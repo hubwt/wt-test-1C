@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7f3dfb14-68a1-4a64-8f76-af885cd5a990">
+  <name>WT_Panel_rita</name>
+  <synonym>
+    <key>ru</key>
+    <value>W t panel rita</value>
+  </synonym>
+  <rootURL>wt_panel_rita</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="a8e062d4-c37c-4260-ba3e-a5f5fd549c7a">
+    <name>Авторизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авторизация</value>
+    </synonym>
+    <template>/sign-in</template>
+    <methods uuid="bbe04ce1-34fc-4d1b-b486-80289c23a244">
+      <name>signin</name>
+      <synonym>
+        <key>ru</key>
+        <value>Signin</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьАвторизациюAuthorization</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0ac6c34e-66fe-4b82-a098-a3eb422e05ce">
+    <name>ВывестиСписокТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вывести список товаров</value>
+    </synonym>
+    <template>/list-products/{id}/{page}/{count}/{pk}</template>
+    <methods uuid="89faa278-bbca-4cdd-b736-0e14978e3f11">
+      <name>GetProductsList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get products list</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровGetProductsList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9f1c0bdc-ca1e-4f79-887a-66a5f478ffca">
+    <name>ВыдатьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выдать продажу</value>
+    </synonym>
+    <template>/issue-sale/{id}</template>
+    <methods uuid="e26286cc-8db6-4ae8-afce-ea9e91817b8e">
+      <name>issueasale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Issueasale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ВыдатьПродажуissueasale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="d91e7ca3-7852-46cc-ac1d-9fa3d16bae34">
+    <name>ЗаявкиИПродажи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявки и продажи</value>
+    </synonym>
+    <template>/application-and-sale/{user_id}/{page}/{count}/{search}</template>
+    <methods uuid="12352ed4-e823-4add-80e2-df0ecefe8933">
+      <name>application_and_sale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Application and sale</value>
+      </synonym>
+      <handler>ЗаявкиИПродажиapplication_and_sale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c27f5218-06ae-43bf-9b55-240455cbf181">
+    <name>ИзменитьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить заявку</value>
+    </synonym>
+    <template>/edit-application</template>
+    <methods uuid="f52109ff-144c-4eda-927c-77b97ad9a10d">
+      <name>editgapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Editgapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьЗаявкуeditgapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c201eefb-c165-4706-8006-26137988a531">
+    <name>ИзменитьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить продажу</value>
+    </synonym>
+    <template>/edit-sale</template>
+    <methods uuid="04aeb219-08ab-42dc-a7c1-5911a6c7f080">
+      <name>editsale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Editsale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьПродажуeditsale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="640f9bbb-bd9f-4d5e-b568-0a05b22a14b3">
+    <name>НаполнитьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наполнить заявку</value>
+    </synonym>
+    <template>/filling-application/{id}</template>
+    <methods uuid="d4aec3fe-5f51-4ffd-b3c6-43181b75aa78">
+      <name>fillingapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Fillingapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>НаполнитьЗаявкуfillingapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1582255c-519b-4ad5-a4ca-28353a1c7c95">
+    <name>НаполнитьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наполнить продажу</value>
+    </synonym>
+    <template>/filling-sale/{Num}</template>
+    <methods uuid="18a282f4-bb71-4075-951c-53ad8ca60844">
+      <name>fillingsale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Fillingsale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>НаполнитьПродажуfillingsale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="84136a70-b961-427d-8dc4-6f102e054b4f">
+    <name>ОтменитьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отменить заявку</value>
+    </synonym>
+    <template>/cancel-application</template>
+    <methods uuid="c239afee-e516-47cf-9828-3e771fd0d1cc">
+      <name>cancelapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Cancelapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОтменитьЗаявкуcancelapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="39bb960d-0557-46d1-886c-11bf4b29f4c7">
+    <name>ОтменитьТоварИзЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отменить товар из заявки</value>
+    </synonym>
+    <template>/cancel-product-application/{Num}</template>
+    <methods uuid="0bca7786-a4f8-4c09-bcb7-736bece53258">
+      <name>cancelproductapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Cancelproductapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОтменитьТоварИзЗаявкиcancelproductapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="cf9c7d03-42f7-4f03-b557-954e4e4c320f">
+    <name>ПолучитьПлохиеЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить плохие заявки</value>
+    </synonym>
+    <template>/bad-application/{user_id}</template>
+    <methods uuid="f887f4a2-1a9b-448b-a86b-f7567d04aee7">
+      <name>bad_application</name>
+      <synonym>
+        <key>ru</key>
+        <value>Bad application</value>
+      </synonym>
+      <handler>ПлохиеЗаявкиbad_application</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e096e636-fb6a-4aa0-821e-7c398590ed50">
+    <name>ПолучитьВесьСписокЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить весь список заявок</value>
+    </synonym>
+    <template>/list-application/{userid}/{Page}/{Count}/{processing}</template>
+    <methods uuid="19dc90e7-ca3b-4281-b461-3e4921b9e2fd">
+      <name>alllistapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Alllistapplication</value>
+      </synonym>
+      <handler>ПолучитьВесьСписокЗаявокalllistapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="556438c1-00b2-409d-9f37-700ea3d9619c">
+    <name>ПолучитьВесьСписокПродаж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить весь список продаж</value>
+    </synonym>
+    <template>/list-sale/{userid}/{Page}/{Count}/{processing}</template>
+    <methods uuid="b2a0c6ad-5798-43ee-ad3b-2d49cbec004b">
+      <name>alllistsales</name>
+      <synonym>
+        <key>ru</key>
+        <value>Alllistsales</value>
+      </synonym>
+      <handler>ПолучитьВесьСписокПродажalllissale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0d664abc-ead4-4455-9623-c35ea6918875">
+    <name>ПолучитьЗаявкиИПродажи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить заявки и продажи</value>
+    </synonym>
+    <template>/getappandsale/{userid}</template>
+    <methods uuid="da7ce02b-4a5f-4306-b4cb-cb429440e96e">
+      <name>getappandsale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getappandsale</value>
+      </synonym>
+      <handler>ПолучитьЗаявкиИПродажиgetappandsale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="dc1652e3-1eae-45cc-9539-54a2dfd04794">
+    <name>ПолучитьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить заявку</value>
+    </synonym>
+    <template>/get-application/{Num}</template>
+    <methods uuid="288e3c84-e2c2-4864-acba-83e604de5eff">
+      <name>getapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getapplication</value>
+      </synonym>
+      <handler>ПолучитьЗаявкуgetapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="67aad960-40e3-4fc7-b496-9ec9e04b3bf0">
+    <name>ПолучитьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить продажу</value>
+    </synonym>
+    <template>/get-sale/{Num}</template>
+    <methods uuid="ceb5cc6a-a1a6-4401-9b69-9867a6e753b1">
+      <name>getsale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getsale</value>
+      </synonym>
+      <handler>ПолучитьПродажуgetsale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b422639f-5aa6-444d-b472-b923884478c6">
+    <name>ПолучитьСписокОрганизаций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список организаций</value>
+    </synonym>
+    <template>/list-organizations</template>
+    <methods uuid="ac31d754-6a53-4c18-818d-0f571fd658a5">
+      <name>listorganizations</name>
+      <synonym>
+        <key>ru</key>
+        <value>Listorganizations</value>
+      </synonym>
+      <handler>ПолучитьСписокОрганизацийlistorganizations</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="90eb31cd-5009-4b5d-bb67-4288d16d1561">
+    <name>ПолучитьСписокСотрудников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список сотрудников</value>
+    </synonym>
+    <template>/workers-list/{department}</template>
+    <methods uuid="3e700b6e-e4f5-4358-8deb-0095b778a389">
+      <name>getworkerslist</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getworkerslist</value>
+      </synonym>
+      <handler>ПолучитьСписокСотрудниковGetWorkersList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c31c71bd-0321-4090-ba10-3ddb3dad25c8">
+    <name>ПолучитьСписокСчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список счетов</value>
+    </synonym>
+    <template>/list-bills</template>
+    <methods uuid="3eca8f70-d551-4312-a9a7-899c19d3945f">
+      <name>listaccounts</name>
+      <synonym>
+        <key>ru</key>
+        <value>Listaccounts</value>
+      </synonym>
+      <handler>ПолучитьСписокСчетовlistaccounts</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="ee9c8600-b995-441a-9dac-ee730a782cdd">
+    <name>ПолучитьСчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить счет</value>
+    </synonym>
+    <template>/get-check/{Num}</template>
+    <methods uuid="d8f9640e-b9b5-4875-a573-fb55ca18528e">
+      <name>getcheck</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getcheck</value>
+      </synonym>
+      <handler>ПолучитьСчетgetcheck</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="08530838-6aef-42ff-b7dd-5e03af823a96">
+    <name>СменаМестаХранения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена места хранения</value>
+    </synonym>
+    <template>/edit-place</template>
+    <methods uuid="b504f068-e31f-456f-b3f9-1cc9293509af">
+      <name>EditPlace</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit place</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаМестаХраненияEditPlace</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3e84eb8a-b3f0-4aad-846c-2cef1311ce27">
+    <name>СоздатьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать продажу</value>
+    </synonym>
+    <template>/create-sale</template>
+    <methods uuid="03218fb6-5ee9-44e2-bb5f-c6a7f8482f36">
+      <name>createsale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Createsale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьПродажуcreatesale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="160c6108-f59a-4845-bc2f-61f434d48074">
+    <name>СоздатьСчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать счет</value>
+    </synonym>
+    <template>/create-check/{Num}</template>
+    <methods uuid="a30b52fd-6c7d-4085-802b-e1c992ea8f23">
+      <name>createcheck</name>
+      <synonym>
+        <key>ru</key>
+        <value>Createcheck</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьСчетcreatecheck</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8d14de4c-67de-4a08-86ce-7e1da6e922c0">
+    <name>ТипыЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Типы заявок</value>
+    </synonym>
+    <template>/types-application/{user_id}</template>
+    <methods uuid="91267c3e-787e-46c3-a2a3-d6162e78b5cc">
+      <name>types_application</name>
+      <synonym>
+        <key>ru</key>
+        <value>Types application</value>
+      </synonym>
+      <handler>ТипыЗаявокtypes_application</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="50912727-ee37-4c94-8797-b77d78585b49">
+    <name>УдалитьТоварИзЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить товар из заявки</value>
+    </synonym>
+    <template>/delete-product-application/{Num}/{Pose}</template>
+    <methods uuid="26542dd4-e268-4edd-b5dd-78e3b374d449">
+      <name>deleteproductapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Deleteproductapplication</value>
+      </synonym>
+      <httpMethod>DELETE</httpMethod>
+      <handler>УдалитьТоварИзЗаявкиdeleteproductapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="2499146c-d051-4705-a5c1-44a565bae7f5">
+    <name>УстановитьТрекНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Установить трек номер</value>
+    </synonym>
+    <template>/set-treck-num</template>
+    <methods uuid="a2f67640-1e3a-47ba-bb18-7c7af16d41d5">
+      <name>settrecknum</name>
+      <synonym>
+        <key>ru</key>
+        <value>Settrecknum</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>УстановитьТрекНомерsettrecknum</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="645f4251-4b57-4551-a213-dd5dcd432e1a">
+    <name>ПереместитьПолку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Переместить полку</value>
+    </synonym>
+    <template>/move-shelf</template>
+    <methods uuid="6bda8e0f-506d-439f-ba41-30583feb1b6b">
+      <name>Moveshelf</name>
+      <synonym>
+        <key>ru</key>
+        <value>Moveshelf</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПеремещениеПолкиmoveshelf</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c485824e-04c8-4802-beef-6aa3f4f991fa">
+    <name>ПолучитьТоварыИзЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары из заявок</value>
+    </synonym>
+    <template>/get-stuff-app</template>
+    <methods uuid="428786b8-def0-4d84-885b-042ce928ba76">
+      <name>getstuffapp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getstuffapp</value>
+      </synonym>
+      <handler>ПолучитьТоварыИзЗаявокgetstuffapp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="dca94cac-a3a7-4a34-979b-bdeafec49e65">
+    <name>ДобавитьТрекНомерВПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавить трек номер в продажу</value>
+    </synonym>
+    <template>/add-track-number/{id}</template>
+    <methods uuid="e413db83-749f-4708-8fc5-d92b5edd083a">
+      <name>Addtracknumber</name>
+      <synonym>
+        <key>ru</key>
+        <value>Addtracknumber</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ДобавитьТрекНомерВПродажуaddtracknumber</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="f5cd967e-46ec-4430-b3ca-44dfab1a5121">
+    <name>Типытоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Типытоваров</value>
+    </synonym>
+    <template>/types-product</template>
+    <methods uuid="d00d26ea-5add-4152-8ff6-ee62afbc0f66">
+      <name>types_product</name>
+      <synonym>
+        <key>ru</key>
+        <value>Types product</value>
+      </synonym>
+      <handler>Типытоваровtypes_product</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9be42b8d-b59d-4921-b5db-0c3d161cc664">
+    <name>ПолучитьТовар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товар</value>
+    </synonym>
+    <template>/product/{id}</template>
+    <methods uuid="393c2672-5b33-4b4b-92d0-674adbf45463">
+      <name>GetProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get product</value>
+      </synonym>
+      <handler>ПолучитьТоварGetProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b857d81e-b371-4b95-8b0e-90d5b63fe669">
+    <name>СменаРеквизитовТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена реквизитов товара</value>
+    </synonym>
+    <template>/edit-product</template>
+    <methods uuid="0ea319dc-5f94-4abd-ad85-d5cac4670a13">
+      <name>EditList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit list</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаРеквизитовТовараEditList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1f882a22-a3a3-43c4-b168-a3d210f16017">
+    <name>ПолучитьПотерянныеТовары</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить потерянные товары</value>
+    </synonym>
+    <template>/get-lost/{page}/{count}/{id}</template>
+    <methods uuid="af22dba6-8d8e-47f2-9cfc-09ff7186d54b">
+      <name>getlost</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlost</value>
+      </synonym>
+      <handler>ПолучитьПотерянныеТоварыgetlost</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3cd86da5-5f2f-452b-aa9b-8d11cef557c5">
+    <name>ПолучитьТоварыВПоддоне</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары в поддоне</value>
+    </synonym>
+    <template>/list-in-pod/{id}/{page}/{count}</template>
+    <methods uuid="6b2efc22-c152-441e-a4b8-0a4de44d229a">
+      <name>GetProductInPoddon</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get product in poddon</value>
+      </synonym>
+      <handler>ПолучитьТоварыВПоддонеGetProductInPoddon</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e8af7b08-a9f3-4fd1-88d0-01d47648280f">
+    <name>Сменаподдона</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сменаподдона</value>
+    </synonym>
+    <template>/remove-to-lost</template>
+    <methods uuid="919dcca9-327d-4e52-87a2-430afe897834">
+      <name>Editpod</name>
+      <synonym>
+        <key>ru</key>
+        <value>Editpod</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаподдонаEditpod</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1ff3d786-e9ed-4249-bd9a-1662f714066f">
+    <name>ПолучитьЗаказНаряд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить заказ наряд</value>
+    </synonym>
+    <template>/get-order/{Num}</template>
+    <methods uuid="9ac66bd3-fa7e-48cc-aa8b-8f2e67354fe7">
+      <name>getorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getorder</value>
+      </synonym>
+      <handler>ПолучитьЗаказНарядgetorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="7896f3af-718f-406e-be7e-a45845dca6a7">
+    <name>НаполнитьЗаказНаряд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наполнить заказ наряд</value>
+    </synonym>
+    <template>/filling-order/{Num}</template>
+    <methods uuid="4fe236b4-8b3c-4af0-9eb2-fb084414390f">
+      <name>fillingorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Fillingorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>НаполнитьЗаказНарядfillingorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="916acd04-b132-4377-803f-24f622d80c06">
+    <name>ОтчётПоКонвейеру</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отчёт по конвейеру</value>
+    </synonym>
+    <template>/pipelinereport/{datestart}/{dateend}</template>
+    <methods uuid="ea8073a9-fb3a-40ca-9a77-d04e2a217511">
+      <name>pipelinereport</name>
+      <synonym>
+        <key>ru</key>
+        <value>Pipelinereport</value>
+      </synonym>
+      <handler>ОтчётПоКонвейеруpipelinereport</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="f4985a34-a7e8-4cca-8c1b-c3664f16fdbe">
+    <name>ИзменитьГабаритыТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить габариты товара</value>
+    </synonym>
+    <template>/set-product-size/{id}</template>
+    <methods uuid="95249d4e-ec24-4127-b407-7c45e1e5da8b">
+      <name>SetProductSize</name>
+      <synonym>
+        <key>ru</key>
+        <value>Set product size</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьГабаритыТовараSetProductSize</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="5b336b93-c8ff-43e0-8c43-9be307ba3514">
+    <name>СписатьДеталь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списать деталь</value>
+    </synonym>
+    <template>/delete-product</template>
+    <methods uuid="cd365b90-dedb-43ca-acb9-551a724dda9e">
+      <name>DeleteProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Delete product</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СписатьДетальDeleteProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e872dac6-4d14-4c7f-a664-27b33de2a510">
+    <name>ОтправитьВРВР</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправить ВРВР</value>
+    </synonym>
+    <template>/send-rvr/{Num}</template>
+    <methods uuid="bab6a9dd-c63a-4bb3-bc39-564c5eea15ff">
+      <name>sendrvr</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sendrvr</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОтправитьВРВРsendrvr</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0c3f9da1-f0a0-48ae-890b-1890a7c4d642">
+    <name>ПолучитьСписокНарядов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список нарядов</value>
+    </synonym>
+    <template>/get-list-orders/{Count}/{Page}/{type}</template>
+    <methods uuid="06d06f78-fe79-48d3-a4d1-4d1357c68e2e">
+      <name>getlistorders</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlistorders</value>
+      </synonym>
+      <handler>ПолучитьСписокНарядовgetlistorders</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="495b735b-8b94-46df-a09c-8fcb2e3bde8f">
+    <name>СменаCтатусаТоваровВЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена cтатуса товаров ВЗН</value>
+    </synonym>
+    <template>/change-state-order/{Num}</template>
+    <methods uuid="858f041b-af94-4d2e-b8e5-bd489e886f1d">
+      <name>changestateorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Changestateorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаCтатусаТоваровВЗНchangestateorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="d29d8ee9-3bd9-48b7-b6da-eff92b4f6a89">
+    <name>ПолучитьМестаХранения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить места хранения</value>
+    </synonym>
+    <template>/get-places/{id}</template>
+    <methods uuid="af598967-1999-434b-b520-53253e92e67e">
+      <name>GetPlaces</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get places</value>
+      </synonym>
+      <handler>ПолучитьМестаХраненияGetPlaces</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="df726355-99a0-4f27-9a30-f1ea3186fc15">
+    <name>ОтменитьТоварИзПродажи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отменить товар из продажи</value>
+    </synonym>
+    <template>/cancel-product-sale/{Num}</template>
+    <methods uuid="fb694522-bebe-4e1a-bbf3-1717a7380417">
+      <name>cancelproductsale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Cancelproductsale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОтменитьТоварИзПродажиcancelproductsale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3246311b-686c-4d5b-a0e7-bfd4991a4e39">
+    <name>СоздатьЗадачу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать задачу</value>
+    </synonym>
+    <template>/create-work</template>
+    <methods uuid="2ce68d9b-5199-4556-8f9f-225d11a21de0">
+      <name>creatework</name>
+      <synonym>
+        <key>ru</key>
+        <value>Creatework</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьЗадачуcreatework</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="793fbdac-0967-407f-9281-2680db42430a">
+    <name>ПолучитьСписокПеремещений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список перемещений</value>
+    </synonym>
+    <template>/get-list-move/{Count}/{Page}/{type}</template>
+    <methods uuid="9b0db5f5-b7de-4b94-b0a2-f9faf6a57a95">
+      <name>getlistmove</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlistmove</value>
+      </synonym>
+      <handler>ПолучитьСписокПеремещенийgetlistmove</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="6ecc230a-fcb5-4f9e-8149-9cb7c97a5074">
+    <name>ПолучитьПеремещение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить перемещение</value>
+    </synonym>
+    <template>/get-move/{Num}/{type}</template>
+    <methods uuid="7de0830c-2daa-4c31-af74-2cb1464b0e87">
+      <name>getmove</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getmove</value>
+      </synonym>
+      <handler>ПолучитьПеремещениеgetmove</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="85b9c405-cd33-4605-8e47-27301cb8f7b6">
+    <name>СменаCтатусаТоваровВПеремещении</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена cтатуса товаров в перемещении</value>
+    </synonym>
+    <template>/changestatemove/{Num}</template>
+    <methods uuid="90fabfb1-1b48-4795-b289-e23a714cce70">
+      <name>changestatemove</name>
+      <synonym>
+        <key>ru</key>
+        <value>Changestatemove</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаCтатусаТоваровВПеремещенииchangestatemove</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="03027fdb-ef9e-4bce-98ca-334ecc28af13">
+    <name>ПолучитьЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить задачи</value>
+    </synonym>
+    <template>/get-tasks/{userid}/{state}/{page}/{count}</template>
+    <methods uuid="74c3df52-94fa-4057-b6fc-b48c7da142a9">
+      <name>GetTasks</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get tasks</value>
+      </synonym>
+      <handler>ПолучитьЗадачиGetTasks</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="2095c8b4-13c8-47a8-985d-3039ddea97d4">
+    <name>СменаСтатусаЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена статуса задачи</value>
+    </synonym>
+    <template>/change-state-task/{id}</template>
+    <methods uuid="a3c0e214-828a-42dd-8501-f91c21b82c7a">
+      <name>ChangeStateTask</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change state task</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаСтатусаЗадачиChangeStateTask</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="358b7429-d3f5-4a0d-8fa0-bd44b9b4a3f4">
+    <name>СменаОтветственногоЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена ответственного задачи</value>
+    </synonym>
+    <template>/change-executor-task/{id}</template>
+    <methods uuid="b1284aff-af43-42bb-ad5b-ab3c63f968b7">
+      <name>ChangeExecutorTask</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change executor task</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаОтветственногоЗадачиChangeExecutorTask</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e7a70031-fa3d-41d6-adc4-5138024a9b57">
+    <name>ПолучитьДашборд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить дашборд</value>
+    </synonym>
+    <template>/get-dash</template>
+    <methods uuid="9817551f-11aa-4f3f-871c-89d894b73840">
+      <name>GetDash</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get dash</value>
+      </synonym>
+      <handler>ПолучитьДашбордGetDash</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e0cad77e-04d2-401b-befa-d0894ae63400">
+    <name>ПолучитьПотеряшки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить потеряшки</value>
+    </synonym>
+    <template>/getlost/{datestart}/{dateend}</template>
+    <methods uuid="5e4929a8-c573-471a-9986-599f8288b1f5">
+      <name>getlost</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlost</value>
+      </synonym>
+      <handler>ПолучитьПотеряшкиgetlost</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="76a53739-70a9-4c14-8877-c4370aade540">
+    <name>ПолучитьПеремещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить перемещения</value>
+    </synonym>
+    <template>/get-in-move/{datestart}/{dateend}/{city}</template>
+    <methods uuid="d8a5e517-dcc5-416c-b443-4b21d9c240bd">
+      <name>getinmove</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getinmove</value>
+      </synonym>
+      <handler>ПолучитьПеремещенияgetinmove</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8ff8e66b-c378-4c31-896a-a958682e6913">
+    <name>ПолучитьПринятые</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить принятые</value>
+    </synonym>
+    <template>/get-received/{datestart}/{dateend}/{city}</template>
+    <methods uuid="93076df8-edd0-4f9c-9cf3-1430dee83b22">
+      <name>getreceived</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getreceived</value>
+      </synonym>
+      <handler>ПолучитьПринятыеgetreceived</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3bdc21d4-4141-43ba-a7c5-9529bb7d8abc">
+    <name>ПолучитьВыданые</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить выданые</value>
+    </synonym>
+    <template>/get-issue/{datestart}/{dateend}/{city}</template>
+    <methods uuid="2c891a8d-8321-4c54-9e92-9ec19ab5bcb8">
+      <name>getissue</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getissue</value>
+      </synonym>
+      <handler>ПолучитьВыданыеgetissue</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c3b7a9f9-bcc9-496d-8720-a4626c7958e7">
+    <name>Памагите</name>
+    <synonym>
+      <key>ru</key>
+      <value>Памагите</value>
+    </synonym>
+    <template>/sos/{user}</template>
+    <methods uuid="589be8be-fa6e-4972-906e-80df53650671">
+      <name>sos</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sos</value>
+      </synonym>
+      <handler>Памагитеsos</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="fbb456c2-346d-4923-9c3e-bdf540b460c1">
+    <name>ПолучитьНайдёныши</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить найдёныши</value>
+    </synonym>
+    <template>/getfind/{datestart}/{dateend}</template>
+    <methods uuid="db134665-18e0-47a9-b700-1dc7af77a188">
+      <name>getfind</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getfind</value>
+      </synonym>
+      <handler>ПолучитьНайдёнышиgetfind</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8506d266-516f-4c05-b3c9-f3a3e685aa11">
+    <name>ГлобальноВыдатьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Глобально выдать продажу</value>
+    </synonym>
+    <template>/global-issue-sale/{num}</template>
+    <methods uuid="34ff34d5-68fa-4c2d-923a-d810f03d8bd1">
+      <name>globalissueasale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Globalissueasale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ГлобальноВыдатьПродажуglobalissueasale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0e602aa8-43a5-4016-ac20-e7c7a78bef8d">
+    <name>ПолучитьПотеряшкиОбщ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить потеряшки общ</value>
+    </synonym>
+    <template>/getlostall/{datestart}/{dateend}/{city}</template>
+    <methods uuid="d97486ef-e3e6-46ca-bd65-afb2948f386a">
+      <name>getlostall</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlostall</value>
+      </synonym>
+      <handler>ПолучитьПотеряшкиОбщgetlostall</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a31ca98e-067b-4cbc-8403-e0ded0e46ecb">
+    <name>ПолучитьДашбордСклада</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить дашборд склада</value>
+    </synonym>
+    <template>/get-dash-store</template>
+    <methods uuid="7138c5bf-9794-4d21-a2d6-a2d8c300a5e1">
+      <name>GetDashStore</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get dash store</value>
+      </synonym>
+      <handler>ПолучитьДашбордСкладаGetDashStore</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="62590d96-dae9-491a-b5ac-8f46d6cc270d">
+    <name>ОтправитьСМС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправить СМС</value>
+    </synonym>
+    <template>/sendSMS</template>
+    <methods uuid="8a375927-327e-4d89-aee5-b817930e1b67">
+      <name>SendSMS</name>
+      <synonym>
+        <key>ru</key>
+        <value>Send SMS</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОтправитьСМСsendSMS</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a0cd1ff6-2dbd-4b6c-bfbe-9cdddfcaf47d">
+    <name>ПолучитьЗадачиОтАвтора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить задачи от автора</value>
+    </synonym>
+    <template>/get-tasks-from-author/{userid}/{state}/{page}/{count}</template>
+    <methods uuid="d8dc9f1b-7cd5-4853-9a31-1f8ca0448624">
+      <name>GetTasksFromAuthor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get tasks from author</value>
+      </synonym>
+      <handler>ПолучитьЗадачиОтАвтораGetTasksFromAuthor</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="43186b51-5525-4da8-aa5f-a99d45a16261">
+    <name>ПроверитьQRкод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проверить qr-код</value>
+    </synonym>
+    <template>/check-qrcode</template>
+    <methods uuid="7d92fe19-4474-4d1b-901b-d1282bafdc9d">
+      <name>CheckQRCode</name>
+      <synonym>
+        <key>ru</key>
+        <value>Check QRCode</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПроверитьQRкодcheckqrcode</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="dcdde31b-b27e-4977-91c1-9d0a37559d91">
+    <name>ПолучитьСтатистикуЗадач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить статистику задач</value>
+    </synonym>
+    <template>/get-task-statistics/{datestart}/{dateend}</template>
+    <methods uuid="41e16ff5-a9f2-4208-8204-d9c8f20eac25">
+      <name>GetTaskStatistics</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get task statistics</value>
+      </synonym>
+      <handler>ПолучитьСтатистикуЗадачgettaskstatistics</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="d83ce25f-6abb-411e-90e4-f4500ba4bdd5">
+    <name>СменаПриоритетаЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена приоритета задачи</value>
+    </synonym>
+    <template>/change-priority-task/{id}</template>
+    <methods uuid="67ba951a-015c-46cc-8817-7f80cf0c3151">
+      <name>ChangePriorityTask</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change priority task</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаПриоритетаЗадачиChangePriorityTask</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="071aca47-172a-4df8-9c5a-329d79912cc7">
+    <name>ПолучитьСписокКарточекТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список карточек товаров</value>
+    </synonym>
+    <template>/get-card-products-list/{id}/{page}/{count}</template>
+    <methods uuid="ee7183b0-2a74-4fe2-83a4-2e2f58d2fbfd">
+      <name>GetProductsList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get products list</value>
+      </synonym>
+      <handler>ПолучитьСписокКарточекТоваровGetProductsList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0f50d029-80c9-4f13-9dba-4ffe0b391788">
+    <name>ПолучитьМашины</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить машины</value>
+    </synonym>
+    <template>/get-trucks</template>
+    <methods uuid="c2f69232-559a-472d-a1ea-19b8ef9093b6">
+      <name>gettrucks</name>
+      <synonym>
+        <key>ru</key>
+        <value>Gettrucks</value>
+      </synonym>
+      <handler>ПолучитьМашиныgettrucks</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="551c80fb-9dc4-4de0-8871-d1352f8ab9fc">
+    <name>ОтчётКонвейерПоСотруднику</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отчёт конвейер по сотруднику</value>
+    </synonym>
+    <template>/pipeline-report-person/{datestart}/{dateend}</template>
+    <methods uuid="36016b58-29d9-4657-9adc-d1c3dd6a726c">
+      <name>pipelineReportPerson</name>
+      <synonym>
+        <key>ru</key>
+        <value>Pipeline report person</value>
+      </synonym>
+      <handler>ОтчётКонвейерПоСотрудникуpipelinereportperson</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

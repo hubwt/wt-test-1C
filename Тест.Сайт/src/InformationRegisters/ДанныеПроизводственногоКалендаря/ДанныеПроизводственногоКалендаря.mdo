@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="118a2cf5-7e3c-43bd-9b98-f2a2223d03bf" extendedConfigurationObject="4a69a70d-1b4c-4999-a3dd-ae1deb331fea">
+  <producedTypes>
+    <selectionType typeId="a83295b9-d4b1-4691-a69a-0519890c8efc" valueTypeId="d16beeef-6aab-40d6-9b9c-cdb916ad282a"/>
+    <listType typeId="9d5ae3d2-2118-40a6-8f49-5d955db6913d" valueTypeId="5485c3e5-ace4-4cbd-9bef-71f2d2ddc623"/>
+    <managerType typeId="f22e382a-08c3-4d3b-aa66-4dfd3f8cc56c" valueTypeId="cec9ccdb-c651-4c1e-a298-4ac575e2bb09"/>
+    <recordSetType typeId="d8d75403-f09b-496d-bb0f-82935e9859aa" valueTypeId="2c2eaf75-6602-4dc8-b04e-b0987d3aab62"/>
+    <recordKeyType typeId="b588a523-9ce2-4a2f-940e-dccf341d5b8e" valueTypeId="bb8a9220-a6d2-4657-92ee-1755acd86969"/>
+    <recordType typeId="b47afead-4626-4303-bdc7-edb2de1e345b" valueTypeId="a3ebbe60-2afb-44b8-9246-4b8823fc8483"/>
+    <recordManagerType typeId="60b7c065-5e82-42f9-9dcb-6fa2b224b574" valueTypeId="871e960a-aa6a-487d-aaa1-9931a5579436"/>
+  </producedTypes>
+  <name>ДанныеПроизводственногоКалендаря</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:InformationRegisterExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+    <informationRegisterPeriodicity>Checked</informationRegisterPeriodicity>
+    <writeMode>Checked</writeMode>
+  </extension>
+  <resources uuid="6c48e1e8-756e-4a89-be68-4e284b92bd79" extendedConfigurationObject="3a36e0f5-a645-47f1-99ae-5b0493d604ad">
+    <name>ВидДня</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>EnumRef.ВидыДнейПроизводственногоКалендаря</type>
+        </types>
+      </typeExtension>
+    </extension>
+    <type/>
+  </resources>
+  <resources uuid="6a9e33cf-f15f-4faf-bcb1-02eba0572993" extendedConfigurationObject="57f762f7-b8e4-498b-a3dc-3d40c94855ec">
+    <name>ДатаПереноса</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>Date</type>
+        </types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </typeExtension>
+    </extension>
+    <type/>
+  </resources>
+  <dimensions uuid="5d98026c-d989-492a-b6ea-7b040905a79b" extendedConfigurationObject="ca7d4086-de35-40fd-af65-73369d452135">
+    <name>ПроизводственныйКалендарь</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.ПроизводственныеКалендари</type>
+        </types>
+      </typeExtension>
+    </extension>
+    <type/>
+  </dimensions>
+  <dimensions uuid="d87c1c20-14f3-4d58-b43b-46575f61b1b9" extendedConfigurationObject="563c0f5c-e0b4-4229-a3f6-183091060aa4">
+    <name>Дата</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>Date</type>
+        </types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </typeExtension>
+    </extension>
+    <type/>
+  </dimensions>
+  <dimensions uuid="69302fae-ea6e-4ecf-9d0a-83472008df72" extendedConfigurationObject="bf967588-ea8f-49a3-9331-af2331ffa162">
+    <name>Год</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>Number</type>
+        </types>
+        <numberQualifiers>
+          <precision>4</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </typeExtension>
+    </extension>
+    <type/>
+  </dimensions>
+</mdclass:InformationRegister>

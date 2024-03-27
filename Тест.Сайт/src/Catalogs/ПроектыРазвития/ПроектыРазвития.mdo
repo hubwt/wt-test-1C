@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="f0f59ac6-a2c1-4767-bc5d-6033478d6592" extendedConfigurationObject="662ab22f-55e1-4c8f-84b2-422c8f9fe971">
+  <producedTypes>
+    <objectType typeId="d3653990-933b-4b76-a1e9-13e3b29a7644" valueTypeId="3d32b84a-aa9f-4062-b391-c0514b4de69b"/>
+    <refType typeId="9457bb8a-bacf-459b-861b-1567ccf9e0ae" valueTypeId="d236df59-3348-4f6f-b224-2520d2b86ff2"/>
+    <selectionType typeId="e6c09118-2e9a-439f-86cd-22c240b12b3d" valueTypeId="33cbe023-ba33-448b-821a-c9ed78c8e95a"/>
+    <listType typeId="4cb60cfd-7d04-47c1-b35c-87ff420ef31c" valueTypeId="dccd3954-f320-4680-bce8-04a5195b692d"/>
+    <managerType typeId="a7d887ab-970a-4c48-91a4-742931378b7e" valueTypeId="d24751c4-6293-42f6-8e41-f527c4894c23"/>
+  </producedTypes>
+  <name>ПроектыРазвития</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:CatalogExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+  </extension>
+  <attributes uuid="4b9ee147-00bf-4219-85ec-17d4ff7a3e54" extendedConfigurationObject="f05b274e-e83f-49f6-8e63-076c298b5e89">
+    <name>Завершен</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>Boolean</type>
+        </types>
+      </typeExtension>
+    </extension>
+    <type/>
+  </attributes>
+  <attributes uuid="21e9fd75-f92c-46df-9cfb-2d0aa0761865" extendedConfigurationObject="531f65f8-0fe0-41ae-833a-ff081f68f497">
+    <name>Отдел</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+      <typeExtension>
+        <types>
+          <state>Checked</state>
+          <type>CatalogRef.Подразделения</type>
+        </types>
+      </typeExtension>
+    </extension>
+    <type/>
+  </attributes>
+  <tabularSections uuid="482e71e6-213c-4dd8-89f7-ed90524f5a80" extendedConfigurationObject="f132d71d-6e81-48ec-a1f9-48e6f48eec66">
+    <producedTypes>
+      <objectType typeId="6f9e67e8-a81f-470c-8a51-09d94acb7e36" valueTypeId="0d6a709f-bd6a-4959-91b0-60099e7b65de"/>
+      <rowType typeId="9cfd78fb-4f14-405f-b672-a0aacba73a41" valueTypeId="1ebf9458-8b0e-4603-a49f-8748e96d9ba1"/>
+    </producedTypes>
+    <name>Участники</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:MdObjectExtension">
+      <extendedConfigurationObject>Checked</extendedConfigurationObject>
+    </extension>
+    <attributes uuid="a749267b-a6b8-4679-a492-b2c4c62ee71f" extendedConfigurationObject="fbbd2ea4-5b7a-46a8-aee1-ed2ea674a18c">
+      <name>Сотрудник</name>
+      <objectBelonging>Adopted</objectBelonging>
+      <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+        <extendedConfigurationObject>Checked</extendedConfigurationObject>
+        <typeExtension>
+          <types>
+            <state>Checked</state>
+            <type>CatalogRef.Пользователи</type>
+          </types>
+        </typeExtension>
+      </extension>
+      <type/>
+    </attributes>
+    <attributes uuid="20673ba1-7a3d-4fc8-9feb-56ff188edb25" extendedConfigurationObject="c4f3122e-d009-4d2b-b9e0-b6d92d69c9dc">
+      <name>Статус</name>
+      <objectBelonging>Adopted</objectBelonging>
+      <extension xsi:type="mdclassExtension:BasicFeatureExtension">
+        <extendedConfigurationObject>Checked</extendedConfigurationObject>
+        <typeExtension>
+          <types>
+            <state>Checked</state>
+            <type>Boolean</type>
+          </types>
+        </typeExtension>
+      </extension>
+      <type/>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>
