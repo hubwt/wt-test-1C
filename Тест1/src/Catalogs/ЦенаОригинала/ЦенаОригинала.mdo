@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="49370b1b-6a4e-476a-a185-4e5beee97e6e">
+  <producedTypes>
+    <objectType typeId="94c57e5d-fdc8-4667-8a54-354b408def33" valueTypeId="a1e17509-9581-417e-9c7d-7568f9c2da09"/>
+    <refType typeId="767d63e8-d5ec-4417-b862-f760ee35daae" valueTypeId="04b10605-9b72-492c-8fe0-7773503f6764"/>
+    <selectionType typeId="76cb41d4-4d9c-4e7b-a621-59e0f62cd0d1" valueTypeId="64ef0982-f549-4573-ba61-a6a7df0619bb"/>
+    <listType typeId="f723f48f-1424-494f-8eac-ce80c1971e91" valueTypeId="0bf12116-d106-4609-88d3-0b7d3efc6e30"/>
+    <managerType typeId="df9d2ecf-b199-4b3a-9a6b-9473c34cf5bd" valueTypeId="58481746-2ecf-4f90-9815-a30153137b3e"/>
+  </producedTypes>
+  <name>ЦенаОригинала</name>
+  <synonym>
+    <key>ru</key>
+    <value>Цена оригинала</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ЦенаОригинала.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ЦенаОригинала.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ЦенаОригинала.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.ЦенаОригинала.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.ЦенаОригинала.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="3059605f-6f60-4303-b264-ca1e903605b6">
+    <name>Артикул</name>
+    <synonym>
+      <key>ru</key>
+      <value>Артикул</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="47d9d1b9-aaec-46d0-8990-545a431392b0">
+    <name>Цена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цена</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b398b8f2-5107-4948-b6f8-e97e2a8bc801">
+    <name>Бренд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бренд</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Производитель</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="c0b82ad4-e31b-4afc-8877-02ce61ab7a27">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="514c2572-61a6-4475-8c1a-24c3f4ccf3a9">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d83ebc0c-c0d8-42d3-bd40-45fa9f3977fb">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>
