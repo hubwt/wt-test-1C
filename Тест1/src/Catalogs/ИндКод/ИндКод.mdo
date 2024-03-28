@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4e11d5b9-0002-4218-90ce-cbc155e22b8b">
+  <producedTypes>
+    <objectType typeId="e5808a73-01a5-4593-93b2-8fd676cca3f6" valueTypeId="d046bb8c-2616-474e-bd9e-54f6b3637438"/>
+    <refType typeId="ed060cf6-21b9-42ce-9755-a9e2e555a4fa" valueTypeId="c52266c1-af6a-4f19-9e2d-2bdf2403cff4"/>
+    <selectionType typeId="e60b071c-05c5-4bfc-9f6b-ad857ff90d50" valueTypeId="46289420-ffd7-4d78-bd8d-b58ca4f46ca9"/>
+    <listType typeId="265250bf-627b-4247-a1f9-b47e223978a8" valueTypeId="7ca90155-f6e7-4444-b53f-b54fc4b69e0e"/>
+    <managerType typeId="d262ba18-22cf-45b1-817f-93e66f8afe25" valueTypeId="686c9a1d-b6e8-4dae-ba4a-b85e4f8bdf4f"/>
+  </producedTypes>
+  <name>ИндКод</name>
+  <synonym>
+    <key>ru</key>
+    <value>Инд код</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ИндКод.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ИндКод.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <owners>Catalog.Номенклатура</owners>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ИндКод.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.ИндКод.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.ИндКод.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="fc84114e-8d03-4b5c-b4be-4eae81aa358c">
+    <name>ДатаПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата поступления</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="33204bad-1a7f-4e35-b831-61392888138a">
+    <name>ДокументПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ поступления</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПоступлениеЗапчастей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="aa054fe1-94a1-4bba-99e5-cf006ae80e58">
+    <name>Распечатано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Распечатано</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="40a6de2f-2af7-4417-9a5f-688a3cf17b27">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6fce6ba7-7bec-4f68-9bb4-86893161a1f6">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d076fc21-760b-434d-9adf-cc97adce2caf">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

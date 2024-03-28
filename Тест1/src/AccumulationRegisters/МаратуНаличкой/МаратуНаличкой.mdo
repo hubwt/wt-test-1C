@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bd8ae7f6-34d7-471a-91c2-2456cba8d53a">
+  <producedTypes>
+    <selectionType typeId="6a961d17-7f2d-48f1-b946-5a523676c7df" valueTypeId="312d4456-9894-4629-80c2-f1e9436b7e19"/>
+    <listType typeId="4ea9084f-f869-466a-8537-14cd1e78ade4" valueTypeId="ddf300d9-4ee1-492e-abe0-5659dae8fe74"/>
+    <managerType typeId="6dbc15ea-5ae6-4bac-a209-1352ffd4f2c6" valueTypeId="23a7dfc6-1d31-483b-84da-46b06212c2c7"/>
+    <recordSetType typeId="04bd6dc4-e826-48de-8a69-ba689e8c0f04" valueTypeId="87827c70-2b14-4a04-a385-0e9028334aa7"/>
+    <recordKeyType typeId="a9ca6d38-9bed-43f6-875d-050c521ffedc" valueTypeId="b7e74cd1-c6fe-4827-bb0f-32688ae873fc"/>
+    <recordType typeId="296ba924-df6f-4d05-a7bd-d081b75ada1d" valueTypeId="9149ad51-78bf-4d42-a143-0ec068da9a0f"/>
+  </producedTypes>
+  <name>МаратуНаличкой</name>
+  <synonym>
+    <key>ru</key>
+    <value>Марату наличкой</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="3084fae3-85d0-4068-9c31-0ab71b9b76d5">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="8aec58a6-42b4-4b8c-b906-a9c90b9488e0">
+    <name>МаратуНаличкой</name>
+    <synonym>
+      <key>ru</key>
+      <value>Марату наличкой</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВыводДенегИзРазборки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>
