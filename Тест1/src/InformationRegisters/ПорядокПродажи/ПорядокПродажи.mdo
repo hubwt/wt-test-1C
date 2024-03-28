@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f103c859-822d-4258-819e-ac3cb0a53c4d">
+  <producedTypes>
+    <selectionType typeId="5dfa13ec-a246-41e1-8e6e-8ba850d1dae2" valueTypeId="86409f15-253a-416c-a650-7bc1256f4758"/>
+    <listType typeId="78c05641-aab0-4b76-bef9-6d7364a24a7f" valueTypeId="544d8a66-5aee-4aa6-baf9-d6761c69c049"/>
+    <managerType typeId="7e39228d-0de2-4a6a-8ad8-69940b523f9b" valueTypeId="d0cfe631-6f56-4adf-b393-d6fbcb71ba75"/>
+    <recordSetType typeId="b1286186-fcea-456c-b212-df3ceeb9a72b" valueTypeId="b5cb1689-d7e8-408c-8051-ec40f001a1ae"/>
+    <recordKeyType typeId="d63c79d7-efd7-422c-88ac-76f7b01d2af9" valueTypeId="247962ed-0bd4-4c41-97d7-08f8d52cee9f"/>
+    <recordType typeId="d54cffe7-a112-40cd-ba7c-04f42dbd53f3" valueTypeId="d8caae71-21b1-4d3f-b534-f09b2e900a3e"/>
+    <recordManagerType typeId="4892a5ee-8dc3-4100-acb8-1bfac08976b1" valueTypeId="e767fcc2-9d01-485a-8a64-a6019b507457"/>
+  </producedTypes>
+  <name>ПорядокПродажи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Порядок продажи</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="5c4632e5-617b-4f56-a4d2-18e76fba9ef2">
+    <name>Колво</name>
+    <synonym>
+      <key>ru</key>
+      <value>Колво</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="0b1bd5d6-0476-482a-817d-f24ad148783c">
+    <name>Продажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Продажа</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПродажаЗапчастей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
