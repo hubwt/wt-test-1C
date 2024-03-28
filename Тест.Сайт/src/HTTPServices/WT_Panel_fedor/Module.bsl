@@ -12582,6 +12582,6 @@
 м = 2;
 j = 3;
 орп = "привет";
-etqewy  = 123;
+etqewy  = "adsdadadadsasdasdadadadadasda";
 фывфв = 12;
 КонецПроцедуры
