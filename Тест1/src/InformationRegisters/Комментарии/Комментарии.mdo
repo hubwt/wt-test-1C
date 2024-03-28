@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9ec46686-0be9-4a28-99a9-d4c790291a50">
+  <producedTypes>
+    <selectionType typeId="f81adf58-ce07-4e43-a940-be59b89d3cce" valueTypeId="fc73f343-5956-4e35-b218-a57598fcb65d"/>
+    <listType typeId="e8160546-f326-4c13-934e-654853b3ff69" valueTypeId="c01ca444-011e-4afb-9aec-364dd7406c2b"/>
+    <managerType typeId="ee8a696d-3951-4347-a60b-b267b978167b" valueTypeId="dd3a70af-7314-4797-8049-c0742383d50d"/>
+    <recordSetType typeId="84322df4-f0b0-4d47-a5c3-f1ce111c7b4d" valueTypeId="6822d355-5828-4ca6-b843-09db4663c939"/>
+    <recordKeyType typeId="4f07656d-86ff-4ffc-ba44-846a827ea1f1" valueTypeId="54ea1beb-e00b-4477-92a0-3d0aa25108e4"/>
+    <recordType typeId="59226b3d-8d28-4482-8f89-d079fc0feb7b" valueTypeId="e13c8fbc-30a9-401f-a8fb-c71487312afe"/>
+    <recordManagerType typeId="2bf8be09-a664-497e-89c3-caac5401848a" valueTypeId="9c2a543d-4396-4580-86af-1912260e10e3"/>
+  </producedTypes>
+  <name>Комментарии</name>
+  <synonym>
+    <key>ru</key>
+    <value>Комментарии</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="86fb03cd-912e-4a18-9a79-24e883d97604">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="7e7c59ec-dd6d-4ba3-960e-ee6ce57d40b7">
+    <name>Машина</name>
+    <synonym>
+      <key>ru</key>
+      <value>Машина</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Машины</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a706c26f-4385-44c4-a245-f0297ca28278">
+    <name>Товар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товар</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f40621e7-87b5-42f2-9c89-b660989c8c17">
+    <name>индкод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Индкод</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ИндКод</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

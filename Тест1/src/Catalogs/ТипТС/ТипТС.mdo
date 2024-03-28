@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bf06298d-87fc-45af-988e-32a20e089def">
+  <producedTypes>
+    <objectType typeId="093a8fdf-92b2-4323-a413-341a9eed74d8" valueTypeId="58e7e597-2b1d-46ef-b1ab-33e6427e7be8"/>
+    <refType typeId="2c108060-9e2d-457d-afb9-94740f8c18c8" valueTypeId="d38f1281-5c46-45fb-99e6-c99aa580785a"/>
+    <selectionType typeId="b1de0b73-b6a9-4543-8c0c-cf437ec32859" valueTypeId="237a07a9-d64a-44be-9b54-e154d1363e86"/>
+    <listType typeId="8dee7e16-cd0c-48da-a344-e7bbe7d1d99e" valueTypeId="42dd2550-773f-4689-89d8-dce9f4bb454a"/>
+    <managerType typeId="d58844de-391d-4a79-ad0d-572eda597d81" valueTypeId="d168338f-5ae4-4137-9886-a52f5d5a613d"/>
+  </producedTypes>
+  <name>ТипТС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Тип ТС</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ТипТС.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ТипТС.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>50</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ТипТС.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.ТипТС.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.ТипТС.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="d1dd338e-961d-4c72-a407-dadafa663894">
+    <name>Производитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Производитель</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Производитель</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a45ef7ae-60bb-4f47-93d9-c984e0e45253">
+    <name>ЭтоПрицеп</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это прицеп</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="15f40f4f-b737-46e3-ba91-8b174f1242cb">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a8a565c5-1551-435a-8d25-5cd1867f1449">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="827916e6-3bc8-4343-9078-bb1ff834cd2f">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>
