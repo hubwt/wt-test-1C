@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанныхДень</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Состояние</dataPath>
+			<field>Состояние</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК Ссылка,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ) КАК Дата
+ПОМЕСТИТЬ ВТ_Продажа
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК Ссылка,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ) КАК Поле1
+ПОМЕСТИТЬ ВТ_Заявки
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ЗаказКлиента.Целевая
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК Количество,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ) КАК Период,
+	"Входящие заявки" КАК Состояние
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка),
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Целевая = ИСТИНА
+			ТОГДА "Целевые заявки"
+		КОГДА ЗаказКлиента.Целевая = ЛОЖЬ
+			ТОГДА "Нецелевые заявки"
+	КОНЕЦ
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Целевая = ИСТИНА
+			ТОГДА "Целевые заявки"
+		КОГДА ЗаказКлиента.Целевая = ЛОЖЬ
+			ТОГДА "Нецелевые заявки"
+	КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка),
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ТОГДА "Продажа"
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ)
+			ТОГДА "Отказ"
+	КОНЕЦ
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И (ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ))
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ТОГДА "Продажа"
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ)
+			ТОГДА "Отказ"
+	КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Продажа.Ссылка / ВТ_Заявки.Ссылка * 100,
+	НАЧАЛОПЕРИОДА(ВТ_Продажа.Дата, ДЕНЬ),
+	"Конверсия"
+ИЗ
+	ВТ_Заявки КАК ВТ_Заявки
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Продажа КАК ВТ_Продажа
+		ПО ВТ_Заявки.Поле1 = ВТ_Продажа.Дата</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанныхНеделя</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоНеделя</dataPath>
+			<field>КоличествоНеделя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество неделя</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодНеделя</dataPath>
+			<field>ПериодНеделя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период неделя</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ПредставлениеПериодаНеделя</presentationExpression>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СостояниеНеделя</dataPath>
+			<field>СостояниеНеделя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредставлениеПериодаНеделя</dataPath>
+			<field>ПредставлениеПериодаНеделя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление периода неделя</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДФ=dd.MM.yyyy</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК Ссылка,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ) КАК Дата
+ПОМЕСТИТЬ ВТ_Продажа
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК Ссылка,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ) КАК Поле1
+ПОМЕСТИТЬ ВТ_Заявки
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ЗаказКлиента.Целевая
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК КоличествоНеделя,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ) КАК ПериодНеделя,
+	"Входящие заявки" КАК СостояниеНеделя,
+	СТРОКА(ДЕНЬ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)), 7, 4) + " - " + СТРОКА(ДЕНЬ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)), 7, 4) КАК ПредставлениеПериодаНеделя
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ),
+	СТРОКА(ДЕНЬ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)), 7, 4) + " - " + СТРОКА(ДЕНЬ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ)), 7, 4)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка),
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Целевая = ИСТИНА
+			ТОГДА "Целевые заявки"
+		КОГДА ЗаказКлиента.Целевая = ЛОЖЬ
+			ТОГДА "Нецелевые заявки"
+	КОНЕЦ,
+	NULL
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Целевая = ИСТИНА
+			ТОГДА "Целевые заявки"
+		КОГДА ЗаказКлиента.Целевая = ЛОЖЬ
+			ТОГДА "Нецелевые заявки"
+	КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка),
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ТОГДА "Продажа"
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ)
+			ТОГДА "Отказ"
+	КОНЕЦ,
+	NULL
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И (ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ))
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, НЕДЕЛЯ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ТОГДА "Продажа"
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ)
+			ТОГДА "Отказ"
+	КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Продажа.Ссылка / ВТ_Заявки.Ссылка * 100,
+	НАЧАЛОПЕРИОДА(ВТ_Продажа.Дата, НЕДЕЛЯ),
+	"Конверсия",
+	NULL
+ИЗ
+	ВТ_Заявки КАК ВТ_Заявки
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Продажа КАК ВТ_Продажа
+		ПО ВТ_Заявки.Поле1 = ВТ_Продажа.Дата</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанныхМесяц</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоМесяц</dataPath>
+			<field>КоличествоМесяц</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество месяц</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодМесяц</dataPath>
+			<field>ПериодМесяц</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период месяц</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ПредставлениеПериодаМесяц</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СостояниеМесяц</dataPath>
+			<field>СостояниеМесяц</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредставлениеПериодаМесяц</dataPath>
+			<field>ПредставлениеПериодаМесяц</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление периода месяц</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК Ссылка,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ) КАК Дата
+ПОМЕСТИТЬ ВТ_Продажа
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК Ссылка,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ) КАК Поле1
+ПОМЕСТИТЬ ВТ_Заявки
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ЗаказКлиента.Целевая
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК КоличествоМесяц,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ) КАК ПериодМесяц,
+	"Входящие заявки" КАК СостояниеМесяц,
+	СТРОКА(ДЕНЬ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)), 7, 4) + " - " + СТРОКА(ДЕНЬ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)), 7, 4) КАК ПредставлениеПериодаМесяц
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ),
+	СТРОКА(ДЕНЬ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)), 7, 4) + " - " + СТРОКА(ДЕНЬ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ)), 7, 4)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка),
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Целевая = ИСТИНА
+			ТОГДА "Целевые заявки"
+		КОГДА ЗаказКлиента.Целевая = ЛОЖЬ
+			ТОГДА "Нецелевые заявки"
+	КОНЕЦ,
+	NULL
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Целевая = ИСТИНА
+			ТОГДА "Целевые заявки"
+		КОГДА ЗаказКлиента.Целевая = ЛОЖЬ
+			ТОГДА "Нецелевые заявки"
+	КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка),
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ТОГДА "Продажа"
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ)
+			ТОГДА "Отказ"
+	КОНЕЦ,
+	NULL
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И (ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ))
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ТОГДА "Продажа"
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ)
+			ТОГДА "Отказ"
+	КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Продажа.Ссылка / ВТ_Заявки.Ссылка * 100,
+	НАЧАЛОПЕРИОДА(ВТ_Продажа.Дата, МЕСЯЦ),
+	"Конверсия",
+	NULL
+ИЗ
+	ВТ_Заявки КАК ВТ_Заявки
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Продажа КАК ВТ_Продажа
+		ПО ВТ_Заявки.Поле1 = ВТ_Продажа.Дата</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанныхКвартал</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоКвартал</dataPath>
+			<field>КоличествоКвартал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество квартал</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодКвартал</dataPath>
+			<field>ПериодКвартал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период квартал</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>ПредставлениеПериодаКвартал</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СостояниеКвартал</dataPath>
+			<field>СостояниеКвартал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявки</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПредставлениеПериодаКвартал</dataPath>
+			<field>ПредставлениеПериодаКвартал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление периода квартал</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК Ссылка,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ) КАК Дата
+ПОМЕСТИТЬ ВТ_Продажа
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК Ссылка,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ) КАК Поле1
+ПОМЕСТИТЬ ВТ_Заявки
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ЗаказКлиента.Целевая
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК КоличествоКвартал,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ) КАК ПериодКвартал,
+	"Входящие заявки" КАК СостояниеКвартал,
+	СТРОКА(ДЕНЬ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)), 7, 4) + " - " + СТРОКА(ДЕНЬ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)), 7, 4) КАК ПредставлениеПериодаКвартал
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ),
+	СТРОКА(ДЕНЬ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)), 7, 4) + " - " + СТРОКА(ДЕНЬ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ))) + "." + ВЫБОР
+		КОГДА МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)) &lt; 10
+			ТОГДА "0" + СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)))
+		ИНАЧЕ СТРОКА(МЕСЯЦ(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)))
+	КОНЕЦ + "." + ПОДСТРОКА(СТРОКА(КОНЕЦПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ)), 7, 4)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка),
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Целевая = ИСТИНА
+			ТОГДА "Целевые заявки"
+		КОГДА ЗаказКлиента.Целевая = ЛОЖЬ
+			ТОГДА "Нецелевые заявки"
+	КОНЕЦ,
+	NULL
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Целевая = ИСТИНА
+			ТОГДА "Целевые заявки"
+		КОГДА ЗаказКлиента.Целевая = ЛОЖЬ
+			ТОГДА "Нецелевые заявки"
+	КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка),
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ТОГДА "Продажа"
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ)
+			ТОГДА "Отказ"
+	КОНЕЦ,
+	NULL
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И (ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ))
+
+СГРУППИРОВАТЬ ПО
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, КВАРТАЛ),
+	ВЫБОР
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+			ТОГДА "Продажа"
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_СостоянияЗаказовКлиента.Отказ)
+			ТОГДА "Отказ"
+	КОНЕЦ
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТ_Продажа.Ссылка / ВТ_Заявки.Ссылка * 100,
+	НАЧАЛОПЕРИОДА(ВТ_Продажа.Дата, КВАРТАЛ),
+	"Конверсия",
+	NULL
+ИЗ
+	ВТ_Заявки КАК ВТ_Заявки
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Продажа КАК ВТ_Продажа
+		ПО ВТ_Заявки.Поле1 = ВТ_Продажа.Дата</query>
+	</dataSet>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоНеделя</dataPath>
+		<expression>Сумма(КоличествоНеделя)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоМесяц</dataPath>
+		<expression>Сумма(КоличествоМесяц)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоКвартал</dataPath>
+		<expression>Сумма(КоличествоКвартал)</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>количество</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>b039e8f0-d3bb-4551-8e2b-3cc8fac975d3</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Количество</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>КоличествоНеделя</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>КоличествоМесяц</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>КоличествоКвартал</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content> </v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>Количество</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">Состояние</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string">Конверсия</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>КоличествоНеделя</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">СостояниеНеделя</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string">Конверсия</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>КоличествоМесяц</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">СостояниеМесяц</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string">Конверсия</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>КоличествоКвартал</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">СостояниеКвартал</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:string">Конверсия</dcsset:right>
+						</dcsset:item>
+					</dcsset:filter>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="v8:LocalStringType">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2</v8:content>
+								</v8:item>
+							</dcscor:value>
+						</dcscor:item>
+					</dcsset:appearance>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Период</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Формат</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДФ=dd.MM.yyyy</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Состояние</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto">
+							<dcsset:use>false</dcsset:use>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>количество</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>День</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодНеделя</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Формат</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДФ=dd.MM.yyyy</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СостояниеНеделя</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto">
+							<dcsset:use>false</dcsset:use>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоНеделя</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Неделя</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодМесяц</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Формат</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДФ=dd.MM.yyyy</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СостояниеМесяц</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto">
+							<dcsset:use>false</dcsset:use>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоМесяц</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Месяц</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ПериодКвартал</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection/>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>Формат</dcscor:parameter>
+									<dcscor:value xsi:type="v8:LocalStringType">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДФ=dd.MM.yyyy</v8:content>
+										</v8:item>
+									</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+					</dcsset:conditionalAppearance>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СостояниеКвартал</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto">
+							<dcsset:use>false</dcsset:use>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоКвартал</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Квартал</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

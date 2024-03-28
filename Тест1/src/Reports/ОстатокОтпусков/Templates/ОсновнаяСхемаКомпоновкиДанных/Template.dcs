@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Должность</dataPath>
+			<field>Должность</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокОфициальный</dataPath>
+			<field>ОстатокОфициальный</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток официальный</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОстатокНеофициальный</dataPath>
+			<field>ОстатокНеофициальный</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остаток неофициальный</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДниОтсутствияОф</dataPath>
+			<field>ДниОтсутствияОф</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дни отсутствия оф</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДниОтсутствияНеОф</dataPath>
+			<field>ДниОтсутствияНеОф</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дни отсутствия не оф</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипДоговора</dataPath>
+			<field>ТипДоговора</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Сотрудники.ДатаНачалаРаботы КАК ДатаНачалаРаботы,
+	Сотрудники.Ссылка КАК Сотрудник,
+	ВЫБОР
+		КОГДА РАЗНОСТЬДАТ(НАЧАЛОПЕРИОДА(Сотрудники.ДатаНачалаРаботы, МЕСЯЦ), Сотрудники.ДатаНачалаРаботы, ДЕНЬ) &gt; 14
+			ТОГДА (РАЗНОСТЬДАТ(Сотрудники.ДатаНачалаРаботы, &amp;ТекДата, МЕСЯЦ) + 1) * 2.33
+		ИНАЧЕ РАЗНОСТЬДАТ(Сотрудники.ДатаНачалаРаботы, &amp;ТекДата, МЕСЯЦ) * 2.33 + РАЗНОСТЬДАТ(НАЧАЛОПЕРИОДА(Сотрудники.ДатаНачалаРаботы, МЕСЯЦ), Сотрудники.ДатаНачалаРаботы, ДЕНЬ) * (2.33 / 30)
+	КОНЕЦ КАК ОстатокНеофициальный
+ПОМЕСТИТЬ ВТ_НЕОфициальныеОстатки
+ИЗ
+	Справочник.Сотрудники КАК Сотрудники
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДолжностиСотрудниковСрезПервых.Период КАК Период,
+	ДолжностиСотрудниковСрезПервых.Сотрудник КАК Сотрудник,
+	ВЫБОР
+		КОГДА РАЗНОСТЬДАТ(НАЧАЛОПЕРИОДА(ДолжностиСотрудниковСрезПервых.ДатаОформления, МЕСЯЦ), ДолжностиСотрудниковСрезПервых.ДатаОформления, ДЕНЬ) &gt; 14
+			ТОГДА (РАЗНОСТЬДАТ(ДолжностиСотрудниковСрезПервых.ДатаОформления, &amp;ТекДата, МЕСЯЦ) + 1) * 2.33
+		ИНАЧЕ РАЗНОСТЬДАТ(ДолжностиСотрудниковСрезПервых.ДатаОформления, &amp;ТекДата, МЕСЯЦ) * 2.33 + РАЗНОСТЬДАТ(НАЧАЛОПЕРИОДА(ДолжностиСотрудниковСрезПервых.ДатаОформления, МЕСЯЦ), ДолжностиСотрудниковСрезПервых.ДатаОформления, ДЕНЬ) * (2.33 / 30)
+	КОНЕЦ КАК ОстатокОфициальный,
+	ДолжностиСотрудниковСрезПервых.ДатаОформления КАК ДатаОформления
+ПОМЕСТИТЬ ВТ_ОфициальныеОстатки
+ИЗ
+	РегистрСведений.ДолжностиСотрудников.СрезПервых КАК ДолжностиСотрудниковСрезПервых
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Отпускные.Сотрудник КАК Сотрудник,
+	ВЫБОР
+		КОГДА СУММА(Отпускные.ДниОтсутствия) ЕСТЬ NULL
+			ТОГДА 0
+		ИНАЧЕ СУММА(Отпускные.ДниОтсутствия)
+	КОНЕЦ КАК ДниОтсутствия
+ПОМЕСТИТЬ ВТ_ОтгуленныеОтпускаОФ
+ИЗ
+	Документ.Отпускные КАК Отпускные
+ГДЕ
+	Отпускные.ТипОтпуска &lt;&gt; ЗНАЧЕНИЕ(Перечисление.ТипыОтпуска.ДеньОтдыхаВСчётОтпуска)
+{ГДЕ
+	(Отпускные.ДатаНач МЕЖДУ &amp;ДатаНач И &amp;ДатаКон)}
+
+СГРУППИРОВАТЬ ПО
+	Отпускные.Сотрудник
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Отпускные.Сотрудник КАК Сотрудник,
+	СУММА(Отпускные.ДниОтсутствия) КАК ДниОтсутствия
+ПОМЕСТИТЬ ВТ_ОтгуленныеОтпускаНЕОФ
+ИЗ
+	Документ.Отпускные КАК Отпускные
+{ГДЕ
+	(Отпускные.ДатаНач МЕЖДУ &amp;ДатаНач И &amp;ДатаКон)}
+
+СГРУППИРОВАТЬ ПО
+	Отпускные.Сотрудник
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДолжностиСотрудниковСрезПоследних.Сотрудник КАК Сотрудник,
+	ДолжностиСотрудниковСрезПоследних.Должность КАК Должность,
+	ДолжностиСотрудниковСрезПоследних.Подразделение КАК Подразделение,
+	ДолжностиСотрудниковСрезПоследних.Период КАК Период,
+	ВЫБОР
+		КОГДА ВТ_ОтгуленныеОтпускаОФ.ДниОтсутствия ЕСТЬ NULL
+			ТОГДА 0
+		ИНАЧЕ ВТ_ОтгуленныеОтпускаОФ.ДниОтсутствия
+	КОНЕЦ КАК ДниОтсутствияОф,
+	ВТ_ОтгуленныеОтпускаНЕОФ.ДниОтсутствия КАК ДниОтсутствияНеОф,
+	ВТ_НЕОфициальныеОстатки.ОстатокНеофициальный КАК ОстатокНеофициальный,
+	ВЫБОР
+		КОГДА НЕ(ДолжностиСотрудниковСрезПоследних.ТипДоговора = &amp;ГПХ
+					ИЛИ ДолжностиСотрудниковСрезПоследних.ТипДоговора = &amp;БезДоговора)
+			ТОГДА ВТ_ОфициальныеОстатки.ОстатокОфициальный
+		ИНАЧЕ ВТ_ОтгуленныеОтпускаОФ.ДниОтсутствия
+	КОНЕЦ КАК ОстатокОфициальный,
+	ДолжностиСотрудниковСрезПоследних.ТипДоговора КАК ТипДоговора
+ИЗ
+	РегистрСведений.ДолжностиСотрудников.СрезПоследних КАК ДолжностиСотрудниковСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОтгуленныеОтпускаОФ КАК ВТ_ОтгуленныеОтпускаОФ
+		ПО ДолжностиСотрудниковСрезПоследних.Сотрудник = ВТ_ОтгуленныеОтпускаОФ.Сотрудник
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОтгуленныеОтпускаНЕОФ КАК ВТ_ОтгуленныеОтпускаНЕОФ
+		ПО ДолжностиСотрудниковСрезПоследних.Сотрудник = ВТ_ОтгуленныеОтпускаНЕОФ.Сотрудник
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_НЕОфициальныеОстатки КАК ВТ_НЕОфициальныеОстатки
+		ПО ДолжностиСотрудниковСрезПоследних.Сотрудник = ВТ_НЕОфициальныеОстатки.Сотрудник
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОфициальныеОстатки КАК ВТ_ОфициальныеОстатки
+		ПО ДолжностиСотрудниковСрезПоследних.Сотрудник = ВТ_ОфициальныеОстатки.Сотрудник
+ГДЕ
+	ДолжностиСотрудниковСрезПоследних.Должность &lt;&gt; ЗНАЧЕНИЕ(Справочник.ДолжностиПредприятия.ПустаяСсылка)
+	И НЕ ДолжностиСотрудниковСрезПоследних.Сотрудник.Пользователь.Недействителен</query>
+	</dataSet>
+	<calculatedField>
+		<dataPath>ОсталосьНеОфициальный</dataPath>
+		<expression>ОстатокНеофициальный - ДниОтсутствияНеОф</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Осталось не официальный</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧЦ=5; ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ОсталосьОфициальный</dataPath>
+		<expression>Остатокофициальный - ДниОтсутствияОф</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Осталось официальный</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧЦ=5; ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+	</calculatedField>
+	<totalField>
+		<dataPath>ОсталосьНеОфициальный</dataPath>
+		<expression>Максимум(ОсталосьНеОфициальный)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОсталосьОфициальный</dataPath>
+		<expression>Максимум(ОсталосьОфициальный)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДниОтсутствияНеОф</dataPath>
+		<expression>Сумма(ДниОтсутствияНеОф)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДниОтсутствияОф</dataPath>
+		<expression>Сумма(ДниОтсутствияОф)</expression>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаКон</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата кон</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаНач</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата нач</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>СтандартныйПериод</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Стандартный период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ТекДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тек дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;СтандартныйПериод.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>БезДоговора</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Без договора</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ТипыКадровыхДоговоров</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ГПХ</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>ГПХ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ТипыКадровыхДоговоров</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подразделение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сотрудник</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОсталосьНеОфициальный</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОсталосьОфициальный</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДниОтсутствияНеОф</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДниОтсутствияОф</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СтандартныйПериод</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>a27ef690-1f22-42f1-8cc7-e023a12d9625</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Сотрудник.Наименование</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Подразделение</dcsset:field>
+						<dcsset:groupType>Hierarchy</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Сотрудник</dcsset:field>
+							<dcsset:groupType>Hierarchy</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
