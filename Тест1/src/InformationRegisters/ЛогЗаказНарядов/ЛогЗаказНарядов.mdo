@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e41bcda2-6bae-44db-b318-422ec0641193">
+  <producedTypes>
+    <selectionType typeId="0b4cb72c-c650-49d3-9fdc-85ad08c21cdc" valueTypeId="e24487f6-3058-4d16-be13-ef6f7dca13ee"/>
+    <listType typeId="21f1b14a-4c80-47bf-a5ba-89a4fea4347f" valueTypeId="9825429d-d846-4204-865d-71806e77d400"/>
+    <managerType typeId="4fbe72f6-f4be-4110-8582-943e1e70a125" valueTypeId="fad11e8e-b638-4711-a35e-10c83db99647"/>
+    <recordSetType typeId="cf07dcbb-9f45-4aef-954a-3c6a05ac0acf" valueTypeId="4c562e3c-2f24-4548-ae4f-d372ed185069"/>
+    <recordKeyType typeId="3a01fb30-b932-4e76-acd3-000e653bd662" valueTypeId="7929b2f8-3e86-4ade-b018-36361a39078d"/>
+    <recordType typeId="902b6e9e-9970-4947-8dd3-40db2e2a7f0b" valueTypeId="ae249def-ca07-4245-b6c6-cac905781663"/>
+    <recordManagerType typeId="12ff0b7d-7d2f-4e44-bdea-5735af773d93" valueTypeId="c66edc5c-19cc-48d8-a5bf-d3f4dfd5b4b1"/>
+  </producedTypes>
+  <name>ЛогЗаказНарядов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Лог заказ нарядов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="6ae6f330-2624-4a1a-8688-ce7fcb817f77">
+    <name>Текст</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1000</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="b15ac041-9826-47b8-b6cc-b8a8e0b53ea7">
+    <name>ЗаказНаряд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ наряд</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаряд</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="03d3590a-3cb4-4fa5-89f5-234a6c409a04">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9ddfe708-0330-4614-8ab7-9cbf50cf1c39">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

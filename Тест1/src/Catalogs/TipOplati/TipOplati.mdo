@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f2fe14b3-f4c1-4a4d-932d-2acab8f93ba9">
+  <producedTypes>
+    <objectType typeId="e6b734a2-b9cc-4985-be7f-4b4271ed1a0a" valueTypeId="d056692f-5f1b-49a4-beee-636e69b309a3"/>
+    <refType typeId="333d5fba-b70d-46be-affc-fb21a12ee0ac" valueTypeId="93cc656d-0561-4dd8-8ca4-d7a81b9f7472"/>
+    <selectionType typeId="56c36b36-73af-4068-94e7-39ec73882dcb" valueTypeId="7c1c73ae-a257-4061-92fa-e32d0b6a1eff"/>
+    <listType typeId="c325cf94-6ab7-4aad-9a69-50a12575805f" valueTypeId="066ce14b-a4b0-4a87-8c60-d95ea9235ea9"/>
+    <managerType typeId="c335180d-c67c-404a-bd4c-ec491e1b4fc2" valueTypeId="9d227f1f-873e-4b27-98d4-534056c5f6de"/>
+  </producedTypes>
+  <name>TipOplati</name>
+  <synonym>
+    <key>ru</key>
+    <value>Типы оплат</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.TipOplati.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.TipOplati.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Тип оплаты</value>
+  </objectPresentation>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.TipOplati.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.TipOplati.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.TipOplati.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="c840b931-5078-45a7-8278-a49a5a685acd">
+    <name>SokrNazvanie</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сокращенное Название</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8613164d-81d4-49e8-9f4f-0c7ff2b17e45">
+    <name>Порядок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fafb5e6b-72e5-4601-8daa-4ede22d95c4e">
+    <name>ВидРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид расчета</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидРасчета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ed796cb3-8969-4b4a-b5ba-da3064e2b96d">
+    <name>Счет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Счета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="c438d6dd-7a5a-4a3a-a154-ec4ba84af586">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="bd154cd2-7092-4683-9e02-4a52ac7b3b82">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c56d3050-6f2e-4982-83e6-320c26c7bb5c">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

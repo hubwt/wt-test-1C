@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8c8c7a31-afb6-44b8-a1e1-c6b6fc5f5919">
+  <producedTypes>
+    <objectType typeId="90ff3b87-583a-4de7-9308-b5c554e01ef1" valueTypeId="16463982-1e35-41a4-9b0f-8e4f9b6bbb04"/>
+    <refType typeId="97fd5d85-a768-44b9-be3b-28ce134b12b5" valueTypeId="181c7706-fce8-4eb1-a1fd-040c30b8439e"/>
+    <selectionType typeId="717c93f2-fc46-4088-aea3-3654104f9f87" valueTypeId="f7b9a972-7fb2-4a05-b0f2-d407a1bf8868"/>
+    <listType typeId="7176122e-09eb-44e8-84c7-a2f326a3c3d0" valueTypeId="dc8acb2a-3f2e-4998-9156-97409505d5bd"/>
+    <managerType typeId="28bafbbf-b9c8-4f86-ba84-37a22e79f0c3" valueTypeId="44141843-8f3e-48db-b711-b182bfeae9ea"/>
+  </producedTypes>
+  <name>Область</name>
+  <synonym>
+    <key>ru</key>
+    <value>Область</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Область.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.Область.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <owners>Catalog.Страна</owners>
+  <codeLength>9</codeLength>
+  <descriptionLength>100</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.Область.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.Область.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.Область.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="4ac19160-d59f-4d74-b3b5-8774cd9d1996">
+    <name>НаименованиеСокращенное</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование сокращенное</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>4</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="7c4944a5-01ed-4a9b-9a38-9c3d0df51902">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b51791ef-afc5-4897-a473-9be8cacb73fe">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9879a1b9-3359-4eff-b0bf-d43a173e9e10">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

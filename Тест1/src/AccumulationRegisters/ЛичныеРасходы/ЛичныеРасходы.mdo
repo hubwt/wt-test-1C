@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="56833f6c-0647-4e0d-8694-d0231af251f4">
+  <producedTypes>
+    <selectionType typeId="9aa079e7-f108-4701-b947-7ffd624433a7" valueTypeId="9de3dc09-1f61-4e16-85bf-6bb387473de9"/>
+    <listType typeId="e4444183-82ba-44bb-b080-e9a3e6461023" valueTypeId="ebe666dd-9f62-440c-957c-86211f0a9728"/>
+    <managerType typeId="82de47ca-add5-46f5-a1b5-9b42e0b40b32" valueTypeId="56410e5f-02c4-4c4c-a7b7-4cd7313baf5a"/>
+    <recordSetType typeId="f8ef4099-b147-4be9-bbdb-f83641d8f0ca" valueTypeId="da9bcbb8-8826-42d9-9414-b3d5fe408fb2"/>
+    <recordKeyType typeId="b36ee74d-544c-44e0-995e-ed5d0c42aa98" valueTypeId="0b333587-b190-46a2-97d9-30f454099e30"/>
+    <recordType typeId="3ce66fd2-ae42-4a40-b8cf-eef1522bd8c2" valueTypeId="9c0c6846-0665-465e-bdf2-3cf371c030e5"/>
+  </producedTypes>
+  <name>ЛичныеРасходы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Личные расходы</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="224273e8-8726-48c3-ab4e-c1b99fe22106">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="76f87201-8456-434c-b8f1-185c4ec45286">
+    <name>ВидРасхода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид расхода</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2d83a84e-9ac3-45f3-8163-e10f11a0a952">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="608dc3c1-4d79-46fb-b845-efc4585f9570">
+    <name>ДокНо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Док но</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>400</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

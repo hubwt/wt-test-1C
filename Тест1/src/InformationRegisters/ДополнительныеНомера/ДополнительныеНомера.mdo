@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a64785ab-bc1a-48f0-92ae-0d067458c91c">
+  <producedTypes>
+    <selectionType typeId="0dbeee36-bab7-4a9e-95b5-59fd667f0bbc" valueTypeId="dd772997-cf03-461e-9246-27c7b5048a42"/>
+    <listType typeId="b0edab6d-c591-48fb-ac2d-e754fcd1511a" valueTypeId="9052e5ff-0132-4bb6-9628-a3c0e984d5d6"/>
+    <managerType typeId="23ec6ed3-2cc4-4188-ab28-81576cd870c6" valueTypeId="41ee0a3b-97a0-46c2-8985-15e87e30f85c"/>
+    <recordSetType typeId="489a7573-d139-4e10-97d8-3331db1ce62a" valueTypeId="d0d9b49a-b037-467e-a616-f19462b4f550"/>
+    <recordKeyType typeId="ee1f5801-92c3-46c9-86ca-275ce1817824" valueTypeId="d41a04c4-6e37-40b6-9fb7-47dd5057b01a"/>
+    <recordType typeId="799387e1-81a7-486d-af74-897e36c410fe" valueTypeId="2356185e-7fec-4e93-b739-fd85105bf05f"/>
+    <recordManagerType typeId="2e43beda-ad9d-4397-bdd4-ffda3dce71c1" valueTypeId="c3cacb13-c15a-4a87-a95b-886cfc9c4e98"/>
+  </producedTypes>
+  <name>ДополнительныеНомера</name>
+  <synonym>
+    <key>ru</key>
+    <value>Дополнительные номера</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="4e52e5db-a9d3-4526-aa3b-3a97ea3c77c0">
+    <name>Менеджер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Менеджер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="a98d7a00-c370-48a3-9bd2-6eb40d31e5da">
+    <name>Контроль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контроль</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="764666e0-4320-4585-9879-e88e87c93469">
+    <name>Город</name>
+    <synonym>
+      <key>ru</key>
+      <value>Город</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Город</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="4fabd5bd-ef06-4d55-9c48-30042169267b">
+    <name>Добавочный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавочный</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

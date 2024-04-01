@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a1f353fc-454b-4a9a-8a94-c5dfca789156">
+  <producedTypes>
+    <selectionType typeId="a1756b83-d798-488a-9a09-117d01d8b4a7" valueTypeId="b3bb9ead-5cd5-45e4-8b08-5b61c4a5c5b0"/>
+    <listType typeId="945a39be-95aa-49a6-ac86-3c79c4c53a74" valueTypeId="54a9d2ee-ebba-4a18-aa1c-8448fde4ed4c"/>
+    <managerType typeId="bab42d4a-49ee-4a8b-afd2-c671bbb73dc6" valueTypeId="296a7f96-cf63-422a-b1df-33eec53a0efb"/>
+    <recordSetType typeId="3d822ac6-1a24-4008-965b-db9518a763c5" valueTypeId="e1a9bc07-fdd7-464f-82ef-6277836684c2"/>
+    <recordKeyType typeId="d60169f6-db47-4e90-af5d-c477a6e4815e" valueTypeId="64ac51a7-ae5c-45ee-b7d3-0f846481fe88"/>
+    <recordType typeId="a3673b78-f86e-4353-9fbd-d5ad5580ae04" valueTypeId="9e9a9809-9568-457c-ae06-97d292beca1a"/>
+    <recordManagerType typeId="cb43bcd9-fe40-4914-a2bd-64ac6f72ad77" valueTypeId="0baad89e-7495-4a40-9ac5-1ae37e4bde06"/>
+  </producedTypes>
+  <name>ОтправкаСМС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отправка СМС</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="7dc61c96-0471-4f33-b094-25495cbcef64">
+    <name>НомерТелефона</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер телефона</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Полный номер телефона</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </resources>
+  <resources uuid="8f35d0bf-201f-4a14-bd00-de7f9a346da3">
+    <name>Отправлено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправлено</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="300e3534-105b-4f99-8513-1b955feae2ad">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c4163024-979b-48fc-bbf3-fc1ad52fd234">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Задача</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2d797b73-77a9-4eaa-903d-2dd6015c5f54">
+    <name>Текст</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

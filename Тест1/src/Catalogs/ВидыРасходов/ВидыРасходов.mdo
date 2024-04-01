@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="97ca440a-faf7-424c-a18b-754a65a658ff">
+  <producedTypes>
+    <objectType typeId="48a6d54d-05b6-403b-84fb-c0774ac527f8" valueTypeId="f0120619-43c5-4774-b7fc-92672e38056e"/>
+    <refType typeId="a227725f-eeb8-40c8-bc64-19a8f49eb01c" valueTypeId="6c744a5e-9c0c-40d9-84a6-3c4fa8c1f7a2"/>
+    <selectionType typeId="926dcd5c-405a-436f-adc8-6bf67909583f" valueTypeId="c4820277-0f1b-4413-8574-f8910edf682b"/>
+    <listType typeId="cdfb3b98-dec8-45ee-a44c-29c81c816937" valueTypeId="6e518c56-c28c-4348-aed2-44cf97fdcbce"/>
+    <managerType typeId="b6065e83-fe73-439e-b555-41b67524481a" valueTypeId="82f544f8-d210-432b-abda-dec7d9d615d0"/>
+  </producedTypes>
+  <name>ВидыРасходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Виды расходов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ВидыРасходов.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ВидыРасходов.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <predefined>
+    <items id="d620876d-6cef-4d56-b9a4-8b735f9dc0a2">
+      <name>КредитПлатеж</name>
+      <description>Кредит платеж</description>
+      <code xsi:type="core:StringValue">
+        <value>000000002</value>
+      </code>
+    </items>
+    <items id="f3c6a53d-d07d-487b-b3a3-7473ea6f4c4c">
+      <name>Топливо</name>
+      <description>Топливо</description>
+      <code xsi:type="core:StringValue">
+        <value>000000001</value>
+      </code>
+    </items>
+  </predefined>
+  <predefinedDataUpdate>DontAutoUpdate</predefinedDataUpdate>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ВидыРасходов.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.ВидыРасходов.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.ВидыРасходов.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="5423480d-0d72-4c70-90e1-4e7eba5263ca">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Работник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="77ca7e57-7334-47f5-8680-fdb3ad47ca7b">
+    <name>Зарплата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зарплата</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="81ba4d6c-5d9f-4e7c-ac3b-73f2bd3b32e0">
+    <name>ВидОперацииСписаниеДенежныхСредств</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид операции списание денежных средств</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыОперацийСписаниеДенежныхСредств</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="afd3bd92-2c28-4268-8527-457fa3ad6cff">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Подразделения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ЭтоЦФО</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="c0e5da1b-e3e5-4f47-98a6-922fb77ea84c">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="30f04fc9-5905-4dae-8a20-74078a5a6754">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="be5f1e6e-a0fc-46cc-a643-33e9bcde4bb2">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="14eec2bf-8a9b-4c1b-b4ab-5ddc8336c438">
+  <producedTypes>
+    <selectionType typeId="bef2b3a6-f71f-4719-b6a3-711db56b2899" valueTypeId="ea7017c3-a711-4545-a12b-c71184e67313"/>
+    <listType typeId="416dc132-9f90-4fef-81dc-3739a2e6593a" valueTypeId="7f8dca95-c082-4854-8b84-ac400ffaaa01"/>
+    <managerType typeId="4755a74b-b0d8-4ed6-84a0-7f27f0f0ba90" valueTypeId="48991f22-c653-42e0-b619-ca721a6d89c3"/>
+    <recordSetType typeId="66f78905-4713-4a05-affa-ea989065b543" valueTypeId="7610c533-a313-4813-8e0b-dd553659d784"/>
+    <recordKeyType typeId="ec4c52db-1ac3-4053-b21e-4e71a702b51c" valueTypeId="2d8d2c89-3379-4ca3-8c3b-6530591ff0a1"/>
+    <recordType typeId="94ee219a-7586-4736-8e19-d81cb79ccb02" valueTypeId="df10bd08-3801-42fc-8b3f-40391d14b587"/>
+    <recordManagerType typeId="86059816-27bc-4936-b880-907986743216" valueTypeId="04bb0f1f-c3e2-4ded-bcf5-168e757dbb12"/>
+  </producedTypes>
+  <name>УстановитьЗП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установить ЗП</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="201c3939-3943-41ad-b4e8-d8a83ca83b14">
+    <name>Зарплата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зарплата</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="0402a8d9-3643-4a4d-a958-be83d55cfb0c">
+    <name>Учредитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учредитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Учредители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="e2b6bb74-26a8-4f09-b666-230078080027">
+    <name>ВидРасхода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид расхода</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="752c0692-b241-4a8e-8f35-1cb9f0bbdece">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

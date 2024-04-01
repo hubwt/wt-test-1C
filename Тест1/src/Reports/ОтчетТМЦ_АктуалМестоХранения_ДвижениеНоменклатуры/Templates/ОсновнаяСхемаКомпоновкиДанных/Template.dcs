@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>АктуальноеМестоНоменклатуры</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвентарныйНомер</dataPath>
+			<field>ИнвентарныйНомер</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТМЦ</dataPath>
+			<field>ТМЦ</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МестоХранения</dataPath>
+			<field>МестоХранения</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОстаток</dataPath>
+			<field>КоличествоОстаток</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ДвижениеТМЦВорктракОстатки.ТМЦ КАК ТМЦ,
+	ДвижениеТМЦВорктракОстатки.МестоХранения КАК МестоХранения,
+	ДвижениеТМЦВорктракОстатки.ИнвентарныйНомер КАК ИнвентарныйНомер,
+	ДвижениеТМЦВорктракОстатки.КоличествоОстаток КАК КоличествоОстаток
+ИЗ
+	РегистрНакопления.ДвижениеТМЦВорктрак.Остатки КАК ДвижениеТМЦВорктракОстатки
+ГДЕ
+	ДвижениеТМЦВорктракОстатки.КоличествоОстаток &gt; 0
+	И ДвижениеТМЦВорктракОстатки.ИнвентарныйНомер.ДокументПоступления &gt; &amp;ДатаНачала</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ДвижениеТовара</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РегистраторПоступл</dataPath>
+			<field>РегистраторПоступл</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистратор поступл</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПеремещение</dataPath>
+			<field>КоличествоПеремещение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество перемещение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦенаПоступление</dataPath>
+			<field>ЦенаПоступление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена поступление</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТМЦПоступление</dataPath>
+			<field>ТМЦПоступление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ТМЦПоступление</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИнвентарныйНомерПоступление</dataPath>
+			<field>ИнвентарныйНомерПоступление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инвентарный номер поступление</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПоступление</dataPath>
+			<field>КоличествоПоступление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество поступление</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РегистраторПеремещение</dataPath>
+			<field>РегистраторПеремещение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистратор перемещение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РегистраторСписание</dataPath>
+			<field>РегистраторСписание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистратор списание</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦенаПеремещение</dataPath>
+			<field>ЦенаПеремещение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена перемещение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоСписание</dataPath>
+			<field>КоличествоСписание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество списание</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦенаСписание</dataPath>
+			<field>ЦенаСписание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена списание</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПоступление</dataPath>
+			<field>СуммаПоступление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма поступление</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПеремещение</dataPath>
+			<field>СуммаПеремещение</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма перемещение</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаСписание</dataPath>
+			<field>СуммаСписание</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма списание</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ДвижениеТМЦВорктрак.ТМЦ КАК ТМЦПоступление,
+	ДвижениеТМЦВорктрак.МестоХранения КАК МестоХраненияПоступление,
+	ДвижениеТМЦВорктрак.ИнвентарныйНомер КАК ИнвентарныйНомерПоступление,
+	ДвижениеТМЦВорктрак.Количество КАК КоличествоПоступление,
+	ДвижениеТМЦВорктрак.Цена КАК ЦенаПоступление,
+	ДвижениеТМЦВорктрак.Количество * ДвижениеТМЦВорктрак.Цена КАК СуммаПоступление,
+	ДвижениеТМЦВорктрак.Регистратор.Ссылка КАК РегистраторПоступл,
+	ДвижениеТМЦВорктрак.Регистратор.Дата КАК РегистраторДатаПоступление
+ПОМЕСТИТЬ ВТ_ПоступлениеТМЦ
+ИЗ
+	РегистрНакопления.ДвижениеТМЦВорктрак КАК ДвижениеТМЦВорктрак
+ГДЕ
+	ДвижениеТМЦВорктрак.Регистратор ССЫЛКА Документ.ПоступлениеТМЦВорктрак
+	И ДвижениеТМЦВорктрак.Регистратор.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДвижениеТМЦВорктрак.ТМЦ КАК ТМЦПеремещение,
+	ДвижениеТМЦВорктрак.МестоХранения КАК МестоХраненияПеремещение,
+	ДвижениеТМЦВорктрак.ИнвентарныйНомер КАК ИнвентарныйНомерПеремещение,
+	ДвижениеТМЦВорктрак.Количество КАК КоличествоПеремещение,
+	ДвижениеТМЦВорктрак.Цена КАК ЦенаПеремещение,
+	ДвижениеТМЦВорктрак.Количество * ДвижениеТМЦВорктрак.Цена КАК СуммаПеремещение,
+	ДвижениеТМЦВорктрак.Регистратор.Ссылка КАК РегистраторПеремещение
+ПОМЕСТИТЬ ВТ_ПеремещениеТМЦ
+ИЗ
+	РегистрНакопления.ДвижениеТМЦВорктрак КАК ДвижениеТМЦВорктрак
+ГДЕ
+	ДвижениеТМЦВорктрак.Регистратор ССЫЛКА Документ.ПеремещениеТМЦВорктрак
+	И ДвижениеТМЦВорктрак.Регистратор.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДвижениеТМЦВорктрак.ТМЦ КАК ТМЦСписание,
+	ДвижениеТМЦВорктрак.МестоХранения КАК МестоХраненияСписание,
+	ДвижениеТМЦВорктрак.ИнвентарныйНомер КАК ИнвентарныйНомерСписание,
+	ДвижениеТМЦВорктрак.Количество КАК КоличествоСписание,
+	ДвижениеТМЦВорктрак.Цена КАК ЦенаСписание,
+	ДвижениеТМЦВорктрак.Количество * ДвижениеТМЦВорктрак.Цена КАК СуммаСписание,
+	ДвижениеТМЦВорктрак.Регистратор.Ссылка КАК РегистраторСписание
+ПОМЕСТИТЬ ВТ_СписаниеТМЦ
+ИЗ
+	РегистрНакопления.ДвижениеТМЦВорктрак КАК ДвижениеТМЦВорктрак
+ГДЕ
+	ДвижениеТМЦВорктрак.Регистратор ССЫЛКА Документ.СписаниеТМЦВорктрак
+	И ДвижениеТМЦВорктрак.Регистратор.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ПоступлениеТМЦ.ТМЦПоступление КАК ТМЦПоступление,
+	ВТ_ПоступлениеТМЦ.РегистраторПоступл КАК РегистраторПоступл,
+	ВТ_ПоступлениеТМЦ.ИнвентарныйНомерПоступление КАК ИнвентарныйНомерПоступление,
+	ВТ_ПоступлениеТМЦ.КоличествоПоступление КАК КоличествоПоступление,
+	ВТ_ПоступлениеТМЦ.ЦенаПоступление КАК ЦенаПоступление,
+	ВЫРАЗИТЬ(ВТ_ПоступлениеТМЦ.СуммаПоступление КАК ЧИСЛО(15, 2)) КАК СуммаПоступление,
+	ВТ_ПеремещениеТМЦ.РегистраторПеремещение КАК РегистраторПеремещение,
+	ВТ_ПеремещениеТМЦ.КоличествоПеремещение КАК КоличествоПеремещение,
+	ВТ_ПеремещениеТМЦ.ЦенаПеремещение КАК ЦенаПеремещение,
+	ВЫРАЗИТЬ(ВТ_ПеремещениеТМЦ.СуммаПеремещение КАК ЧИСЛО(15, 2)) КАК СуммаПеремещение,
+	ВТ_СписаниеТМЦ.РегистраторСписание КАК РегистраторСписание,
+	ВТ_СписаниеТМЦ.КоличествоСписание КАК КоличествоСписание,
+	ВТ_СписаниеТМЦ.ЦенаСписание КАК ЦенаСписание,
+	ВЫРАЗИТЬ(ВТ_СписаниеТМЦ.СуммаСписание КАК ЧИСЛО(15, 2)) КАК СуммаСписание
+ИЗ
+	ВТ_ПоступлениеТМЦ КАК ВТ_ПоступлениеТМЦ
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПеремещениеТМЦ КАК ВТ_ПеремещениеТМЦ
+		ПО ВТ_ПоступлениеТМЦ.ИнвентарныйНомерПоступление = ВТ_ПеремещениеТМЦ.ИнвентарныйНомерПеремещение
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СписаниеТМЦ КАК ВТ_СписаниеТМЦ
+		ПО ВТ_ПоступлениеТМЦ.ИнвентарныйНомерПоступление = ВТ_СписаниеТМЦ.ИнвентарныйНомерСписание</query>
+	</dataSet>
+	<totalField>
+		<dataPath>СуммаПоступление</dataPath>
+		<expression>Сумма(СуммаПоступление)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПеремещение</dataPath>
+		<expression>Сумма(СуммаПеремещение)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаСписание</dataPath>
+		<expression>Сумма(СуммаСписание)</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТМЦ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИнвентарныйНомер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МестоХранения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОстаток</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>6a76eebf-6579-48f1-b581-adfc44fc105c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>a32c1521-3b1f-45be-bdd8-a5b7885f6736</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>c0002b3a-1d79-4abd-9bf8-2cef022de52e</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>ДвижениеТовара</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ТМЦПоступление</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РегистраторПоступл</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИнвентарныйНомерПоступление</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПоступление</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЦенаПоступление</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПоступление</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РегистраторПеремещение</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПеремещение</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЦенаПеремещение</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПеремещение</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>РегистраторСписание</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоСписание</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЦенаСписание</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаСписание</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>АктуальноеМестоНоменклатуры</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Актуальное место номенклатуры</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТМЦ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИнвентарныйНомер</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>МестоХранения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоОстаток</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>67ee3076-9fe3-40d0-99d3-ed8ec0b602fd</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>d03ededb-6750-4036-9401-789bc40e72b0</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>АктуальноеМестоНоменклатуры</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ДвижениеТовара</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Движение товара</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ТМЦПоступление</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РегистраторПоступл</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистратор поступление</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИнвентарныйНомерПоступление</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПоступление</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦенаПоступление</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПоступление</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РегистраторПеремещение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоПеремещение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦенаПеремещение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПеремещение</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РегистраторСписание</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоСписание</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦенаСписание</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаСписание</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>045cb3ce-7098-44cd-a005-a6d18bc0f2db</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>5f578f2a-844a-43b4-975b-a7de8b351a01</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>ДвижениеТовара</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

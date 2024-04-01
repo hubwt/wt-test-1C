@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fcde1932-de54-4e01-9aa8-aeb485e419a4">
+  <producedTypes>
+    <objectType typeId="a2286ed5-a3d2-4e92-a5f6-7b3a7b0394ae" valueTypeId="ce927b4e-4548-4a3b-88f3-1c5a791421df"/>
+    <managerType typeId="8a1a3426-1145-49b1-89a6-188da95ae209" valueTypeId="e0c29c5c-d445-4896-be39-b12093038c81"/>
+  </producedTypes>
+  <name>УстановкаПоказателейСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установка показателей сотрудников</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.УстановкаПоказателейСотрудников.Form.Форма</defaultForm>
+  <attributes uuid="ff53277a-d37e-4597-9cea-467ffa9e7ba1">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="068d3818-ed89-4e34-a66e-de352d73dc80">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="589a17cf-9d3e-47c9-a8df-2f1a411a979e">
+    <producedTypes>
+      <objectType typeId="a8b823a1-c376-4298-b30b-93c6cc3d5b44" valueTypeId="e251653d-e7ef-47bc-8b4b-75dd7423b589"/>
+      <rowType typeId="18e8b455-c0a3-466c-9772-fb291d6ccabb" valueTypeId="cd078ea8-57f5-4ee0-992e-73266eb09796"/>
+    </producedTypes>
+    <name>Показатели</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатели</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a103be82-42b4-4b7c-a1c7-09ab306cdc5b">
+      <name>Показатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Показатель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПоказателиСотрудников</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e399b74e-adab-4e89-8bfb-7ac1fa8d48e3">
+      <name>ЗначениеПлан</name>
+      <synonym>
+        <key>ru</key>
+        <value>План</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="426e3e2f-dec3-4d36-8188-1f4ee168a082">
+      <name>ЗначениеФакт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Факт</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="f3937b1c-8c10-450d-9008-adc6266bbc4b">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

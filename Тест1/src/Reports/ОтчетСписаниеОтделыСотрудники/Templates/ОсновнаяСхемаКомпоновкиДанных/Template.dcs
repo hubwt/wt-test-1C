@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>СуммаНаОтделы</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СписаниеНаОтдел</dataPath>
+			<field>СписаниеНаОтдел</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНаОтделы</dataPath>
+			<field>СуммаНаОтделы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма на отделы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	СписаниеТМЦВорктрак.СписаниеНаОтдел КАК СписаниеНаОтдел,
+	СУММА(СписаниеТМЦВорктрак.СуммаДокумента) КАК СуммаНаОтделы
+ИЗ
+	Документ.СписаниеТМЦВорктрак КАК СписаниеТМЦВорктрак
+ГДЕ
+	СписаниеТМЦВорктрак.ВидСписания = ЗНАЧЕНИЕ(Перечисление.ВидыСписания.ВОтдел) 
+	И СписаниеТМЦВорктрак.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	СписаниеТМЦВорктрак.СписаниеНаОтдел</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>СуммаНаСотрудников</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СписаниеНаСотрудника</dataPath>
+			<field>СписаниеНаСотрудника</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНаСотрудников</dataPath>
+			<field>СуммаНаСотрудников</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма на сотрудников</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	СписаниеТМЦВорктрак.СписаниеНаСотрудника КАК СписаниеНаСотрудника,
+	СУММА(СписаниеТМЦВорктрак.СуммаДокумента) КАК СуммаНаСотрудников
+ИЗ
+	Документ.СписаниеТМЦВорктрак КАК СписаниеТМЦВорктрак
+ГДЕ
+	СписаниеТМЦВорктрак.ВидСписания = ЗНАЧЕНИЕ(Перечисление.ВидыСписания.Сотруднику)
+	И СписаниеТМЦВорктрак.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	СписаниеТМЦВорктрак.СписаниеНаСотрудника</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>СуммаНаКомплектации</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаНаКомплектации</dataPath>
+			<field>СуммаНаКомплектации</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма на комплектации</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СписаниеКомплектации</dataPath>
+			<field>СписаниеКомплектации</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Списание комплектации</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	СписаниеТМЦВорктрак.СписаниеВТМЦ КАК СписаниеКомплектации,
+	СУММА(СписаниеТМЦВорктрак.СуммаДокумента) КАК СуммаНаКомплектации
+ИЗ
+	Документ.СписаниеТМЦВорктрак КАК СписаниеТМЦВорктрак
+ГДЕ
+	СписаниеТМЦВорктрак.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И СписаниеТМЦВорктрак.ВидСписания = ЗНАЧЕНИЕ(Перечисление.ВидыСписания.КомплектацияТМЦ)
+
+СГРУППИРОВАТЬ ПО
+	СписаниеТМЦВорктрак.СписаниеВТМЦ</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>СуммаПеремещения</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СкладПеремещения</dataPath>
+			<field>СкладПеремещения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склад перемещения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПеремещения</dataPath>
+			<field>СуммаПеремещения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма перемещения</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>  ВЫБРАТЬ
+	ПеремещениеТМЦВорктракСписокТМЦ.Склад КАК СкладПеремещения,
+	СУММА(ПеремещениеТМЦВорктракСписокТМЦ.Сумма) КАК СуммаПеремещения
+ИЗ
+	Документ.ПеремещениеТМЦВорктрак.СписокТМЦ КАК ПеремещениеТМЦВорктракСписокТМЦ
+ГДЕ
+	ПеремещениеТМЦВорктракСписокТМЦ.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	ПеремещениеТМЦВорктракСписокТМЦ.Склад</query>
+	</dataSet>
+	<totalField>
+		<dataPath>СуммаНаОтделы</dataPath>
+		<expression>Сумма(СуммаНаОтделы)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаНаСотрудников</dataPath>
+		<expression>Сумма(СуммаНаСотрудников)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаНаКомплектации</dataPath>
+		<expression>Сумма(СуммаНаКомплектации)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПеремещения</dataPath>
+		<expression>Сумма(СуммаПеремещения)</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СкладПеремещения</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПеремещения</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>8fcf9e53-e1a2-4f84-885c-78a1af07fcdc</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>75253c55-051c-4c97-9f2a-a82b74bf1cad</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>Списания на отделы</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СписаниеНаОтдел</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаНаОтделы</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>Списания на сотрудников</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СписаниеНаСотрудника</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаНаСотрудников</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>Списания на комплектации</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СписаниеКомплектации</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаНаКомплектации</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>Перемещения общее</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

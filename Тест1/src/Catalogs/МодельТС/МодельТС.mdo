@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="722290a3-1dc5-430d-acec-1314b2d928de">
+  <producedTypes>
+    <objectType typeId="256a943b-60c5-4e2c-9f96-b62ed8601335" valueTypeId="71476fdc-b147-437f-9088-b7d99ea131fc"/>
+    <refType typeId="5d00dcdf-e78f-4548-ab1f-50f22299489e" valueTypeId="13c95c92-9f4e-4611-81f0-b02bd0f0f48b"/>
+    <selectionType typeId="2fb58520-58de-46b8-b78c-27b7e06fbb69" valueTypeId="66c5b026-6e64-44b0-8122-97618eab9aba"/>
+    <listType typeId="cee8e51b-333b-4540-af03-3065013a4fcd" valueTypeId="bfc529bb-e353-4748-bbbd-f2479d005b72"/>
+    <managerType typeId="9a5d118f-b79a-4ee1-b442-9323a2582072" valueTypeId="4c18c4b3-a773-4f6d-a343-fad7a121f555"/>
+  </producedTypes>
+  <name>МодельТС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Модели ТС</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.МодельТС.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.МодельТС.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Модель ТС</value>
+  </objectPresentation>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <owners>Catalog.ТипТС</owners>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.МодельТС.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.МодельТС.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.МодельТС.Form.ФормаВыбора</defaultChoiceForm>
+  <tabularSections uuid="a572cc87-bc57-46f6-be89-93dd796dcfbc">
+    <producedTypes>
+      <objectType typeId="e373045a-69ef-4a47-8a63-e27f1da04279" valueTypeId="98266105-fed0-43a9-a25e-a05aff952941"/>
+      <rowType typeId="67c6174f-adb1-45f6-a873-b4116b27ed72" valueTypeId="13a947ea-3d54-452d-9d23-7146904c59a8"/>
+    </producedTypes>
+    <name>ПлановыеРемонты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Плановые ремонты</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="199adcba-af27-46f9-a184-5711b9b77a4b">
+      <name>ВидОбслуживания</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид обслуживания</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыОбслуживания</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="88d48028-ff84-4b70-a08f-7858228ce355">
+      <name>ВидПланированияПоВыработке</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид планирования</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="6fb0bd0d-e617-4cb3-9385-334bb4650831">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d34efe55-db7b-47db-a78e-5661dc309de2">
+      <name>Периодичность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Периодичность</value>
+      </synonym>
+      <type>
+        <types>EnumRef.Периодичность</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="84f1615d-2497-433b-a51e-4f89d5929c39">
+      <name>ПараметрВыработки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Параметр выработки</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ПараметрыВыработкиАтомобиля</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b95ff785-c423-4794-aed9-9ec02752429a">
+      <name>Допуск</name>
+      <synonym>
+        <key>ru</key>
+        <value>Допуск</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="4f955334-75c1-42db-b890-1eaa3c2ddaff">
+      <name>КоличествоПовторов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество повторов</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <forms uuid="29a686a5-9285-41a1-aafa-90f23aad12b9">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f2bb9074-a44f-4414-88e2-0a4684d8df1f">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d4ee4f3e-ac55-4bd1-a251-e716c853315d">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bd0c2eb1-1156-455a-a533-9886d3bcbbab">
+  <producedTypes>
+    <objectType typeId="4fb8b6c7-d20d-48da-be0f-6987b33ae9b0" valueTypeId="e4f7bad6-30a6-44e4-91ba-5b910fa184f3"/>
+    <refType typeId="24fbbef4-2af6-4718-a837-d9962268363e" valueTypeId="b895a708-2d3e-4735-a062-e8bbd46d062e"/>
+    <selectionType typeId="d5e0f570-a73e-4239-9707-344e5699151e" valueTypeId="381227b0-d1f1-49f0-8ec9-1cb6cbc684cb"/>
+    <listType typeId="e0981265-6a6e-481e-a2f5-4bc2cd51fd10" valueTypeId="af9c2730-b9dd-4980-b0dd-a818cce7fb27"/>
+    <managerType typeId="ba485fde-aebf-4df2-9df5-1ef13afcbca6" valueTypeId="cf557b51-cff1-408b-aab6-a596bd9b52c4"/>
+  </producedTypes>
+  <name>ВложенияВолжска</name>
+  <synonym>
+    <key>ru</key>
+    <value>Кредит в Банке</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ВложенияВолжска.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.ВложенияВолжска.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.ВложенияВолжска.Form.ФормаЭлемента</defaultObjectForm>
+  <defaultListForm>Catalog.ВложенияВолжска.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.ВложенияВолжска.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="679eb58e-3aa9-4c18-ae1a-a03a77cc01c2">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8874bf88-0429-4fc8-adda-ce1da0992dd8">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="30b24407-c7b4-411a-88d3-1272b082d71e">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма На Руки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c2bbfc92-3d95-4380-a98c-18681175a837">
+    <name>СуммаДолга</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма долга</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="9f39e58e-7f62-42fc-a547-969d545f44a9">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="aeeb6b70-b1c0-43f4-8176-9d1d169c8768">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6a63dbe3-1ddf-4d1b-8624-81388c72d1ec">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>

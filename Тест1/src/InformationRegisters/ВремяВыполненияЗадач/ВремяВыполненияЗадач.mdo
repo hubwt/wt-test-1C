@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ecc568f5-57f1-4067-970f-203b2f5678a6">
+  <producedTypes>
+    <selectionType typeId="b474748a-fca9-45d9-bcbb-c01cc9528391" valueTypeId="b349972d-fafe-4444-b69c-ea7a12a8aa8a"/>
+    <listType typeId="f267fc58-0fd1-44ea-a0ee-c6c7308c8ad9" valueTypeId="fcf57f8a-8104-43f1-80ee-fca00b4f9561"/>
+    <managerType typeId="6e4f2bd1-ccb2-4ed8-acde-0d95cf8c5790" valueTypeId="90ec41a6-3201-4faa-8298-91d06f69198a"/>
+    <recordSetType typeId="d3b3f359-1d80-40cf-a758-0ca254a9a9b5" valueTypeId="d04fb439-3c47-4502-86d6-4d3daf76fb8c"/>
+    <recordKeyType typeId="22404db1-cc7e-4780-9b9a-912177dbfda0" valueTypeId="281f0ee0-60ff-4d71-b03e-a424bfead0c8"/>
+    <recordType typeId="1d2daebc-8f12-48b1-a3eb-42f0216c457b" valueTypeId="08a25683-8af3-4302-b509-5293b0b22dd9"/>
+    <recordManagerType typeId="8db64039-137a-491d-9f24-a3e15de9699c" valueTypeId="316fd219-e766-49d7-bf97-0958a1a42cf0"/>
+  </producedTypes>
+  <name>ВремяВыполненияЗадач</name>
+  <synonym>
+    <key>ru</key>
+    <value>Время выполнения задач</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="f05a713d-b8dd-4284-921d-28837b4d002c">
+    <name>НачалоЗамера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало замера</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="83d59d9b-0888-4f5b-ab0d-43bce7f003fb">
+    <name>КонецЗамера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конец замера</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="45726fd4-ae0d-414d-8fdf-675718e74d6c">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d2db0420-a73c-4ec8-abb7-6db7a138a843">
+    <name>Срок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="77ddecb2-597b-45cc-b510-532f05cbe6a9">
+    <name>ДатаСреза</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата среза</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b06c923b-0c5a-49e3-bc3e-3b5de2f541aa">
+    <name>Задача</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задача</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Задача</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
