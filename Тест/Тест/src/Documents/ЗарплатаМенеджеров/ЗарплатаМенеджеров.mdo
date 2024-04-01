@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3b0123ce-9830-43c3-96c3-590cd4ca1370">
+  <producedTypes>
+    <objectType typeId="ddf03c69-3038-4762-b5f2-6da9c3e43746" valueTypeId="b17d5347-80a2-47fb-a275-6f32a6226541"/>
+    <refType typeId="04dec835-e8b8-4d57-bb13-835d3701e091" valueTypeId="dc1badb5-ba17-40c9-b020-3dcdc66cd08e"/>
+    <selectionType typeId="2c45f5b7-7014-4aa5-9e0b-e75c48623060" valueTypeId="7a9f77c6-d08f-4b53-87ad-a88a6fd47fac"/>
+    <listType typeId="e5cfb7d0-04cb-4e96-89e5-ade3de3c2f56" valueTypeId="707b18e8-f3fe-4f6c-bbb5-fd85f9ee987e"/>
+    <managerType typeId="aa2359aa-bb98-4f02-b354-d1e5be477e71" valueTypeId="189d9676-28b6-4104-b43b-d7d196a62210"/>
+  </producedTypes>
+  <name>ЗарплатаМенеджеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Зарплата менеджеров</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ЗарплатаМенеджеров.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ЗарплатаМенеджеров.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ЗарплатаМенеджеров.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Document.ЗарплатаМенеджеров.Form.ФормаВыбора</defaultChoiceForm>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="3659f694-cb26-4cf7-bfc6-e815b82b86b5">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fc97ddf2-eeeb-49c6-bd38-b8a5fe677373">
+    <name>Выдано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выдано</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fcb65ce0-f598-4ee6-ad12-65a024e5c710">
+    <name>Кому</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кому</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="b0f050a6-00c8-4b6b-99c2-c4e3bd401009">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d12a0527-6add-4164-9796-494668274db4">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="cfb1436f-11d6-40aa-89ef-a755c3792d31">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="e58fa7d8-37eb-48b5-a1db-ca2b50bc3a8c">
+    <producedTypes>
+      <objectType typeId="c7011743-a5b0-4058-a110-0a17e0fe6c87" valueTypeId="548dd64c-f144-4621-a694-bcbdc2835e50"/>
+      <rowType typeId="905851df-6e4e-4a93-8605-5ca32a7b521d" valueTypeId="889efa09-38d9-4c29-8f3a-15e13dd8eecc"/>
+    </producedTypes>
+    <name>Документы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы</value>
+    </synonym>
+    <attributes uuid="ac7c61f6-36ca-4c19-9179-1173f338c252">
+      <name>документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ПродажаЗапчастей</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="51e18d5f-a7a4-4b49-972a-69e81ef07c8e">
+      <name>сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

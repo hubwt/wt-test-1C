@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e1910ee6-fd5b-4e30-a71d-429e3ca31cbc">
+  <producedTypes>
+    <selectionType typeId="8de7d9de-d77c-4934-85c2-ac0367861298" valueTypeId="15ba1cb0-7248-421e-860a-210b858afb58"/>
+    <listType typeId="1747f43f-c55e-4f19-9711-6465c89d9ca7" valueTypeId="d658e8b0-2ceb-4876-b8b3-e2115e4448f9"/>
+    <managerType typeId="efaba438-f920-4f3f-a83f-65ed90eb32fb" valueTypeId="67015539-78cd-4e20-bec3-03f8876f98d1"/>
+    <recordSetType typeId="50d4cd67-8c7f-4b8d-9dbd-e5559fdfaaed" valueTypeId="a66aa3d5-2fdb-4698-b889-b2ae74e56ebe"/>
+    <recordKeyType typeId="58390b35-ed73-4ed7-aa8b-708fb96fea7f" valueTypeId="478fcfa9-f90d-43b9-b459-b36ebc88e2ff"/>
+    <recordType typeId="2cb289f9-c518-44cb-8326-8772f1b67cb8" valueTypeId="e5b08ca2-e15a-4e7c-ae32-51bd6d476019"/>
+  </producedTypes>
+  <name>Расходы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расходы</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="acb906d3-58d8-4a87-9382-90f94ddd450c">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="24f2392f-f513-4ee3-a7c1-df2a47ac815b">
+    <name>Реквизит1</name>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="414db729-17ac-4aac-9b5c-e047698f9861">
+    <name>ВидРасхода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид расхода</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="7d4083a2-cf80-4a00-a189-ec51a73e7e64">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="696a478a-4262-41d6-910d-6d40a50b2440">
+    <name>ДокНо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Док но</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>400</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ea4a82b0-c99d-42cf-a62b-556014777d9c">
+  <producedTypes>
+    <objectType typeId="13388bc3-be93-4ac2-a99c-f440d17bac7c" valueTypeId="cf13dcec-991c-49c7-997b-fda48615fdb3"/>
+    <managerType typeId="0d26d1b2-f80d-406a-8c85-624acd03fa39" valueTypeId="9b5820c4-755d-4861-a087-b1469d7378de"/>
+  </producedTypes>
+  <name>НастройкаОсновнойРабочейГруппы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Основная рабочая группа</value>
+  </synonym>
+  <defaultForm>DataProcessor.НастройкаОсновнойРабочейГруппы.Form.Форма</defaultForm>
+  <attributes uuid="3c5d4eb3-e5d4-4de2-8235-ca837a9c12bd">
+    <name>Проект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проект</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПроектыРазвития</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="12d2182e-80f0-4ea1-9747-5edf7d11f8b8">
+    <producedTypes>
+      <objectType typeId="5edf427d-e59f-4d52-b4e5-e70a95ce2337" valueTypeId="eb6aef5d-43c6-4059-a662-43f80f034503"/>
+      <rowType typeId="d05a6d4e-d817-408b-a2da-0cfb1095f151" valueTypeId="2604ee40-c06f-45ed-8079-c3b3b516c034"/>
+    </producedTypes>
+    <name>Участники</name>
+    <synonym>
+      <key>ru</key>
+      <value>Участники</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="001d922b-8d18-453c-94e3-c86d0341023f">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="37365115-7a01-421e-ab35-7137b5ae09d7">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

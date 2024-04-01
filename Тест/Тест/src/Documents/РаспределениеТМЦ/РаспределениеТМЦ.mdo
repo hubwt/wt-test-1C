@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2bd75787-67e0-4f58-83ec-84c48775253f">
+  <producedTypes>
+    <objectType typeId="d13f9b5a-b6c9-47e6-bb31-49397dd9e53a" valueTypeId="5396bb75-a442-4a65-82ac-0a324550ef91"/>
+    <refType typeId="90e3d528-da68-4b93-8d24-b0996272c3ae" valueTypeId="f6ce2b17-2ae0-461a-a252-657639112980"/>
+    <selectionType typeId="ee457864-4d51-4417-b9d3-4a5ea94d57af" valueTypeId="b4ba2ddf-636b-4e37-9850-5df9540ad51e"/>
+    <listType typeId="1e1dace4-9bcf-4e1e-8be0-47b0eb99a20c" valueTypeId="8056a732-a613-4ac0-9e9a-9e3ad9713fcf"/>
+    <managerType typeId="9f6994c5-b5f1-47cb-ab5c-c815dfe51bb7" valueTypeId="c33b5862-3ffa-4c50-bfff-3bfc2fb4a956"/>
+  </producedTypes>
+  <name>РаспределениеТМЦ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Распределение ТМЦ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.РаспределениеТМЦ.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.РаспределениеТМЦ.Form.ФормаДокумента</defaultObjectForm>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="7b3ce39c-f68f-4880-ac39-5e6a19b3ab7a">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fbb938e0-bce5-458c-9fb0-31eee1392a48">
+    <name>Реквизит1</name>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="fedf81b7-68de-4871-82fe-1cc358e35314">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Document>

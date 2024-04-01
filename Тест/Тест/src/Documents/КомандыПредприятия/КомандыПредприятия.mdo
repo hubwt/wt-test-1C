@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="853dd26f-1bd0-4f9c-95e7-c80d2fdfa3df">
+  <producedTypes>
+    <objectType typeId="b0eb38d6-fccc-4653-8e29-7b27a7c18e90" valueTypeId="4847b8e6-8d67-474c-8fd3-5ac684d215f9"/>
+    <refType typeId="f1bfa1de-ce14-4d84-ad9f-66eef23b4384" valueTypeId="57fd2ef8-bf09-446d-a074-453b641e5dc9"/>
+    <selectionType typeId="b048ce90-4536-477f-8de1-9cf16bcf01d3" valueTypeId="c902ccb6-d2fa-4be1-8a85-ac8adb7c0a59"/>
+    <listType typeId="987c04ad-0b1c-43d4-9206-5cd586c81f5a" valueTypeId="4fab8c72-ee90-40f9-808e-f1e9836eee7f"/>
+    <managerType typeId="e0b3e04f-7b24-4e96-8530-0fec2997cd92" valueTypeId="5efa83d8-b180-4a74-9b69-861f72b33a92"/>
+  </producedTypes>
+  <name>КомандыПредприятия</name>
+  <synonym>
+    <key>ru</key>
+    <value>Команды предприятия</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.КомандыПредприятия.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.КомандыПредприятия.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.КомандыПредприятия.Form.ФормаСписка</defaultListForm>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="ffbaa2d7-4500-4d69-855e-69c018aa1994">
+    <name>Наименование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Название команды</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="0f8ae455-c404-497f-b046-76b86c40cee8">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="5757308f-984b-4de4-8f04-c4293aa2417b">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="d293e723-27d1-4b4f-abe9-47ccc4e236e6">
+    <producedTypes>
+      <objectType typeId="eb92eed1-cbf2-4a51-8aa5-c7fd6f268bbb" valueTypeId="d0d5b09a-d6e3-4fbf-bd6b-66f171ef20ca"/>
+      <rowType typeId="a41acd11-2bbb-4208-a381-6b2c3d4b24bc" valueTypeId="677f0d90-fe9a-4ad1-a15e-350462c27965"/>
+    </producedTypes>
+    <name>Участники</name>
+    <synonym>
+      <key>ru</key>
+      <value>Участники</value>
+    </synonym>
+    <attributes uuid="0e2f1c7a-efd8-40f6-b39e-eec86f1207fc">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="07d167ab-21a7-437a-a161-7ca5932e3ece">
+      <name>Должность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Должность</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ДолжностиПредприятия</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

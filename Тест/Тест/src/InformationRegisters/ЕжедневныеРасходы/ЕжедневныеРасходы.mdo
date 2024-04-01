@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4c6a116c-0483-4931-aef7-f29f20a7ef27">
+  <producedTypes>
+    <selectionType typeId="69466846-dfe1-46a2-bcdf-f188a4973454" valueTypeId="31bc285a-f5fb-4bde-b727-aa4d39c1c8f2"/>
+    <listType typeId="a811efa9-e40d-4478-98d4-0a10b66aa0b0" valueTypeId="885e9305-54d7-4ef8-b870-e91ff232dfdb"/>
+    <managerType typeId="aa767085-e47c-4dcf-9a5a-f990a5960a68" valueTypeId="36d0a8d4-9e12-4127-ba07-fdb4deb13103"/>
+    <recordSetType typeId="cac9f8c3-ec87-4f29-a009-7d33d4eb7f71" valueTypeId="9d8e9312-b5b4-4884-9c58-4c97eb55981b"/>
+    <recordKeyType typeId="69a68410-d852-419a-a4cd-ecb050dca87a" valueTypeId="36c974c4-e5a1-49ef-9300-70037672f6b0"/>
+    <recordType typeId="ad005dcf-1a10-4b6d-a026-0970c4a3ac11" valueTypeId="c0241698-4059-426e-80d5-7f88c943164f"/>
+    <recordManagerType typeId="762693b4-107e-4244-98c1-737a8efbed59" valueTypeId="3e97d034-413b-41d6-8301-9d87f1e883d5"/>
+  </producedTypes>
+  <name>ЕжедневныеРасходы</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ежедневные расходы</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ЕжедневныеРасходы.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ЕжедневныеРасходы.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="ccf14956-db44-4b4b-b019-91ffc37c1948">
+    <name>ПредельныйРасход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предельный расход</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2bc5c958-bba0-4dd6-9642-834dbe54c0ad">
+    <name>ФактическийРасход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фактический расход</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ee65be6a-a5f5-45b5-90fb-95d63ce18694">
+    <name>Баланс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Баланс</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <forms uuid="bffb6212-efbd-48d8-879a-edd65d246d13">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="23fa7e1a-77c1-46e1-8f54-c768882a770a">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

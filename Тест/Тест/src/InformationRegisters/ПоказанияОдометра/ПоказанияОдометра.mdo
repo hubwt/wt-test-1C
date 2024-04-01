@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b3f4df79-43b3-4111-87d1-899f629fffa5">
+  <producedTypes>
+    <selectionType typeId="ab73415e-6994-42b0-bcb3-83b7a50e1007" valueTypeId="aa020cf7-55e2-45b9-b0fa-67d8bfa4f486"/>
+    <listType typeId="d14927dd-d780-4d4c-bf72-232e8469a92e" valueTypeId="7ff6e3f2-af05-42ed-baf0-6cb1fc7ecaec"/>
+    <managerType typeId="30016472-09bd-46b8-a1d3-74374b632ab6" valueTypeId="7408c416-7d04-4b77-b63b-71445df07433"/>
+    <recordSetType typeId="795374ec-abbd-4322-b5d2-4308c265bfea" valueTypeId="90b2c5a0-0d5e-4837-958b-1298125a9e9a"/>
+    <recordKeyType typeId="f6bebb19-9892-4ff7-aa0f-cde90b6de04d" valueTypeId="8c6a7fe7-df75-46f1-9248-bae9de235507"/>
+    <recordType typeId="eb8da903-2320-4c76-813d-55e406b60afd" valueTypeId="227a4b7d-7b58-42c3-8156-9b82da92fb75"/>
+    <recordManagerType typeId="675c824a-4ab2-46df-a4d3-6ad6432cd78a" valueTypeId="dfa05bbf-1f2c-4d4a-9a9f-326ae39a2b0a"/>
+  </producedTypes>
+  <name>ПоказанияОдометра</name>
+  <synonym>
+    <key>ru</key>
+    <value>Показания одометра</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="72c2b1ab-30b2-495e-86ed-bf14ffea065e">
+    <name>Показание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показание</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="ac858bce-fdf6-4093-946e-9fb0fd9ca81d">
+    <name>Автомобиль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Автомобиль</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Машины</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

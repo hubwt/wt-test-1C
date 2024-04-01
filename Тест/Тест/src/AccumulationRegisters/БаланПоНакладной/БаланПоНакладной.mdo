@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e6bf009a-2bb9-4d48-b508-5a409ffadc28">
+  <producedTypes>
+    <selectionType typeId="715265b2-a11a-4c6b-afae-b1c2552ed0d5" valueTypeId="2b9e9765-1f3c-4487-b7a7-84b40de4edfd"/>
+    <listType typeId="192a48fd-a557-463c-836d-bb5360d0e3aa" valueTypeId="bb107def-0b74-4ab4-872d-93b1543f2277"/>
+    <managerType typeId="5a52c16e-1f5e-426d-ba27-1bfb6acb2497" valueTypeId="4634a78f-2121-43f8-8a79-7e769b96561d"/>
+    <recordSetType typeId="e7e0b629-eb98-4f43-b66b-719201343f95" valueTypeId="9cf7e3a4-dc8a-46ed-9de5-2525062b24d4"/>
+    <recordKeyType typeId="9046759e-6b9d-4d8e-975d-b7108369c2e9" valueTypeId="f84b50c4-1d52-4e49-a889-41113639d8ab"/>
+    <recordType typeId="96a600ce-54b8-4041-b03a-1f0fcdbc56a9" valueTypeId="1f6114c1-b453-4472-8426-8ce21211cd0b"/>
+  </producedTypes>
+  <name>БаланПоНакладной</name>
+  <synonym>
+    <key>ru</key>
+    <value>Балан по накладной</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="d1e36914-c599-4d1a-96d8-4d254960006d">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="537956b4-73ad-4bcf-a19f-4b48fa30812d">
+    <name>Измерение1</name>
+    <type>
+      <types>DocumentRef.ПродажаЗапчастей</types>
+      <types>DocumentRef.ЗаказНаряд</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0885afbe-fe68-401a-b4ca-4ce2ef144f5f">
+  <producedTypes>
+    <selectionType typeId="05d05169-d571-4aaa-bfe6-d58db465b602" valueTypeId="638aa66c-6db0-4487-932f-e825d46671d5"/>
+    <listType typeId="d56804b8-772e-4f03-958c-f8a63f4d163f" valueTypeId="583cd28e-9c04-40af-b6f0-f82010894c33"/>
+    <managerType typeId="bd53811a-f5ef-4119-b43d-087384c7687d" valueTypeId="3a7cf8be-a60a-4dc5-b935-b5c1ec3e257f"/>
+    <recordSetType typeId="65e8c81b-b477-4999-92fa-46bffa8310c5" valueTypeId="896b7b53-1fe1-4c0e-a702-9985d3042ab9"/>
+    <recordKeyType typeId="7d41cac5-db72-4a01-8125-7a45b784259b" valueTypeId="3276a43e-3e93-42cd-baf1-ed34ef0ef8e9"/>
+    <recordType typeId="bd25eea1-e3fe-4588-a490-f65aa3c27b9a" valueTypeId="df7db307-a607-4922-bb5e-d63754b59203"/>
+    <recordManagerType typeId="d3a89606-8b51-4a59-a42a-b7f7faa26adf" valueTypeId="fe4e9198-a2ed-4844-95ac-3f1360395c2b"/>
+  </producedTypes>
+  <name>СостоянияКлиента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояния клиента</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="1221c17e-1e51-4942-9bb5-42547c8d0d1d">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостояниеКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="aaaf4773-6934-4e3e-8532-994e9fb18a43">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="03061fe9-27aa-4e6b-9135-42290a012df5">
+    <name>Клиент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Клиент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Клиенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5470930f-19f2-42d2-a883-4f9062eaacfd">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="84a2a178-4a3d-423b-b843-14168a404911">
+  <producedTypes>
+    <selectionType typeId="63d9407f-23ed-4da5-9497-383b0c1c2f07" valueTypeId="3834c299-a954-495f-914f-4df14bb4d075"/>
+    <listType typeId="8fd411cd-1735-48dd-8b6c-7052bcb893fe" valueTypeId="8a0a14e1-2832-49cf-acb0-9a9bd111e6ea"/>
+    <managerType typeId="a6cdf47b-d3d6-4dad-ad9e-002242895124" valueTypeId="ea01cee4-32fc-4c4c-9bcc-46c581226b5c"/>
+    <recordSetType typeId="5e45372d-94b4-40d2-90b2-d9faa8cf94df" valueTypeId="bb70755e-9a7c-4a53-8b8f-308c6e9e7cef"/>
+    <recordKeyType typeId="df32e3a2-7beb-4d5f-a73d-8f018f7e02fc" valueTypeId="8620efde-9e41-41cd-8c58-468e84735e01"/>
+    <recordType typeId="37378249-24da-4cce-ac29-bbd87423b586" valueTypeId="eb1710a8-57dd-4787-9cf4-38e0d4fddaff"/>
+    <recordManagerType typeId="78bbcf1a-ed1c-4883-8415-300696264fb3" valueTypeId="caca6fb7-8014-4f27-a91b-c4c1ab679e8e"/>
+  </producedTypes>
+  <name>ПриоритетыЗадач</name>
+  <synonym>
+    <key>ru</key>
+    <value>Приоритеты задач</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="e71c992c-67ad-45cc-935f-de678548f9b4">
+    <name>Приоритет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приоритет</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:StringValue">
+      <value>0</value>
+    </minValue>
+    <maxValue xsi:type="core:StringValue">
+      <value>999</value>
+    </maxValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="44bf09b2-f898-4fe7-8b55-aee6ff24e464">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ae4a2489-0161-45c1-8dfa-43364977e579">
+    <name>Направление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Подразделения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="02183910-8a04-447e-81c3-44606e1b152d">
+    <name>Задача</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задача</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Задача</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

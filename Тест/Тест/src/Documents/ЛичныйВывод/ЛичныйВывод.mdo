@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="00d29615-3ea7-44fb-a74e-b9535754b2e0">
+  <producedTypes>
+    <objectType typeId="faaba55a-45f3-41ba-b022-d188792a3f02" valueTypeId="fcaf0339-a1cd-4a33-ad15-7c3d8e7ed187"/>
+    <refType typeId="6aa6b6d3-227b-4409-8e27-f9e217411f6e" valueTypeId="4b6176e8-0e80-4624-88af-65b1b8e91b98"/>
+    <selectionType typeId="57d7c946-4a65-4521-8e61-a43c3dc2009e" valueTypeId="b65eec4a-a28d-47e9-a923-514f2d720fbf"/>
+    <listType typeId="fc2195c4-ace1-44d7-a40d-a5656c9d14ad" valueTypeId="322948a6-51ee-4c01-a061-03b433b0ebf6"/>
+    <managerType typeId="cd78ecfd-e82c-42d8-8d02-52eefa403b00" valueTypeId="98fa0432-a59f-4e39-985e-b33d776114db"/>
+  </producedTypes>
+  <name>ЛичныйВывод</name>
+  <synonym>
+    <key>ru</key>
+    <value>Дополнительные траты</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ЛичныйВывод.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Дополнительная трата</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Дополнительные траты</value>
+  </listPresentation>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.ЛичныйВывод.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ЛичныйВывод.Form.ФормаСписка</defaultListForm>
+  <registerRecords>AccumulationRegister.Баланс</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="f2011229-f60b-4e08-b16a-c87f3f92053a">
+    <name>Кому</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кому</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Учеридители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e1936881-29fe-449c-aa7c-6770168394fd">
+    <name>Откуда</name>
+    <synonym>
+      <key>ru</key>
+      <value>Откуда</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Счета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1efd87cb-3b6f-4508-b4fd-8a5589ebb1ba">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="66276555-1dbe-4385-98f8-5a8510944a5c">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c09c1aeb-6aa0-4481-9fee-a6e766b7daa6">
+    <name>Учредитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учредитель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Учредители</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="a28a7cea-4647-4d98-b6b1-85d4ed71054d">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0aef0f9d-32c4-4109-b66c-69f938dce011">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Document>

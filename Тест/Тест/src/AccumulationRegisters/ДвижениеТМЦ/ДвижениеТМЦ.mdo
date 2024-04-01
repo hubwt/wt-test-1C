@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8cea6545-e6e4-43f0-863a-680f104d87bf">
+  <producedTypes>
+    <selectionType typeId="1a76218b-3a21-4af9-ad1c-fc15b0d6d6ee" valueTypeId="c376a2ac-c92d-4e19-b2b1-d643d953c486"/>
+    <listType typeId="c367a785-7959-4075-b668-f433f94f2dd4" valueTypeId="15f598a8-ac59-4f8e-886e-f5fea1eaf8f0"/>
+    <managerType typeId="a2618f60-eeab-45ee-9422-0f10ac5e4b13" valueTypeId="2b136471-1758-4e9c-8f47-3dc03a6ef7e9"/>
+    <recordSetType typeId="5c9db820-ce36-400b-b56e-8ed80827674d" valueTypeId="3a6e7c77-b62d-4cde-9cbf-98f1ee1574e9"/>
+    <recordKeyType typeId="a6517933-7dc8-4a70-ba0e-f77005f34ea8" valueTypeId="75b08a8d-e7aa-4861-a6ac-d4c67a38da4f"/>
+    <recordType typeId="577baa02-7ea4-4454-8ac0-5d62b458698f" valueTypeId="80df9fed-d5ba-419b-bb4f-d24cfaf9da75"/>
+  </producedTypes>
+  <name>ДвижениеТМЦ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Движение ТМЦ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultListForm>AccumulationRegister.ДвижениеТМЦ.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="e54d515f-f61c-4100-b33e-68a97e8ccba4">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="244be9f4-0953-4249-ba34-5200cc35b465">
+    <name>Цена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цена</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="4f5f2d6f-39a6-48bb-9287-0c4203d950f8">
+    <name>ТМЦПоНакладной</name>
+    <synonym>
+      <key>ru</key>
+      <value>ТМЦ по накладной</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>1000</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="2e470a52-cab4-4c7e-bf98-59f65f0fd64c">
+    <name>ТМЦ</name>
+    <synonym>
+      <key>ru</key>
+      <value>ТМЦ</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="295a2263-2f75-4fdf-90d4-2b9b5e55d669">
+    <name>МестоХранения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Место хранения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Стеллаж</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2690fae1-1efa-4e37-b8e0-00542877cdb3">
+    <name>Код</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="bc2ece3e-789c-4f0f-b33b-7c6478c07bac">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>
