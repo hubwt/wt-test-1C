@@ -1521,7 +1521,7 @@
       <key>ru</key>
       <value>Получить каталог машин</value>
     </synonym>
-    <template>/get-list-trucks/{page}/{count}/{id}</template>
+    <template>/get-list-trucks/{page}/{count}/{id}/{status}</template>
     <methods uuid="fc2d97b6-da74-4eb6-a050-f9999753077c">
       <name>getlisttrucks</name>
       <synonym>
@@ -1529,6 +1529,38 @@
         <value>Getlisttrucks</value>
       </synonym>
       <handler>ПолучитьКаталогМашинgetlisttrucks</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="f3e4f74d-09de-4ede-8520-d83cdbf6c15a">
+    <name>ПолучитьФинансовуюСтатистику</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить финансовую статистику</value>
+    </synonym>
+    <template>/get-financial-statistics/{datestart}/{dateend}/{city}</template>
+    <methods uuid="11562578-d24f-4c6b-93cb-d5bed4002bd4">
+      <name>getfinancialstatistics</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getfinancialstatistics</value>
+      </synonym>
+      <handler>ПолучитьФинансовуюСтатистикуgetfinancialstatistics</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="7f116d65-5386-4b01-b26a-f8f4c64ae03c">
+    <name>ПолучитьСтатусыФиксацииМашин</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить статусы фиксации машин</value>
+    </synonym>
+    <template>/get-machine-fixing-statuses</template>
+    <methods uuid="5ac71ebf-d696-41a5-b8b6-29e4e6ab0f29">
+      <name>getmachinefixingstatuses</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getmachinefixingstatuses</value>
+      </synonym>
+      <handler>ПолучитьСтатусыФиксацииМашинgetmachinefixingstatuses</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
