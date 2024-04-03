@@ -1563,4 +1563,37 @@
       <handler>ПолучитьСтатусыФиксацииМашинgetmachinefixingstatuses</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="dfb1a8b7-e03d-4906-86d1-6eafb41de4fd">
+    <name>ПолучитьМашину</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить машину</value>
+    </synonym>
+    <template>/get-truck/{id}</template>
+    <methods uuid="f329b32d-b332-494d-9b99-5a43c2466569">
+      <name>gettruck</name>
+      <synonym>
+        <key>ru</key>
+        <value>Gettruck</value>
+      </synonym>
+      <handler>ПолучитьМашинуgettruck</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e823ac37-32ad-4305-b04f-c100c851c1e3">
+    <name>РедактироватьКомментарийКМашине</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактировать комментарий к машине</value>
+    </synonym>
+    <template>/edit-truck-comment</template>
+    <methods uuid="9a98f46f-0e82-424f-ae87-77c6ff1d131b">
+      <name>edittruckcomment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edittruckcomment</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>РедактироватьКомментарийКМашинеedittruckcomment</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
