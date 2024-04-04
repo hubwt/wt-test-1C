@@ -1596,4 +1596,37 @@
       <handler>РедактироватьКомментарийКМашинеedittruckcomment</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="77264261-ac59-4cff-92eb-af3d35a06072">
+    <name>ПолучитьСписокВсехСотрудников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список всех сотрудников</value>
+    </synonym>
+    <template>/get-all-workers-list</template>
+    <methods uuid="0351101b-2f0e-414e-8ada-c32f824fed14">
+      <name>GetAllWorkersList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get all workers list</value>
+      </synonym>
+      <handler>ПолучитьСписокВсехСотрудниковGetAllWorkersList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="ddb426d6-67be-4be3-92b0-2dceb13eaac5">
+    <name>СоздатьЗадачуЛичную</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать задачу личную</value>
+    </synonym>
+    <template>/create-task-personal</template>
+    <methods uuid="79ffbb4a-932a-474c-bb94-7c0bd809b19e">
+      <name>createworkpersonal</name>
+      <synonym>
+        <key>ru</key>
+        <value>Createworkpersonal</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьЗадачуЛичнуюcreateworkpersonal</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
