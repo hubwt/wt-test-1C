@@ -11,31 +11,12 @@
 			<field>Организация</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Период</dataPath>
-			<field>Период</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоОборот</dataPath>
-			<field>КоличествоОборот</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаОборот</dataPath>
-			<field>СуммаОборот</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>Номенклатура</dataPath>
 			<field>Номенклатура</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Подразделение</dataPath>
 			<field>Подразделение</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Регистратор</dataPath>
-			<field>Регистратор</field>
-			<role>
-				<dcscom:required>true</dcscom:required>
-			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Цена</dataPath>
@@ -50,30 +31,61 @@
 			<field>Менеджер</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ИсточникОбращения</dataPath>
-			<field>ИсточникОбращения</field>
+			<dataPath>ПериодНеделя</dataPath>
+			<field>ПериодНеделя</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Источник обращения</v8:content>
+					<v8:content>Период неделя</v8:content>
 				</v8:item>
 			</title>
 			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-				<dcscom:parentDimension>Регистратор</dcscom:parentDimension>
-				<dcscom:required>true</dcscom:required>
+				<dcscom:periodNumber>2</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
 			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОборотНеделя</dataPath>
+			<field>КоличествоОборотНеделя</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОборотНеделя</dataPath>
+			<field>СуммаОборотНеделя</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РегистраторНеделя</dataPath>
+			<field>РегистраторНеделя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистратор неделя</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:periodNumber>1</dcscom:periodNumber>
+				<dcscom:periodType>Main</dcscom:periodType>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсточникОбращенияНеделя</dataPath>
+			<field>ИсточникОбращенияНеделя</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источник обращения неделя</v8:content>
+				</v8:item>
+			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ПродажиОбороты.Период КАК Период,
-	СУММА(ПродажиОбороты.КоличествоОборот) КАК КоличествоОборот,
-	СУММА(ПродажиОбороты.СуммаОборот) КАК СуммаОборот,
-	Продажи.Регистратор КАК Регистратор,
-	Продажи.Регистратор.Клиент.ИсточникОбращения КАК ИсточникОбращения
+	ПродажиОбороты.Период КАК ПериодНеделя,
+	СУММА(ПродажиОбороты.КоличествоОборот) КАК КоличествоОборотНеделя,
+	СУММА(ПродажиОбороты.СуммаОборот) КАК СуммаОборотНеделя,
+	Продажи.Регистратор КАК РегистраторНеделя,
+	Продажи.Регистратор.Клиент.ИсточникОбращения КАК ИсточникОбращенияНеделя
 ИЗ
 	РегистрНакопления.Продажи КАК Продажи
-		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.Продажи.Обороты(, , Месяц, ) КАК ПродажиОбороты
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.Продажи.Обороты(, , Неделя, ) КАК ПродажиОбороты
 		ПО Продажи.Организация = ПродажиОбороты.Организация
 			И Продажи.Автомобиль = ПродажиОбороты.Автомобиль
 			И Продажи.Номенклатура = ПродажиОбороты.Номенклатура
@@ -180,14 +192,6 @@
 	Продажи.Регистратор,
 	Продажи.Регистратор.Клиент.ИсточникОбращения</query>
 	</dataSet>
-	<totalField>
-		<dataPath>КоличествоОборот</dataPath>
-		<expression>Сумма(КоличествоОборот)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>СуммаОборот</dataPath>
-		<expression>Сумма(СуммаОборот)</expression>
-	</totalField>
 	<totalField>
 		<dataPath>СуммаОборотНеделя</dataPath>
 		<expression>Сумма(СуммаОборотНеделя)</expression>
