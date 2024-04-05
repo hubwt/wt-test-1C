@@ -7,44 +7,12 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Организация</dataPath>
-			<field>Организация</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Номенклатура</dataPath>
-			<field>Номенклатура</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Подразделение</dataPath>
-			<field>Подразделение</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Цена</dataPath>
-			<field>Цена</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Автомобиль</dataPath>
-			<field>Автомобиль</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Менеджер</dataPath>
-			<field>Менеджер</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>Период</dataPath>
 			<field>Период</field>
 			<role>
 				<dcscom:periodNumber>2</dcscom:periodNumber>
 				<dcscom:periodType>Main</dcscom:periodType>
 			</role>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоОборот</dataPath>
-			<field>КоличествоОборот</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаОборот</dataPath>
-			<field>СуммаОборот</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Регистратор</dataPath>
@@ -64,11 +32,43 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОборот</dataPath>
+			<field>КоличествоОборот</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаОборот</dataPath>
+			<field>СуммаОборот</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Автомобиль</dataPath>
+			<field>Автомобиль</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цена</dataPath>
+			<field>Цена</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Менеджер</dataPath>
+			<field>Менеджер</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подразделение</dataPath>
+			<field>Подразделение</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ПродажиОбороты.Период КАК Период,
-	СУММА(ПродажиОбороты.КоличествоОборот) КАК КоличествоОборот,
-	СУММА(ПродажиОбороты.СуммаОборот) КАК СуммаОборот,
+	НачалоПериода(Продажи.Период, МЕСЯЦ) КАК Период,
+	СУММА(Продажи.Количество) КАК КоличествоОборот,
+	СУММА(Продажи.Сумма) КАК СуммаОборот,
 	Продажи.Регистратор КАК Регистратор,
 	ВЫБОР
 		КОГДА Продажи.Регистратор.ЗаказКлиента = ЗНАЧЕНИЕ(Документ.ЗаказКлиента.ПустаяСсылка)
@@ -82,14 +82,16 @@
 ИЗ
 	РегистрНакопления.Продажи КАК Продажи
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.Продажи.Обороты(,, Месяц,) КАК ПродажиОбороты
-		ПО Продажи.Организация = ПродажиОбороты.Организация
-		И Продажи.Автомобиль = ПродажиОбороты.Автомобиль
-		И Продажи.Номенклатура = ПродажиОбороты.Номенклатура
-		И Продажи.Цена = ПродажиОбороты.Цена
-		И Продажи.Менеджер = ПродажиОбороты.Менеджер
-		И Продажи.Подразделение = ПродажиОбороты.Подразделение
+		ПО (Продажи.Организация = ПродажиОбороты.Организация)
+		И (Продажи.Автомобиль = ПродажиОбороты.Автомобиль)
+		И (Продажи.Номенклатура = ПродажиОбороты.Номенклатура)
+		И (Продажи.Цена = ПродажиОбороты.Цена)
+		И (Продажи.Менеджер = ПродажиОбороты.Менеджер)
+		И (Продажи.Подразделение = ПродажиОбороты.Подразделение)
+ГДЕ
+	Продажи.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
 СГРУППИРОВАТЬ ПО
-	ПродажиОбороты.Период,
+	Продажи.Период,
 	Продажи.Регистратор,
 	ВЫБОР
 		КОГДА Продажи.Регистратор.ЗаказКлиента = ЗНАЧЕНИЕ(Документ.ЗаказКлиента.ПустаяСсылка)
@@ -175,9 +177,9 @@
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ПродажиОбороты.Период КАК ПериодНеделя,
-	СУММА(ПродажиОбороты.КоличествоОборот) КАК КоличествоОборотНеделя,
-	СУММА(ПродажиОбороты.СуммаОборот) КАК СуммаОборотНеделя,
+	НачалоПериода(Продажи.Период, НЕДЕЛЯ) КАК ПериодНеделя,
+	СУММА(Продажи.Количество) КАК КоличествоОборотНеделя,
+	СУММА(Продажи.Сумма) КАК СуммаОборотНеделя,
 	Продажи.Регистратор КАК РегистраторНеделя,
 	ВЫБОР
 		КОГДА Продажи.Регистратор.ЗаказКлиента.Канал = ЗНАЧЕНИЕ(Справочник.ИсточникиОбращений.ПустаяСсылка)
@@ -193,8 +195,10 @@
 		И Продажи.Цена = ПродажиОбороты.Цена
 		И Продажи.Менеджер = ПродажиОбороты.Менеджер
 		И Продажи.Подразделение = ПродажиОбороты.Подразделение
+ГДЕ
+	Продажи.Период МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
 СГРУППИРОВАТЬ ПО
-	ПродажиОбороты.Период,
+	Продажи.Период,
 	Продажи.Регистратор,
 	ВЫБОР
 		КОГДА Продажи.Регистратор.ЗаказКлиента.Канал = ЗНАЧЕНИЕ(Справочник.ИсточникиОбращений.ПустаяСсылка)
@@ -211,12 +215,12 @@
 		<expression>Сумма(КоличествоОборотНеделя)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>КоличествоОборот</dataPath>
-		<expression>Сумма(КоличествоОборот)</expression>
-	</totalField>
-	<totalField>
 		<dataPath>СуммаОборот</dataPath>
 		<expression>Сумма(СуммаОборот)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоОборот</dataPath>
+		<expression>Сумма(КоличествоОборот)</expression>
 	</totalField>
 	<parameter>
 		<name>СтандартныйПериод</name>
