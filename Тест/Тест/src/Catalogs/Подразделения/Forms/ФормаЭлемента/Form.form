@@ -547,7 +547,7 @@
       </items>
       <items xsi:type="form:Table">
         <name>Должности1</name>
-        <id>127</id>
+        <id>130</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -559,7 +559,7 @@
         <titleLocation>None</titleLocation>
         <items xsi:type="form:FormField">
           <name>ДолжностиНомерСтроки</name>
-          <id>140</id>
+          <id>143</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -570,7 +570,7 @@
           </dataPath>
           <extendedTooltip>
             <name>ДолжностиНомерСтрокиРасширеннаяПодсказка</name>
-            <id>142</id>
+            <id>145</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -585,7 +585,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ДолжностиНомерСтрокиКонтекстноеМеню</name>
-            <id>141</id>
+            <id>144</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -609,7 +609,7 @@
         </items>
         <items xsi:type="form:FormField">
           <name>ДолжностиДолжность</name>
-          <id>143</id>
+          <id>146</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -620,7 +620,7 @@
           </dataPath>
           <extendedTooltip>
             <name>ДолжностиДолжностьРасширеннаяПодсказка</name>
-            <id>145</id>
+            <id>148</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -635,7 +635,161 @@
           </extendedTooltip>
           <contextMenu>
             <name>ДолжностиДолжностьКонтекстноеМеню</name>
-            <id>144</id>
+            <id>147</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>ДолжностиКоличествоОбязанностей</name>
+          <id>155</id>
+          <title>
+            <key>ru</key>
+            <value>Кол-во обязанностей</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Объект.Должности.КоличествоОбязанностей</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ДолжностиКоличествоОбязанностейРасширеннаяПодсказка</name>
+            <id>157</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ДолжностиКоличествоОбязанностейКонтекстноеМеню</name>
+            <id>156</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>ДолжностиОклад</name>
+          <id>149</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Объект.Должности.Оклад</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ДолжностиОкладРасширеннаяПодсказка</name>
+            <id>151</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ДолжностиОкладКонтекстноеМеню</name>
+            <id>150</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>ДолжностиМотивация</name>
+          <id>152</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Объект.Должности.Мотивация</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ДолжностиМотивацияРасширеннаяПодсказка</name>
+            <id>154</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ДолжностиМотивацияКонтекстноеМеню</name>
+            <id>153</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -659,7 +813,7 @@
         </items>
         <autoCommandBar>
           <name>Должности1КоманднаяПанель</name>
-          <id>128</id>
+          <id>131</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -675,10 +829,10 @@
             <common>true</common>
           </userVisible>
           <name>Должности1СтрокаПоиска</name>
-          <id>131</id>
+          <id>134</id>
           <extendedTooltip>
             <name>Должности1СтрокаПоискаРасширеннаяПодсказка</name>
-            <id>133</id>
+            <id>136</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -693,7 +847,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>Должности1СтрокаПоискаКонтекстноеМеню</name>
-            <id>132</id>
+            <id>135</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -713,10 +867,10 @@
             <common>true</common>
           </userVisible>
           <name>Должности1СостояниеПросмотра</name>
-          <id>137</id>
+          <id>140</id>
           <extendedTooltip>
             <name>Должности1СостояниеПросмотраРасширеннаяПодсказка</name>
-            <id>139</id>
+            <id>142</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -731,7 +885,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>Должности1СостояниеПросмотраКонтекстноеМеню</name>
-            <id>138</id>
+            <id>141</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -752,10 +906,10 @@
             <common>true</common>
           </userVisible>
           <name>Должности1УправлениеПоиском</name>
-          <id>134</id>
+          <id>137</id>
           <extendedTooltip>
             <name>Должности1УправлениеПоискомРасширеннаяПодсказка</name>
-            <id>136</id>
+            <id>139</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -770,7 +924,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>Должности1УправлениеПоискомКонтекстноеМеню</name>
-            <id>135</id>
+            <id>138</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -786,7 +940,7 @@
         </searchControlAddition>
         <extendedTooltip>
           <name>Должности1РасширеннаяПодсказка</name>
-          <id>130</id>
+          <id>133</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -801,7 +955,7 @@
         </extendedTooltip>
         <contextMenu>
           <name>Должности1КонтекстноеМеню</name>
-          <id>129</id>
+          <id>132</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -1027,7 +1181,6 @@
             <common>true</common>
           </userVisible>
           <horizontalAlign>Left</horizontalAlign>
-          <autoFill>true</autoFill>
         </autoCommandBar>
         <searchStringAddition>
           <visible>true</visible>
@@ -1627,6 +1780,31 @@
     </edit>
     <main>true</main>
     <savedData>true</savedData>
+    <additionalColumns>
+      <tablePath xsi:type="form:DataPath">
+        <segments>Объект.Должности</segments>
+      </tablePath>
+      <columns>
+        <name>КоличествоОбязанностей</name>
+        <title>
+          <key>ru</key>
+          <value>Кол-во обязанностей</value>
+        </title>
+        <id>4</id>
+        <valueType>
+          <types>Number</types>
+          <numberQualifiers>
+            <precision>10</precision>
+          </numberQualifiers>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+    </additionalColumns>
   </attributes>
   <attributes>
     <name>СписокДолжостей</name>
@@ -1676,13 +1854,17 @@
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
-	Обязанности.Ссылка КАК Ссылка,
-	Обязанности.Описание КАК Описание,
-	Обязанности.Код КАК Код
+	ОбязанностиСписокДолжностей.Ссылка,
+	ОбязанностиСписокДолжностей.Ссылка.Описание,
+	ОбязанностиСписокДолжностей.Ссылка.Код
 ИЗ
-	Справочник.Обязанности КАК Обязанности
+	Справочник.Подразделения.Должности КАК ПодразделенияДолжности
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Обязанности.СписокДолжностей КАК ОбязанностиСписокДолжностей
+		ПО ПодразделенияДолжности.Должность = ОбязанностиСписокДолжностей.Должность
 ГДЕ
-	Обязанности.СписокДолжностей.Должность.Отдел = &amp;Отдел</queryText>
+	ПодразделенияДолжности.Ссылка = &amp;Отдел
+	ИЛИ ПодразделенияДолжности.Ссылка.Родитель = &amp;Отдел
+	ИЛИ ПодразделенияДолжности.Ссылка.Родитель.Родитель = &amp;Отдел</queryText>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
