@@ -1791,4 +1791,37 @@
       <handler>ПолучитьИнфуТоваровПоПоддонуgetproductsbypallet</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="17a4920d-83a6-46bd-af6d-82ddcb85fd11">
+    <name>СоздатьЗадачуИзЗаказНарядаВосстановления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать задачу из заказ наряда восстановления</value>
+    </synonym>
+    <template>/create-work-order-recovery</template>
+    <methods uuid="77bde10c-0dad-4d1c-a76e-00595510d0d0">
+      <name>createworkorderrecovery</name>
+      <synonym>
+        <key>ru</key>
+        <value>Createworkorderrecovery</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьЗадачуИзЗаказНарядаВосстановленияcreateworkorderrecovery</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="af5468f6-2106-4a6b-9ce3-0c60e5fce798">
+    <name>ПолучитьСписокНарядовВосстановления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список нарядов восстановления</value>
+    </synonym>
+    <template>/get-list-orders-recovery/{Count}/{Page}</template>
+    <methods uuid="35b38432-ea65-40fe-ab37-89d6db67ccc1">
+      <name>getlistordersrecovery</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlistordersrecovery</value>
+      </synonym>
+      <handler>ПолучитьСписокНарядовВосстановленияgetlistordersrecovery</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
