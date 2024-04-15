@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:FormField">
+    <name>Фильтр</name>
+    <id>49</id>
+    <title>
+      <key>ru</key>
+      <value>Активные</value>
+    </title>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Фильтр</segments>
+    </dataPath>
+    <handlers>
+      <event>OnChange</event>
+      <name>ФильтрПриИзменении</name>
+    </handlers>
+    <extendedTooltip>
+      <name>ФильтрРасширеннаяПодсказка</name>
+      <id>51</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>ФильтрКонтекстноеМеню</name>
+      <id>50</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>CheckBoxField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+  </items>
   <items xsi:type="form:FormGroup">
     <name>СписокКомпоновщикНастроекПользовательскиеНастройки</name>
     <id>1</id>
@@ -249,7 +300,6 @@
     <items xsi:type="form:FormField">
       <name>НомерИсходящий</name>
       <id>40</id>
-      <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
@@ -345,7 +395,6 @@
     <items xsi:type="form:FormField">
       <name>Город</name>
       <id>28</id>
-      <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
@@ -391,7 +440,6 @@
     <items xsi:type="form:FormField">
       <name>Действующий</name>
       <id>31</id>
-      <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
@@ -430,6 +478,60 @@
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СостояниеПриказа</name>
+      <id>46</id>
+      <title>
+        <key>ru</key>
+        <value>Состояние</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.СостояниеПриказа</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СостояниеПриказаРасширеннаяПодсказка</name>
+        <id>48</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СостояниеПриказаКонтекстноеМеню</name>
+        <id>47</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
     </items>
     <items xsi:type="form:FormField">
       <name>Заголовок</name>
@@ -760,38 +862,35 @@
     </notDefaultUseAlwaysAttributes>
     <main>true</main>
     <extInfo xsi:type="form:DynamicListExtInfo">
-      <queryText>ВЫБРАТЬ 
-       Приказ.Ссылка, 
-       Приказ.ПометкаУдаления, 
-       Приказ.Номер, 
-       Приказ.Дата, 
-       Приказ.Проведен, 
-       Приказ.Организация, 
-       Приказ.Подразделение, 
-       Приказ.Город, 
-       Приказ.Действующий, 
-       Приказ.Заголовок, 
-       Приказ.Цель, 
-       Приказ.Описание, 
-       Приказ.Ответственный, 
-       Приказ.ТипПриказа, 
-       Приказ.НомерИсходящий, 
-     ВЫБОР
-        КОГДА НаличиеФайлов.ЕстьФайлы ЕСТЬ NULL ТОГДА
-            0
-        КОГДА НаличиеФайлов.ЕстьФайлы ТОГДА
-            1
-        ИНАЧЕ
-            0
-    КОНЕЦ КАК ЕстьФайлы
-    ИЗ 
-       Документ.Приказ
- КАК 
-       Приказ
-       ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.НаличиеФайлов КАК НаличиеФайлов
-        ПО Приказ.Ссылка = НаличиеФайлов.ОбъектСФайлами
-
-       </queryText>
+      <queryText>ВЫБРАТЬ
+	Приказ.Ссылка,
+	Приказ.ПометкаУдаления,
+	Приказ.Номер,
+	Приказ.Дата,
+	Приказ.Проведен,
+	Приказ.Организация,
+	Приказ.Подразделение,
+	Приказ.Город,
+	Приказ.Действующий,
+	Приказ.Заголовок,
+	Приказ.Цель,
+	Приказ.Описание,
+	Приказ.Ответственный,
+	Приказ.ТипПриказа,
+	Приказ.НомерИсходящий,
+	ВЫБОР
+		КОГДА НаличиеФайлов.ЕстьФайлы ЕСТЬ NULL
+			ТОГДА 0
+		КОГДА НаличиеФайлов.ЕстьФайлы
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЕстьФайлы,
+	Приказ.СостояниеПриказа
+ИЗ
+	Документ.Приказ КАК Приказ
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.НаличиеФайлов КАК НаличиеФайлов
+		ПО Приказ.Ссылка = НаличиеФайлов.ОбъектСФайлами
+{ГДЕ Приказ.СостояниеПриказа В (&amp;Состояния)}</queryText>
       <mainTable>Document.Приказ</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
@@ -799,6 +898,23 @@
       <autoSaveUserSettings>true</autoSaveUserSettings>
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
+  </attributes>
+  <attributes>
+    <name>Фильтр</name>
+    <title>
+      <key>ru</key>
+      <value>Фильтр</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
   </attributes>
   <commandInterface>
     <navigationPanel/>
