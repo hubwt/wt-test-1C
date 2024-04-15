@@ -1406,6 +1406,7 @@
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
 				|<available>true</available>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
 				|<oem_number>" + ?(НомерПроизводителя <> "", НомерПроизводителя, СтрЗаменить(РезультатЗапроса.Артикул, "*", "")) + "</oem_number>
@@ -1449,6 +1450,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<available>true</available>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
@@ -1656,6 +1658,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<available>true</available>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
@@ -1700,6 +1703,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<available>true</available>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
@@ -1907,6 +1911,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<available>true</available>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
@@ -1951,6 +1956,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<available>true</available>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
