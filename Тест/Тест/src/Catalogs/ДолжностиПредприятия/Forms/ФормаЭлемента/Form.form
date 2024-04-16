@@ -2325,6 +2325,56 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
+          <name>СписокОкладовМотивация</name>
+          <id>266</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>СписокОкладов.Мотивация</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокОкладовМотивацияРасширеннаяПодсказка</name>
+            <id>268</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокОкладовМотивацияКонтекстноеМеню</name>
+            <id>267</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>СписокОкладовСтандартнаяКартинка</name>
           <id>248</id>
           <enabled>true</enabled>
@@ -4309,7 +4359,8 @@
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
 	ПодразделенияДолжности.Оклад,
-	ПодразделенияДолжности.Ссылка
+	ПодразделенияДолжности.Ссылка,
+	ПодразделенияДолжности.Мотивация
 ИЗ
 	Справочник.Подразделения.Должности КАК ПодразделенияДолжности
 ГДЕ
