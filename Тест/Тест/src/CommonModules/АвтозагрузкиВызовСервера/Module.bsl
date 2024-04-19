@@ -914,13 +914,7 @@
 			|Внутренний артикул: " + РезультатЗАпроса.индкод + "</p> 
 			|<p>Большой выбор запчастей для грузовиков Scania, обеспечиваем высокое качество и надежность. Наши запчасти подходят для всех моделей, включая Скания R, Скания P, Скания G, Скания S. Скания 5 серии и Скания 6 серии.</p> 
 			|<p>Почему мы?</p>
-			|<p>- Большой ассортимент<br>
-			|- Запчасти для всех моделей Scania 5 series и Scania 6 series.<br>
-			|- Быстрая и надежная доставка по всей России.</p>
-			|<p>Что мы предлагаем?</p>
-			|<p>- Запчасти Scania 5 и 6 серии<br>
-			|- Качество гарантировано: оригинальные и качественные аналоги.<br>
-			|- Быстрая обработка заказов и отправка.</p>
+			|<p>- Быстрая и надежная доставка по всей России.</p>
 			|<p>Почему стоит выбрать нас?<br>
 			|- Опытные специалисты помогут вам подобрать нужные детали.<br>
 			|- Онлайн-консультации: отправим фото и видео по запросу.</p>
@@ -1412,6 +1406,7 @@
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
 				|<available>true</available>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
 				|<oem_number>" + ?(НомерПроизводителя <> "", НомерПроизводителя, СтрЗаменить(РезультатЗапроса.Артикул, "*", "")) + "</oem_number>
@@ -1455,6 +1450,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<available>true</available>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
@@ -1662,6 +1658,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<available>true</available>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
@@ -1706,6 +1703,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<available>true</available>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
@@ -1913,6 +1911,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<available>true</available>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>
@@ -1957,6 +1956,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<offer id=""" + АйдиКод + """ available=""true"">
 				|<name>" + Название + "</name>
+				|<sWhereabouts>в наличии</sWhereabouts>
 				|<available>true</available>
 				|<analog_numbers>" + Аналог + "</analog_numbers>
 				|<manufacturer>Scania</manufacturer>

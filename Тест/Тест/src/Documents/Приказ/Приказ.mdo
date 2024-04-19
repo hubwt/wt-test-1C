@@ -84,7 +84,6 @@
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
-    <fillChecking>ShowError</fillChecking>
     <fillFromFillingValue>true</fillFromFillingValue>
     <fillValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
@@ -250,6 +249,71 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="f4e0e3d4-5291-462d-96f8-a24dde25e5fd">
+    <name>СостояниеПриказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние приказа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостоянияПриказа</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="bb3afb2e-7c39-41b5-85ba-33e837b08263">
+    <name>Ответственность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственность</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДолжностиПредприятия</types>
+      <types>CatalogRef.Подразделения</types>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f8f84c29-6747-4415-bdf1-e0913c4abc2e">
+    <name>Контролёр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контролёр</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="de48cc0b-4e3f-463e-ba64-5dd14673d256">
+    <name>ДатаСдачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата сдачи</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <forms uuid="b3c8c039-a705-483b-94f4-26d21e83f6eb">
     <name>ФормаДокумента</name>
     <synonym>
@@ -317,6 +381,47 @@
       </synonym>
       <type>
         <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="630b44b4-3357-4dae-92bd-2e0512edda64">
+    <producedTypes>
+      <objectType typeId="f0519363-529f-49ef-9fcc-e9a163e6aaf6" valueTypeId="2156f9f8-87c3-4be8-8dbf-2429c78ccbe0"/>
+      <rowType typeId="641158e0-9398-46e7-b5c7-023439d8968b" valueTypeId="a01addab-a423-437c-9e93-8ab0bece3d2a"/>
+    </producedTypes>
+    <name>ФайлыСОблака</name>
+    <synonym>
+      <key>ru</key>
+      <value>Файлы с облака</value>
+    </synonym>
+    <attributes uuid="4a5bef5b-1e2e-4423-aa45-afd9a789a377">
+      <name>СсылкаНаФайл</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ссылка на файл</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="714f57cd-cb07-4a6a-b6cc-cdf769283038">
+      <name>Наименование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наименование</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>

@@ -189,6 +189,91 @@
     <id>32</id>
     <displayImportance>High</displayImportance>
     <items xsi:type="form:FormGroup">
+      <name>СтраницаОписание</name>
+      <id>111</id>
+      <items xsi:type="form:FormField">
+        <name>Описание</name>
+        <id>29</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Объект.Описание</segments>
+        </dataPath>
+        <titleLocation>None</titleLocation>
+        <extendedTooltip>
+          <name>ОписаниеРасширеннаяПодсказка</name>
+          <id>31</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ОписаниеКонтекстноеМеню</name>
+          <id>30</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <multiLine>true</multiLine>
+          <extendedEdit>true</extendedEdit>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>ru</key>
+        <value>Описание</value>
+      </title>
+      <extendedTooltip>
+        <name>СтраницаОписаниеРасширеннаяПодсказка</name>
+        <id>112</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormGroup">
       <name>СтраницаСотрудники</name>
       <id>34</id>
       <items xsi:type="form:Table">
@@ -474,7 +559,6 @@
         <fileDragMode>AsFileRef</fileDragMode>
         <rowFilter xsi:type="core:UndefinedValue"/>
       </items>
-      <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
@@ -1269,7 +1353,7 @@
       </userVisible>
       <title>
         <key>ru</key>
-        <value>Страница сотрудники по должности</value>
+        <value>Сотрудники по должности в отделах</value>
       </title>
       <toolTip>
         <key>ru</key>
@@ -1654,7 +1738,7 @@
       </userVisible>
       <title>
         <key>ru</key>
-        <value>Страница задачи должности</value>
+        <value>Задачи должности</value>
       </title>
       <toolTip>
         <key>ru</key>
@@ -1663,91 +1747,6 @@
       <extendedTooltip>
         <name>СтраницаЗадачиДолжностиРасширеннаяПодсказка</name>
         <id>88</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <type>Label</type>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:LabelDecorationExtInfo">
-          <horizontalAlign>Left</horizontalAlign>
-        </extInfo>
-      </extendedTooltip>
-      <type>Page</type>
-      <extInfo xsi:type="form:PageGroupExtInfo">
-        <group>Vertical</group>
-        <showTitle>true</showTitle>
-      </extInfo>
-    </items>
-    <items xsi:type="form:FormGroup">
-      <name>СтраницаОписание</name>
-      <id>111</id>
-      <items xsi:type="form:FormField">
-        <name>Описание</name>
-        <id>29</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <dataPath xsi:type="form:DataPath">
-          <segments>Объект.Описание</segments>
-        </dataPath>
-        <titleLocation>None</titleLocation>
-        <extendedTooltip>
-          <name>ОписаниеРасширеннаяПодсказка</name>
-          <id>31</id>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
-          <type>Label</type>
-          <autoMaxWidth>true</autoMaxWidth>
-          <autoMaxHeight>true</autoMaxHeight>
-          <extInfo xsi:type="form:LabelDecorationExtInfo">
-            <horizontalAlign>Left</horizontalAlign>
-          </extInfo>
-        </extendedTooltip>
-        <contextMenu>
-          <name>ОписаниеКонтекстноеМеню</name>
-          <id>30</id>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
-          <autoFill>true</autoFill>
-        </contextMenu>
-        <type>InputField</type>
-        <editMode>Enter</editMode>
-        <showInHeader>true</showInHeader>
-        <headerHorizontalAlign>Left</headerHorizontalAlign>
-        <showInFooter>true</showInFooter>
-        <extInfo xsi:type="form:InputFieldExtInfo">
-          <autoMaxHeight>true</autoMaxHeight>
-          <wrap>true</wrap>
-          <multiLine>true</multiLine>
-          <extendedEdit>true</extendedEdit>
-          <chooseType>true</chooseType>
-          <typeDomainEnabled>true</typeDomainEnabled>
-          <textEdit>true</textEdit>
-        </extInfo>
-      </items>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <title>
-        <key>ru</key>
-        <value>Описание</value>
-      </title>
-      <extendedTooltip>
-        <name>СтраницаОписаниеРасширеннаяПодсказка</name>
-        <id>112</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -1902,22 +1901,26 @@
 	РегистрСведений.ДолжностиСотрудников.СрезПоследних КАК ДолжностиСотрудниковСрезПоследних
 ГДЕ
 	ДолжностиСотрудниковСрезПоследних.ТипДоговора &lt;> &amp;ТипДоговора
-
 СГРУППИРОВАТЬ ПО
 	ДолжностиСотрудниковСрезПоследних.Сотрудник,
 	ДолжностиСотрудниковСрезПоследних.Регистратор.ТипДоговора
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ОбязанностиСписокДолжностей.Должность КАК Должность,
 	ОбязанностиСписокДолжностей.Ссылка КАК Ссылка,
 	ВТ_Должности.Сотрудник КАК Сотрудник,
-	ВТ_Должности.Период КАК Период
+	ВТ_Должности.Период КАК Период,
+	ПодразделенияДолжности.Ссылка,
+	ПодразделенияДолжности.Должность
 ИЗ
 	Справочник.Обязанности.СписокДолжностей КАК ОбязанностиСписокДолжностей
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Должности КАК ВТ_Должности
 		ПО ОбязанностиСписокДолжностей.Должность = ВТ_Должности.Должность
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Подразделения.Должности КАК ПодразделенияДолжности
+		ПО ПодразделенияДолжности.Должность = ВТ_Должности.Должность
+		
 ГДЕ
 	ОбязанностиСписокДолжностей.Ссылка = &amp;Ссылка</queryText>
       <autoFillAvailableFields>true</autoFillAvailableFields>
