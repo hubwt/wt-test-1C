@@ -3425,6 +3425,36 @@
           <contextMenu>
             <name>РаботыСписокСостояниеПросмотраКонтекстноеМеню</name>
             <id>126</id>
+            <items xsi:type="form:Button">
+              <name>РаботыСписокСостояниеПросмотраКонтекстноеМенюДобавитьРаботуВНаоряд</name>
+              <id>258</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <extendedTooltip>
+                <name>РаботыСписокСостояниеПросмотраКонтекстноеМенюДобавитьРаботуВНаорядРасширеннаяПодсказка</name>
+                <id>259</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <commandName>Form.Command.ДобавитьРаботуВНаряд</commandName>
+              <representation>Auto</representation>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <placementArea>UserCmds</placementArea>
+              <representationInContextMenu>Auto</representationInContextMenu>
+            </items>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3495,6 +3525,36 @@
         <contextMenu>
           <name>РаботыСписокКонтекстноеМеню</name>
           <id>119</id>
+          <items xsi:type="form:Button">
+            <name>РаботыСписокКонтекстноеМенюДобавитьРаботуВНаряд</name>
+            <id>256</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>РаботыСписокКонтекстноеМенюДобавитьРаботуВНарядРасширеннаяПодсказка</name>
+              <id>257</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <commandName>Form.Command.ДобавитьРаботуВНаряд</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+          </items>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -4452,6 +4512,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>ПечатьЗаявкаНаВосстановление</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ДобавитьРаботуВНаряд</name>
+    <title>
+      <key>ru</key>
+      <value>Добавить работу в наряд</value>
+    </title>
+    <id>7</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ДобавитьРаботуВНаряд</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
