@@ -1840,4 +1840,38 @@
       <handler>ПолучитьПриказgetorder</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="ae179d26-ef91-4778-904b-f867b3225d87">
+    <name>ДобавитьОтветственногоВЗадачу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавить ответственного в задачу</value>
+    </synonym>
+    <template>/add-executor</template>
+    <methods uuid="57c2cfd0-56a7-42e1-9afb-c47d5a688458">
+      <name>addexecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Addexecutor</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ДобавитьОтветственногоВЗадачуaddexecutor</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9340bcdc-f9bc-42c9-8854-a71d7311446b">
+    <name>УдалитьОтветственногоВЗадаче</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить ответственного в задаче</value>
+    </synonym>
+    <template>/delete-executor</template>
+    <methods uuid="738fc2c3-309b-4cb4-8518-d354d5c332a7">
+      <name>deleteexecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Deleteexecutor</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>УдалитьОтветственногоВЗадачуdeleteexecutor</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
