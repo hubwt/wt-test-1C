@@ -268,6 +268,72 @@
             </textColor>
           </extInfo>
         </items>
+        <items xsi:type="form:FormField">
+          <name>СколькоСписать</name>
+          <id>788</id>
+          <title>
+            <key>ru</key>
+            <value>Сумма Списания Бонусов</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Объект.СколькоСписать</segments>
+          </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>СколькоСписатьПриИзменении</name>
+          </handlers>
+          <extendedTooltip>
+            <name>СколькоСписатьРасширеннаяПодсказка</name>
+            <id>790</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СколькоСписатьКонтекстноеМеню</name>
+            <id>789</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <handlers>
+              <event>EditTextChange</event>
+              <name>СколькоСписатьИзменениеТекстаРедактирования</name>
+            </handlers>
+            <handlers>
+              <event>TextEditEnd</event>
+              <name>СколькоСписатьОкончаниеВводаТекста1</name>
+            </handlers>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
         <items xsi:type="form:Button">
           <name>СписатьБонусы</name>
           <id>778</id>
