@@ -1891,4 +1891,52 @@
       <handler>ИзменитьСтатусЗаявкиeditstatusapplication</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="aba86cac-654c-4ac6-8629-0217b5680db7">
+    <name>ПолучитьСтатистикуПоСтроительству</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить статистику по строительству</value>
+    </synonym>
+    <template>/get-statistics-construction/{datestart}/{dateend}/{city}</template>
+    <methods uuid="d92ac924-2c4f-44c9-bccb-5c82dfedbc82">
+      <name>getstatisticsconstruction</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getstatisticsconstruction</value>
+      </synonym>
+      <handler>ПолучитьСтатистикуПоСтроительствуgetstatisticsconstruction</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="4248c0b3-6374-4ecf-b4e4-3616aa0003a1">
+    <name>ПолучитьВесьСписокЗаявокНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить весь список заявок новый</value>
+    </synonym>
+    <template>/list-application-new/{userid}/{Page}/{Count}/{processing}</template>
+    <methods uuid="38ae23e1-0f77-47c7-b5a6-5db2c05e1771">
+      <name>alllistapplicationnew</name>
+      <synonym>
+        <key>ru</key>
+        <value>Alllistapplicationnew</value>
+      </synonym>
+      <handler>ПолучитьВесьСписокЗаявокНовыйalllistapplicationnew</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3b3cc974-e802-4ada-9f32-53977a061af8">
+    <name>ТипыЗаявокНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Типы заявок новый</value>
+    </synonym>
+    <template>/types-application-new/{user_id}</template>
+    <methods uuid="fb5027fc-4d69-4a0a-920b-2f9e7e860d0a">
+      <name>types_applicationnew</name>
+      <synonym>
+        <key>ru</key>
+        <value>Types application new</value>
+      </synonym>
+      <handler>ТипыЗаявокНовыйtypes_applicationnew</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
