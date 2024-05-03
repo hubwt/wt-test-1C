@@ -241,6 +241,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>ЗаказчикСотрудник</name>
+      <id>107</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.ЗаказчикСотрудник</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ЗаказчикСотрудникРасширеннаяПодсказка</name>
+        <id>109</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ЗаказчикСотрудникКонтекстноеМеню</name>
+        <id>108</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>Поставщик</name>
       <id>74</id>
       <visible>true</visible>
@@ -1738,13 +1788,12 @@
 	РегистрНакопления.РегистрНакопления1 КАК РегистрНакопления1
 ГДЕ
 	РегистрНакопления1.Регистратор ССЫЛКА Документ.ПоступлениеЗапчастей
-
 СГРУППИРОВАТЬ ПО
 	РегистрНакопления1.машина
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	РегистрНакопления1.машина КАК машина,
 	СУММА(РегистрНакопления1.Колво) КАК Колво
 ПОМЕСТИТЬ ВТ_КоличествоДеталейПродаж
@@ -1752,14 +1801,13 @@
 	РегистрНакопления.РегистрНакопления1 КАК РегистрНакопления1
 ГДЕ
 	(РегистрНакопления1.Регистратор ССЫЛКА Документ.ПродажаЗапчастей
-			ИЛИ РегистрНакопления1.Регистратор ССЫЛКА Документ.ЗаказНаряд)
-
+	ИЛИ РегистрНакопления1.Регистратор ССЫЛКА Документ.ЗаказНаряд)
 СГРУППИРОВАТЬ ПО
 	РегистрНакопления1.машина
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	РегистрНакопления1Остатки.машина КАК машина,
 	СУММА(РегистрНакопления1Остатки.КолвоОстаток) КАК КолвоОстаток
 ПОМЕСТИТЬ ВТ_КоличествоДеталейПоМашинам
@@ -1767,13 +1815,12 @@
 	РегистрНакопления.РегистрНакопления1.Остатки КАК РегистрНакопления1Остатки
 ГДЕ
 	РегистрНакопления1Остатки.КолвоОстаток > 0
-
 СГРУППИРОВАТЬ ПО
 	РегистрНакопления1Остатки.машина
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	СправочникМашины.Ссылка КАК Ссылка,
 	СправочникМашины.ПометкаУдаления КАК ПометкаУдаления,
 	СправочникМашины.Код КАК Код,
@@ -1806,7 +1853,8 @@
 	ВТ_КоличествоДеталейПродаж.Колво КАК КоличествоПроданныхДеталей,
 	СправочникМашины.Серия КАК Серия,
 	СправочникМашины.Модель КАК Модель,
-	СправочникМашины.СрокОкупаемостиВМесяцах КАК СрокОкупаемостиВМесяцах
+	СправочникМашины.СрокОкупаемостиВМесяцах КАК СрокОкупаемостиВМесяцах,
+	СправочникМашины.ЗаказчикСотрудник
 ИЗ
 	Справочник.Машины КАК СправочникМашины
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПоказателиАвтомобилей КАК ВТ_Показатели
