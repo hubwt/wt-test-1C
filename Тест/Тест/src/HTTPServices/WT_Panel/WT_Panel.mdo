@@ -1874,23 +1874,6 @@
       <handler>УдалитьОтветственногоВЗадачуdeleteexecutor</handler>
     </methods>
   </urlTemplates>
-  <urlTemplates uuid="787b5196-894b-483d-be37-322febc43c4b">
-    <name>СоздатьЗадачуИзЗаказНаряда</name>
-    <synonym>
-      <key>ru</key>
-      <value>Создать задачу из заказ наряда</value>
-    </synonym>
-    <template>/create-work-order-for-truck</template>
-    <methods uuid="ab4bf820-dece-4758-b1bb-e789d1851eda">
-      <name>createworkorder</name>
-      <synonym>
-        <key>ru</key>
-        <value>Createworkorder</value>
-      </synonym>
-      <httpMethod>POST</httpMethod>
-      <handler>СоздатьЗадачуИзЗаказНарядаcreateworkorder</handler>
-    </methods>
-  </urlTemplates>
   <urlTemplates uuid="5442e4f7-266f-46dd-a939-1382bf12eddc">
     <name>ИзменитьСтатусЗаявки</name>
     <synonym>
@@ -1908,36 +1891,52 @@
       <handler>ИзменитьСтатусЗаявкиeditstatusapplication</handler>
     </methods>
   </urlTemplates>
-  <urlTemplates uuid="e77a8a1c-fa47-4df7-8586-f360a60a9be2">
-    <name>ПолучитьСписокНарядовДляРабот</name>
+  <urlTemplates uuid="aba86cac-654c-4ac6-8629-0217b5680db7">
+    <name>ПолучитьСтатистикуПоСтроительству</name>
     <synonym>
       <key>ru</key>
-      <value>Получить список нарядов для работ</value>
+      <value>Получить статистику по строительству</value>
     </synonym>
-    <template>/get-list-orders-for-work/{Count}/{Page}/{type}</template>
-    <methods uuid="fee82074-4b96-4351-9501-039d6e430621">
-      <name>getlistordersforworks</name>
+    <template>/get-statistics-construction/{datestart}/{dateend}/{city}</template>
+    <methods uuid="d92ac924-2c4f-44c9-bccb-5c82dfedbc82">
+      <name>getstatisticsconstruction</name>
       <synonym>
         <key>ru</key>
-        <value>Getlistordersforworks</value>
+        <value>Getstatisticsconstruction</value>
       </synonym>
-      <handler>ПолучитьСписокНарядовДляРаботgetlistordersforworks</handler>
+      <handler>ПолучитьСтатистикуПоСтроительствуgetstatisticsconstruction</handler>
     </methods>
   </urlTemplates>
-  <urlTemplates uuid="e0fe0e27-858a-46e3-ae40-6289f09667f5">
-    <name>ДашбордРВР</name>
+  <urlTemplates uuid="4248c0b3-6374-4ecf-b4e4-3616aa0003a1">
+    <name>ПолучитьВесьСписокЗаявокНовый</name>
     <synonym>
       <key>ru</key>
-      <value>Дашборд РВР</value>
+      <value>Получить весь список заявок новый</value>
     </synonym>
-    <template>/get-dash-rvr</template>
-    <methods uuid="20b2dcec-28d9-4f47-bf77-7f4078156e69">
-      <name>getdashrvr</name>
+    <template>/list-application-new/{userid}/{Page}/{Count}/{processing}</template>
+    <methods uuid="38ae23e1-0f77-47c7-b5a6-5db2c05e1771">
+      <name>alllistapplicationnew</name>
       <synonym>
         <key>ru</key>
-        <value>Getdashrvr</value>
+        <value>Alllistapplicationnew</value>
       </synonym>
-      <handler>ДашбордРВРgetdashrvr</handler>
+      <handler>ПолучитьВесьСписокЗаявокНовыйalllistapplicationnew</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3b3cc974-e802-4ada-9f32-53977a061af8">
+    <name>ТипыЗаявокНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Типы заявок новый</value>
+    </synonym>
+    <template>/types-application-new/{user_id}</template>
+    <methods uuid="fb5027fc-4d69-4a0a-920b-2f9e7e860d0a">
+      <name>types_applicationnew</name>
+      <synonym>
+        <key>ru</key>
+        <value>Types application new</value>
+      </synonym>
+      <handler>ТипыЗаявокНовыйtypes_applicationnew</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
