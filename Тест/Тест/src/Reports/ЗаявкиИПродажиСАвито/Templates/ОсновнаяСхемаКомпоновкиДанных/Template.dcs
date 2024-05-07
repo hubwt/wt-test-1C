@@ -7,19 +7,39 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаПродажи</dataPath>
-			<field>СуммаПродажи</field>
+			<dataPath>КоличествоЗаявок</dataPath>
+			<field>КоличествоЗаявок</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Продажа</dataPath>
-			<field>Продажа</field>
+			<dataPath>СуммаЗаявок</dataPath>
+			<field>СуммаЗаявок</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоПродаж</dataPath>
+			<field>КоличествоПродаж</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПродаж</dataPath>
+			<field>СуммаПродаж</field>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>
+		<query>ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ МаршрутЗвонков.ЗаявкаКлиента.Ссылка) КАК КоличествоЗаявок,
+	СУММА(МаршрутЗвонков.ЗаявкаКлиента.СуммаДокумента) КАК СуммаЗаявок
+ПОМЕСТИТЬ КоличествоИсуммаЗаявок
+ИЗ
+	РегистрСведений.МаршрутЗвонков КАК МаршрутЗвонков
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СопоставлениеРекламныхКампаний КАК СопоставлениеРекламныхКампаний
+		ПО (МаршрутЗвонков.ЛинияНомер = СопоставлениеРекламныхКампаний.Телефон)
+ГДЕ
+	СопоставлениеРекламныхКампаний.Источник.Ссылка В (&amp;Каналы)
+	И МаршрутЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+;
+
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ПродажаЗапчастей.Ссылка) КАК Продажа,
-	СУММА(ПродажаЗапчастей.ИтогоРекв) КАК СуммаПродажи
+ ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ПродажаЗапчастей.Ссылка) КАК КоличествоПродаж,
+	СУММА(ПродажаЗапчастей.ИтогоРекв) КАК СуммаПродаж
 ПОМЕСТИТЬ Продажи
 ИЗ
 	Документ.ПродажаЗапчастей КАК ПродажаЗапчастей
@@ -29,7 +49,14 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-</query>
+ ВЫБРАТЬ
+	КоличествоИсуммаЗаявок.КоличествоЗаявок,
+	КоличествоИсуммаЗаявок.СуммаЗаявок,
+	Продажи.КоличествоПродаж,
+	Продажи.СуммаПродаж
+ИЗ
+	КоличествоИсуммаЗаявок КАК КоличествоИсуммаЗаявок,
+	Продажи КАК Продажи</query>
 	</dataSet>
 	<parameter>
 		<name>Каналы</name>
@@ -39,7 +66,7 @@
 				<v8:content>Каналы</v8:content>
 			</v8:item>
 		</title>
-		<useRestriction>true</useRestriction>
+		<useRestriction>false</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
 	</parameter>
 	<parameter>
@@ -56,7 +83,7 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
-		<useRestriction>true</useRestriction>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
 		<name>ДатаНачала</name>
@@ -72,7 +99,7 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
-		<useRestriction>true</useRestriction>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -80,18 +107,32 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Ссылка</dcsset:field>
+					<dcsset:field>КоличествоЗаявок</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаЗаявки</dcsset:field>
+					<dcsset:field>СуммаЗаявок</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Продажа</dcsset:field>
+					<dcsset:field>КоличествоПродаж</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаПродажи</dcsset:field>
+					<dcsset:field>СуммаПродаж</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Каналы</dcscor:parameter>
+					<dcsset:userSettingID>4949a3a6-5c6b-4dbd-b097-75452c72deea</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcsset:userSettingID>df7bdade-483f-46d2-a168-a5028c47c581</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcsset:userSettingID>176352e9-bb38-40b0-b35b-ca6ed4d0edd5</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>МакетОформления</dcscor:parameter>
