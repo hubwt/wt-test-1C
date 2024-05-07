@@ -7,26 +7,36 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоЗаявок</dataPath>
-			<field>КоличествоЗаявок</field>
+			<dataPath>Заявка</dataPath>
+			<field>Заявка</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаЗаявок</dataPath>
-			<field>СуммаЗаявок</field>
+			<dataPath>СуммаЗаявки</dataPath>
+			<field>СуммаЗаявки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсточникЗаявки</dataPath>
+			<field>ИсточникЗаявки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Продажа</dataPath>
+			<field>Продажа</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма заявок</v8:content>
+					<v8:content>Продажа</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоПродаж</dataPath>
-			<field>КоличествоПродаж</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаПродаж</dataPath>
-			<field>СуммаПродаж</field>
+			<dataPath>СуммаПродажи</dataPath>
+			<field>СуммаПродажи</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма продажи</v8:content>
+				</v8:item>
+			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
@@ -37,7 +47,7 @@
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СопоставлениеРекламныхКампаний КАК СопоставлениеРекламныхКампаний
 		ПО (МаршрутЗвонков.ЛинияНомер = СопоставлениеРекламныхКампаний.Телефон)
 ГДЕ
-	СопоставлениеРекламныхКампаний.Источник.Ссылка В (&amp;Каналы)
+	СопоставлениеРекламныхКампаний.Источник.Ссылка В(&amp;Каналы)
 	И МаршрутЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
 
 ОБЪЕДИНИТЬ
@@ -49,41 +59,73 @@
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СопоставлениеРекламныхКампаний КАК СопоставлениеРекламныхКампаний
 		ПО ЗаказКлиента.Канал = СопоставлениеРекламныхКампаний.Источник
 ГДЕ
-	СопоставлениеРекламныхКампаний.Источник В (&amp;Каналы)
+	СопоставлениеРекламныхКампаний.Источник В(&amp;Каналы)
 	И ЗаказКлиента.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
-	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Заявки.ЗаявкаКлиентаСсылка.Ссылка) КАК КоличествоЗаявок,
-	СУММА(Заявки.ЗаявкаКлиентаСсылка.СуммаДокумента) КАК ЗаявкаКлиентаСсылкаСуммаДокумента
+ВЫБРАТЬ
+	Заявки.ЗаявкаКлиентаСсылка.Ссылка КАК Заявка,
+	СУММА(Заявки.ЗаявкаКлиентаСсылка.СуммаДокумента) КАК СуммаЗаявки,
+	Заявки.ЗаявкаКлиентаСсылка.Канал КАК ИсточникЗаявки
 ПОМЕСТИТЬ ЗаявкиОбщ
 ИЗ
 	Заявки КАК Заявки
+
+СГРУППИРОВАТЬ ПО
+	Заявки.ЗаявкаКлиентаСсылка.Ссылка,
+	Заявки.ЗаявкаКлиентаСсылка.Канал
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
-	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ПродажаЗапчастей.Ссылка) КАК КоличествоПродаж,
-	СУММА(ПродажаЗапчастей.ИтогоРекв) КАК СуммаПродаж
+ВЫБРАТЬ
+	ПродажаЗапчастей.Ссылка КАК Ссылка,
+	СУММА(ПродажаЗапчастей.ИтогоРекв) КАК ИтогоРекв,
+	ПродажаЗапчастей.ЗаказКлиента КАК ЗаказКлиента
 ПОМЕСТИТЬ Продажи
 ИЗ
 	Документ.ПродажаЗапчастей КАК ПродажаЗапчастей
 ГДЕ
-	ПродажаЗапчастей.ЗаказКлиента.Канал В (&amp;Каналы)
-	И ПродажаЗапчастей.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+	ПродажаЗапчастей.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+	И ПродажаЗапчастей.ЗаказКлиента В
+			(ВЫБРАТЬ
+				ЗаявкиОбщ.Заявка
+			ИЗ
+				ЗаявкиОбщ КАК ЗаявкиОбщ)
+
+СГРУППИРОВАТЬ ПО
+	ПродажаЗапчастей.Ссылка,
+	ПродажаЗапчастей.ЗаказКлиента
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
-	ЗаявкиОбщ.КоличествоЗаявок,
-	ЗаявкиОбщ.ЗаявкаКлиентаСсылкаСуммаДокумента КАК СуммаЗаявок,
-	Продажи.КоличествоПродаж,
-	Продажи.СуммаПродаж
+ВЫБРАТЬ
+	ЗаявкиОбщ.Заявка КАК Заявка,
+	ЗаявкиОбщ.СуммаЗаявки КАК СуммаЗаявки,
+	ЗаявкиОбщ.ИсточникЗаявки КАК ИсточникЗаявки,
+	Продажи.Ссылка КАК Продажа,
+	Продажи.ИтогоРекв КАК СуммаПродажи
 ИЗ
-	ЗаявкиОбщ КАК ЗаявкиОбщ,
-	Продажи КАК Продажи</query>
+	ЗаявкиОбщ КАК ЗаявкиОбщ
+		ЛЕВОЕ СОЕДИНЕНИЕ Продажи КАК Продажи
+		ПО (ЗаявкиОбщ.Заявка = Продажи.ЗаказКлиента)</query>
 	</dataSet>
+	<totalField>
+		<dataPath>СуммаЗаявки</dataPath>
+		<expression>Сумма(СуммаЗаявки)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СуммаПродажи</dataPath>
+		<expression>Сумма(СуммаПродажи)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Продажа</dataPath>
+		<expression>Количество(Продажа)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Заявка</dataPath>
+		<expression>Количество(Заявка)</expression>
+	</totalField>
 	<parameter>
 		<name>Каналы</name>
 		<title xsi:type="v8:LocalStringType">
@@ -109,7 +151,6 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
-		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
@@ -126,7 +167,6 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
-		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
@@ -135,33 +175,33 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоЗаявок</dcsset:field>
+					<dcsset:field>ИсточникЗаявки</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаЗаявок</dcsset:field>
+					<dcsset:field>Заявка</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоПродаж</dcsset:field>
+					<dcsset:field>СуммаЗаявки</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаПродаж</dcsset:field>
+					<dcsset:field>Продажа</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПродажи</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Каналы</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>a780e885-d003-4101-9a7f-f05330721fe8</dcsset:userSettingID>
+					<dcsset:userSettingID>c681e27b-4fe0-438b-a80d-3f1ad6a8de92</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>aa3f7f7f-4ba8-4c78-a609-ce8e3ec8ba9d</dcsset:userSettingID>
+					<dcsset:userSettingID>13f58773-d65e-41fc-be00-b28769284871</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ДатаНачала</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-					<dcsset:userSettingID>73994a8f-e2fc-4aae-8ab6-a59754708c44</dcsset:userSettingID>
+					<dcsset:userSettingID>8e34294f-521f-45da-98e1-d474b5fa44eb</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
@@ -171,6 +211,13 @@
 				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ИсточникЗаявки</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+					</dcsset:item>
+				</dcsset:groupItems>
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
