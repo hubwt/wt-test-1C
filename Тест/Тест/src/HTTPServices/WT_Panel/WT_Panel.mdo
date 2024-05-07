@@ -2004,4 +2004,36 @@
       <handler>СменаРодителяЗадачиChangeParentTask</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="3f557ae1-3240-48f8-8ea0-e106051708fe">
+    <name>ПолучитьСписокПроектовЗадач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список проектов задач</value>
+    </synonym>
+    <template>/get-project-tasks/{userid}/{state}/{page}/{count}/{text}</template>
+    <methods uuid="2eb6b5ba-8553-42c2-b3ae-5d3c4b92122d">
+      <name>GetProjectTasks</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get project tasks</value>
+      </synonym>
+      <handler>ПолучитьСписокПроектовЗадачGetProjectTasks</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="11efb90c-1604-48e9-bed5-11103df07acd">
+    <name>ПолучитьПроектыЗадачОтдела</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить проекты задач отдела</value>
+    </synonym>
+    <template>/get-projects-tasks-department/{direction}/{state}/{page}/{count}/{text}</template>
+    <methods uuid="87c8b322-6e91-409c-929e-e6960c671395">
+      <name>GetTasksDepartment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get tasks department</value>
+      </synonym>
+      <handler>ПолучитьПроектыЗадачОтделаGetProjectsTasksDepartment</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
