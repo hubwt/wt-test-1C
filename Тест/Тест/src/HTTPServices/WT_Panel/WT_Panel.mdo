@@ -1840,4 +1840,200 @@
       <handler>ПолучитьПриказgetorder</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="ae179d26-ef91-4778-904b-f867b3225d87">
+    <name>ДобавитьОтветственногоВЗадачу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавить ответственного в задачу</value>
+    </synonym>
+    <template>/add-executor</template>
+    <methods uuid="57c2cfd0-56a7-42e1-9afb-c47d5a688458">
+      <name>addexecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Addexecutor</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ДобавитьОтветственногоВЗадачуaddexecutor</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9340bcdc-f9bc-42c9-8854-a71d7311446b">
+    <name>УдалитьОтветственногоВЗадаче</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить ответственного в задаче</value>
+    </synonym>
+    <template>/delete-executor</template>
+    <methods uuid="738fc2c3-309b-4cb4-8518-d354d5c332a7">
+      <name>deleteexecutor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Deleteexecutor</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>УдалитьОтветственногоВЗадачуdeleteexecutor</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="5442e4f7-266f-46dd-a939-1382bf12eddc">
+    <name>ИзменитьСтатусЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить статус заявки</value>
+    </synonym>
+    <template>/edit-status-application/{id}</template>
+    <methods uuid="1d285fcb-4d9e-415a-98de-21eea951d48e">
+      <name>EditStatusApplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit status application</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьСтатусЗаявкиeditstatusapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="aba86cac-654c-4ac6-8629-0217b5680db7">
+    <name>ПолучитьСтатистикуПоСтроительству</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить статистику по строительству</value>
+    </synonym>
+    <template>/get-statistics-construction/{datestart}/{dateend}/{city}</template>
+    <methods uuid="d92ac924-2c4f-44c9-bccb-5c82dfedbc82">
+      <name>getstatisticsconstruction</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getstatisticsconstruction</value>
+      </synonym>
+      <handler>ПолучитьСтатистикуПоСтроительствуgetstatisticsconstruction</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="4248c0b3-6374-4ecf-b4e4-3616aa0003a1">
+    <name>ПолучитьВесьСписокЗаявокНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить весь список заявок новый</value>
+    </synonym>
+    <template>/list-application-new/{userid}/{Page}/{Count}/{processing}</template>
+    <methods uuid="38ae23e1-0f77-47c7-b5a6-5db2c05e1771">
+      <name>alllistapplicationnew</name>
+      <synonym>
+        <key>ru</key>
+        <value>Alllistapplicationnew</value>
+      </synonym>
+      <handler>ПолучитьВесьСписокЗаявокНовыйalllistapplicationnew</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3b3cc974-e802-4ada-9f32-53977a061af8">
+    <name>ТипыЗаявокНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Типы заявок новый</value>
+    </synonym>
+    <template>/types-application-new/{user_id}</template>
+    <methods uuid="fb5027fc-4d69-4a0a-920b-2f9e7e860d0a">
+      <name>types_applicationnew</name>
+      <synonym>
+        <key>ru</key>
+        <value>Types application new</value>
+      </synonym>
+      <handler>ТипыЗаявокНовыйtypes_applicationnew</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="afba18ee-e10e-4a79-8e74-9bbb53f7d718">
+    <name>ПолучитьДашбордРВР</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить дашборд РВР</value>
+    </synonym>
+    <template>/get-dash-rvr/{date_start}/{date_end}</template>
+    <methods uuid="b6efaef6-c386-4096-ab5a-acf2ca02a85d">
+      <name>getdashrvr</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getdashrvr</value>
+      </synonym>
+      <handler>ДашбордРВРgetdashrvr</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9edcc2f4-33cd-48c2-9fa8-398251da30f5">
+    <name>ПолучитьДашбордМалярки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить дашборд малярки</value>
+    </synonym>
+    <template>/get-dash-painter/{date_start}/{date_end}</template>
+    <methods uuid="9a676bdd-a8e6-460c-b934-65484b84d154">
+      <name>getdashpainter</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getdashpainter</value>
+      </synonym>
+      <handler>ДашбордМаляркиgetdashpainter</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1fb45248-804f-444a-892f-7b413808aec2">
+    <name>ПолучитьДашбордВосстановления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить дашборд восстановления</value>
+    </synonym>
+    <template>/get-dash-recovery/{date_start}/{date_end}</template>
+    <methods uuid="2fe8741e-e09d-4318-9be9-0f1608367cc6">
+      <name>getdashrecovery</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getdashrecovery</value>
+      </synonym>
+      <handler>ДашбордВосстановленияgetdashrecovery</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="855d5087-d310-4691-8ee5-e275c4dcc3b8">
+    <name>СменаРодителяЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена родителя задачи</value>
+    </synonym>
+    <template>/change-parent-task/{id}</template>
+    <methods uuid="fc067e5b-3be0-4331-937c-8df742a6eb44">
+      <name>ChangeParentTask</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change parent task</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаРодителяЗадачиChangeParentTask</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3f557ae1-3240-48f8-8ea0-e106051708fe">
+    <name>ПолучитьСписокПроектовЗадач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список проектов задач</value>
+    </synonym>
+    <template>/get-project-tasks/{userid}/{state}/{page}/{count}/{text}</template>
+    <methods uuid="2eb6b5ba-8553-42c2-b3ae-5d3c4b92122d">
+      <name>GetProjectTasks</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get project tasks</value>
+      </synonym>
+      <handler>ПолучитьСписокПроектовЗадачGetProjectTasks</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="11efb90c-1604-48e9-bed5-11103df07acd">
+    <name>ПолучитьПроектыЗадачОтдела</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить проекты задач отдела</value>
+    </synonym>
+    <template>/get-projects-tasks-department/{direction}/{state}/{page}/{count}/{text}</template>
+    <methods uuid="87c8b322-6e91-409c-929e-e6960c671395">
+      <name>GetTasksDepartment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get tasks department</value>
+      </synonym>
+      <handler>ПолучитьПроектыЗадачОтделаGetProjectsTasksDepartment</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>

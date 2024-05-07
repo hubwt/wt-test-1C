@@ -13,6 +13,12 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>СуммаЗаявок</dataPath>
 			<field>СуммаЗаявок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма заявок</v8:content>
+				</v8:item>
+			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>КоличествоПродаж</dataPath>
@@ -24,9 +30,8 @@
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ МаршрутЗвонков.ЗаявкаКлиента.Ссылка) КАК КоличествоЗаявок,
-	СУММА(МаршрутЗвонков.ЗаявкаКлиента.СуммаДокумента) КАК СуммаЗаявок
-ПОМЕСТИТЬ КоличествоИсуммаЗаявок
+	МаршрутЗвонков.ЗаявкаКлиента.Ссылка КАК ЗаявкаКлиентаСсылка
+ПОМЕСТИТЬ Заявки
 ИЗ
 	РегистрСведений.МаршрутЗвонков КАК МаршрутЗвонков
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СопоставлениеРекламныхКампаний КАК СопоставлениеРекламныхКампаний
@@ -34,6 +39,27 @@
 ГДЕ
 	СопоставлениеРекламныхКампаний.Источник.Ссылка В (&amp;Каналы)
 	И МаршрутЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ЗаказКлиента.Ссылка
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.СопоставлениеРекламныхКампаний КАК СопоставлениеРекламныхКампаний
+		ПО ЗаказКлиента.Канал = СопоставлениеРекламныхКампаний.Источник
+ГДЕ
+	СопоставлениеРекламныхКампаний.Источник В (&amp;Каналы)
+	И ЗаказКлиента.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Заявки.ЗаявкаКлиентаСсылка.Ссылка) КАК КоличествоЗаявок,
+	СУММА(Заявки.ЗаявкаКлиентаСсылка.СуммаДокумента) КАК ЗаявкаКлиентаСсылкаСуммаДокумента
+ПОМЕСТИТЬ ЗаявкиОбщ
+ИЗ
+	Заявки КАК Заявки
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -50,12 +76,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
  ВЫБРАТЬ
-	КоличествоИсуммаЗаявок.КоличествоЗаявок,
-	КоличествоИсуммаЗаявок.СуммаЗаявок,
+	ЗаявкиОбщ.КоличествоЗаявок,
+	ЗаявкиОбщ.ЗаявкаКлиентаСсылкаСуммаДокумента КАК СуммаЗаявок,
 	Продажи.КоличествоПродаж,
 	Продажи.СуммаПродаж
 ИЗ
-	КоличествоИсуммаЗаявок КАК КоличествоИсуммаЗаявок,
+	ЗаявкиОбщ КАК ЗаявкиОбщ,
 	Продажи КАК Продажи</query>
 	</dataSet>
 	<parameter>
@@ -83,6 +109,7 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
@@ -99,6 +126,7 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
@@ -122,21 +150,24 @@
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Каналы</dcscor:parameter>
-					<dcsset:userSettingID>4949a3a6-5c6b-4dbd-b097-75452c72deea</dcsset:userSettingID>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>a780e885-d003-4101-9a7f-f05330721fe8</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
-					<dcsset:userSettingID>df7bdade-483f-46d2-a168-a5028c47c581</dcsset:userSettingID>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>aa3f7f7f-4ba8-4c78-a609-ce8e3ec8ba9d</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>ДатаНачала</dcscor:parameter>
-					<dcsset:userSettingID>176352e9-bb38-40b0-b35b-ca6ed4d0edd5</dcsset:userSettingID>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>73994a8f-e2fc-4aae-8ab6-a59754708c44</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>МакетОформления</dcscor:parameter>
-					<dcscor:value xsi:type="xs:string">Арктика</dcscor:value>
+					<dcscor:value xsi:type="xs:string">Зеленый</dcscor:value>
 				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">

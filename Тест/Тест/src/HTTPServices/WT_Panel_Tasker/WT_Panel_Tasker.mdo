@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c7388b52-93eb-4e98-8908-4d7faeb6cb7a">
+  <name>WT_Panel_Tasker</name>
+  <synonym>
+    <key>ru</key>
+    <value>W t panel tasker</value>
+  </synonym>
+  <rootURL>wt_panel_tasker</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="decd124b-2b9a-4f3f-80f4-fe93012d5cc7">
+    <name>СоздатьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать заявку</value>
+    </synonym>
+    <template>/create-application</template>
+    <methods uuid="48b25ece-b45f-43b1-a129-e325b5c4473e">
+      <name>CreateApplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Create application</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьЗаявкуcreateapplication</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>
