@@ -7,57 +7,15 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоЗаявок</dataPath>
-			<field>КоличествоЗаявок</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Количество заявок</v8:content>
-				</v8:item>
-			</title>
+			<dataPath>СуммаПродажи</dataPath>
+			<field>СуммаПродажи</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаЗаявок</dataPath>
-			<field>СуммаЗаявок</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма заявок</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоПродаж</dataPath>
-			<field>КоличествоПродаж</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Количество продаж</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>СуммаПродаж</dataPath>
-			<field>СуммаПродаж</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Сумма продаж</v8:content>
-				</v8:item>
-			</title>
+			<dataPath>Продажа</dataPath>
+			<field>Продажа</field>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
-	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаявкаКлиента.Ссылка) КАК Заявка,
-	СУММА(ЗаявкаКлиента.СуммаДокумента) КАК СуммаЗаявки
-ПОМЕСТИТЬ Заявки
-ИЗ
-	Документ.ЗаказКлиента КАК ЗаявкаКлиента
-ГДЕ
-	ЗаявкаКлиента.Канал В (&amp;Каналы)
-	И ЗаявкаКлиента.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
-;
-
+		<query>
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ПродажаЗапчастей.Ссылка) КАК Продажа,
@@ -71,14 +29,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	Заявки.Заявка КАК КоличествоЗаявок,
-	Заявки.СуммаЗаявки КАК СуммаЗаявок,
-	Продажи.Продажа КАК КоличествоПродаж,
-	Продажи.СуммаПродажи КАК СуммаПродаж
-ИЗ
-	Заявки КАК Заявки,
-	Продажи КАК Продажи</query>
+</query>
 	</dataSet>
 	<parameter>
 		<name>Каналы</name>
@@ -88,7 +39,7 @@
 				<v8:content>Каналы</v8:content>
 			</v8:item>
 		</title>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
 		<valueListAllowed>true</valueListAllowed>
 	</parameter>
 	<parameter>
@@ -105,7 +56,7 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<parameter>
 		<name>ДатаНачала</name>
@@ -121,7 +72,7 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -129,32 +80,18 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоЗаявок</dcsset:field>
+					<dcsset:field>Ссылка</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаЗаявок</dcsset:field>
+					<dcsset:field>СуммаЗаявки</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоПродаж</dcsset:field>
+					<dcsset:field>Продажа</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>СуммаПродаж</dcsset:field>
+					<dcsset:field>СуммаПродажи</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
-			<dcsset:dataParameters>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>Каналы</dcscor:parameter>
-					<dcsset:userSettingID>a780e885-d003-4101-9a7f-f05330721fe8</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
-					<dcsset:userSettingID>aa3f7f7f-4ba8-4c78-a609-ce8e3ec8ba9d</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:parameter>ДатаНачала</dcscor:parameter>
-					<dcsset:userSettingID>73994a8f-e2fc-4aae-8ab6-a59754708c44</dcsset:userSettingID>
-				</dcscor:item>
-			</dcsset:dataParameters>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>МакетОформления</dcscor:parameter>
