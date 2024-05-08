@@ -2069,4 +2069,38 @@
       <handler>СменаАвтораЗадачиChangeAuthorTask</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="76f247b5-613d-4538-afa4-0f047b0d01f9">
+    <name>ДобавитьАвтораВЗадачу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавить автора в задачу</value>
+    </synonym>
+    <template>/add-author</template>
+    <methods uuid="feb0e514-f43d-44dc-8a18-6079baa7c311">
+      <name>addauthot</name>
+      <synonym>
+        <key>ru</key>
+        <value>Addauthot</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ДобавитьАвтораВЗадачуaddauthor</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9b40f9cc-41d7-4bbb-a116-ff5629e4f880">
+    <name>УдалитьАвтораВЗадаче</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить автора в задаче</value>
+    </synonym>
+    <template>/delete-author</template>
+    <methods uuid="a25dc51e-4c08-4615-81e5-943e3e39d880">
+      <name>deleteauthor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Deleteauthor</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>УдалитьАвтораВЗадачуdeleteexecutor</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
