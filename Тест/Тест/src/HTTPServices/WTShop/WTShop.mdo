@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0394af51-d2d6-47db-8102-fc9d8606e166">
-  <name>WT10</name>
+  <name>WTShop</name>
   <synonym>
     <key>ru</key>
-    <value>W t10</value>
+    <value>WTShop</value>
   </synonym>
-  <rootURL>wt10</rootURL>
+  <rootURL>wt_shop</rootURL>
   <reuseSessions>AutoUse</reuseSessions>
   <sessionMaxAge>20</sessionMaxAge>
   <urlTemplates uuid="39382322-8579-4b12-84f1-f91e469f04e1">
@@ -39,6 +39,23 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>СоздатьЗаявкуcreateapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="deb544a0-b1e8-4119-b960-ca3a58b7d650">
+    <name>Авторизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авторизация</value>
+    </synonym>
+    <template>/sign-in</template>
+    <methods uuid="5e1fe362-9f9a-4c8e-a4b6-94bd15c36909">
+      <name>Authorization</name>
+      <synonym>
+        <key>ru</key>
+        <value>Authorization</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьАвторизациюAuthorization</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>

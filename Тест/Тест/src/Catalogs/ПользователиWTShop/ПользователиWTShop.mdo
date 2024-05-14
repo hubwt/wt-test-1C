@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c16ae4eb-5a9f-4660-b1c4-eb7565b32429">
+  <producedTypes>
+    <objectType typeId="5db1af94-95fb-41c6-a4a8-5e782becf00c" valueTypeId="90fd7df0-d75c-4aec-b924-b39a0eeaf08c"/>
+    <refType typeId="cb06a717-47e4-4621-9f48-ddce46d70776" valueTypeId="7b64ff96-488d-4eef-b37c-037b2ab4fd41"/>
+    <selectionType typeId="b77eba5d-336e-42c1-8551-252e858467c4" valueTypeId="860e0093-1385-4e1e-86d7-6b33bb4b815f"/>
+    <listType typeId="85b276e0-542c-4eec-867d-b26985ebb5c9" valueTypeId="eaf2934d-4690-4c29-bbcc-abb94d2c9966"/>
+    <managerType typeId="8568ce8c-36bd-45cf-9056-00b3c1fa0338" valueTypeId="6a80f55e-caee-4a7e-b4ad-790ac74b622e"/>
+  </producedTypes>
+  <name>ПользователиWTShop</name>
+  <synonym>
+    <key>ru</key>
+    <value>Пользователи WTShop</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ПользователиWTShop.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.ПользователиWTShop.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>150</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="790d3ac1-1f49-4267-8803-44f9fda11e1c">
+    <name>НомерТелефона</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер телефона</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ce6f64c4-2716-4c68-8494-7510aeb5a7e6">
+    <name>СвязьСКлиентом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Связь с клиентом</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Клиенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>
