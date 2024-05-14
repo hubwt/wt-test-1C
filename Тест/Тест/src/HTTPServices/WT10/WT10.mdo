@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0394af51-d2d6-47db-8102-fc9d8606e166">
+  <name>WT10</name>
+  <synonym>
+    <key>ru</key>
+    <value>W t10</value>
+  </synonym>
+  <rootURL>wt10</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="39382322-8579-4b12-84f1-f91e469f04e1">
+    <name>ПолучитьСписокКатегорий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список категорий</value>
+    </synonym>
+    <template>/categories</template>
+    <methods uuid="a484aff4-7fa8-4e42-8a8c-cdeeb61063e1">
+      <name>getCategories</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get categories</value>
+      </synonym>
+      <handler>ПолучитьСписокКатегорийgetCategories</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="6819f1a7-b841-49fc-bf95-59ab1d864d37">
+    <name>СоздатьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать заявку</value>
+    </synonym>
+    <template>/create-application</template>
+    <methods uuid="a4a2bbeb-d117-4daf-abca-d74596b6bbcd">
+      <name>CreateApplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Create application</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьЗаявкуcreateapplication</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>
