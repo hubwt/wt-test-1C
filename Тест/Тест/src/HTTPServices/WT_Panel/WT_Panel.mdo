@@ -2103,4 +2103,53 @@
       <handler>УдалитьАвтораВЗадачуdeleteexecutor</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="18c0e003-4886-4e40-9fcf-ffabf3cf63b5">
+    <name>ИзменитьПроектностьЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить проектность задачи</value>
+    </synonym>
+    <template>/change-state-project</template>
+    <methods uuid="ac83c243-c167-4077-948e-562db6616e37">
+      <name>deleteauthor</name>
+      <synonym>
+        <key>ru</key>
+        <value>Deleteauthor</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьПроектностьЗадачиdeleteauthor</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="4c9ded76-aecf-493d-ad04-f6cca3fbe146">
+    <name>ПолучитьСписокНарядовДляРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список нарядов для работ</value>
+    </synonym>
+    <template>/get-list-orders-for-work/{Count}/{Page}/{type}</template>
+    <methods uuid="671ade61-83b9-4a0b-a301-0ba2f94e0b08">
+      <name>getlistordersforworks</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlistordersforworks</value>
+      </synonym>
+      <handler>ПолучитьСписокНарядовДляРаботgetlistordersforworks</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="38d4531d-e30c-44aa-986f-188597343340">
+    <name>ПолучитьЗадачиВсе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить задачи все</value>
+    </synonym>
+    <template>/get-tasks-all/{page}/{count}/{text}</template>
+    <methods uuid="1edab319-0056-4152-9ad0-07de028aec89">
+      <name>GetTasksAll</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get tasks all</value>
+      </synonym>
+      <handler>ПолучитьЗадачиВсеGetTasksAll</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
