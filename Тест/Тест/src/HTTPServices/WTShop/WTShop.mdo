@@ -58,4 +58,20 @@
       <handler>ПолучитьАвторизациюAuthorization</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="40b167e3-1467-418f-b046-cf1afc7d96bc">
+    <name>ВывестиСписокТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вывести список товаров</value>
+    </synonym>
+    <template>/list-products/{id}/{page}/{count}/{pk}</template>
+    <methods uuid="7c294a67-36bc-48f2-9d61-63449d9fcd53">
+      <name>GetProductsList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get products list</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровGetProductsList</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
