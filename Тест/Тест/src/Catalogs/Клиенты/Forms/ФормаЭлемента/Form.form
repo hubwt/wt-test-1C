@@ -5174,6 +5174,37 @@
     <items xsi:type="form:FormGroup">
       <name>ГруппаОКомпании</name>
       <id>153</id>
+      <items xsi:type="form:Button">
+        <name>ЗаполнитьДанныеПоИНН</name>
+        <id>654</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ЗаполнитьДанныеПоИННРасширеннаяПодсказка</name>
+          <id>655</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualButton</type>
+        <commandName>Form.Command.ЗаполнитьДанныеПоИНН</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
       <items xsi:type="form:FormGroup">
         <name>Почта</name>
         <id>520</id>
@@ -9088,7 +9119,7 @@
     </items>
     <items xsi:type="form:FormGroup">
       <name>Бонусы</name>
-      <id>654</id>
+      <id>743</id>
       <items xsi:type="form:Table">
         <name>БонусыКлиента</name>
         <id>709</id>
@@ -9635,7 +9666,7 @@
       </title>
       <extendedTooltip>
         <name>БонусыРасширеннаяПодсказка</name>
-        <id>655</id>
+        <id>744</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -10359,6 +10390,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>СоздатьДозвон</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ЗаполнитьДанныеПоИНН</name>
+    <title>
+      <key>ru</key>
+      <value>Заполнить данные по ИНН</value>
+    </title>
+    <id>3</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ЗаполнитьДанныеПоИНН</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
