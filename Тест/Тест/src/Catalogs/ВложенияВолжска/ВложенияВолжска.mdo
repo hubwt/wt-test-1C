@@ -78,7 +78,8 @@
     <type>
       <types>Number</types>
       <numberQualifiers>
-        <precision>10</precision>
+        <precision>11</precision>
+        <scale>2</scale>
       </numberQualifiers>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
@@ -106,6 +107,117 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="a712b31d-ba3b-4581-888b-9813b39099b9">
+    <name>ОплаченоПоКредиту</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оплачено по кредиту</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="49147de3-fad1-490f-8cf7-833d4bacdedc">
+    <name>ОсталосьОтбить</name>
+    <synonym>
+      <key>ru</key>
+      <value>Осталось отбить</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="dd4f12fc-2e51-44a7-a8d0-0c26c5c14c35">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусКредита</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="4d2c1b51-005a-4776-8bfc-ee2d01537a35">
+    <producedTypes>
+      <objectType typeId="2e385b49-0930-45ef-b92f-28b46d0e7e44" valueTypeId="1c6907a4-f243-416a-a517-ac96e5734125"/>
+      <rowType typeId="a84edc82-72eb-458b-98a6-840022af3a44" valueTypeId="85ed7fc3-f53a-4252-b954-265dc48cbd34"/>
+    </producedTypes>
+    <name>Погашения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Погашения</value>
+    </synonym>
+    <attributes uuid="446f82e4-25d8-47bf-b3d7-0617ce23711f">
+      <name>ДокументРасхода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ расхода</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.Расходы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="5cd09592-cfb0-4a16-a8c5-b42f581f74fa">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>12</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="5fe7e675-b4e3-443f-ac84-cd4b26ab933a">
+      <name>Дата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
   <forms uuid="9f39e58e-7f62-42fc-a547-969d545f44a9">
     <name>ФормаЭлемента</name>
     <synonym>
