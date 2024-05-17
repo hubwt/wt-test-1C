@@ -1450,6 +1450,37 @@
     <items xsi:type="form:FormGroup">
       <name>Сотрудники</name>
       <id>39</id>
+      <items xsi:type="form:Button">
+        <name>ОбновитьСписокСотрудников</name>
+        <id>1092</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ОбновитьСписокСотрудниковРасширеннаяПодсказка</name>
+          <id>1093</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualButton</type>
+        <commandName>Form.Command.ОбновитьСписокСотрудников</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
       <items xsi:type="form:Table">
         <name>Участники</name>
         <id>41</id>
@@ -3998,6 +4029,7 @@
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
+        <readOnly>true</readOnly>
         <editMode>Enter</editMode>
         <showInHeader>true</showInHeader>
         <headerHorizontalAlign>Left</headerHorizontalAlign>
@@ -4048,6 +4080,7 @@
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
+        <readOnly>true</readOnly>
         <editMode>Enter</editMode>
         <showInHeader>true</showInHeader>
         <headerHorizontalAlign>Left</headerHorizontalAlign>
@@ -4098,6 +4131,7 @@
           <autoFill>true</autoFill>
         </contextMenu>
         <type>InputField</type>
+        <readOnly>true</readOnly>
         <editMode>Enter</editMode>
         <showInHeader>true</showInHeader>
         <headerHorizontalAlign>Left</headerHorizontalAlign>
@@ -4433,32 +4467,32 @@
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
-	КадровыйПриказ.Ссылка,
-	КадровыйПриказ.ПометкаУдаления,
-	КадровыйПриказ.Номер,
-	КадровыйПриказ.Дата,
-	КадровыйПриказ.Проведен,
-	КадровыйПриказ.Комментарий,
-	КадровыйПриказ.Организация,
-	КадровыйПриказ.ЦФО,
-	КадровыйПриказ.НомерИсходящий,
-	КадровыйПриказ.ДатаДоговора,
-	КадровыйПриказ.Сотрудник,
-	КадровыйПриказ.Отдел,
-	КадровыйПриказ.Должность,
-	КадровыйПриказ.ТипДоговора,
-	КадровыйПриказ.ДатаНачалаРаботы,
-	КадровыйПриказ.НомерДоговора,
-	КадровыйПриказ.Город,
-	КадровыйПриказ.Оклад,
-	КадровыйПриказ.Мотивация,
-	КадровыйПриказ.Сотрудники.*,
-	КадровыйПриказ.Надбавки.*,
-	КадровыйПриказ.МоментВремени
+	КадровыйПриказ.Сотрудник КАК Сотрудник,
+	МАКСИМУМ(КадровыйПриказ.Дата) КАК ДатаДоговора
+ПОМЕСТИТЬ ВТ_ДолжностиДаты
 ИЗ
 	Документ.КадровыйПриказ КАК КадровыйПриказ
+
+СГРУППИРОВАТЬ ПО
+	КадровыйПриказ.Сотрудник
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(КадровыйПриказ.Должность) КАК Должность,
+	МАКСИМУМ(КадровыйПриказ.Отдел) КАК Отдел,
+	КадровыйПриказ.Сотрудник КАК Сотрудник,
+	МАКСИМУМ(КадровыйПриказ.Дата) КАК ДатаДоговора
+ИЗ
+	Документ.КадровыйПриказ КАК КадровыйПриказ
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТ_ДолжностиДаты КАК ВТ_ДолжностиДаты
+		ПО (ВТ_ДолжностиДаты.Сотрудник = КадровыйПриказ.Сотрудник)
+			И (ВТ_ДолжностиДаты.ДатаДоговора = КадровыйПриказ.Дата)
 ГДЕ
-	КадровыйПриказ.Отдел = &amp;Отдел</queryText>
+	КадровыйПриказ.Отдел = &amp;Отдел
+
+СГРУППИРОВАТЬ ПО
+	КадровыйПриказ.Сотрудник</queryText>
       <mainTable>Document.КадровыйПриказ</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
@@ -4556,6 +4590,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>ПоказатьСкрытьДолжности</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ОбновитьСписокСотрудников</name>
+    <title>
+      <key>ru</key>
+      <value>Обновить список сотрудников</value>
+    </title>
+    <id>5</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ОбновитьСписокСотрудников</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
