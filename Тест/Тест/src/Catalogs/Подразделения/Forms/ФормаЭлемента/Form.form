@@ -3935,65 +3935,11 @@
         </extInfo>
       </items>
       <items xsi:type="form:FormField">
-        <name>Оклад</name>
-        <id>338</id>
-        <title>
-          <key>ru</key>
-          <value>Оклады(Сумма)</value>
-        </title>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <dataPath xsi:type="form:DataPath">
-          <segments>Оклад</segments>
-        </dataPath>
-        <extendedTooltip>
-          <name>ОкладРасширеннаяПодсказка</name>
-          <id>340</id>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
-          <type>Label</type>
-          <autoMaxWidth>true</autoMaxWidth>
-          <autoMaxHeight>true</autoMaxHeight>
-          <extInfo xsi:type="form:LabelDecorationExtInfo">
-            <horizontalAlign>Left</horizontalAlign>
-          </extInfo>
-        </extendedTooltip>
-        <contextMenu>
-          <name>ОкладКонтекстноеМеню</name>
-          <id>339</id>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
-          <autoFill>true</autoFill>
-        </contextMenu>
-        <type>InputField</type>
-        <readOnly>true</readOnly>
-        <editMode>Enter</editMode>
-        <showInHeader>true</showInHeader>
-        <headerHorizontalAlign>Left</headerHorizontalAlign>
-        <showInFooter>true</showInFooter>
-        <extInfo xsi:type="form:InputFieldExtInfo">
-          <autoMaxWidth>true</autoMaxWidth>
-          <autoMaxHeight>true</autoMaxHeight>
-          <wrap>true</wrap>
-          <chooseType>true</chooseType>
-          <typeDomainEnabled>true</typeDomainEnabled>
-          <textEdit>true</textEdit>
-        </extInfo>
-      </items>
-      <items xsi:type="form:FormField">
         <name>Оклад1</name>
         <id>350</id>
         <title>
           <key>ru</key>
-          <value>Оклады(Сумма)</value>
+          <value>Оклады сотрудников подразделения(Сумма)</value>
         </title>
         <visible>true</visible>
         <enabled>true</enabled>
@@ -4021,6 +3967,61 @@
         <contextMenu>
           <name>Оклад1КонтекстноеМеню</name>
           <id>351</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <readOnly>true</readOnly>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>ОкладСуммаУправлениеиОтдел</name>
+        <id>1097</id>
+        <title>
+          <key>ru</key>
+          <value>Оклад сотрудников  отдела и управления (Сумма)</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Объект.ОкладСуммаУправлениеиОтдел</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>ОкладСуммаУправлениеиОтделРасширеннаяПодсказка</name>
+          <id>1099</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ОкладСуммаУправлениеиОтделКонтекстноеМеню</name>
+          <id>1098</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -4097,6 +4098,10 @@
       <items xsi:type="form:FormField">
         <name>Доход</name>
         <id>341</id>
+        <title>
+          <key>ru</key>
+          <value>Доход Управление и Отделы (Сумма)</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -4195,7 +4200,7 @@
       </userVisible>
       <title>
         <key>ru</key>
-        <value>Группа1</value>
+        <value>Страница Премии</value>
       </title>
       <extendedTooltip>
         <name>СтраницаПремииРасширеннаяПодсказка</name>
