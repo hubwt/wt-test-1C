@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4f0bff95-7290-4d33-a312-a12f64a41718">
+  <producedTypes>
+    <selectionType typeId="7b7bf2e2-fb87-46c6-9e71-7ff53ba8c00f" valueTypeId="d653aa3b-36c4-4ed6-add3-9bbecb6f79e6"/>
+    <listType typeId="69b956e5-5143-4582-8383-fa0882dad89a" valueTypeId="0bc5711b-8e24-46c9-b645-d315eef239c8"/>
+    <managerType typeId="efd6f93a-ce59-4ca2-8733-0883abd900ac" valueTypeId="5ea42dea-13c7-4934-ae15-98f5069fb6c0"/>
+    <recordSetType typeId="ad6810fb-007a-424c-bfa7-3b857686d7df" valueTypeId="8d68c5f1-97f1-409c-b76e-325100a2e2bf"/>
+    <recordKeyType typeId="2e696b6c-d334-45b0-9cad-6c8e2716c09c" valueTypeId="c3517d22-87f8-489c-993e-51c4508325a6"/>
+    <recordType typeId="7de076b3-0eb0-40f8-9bd1-df27ec1dddb4" valueTypeId="8bbc1c2e-4287-4900-8df4-cd914f30c45a"/>
+    <recordManagerType typeId="d6db5bd6-e985-4f2a-a096-f290913af690" valueTypeId="f7b6511d-36f5-4309-8bed-f6e957997123"/>
+  </producedTypes>
+  <name>ВремяВыполненияЗН</name>
+  <synonym>
+    <key>ru</key>
+    <value>Время выполнения ЗН</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="349a1c95-c554-40f9-abb6-d8fffe3cd9a7">
+    <name>НачалоЗамера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало замера</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="45888b0a-dd05-48f2-b023-11cfb9b7cefe">
+    <name>КонецЗамера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конец замера</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="86c59dbd-1dad-49a5-a03d-086c27c01ff5">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a22975b5-9e08-4ea6-99d0-a87b4e6f4da7">
+    <name>Срок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="e61b9ddf-ac6d-4661-ada9-f0cf31adc911">
+    <name>ЗаказНаряд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ наряд</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПроектыРазработки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
