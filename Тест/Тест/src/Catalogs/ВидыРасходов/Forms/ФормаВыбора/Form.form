@@ -381,9 +381,19 @@
     </edit>
     <main>true</main>
     <extInfo xsi:type="form:DynamicListExtInfo">
+      <queryText>ВЫБРАТЬ
+	ВидыРасходов.Код,
+	ВидыРасходов.Наименование,
+	ВидыРасходов.Пользователь
+ИЗ
+	Справочник.ВидыРасходов КАК ВидыРасходов
+ГДЕ
+	ВидыРасходов.Пользователь.Недействителен = ЛОЖЬ
+	ИЛИ ВидыРасходов.Пользователь = ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)</queryText>
       <mainTable>Catalog.ВидыРасходов</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
+      <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
