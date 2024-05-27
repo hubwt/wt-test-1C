@@ -2251,4 +2251,37 @@
       <handler>ДобавитьВНарядОтветственногоaddworkerinorder</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="1bf540ab-f4ae-44b5-8be9-ec39b3c0fd7a">
+    <name>ПолучитьСписокДеталейНаРемонт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список деталей на ремонт</value>
+    </synonym>
+    <template>/list-products-repair/{page}/{count}</template>
+    <methods uuid="c5b6a43f-54cc-43fc-82d6-49bf43bf6c1e">
+      <name>getlistproductsrepair</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlistproductsrepair</value>
+      </synonym>
+      <handler>ПолучитьСписокДеталейНаРемонтgetlistproductsrepair</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a1974aa7-5c93-4d01-a9cd-69c1975f2bb7">
+    <name>ОтправитьСообщение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправить сообщение</value>
+    </synonym>
+    <template>/send-message</template>
+    <methods uuid="e2395054-588c-4c34-8b5b-713d769638b6">
+      <name>sendmessage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sendmessage</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОтправитьСообщениеsendmessage</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
