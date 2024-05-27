@@ -624,7 +624,7 @@
       <key>ru</key>
       <value>Отчёт по конвейеру</value>
     </synonym>
-    <template>/pipelinereport/{datestart}/{dateend}</template>
+    <template>/pipelinereport/{datestart}/{dateend}/{city}</template>
     <methods uuid="93400930-5df2-4446-84af-df1e995549cf">
       <name>pipelinereport</name>
       <synonym>
@@ -2282,6 +2282,22 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>ОтправитьСообщениеsendmessage</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3ddde614-9849-4943-8110-108665f8385a">
+    <name>ПолучитьСписокСотрудниковИГородов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список сотрудников и городов</value>
+    </synonym>
+    <template>/get-all-workers-city</template>
+    <methods uuid="1d7b8062-7907-48a2-b69a-396ebbfa4d08">
+      <name>GetAllWorkersCity</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get all workers city</value>
+      </synonym>
+      <handler>ПолучитьСписокВсехСотрудниковИГородовGetAllWorkersCity</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
