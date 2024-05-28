@@ -2152,4 +2152,136 @@
       <handler>ПолучитьЗадачиВсеGetTasksAll</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="5aab0eb9-acbf-41d8-82ee-d87892a70b34">
+    <name>ПолучитьДолжностиСотрудников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить должности сотрудников</value>
+    </synonym>
+    <template>/workers-positions</template>
+    <methods uuid="edf819c6-410b-4b27-b9ac-e77f6ac1a01d">
+      <name>GetWorkersPositions</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get workers positions</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьДолжностиСотрудниковGetWorkersPositions</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b62942b3-cfed-4182-8fa4-b510de126ced">
+    <name>ПолучитьНеликвид</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить неликвид</value>
+    </synonym>
+    <template>/get-liquid</template>
+    <methods uuid="438555fd-f0c2-485f-8af8-8189831fdf3a">
+      <name>getliquid</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getliquid</value>
+      </synonym>
+      <handler>ПолучитьНеликвидgetliquid</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0ffc643e-ef97-4790-9214-e57337af64ff">
+    <name>ПолучитьНеликвидВладимирский</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить неликвид владимирский</value>
+    </synonym>
+    <template>/get-liquid-vlad/{date_start}/{date_end}</template>
+    <methods uuid="d7904dab-69b5-4353-ab5b-8660ba71f1fd">
+      <name>getliquidvlad</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getliquidvlad</value>
+      </synonym>
+      <handler>ПолучитьНеликвидВладимирскийgetliquidVlad</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="063cb0bf-bd30-4d53-b745-c1089737b661">
+    <name>СписокЗНСоВременем</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список ЗНСо временем</value>
+    </synonym>
+    <template>/get-list-orders-time</template>
+    <methods uuid="83920cdd-f109-4af1-82e3-48868e2cedfb">
+      <name>getlistorderstime</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlistorderstime</value>
+      </synonym>
+      <handler>ПолучитьСписокНарядовСоВременемgetlistorderstime</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="f94f6360-794a-4c5e-adc0-e18118cf5066">
+    <name>ВзятьВРаботуЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Взять в работу ЗН</value>
+    </synonym>
+    <template>/get-order-in-work</template>
+    <methods uuid="eab99a0e-5ad9-4591-bf22-00515b2f3904">
+      <name>getorderinwork</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getorderinwork</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ВзятьВРаботуЗНstartworkinorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="d20c755f-32bd-4bde-8e28-ddfcb9a57e10">
+    <name>ДобавитьВНарядОтветственного</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавить в наряд ответственного</value>
+    </synonym>
+    <template>/add-worker-in-order</template>
+    <methods uuid="8db22ef6-cf59-4327-a27b-e97cbd698355">
+      <name>addworkerinorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Addworkerinorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ДобавитьВНарядОтветственногоaddworkerinorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1bf540ab-f4ae-44b5-8be9-ec39b3c0fd7a">
+    <name>ПолучитьСписокДеталейНаРемонт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список деталей на ремонт</value>
+    </synonym>
+    <template>/list-products-repair/{page}/{count}</template>
+    <methods uuid="c5b6a43f-54cc-43fc-82d6-49bf43bf6c1e">
+      <name>getlistproductsrepair</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlistproductsrepair</value>
+      </synonym>
+      <handler>ПолучитьСписокДеталейНаРемонтgetlistproductsrepair</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a1974aa7-5c93-4d01-a9cd-69c1975f2bb7">
+    <name>ОтправитьСообщение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправить сообщение</value>
+    </synonym>
+    <template>/send-message</template>
+    <methods uuid="e2395054-588c-4c34-8b5b-713d769638b6">
+      <name>sendmessage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Sendmessage</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОтправитьСообщениеsendmessage</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
