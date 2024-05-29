@@ -2995,13 +2995,55 @@
             <autoMaxHeight>true</autoMaxHeight>
           </extInfo>
         </items>
+        <items xsi:type="form:FormField">
+          <name>СписокПоступленияНовыеЦветСписка</name>
+          <id>483</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>СписокПоступленияНовые.ЦветСписка</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокПоступленияНовыеЦветСпискаРасширеннаяПодсказка</name>
+            <id>485</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокПоступленияНовыеЦветСпискаКонтекстноеМеню</name>
+            <id>484</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>CheckBoxField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+        </items>
         <autoCommandBar>
           <name>СписокПоступленияНовыеКоманднаяПанель</name>
           <id>82</id>
           <items xsi:type="form:Button">
             <name>СписокПоступленияНовыеКомандаОплачено</name>
             <id>238</id>
-            <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
               <common>true</common>
@@ -3031,7 +3073,6 @@
           <items xsi:type="form:Button">
             <name>СписокПоступленияНовыеКомандаНеОплачено</name>
             <id>240</id>
-            <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
               <common>true</common>
@@ -4224,19 +4265,17 @@
 ПОМЕСТИТЬ ВсегоДеталей
 ИЗ
 	Документ.ПоступлениеЗапчастей.Таблица КАК ПоступлениеЗапчастейТаблица
-
 СГРУППИРОВАТЬ ПО
 	ПоступлениеЗапчастейТаблица.Ссылка
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	РегистрНакопления1Остатки.индкод.ДокументПоступления КАК ДокументПоступления,
 	СУММА(РегистрНакопления1Остатки.КолвоОстаток) КАК Количество
 ПОМЕСТИТЬ ВТ_ОстаткиПоПоступлениям
 ИЗ
 	РегистрНакопления.РегистрНакопления1.Остатки КАК РегистрНакопления1Остатки
-
 СГРУППИРОВАТЬ ПО
 	РегистрНакопления1Остатки.индкод.ДокументПоступления
 
@@ -4245,7 +4284,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ДокументПоступлениеЗапчастей.Ссылка КАК Ссылка,
 	ДокументПоступлениеЗапчастей.ВерсияДанных КАК ВерсияДанных,
 	ДокументПоступлениеЗапчастей.ПометкаУдаления КАК ПометкаУдаления,
@@ -4294,8 +4333,9 @@
 		ДатаДобавления КАК ДатаДобавления,
 		НаименованиеПоставщика КАК НаименованиеПоставщика,
 		Автомобиль КАК Автомобиль,
-		Партия КАК Партия
-	) КАК Таблица
+		Партия КАК Партия) КАК Таблица,
+	ДокументПоступлениеЗапчастей.ЦветСписка,
+	ДокументПоступлениеЗапчастей.ЦветСписка
 ИЗ
 	Документ.ПоступлениеЗапчастей КАК ДокументПоступлениеЗапчастей
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РасчетыСПоставщиками.Обороты КАК РасчетыСПоставщикамиобороты
@@ -4306,7 +4346,7 @@
 		ПО ДокументПоступлениеЗапчастей.Ссылка = ВсегоДеталей.Ссылка
 ГДЕ
 	(ДокументПоступлениеЗапчастей.Перекуп
-			ИЛИ ДокументПоступлениеЗапчастей.Новые)</queryText>
+	ИЛИ ДокументПоступлениеЗапчастей.Новые)</queryText>
       <mainTable>Document.ПоступлениеЗапчастей</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
