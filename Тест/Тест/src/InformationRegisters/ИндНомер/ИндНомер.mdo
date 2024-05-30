@@ -18,6 +18,7 @@
   <editType>InDialog</editType>
   <defaultRecordForm>InformationRegister.ИндНомер.Form.ФормаЗаписи</defaultRecordForm>
   <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
   <resources uuid="6d1a6b0a-8627-492c-a591-3604f6e4d28d">
     <name>Код</name>
     <synonym>
@@ -276,6 +277,54 @@
     </synonym>
     <type>
       <types>CatalogRef.Поддоны</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ef7b8ffc-433a-4b52-a96e-48e6eb71f25f">
+    <name>НоменклатураДляПоиска</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура для поиска</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8d978c5b-7109-41c8-9452-4425c3dab2ca">
+    <name>Артикул</name>
+    <synonym>
+      <key>ru</key>
+      <value>Артикул</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>18</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d0955b75-5c48-49c3-af30-7f4cdacd88e1">
+    <name>Подкатегория</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подкатегория</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Категории</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
