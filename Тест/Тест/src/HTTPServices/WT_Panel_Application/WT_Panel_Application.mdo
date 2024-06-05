@@ -8,4 +8,53 @@
   <rootURL>wt_panel_application</rootURL>
   <reuseSessions>AutoUse</reuseSessions>
   <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="e3b73686-90de-4f73-9e12-589789be671b">
+    <name>ПолучитьДашбордДляСклада</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить дашборд для склада</value>
+    </synonym>
+    <template>/get-dash-storage/{state}/{count}/{page}</template>
+    <methods uuid="49ddd30c-59fc-4c58-94c6-90ef26267ec6">
+      <name>GetDashStorage</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get dash storage</value>
+      </synonym>
+      <handler>ПолучитьДашбордДляСкладаGetDashStorage</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c53e0872-26da-4aa2-a098-bfc0931040cc">
+    <name>ПолучитьГруппыЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить группы заявок</value>
+    </synonym>
+    <template>/get-count-app</template>
+    <methods uuid="aca988c2-c01d-4b4e-a155-e49cb84f6f71">
+      <name>getcountapp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getcountapp</value>
+      </synonym>
+      <handler>КоличествоЗаявокПоСтатусамgetcountapp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="cf8723dd-a690-4cef-b6b0-6a8fa2d87ae4">
+    <name>СменаСтатусаЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена статуса заявки</value>
+    </synonym>
+    <template>/change-state-app</template>
+    <methods uuid="15a29894-ffe4-4a7e-9f49-114fcc567ef0">
+      <name>ChangeStateApp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change state app</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаСтатусаЗаявкиChangeStateApp</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
