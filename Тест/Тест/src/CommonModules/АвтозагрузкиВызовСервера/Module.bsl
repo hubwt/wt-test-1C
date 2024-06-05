@@ -1163,7 +1163,7 @@
 			|<p>Закажите оригинальные запчасти Scania прямо сейчас и обеспечьте вашему грузовику надежность и долгий срок службы!</p]]></Description>
 			|<Price>" + Цена + "</Price>
 			|" + НайденныеФотки + "
-			|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw&list=PLnbjYzzECnGHE829ffFQf6l-FS5CA8hAm&index=8</VideoURL>
+			|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw&amp;list=PLnbjYzzECnGHE829ffFQf6l-FS5CA8hAm&amp;index=8</VideoURL>
 			|<GoodsType>Запчасти</GoodsType>
 			|<AdType>Товар приобретен на продажу</AdType>
 			|<ProductType>Для грузовиков и спецтехники</ProductType>
@@ -1403,7 +1403,7 @@
 				|<p>️запчасти scania, запчасти scania серии, запчасти scania r,  запчасти scania купить, запчасти scania 5, запчасти автомобиля scania, запчасти scania 6</p]]></Description>
 				|<Price>" + Формат(РезультатЗапроса.Цена * 1.05, "ЧДЦ=0; ЧГ=0") + "</Price>
 				|" + НайденныеФотки + "
-				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw&list=PLnbjYzzECnGHE829ffFQf6l-FS5CA8hAm&index=8</VideoURL>
+				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw&amp;list=PLnbjYzzECnGHE829ffFQf6l-FS5CA8hAm&amp;index=8</VideoURL>
 				|<GoodsType>Шины, диски и колёса</GoodsType>
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Шины для грузовиков и спецтехники</ProductType>
@@ -1462,7 +1462,7 @@
 				|<p>️запчасти scania, запчасти scania серии, запчасти scania r,  запчасти scania купить, запчасти scania 5, запчасти автомобиля scania, запчасти scania 6</p]]></Description>
 				|<Price>" + Формат(РезультатЗапроса.Цена * 1.05, "ЧДЦ=0; ЧГ=0") + "</Price>
 				|" + НайденныеФотки + "
-				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw&list=PLnbjYzzECnGHE829ffFQf6l-FS5CA8hAm&index=8</VideoURL>
+				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw&amp;list=PLnbjYzzECnGHE829ffFQf6l-FS5CA8hAm&amp;index=8</VideoURL>
 				|<GoodsType>Запчасти</GoodsType>
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Для грузовиков и спецтехники</ProductType>
