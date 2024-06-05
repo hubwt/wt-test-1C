@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9554afc4-0c44-4aba-b268-52740270a30c">
+  <producedTypes>
+    <selectionType typeId="977b11fb-37cd-4f84-a81b-d9ba9a88e5c8" valueTypeId="320e458f-468b-41bb-9200-db1c9f6d7cf4"/>
+    <listType typeId="c0879eb7-f9fe-4cd6-9c57-52290790877f" valueTypeId="73c0df91-d953-431a-a88f-813b1c5987f7"/>
+    <managerType typeId="a1d83202-724b-4309-a794-13a9135d1633" valueTypeId="eeda3a18-e432-4c54-89cb-ba3a61bcbed8"/>
+    <recordSetType typeId="38bb4f7b-326f-4181-aad5-423674ae76be" valueTypeId="f252e600-c836-43b2-82a7-90d8cfe40391"/>
+    <recordKeyType typeId="0fd82eb5-79af-4265-8867-9d7dcce2c5ba" valueTypeId="41196eda-4bef-4052-90f6-9952ac6131af"/>
+    <recordType typeId="b7e685fe-a6cc-4ddd-8e1e-741ff1e6b1c7" valueTypeId="70a8cb89-9fb7-4981-bb40-643d628829b4"/>
+    <recordManagerType typeId="ce3e20ce-e880-41c3-ab37-74691a88353d" valueTypeId="8e7de77a-1856-42ed-9f86-8b4726596af0"/>
+  </producedTypes>
+  <name>ВремяВыполненияЗаявок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Время выполнения заявок</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="d99ee4a7-dd4e-4fb2-b785-48c12f34a115">
+    <name>НачалоЗамера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало замера</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5e4b6492-3593-4fbd-b2b9-c83b29328710">
+    <name>КонецЗамера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конец замера</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bba69704-f314-4353-9a95-5d1735489968">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1825e7d5-fb6c-4201-8e2d-ca5155a42fa6">
+    <name>Срок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e062e9e2-ac76-48de-985e-266edaadbc02">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатусыWT</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="bc6eddd4-f690-4cbe-bfc6-62bd7db6145c">
+    <name>ЗаявкаПродажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка продажа</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказКлиента</types>
+      <types>DocumentRef.ПродажаЗапчастей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
