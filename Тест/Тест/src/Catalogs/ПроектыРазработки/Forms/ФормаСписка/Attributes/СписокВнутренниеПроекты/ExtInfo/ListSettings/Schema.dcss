@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSet xsi:type="DataSetQuery">
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПометкаУдаления</dataPath>
+			<field>ПометкаУдаления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Код</dataPath>
+			<field>Код</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Наименование</dataPath>
+			<field>Наименование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Клиент</dataPath>
+			<field>Клиент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Состояние</dataPath>
+			<field>Состояние</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВинКод</dataPath>
+			<field>ВинКод</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ответственный</dataPath>
+			<field>Ответственный</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСоздания</dataPath>
+			<field>ДатаСоздания</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сложность</dataPath>
+			<field>Сложность</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПриема</dataPath>
+			<field>ДатаПриема</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСдачи</dataPath>
+			<field>ДатаСдачи</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокРемонта</dataPath>
+			<field>СрокРемонта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВремяДоСдачи</dataPath>
+			<field>ВремяДоСдачи</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Предопределенный</dataPath>
+			<field>Предопределенный</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИмяПредопределенныхДанных</dataPath>
+			<field>ИмяПредопределенныхДанных</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Срок</dataPath>
+			<field>Срок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Осталось</dataPath>
+			<field>Осталось</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Осталось</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПлановаяДатаРемонта</dataPath>
+			<field>ПлановаяДатаРемонта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЕстьФайлы</dataPath>
+			<field>ЕстьФайлы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть файлы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<query>ВЫБРАТЬ
+	СправочникПроектыРазработки.Ссылка КАК Ссылка,
+	СправочникПроектыРазработки.ПометкаУдаления КАК ПометкаУдаления,
+	СправочникПроектыРазработки.Код КАК Код,
+	СправочникПроектыРазработки.Наименование КАК Наименование,
+	СправочникПроектыРазработки.Клиент КАК Клиент,
+	СправочникПроектыРазработки.Комментарий КАК Комментарий,
+	СправочникПроектыРазработки.Состояние КАК Состояние,
+	СправочникПроектыРазработки.ВинКод КАК ВинКод,
+	СправочникПроектыРазработки.Ответственный КАК Ответственный,
+	СправочникПроектыРазработки.ДатаСоздания КАК ДатаСоздания,
+	СправочникПроектыРазработки.Сложность КАК Сложность,
+	СправочникПроектыРазработки.ДатаПриема КАК ДатаПриема,
+	СправочникПроектыРазработки.ДатаСдачи КАК ДатаСдачи,
+	СправочникПроектыРазработки.СрокРемонта КАК СрокРемонта,
+	СправочникПроектыРазработки.ВремяДоСдачи КАК ВремяДоСдачи,
+	СправочникПроектыРазработки.Предопределенный КАК Предопределенный,
+	СправочникПроектыРазработки.ИмяПредопределенныхДанных КАК ИмяПредопределенныхДанных,
+	ВЫБОР
+		КОГДА (СправочникПроектыРазработки.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияЗаказНаряда.ВРаботе)
+				ИЛИ СправочникПроектыРазработки.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияЗаказНаряда.Ожидание))
+				И СправочникПроектыРазработки.ДатаСдачи &lt;&gt; &amp;ПустаяДата
+			ТОГДА РАЗНОСТЬДАТ(СправочникПроектыРазработки.ДатаПриема, СправочникПроектыРазработки.ДатаСдачи, ДЕНЬ) + 1
+		ИНАЧЕ СправочникПроектыРазработки.СрокРемонта
+	КОНЕЦ КАК Срок,
+	ВЫБОР
+		КОГДА (СправочникПроектыРазработки.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияЗаказНаряда.ВРаботе)
+				ИЛИ СправочникПроектыРазработки.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияЗаказНаряда.Ожидание))
+				И СправочникПроектыРазработки.ДатаСдачи &lt;&gt; &amp;ПустаяДата
+			ТОГДА РАЗНОСТЬДАТ(&amp;ТекущаяДата, СправочникПроектыРазработки.ДатаСдачи, ДЕНЬ)
+		ИНАЧЕ СправочникПроектыРазработки.ВремяДоСдачи
+	КОНЕЦ КАК Осталось,
+	СправочникПроектыРазработки.ПлановаяДатаРемонта КАК ПлановаяДатаРемонта,
+	ВЫБОР
+		КОГДА НаличиеФайлов.ЕстьФайлы ЕСТЬ NULL
+			ТОГДА 1
+		КОГДА НаличиеФайлов.ЕстьФайлы
+			ТОГДА 0
+		ИНАЧЕ 1
+	КОНЕЦ КАК ЕстьФайлы
+ИЗ
+	Справочник.ПроектыРазработки КАК СправочникПроектыРазработки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.НаличиеФайлов КАК НаличиеФайлов
+		ПО (СправочникПроектыРазработки.Ссылка = НаличиеФайлов.ОбъектСФайлами)
+ГДЕ
+	СправочникПроектыРазработки.Состояние В (&amp;Состояние)
+	И СправочникПроектыРазработки.ВнутреннийПроект = ИСТИНА</query>
+	</dataSet>
+</DataCompositionSchema>
