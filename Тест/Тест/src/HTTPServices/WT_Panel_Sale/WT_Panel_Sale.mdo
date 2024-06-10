@@ -8,4 +8,20 @@
   <rootURL>wt_panel_sale</rootURL>
   <reuseSessions>AutoUse</reuseSessions>
   <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="43e16326-2005-4c42-91ca-03814e745e68">
+    <name>ПолучитьДашбордДляПродаж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить дашборд для продаж</value>
+    </synonym>
+    <template>/get-dash-sale/{state}/{sub_state}/{count}/{page}</template>
+    <methods uuid="c1036344-e650-40d1-8cc6-9c99e20d3b0e">
+      <name>GetDashSale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get Dash Sale</value>
+      </synonym>
+      <handler>ПолучитьДашбордДляПродажGetDashSale</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
