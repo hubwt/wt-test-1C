@@ -1361,6 +1361,78 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="e00b49dd-24cc-4469-8c43-4ec4c43e801e">
+    <name>НеЛиквид</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не ликвид</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="706e0017-4893-47ab-ac33-94ee124a7abf">
+    <name>ПроцентМенеджераНаНеЛиквид</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент менеджера на не ликвид</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="bc1f0f16-a16d-4136-9efd-c434728a7622">
+    <name>ЗПМенеджераНаНеЛиквид</name>
+    <synonym>
+      <key>ru</key>
+      <value>ЗПМенеджера на не ликвид</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="aa53bf8c-eb35-44c4-894b-8f1bc11b222e">
+    <name>ВКассуНеЛиквид</name>
+    <synonym>
+      <key>ru</key>
+      <value>В кассу не ликвид</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <tabularSections uuid="d67b4663-4a33-4abb-9390-f30798f65def">
     <producedTypes>
       <objectType typeId="9fe2d906-c866-4bae-8c51-d4bca319eb71" valueTypeId="70bebb0a-52eb-430e-93cc-032cc3c7e35f"/>
@@ -1624,6 +1696,96 @@
       </synonym>
       <type>
         <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b02b6376-7615-495e-bc6f-9ae857a8937b">
+      <name>Наличие</name>
+      <synonym>
+        <key>ru</key>
+        <value>Наличие</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>6</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ae539118-ed1f-4320-9b0e-40ae7e48fd9f">
+      <name>ЦенаТЧ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена ТЧ</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="11e7d01c-e68e-45bf-b3cd-97f33857abff">
+      <name>ПроцентМенеджераНаНеЛиквидТЧ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Процент менеджера на не ликвид ТЧ</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>3</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0e6138c5-ea9c-4a6a-ac43-6fd8382f52e0">
+      <name>ЗПМенеджераНаНеЛиквидТЧ</name>
+      <synonym>
+        <key>ru</key>
+        <value>ЗПМенеджера на не ликвид ТЧ</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>7</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ecb430c7-fd8f-4355-b6ac-f0d9f0358711">
+      <name>ВКассуНеЛиквидТЧ</name>
+      <synonym>
+        <key>ru</key>
+        <value>В кассу не ликвид ТЧ</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
