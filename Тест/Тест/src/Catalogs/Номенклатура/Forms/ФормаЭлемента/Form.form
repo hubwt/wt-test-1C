@@ -8256,6 +8256,36 @@
         <autoCommandBar>
           <name>ПредложенияКоманднаяПанель</name>
           <id>1090</id>
+          <items xsi:type="form:Button">
+            <name>ПредложенияОбновитьНеЛиквид</name>
+            <id>1149</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>ПредложенияОбновитьНеЛиквидРасширеннаяПодсказка</name>
+              <id>1150</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <commandName>Form.Command.ОбновитьНеЛиквид</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+          </items>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -14987,6 +15017,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>ЗакончитьРаспродажу</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ОбновитьНеЛиквид</name>
+    <title>
+      <key>ru</key>
+      <value>Обновить </value>
+    </title>
+    <id>15</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ОбновитьНеЛиквид</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
