@@ -2402,6 +2402,10 @@
                   <segments>Объект.РекомендованаяЦена</segments>
                 </dataPath>
                 <titleLocation>None</titleLocation>
+                <toolTip>
+                  <key>ru</key>
+                  <value>Цена товара</value>
+                </toolTip>
                 <handlers>
                   <event>OnChange</event>
                   <name>РекомендованаяЦенаПриИзменении</name>
@@ -2791,7 +2795,7 @@
           <id>1125</id>
           <title>
             <key>ru</key>
-            <value>Товар не ликвиден</value>
+            <value>% менеджера</value>
           </title>
           <titleFont xsi:type="core:FontDef">
             <height>11.0</height>
@@ -2803,7 +2807,7 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Объект.НеЛиквид</segments>
+            <segments>Объект.ПроцентМенеджера</segments>
           </dataPath>
           <handlers>
             <event>OnChange</event>
@@ -3002,6 +3006,7 @@
               <autoFill>true</autoFill>
             </contextMenu>
             <type>InputField</type>
+            <readOnly>true</readOnly>
             <editMode>Enter</editMode>
             <showInHeader>true</showInHeader>
             <headerHorizontalAlign>Left</headerHorizontalAlign>
@@ -3056,6 +3061,7 @@
               <autoFill>true</autoFill>
             </contextMenu>
             <type>InputField</type>
+            <readOnly>true</readOnly>
             <editMode>Enter</editMode>
             <showInHeader>true</showInHeader>
             <headerHorizontalAlign>Left</headerHorizontalAlign>
