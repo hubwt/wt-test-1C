@@ -14,7 +14,7 @@
       <key>ru</key>
       <value>Получить дашборд для продаж</value>
     </synonym>
-    <template>/get-dash-sale/{state}/{sub_state}/{count}/{page}</template>
+    <template>/get-dash-sale/{state}/{sub_state}/{count}/{page}/{saler}</template>
     <methods uuid="c1036344-e650-40d1-8cc6-9c99e20d3b0e">
       <name>GetDashSale</name>
       <synonym>
@@ -22,6 +22,39 @@
         <value>Get Dash Sale</value>
       </synonym>
       <handler>ПолучитьДашбордДляПродажGetDashSale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="62fc2ae8-7fcd-49d7-be1a-6b99a9cff7e4">
+    <name>ПолучитьГруппыЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить группы заявок</value>
+    </synonym>
+    <template>/get-count-app/{saler}</template>
+    <methods uuid="92a88ee3-bce0-4e5d-9f2b-d074f1385f9d">
+      <name>getcountapp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getcountapp</value>
+      </synonym>
+      <handler>КоличествоЗаявокПоСтатусамgetcountapp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="2c195283-a64c-4a4a-9611-71d1a93c0ea6">
+    <name>СоздатьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать заявку</value>
+    </synonym>
+    <template>/create-application</template>
+    <methods uuid="2b20fcb9-4200-4e9e-99cb-202fb20e6797">
+      <name>CreateApplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Create application</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьЗаявкуcreateapplication</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>

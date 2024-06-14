@@ -24,4 +24,37 @@
       <handler>ПолучитьДашбордДляСкладаGetDashStorage</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="0f5070a4-bbc6-4338-b8fd-5359327b0b23">
+    <name>СменаСтатусаЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена статуса заявки</value>
+    </synonym>
+    <template>/change-sub-state-app</template>
+    <methods uuid="7785ea75-feec-4a87-8955-ce0df9c8745c">
+      <name>ChangeStateApp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change state app</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаСтатусаЗаявкиChangeStateApp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a01e7a1d-ee8b-48f7-8efa-d7cb090d4270">
+    <name>ПолучитьГруппыЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить группы заявок</value>
+    </synonym>
+    <template>/get-count-app</template>
+    <methods uuid="8dad9548-e24c-4d9d-9247-5281de5268ed">
+      <name>getcountapp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getcountapp</value>
+      </synonym>
+      <handler>КоличествоЗаявокПоСтатусамgetcountapp</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
