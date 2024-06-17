@@ -8311,10 +8311,10 @@
           <titleLocation>None</titleLocation>
           <items xsi:type="form:FormField">
             <name>СписокОстатковНаСчётеИзмерение1</name>
-            <id>858</id>
+            <id>3260</id>
             <title>
               <key>ru</key>
-              <value>Счёт</value>
+              <value>Счет</value>
             </title>
             <visible>true</visible>
             <enabled>true</enabled>
@@ -8326,7 +8326,7 @@
             </dataPath>
             <extendedTooltip>
               <name>СписокОстатковНаСчётеИзмерение1РасширеннаяПодсказка</name>
-              <id>860</id>
+              <id>3262</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -8341,7 +8341,7 @@
             </extendedTooltip>
             <contextMenu>
               <name>СписокОстатковНаСчётеИзмерение1КонтекстноеМеню</name>
-              <id>859</id>
+              <id>3261</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -8349,23 +8349,23 @@
               </userVisible>
               <autoFill>true</autoFill>
             </contextMenu>
-            <type>LabelField</type>
+            <type>InputField</type>
             <editMode>Enter</editMode>
             <showInHeader>true</showInHeader>
             <headerHorizontalAlign>Left</headerHorizontalAlign>
             <showInFooter>true</showInFooter>
-            <extInfo xsi:type="form:LabelFieldExtInfo">
+            <extInfo xsi:type="form:InputFieldExtInfo">
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
+              <wrap>true</wrap>
+              <chooseType>true</chooseType>
+              <typeDomainEnabled>true</typeDomainEnabled>
+              <textEdit>true</textEdit>
             </extInfo>
           </items>
           <items xsi:type="form:FormField">
             <name>СписокОстатковНаСчётеБалансОстаток</name>
-            <id>855</id>
-            <title>
-              <key>ru</key>
-              <value>Сумма</value>
-            </title>
+            <id>3263</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -8376,7 +8376,7 @@
             </dataPath>
             <extendedTooltip>
               <name>СписокОстатковНаСчётеБалансОстатокРасширеннаяПодсказка</name>
-              <id>857</id>
+              <id>3265</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -8391,7 +8391,7 @@
             </extendedTooltip>
             <contextMenu>
               <name>СписокОстатковНаСчётеБалансОстатокКонтекстноеМеню</name>
-              <id>856</id>
+              <id>3264</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -8399,14 +8399,68 @@
               </userVisible>
               <autoFill>true</autoFill>
             </contextMenu>
-            <type>LabelField</type>
+            <type>InputField</type>
             <editMode>Enter</editMode>
             <showInHeader>true</showInHeader>
             <headerHorizontalAlign>Left</headerHorizontalAlign>
             <showInFooter>true</showInFooter>
-            <extInfo xsi:type="form:LabelFieldExtInfo">
+            <extInfo xsi:type="form:InputFieldExtInfo">
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
+              <wrap>true</wrap>
+              <chooseType>true</chooseType>
+              <typeDomainEnabled>true</typeDomainEnabled>
+              <textEdit>true</textEdit>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormField">
+            <name>СписокОстатковНаСчётеОтветственныйПоСчету</name>
+            <id>3266</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>СписокОстатковНаСчёте.ОтветственныйПоСчету</segments>
+            </dataPath>
+            <extendedTooltip>
+              <name>СписокОстатковНаСчётеОтветственныйПоСчетуРасширеннаяПодсказка</name>
+              <id>3268</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>СписокОстатковНаСчётеОтветственныйПоСчетуКонтекстноеМеню</name>
+              <id>3267</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>InputField</type>
+            <editMode>Enter</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:InputFieldExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <wrap>true</wrap>
+              <chooseType>true</chooseType>
+              <typeDomainEnabled>true</typeDomainEnabled>
+              <textEdit>true</textEdit>
             </extInfo>
           </items>
           <autoCommandBar>
@@ -35408,11 +35462,23 @@
       <common>true</common>
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
-      <queryText>ВЫБРАТЬ
+      <queryText>  ВЫБРАТЬ
+	Счета.Ссылка КАК Ссылка,
+	Счета.ОтветственныйПоСчету КАК ОтветственныйПоСчету
+ПОМЕСТИТЬ ВТ_Счета
+ИЗ
+	Справочник.Счета КАК Счета
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
 	РегистрНакопленияБалансОстатки.Измерение1 КАК Измерение1,
-	РегистрНакопленияБалансОстатки.БалансОстаток КАК БалансОстаток
+	РегистрНакопленияБалансОстатки.БалансОстаток КАК БалансОстаток,
+	ВТ_Счета.ОтветственныйПоСчету КАК ОтветственныйПоСчету
 ИЗ
 	РегистрНакопления.Баланс.Остатки КАК РегистрНакопленияБалансОстатки
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Счета КАК ВТ_Счета
+		ПО (РегистрНакопленияБалансОстатки.Измерение1 = ВТ_Счета.Ссылка)
 </queryText>
       <mainTable>AccumulationRegister.Баланс.Balance</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
