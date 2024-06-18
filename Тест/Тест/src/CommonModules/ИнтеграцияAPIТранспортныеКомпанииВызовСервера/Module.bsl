@@ -283,7 +283,7 @@
 
 	///+ГомзМА 02.11.2023	
 	Соединение = Новый HTTPСоединение("api.cdek.ru", 443,,,,, Новый ЗащищенноеСоединениеOpenSSL());
-	Запрос = Новый HTTPЗапрос("/v2/oauth/token?grant_type=client_credentials&client_id=uKpk66IlNs5qS0Yh2Bv3sXsT7SJizMub&client_secret=QNV4rlOG7Hr5BIkNnU66TBC4BIM0Xp3g");
+	Запрос = Новый HTTPЗапрос("/v2/oauth/token?grant_type=client_credentials&client_id=Ax3ylnrRyqOGYdStn31keTf10sbDbwFR&client_secret=V1HHAx0yz8kXRr75kaPmW3hYexO5sbDU");
 	//В запросе можно обратиться к нужному ресурсу и с нужными параметрами 
 	Ответ = Соединение.ОтправитьДляОбработки(Запрос);
 	
