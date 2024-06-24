@@ -32,27 +32,65 @@
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	СтатистикаАвитоСрезПоследних.КоличествоПросмотров,
-	СтатистикаАвитоСрезПоследних.КоличествоКонтактов,
-	СтатистикаАвитоСрезПоследних.КоличествоЗвонков,
-	СтатистикаАвитоСрезПоследних.КоличествоЗаказов,
-	СтатистикаАвитоСрезПоследних.КоличествоОбъявлений,
-	СтатистикаАвитоСрезПоследних.Период
+	СтатистикаАвито.Период,
+	СтатистикаАвито.КоличествоПросмотров,
+	СтатистикаАвито.КоличествоКонтактов,
+	СтатистикаАвито.КоличествоЗвонков,
+	СтатистикаАвито.КоличествоЗаказов,
+	СтатистикаАвито.КоличествоОбъявлений
 ИЗ
-	РегистрСведений.СтатистикаАвито.СрезПоследних КАК СтатистикаАвитоСрезПоследних</query>
+	РегистрСведений.СтатистикаАвито КАК СтатистикаАвито
+ГДЕ
+	СтатистикаАвито.Период МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания</query>
 	</dataSet>
+	<totalField>
+		<dataPath>КоличествоЗаказов</dataPath>
+		<expression>Сумма(КоличествоЗаказов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоЗвонков</dataPath>
+		<expression>Сумма(КоличествоЗвонков)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоКонтактов</dataPath>
+		<expression>Сумма(КоличествоКонтактов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоОбъявлений</dataPath>
+		<expression>Максимум(КоличествоОбъявлений)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПросмотров</dataPath>
+		<expression>Сумма(КоличествоПросмотров)</expression>
+	</totalField>
 	<parameter>
-		<name>Период</name>
+		<name>ДатаНачала</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Период</v8:content>
+				<v8:content>Дата начала</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
 			<v8:Type>xs:dateTime</v8:Type>
 			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
 		<useRestriction>false</useRestriction>
@@ -81,6 +119,16 @@
 					<dcsset:field>КоличествоОбъявлений</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcsset:userSettingID>3d0958ba-1c32-428b-b6e2-45c2a413a155</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcsset:userSettingID>b80b1997-70f7-4645-a610-d65d85384f38</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>МакетОформления</dcscor:parameter>
@@ -89,10 +137,30 @@
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:order>
-					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					<dcsset:item xsi:type="dcsset:OrderItemField">
+						<dcsset:field>Период</dcsset:field>
+						<dcsset:orderType>Asc</dcsset:orderType>
+					</dcsset:item>
 				</dcsset:order>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Период</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоПросмотров</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоКонтактов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоЗвонков</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоЗаказов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоОбъявлений</dcsset:field>
+					</dcsset:item>
 				</dcsset:selection>
 			</dcsset:item>
 		</dcsset:settings>
