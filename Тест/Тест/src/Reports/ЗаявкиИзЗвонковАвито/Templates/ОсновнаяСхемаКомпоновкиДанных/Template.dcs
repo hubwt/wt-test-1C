@@ -43,9 +43,10 @@
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
-		ПО ЗвонкиАвито.НомерПокупателя = ЗаказКлиента.Клиент
+		ПО СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ(ЗвонкиАвито.НомерПокупателя, "-", ""), " ",
+			"") = СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ(ЗаказКлиента.НомерТелефона, "-", ""), " ", "")
 ГДЕ
-	(ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания)
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
 СГРУППИРОВАТЬ ПО
 	ЗаказКлиента.Состояние,
 	ЗвонкиАвито.АккаунтАвито</query>
@@ -135,7 +136,7 @@
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>МакетОформления</dcscor:parameter>
-					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+					<dcscor:value xsi:type="xs:string">Арктика</dcscor:value>
 				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
