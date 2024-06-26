@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АккаунтАвито</dataPath>
+			<field>АккаунтАвито</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аккаунт авито</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АккаунтАвито2</dataPath>
+			<field>АккаунтАвито2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аккаунт авито2</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АккаунтАвито1</dataPath>
+			<field>АккаунтАвито1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аккаунт авито1</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НеПерезвонили</dataPath>
+			<field>НеПерезвонили</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не перезвонили</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Перезвонили</dataPath>
+			<field>Перезвонили</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перезвонили</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Успешно</dataPath>
+			<field>Успешно</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Успешно</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя
+ПОМЕСТИТЬ Успешные
+ИЗ
+	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
+ГДЕ
+	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+	И ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито,
+	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК Количество,
+	&amp;Перезвонили КАК Перезвонили
+ПОМЕСТИТЬ ПерезвонилиВТ
+ИЗ
+	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
+ГДЕ
+	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+	И ЗвонкиАвито.ПродолжительностьЗвонка = 0
+	И ЗвонкиАвито.НомерПокупателя В
+			(ВЫБРАТЬ
+				Успешные.НомерПокупателя КАК НомерПокупателя
+			ИЗ
+				Успешные КАК Успешные)
+
+СГРУППИРОВАТЬ ПО
+	ЗвонкиАвито.АккаунтАвито
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито,
+	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК Количество,
+	&amp;НеПерезвонили КАК НеПерезвонили
+ПОМЕСТИТЬ НеПерезвонилиВТ
+ИЗ
+	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
+ГДЕ
+	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+	И ЗвонкиАвито.ПродолжительностьЗвонка = 0
+	И НЕ ЗвонкиАвито.НомерПокупателя В
+				(ВЫБРАТЬ
+					Успешные.НомерПокупателя КАК НомерПокупателя
+				ИЗ
+					Успешные КАК Успешные)
+
+СГРУППИРОВАТЬ ПО
+	ЗвонкиАвито.АккаунтАвито
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито,
+	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК Количество,
+	&amp;Успешно КАК Успешно
+ПОМЕСТИТЬ УспешныеВТ
+ИЗ
+	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
+ГДЕ
+	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+	И ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
+
+СГРУППИРОВАТЬ ПО
+	ЗвонкиАвито.АккаунтАвито
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НеПерезвонилиВТ.АккаунтАвито КАК АккаунтАвито,
+	НеПерезвонилиВТ.Количество КАК НеПерезвонили,
+	ПерезвонилиВТ.АккаунтАвито КАК АккаунтАвито1,
+	ПерезвонилиВТ.Количество КАК Перезвонили,
+	УспешныеВТ.АккаунтАвито КАК АккаунтАвито2,
+	УспешныеВТ.Количество КАК Успешно
+ИЗ
+	УспешныеВТ КАК УспешныеВТ
+		ПОЛНОЕ СОЕДИНЕНИЕ ПерезвонилиВТ КАК ПерезвонилиВТ
+			ПОЛНОЕ СОЕДИНЕНИЕ НеПерезвонилиВТ КАК НеПерезвонилиВТ
+			ПО ПерезвонилиВТ.АккаунтАвито = НеПерезвонилиВТ.АккаунтАвито
+		ПО УспешныеВТ.АккаунтАвито = ПерезвонилиВТ.АккаунтАвито</query>
+	</dataSet>
+	<totalField>
+		<dataPath>НеПерезвонили</dataPath>
+		<expression>Сумма(НеПерезвонили)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Перезвонили</dataPath>
+		<expression>Сумма(Перезвонили)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Успешно</dataPath>
+		<expression>Сумма(Успешно)</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НеПерезвонили</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Не перезвонили</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Перезвонили</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Перезвонили</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Успешно</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Успешно</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>АккаунтАвито</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НеПерезвонили</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Перезвонили</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Успешно</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>ec3296ff-78f5-4c76-890f-79deec161443</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>38905272-5006-4d95-85db-26cd6f5f8c8f</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НеПерезвонили</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Перезвонили</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Успешно</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>АккаунтАвито</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
