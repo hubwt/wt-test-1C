@@ -9,10 +9,14 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>АккаунтАвито</dataPath>
 			<field>АккаунтАвито</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Успешные</dataPath>
+			<field>Успешные</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Аккаунт авито</v8:content>
+					<v8:content>Успешные</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -27,22 +31,22 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>АккаунтАвито1</dataPath>
-			<field>АккаунтАвито1</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Аккаунт авито1</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>НеПерезвонили</dataPath>
 			<field>НеПерезвонили</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Не перезвонили</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АккаунтАвито1</dataPath>
+			<field>АккаунтАвито1</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аккаунт авито1</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -56,19 +60,10 @@
 				</v8:item>
 			</title>
 		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Успешно</dataPath>
-			<field>Успешно</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Успешно</v8:content>
-				</v8:item>
-			</title>
-		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя,
+	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито
 ПОМЕСТИТЬ Успешные
 ИЗ
 	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
@@ -80,8 +75,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито,
-	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК Количество,
-	&amp;Перезвонили КАК Перезвонили
+	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК Перезвонили,
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя
 ПОМЕСТИТЬ ПерезвонилиВТ
 ИЗ
 	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
@@ -95,14 +90,15 @@
 				Успешные КАК Успешные)
 
 СГРУППИРОВАТЬ ПО
-	ЗвонкиАвито.АккаунтАвито
+	ЗвонкиАвито.АккаунтАвито,
+	ЗвонкиАвито.НомерПокупателя
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито,
-	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК Количество,
-	&amp;НеПерезвонили КАК НеПерезвонили
+	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК НеПерезвонили,
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя
 ПОМЕСТИТЬ НеПерезвонилиВТ
 ИЗ
 	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
@@ -111,20 +107,21 @@
 	И ЗвонкиАвито.ПродолжительностьЗвонка = 0
 	И НЕ ЗвонкиАвито.НомерПокупателя В
 				(ВЫБРАТЬ
-					Успешные.НомерПокупателя КАК НомерПокупателя
+					ПерезвонилиВТ.НомерПокупателя КАК НомерПокупателя
 				ИЗ
-					Успешные КАК Успешные)
+					ПерезвонилиВТ КАК ПерезвонилиВТ)
 
 СГРУППИРОВАТЬ ПО
-	ЗвонкиАвито.АккаунтАвито
+	ЗвонкиАвито.АккаунтАвито,
+	ЗвонкиАвито.НомерПокупателя
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито,
-	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК Количество,
-	&amp;Успешно КАК Успешно
-ПОМЕСТИТЬ УспешныеВТ
+	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК Успешные,
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя
+ПОМЕСТИТЬ УспешноВТ
 ИЗ
 	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
 ГДЕ
@@ -132,23 +129,24 @@
 	И ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
 
 СГРУППИРОВАТЬ ПО
-	ЗвонкиАвито.АккаунтАвито
+	ЗвонкиАвито.АккаунтАвито,
+	ЗвонкиАвито.НомерПокупателя
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	НеПерезвонилиВТ.АккаунтАвито КАК АккаунтАвито,
-	НеПерезвонилиВТ.Количество КАК НеПерезвонили,
+	НеПерезвонилиВТ.НеПерезвонили КАК НеПерезвонили,
 	ПерезвонилиВТ.АккаунтАвито КАК АккаунтАвито1,
-	ПерезвонилиВТ.Количество КАК Перезвонили,
-	УспешныеВТ.АккаунтАвито КАК АккаунтАвито2,
-	УспешныеВТ.Количество КАК Успешно
+	ПерезвонилиВТ.Перезвонили КАК Перезвонили,
+	УспешноВТ.АккаунтАвито КАК АккаунтАвито2,
+	УспешноВТ.Успешные КАК Успешные
 ИЗ
-	УспешныеВТ КАК УспешныеВТ
+	УспешноВТ КАК УспешноВТ
 		ПОЛНОЕ СОЕДИНЕНИЕ ПерезвонилиВТ КАК ПерезвонилиВТ
-			ПОЛНОЕ СОЕДИНЕНИЕ НеПерезвонилиВТ КАК НеПерезвонилиВТ
-			ПО ПерезвонилиВТ.АккаунтАвито = НеПерезвонилиВТ.АккаунтАвито
-		ПО УспешныеВТ.АккаунтАвито = ПерезвонилиВТ.АккаунтАвито</query>
+		ПО УспешноВТ.АккаунтАвито = ПерезвонилиВТ.АккаунтАвито
+		ПОЛНОЕ СОЕДИНЕНИЕ НеПерезвонилиВТ КАК НеПерезвонилиВТ
+		ПО УспешноВТ.АккаунтАвито = НеПерезвонилиВТ.АккаунтАвито</query>
 	</dataSet>
 	<totalField>
 		<dataPath>НеПерезвонили</dataPath>
@@ -159,8 +157,8 @@
 		<expression>Сумма(Перезвонили)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>Успешно</dataPath>
-		<expression>Сумма(Успешно)</expression>
+		<dataPath>Успешные</dataPath>
+		<expression>Сумма(Успешные)</expression>
 	</totalField>
 	<parameter>
 		<name>ДатаНачала</name>
@@ -196,55 +194,19 @@
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>false</useRestriction>
 	</parameter>
-	<parameter>
-		<name>НеПерезвонили</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Не перезвонили</v8:content>
-			</v8:item>
-		</title>
-		<value xsi:nil="true"/>
-		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Перезвонили</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Перезвонили</v8:content>
-			</v8:item>
-		</title>
-		<value xsi:nil="true"/>
-		<useRestriction>true</useRestriction>
-	</parameter>
-	<parameter>
-		<name>Успешно</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Успешно</v8:content>
-			</v8:item>
-		</title>
-		<value xsi:nil="true"/>
-		<useRestriction>true</useRestriction>
-	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>АккаунтАвито</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>НеПерезвонили</dcsset:field>
+					<dcsset:field>Успешные</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Перезвонили</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Успешно</dcsset:field>
+					<dcsset:field>НеПерезвонили</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
@@ -257,21 +219,6 @@
 					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
 					<dcsset:userSettingID>38905272-5006-4d95-85db-26cd6f5f8c8f</dcsset:userSettingID>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>НеПерезвонили</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Перезвонили</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
-				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>Успешно</dcscor:parameter>
-					<dcscor:value xsi:nil="true"/>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
@@ -296,14 +243,6 @@
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
-				<dcsset:item xsi:type="dcsset:StructureItemGroup">
-					<dcsset:order>
-						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-					</dcsset:order>
-					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
-					</dcsset:selection>
-				</dcsset:item>
 			</dcsset:item>
 		</dcsset:settings>
 	</settingsVariant>
