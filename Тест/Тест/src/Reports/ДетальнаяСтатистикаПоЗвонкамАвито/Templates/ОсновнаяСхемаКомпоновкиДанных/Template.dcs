@@ -7,158 +7,110 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>АккаунтАвито</dataPath>
-			<field>АккаунтАвито</field>
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Успешные</dataPath>
-			<field>Успешные</field>
+			<dataPath>КоличествоПерезвонивших</dataPath>
+			<field>КоличествоПерезвонивших</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Успешные</v8:content>
+					<v8:content>Количество перезвонивших</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>АккаунтАвито2</dataPath>
-			<field>АккаунтАвито2</field>
+			<dataPath>Аккаунт</dataPath>
+			<field>Аккаунт</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Аккаунт авито2</v8:content>
+					<v8:content>Аккаунт</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>НеПерезвонили</dataPath>
-			<field>НеПерезвонили</field>
+			<dataPath>КоличествоПропущенных</dataPath>
+			<field>КоличествоПропущенных</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Не перезвонили</v8:content>
+					<v8:content>Количество пропущенных</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>АккаунтАвито1</dataPath>
-			<field>АккаунтАвито1</field>
+			<dataPath>КоличествоУспешных</dataPath>
+			<field>КоличествоУспешных</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Аккаунт авито1</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Перезвонили</dataPath>
-			<field>Перезвонили</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Перезвонили</v8:content>
+					<v8:content>Количество успешных</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ЗвонкиАвито.Дата, ДЕНЬ) КАК Дата,
 	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя,
 	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито
 ПОМЕСТИТЬ Успешные
 ИЗ
 	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
 ГДЕ
-	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
-	И ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
+	ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
+	И ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито,
-	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК Перезвонили,
-	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя
-ПОМЕСТИТЬ ПерезвонилиВТ
+	НАЧАЛОПЕРИОДА(ЗвонкиАвито.Дата, ДЕНЬ) КАК Дата,
+	ЗвонкиАвито.АккаунтАвито КАК Аккаунт,
+	ВЫБОР
+		КОГДА ЗвонкиАвито.ПродолжительностьЗвонка = 0
+				И НЕ ЗвонкиАвито.НомерПокупателя В
+						(ВЫБРАТЬ
+							Успешные.НомерПокупателя КАК НомерПокупателя
+						ИЗ
+							Успешные КАК Успешные)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК КоличествоПропущенных,
+	ВЫБОР
+		КОГДА ЗвонкиАвито.ПродолжительностьЗвонка = 0
+				И ЗвонкиАвито.НомерПокупателя В
+					(ВЫБРАТЬ
+						Успешные.НомерПокупателя КАК НомерПокупателя
+					ИЗ
+						Успешные КАК Успешные)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК КоличествоПерезвонивших,
+	ВЫБОР
+		КОГДА ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК КоличествоУспешных
 ИЗ
 	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
 ГДЕ
-	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
-	И ЗвонкиАвито.ПродолжительностьЗвонка = 0
-	И ЗвонкиАвито.НомерПокупателя В
-			(ВЫБРАТЬ
-				Успешные.НомерПокупателя КАК НомерПокупателя
-			ИЗ
-				Успешные КАК Успешные)
-
-СГРУППИРОВАТЬ ПО
-	ЗвонкиАвито.АккаунтАвито,
-	ЗвонкиАвито.НомерПокупателя
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито,
-	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК НеПерезвонили,
-	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя
-ПОМЕСТИТЬ НеПерезвонилиВТ
-ИЗ
-	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
-ГДЕ
-	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
-	И ЗвонкиАвито.ПродолжительностьЗвонка = 0
-	И НЕ ЗвонкиАвито.НомерПокупателя В
-				(ВЫБРАТЬ
-					ПерезвонилиВТ.НомерПокупателя КАК НомерПокупателя
-				ИЗ
-					ПерезвонилиВТ КАК ПерезвонилиВТ)
-
-СГРУППИРОВАТЬ ПО
-	ЗвонкиАвито.АккаунтАвито,
-	ЗвонкиАвито.НомерПокупателя
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито,
-	КОЛИЧЕСТВО(ЗвонкиАвито.НомерПокупателя) КАК Успешные,
-	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя
-ПОМЕСТИТЬ УспешноВТ
-ИЗ
-	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
-ГДЕ
-	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
-	И ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
-
-СГРУППИРОВАТЬ ПО
-	ЗвонкиАвито.АккаунтАвито,
-	ЗвонкиАвито.НомерПокупателя
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	НеПерезвонилиВТ.АккаунтАвито КАК АккаунтАвито,
-	НеПерезвонилиВТ.НеПерезвонили КАК НеПерезвонили,
-	ПерезвонилиВТ.АккаунтАвито КАК АккаунтАвито1,
-	ПерезвонилиВТ.Перезвонили КАК Перезвонили,
-	УспешноВТ.АккаунтАвито КАК АккаунтАвито2,
-	УспешноВТ.Успешные КАК Успешные
-ИЗ
-	УспешноВТ КАК УспешноВТ
-		ПОЛНОЕ СОЕДИНЕНИЕ ПерезвонилиВТ КАК ПерезвонилиВТ
-		ПО УспешноВТ.АккаунтАвито = ПерезвонилиВТ.АккаунтАвито
-		ПОЛНОЕ СОЕДИНЕНИЕ НеПерезвонилиВТ КАК НеПерезвонилиВТ
-		ПО УспешноВТ.АккаунтАвито = НеПерезвонилиВТ.АккаунтАвито</query>
+	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)</query>
 	</dataSet>
 	<totalField>
-		<dataPath>НеПерезвонили</dataPath>
-		<expression>Сумма(НеПерезвонили)</expression>
+		<dataPath>КоличествоПерезвонивших</dataPath>
+		<expression>Сумма(КоличествоПерезвонивших)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>Перезвонили</dataPath>
-		<expression>Сумма(Перезвонили)</expression>
+		<dataPath>КоличествоПропущенных</dataPath>
+		<expression>Сумма(КоличествоПропущенных)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>Успешные</dataPath>
-		<expression>Сумма(Успешные)</expression>
+		<dataPath>КоличествоУспешных</dataPath>
+		<expression>Сумма(КоличествоУспешных)</expression>
 	</totalField>
 	<parameter>
 		<name>ДатаНачала</name>
@@ -171,11 +123,12 @@
 		<valueType>
 			<v8:Type>xs:dateTime</v8:Type>
 			<v8:DateQualifiers>
-				<v8:DateFractions>Date</v8:DateFractions>
+				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
-		<useRestriction>false</useRestriction>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
 	</parameter>
 	<parameter>
 		<name>ДатаОкончания</name>
@@ -188,10 +141,29 @@
 		<valueType>
 			<v8:Type>xs:dateTime</v8:Type>
 			<v8:DateQualifiers>
-				<v8:DateFractions>Date</v8:DateFractions>
+				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
@@ -200,25 +172,36 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Успешные</dcsset:field>
+					<dcsset:field>КоличествоУспешных</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Перезвонили</dcsset:field>
+					<dcsset:field>КоличествоПропущенных</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>НеПерезвонили</dcsset:field>
+					<dcsset:field>КоличествоПерезвонивших</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ДатаНачала</dcscor:parameter>
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
-					<dcsset:userSettingID>ec3296ff-78f5-4c76-890f-79deec161443</dcsset:userSettingID>
+					<dcsset:userSettingID>e0165f9a-71c4-47f5-8fc0-a3a57dd38367</dcsset:userSettingID>
 				</dcscor:item>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
 					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
 					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
-					<dcsset:userSettingID>38905272-5006-4d95-85db-26cd6f5f8c8f</dcsset:userSettingID>
+					<dcsset:userSettingID>77ca7de2-37c5-4b61-9785-8e5226af4e46</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>258fd932-b0c6-4333-99aa-ada34d672e54</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
 			<dcsset:outputParameters>
@@ -226,11 +209,15 @@
 					<dcscor:parameter>МакетОформления</dcscor:parameter>
 					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ТипДиаграммы</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:ChartType">Column3D</dcscor:value>
+				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>АккаунтАвито</dcsset:field>
+						<dcsset:field>Дата</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -243,6 +230,23 @@
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Аккаунт</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
 			</dcsset:item>
 		</dcsset:settings>
 	</settingsVariant>
