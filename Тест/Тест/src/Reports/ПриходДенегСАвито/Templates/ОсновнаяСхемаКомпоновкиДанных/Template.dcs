@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сумма</dataPath>
+			<field>Сумма</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Канал</dataPath>
+			<field>Канал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Канал</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПриходДенгег</dataPath>
+			<field>ПриходДенгег</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Приход денгег</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоЗаявок</dataPath>
+			<field>КоличествоЗаявок</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество заявок</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя,
+	НАЧАЛОПЕРИОДА(ЗвонкиАвито.Дата, ДЕНЬ) КАК Дата,
+	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито
+ПОМЕСТИТЬ Звонки
+ИЗ
+	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
+ГДЕ
+	ЗвонкиАвито.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПриходДенегНаСчет.Сделка КАК Сделка,
+	СУММА(ПриходДенегНаСчет.СуммаДокумента) КАК СуммаДокумента
+ПОМЕСТИТЬ ПриходДенег
+ИЗ
+	Документ.ПриходДенегНаСчет КАК ПриходДенегНаСчет
+ГДЕ
+	ПриходДенегНаСчет.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	ПриходДенегНаСчет.Сделка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказКлиента.СуммаДокумента КАК СуммаДокумента,
+	ЗаказКлиента.Ссылка КАК Заявка,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ) КАК Дата,
+	ВЫБОР
+		КОГДА ЗаказКлиента.Канал.Наименование = "AVITO"
+			ТОГДА "Авито1"
+		КОГДА ЗаказКлиента.Канал.Наименование = "Авито Частник"
+			ТОГДА "Авито2"
+		КОГДА ЗаказКлиента.Канал.Наименование = "Авито Частник2 (доставка)"
+			ТОГДА "Авито3"
+		ИНАЧЕ ЗаказКлиента.Канал.Наименование
+	КОНЕЦ КАК Канал
+ПОМЕСТИТЬ ДеньгиИКоличествоИзЗаявок
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(Перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+	И ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ЗаказКлиента.Канал В(&amp;Каналы)
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ЗаказКлиента.СуммаДокумента,
+	ЗаказКлиента.Ссылка,
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, МЕСЯЦ),
+	Звонки.АккаунтАвито
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Звонки КАК Звонки
+		ПО (СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ(ЗаказКлиента.НомерТелефона, "-", ""), " ", "") = СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ(Звонки.НомерПокупателя, "-", ""), " ", " "))
+ГДЕ
+	ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(Перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+	И ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ(ЗаказКлиента.НомерТелефона, "-", ""), " ", "") В
+			(ВЫБРАТЬ
+				СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ(Звонки.НомерПокупателя, "-", ""), " ", "") КАК НомерПокупателя
+			ИЗ
+				Звонки КАК Звонки)
+ОБЪЕДИНИТЬ  
+ 
+ ВЫБРАТЬ 
+   МаршрутЗвонков.ЗаявкаКлиента.СуммаДокумента КАК СуммаДокумента,
+	МаршрутЗвонков.ЗаявкаКлиента КАК ЗаявкаКлиента,
+	
+	НАЧАЛОПЕРИОДА(МаршрутЗвонков.ЗаявкаКлиента.Дата, МЕСЯЦ) КАК Дата,
+	ВЫБОР
+		КОГДА ИСТИНА
+			ТОГДА "Drom.ru"
+	КОНЕЦ КАК Канал
+ИЗ
+	РегистрСведений.МаршрутЗвонков КАК МаршрутЗвонков
+ГДЕ
+	СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ(МаршрутЗвонков.ЛинияНомер, "-", ""), " ", "") = СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ("+79300368164", "-", ""), " ", "")
+	И МаршрутЗвонков.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И НЕ МаршрутЗвонков.ЗаявкаКлиента = ЗНАЧЕНИЕ(Документ.ЗаказКлиента.ПустаяСсылка)
+	И МаршрутЗвонков.ЗаявкаКлиента.Состояние = ЗНАЧЕНИЕ(Перечисление.дт_СостоянияЗаказовКлиента.Продажа)  
+	
+ОБЪЕДИНИТЬ 
+
+ВЫБРАТЬ 
+   МаршрутЗвонков.ЗаявкаКлиента.СуммаДокумента КАК СуммаДокумента,
+	МаршрутЗвонков.ЗаявкаКлиента КАК ЗаявкаКлиента,
+	
+	НАЧАЛОПЕРИОДА(МаршрутЗвонков.ЗаявкаКлиента.Дата, МЕСЯЦ) КАК Дата,
+	ВЫБОР
+		КОГДА ИСТИНА
+			ТОГДА "ZZap"
+	КОНЕЦ КАК Канал
+ИЗ
+	РегистрСведений.МаршрутЗвонков КАК МаршрутЗвонков
+ГДЕ
+	СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ(МаршрутЗвонков.ЛинияНомер, "-", ""), " ", "") = СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ("+79300368369", "-", ""), " ", "")
+	И МаршрутЗвонков.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И НЕ МаршрутЗвонков.ЗаявкаКлиента = ЗНАЧЕНИЕ(Документ.ЗаказКлиента.ПустаяСсылка)
+	И МаршрутЗвонков.ЗаявкаКлиента.Состояние = ЗНАЧЕНИЕ(Перечисление.дт_СостоянияЗаказовКлиента.Продажа)
+;
+
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(ДеньгиИКоличествоИзЗаявок.СуммаДокумента) КАК Сумма,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ДеньгиИКоличествоИзЗаявок.Заявка) КАК КоличествоЗаявок,
+	ДеньгиИКоличествоИзЗаявок.Дата КАК Дата,
+	ДеньгиИКоличествоИзЗаявок.Канал КАК Канал,
+	СУММА(ПриходДенег.СуммаДокумента) КАК ПриходДенгег
+ИЗ
+	ДеньгиИКоличествоИзЗаявок КАК ДеньгиИКоличествоИзЗаявок
+		ЛЕВОЕ СОЕДИНЕНИЕ ПриходДенег КАК ПриходДенег
+		ПО ДеньгиИКоличествоИзЗаявок.Заявка = ПриходДенег.Сделка.ЗаказКлиента
+
+СГРУППИРОВАТЬ ПО
+	ДеньгиИКоличествоИзЗаявок.Дата,
+	ДеньгиИКоличествоИзЗаявок.Канал
+;
+
+</query>
+	</dataSet>
+	<totalField>
+		<dataPath>КоличествоЗаявок</dataPath>
+		<expression>Сумма(КоличествоЗаявок)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПриходДенгег</dataPath>
+		<expression>Сумма(ПриходДенгег)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Сумма</dataPath>
+		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<value xsi:type="xs:string"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Каналы</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Каналы</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ИсточникиОбращений</v8:Type>
+		</valueType>
+		<useRestriction>false</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоЗаявок</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сумма</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПриходДенгег</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Каналы</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>7540e3a3-ff4a-4ebd-9a87-aeb2d0db5cf6</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Дата</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Море</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Канал</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:row>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
