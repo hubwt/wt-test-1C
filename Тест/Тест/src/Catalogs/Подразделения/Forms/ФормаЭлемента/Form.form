@@ -2600,7 +2600,7 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокКадровыеПриказы.Ref</segments>
+            <segments>СписокКадровыеПриказы.Ссылка</segments>
           </dataPath>
           <extendedTooltip>
             <name>СписокКадровыеПриказыСсылкаРасширеннаяПодсказка</name>
@@ -2692,7 +2692,7 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокКадровыеПриказы.Number</segments>
+            <segments>СписокКадровыеПриказы.Номер</segments>
           </dataPath>
           <extendedTooltip>
             <name>СписокКадровыеПриказыНомерРасширеннаяПодсказка</name>
@@ -2742,7 +2742,7 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокКадровыеПриказы.Date</segments>
+            <segments>СписокКадровыеПриказы.Дата</segments>
           </dataPath>
           <extendedTooltip>
             <name>СписокКадровыеПриказыДатаРасширеннаяПодсказка</name>
@@ -4501,7 +4501,6 @@
         <type>UsualGroup</type>
         <extInfo xsi:type="form:UsualGroupExtInfo">
           <group>HorizontalIfPossible</group>
-          <behavior>Auto</behavior>
           <representation>WeakSeparation</representation>
           <showLeftMargin>true</showLeftMargin>
           <united>true</united>
@@ -4586,12 +4585,12 @@
     <autoFill>true</autoFill>
   </autoCommandBar>
   <handlers>
-    <event>OnCreateAtServer</event>
-    <name>ПриСозданииНаСервере</name>
-  </handlers>
-  <handlers>
     <event>OnOpen</event>
     <name>ПриОткрытии</name>
+  </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
   </handlers>
   <windowOpeningMode>LockOwnerWindow</windowOpeningMode>
   <autoTitle>true</autoTitle>
