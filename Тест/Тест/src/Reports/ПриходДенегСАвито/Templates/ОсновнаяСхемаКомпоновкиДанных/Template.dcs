@@ -41,12 +41,12 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоЗаявок</dataPath>
-			<field>КоличествоЗаявок</field>
+			<dataPath>КоличествоЗаявокПродажа</dataPath>
+			<field>КоличествоЗаявокПродажа</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество заявок</v8:content>
+					<v8:content>Количество заявок продажа</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -160,7 +160,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	СУММА(ДеньгиИКоличествоИзЗаявок.СуммаДокумента) КАК Сумма,
-	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ДеньгиИКоличествоИзЗаявок.Заявка) КАК КоличествоЗаявок,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ДеньгиИКоличествоИзЗаявок.Заявка) КАК КоличествоЗаявокПродажа,
 	ДеньгиИКоличествоИзЗаявок.Дата КАК Дата,
 	ДеньгиИКоличествоИзЗаявок.Канал КАК Канал,
 	СУММА(ПриходДенег.СуммаДокумента) КАК ПриходДенгег
@@ -177,16 +177,16 @@
 </query>
 	</dataSet>
 	<totalField>
-		<dataPath>КоличествоЗаявок</dataPath>
-		<expression>Сумма(КоличествоЗаявок)</expression>
-	</totalField>
-	<totalField>
 		<dataPath>ПриходДенгег</dataPath>
 		<expression>Сумма(ПриходДенгег)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>Сумма</dataPath>
 		<expression>Сумма(Сумма)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоЗаявокПродажа</dataPath>
+		<expression>Сумма(КоличествоЗаявокПродажа)</expression>
 	</totalField>
 	<parameter>
 		<name>ДатаНачала</name>
@@ -252,7 +252,7 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КоличествоЗаявок</dcsset:field>
+					<dcsset:field>КоличествоЗаявокПродажа</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Сумма</dcsset:field>
