@@ -5019,6 +5019,40 @@
             <representationInContextMenu>Auto</representationInContextMenu>
           </items>
           <items xsi:type="form:Button">
+            <name>ПартииКонтекстноеМенюДобавитьВЗаказКлиентаПартию</name>
+            <id>457</id>
+            <title>
+              <key>ru</key>
+              <value>Добавитьв заявку клиента </value>
+            </title>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <extendedTooltip>
+              <name>ПартииКонтекстноеМенюДобавитьВЗаказКлиентаПартиюРасширеннаяПодсказка</name>
+              <id>458</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <commandName>Form.Command.ДобавитьВЗаказКлиентаПартию</commandName>
+            <representation>Auto</representation>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <placementArea>UserCmds</placementArea>
+            <representationInContextMenu>Auto</representationInContextMenu>
+          </items>
+          <items xsi:type="form:Button">
             <name>ПартииКонтекстноеМенюПечатьэтикетки</name>
             <id>374</id>
             <visible>true</visible>
@@ -5988,9 +6022,6 @@
     <userVisible>
       <common>true</common>
     </userVisible>
-    <dataPath xsi:type="form:DataPath">
-      <segments>Items.Список.CurrentData.НомераЗамен</segments>
-    </dataPath>
     <titleLocation>None</titleLocation>
     <items xsi:type="form:FormField">
       <name>НомераЗаменнаименование</name>
@@ -6000,9 +6031,6 @@
       <userVisible>
         <common>true</common>
       </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>Items.Список.CurrentData.НомераЗамен.наименование</segments>
-      </dataPath>
       <extendedTooltip>
         <name>НомераЗаменнаименованиеРасширеннаяПодсказка</name>
         <id>419</id>
@@ -6028,19 +6056,10 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <type>InputField</type>
       <editMode>EnterOnInput</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:InputFieldExtInfo">
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <wrap>true</wrap>
-        <chooseType>true</chooseType>
-        <typeDomainEnabled>true</typeDomainEnabled>
-        <textEdit>true</textEdit>
-      </extInfo>
     </items>
     <items xsi:type="form:FormField">
       <name>НомераЗаменНомерЗамены</name>
@@ -6050,9 +6069,6 @@
       <userVisible>
         <common>true</common>
       </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>Items.Список.CurrentData.НомераЗамен.НомерЗамены</segments>
-      </dataPath>
       <extendedTooltip>
         <name>НомераЗаменНомерЗаменыРасширеннаяПодсказка</name>
         <id>422</id>
@@ -6078,19 +6094,10 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <type>InputField</type>
       <editMode>EnterOnInput</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:InputFieldExtInfo">
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <wrap>true</wrap>
-        <chooseType>true</chooseType>
-        <typeDomainEnabled>true</typeDomainEnabled>
-        <textEdit>true</textEdit>
-      </extInfo>
     </items>
     <items xsi:type="form:FormField">
       <name>НомераЗаменНомерСтроки</name>
@@ -6100,9 +6107,6 @@
       <userVisible>
         <common>true</common>
       </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>Items.Список.CurrentData.НомераЗамен.НомерСтроки</segments>
-      </dataPath>
       <extendedTooltip>
         <name>НомераЗаменНомерСтрокиРасширеннаяПодсказка</name>
         <id>425</id>
@@ -6128,19 +6132,10 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <type>InputField</type>
       <editMode>EnterOnInput</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:InputFieldExtInfo">
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <wrap>true</wrap>
-        <chooseType>true</chooseType>
-        <typeDomainEnabled>true</typeDomainEnabled>
-        <textEdit>true</textEdit>
-      </extInfo>
     </items>
     <items xsi:type="form:FormField">
       <name>НомераЗаменПроизводитель</name>
@@ -6150,9 +6145,6 @@
       <userVisible>
         <common>true</common>
       </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>Items.Список.CurrentData.НомераЗамен.Производитель</segments>
-      </dataPath>
       <extendedTooltip>
         <name>НомераЗаменПроизводительРасширеннаяПодсказка</name>
         <id>428</id>
@@ -6178,19 +6170,10 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <type>InputField</type>
       <editMode>EnterOnInput</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:InputFieldExtInfo">
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <wrap>true</wrap>
-        <chooseType>true</chooseType>
-        <typeDomainEnabled>true</typeDomainEnabled>
-        <textEdit>true</textEdit>
-      </extInfo>
     </items>
     <items xsi:type="form:FormField">
       <name>НомераЗаменСсылка</name>
@@ -6200,9 +6183,6 @@
       <userVisible>
         <common>true</common>
       </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>Items.Список.CurrentData.НомераЗамен.Ссылка</segments>
-      </dataPath>
       <extendedTooltip>
         <name>НомераЗаменСсылкаРасширеннаяПодсказка</name>
         <id>431</id>
@@ -6228,19 +6208,10 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <type>InputField</type>
       <editMode>EnterOnInput</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:InputFieldExtInfo">
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <wrap>true</wrap>
-        <chooseType>true</chooseType>
-        <typeDomainEnabled>true</typeDomainEnabled>
-        <textEdit>true</textEdit>
-      </extInfo>
     </items>
     <autoCommandBar>
       <name>НомераЗаменКоманднаяПанель</name>
@@ -7353,6 +7324,23 @@
       <common>true</common>
     </edit>
   </attributes>
+  <attributes>
+    <name>ДобавитьПартиюВЗаказКлиента</name>
+    <title>
+      <key>ru</key>
+      <value>Добавить партию в заказ клиента</value>
+    </title>
+    <id>25</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
   <formCommands>
     <name>Поиск</name>
     <title>
@@ -8216,6 +8204,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>ФотоДетали</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ДобавитьВЗаказКлиентаПартию</name>
+    <title>
+      <key>ru</key>
+      <value>Добавить в заказ клиента партию</value>
+    </title>
+    <id>43</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ДобавитьВЗаказКлиентаПартию</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
