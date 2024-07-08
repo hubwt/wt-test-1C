@@ -108,7 +108,7 @@
     <titleLocation>None</titleLocation>
     <items xsi:type="form:FormField">
       <name>Наименование</name>
-      <id>16</id>
+      <id>115</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -117,10 +117,9 @@
       <dataPath xsi:type="form:DataPath">
         <segments>Список.Description</segments>
       </dataPath>
-      <defaultItem>true</defaultItem>
       <extendedTooltip>
         <name>НаименованиеРасширеннаяПодсказка</name>
-        <id>18</id>
+        <id>117</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -135,7 +134,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>НаименованиеКонтекстноеМеню</name>
-        <id>17</id>
+        <id>116</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -143,19 +142,23 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <type>LabelField</type>
+      <type>InputField</type>
       <editMode>Enter</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:LabelFieldExtInfo">
+      <extInfo xsi:type="form:InputFieldExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
       <name>Код</name>
-      <id>19</id>
+      <id>112</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -166,7 +169,7 @@
       </dataPath>
       <extendedTooltip>
         <name>КодРасширеннаяПодсказка</name>
-        <id>21</id>
+        <id>114</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -181,7 +184,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>КодКонтекстноеМеню</name>
-        <id>20</id>
+        <id>113</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -189,14 +192,18 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <type>LabelField</type>
+      <type>InputField</type>
       <editMode>Enter</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:LabelFieldExtInfo">
+      <extInfo xsi:type="form:InputFieldExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
       </extInfo>
     </items>
     <commandBarLocation>None</commandBarLocation>
@@ -426,9 +433,45 @@
     </edit>
     <main>true</main>
     <extInfo xsi:type="form:DynamicListExtInfo">
+      <queryText>ВЫБРАТЬ 
+       Подразделения.Ссылка, 
+       Подразделения.ПометкаУдаления, 
+       Подразделения.Родитель, 
+       Подразделения.Код, 
+       Подразделения.Наименование, 
+       Подразделения.ЭтоЦФО, 
+       Подразделения.Город, 
+       Подразделения.Описание, 
+       Подразделения.ПроценОтВыручки, 
+       Подразделения.Доход, 
+       Подразделения.КоличествоСотрудников, 
+       Подразделения.Премия, 
+       Подразделения.Оклад, 
+       Подразделения.НеПерезаписывать, 
+       Подразделения.ОкладСуммаУправлениеиОтдел, 
+       Подразделения.ДоходОбщий, 
+       Подразделения.ПремияОбщая, 
+       Подразделения.ПроценОтВыручкиОбщий, 
+       Подразделения.КоличествоСотрудниковОбщее, 
+       Подразделения.ПремиальныйФонд, 
+       Подразделения.ПроцентПремиальныйФонд, 
+       Подразделения.Участники.*, 
+       Подразделения.Должности.*, 
+       Подразделения.Предопределенный, 
+       Подразделения.ИмяПредопределенныхДанных
+ ИЗ 
+       Справочник.Подразделения
+ КАК 
+       Подразделения
+ ГДЕ
+	(Подразделения.Код = &quot;000000105&quot;
+	ИЛИ Подразделения.Родитель.Код = &quot;000000105&quot;
+	ИЛИ Подразделения.Родитель.Родитель.Код = &quot;000000105&quot;
+	ИЛИ Подразделения.Родитель.Родитель.Родитель.Код = &quot;000000105&quot;)</queryText>
       <mainTable>Catalog.Подразделения</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
+      <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
