@@ -2010,6 +2010,13 @@
       <value>Этикетка</value>
     </synonym>
   </templates>
+  <templates uuid="4b7fe248-1f56-443f-8777-1c31d263eae0">
+    <name>Ценник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ценник</value>
+    </synonym>
+  </templates>
   <commands uuid="75a45711-c4d9-4314-9a52-f5583579bd58">
     <name>НоменклатураДополнительныйСписок</name>
     <synonym>
@@ -2039,5 +2046,17 @@
     <group>NavigationPanelImportant</group>
     <commandParameterType/>
     <representation>Auto</representation>
+  </commands>
+  <commands uuid="1b528fde-537c-45ce-a970-b3d8d65ab054">
+    <name>ПечатьЦенников</name>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>CatalogRef.Номенклатура</types>
+    </commandParameterType>
+    <parameterUseMode>Multiple</parameterUseMode>
+    <representation>PictureAndText</representation>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.Print</picture>
+    </picture>
   </commands>
 </mdclass:Catalog>
