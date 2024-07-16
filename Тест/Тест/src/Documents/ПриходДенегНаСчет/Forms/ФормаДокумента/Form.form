@@ -373,6 +373,10 @@
           <dataPath xsi:type="form:DataPath">
             <segments>Объект.Сделка</segments>
           </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>СделкаПриИзменении1</name>
+          </handlers>
           <extendedTooltip>
             <name>СделкаРасширеннаяПодсказка</name>
             <id>93</id>
@@ -905,7 +909,7 @@
   </items>
   <items xsi:type="form:FormField">
     <name>Клиент</name>
-    <id>88</id>
+    <id>97</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -920,7 +924,7 @@
     </handlers>
     <extendedTooltip>
       <name>КлиентРасширеннаяПодсказка</name>
-      <id>90</id>
+      <id>99</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -935,7 +939,7 @@
     </extendedTooltip>
     <contextMenu>
       <name>КлиентКонтекстноеМеню</name>
-      <id>89</id>
+      <id>98</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -1529,6 +1533,10 @@
     <event>OnCreateAtServer</event>
     <name>ПриСозданииНаСервере</name>
   </handlers>
+  <handlers>
+    <event>FillCheckProcessingAtServer</event>
+    <name>ОбработкаПроверкиЗаполненияНаСервере</name>
+  </handlers>
   <excludedCommands>PostAndClose</excludedCommands>
   <autoTitle>true</autoTitle>
   <autoUrl>true</autoUrl>
@@ -1624,7 +1632,6 @@
     <edit>
       <common>true</common>
     </edit>
-    <fillChecking>ShowError</fillChecking>
   </attributes>
   <formCommands>
     <name>ПровестиИЗакрыть</name>
