@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="07d3307d-6544-4f5b-a4bd-7784f068fc6f">
+  <name>wt_10</name>
+  <synonym>
+    <key>ru</key>
+    <value>Wt 10</value>
+  </synonym>
+  <rootURL>wt_10</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="7ac4d9fc-685c-44d1-bc24-5b04d69429f1">
+    <name>ВывестиСписокТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вывести список товаров</value>
+    </synonym>
+    <template>/list/{text}/{count}/{page}</template>
+    <methods uuid="a0c4aeb6-797c-4d77-a8f0-68d420352b63">
+      <name>GetProductsList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get products list</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровGetProductsList</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>
