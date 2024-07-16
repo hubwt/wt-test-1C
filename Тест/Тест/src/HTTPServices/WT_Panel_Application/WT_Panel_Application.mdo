@@ -73,4 +73,55 @@
       <handler>ПолучитьЗаявкуgetapplication</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="46d31fb9-0cce-40f8-b861-eaa7f7cecb1d">
+    <name>СоздатьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать заявку</value>
+    </synonym>
+    <template>/create-application</template>
+    <methods uuid="f0337785-185b-4ddd-868a-2c06dfb3f87f">
+      <name>CreateApplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Create application</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьЗаявкуcreateapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b488c721-c257-43bf-9dad-779f353a1b35">
+    <name>НаполнитьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наполнить заявку</value>
+    </synonym>
+    <template>/filling-application/{id}</template>
+    <methods uuid="8323829f-99b6-468c-a0f4-b1b0b4d86ebe">
+      <name>fillingapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Fillingapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>НаполнитьЗаявкуfillingapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="14f4b60b-f787-4e0c-834c-3c22fec2f1b6">
+    <name>ОтменитьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отменить заявку</value>
+    </synonym>
+    <template>/cancel-application</template>
+    <methods uuid="6e188e8a-cf5a-45f9-9b47-34b20af9f37d">
+      <name>cancelapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Cancelapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОтменитьЗаявкуcancelapplication</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>

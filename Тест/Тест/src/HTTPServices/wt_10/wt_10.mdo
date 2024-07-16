@@ -24,4 +24,71 @@
       <handler>ПолучитьСписокТоваровGetProductsList</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="0f2581ca-f190-4550-ad75-bb10321f0169">
+    <name>ПолучитьТовар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товар</value>
+    </synonym>
+    <template>/product/{id}</template>
+    <methods uuid="70af9114-d59d-4afb-8e0b-40ca87cb0e35">
+      <name>GetProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get product</value>
+      </synonym>
+      <handler>ПолучитьТоварGetProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c4164f30-35af-42fd-9cd1-f6ce889b9d05">
+    <name>Авторизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авторизация</value>
+    </synonym>
+    <template>/auth</template>
+    <methods uuid="9f729552-b939-4595-8714-ec6a22a28a95">
+      <name>Authorization</name>
+      <synonym>
+        <key>ru</key>
+        <value>Authorization</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьАвторизациюAuthorization</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="21e51888-415f-4aa5-a068-c9314861fdff">
+    <name>СменаМестаХранения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена места хранения</value>
+    </synonym>
+    <template>/edit-place</template>
+    <methods uuid="95e89f65-f0fe-4bd6-910c-164d1f49be6b">
+      <name>EditPlace</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit place</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаМестаХраненияEditPlace</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="85707558-4bf8-40af-bece-f60b835df540">
+    <name>ПолучитьТоварыПоИндкодам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары по индкодам</value>
+    </synonym>
+    <template>/get-products-by-id</template>
+    <methods uuid="8729479d-644c-4b66-ac19-367df580ecfc">
+      <name>GetProductsById</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get products by id</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьТоварыПоИндкодамGetProductsById</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
