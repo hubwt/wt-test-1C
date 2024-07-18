@@ -63,7 +63,7 @@
       <key>ru</key>
       <value>Получить заявку</value>
     </synonym>
-    <template>/get-application/{Num}</template>
+    <template>/get-application/{id}</template>
     <methods uuid="6467dacc-6bfe-426e-a82c-9ba6992ff455">
       <name>getapplication</name>
       <synonym>
@@ -122,6 +122,56 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>ОтменитьЗаявкуcancelapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="aad13fb8-80c5-49de-8c70-8b71d8000890">
+    <name>УдалитьТоварИзЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить товар из заявки</value>
+    </synonym>
+    <template>/deleteproductapplication/{id}/{pose}</template>
+    <methods uuid="60a50c5b-a0d4-430a-a143-736611a07ea2">
+      <name>deleteproductapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Deleteproductapplication</value>
+      </synonym>
+      <httpMethod>DELETE</httpMethod>
+      <handler>УдалитьТоварИзЗаявкиdeleteproductapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3e514523-b16e-4891-bbac-b01aa4cb0e0f">
+    <name>ИзменитьКлиентаВЗаявке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить клиента в заявке</value>
+    </synonym>
+    <template>/edit-application-client</template>
+    <methods uuid="d6b17c74-5093-4bec-a34a-75dd479940f5">
+      <name>editgapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Editgapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьКлиентаВЗаявкеeditgapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8e372388-79ce-4494-8fe4-533081a4ea87">
+    <name>ПолучитьДашбордДляПродаж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить дашборд для продаж</value>
+    </synonym>
+    <template>/get-app-manager/{count}/{page}/{saler}</template>
+    <methods uuid="70db7240-2a1c-4e83-ab31-e533750c25d0">
+      <name>GetDashSale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get Dash Sale</value>
+      </synonym>
+      <handler>ПолучитьЗаявкиДляМенеджераGetDashSalers</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
