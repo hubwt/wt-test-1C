@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c174d640-5ce7-4c95-9b69-169c25383235">
+  <producedTypes>
+    <objectType typeId="0adfa738-bf36-4ec3-bab3-ddfde1cd67d2" valueTypeId="ba49a8fe-05f6-4267-8d76-4ca1ced8c733"/>
+    <refType typeId="5c6935a4-f4a2-4e1b-9199-b190bd78054e" valueTypeId="d6e02a64-6b5f-40f8-b197-5d08406eff3c"/>
+    <selectionType typeId="84d502a4-e44b-4d29-b5db-96d2ad670aa3" valueTypeId="f7f98885-3f94-4e31-a9ba-fed9ffa76e20"/>
+    <listType typeId="ed9e509f-a1af-49d8-aa19-2ee8e3c24954" valueTypeId="b1b57f39-8a4b-44db-9113-453f63bf0a6e"/>
+    <managerType typeId="69ba31d6-d1f0-493e-8f56-8ca89ff17e39" valueTypeId="471d1259-4e68-4c06-a298-562b63989246"/>
+  </producedTypes>
+  <name>КлиентыССайта</name>
+  <synonym>
+    <key>ru</key>
+    <value>Клиенты с сайта</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.КлиентыССайта.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.КлиентыССайта.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.КлиентыССайта.Form.ФормаЭлемента</defaultObjectForm>
+  <attributes uuid="7c6e5169-3ab2-4303-bd6c-6d867e2949b5">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3bca26f2-66d8-435a-bff3-167c618da2f3">
+    <name>Телефон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Телефон</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>17</length>
+      </stringQualifiers>
+    </type>
+    <mask>9-(999)-999-99-99</mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="4335bdbe-801d-4878-b7b8-bd49f97f253d">
+    <name>ФормаЭлемента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма элемента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:Catalog>
