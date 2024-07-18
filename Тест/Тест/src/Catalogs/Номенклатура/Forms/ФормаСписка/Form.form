@@ -2114,65 +2114,8 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>РекомендованаяЦена</name>
-      <id>80</id>
-      <title>
-        <key>ru</key>
-        <value>Рек.Цена</value>
-      </title>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>Список.РекомендованаяЦена</segments>
-      </dataPath>
-      <extendedTooltip>
-        <name>РекомендованаяЦенаРасширеннаяПодсказка</name>
-        <id>181</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <type>Label</type>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:LabelDecorationExtInfo">
-          <horizontalAlign>Left</horizontalAlign>
-        </extInfo>
-      </extendedTooltip>
-      <contextMenu>
-        <name>РекомендованаяЦенаКонтекстноеМеню</name>
-        <id>81</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <autoFill>true</autoFill>
-      </contextMenu>
-      <type>LabelField</type>
-      <horizontalAlign>Left</horizontalAlign>
-      <editMode>Enter</editMode>
-      <showInHeader>true</showInHeader>
-      <headerHorizontalAlign>Left</headerHorizontalAlign>
-      <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:LabelFieldExtInfo">
-        <width>7</width>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <verticalStretch>false</verticalStretch>
-        <format>
-          <key>ru</key>
-          <value>ЧН=0</value>
-        </format>
-      </extInfo>
-    </items>
-    <items xsi:type="form:FormField">
       <name>Цена</name>
-      <id>495</id>
+      <id>501</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -2183,7 +2126,7 @@
       </dataPath>
       <extendedTooltip>
         <name>ЦенаРасширеннаяПодсказка</name>
-        <id>497</id>
+        <id>503</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -2198,7 +2141,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ЦенаКонтекстноеМеню</name>
-        <id>496</id>
+        <id>502</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -6768,7 +6711,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ИндНомер.индкод.Владелец КАК Товар,
 	СУММА(ВЫБОР
 		КОГДА ИндНомер.ЕстьФото
@@ -6788,7 +6731,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ИндНомер.индкод.Владелец КАК индкодВладелец,
 	МАКСИМУМ(ИндНомер.АвитоЧастник) КАК АвитоЧастник,
 	ИндНомер.ЦенаПроверена КАК ЦенаПроверена,
@@ -6803,7 +6746,34 @@
 ;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 ВЫБРАТЬ
+	МАКСИМУМ(дт_ЦеныНоменклатурыСрезПоследних.Период) КАК Период,
+	дт_ЦеныНоменклатурыСрезПоследних.Номенклатура КАК Номенклатура
+ПОМЕСТИТЬ МаксПериод
+ИЗ
+	РегистрСведений.дт_ЦеныНоменклатуры.СрезПоследних(&amp;ТекДата,) КАК дт_ЦеныНоменклатурыСрезПоследних
+СГРУППИРОВАТЬ ПО
+	дт_ЦеныНоменклатурыСрезПоследних.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
+	дт_ЦеныНоменклатуры.Номенклатура КАК Номенклатура,
+	МАКСИМУМ(дт_ЦеныНоменклатуры.Цена) КАК Цена
+ПОМЕСТИТЬ Актуальная
+ИЗ
+	РегистрСведений.дт_ЦеныНоменклатуры.СрезПоследних(&amp;ТекДата,) КАК дт_ЦеныНоменклатуры
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ МаксПериод КАК МаксПериод
+		ПО (дт_ЦеныНоменклатуры.Период = МаксПериод.Период)
+		И (дт_ЦеныНоменклатуры.Номенклатура = МаксПериод.Номенклатура)
+СГРУППИРОВАТЬ ПО
+	дт_ЦеныНоменклатуры.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	ВЫБРАТЬ
 	СправочникНоменклатура.Ссылка КАК Ссылка,
 	СправочникНоменклатура.Распродажа КАК Распродажа,
 	СправочникНоменклатура.ДатаОкончанияРаспродажи КАК ДатаОкончанияРаспродажи,
@@ -6844,7 +6814,8 @@
 			ТОГДА ЛОЖЬ
 		ИНАЧЕ ИСТИНА
 	КОНЕЦ КАК Витрина,
-	ВТ_Продажи.Ссылка КАК КоличествоПродаж
+	ВТ_Продажи.Ссылка КАК КоличествоПродаж,
+	ОКР(Актуальная.Цена, 0) КАК Цена
 ИЗ
 	Справочник.Номенклатура КАК СправочникНоменклатура
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РегистрНакопления1.Остатки(,
@@ -6866,7 +6837,9 @@
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КоличествоФото КАК ВТ_КоличествоФото
 		ПО СправочникНоменклатура.Ссылка = ВТ_КоличествоФото.Товар
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Продажи КАК ВТ_Продажи
-		ПО СправочникНоменклатура.Ссылка = ВТ_Продажи.Товар</queryText>
+		ПО СправочникНоменклатура.Ссылка = ВТ_Продажи.Товар
+		ЛЕВОЕ СОЕДИНЕНИЕ Актуальная КАК Актуальная
+		ПО Актуальная.Номенклатура = СправочникНоменклатура.Ссылка</queryText>
       <mainTable>Catalog.Номенклатура</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
