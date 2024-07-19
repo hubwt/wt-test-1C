@@ -1139,23 +1139,19 @@
     </dataPath>
     <titleLocation>None</titleLocation>
     <items xsi:type="form:FormField">
-      <name>НеЛиквид</name>
-      <id>492</id>
-      <title>
-        <key>ru</key>
-        <value>Предложения</value>
-      </title>
+      <name>Предложения</name>
+      <id>504</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>Список.НеЛиквид</segments>
+        <segments>Список.Предложения</segments>
       </dataPath>
       <extendedTooltip>
-        <name>НеЛиквидРасширеннаяПодсказка</name>
-        <id>494</id>
+        <name>ПредложенияРасширеннаяПодсказка</name>
+        <id>506</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -1169,8 +1165,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>НеЛиквидКонтекстноеМеню</name>
-        <id>493</id>
+        <name>ПредложенияКонтекстноеМеню</name>
+        <id>505</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -2114,23 +2110,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>РекомендованаяЦена</name>
-      <id>80</id>
-      <title>
-        <key>ru</key>
-        <value>Рек.Цена</value>
-      </title>
+      <name>Цена</name>
+      <id>501</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>Список.РекомендованаяЦена</segments>
+        <segments>Список.Цена</segments>
       </dataPath>
       <extendedTooltip>
-        <name>РекомендованаяЦенаРасширеннаяПодсказка</name>
-        <id>181</id>
+        <name>ЦенаРасширеннаяПодсказка</name>
+        <id>503</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -2144,8 +2136,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>РекомендованаяЦенаКонтекстноеМеню</name>
-        <id>81</id>
+        <name>ЦенаКонтекстноеМеню</name>
+        <id>502</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -2153,21 +2145,18 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <type>LabelField</type>
-      <horizontalAlign>Left</horizontalAlign>
+      <type>InputField</type>
       <editMode>Enter</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:LabelFieldExtInfo">
-        <width>7</width>
+      <extInfo xsi:type="form:InputFieldExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
-        <verticalStretch>false</verticalStretch>
-        <format>
-          <key>ru</key>
-          <value>ЧН=0</value>
-        </format>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
@@ -4560,57 +4549,6 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>ПартииЦена</name>
-          <id>25</id>
-          <title>
-            <key>ru</key>
-            <value>Цена продажи</value>
-          </title>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
-          <dataPath xsi:type="form:DataPath">
-            <segments>Партии.цена</segments>
-          </dataPath>
-          <extendedTooltip>
-            <name>ПартииЦенаРасширеннаяПодсказка</name>
-            <id>213</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <type>Label</type>
-            <autoMaxWidth>true</autoMaxWidth>
-            <autoMaxHeight>true</autoMaxHeight>
-            <extInfo xsi:type="form:LabelDecorationExtInfo">
-              <horizontalAlign>Left</horizontalAlign>
-            </extInfo>
-          </extendedTooltip>
-          <contextMenu>
-            <name>ПартииЦенаКонтекстноеМеню</name>
-            <id>26</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <autoFill>true</autoFill>
-          </contextMenu>
-          <type>LabelField</type>
-          <editMode>Enter</editMode>
-          <showInHeader>true</showInHeader>
-          <headerHorizontalAlign>Left</headerHorizontalAlign>
-          <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:LabelFieldExtInfo">
-            <width>1</width>
-            <autoMaxWidth>true</autoMaxWidth>
-            <autoMaxHeight>true</autoMaxHeight>
-            <verticalStretch>false</verticalStretch>
-          </extInfo>
-        </items>
-        <items xsi:type="form:FormField">
           <name>Партиицена2</name>
           <id>283</id>
           <visible>true</visible>
@@ -6769,7 +6707,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ИндНомер.индкод.Владелец КАК Товар,
 	СУММА(ВЫБОР
 		КОГДА ИндНомер.ЕстьФото
@@ -6789,7 +6727,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ИндНомер.индкод.Владелец КАК индкодВладелец,
 	МАКСИМУМ(ИндНомер.АвитоЧастник) КАК АвитоЧастник,
 	ИндНомер.ЦенаПроверена КАК ЦенаПроверена,
@@ -6803,8 +6741,34 @@
 	ИндНомер.Комментарий
 ;
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	ВЫБРАТЬ
+	МАКСИМУМ(дт_ЦеныНоменклатурыСрезПоследних.Период) КАК Период,
+	дт_ЦеныНоменклатурыСрезПоследних.Номенклатура КАК Номенклатура
+ПОМЕСТИТЬ МаксПериод
+ИЗ
+	РегистрСведений.дт_ЦеныНоменклатуры.СрезПоследних(&amp;ТекДата,) КАК дт_ЦеныНоменклатурыСрезПоследних
+СГРУППИРОВАТЬ ПО
+	дт_ЦеныНоменклатурыСрезПоследних.Номенклатура
+;
+
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
+	дт_ЦеныНоменклатуры.Номенклатура КАК Номенклатура,
+	МАКСИМУМ(дт_ЦеныНоменклатуры.Цена) КАК Цена
+ПОМЕСТИТЬ Актуальная
+ИЗ
+	РегистрСведений.дт_ЦеныНоменклатуры.СрезПоследних(&amp;ТекДата,) КАК дт_ЦеныНоменклатуры
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ МаксПериод КАК МаксПериод
+		ПО (дт_ЦеныНоменклатуры.Период = МаксПериод.Период)
+		И (дт_ЦеныНоменклатуры.Номенклатура = МаксПериод.Номенклатура)
+СГРУППИРОВАТЬ ПО
+	дт_ЦеныНоменклатуры.Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
 	НоменклатураПредложения.Ссылка,
 	КОЛИЧЕСТВО(НоменклатураПредложения.НомерСтроки) КАК КоличествоЗаписей
 ПОМЕСТИТЬ ВТ_Предложения
@@ -6814,8 +6778,9 @@
 	НоменклатураПредложения.Ссылка
 ;
 
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	ВЫБРАТЬ
 	СправочникНоменклатура.Ссылка КАК Ссылка,
 	СправочникНоменклатура.Распродажа КАК Распродажа,
 	СправочникНоменклатура.ДатаОкончанияРаспродажи КАК ДатаОкончанияРаспродажи,
@@ -6861,7 +6826,8 @@
 		КОГДА ЕСТЬNULL(ВТ_Предложения.КоличествоЗаписей, 0) > 0
 			ТОГДА &quot;Заполнено&quot;
 		ИНАЧЕ &quot;&quot;
-	КОНЕЦ КАК НеЛиквид
+	КОНЕЦ КАК Предложения,
+	ОКР(Актуальная.Цена, 0) КАК Цена
 ИЗ
 	Справочник.Номенклатура КАК СправочникНоменклатура
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РегистрНакопления1.Остатки(,
@@ -6885,7 +6851,9 @@
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Продажи КАК ВТ_Продажи
 		ПО СправочникНоменклатура.Ссылка = ВТ_Продажи.Товар
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Предложения КАК ВТ_Предложения
-		ПО ВТ_Предложения.Ссылка = СправочникНоменклатура.Ссылка</queryText>
+		ПО ВТ_Предложения.Ссылка = СправочникНоменклатура.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ Актуальная КАК Актуальная
+		ПО Актуальная.Номенклатура = СправочникНоменклатура.Ссылка</queryText>
       <mainTable>Catalog.Номенклатура</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
