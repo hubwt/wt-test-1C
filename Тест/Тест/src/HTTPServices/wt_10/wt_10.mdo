@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="07d3307d-6544-4f5b-a4bd-7784f068fc6f">
+  <name>wt_10</name>
+  <synonym>
+    <key>ru</key>
+    <value>Wt 10</value>
+  </synonym>
+  <rootURL>wt_10</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="7ac4d9fc-685c-44d1-bc24-5b04d69429f1">
+    <name>ВывестиСписокТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вывести список товаров</value>
+    </synonym>
+    <template>/list/{text}/{count}/{page}</template>
+    <methods uuid="a0c4aeb6-797c-4d77-a8f0-68d420352b63">
+      <name>GetProductsList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get products list</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровGetProductsList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0f2581ca-f190-4550-ad75-bb10321f0169">
+    <name>ПолучитьТовар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товар</value>
+    </synonym>
+    <template>/product/{id}</template>
+    <methods uuid="70af9114-d59d-4afb-8e0b-40ca87cb0e35">
+      <name>GetProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get product</value>
+      </synonym>
+      <handler>ПолучитьТоварGetProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c4164f30-35af-42fd-9cd1-f6ce889b9d05">
+    <name>Авторизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авторизация</value>
+    </synonym>
+    <template>/auth</template>
+    <methods uuid="9f729552-b939-4595-8714-ec6a22a28a95">
+      <name>Authorization</name>
+      <synonym>
+        <key>ru</key>
+        <value>Authorization</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьАвторизациюAuthorization</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="21e51888-415f-4aa5-a068-c9314861fdff">
+    <name>СменаМестаХранения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена места хранения</value>
+    </synonym>
+    <template>/edit-place</template>
+    <methods uuid="95e89f65-f0fe-4bd6-910c-164d1f49be6b">
+      <name>EditPlace</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit place</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаМестаХраненияEditPlace</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="85707558-4bf8-40af-bece-f60b835df540">
+    <name>ПолучитьТоварыПоИндкодам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары по индкодам</value>
+    </synonym>
+    <template>/get-products-by-id</template>
+    <methods uuid="8729479d-644c-4b66-ac19-367df580ecfc">
+      <name>GetProductsById</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get products by id</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьТоварыПоИндкодамGetProductsById</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="44c3be88-b3a7-4430-8939-bbf873ebde22">
+    <name>СменаРеквизитовТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена реквизитов товара</value>
+    </synonym>
+    <template>/edit-product</template>
+    <methods uuid="94ce30b2-791b-48b9-b8bf-7ecd476f6b49">
+      <name>EditList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit list</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаРеквизитовТовараEditList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="175af8fe-72b4-4c34-8b2d-17bdaf4ca43d">
+    <name>СменаНаличия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена наличия</value>
+    </synonym>
+    <template>/change-of-availability</template>
+    <methods uuid="91609927-4183-4ee8-a014-3a55ed991d79">
+      <name>ChangeOfAvailability</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change of availability</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаНаличияChangeOfAvailability</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="da90a0d0-2003-4226-b889-7c63cad55533">
+    <name>ВывестиСписокпохожихТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вывести списокпохожих товаров</value>
+    </synonym>
+    <template>/similar-list/{id}/{count}/{page}</template>
+    <methods uuid="41195fff-a450-4297-a25e-c86ed7fb0f76">
+      <name>GetSimilarProductsList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get similar products list</value>
+      </synonym>
+      <handler>ПолучитьСписокПохожихТоваровGetSimilarProductsList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="d0c7d45f-cfeb-4ecc-a433-ff1051deed0c">
+    <name>ГлобальноВыдатьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Глобально выдать продажу</value>
+    </synonym>
+    <template>/global-issue-sale/{id}</template>
+    <methods uuid="1f4569c1-6942-4dd0-b0c3-87329b1b9a64">
+      <name>globalissueasale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Globalissueasale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ГлобальноВыдатьПродажуglobalissueasale</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>
