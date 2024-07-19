@@ -91,4 +91,54 @@
       <handler>ПолучитьТоварыПоИндкодамGetProductsById</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="44c3be88-b3a7-4430-8939-bbf873ebde22">
+    <name>СменаРеквизитовТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена реквизитов товара</value>
+    </synonym>
+    <template>/edit-product</template>
+    <methods uuid="94ce30b2-791b-48b9-b8bf-7ecd476f6b49">
+      <name>EditList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit list</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаРеквизитовТовараEditList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="175af8fe-72b4-4c34-8b2d-17bdaf4ca43d">
+    <name>СменаНаличия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена наличия</value>
+    </synonym>
+    <template>/change-of-availability</template>
+    <methods uuid="91609927-4183-4ee8-a014-3a55ed991d79">
+      <name>ChangeOfAvailability</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change of availability</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаНаличияChangeOfAvailability</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="da90a0d0-2003-4226-b889-7c63cad55533">
+    <name>ВывестиСписокпохожихТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вывести списокпохожих товаров</value>
+    </synonym>
+    <template>/similar-list/{id}/{count}/{page}</template>
+    <methods uuid="41195fff-a450-4297-a25e-c86ed7fb0f76">
+      <name>GetSimilarProductsList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get similar products list</value>
+      </synonym>
+      <handler>ПолучитьСписокПохожихТоваровGetSimilarProductsList</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
