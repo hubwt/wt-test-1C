@@ -164,7 +164,7 @@
       <key>ru</key>
       <value>Получить заявки для менеджера</value>
     </synonym>
-    <template>/get-app-manager/{count}/{page}/{saler}</template>
+    <template>/get-app-manager/{count}/{page}/{saler}/{text}</template>
     <methods uuid="70db7240-2a1c-4e83-ab31-e533750c25d0">
       <name>GetDashSale</name>
       <synonym>
@@ -172,6 +172,40 @@
         <value>Get Dash Sale</value>
       </synonym>
       <handler>ПолучитьЗаявкиДляМенеджераGetDashSalers</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="2f2e872f-a4a3-4f90-8a74-0af890136768">
+    <name>ВзятьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Взять заявку</value>
+    </synonym>
+    <template>/take-app</template>
+    <methods uuid="0c7600ed-1f7a-47bb-8c14-2e58f5795575">
+      <name>takeapp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Takeapp</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ВзятьЗаявкуtakeapp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="37170caa-93ff-4633-8610-0662005efa80">
+    <name>СменаКлиентаВЗаявке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена клиента в заявке</value>
+    </synonym>
+    <template>/edit-client-application</template>
+    <methods uuid="8223cd17-b2c1-49d4-8956-76d6f06bd4ef">
+      <name>editclientapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Editclientapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаКлиентаВЗаявкеeditclientapplication</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
