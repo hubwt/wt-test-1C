@@ -274,6 +274,23 @@
       <handler>ПолучитьПродажуgetsale</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="2140c3c2-8bb7-4fbe-b9fb-e00b2bdee934">
+    <name>ПолучитьИнфоОПользователе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить инфо о пользователе</value>
+    </synonym>
+    <template>/get-info-user</template>
+    <methods uuid="448d2fe6-491f-4e51-bf32-63b441253147">
+      <name>getinfouser</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getinfouser</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьИнфоОПользователеgetinfouser</handler>
+    </methods>
+  </urlTemplates>
   <urlTemplates uuid="8c44628d-805f-4540-aa2e-eb2d3f0e7394">
     <name>ПолучитьРолиПользователей</name>
     <synonym>
@@ -305,6 +322,23 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>ИзменитьПродажуeditsale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="035e2765-6700-4565-9568-1b49e0956964">
+    <name>ОтправитьСМС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправить СМС</value>
+    </synonym>
+    <template>/send-SMS</template>
+    <methods uuid="6b116ddd-c314-464b-9bc1-504dff2dfc99">
+      <name>SendSMS</name>
+      <synonym>
+        <key>ru</key>
+        <value>Send SMS</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОтправитьСМСsendSMS</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
