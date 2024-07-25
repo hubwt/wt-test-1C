@@ -16,7 +16,7 @@
   <inputByString>Catalog.Номенклатура.StandardAttribute.Description</inputByString>
   <inputByString>Catalog.Номенклатура.StandardAttribute.Code</inputByString>
   <inputByString>Catalog.Номенклатура.Attribute.Артикул</inputByString>
-  <searchStringModeOnInputByString>AnyPart</searchStringModeOnInputByString>
+  <choiceDataGetModeOnInputByString>Background</choiceDataGetModeOnInputByString>
   <standardAttributes>
     <dataHistory>Use</dataHistory>
     <name>PredefinedDataName</name>
@@ -192,7 +192,6 @@
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
   <attributes uuid="ef6e9242-ce4c-4c10-bd8f-38de62787669">
@@ -735,8 +734,6 @@
     <maxValue xsi:type="core:UndefinedValue"/>
     <fillChecking>ShowError</fillChecking>
     <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
   </attributes>
   <attributes uuid="7de2f75e-898b-4e84-986b-ce2e5a76c04d">
     <name>Производитель</name>
@@ -1429,6 +1426,22 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="6e9f8b63-70ea-41b8-9dd6-84eab5eed140">
+    <name>Лог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Лог</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <tabularSections uuid="d67b4663-4a33-4abb-9390-f30798f65def">
     <producedTypes>
       <objectType typeId="9fe2d906-c866-4bae-8c51-d4bca319eb71" valueTypeId="70bebb0a-52eb-430e-93cc-032cc3c7e35f"/>
@@ -1513,7 +1526,6 @@
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
       <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
     </attributes>
     <attributes uuid="b169466a-bd46-4329-b96e-522aee6051a7">
       <name>Наименование</name>
@@ -1528,7 +1540,6 @@
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
       <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
     </attributes>
     <attributes uuid="d22d7148-46cd-4711-906d-b447d1b0da79">
       <name>Количество</name>
@@ -1560,7 +1571,6 @@
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
       <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
     </attributes>
     <attributes uuid="b8b8ef03-51b0-47ef-b328-f6b205971ecc">
       <name>НомерПоиск</name>
@@ -1577,7 +1587,6 @@
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
       <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
     </attributes>
     <attributes uuid="c5fb656a-902f-487a-9628-e2258ecf8c96">
       <name>Предложение</name>
@@ -1960,6 +1969,11 @@
       <key>ru</key>
       <value>Форма элемента</value>
     </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
   </forms>
