@@ -164,7 +164,7 @@
       <key>ru</key>
       <value>Получить заявки для менеджера</value>
     </synonym>
-    <template>/get-app-manager/{count}/{page}/{saler}/{text}/{action_status}/{fin_status}</template>
+    <template>/get-app-manager/{count}/{page}/{saler}/{text}</template>
     <methods uuid="70db7240-2a1c-4e83-ab31-e533750c25d0">
       <name>GetDashSale</name>
       <synonym>
@@ -223,6 +223,22 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>ВзятьВРаботуКладощикtakeappstorager</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="17ef7c27-ba96-4b5e-928d-dc0c8caef469">
+    <name>ПолучитьЗаявкиДляКладовщика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить заявки для кладовщика</value>
+    </synonym>
+    <template>/get-app-storekeeper/{count}/{page}/{storekeeper}/{text}</template>
+    <methods uuid="6bd9bcf9-39ff-4606-aa07-8b1844909457">
+      <name>Getappstorekeeper</name>
+      <synonym>
+        <key>ru</key>
+        <value>getappstorekeeper</value>
+      </synonym>
+      <handler>ПолучитьЗаявкиДляКладовщикаgetappstorekeeper</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>

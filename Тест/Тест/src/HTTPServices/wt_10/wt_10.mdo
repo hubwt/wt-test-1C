@@ -14,7 +14,7 @@
       <key>ru</key>
       <value>Вывести список товаров</value>
     </synonym>
-    <template>/list/{text}/{count}/{page}</template>
+    <template>/product-cards-list/{text}/{count}/{page}</template>
     <methods uuid="a0c4aeb6-797c-4d77-a8f0-68d420352b63">
       <name>GetProductsList</name>
       <synonym>
@@ -305,6 +305,89 @@
         <value>Getuserroles</value>
       </synonym>
       <handler>ПолучитьРолиПользователейgetuserroles</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="48ec27f3-475a-49d2-a234-451447699bd7">
+    <name>ИзменитьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить продажу</value>
+    </synonym>
+    <template>/edit-sale</template>
+    <methods uuid="48fbfad5-2d0c-4ed3-9984-626fcdee1ead">
+      <name>editsale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Editsale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьПродажуeditsale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="035e2765-6700-4565-9568-1b49e0956964">
+    <name>ОтправитьСМС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправить СМС</value>
+    </synonym>
+    <template>/send-SMS</template>
+    <methods uuid="6b116ddd-c314-464b-9bc1-504dff2dfc99">
+      <name>SendSMS</name>
+      <synonym>
+        <key>ru</key>
+        <value>Send SMS</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОтправитьСМСsendSMS</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0160748b-d757-4547-ab31-be1c3a1bfc42">
+    <name>СоздатьКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать клиента</value>
+    </synonym>
+    <template>/create-client</template>
+    <methods uuid="8b1bf1e8-35e8-4ea2-85db-690121f7310c">
+      <name>createclient</name>
+      <synonym>
+        <key>ru</key>
+        <value>Createclient</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьКлиентаcreateclient</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e2df70a3-e281-424b-8f28-e1ad7e3638f5">
+    <name>ПолучитьКарточкуТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить карточку товара</value>
+    </synonym>
+    <template>/get-card-product/{id}</template>
+    <methods uuid="227e164c-913a-48bf-af99-2a2a2a132546">
+      <name>getcardproduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getcardproduct</value>
+      </synonym>
+      <handler>ПолучитьКарточкуТовараgetcardproduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="71343966-a878-4133-a0cf-30e8859f292b">
+    <name>ПолучитьТоварыКарточки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары карточки</value>
+    </synonym>
+    <template>/products-card/{id}/{count}/{page}</template>
+    <methods uuid="8b20b3b0-279e-47e9-81c6-17bb809abff4">
+      <name>productscard</name>
+      <synonym>
+        <key>ru</key>
+        <value>Productscard</value>
+      </synonym>
+      <handler>ПолучитьТоварыКарточкиproductscard</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
