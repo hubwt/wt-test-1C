@@ -1084,7 +1084,6 @@
         <items xsi:type="form:FormField">
           <name>Контролёр1</name>
           <id>395</id>
-          <visible>true</visible>
           <userVisible>
             <common>true</common>
           </userVisible>
@@ -9498,17 +9497,84 @@
         <representation>Auto</representation>
       </extInfo>
     </items>
-    <items xsi:type="form:Button">
-      <name>ПерейтиВЗаявкуWT10</name>
-      <id>1371</id>
+    <items xsi:type="form:FormGroup">
+      <name>СсылкаНаСайт</name>
+      <id>1375</id>
+      <items xsi:type="form:Button">
+        <name>ПерейтиВЗаявкуWT10</name>
+        <id>1371</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ПерейтиВЗаявкуWT10РасширеннаяПодсказка</name>
+          <id>1372</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.ПерейтиВЗаявкуWT10</commandName>
+        <representation>Picture</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <picture xsi:type="core:PictureRef">
+          <picture>StdPicture.GotoExternalURL</picture>
+        </picture>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:Button">
+        <name>ФормаКраткоеОписание</name>
+        <id>1377</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ФормаКраткоеОписаниеРасширеннаяПодсказка</name>
+          <id>1378</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.КраткоеОписание</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
+      <title>
+        <key>ru</key>
+        <value>Перейти на сайт WT10</value>
+      </title>
       <extendedTooltip>
-        <name>ПерейтиВЗаявкуWT10РасширеннаяПодсказка</name>
-        <id>1372</id>
+        <name>СсылкаНаСайтРасширеннаяПодсказка</name>
+        <id>1376</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -9521,15 +9587,10 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.Command.ПерейтиВЗаявкуWT10</commandName>
-      <representation>Picture</representation>
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
-      <placementArea>UserCmds</placementArea>
-      <picture xsi:type="core:PictureRef">
-        <picture>StdPicture.GotoExternalURL</picture>
-      </picture>
-      <representationInContextMenu>Auto</representationInContextMenu>
+      <type>Popup</type>
+      <extInfo xsi:type="form:PopupGroupExtInfo">
+        <representation>Auto</representation>
+      </extInfo>
     </items>
     <visible>true</visible>
     <enabled>true</enabled>
@@ -10445,6 +10506,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>ПерейтиВЗаявкуWT10</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>КраткоеОписание</name>
+    <title>
+      <key>ru</key>
+      <value>Краткое описание</value>
+    </title>
+    <id>12</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>КраткоеОписание</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
