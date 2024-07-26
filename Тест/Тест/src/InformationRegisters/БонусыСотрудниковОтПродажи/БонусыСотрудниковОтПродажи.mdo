@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e0de2bf-470b-4911-80b1-17d6aecfda48">
+  <producedTypes>
+    <selectionType typeId="1ad60ced-8e3b-4bd1-8964-924759a10ba0" valueTypeId="5d7c7947-66bf-4ca9-a581-58f0e5f45419"/>
+    <listType typeId="31ef5b4d-8b2e-49d9-b595-29a6f62ba25e" valueTypeId="617a23eb-0e06-42b7-9e5d-d46aab512da9"/>
+    <managerType typeId="5bdf0e51-b2f3-4bcf-8e5a-c8a492d7b069" valueTypeId="1580fbeb-cc88-42a5-8466-c1de433f07f0"/>
+    <recordSetType typeId="94478950-7179-4f6a-8869-4bb9467dda37" valueTypeId="936290e6-af08-47b0-9871-b80be777b62d"/>
+    <recordKeyType typeId="180ddbd5-1aff-4725-baef-c2a276b8ff93" valueTypeId="85627228-16c7-4a9c-bae4-e1947c33d1f6"/>
+    <recordType typeId="009e3d56-17a9-4f0a-9987-87408643e8c4" valueTypeId="b2a730de-1d9b-44b3-acea-06151659aaf7"/>
+    <recordManagerType typeId="7a866b50-a2a9-4796-89c4-c61bd931fc7d" valueTypeId="f2c71791-0964-409a-b3f2-83630e6eb7ad"/>
+  </producedTypes>
+  <name>БонусыСотрудниковОтПродажи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бонусы сотрудников от продажи</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6bcebc55-79f9-4720-b57e-aa33f0ea3f6c">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>20</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="c2e7c454-e424-4c3e-9b3c-39467e45edca">
+    <name>Роль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Роль</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДолжностиДляУК</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="926ebe30-2ddf-404e-90ea-2af7aeb50616">
+    <name>Продажа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Продажа</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПродажаЗапчастей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="de5e7852-c191-4fda-90e2-6a75d023136b">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
