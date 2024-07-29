@@ -390,4 +390,38 @@
       <handler>ПолучитьТоварыКарточкиproductscard</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="a8539ffa-de00-40c6-b5b8-28df461bb007">
+    <name>СменаФинансовогоСтатусаЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена финансового статуса заявки</value>
+    </synonym>
+    <template>/change_application_fin_status/{id}/{status}</template>
+    <methods uuid="e83cecbd-025b-403f-a842-bab4d53850ee">
+      <name>ChangeApplicationFinStatus</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change application fin status</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаСтатусаЗаявкиChangeApplicationFinStatus</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="4049f5ca-73b4-42a9-bc1d-de29171b49e4">
+    <name>СменаСтатусаДействияЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена статуса действия заявки</value>
+    </synonym>
+    <template>/change_application_action_status/{id}/{status}</template>
+    <methods uuid="cf935b5a-c30a-4487-b122-3af82cb5a3af">
+      <name>ChangeApplicationActionStatus</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change application action status</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаСтатусаДействияЗаявкиChangeApplicationActionStatus</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
