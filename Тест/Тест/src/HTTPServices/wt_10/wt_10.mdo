@@ -424,4 +424,20 @@
       <handler>СменаСтатусаДействияЗаявкиChangeApplicationActionStatus</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="e6cc1007-58f9-43c5-94b0-2adea72a824f">
+    <name>ПолучитьПоследнийУчтенныйТовар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить последний учтенный товар</value>
+    </synonym>
+    <template>/get_last_counted_products/{count}/{page}</template>
+    <methods uuid="fbbde8be-8ddf-44b0-a5b5-b083294d9dee">
+      <name>GetLastCountedProducts</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get last counted products</value>
+      </synonym>
+      <handler>ПолучитьПоследнийУчтенныйТоварGetLastCountedProducts</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
