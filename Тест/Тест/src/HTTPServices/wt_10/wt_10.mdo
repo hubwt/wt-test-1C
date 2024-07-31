@@ -341,6 +341,22 @@
       <handler>ОтправитьСМСsendSMS</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="a04c63e0-e423-40ea-a0a5-d6494bd52403">
+    <name>ПопулярныйТоварИзЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Популярный товар из заявок</value>
+    </synonym>
+    <template>/PopularProduct/{count}/{page}</template>
+    <methods uuid="75c5f24a-90fb-41de-97b0-cf9a06819e46">
+      <name>PopularProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Popular product</value>
+      </synonym>
+      <handler>ПопулярныйТоварИзЗаявокPopularProduct</handler>
+    </methods>
+  </urlTemplates>
   <urlTemplates uuid="0160748b-d757-4547-ab31-be1c3a1bfc42">
     <name>СоздатьКлиента</name>
     <synonym>
@@ -388,6 +404,22 @@
         <value>Productscard</value>
       </synonym>
       <handler>ПолучитьТоварыКарточкиproductscard</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="43b67302-f855-4870-9781-c09cf8c20af8">
+    <name>ПулучитьДанныеПользователяWT10</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пулучить данные пользователя w t10</value>
+    </synonym>
+    <template>/user_WT10/{user}/{id}</template>
+    <methods uuid="27a1cbd5-df20-4dfe-8f24-48d6699ca7a3">
+      <name>ПолучитьДанныеПользователя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Получить данные пользователя</value>
+      </synonym>
+      <handler>ПулучитьДанныеПользователя</handler>
     </methods>
   </urlTemplates>
   <urlTemplates uuid="7f027fd8-3c0c-4a85-9830-d6e90049d613">
