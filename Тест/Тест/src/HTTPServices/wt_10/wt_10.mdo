@@ -406,6 +406,56 @@
       <handler>ПолучитьТоварыКарточкиproductscard</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="a8539ffa-de00-40c6-b5b8-28df461bb007">
+    <name>СменаФинансовогоСтатусаЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена финансового статуса заявки</value>
+    </synonym>
+    <template>/change_application_fin_status/{id}/{status}</template>
+    <methods uuid="e83cecbd-025b-403f-a842-bab4d53850ee">
+      <name>ChangeApplicationFinStatus</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change application fin status</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаСтатусаЗаявкиChangeApplicationFinStatus</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="4049f5ca-73b4-42a9-bc1d-de29171b49e4">
+    <name>СменаСтатусаДействияЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена статуса действия заявки</value>
+    </synonym>
+    <template>/change_application_action_status/{id}/{status}</template>
+    <methods uuid="cf935b5a-c30a-4487-b122-3af82cb5a3af">
+      <name>ChangeApplicationActionStatus</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change application action status</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаСтатусаДействияЗаявкиChangeApplicationActionStatus</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e6cc1007-58f9-43c5-94b0-2adea72a824f">
+    <name>ПолучитьПоследнийУчтенныйТовар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить последний учтенный товар</value>
+    </synonym>
+    <template>/get_last_counted_products/{count}/{page}</template>
+    <methods uuid="fbbde8be-8ddf-44b0-a5b5-b083294d9dee">
+      <name>GetLastCountedProducts</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get last counted products</value>
+      </synonym>
+      <handler>ПолучитьПоследнийУчтенныйТоварGetLastCountedProducts</handler>
+    </methods>
+  </urlTemplates>
   <urlTemplates uuid="43b67302-f855-4870-9781-c09cf8c20af8">
     <name>ПулучитьДанныеПользователяWT10</name>
     <synonym>
