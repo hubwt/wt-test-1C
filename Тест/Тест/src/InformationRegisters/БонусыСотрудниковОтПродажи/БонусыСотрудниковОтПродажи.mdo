@@ -37,7 +37,42 @@
     <dataHistory>Use</dataHistory>
     <fillValue xsi:type="core:UndefinedValue"/>
   </resources>
-  <attributes uuid="c2e7c454-e424-4c3e-9b3c-39467e45edca">
+  <resources uuid="5a0d83ef-9df1-4bb1-b160-f3b91b82e968">
+    <name>Бонус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бонус</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>20</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="de5e7852-c191-4fda-90e2-6a75d023136b">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="90440678-7053-47a7-9e8d-377e2a99da51">
     <name>Роль</name>
     <synonym>
       <key>ru</key>
@@ -51,8 +86,8 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
     <fillValue xsi:type="core:UndefinedValue"/>
-  </attributes>
-  <attributes uuid="926ebe30-2ddf-404e-90ea-2af7aeb50616">
+  </dimensions>
+  <dimensions uuid="25f16df6-effb-4dba-ad04-a6c55f0d786d">
     <name>Продажа</name>
     <synonym>
       <key>ru</key>
@@ -66,15 +101,20 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
     <fillValue xsi:type="core:UndefinedValue"/>
-  </attributes>
-  <dimensions uuid="de5e7852-c191-4fda-90e2-6a75d023136b">
-    <name>Сотрудник</name>
+  </dimensions>
+  <dimensions uuid="b93b011c-be89-4e21-8470-3dd26faa6f84">
+    <name>ДокументРег</name>
     <synonym>
       <key>ru</key>
-      <value>Сотрудник</value>
+      <value>Документ рег</value>
     </synonym>
     <type>
-      <types>CatalogRef.Пользователи</types>
+      <types>String</types>
+      <types>DocumentRef.ПриходДенегНаСчет</types>
+      <types>DocumentRef.АктВозврата</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
