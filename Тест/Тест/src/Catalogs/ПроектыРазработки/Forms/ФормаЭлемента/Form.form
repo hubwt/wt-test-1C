@@ -1908,6 +1908,55 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
+          <name>СписокСостояние</name>
+          <id>241</id>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Список.Состояние</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокСостояниеРасширеннаяПодсказка</name>
+            <id>243</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокСостояниеКонтекстноеМеню</name>
+            <id>242</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>СписокКомментарий</name>
           <id>50</id>
           <visible>true</visible>
@@ -3394,7 +3443,8 @@
       <queryText>ВЫБРАТЬ
 	ЗаказНаряд.Ссылка КАК Ссылка,
 	ЗаказНаряд.СуммаТовары КАК СуммаТовары,
-	ЗаказНаряд.СуммаРаботы КАК СуммаРаботы
+	ЗаказНаряд.СуммаРаботы КАК СуммаРаботы,
+	ЗаказНаряд.Состояние
 ПОМЕСТИТЬ ВТ_ЗаказНаряд
 ИЗ
 	Документ.ЗаказНаряд КАК ЗаказНаряд
@@ -3404,6 +3454,7 @@
 ВЫБРАТЬ
 	ПоступлениеЗапчастей.Ссылка,
 	ПоступлениеЗапчастей.СуммаНакладной,
+	NULL,
 	NULL
 ИЗ
 	Документ.ПоступлениеЗапчастей КАК ПоступлениеЗапчастей
@@ -3413,6 +3464,7 @@
 ВЫБРАТЬ
 	ПриходДенегНаСчет.Ссылка,
 	ПриходДенегНаСчет.СуммаДокумента,
+	NULL,
 	NULL
 ИЗ
 	Документ.ПриходДенегНаСчет КАК ПриходДенегНаСчет
@@ -3422,6 +3474,7 @@
 ВЫБРАТЬ
 	ПродажаЗапчастей.Ссылка,
 	ПродажаЗапчастей.ИтогоРекв,
+	NULL,
 	NULL
 ИЗ
 	Документ.ПродажаЗапчастей КАК ПродажаЗапчастей
@@ -3431,13 +3484,14 @@
 ВЫБРАТЬ
 	ПредварительныйСчет.Ссылка,
 	ПредварительныйСчет.ИтогоРекв,
+	NULL,
 	NULL
 ИЗ
 	Документ.ПредварительныйСчет КАК ПредварительныйСчет
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ЖурналДокументовДокументыПоПроектам.Ссылка КАК Ссылка,
 	ЖурналДокументовДокументыПоПроектам.Дата КАК Дата,
 	ЖурналДокументовДокументыПоПроектам.ПометкаУдаления КАК ПометкаУдаления,
@@ -3449,7 +3503,8 @@
 	ЖурналДокументовДокументыПоПроектам.Комментарий КАК Комментарий,
 	ЖурналДокументовДокументыПоПроектам.Тип КАК Тип,
 	ВТ_ЗаказНаряд_Работы.СуммаТовары КАК СуммаТовары,
-	ВТ_ЗаказНаряд_Работы.СуммаРаботы КАК СуммаРаботы
+	ВТ_ЗаказНаряд_Работы.СуммаРаботы КАК СуммаРаботы,
+	ВТ_ЗаказНаряд_Работы.Состояние
 ИЗ
 	ЖурналДокументов.ДокументыПоПроектам КАК ЖурналДокументовДокументыПоПроектам
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ЗаказНаряд КАК ВТ_ЗаказНаряд_Работы
