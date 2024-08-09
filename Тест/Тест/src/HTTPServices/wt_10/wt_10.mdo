@@ -396,7 +396,7 @@
       <key>ru</key>
       <value>Получить товары карточки</value>
     </synonym>
-    <template>/products-card/{id}/{count}/{page}</template>
+    <template>/products-card/{id}/{filter_stock}/{count}/{page}</template>
     <methods uuid="8b20b3b0-279e-47e9-81c6-17bb809abff4">
       <name>productscard</name>
       <synonym>
@@ -536,6 +536,23 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>ИзменитьДанныеСотрудникаChahgeEmployeeData</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="fea5a20a-06d9-40ee-9137-bcf5613110a2">
+    <name>ИзменитьРолиСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить роли сотрудника</value>
+    </synonym>
+    <template>/change_employee_role</template>
+    <methods uuid="1938a7ed-14eb-44e9-be6c-26e62e27d071">
+      <name>ChahgeEmployeeRoles</name>
+      <synonym>
+        <key>ru</key>
+        <value>Chahge employee roles</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьРолиСотрудникаChahgeEmployeeRoles</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
