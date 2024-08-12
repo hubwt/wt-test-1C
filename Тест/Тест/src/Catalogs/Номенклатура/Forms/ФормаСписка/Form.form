@@ -3101,6 +3101,43 @@
       <name>СписокКонтекстноеМеню</name>
       <id>2</id>
       <items xsi:type="form:Button">
+        <name>СписокКонтекстноеМенюКарточкаТовараWT10</name>
+        <id>509</id>
+        <title>
+          <key>ru</key>
+          <value>КарточкаТовараWT10</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>СписокКонтекстноеМенюКарточкаТовараWT10РасширеннаяПодсказка</name>
+          <id>510</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.КарточкаТовараWT10</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <picture xsi:type="core:PictureRef">
+          <picture>StdPicture.GotoExternalURL</picture>
+        </picture>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:Button">
         <name>СписокКонтекстноеМенюДобавитьВПриход</name>
         <id>35</id>
         <visible>true</visible>
@@ -8304,6 +8341,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>ДобавитьВЗаказКлиентаПартию</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>КарточкаТовараWT10</name>
+    <title>
+      <key>ru</key>
+      <value>Карточка товара w t10</value>
+    </title>
+    <id>44</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>КарточкаТовараWT10</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
