@@ -8,4 +8,70 @@
   <rootURL>wt_panel_order</rootURL>
   <reuseSessions>AutoUse</reuseSessions>
   <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="f86fc8f5-7ab9-4264-82c2-8b03be674abb">
+    <name>ПолучитьЗаказНаряд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить заказ наряд</value>
+    </synonym>
+    <template>/get-order/{id}</template>
+    <methods uuid="5772542b-889a-4117-88ed-289cfac4680b">
+      <name>getorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getorder</value>
+      </synonym>
+      <handler>ПолучитьЗаказНарядgetorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="847cba52-8070-49d7-b5d8-b4865f519ee2">
+    <name>НаполнитьЗаказНаряд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наполнить заказ наряд</value>
+    </synonym>
+    <template>/filling-order/{id}</template>
+    <methods uuid="030be23c-9021-47a3-9437-8c43328ac5f0">
+      <name>fillingorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Fillingorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>НаполнитьЗаказНарядfillingorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="cf4f0006-6ecb-4810-b6f6-07a6c47e1c67">
+    <name>ПолучитьСписокНарядов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список нарядов</value>
+    </synonym>
+    <template>/get-list-orders/{Count}/{Page}/{type}</template>
+    <methods uuid="cfe9dab3-f607-4547-a6ab-c15f334ee98d">
+      <name>getlistorders</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlistorders</value>
+      </synonym>
+      <handler>ПолучитьСписокНарядовgetlistorders</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="f19a4add-2661-469d-9700-291e2516f9a5">
+    <name>СменаCтатусаТоваровВЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена cтатуса товаров ВЗН</value>
+    </synonym>
+    <template>/change-state-order/{id}</template>
+    <methods uuid="e34ac329-c0d3-4264-b64b-4dcb5c6fad52">
+      <name>changestateorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Changestateorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаCтатусаТоваровВЗНchangestateorder</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
