@@ -347,7 +347,7 @@
       <key>ru</key>
       <value>Популярный товар из заявок</value>
     </synonym>
-    <template>/PopularProduct/{count}/{page}</template>
+    <template>/PopularProduct/{count}/{page}/{filter_stock}</template>
     <methods uuid="75c5f24a-90fb-41de-97b0-cf9a06819e46">
       <name>PopularProduct</name>
       <synonym>
@@ -553,6 +553,23 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>ИзменитьРолиСотрудникаChahgeEmployeeRoles</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8a292233-ce9f-4154-856b-265368f71f40">
+    <name>ИзменитьЦенуТовараВЗаявке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить цену товара в заявке</value>
+    </synonym>
+    <template>/edit-price-product/{id}</template>
+    <methods uuid="9b62d058-48cf-48ab-a3a9-bc22fc69e72d">
+      <name>EditPriceProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit price product</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьЦенуТовараВЗаявкеEditPriceProduct</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
