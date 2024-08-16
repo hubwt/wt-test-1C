@@ -74,4 +74,53 @@
       <handler>СменаCтатусаТоваровВЗНchangestateorder</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="1c732f00-f809-43db-b485-d72f7d4dffba">
+    <name>ДобавитьВНарядОтветственного</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавить в наряд ответственного</value>
+    </synonym>
+    <template>/add-worker-in-order</template>
+    <methods uuid="958ae207-a2a5-4e23-b149-b00063358ddb">
+      <name>addworkerinorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Addworkerinorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ДобавитьВНарядОтветственногоaddworkerinorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e5023b7e-9360-4fac-96d3-9b4fc8b8f1a7">
+    <name>ПолучитьРаботыЗаказНаряда</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить работы заказ наряда</value>
+    </synonym>
+    <template>/get-works-order/{id}/{count}/{page}</template>
+    <methods uuid="d5d287b5-45ac-4981-8b90-b5580a945b7f">
+      <name>getworksorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getworksorder</value>
+      </synonym>
+      <handler>ПолучитьРаботыЗаказНарядаgetworksorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1edf32f0-c90c-4bbc-995f-7ec9447d5c7a">
+    <name>ПолучитьТоварыЗаказНаряда</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары заказ наряда</value>
+    </synonym>
+    <template>/get-products-order/{id}/{count}/{page}</template>
+    <methods uuid="7c43db39-da32-430d-90cb-a769b198eafc">
+      <name>getproductsorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getproductsorder</value>
+      </synonym>
+      <handler>ПолучитьТоварыЗаказНарядаgetproductsorder</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
