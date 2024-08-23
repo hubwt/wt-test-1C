@@ -30,7 +30,7 @@
       <key>ru</key>
       <value>Наполнить заказ наряд</value>
     </synonym>
-    <template>/filling-order/{id}</template>
+    <template>/filling-zn/{id}</template>
     <methods uuid="030be23c-9021-47a3-9437-8c43328ac5f0">
       <name>fillingorder</name>
       <synonym>
@@ -47,7 +47,7 @@
       <key>ru</key>
       <value>Получить список нарядов</value>
     </synonym>
-    <template>/get-list-orders/{count}/{page}</template>
+    <template>/get-list-orders/{text}/{count}/{page}</template>
     <methods uuid="cfe9dab3-f607-4547-a6ab-c15f334ee98d">
       <name>getlistorders</name>
       <synonym>
@@ -63,7 +63,7 @@
       <key>ru</key>
       <value>Смена cтатуса товаров ВЗН</value>
     </synonym>
-    <template>/change-state-order/{id}</template>
+    <template>/change-state-order-product/{id}</template>
     <methods uuid="e34ac329-c0d3-4264-b64b-4dcb5c6fad52">
       <name>changestateorder</name>
       <synonym>
@@ -72,6 +72,157 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>СменаCтатусаТоваровВЗНchangestateorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1c732f00-f809-43db-b485-d72f7d4dffba">
+    <name>ДобавитьВНарядОтветственного</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавить в наряд ответственного</value>
+    </synonym>
+    <template>/add-worker-in-order</template>
+    <methods uuid="958ae207-a2a5-4e23-b149-b00063358ddb">
+      <name>addworkerinorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Addworkerinorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ДобавитьВНарядОтветственногоaddworkerinorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e5023b7e-9360-4fac-96d3-9b4fc8b8f1a7">
+    <name>ПолучитьРаботыЗаказНаряда</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить работы заказ наряда</value>
+    </synonym>
+    <template>/get-works-order/{id}/{count}/{page}</template>
+    <methods uuid="d5d287b5-45ac-4981-8b90-b5580a945b7f">
+      <name>getworksorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getworksorder</value>
+      </synonym>
+      <handler>ПолучитьРаботыЗаказНарядаgetworksorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1edf32f0-c90c-4bbc-995f-7ec9447d5c7a">
+    <name>ПолучитьТоварыЗаказНаряда</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары заказ наряда</value>
+    </synonym>
+    <template>/get-products-order/{id}/{text}/{count}/{page}</template>
+    <methods uuid="7c43db39-da32-430d-90cb-a769b198eafc">
+      <name>getproductsorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getproductsorder</value>
+      </synonym>
+      <handler>ПолучитьТоварыЗаказНарядаgetproductsorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="05f7f536-2317-4996-a1e7-4d95c66e44cb">
+    <name>УдалитьТоварИзЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить товар из ЗН</value>
+    </synonym>
+    <template>/delete-product-zn</template>
+    <methods uuid="107102e5-da4d-4e1c-9f8b-97357131baf6">
+      <name>deleteproductzn</name>
+      <synonym>
+        <key>ru</key>
+        <value>Deleteproductzn</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>УдалитьТоварИзЗНldeteproductZNdeleteproductzn</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="6ae7243b-aadc-4e73-a6b2-2b95914d5be0">
+    <name>СменаCтатусаВЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена cтатуса ВЗН</value>
+    </synonym>
+    <template>/change-state-order/{id}</template>
+    <methods uuid="e453b750-413c-420a-9b76-8f041987d7ec">
+      <name>changestateorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Changestateorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаCтатусаВЗНchangestateorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="72b2c44e-ab0a-486e-be0f-2eb212939cf3">
+    <name>ВыйтиИзЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выйти из ЗН</value>
+    </synonym>
+    <template>/get-out-zn</template>
+    <methods uuid="957363b6-0ae0-4a7a-8aeb-f994e7fd0a39">
+      <name>getoutzn</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getoutzn</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ВыйтиИзЗНgetoutapp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8dd5c3b6-df12-4d8d-902c-828dd4c270e3">
+    <name>ВзятьВРаботуКладощик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Взять в работу кладощик</value>
+    </synonym>
+    <template>/take-zn-storager</template>
+    <methods uuid="ddea1179-9b97-4da3-aa3f-78d98453bd4e">
+      <name>takeznstorager</name>
+      <synonym>
+        <key>ru</key>
+        <value>Takeznstorager</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ВзятьВРаботуКладощикtakeznstorager</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="017366d6-8bc6-4ba4-bb16-1411cee611dd">
+    <name>СменатовараЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сменатовара ЗН</value>
+    </synonym>
+    <template>/replace-product-zn/{id}</template>
+    <methods uuid="bcdb06b2-5103-45ae-a142-60c2d990f7bc">
+      <name>replaceproductzn</name>
+      <synonym>
+        <key>ru</key>
+        <value>Replaceproductzn</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменатовараЗНreplaceproductzn</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="7bf8e510-de16-41f8-aeff-6ec60301bda4">
+    <name>СменаМеткиТоваровВЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена метки товаров ВЗН</value>
+    </synonym>
+    <template>/change-mark-order-product/{id}</template>
+    <methods uuid="a1bcd529-e38a-4432-b7b7-de9eba4c517a">
+      <name>changemarkorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Changemarkorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаМеткиТоваровВЗНchangestateorder</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>

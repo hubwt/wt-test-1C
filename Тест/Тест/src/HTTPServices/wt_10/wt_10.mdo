@@ -347,7 +347,7 @@
       <key>ru</key>
       <value>Популярный товар из заявок</value>
     </synonym>
-    <template>/PopularProduct/{count}/{page}</template>
+    <template>/PopularProduct/{count}/{page}/{filter_stock}</template>
     <methods uuid="75c5f24a-90fb-41de-97b0-cf9a06819e46">
       <name>PopularProduct</name>
       <synonym>
@@ -478,7 +478,7 @@
       <key>ru</key>
       <value>Получить список клиентов</value>
     </synonym>
-    <template>/get-list-clients/{count}/{page}/{query}</template>
+    <template>/get-list-clients/{count}/{page}/{text}</template>
     <methods uuid="cca22046-53a6-47cf-a0bb-ab8d87640ec4">
       <name>Getlistclients</name>
       <synonym>
@@ -553,6 +553,220 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>ИзменитьРолиСотрудникаChahgeEmployeeRoles</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8a292233-ce9f-4154-856b-265368f71f40">
+    <name>ИзменитьЦенуТовараВЗаявке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить цену товара в заявке</value>
+    </synonym>
+    <template>/edit-application-product-price/{id}</template>
+    <methods uuid="9b62d058-48cf-48ab-a3a9-bc22fc69e72d">
+      <name>EditPriceProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit price product</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьЦенуТовараВЗаявкеEditPriceProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="04c799f7-73d1-41ed-868a-786236a811ed">
+    <name>ПолучитьОписаниеКарточкиТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить описание карточки товара</value>
+    </synonym>
+    <template>/get_description_product_card/{id}</template>
+    <methods uuid="4beeb7b8-d365-4e07-8e6a-8f91fd8f3e3d">
+      <name>GetDescriptionProductCard</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get description product card</value>
+      </synonym>
+      <handler>ПолучитьОписаниеКарточкиТовараGetDescriptionProductCard</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b3dbe81a-2045-4f06-a0b3-15a22fe6b9ba">
+    <name>ИзменитьОписаниеКарточкиТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить описание карточки товара</value>
+    </synonym>
+    <template>/edit_description_product_card</template>
+    <methods uuid="abdacfaf-989e-482a-aaef-cbb0c1ba86e7">
+      <name>EditDescriptionProductCard</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit description product card</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьОписаниеКарточкиТовараEditDescriptionProductCard</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="efa47853-8519-475f-a251-a1c772abf869">
+    <name>ПолучитьОписаниеТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить описание товара</value>
+    </synonym>
+    <template>/get_description_product/{id}</template>
+    <methods uuid="83112a2d-1e8e-4981-85d5-c35523125f4d">
+      <name>GetDescriptionProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get description product</value>
+      </synonym>
+      <handler>ПолучитьОписаниеТовараGetDescriptionProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0d300fa9-6ee4-4515-9198-20a468815df4">
+    <name>ИзменитьОписаниеТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить описание товара</value>
+    </synonym>
+    <template>/edit_description_product</template>
+    <methods uuid="3452b584-47b7-4813-b006-4b22230ba73d">
+      <name>EditDescriptionProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit description product</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьОписаниеТовараEditDescriptionProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="ffe63990-6762-44a3-bc58-b9724c9ba024">
+    <name>ПолучитьДанныеДляПродажи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить данные для продажи</value>
+    </synonym>
+    <template>/get_data_sale/{id}</template>
+    <methods uuid="0afdfd01-94c3-49a1-8fcf-f36deceb2685">
+      <name>GetDataSale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get data sale</value>
+      </synonym>
+      <handler>ПолучитьДанныеДляПродажиGetDataSale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="d4877773-4581-4e04-87c5-acf30e9e05d1">
+    <name>ЗаполнениеДанныхПродажи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заполнение данных продажи</value>
+    </synonym>
+    <template>/filling_data_sale/{id}</template>
+    <methods uuid="0215e038-12b3-46ec-802c-0bee7a6eafa3">
+      <name>FillingDataSale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Filling data sale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ЗаполнениеДанныхПродажиFillingDataSale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="ff4f6cb7-bc88-4f73-a756-546a11c0cfa6">
+    <name>ПолучитьСтраны</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить страны</value>
+    </synonym>
+    <template>/get_countries</template>
+    <methods uuid="7626212f-8ee3-40df-a5e5-f35cc05b9959">
+      <name>GetCountries</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get countries</value>
+      </synonym>
+      <handler>ПолучитьСтраныGetCountries</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="11192f63-4142-4284-acb4-206efb7bff1d">
+    <name>ПолучитьРегионы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить регионы</value>
+    </synonym>
+    <template>/get_regions/{count}/{page}/{text}</template>
+    <methods uuid="7708348e-7459-4115-a982-5c3f8f020a6e">
+      <name>GetRegions</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get regions</value>
+      </synonym>
+      <handler>ПолучитьРегионыGetRegions</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="4ba5d9fc-0e29-4ee5-866d-849e6f0090be">
+    <name>ПолучитьГорода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить города</value>
+    </synonym>
+    <template>/get_cities/{count}/{page}/{text}</template>
+    <methods uuid="2d263bb0-a078-4109-af28-d7e372dbac21">
+      <name>GetCities</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get cities</value>
+      </synonym>
+      <handler>ПолучитьГородаGetCities</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="ecae1532-4e7f-4494-976d-60049d2a5502">
+    <name>ЗаменитьКлиентаВПродаже</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заменить клиента в продаже</value>
+    </synonym>
+    <template>/replace_client_sale/{id}/{id_client}</template>
+    <methods uuid="79b6aae3-b63b-4a40-b02b-ee8cb60a2b35">
+      <name>ReplaceClientSale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Replace client sale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ЗаменитьКлиентаВПродажеReplaceClientSale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1623fa60-1166-4ca3-8296-a62c5416803e">
+    <name>РедактироватьКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактировать клиента</value>
+    </synonym>
+    <template>/edit_client/{id}</template>
+    <methods uuid="cda52a2b-fe87-489f-8c66-5d75e86c36e6">
+      <name>EditClient</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit client</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>РедактироватьКлиентаEditClient</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="43535198-5c59-45ad-80a6-1ace47e8b949">
+    <name>ПолучитьДанныеКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить данные клиента</value>
+    </synonym>
+    <template>/get_client_data/{id}</template>
+    <methods uuid="9d685867-5c2e-40af-83a0-421d6ee656af">
+      <name>GetClientData</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get client data</value>
+      </synonym>
+      <handler>ПолучитьДанныеКлиентаGetClientData</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
