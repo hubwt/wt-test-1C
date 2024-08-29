@@ -769,4 +769,69 @@
       <handler>ПолучитьДанныеКлиентаGetClientData</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="910b9fcc-5afa-4123-9e57-76ce936e7acc">
+    <name>ПравильныйПоискНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Правильный поиск номенклатуры</value>
+    </synonym>
+    <template>/list-products-right</template>
+    <methods uuid="1d50b2f0-68f7-4ecb-8d57-4acd52579ad9">
+      <name>GetProductsList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get products list</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПравильныйПоискНоменклатурыGetProductsList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="dc700f44-c634-45b0-820b-55f9d0050afe">
+    <name>ПечатьНарядаНаДоставку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Печать наряда на доставку</value>
+    </synonym>
+    <template>/printing_delivery/{id}</template>
+    <methods uuid="074516db-7a81-46f3-aeaf-042b1aa52449">
+      <name>PrintingDelivery</name>
+      <synonym>
+        <key>ru</key>
+        <value>Printing delivery</value>
+      </synonym>
+      <handler>ПечатьНарядаНаДоставкуPrintingDelivery</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="5e5a04e3-f703-4150-821f-36109d7f3bfc">
+    <name>ПечатьАктаВозврата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Печать акта возврата</value>
+    </synonym>
+    <template>/printing_return_product/{id}</template>
+    <methods uuid="75009320-6a69-48bc-92b7-a6938a80a93c">
+      <name>PrintingReturnProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Printing return product</value>
+      </synonym>
+      <handler>ПечатьАктаВозвратаPrintingReturnProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="fb723013-4573-4df7-a35e-6652a606ef9d">
+    <name>ПечатьСчетаНаОплату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Печать счета на оплату</value>
+    </synonym>
+    <template>/printing_document_payment/{id}/{stamp}</template>
+    <methods uuid="13bd920c-b26b-4bb6-a5b1-2810cc5ad408">
+      <name>PrintingDocumentPayment</name>
+      <synonym>
+        <key>ru</key>
+        <value>Printing document payment</value>
+      </synonym>
+      <handler>ПечатьСчетаНаОплатуPrintingDocumentPayment</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
