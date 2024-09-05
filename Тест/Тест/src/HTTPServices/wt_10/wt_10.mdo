@@ -14,7 +14,7 @@
       <key>ru</key>
       <value>Вывести список товаров</value>
     </synonym>
-    <template>/product-cards-list/{text}/{count}/{page}</template>
+    <template>/product-cards-list/{text}/{count}/{page}/{availability}</template>
     <methods uuid="a0c4aeb6-797c-4d77-a8f0-68d420352b63">
       <name>GetProductsList</name>
       <synonym>
@@ -815,6 +815,54 @@
         <value>Printing document payment</value>
       </synonym>
       <handler>ПечатьСчетаНаОплатуPrintingDocumentPayment</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="41787362-c326-4add-bc0f-1e2f0c4312d4">
+    <name>ДобавитьНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавить НДС</value>
+    </synonym>
+    <template>/add-vat/{id}</template>
+    <methods uuid="aa4cedf1-b9e6-4779-b1de-dc4bed0d9aaa">
+      <name>addvat</name>
+      <synonym>
+        <key>ru</key>
+        <value>Addvat</value>
+      </synonym>
+      <handler>ДобавитьНДСaddvat</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b7b568fc-a0e1-4133-a7fd-de41961ace55">
+    <name>ПолучитьСписоккарточекТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить списоккарточек товаров</value>
+    </synonym>
+    <template>/get-card-ids</template>
+    <methods uuid="1c597e15-d320-4ad1-83da-3bf39fe32079">
+      <name>getcardids</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getcardids</value>
+      </synonym>
+      <handler>ПолучитьСписоккарточекТоваровgetcardids</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="bc171e2f-a060-4a36-a479-0aa6b15e8112">
+    <name>ПолучитьСписокТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список товаров</value>
+    </synonym>
+    <template>/get-product-ids</template>
+    <methods uuid="23df4ddf-762d-4cb7-bfd5-9b379a0fb357">
+      <name>getproductids</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getproductids</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровgetproductids</handler>
     </methods>
   </urlTemplates>
   <urlTemplates uuid="910b9fcc-5afa-4123-9e57-76ce936e7acc">

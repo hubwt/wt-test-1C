@@ -1756,8 +1756,38 @@
     <name>ФормаКоманднаяПанель</name>
     <id>-1</id>
     <items xsi:type="form:Button">
+      <name>ФормаОтчётПопроданнымЗапчастям</name>
+      <id>125</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>ФормаОтчётПопроданнымЗапчастямРасширеннаяПодсказка</name>
+        <id>126</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.Command.ОтчётПопроданнымЗапчастям</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
       <name>ФормаОтчётПоЗапчастям</name>
-      <id>69</id>
+      <id>127</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -1765,7 +1795,7 @@
       </userVisible>
       <extendedTooltip>
         <name>ФормаОтчётПоЗапчастямРасширеннаяПодсказка</name>
-        <id>70</id>
+        <id>128</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -1784,6 +1814,7 @@
       <autoMaxHeight>true</autoMaxHeight>
       <placementArea>UserCmds</placementArea>
       <representationInContextMenu>Auto</representationInContextMenu>
+      <locationInCommandBar>InCommandBarAndInAdditionalSubmenu</locationInCommandBar>
     </items>
     <items xsi:type="form:Addition">
       <title>
@@ -2004,22 +2035,22 @@
     </edit>
   </attributes>
   <formCommands>
-    <name>ОтчётПоЗапчастям</name>
+    <name>ОтчётПопроданнымЗапчастям</name>
     <title>
       <key>ru</key>
-      <value>Отчёт по запчастям</value>
+      <value>Отчёт попроданным запчастям</value>
     </title>
     <id>1</id>
     <toolTip>
       <key>ru</key>
-      <value>Отчёт по запчастям</value>
+      <value>Отчёт попроданным запчастям</value>
     </toolTip>
     <use>
       <common>true</common>
     </use>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
-        <name>ОтчётПоЗапчастям</name>
+        <name>ОтчётПоПроданнымЗапчастям</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
@@ -2037,6 +2068,27 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>Поиск</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ОтчётПоЗапчастям</name>
+    <title>
+      <key>ru</key>
+      <value>Отчёт по запчастям</value>
+    </title>
+    <id>2</id>
+    <toolTip>
+      <key>ru</key>
+      <value>Отчёт по запчастям</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ОтчётПоЗапчастям</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
