@@ -1182,10 +1182,6 @@
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
-      <choiceParameterLinks>
-        <name>Отбор.Владелец</name>
-        <field>Document.ЗаказНаряд.TabularSection.Товары.Attribute.Номенклатура</field>
-      </choiceParameterLinks>
       <dataHistory>Use</dataHistory>
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
@@ -1199,7 +1195,7 @@
         <types>Number</types>
         <numberQualifiers>
           <precision>15</precision>
-          <scale>2</scale>
+          <scale>1</scale>
           <nonNegative>true</nonNegative>
         </numberQualifiers>
       </type>
@@ -1403,6 +1399,23 @@
       </synonym>
       <type>
         <types>EnumRef.МеткиДляТоваровЗН</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="06a58bd5-8229-4462-a188-e928ad49756b">
+      <name>ДатаУстановки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата установки</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
