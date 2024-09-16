@@ -577,6 +577,7 @@
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
           <wrap>true</wrap>
+          <quickChoice>true</quickChoice>
           <chooseType>true</chooseType>
           <typeDomainEnabled>true</typeDomainEnabled>
           <textEdit>true</textEdit>
@@ -654,6 +655,10 @@
         <dataPath xsi:type="form:DataPath">
           <segments>Объект.Город2</segments>
         </dataPath>
+        <handlers>
+          <event>OnChange</event>
+          <name>Город2ПриИзменении</name>
+        </handlers>
         <extendedTooltip>
           <name>Город2РасширеннаяПодсказка</name>
           <id>94</id>
@@ -685,9 +690,18 @@
         <headerHorizontalAlign>Left</headerHorizontalAlign>
         <showInFooter>true</showInFooter>
         <extInfo xsi:type="form:InputFieldExtInfo">
+          <handlers>
+            <event>AutoComplete</event>
+            <name>Город2АвтоПодбор</name>
+          </handlers>
+          <handlers>
+            <event>StartChoice</event>
+            <name>Город2НачалоВыбора</name>
+          </handlers>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
           <wrap>true</wrap>
+          <quickChoice>true</quickChoice>
           <chooseType>true</chooseType>
           <typeDomainEnabled>true</typeDomainEnabled>
           <textEdit>true</textEdit>
