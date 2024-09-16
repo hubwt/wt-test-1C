@@ -6122,6 +6122,10 @@
         <items xsi:type="form:FormField">
           <name>ТоварыДатаУстановки</name>
           <id>782</id>
+          <title>
+            <key>ru</key>
+            <value>Установлена</value>
+          </title>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -6763,6 +6767,10 @@
         <handlers>
           <event>OnChange</event>
           <name>ТоварыПриИзменении</name>
+        </handlers>
+        <handlers>
+          <event>AfterDeleteRow</event>
+          <name>ТоварыПослеУдаления</name>
         </handlers>
         <searchStringAddition>
           <visible>true</visible>
@@ -8223,6 +8231,11 @@
             <choiceList>
               <value xsi:type="core:ReferenceValue">
                 <value>Enum.дт_РолиВПродаже.EnumValue.Подготовщик</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.дт_РолиВПродаже.EnumValue.Кладовщик</value>
               </value>
             </choiceList>
           </extInfo>

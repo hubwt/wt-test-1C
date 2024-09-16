@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0899b2c4-9aea-413f-8947-789daf4037f9">
+  <producedTypes>
+    <selectionType typeId="b1a533d4-b241-4873-86f5-0c354a0fe7a9" valueTypeId="4bf0c612-6c03-4b14-ac3e-a3c7603b79ac"/>
+    <listType typeId="7978ed5c-199d-47a3-b4c5-f65e5ab6719a" valueTypeId="2ed7934f-b843-4b59-afef-e9c1ff00530a"/>
+    <managerType typeId="ff7c2d45-8762-4880-9d6f-f438bd38c82f" valueTypeId="c5e6c4ee-3333-4684-9564-1eafc06df325"/>
+    <recordSetType typeId="17b872ce-5a7d-4b6c-9a64-4cbcf787a38a" valueTypeId="ff74d6b2-fa9f-4c77-905b-d81c1f19723d"/>
+    <recordKeyType typeId="44421a08-a63a-4b1f-92d8-2b18b3f385a3" valueTypeId="6c973615-ebe0-4f39-ab7d-185af42791f8"/>
+    <recordType typeId="e7af18db-6765-48c6-b1d2-b815ffa26e25" valueTypeId="6570c79b-de4d-4fe0-ab11-7a13b6b584fd"/>
+    <recordManagerType typeId="7f855182-da1d-4a8d-8c6e-19319f5dc413" valueTypeId="8014b906-e360-485f-ad42-2c2414ed346f"/>
+  </producedTypes>
+  <name>БонусыУчетчикиРазборщики</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бонусы учетчики разборщики</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="dda6e64d-8482-4576-a3e7-4d064fc4abee">
+    <name>Цена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цена</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d472e7b5-e0bd-4569-ab1f-fe6ff47d5a4f">
+    <name>Бонус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бонус</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="e5782fd7-147a-4041-8cff-7dfb5b982647">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e8b71537-983e-413a-94a1-5fee6dcd699b">
+    <name>ИндКод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инд код</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ИндКод</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="00d1ada5-850b-4db5-8ea9-14526de8639a">
+    <name>Машина</name>
+    <synonym>
+      <key>ru</key>
+      <value>Машина</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Машины</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="935321d9-67da-4018-abfa-b40c5263346d">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

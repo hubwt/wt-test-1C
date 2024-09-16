@@ -56,12 +56,12 @@
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	БонусыСотрудниковОтПродажи.Сотрудник,
-	БонусыСотрудниковОтПродажи.Период,
-	БонусыСотрудниковОтПродажи.ДокументРег,
-	БонусыСотрудниковОтПродажи.Сумма,
-	БонусыСотрудниковОтПродажи.Бонус,
-	БонусыСотрудниковОтПродажи.Продажа
+	БонусыСотрудниковОтПродажи.Сотрудник КАК Сотрудник,
+	БонусыСотрудниковОтПродажи.Период КАК Период,
+	БонусыСотрудниковОтПродажи.ДокументРег КАК ДокументРег,
+	БонусыСотрудниковОтПродажи.Сумма КАК Сумма,
+	БонусыСотрудниковОтПродажи.Бонус КАК Бонус,
+	БонусыСотрудниковОтПродажи.Продажа КАК Продажа
 ПОМЕСТИТЬ ВТ_Основная
 ИЗ
 	РегистрСведений.БонусыСотрудниковОтПродажи КАК БонусыСотрудниковОтПродажи
@@ -71,19 +71,145 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	Сотрудники.Ссылка КАК Кладовщик,
+	ПодразделенияУчастники.Сотрудник КАК Кладовщик,
 	ВТ_Основная.Период КАК ДатаЗачисления,
 	ВТ_Основная.ДокументРег КАК ДокументРегистрации,
 	ВТ_Основная.Сумма КАК СуммаОтгрузки,
 	ВТ_Основная.Бонус КАК Бонус,
-	ВТ_Основная.Продажа КАК Продажа
+	ВТ_Основная.Продажа КАК Продажа	
 ИЗ
-	Справочник.Сотрудники КАК Сотрудники
+	Справочник.Подразделения.Участники КАК ПодразделенияУчастники
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Основная КАК ВТ_Основная
-		ПО ВТ_Основная.Сотрудник = Сотрудники.Пользователь.Ссылка
+		ПО (ВТ_Основная.Сотрудник.Ссылка = ПодразделенияУчастники.Сотрудник.Ссылка)
 ГДЕ
-	Сотрудники.РолиWT10.Роль.Код = "000000003"
-	И Сотрудники.Пользователь.Недействителен = ЛОЖЬ</query>
+	ВТ_Основная.Период МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания  
+	И (ПодразделенияУчастники.Ссылка.Код = "000000087" 
+		ИЛИ ПодразделенияУчастники.Ссылка.Код = "000000118"
+		ИЛИ ПодразделенияУчастники.Ссылка.Код = "000000096")</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных2</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Учетчик2</dataPath>
+			<field>Учетчик2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учетчик</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИндКод2</dataPath>
+			<field>ИндКод2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инд код</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Машина2</dataPath>
+			<field>Машина2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Машина</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура2</dataPath>
+			<field>Номенклатура2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номенклатура</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Цена2</dataPath>
+			<field>Цена2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Бонус2</dataPath>
+			<field>Бонус2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Бонус</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период2</dataPath>
+			<field>Период2</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИндКод2Кол</dataPath>
+			<field>ИндКод2Кол</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество ИндКод</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	БонусыУчетчикиРазборщики.ИндКод КАК ИндКод2,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ БонусыУчетчикиРазборщики.ИндКод) КАК ИндКод2Кол,
+	БонусыУчетчикиРазборщики.Машина КАК Машина2,
+	БонусыУчетчикиРазборщики.Номенклатура КАК Номенклатура2,
+	БонусыУчетчикиРазборщики.Цена КАК Цена2,
+	БонусыУчетчикиРазборщики.Бонус КАК Бонус2,
+	НАЧАЛОПЕРИОДА(БонусыУчетчикиРазборщики.Период, ДЕНЬ) КАК Период2,
+	ПодразделенияУчастники.Сотрудник КАК Учетчик2
+ИЗ
+	Справочник.Подразделения.Участники КАК ПодразделенияУчастники
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.БонусыУчетчикиРазборщики КАК БонусыУчетчикиРазборщики
+		ПО ПодразделенияУчастники.Сотрудник.Ссылка = БонусыУчетчикиРазборщики.Сотрудник.Ссылка
+ГДЕ
+	ПодразделенияУчастники.Ссылка.Код = "000000086"
+	И БонусыУчетчикиРазборщики.Период МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	БонусыУчетчикиРазборщики.ИндКод,
+	БонусыУчетчикиРазборщики.Машина,
+	БонусыУчетчикиРазборщики.Номенклатура,
+	БонусыУчетчикиРазборщики.Цена,
+	БонусыУчетчикиРазборщики.Бонус,
+	ПодразделенияУчастники.Сотрудник,
+	НАЧАЛОПЕРИОДА(БонусыУчетчикиРазборщики.Период, ДЕНЬ)</query>
 	</dataSet>
 	<calculatedField>
 		<dataPath>Регистратор</dataPath>
@@ -106,6 +232,18 @@
 	<totalField>
 		<dataPath>СуммаОтгрузки</dataPath>
 		<expression>Сумма(СуммаОтгрузки)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Бонус2</dataPath>
+		<expression>Сумма(Бонус2)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Цена2</dataPath>
+		<expression>Сумма(Цена2)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИндКод2Кол</dataPath>
+		<expression>Сумма(ИндКод2Кол)</expression>
 	</totalField>
 	<parameter>
 		<name>СтандартныйПериод</name>
@@ -195,6 +333,12 @@
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
 			</dcsset:order>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Арктика</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
@@ -211,6 +355,17 @@
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
 				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Бонусы для кладовщиков</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
@@ -252,6 +407,98 @@
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>Бонус</dcsset:field>
+							</dcsset:item>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Учетчик2</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Учетчик2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Цена2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ИндКод2Кол</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Бонус2</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Бонусы для учетчиков</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Период2</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Период2</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Цена2</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ИндКод2Кол</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Бонус2</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ИндКод2</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Номенклатура2</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Машина2</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Цена2</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>ИндКод2Кол</dcsset:field>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:SelectedItemField">
+								<dcsset:field>Бонус2</dcsset:field>
 							</dcsset:item>
 						</dcsset:selection>
 					</dcsset:item>
