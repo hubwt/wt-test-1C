@@ -8311,7 +8311,7 @@
           <titleLocation>None</titleLocation>
           <items xsi:type="form:FormField">
             <name>СписокОстатковНаСчётеИзмерение1</name>
-            <id>3260</id>
+            <id>3244</id>
             <title>
               <key>ru</key>
               <value>Счет</value>
@@ -8326,7 +8326,7 @@
             </dataPath>
             <extendedTooltip>
               <name>СписокОстатковНаСчётеИзмерение1РасширеннаяПодсказка</name>
-              <id>3262</id>
+              <id>3246</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -8341,7 +8341,7 @@
             </extendedTooltip>
             <contextMenu>
               <name>СписокОстатковНаСчётеИзмерение1КонтекстноеМеню</name>
-              <id>3261</id>
+              <id>3245</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -8365,7 +8365,7 @@
           </items>
           <items xsi:type="form:FormField">
             <name>СписокОстатковНаСчётеОтветственныйПоСчету</name>
-            <id>3266</id>
+            <id>3250</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -8376,7 +8376,7 @@
             </dataPath>
             <extendedTooltip>
               <name>СписокОстатковНаСчётеОтветственныйПоСчетуРасширеннаяПодсказка</name>
-              <id>3268</id>
+              <id>3252</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -8391,7 +8391,61 @@
             </extendedTooltip>
             <contextMenu>
               <name>СписокОстатковНаСчётеОтветственныйПоСчетуКонтекстноеМеню</name>
-              <id>3267</id>
+              <id>3251</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>InputField</type>
+            <editMode>Enter</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:InputFieldExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <wrap>true</wrap>
+              <chooseType>true</chooseType>
+              <typeDomainEnabled>true</typeDomainEnabled>
+              <textEdit>true</textEdit>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormField">
+            <name>СписокОстатковНаСчётеВидПеречисления</name>
+            <id>3253</id>
+            <title>
+              <key>ru</key>
+              <value>Вид расчета</value>
+            </title>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>СписокОстатковНаСчёте.ВидПеречисления</segments>
+            </dataPath>
+            <extendedTooltip>
+              <name>СписокОстатковНаСчётеВидПеречисленияРасширеннаяПодсказка</name>
+              <id>3255</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>СписокОстатковНаСчётеВидПеречисленияКонтекстноеМеню</name>
+              <id>3254</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -8415,7 +8469,7 @@
           </items>
           <items xsi:type="form:FormField">
             <name>СписокОстатковНаСчётеБалансОстаток</name>
-            <id>3263</id>
+            <id>3247</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -8426,7 +8480,7 @@
             </dataPath>
             <extendedTooltip>
               <name>СписокОстатковНаСчётеБалансОстатокРасширеннаяПодсказка</name>
-              <id>3265</id>
+              <id>3249</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -8441,7 +8495,7 @@
             </extendedTooltip>
             <contextMenu>
               <name>СписокОстатковНаСчётеБалансОстатокКонтекстноеМеню</name>
-              <id>3264</id>
+              <id>3248</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -35450,24 +35504,25 @@
       <common>true</common>
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
-      <queryText>  ВЫБРАТЬ
+      <queryText>ВЫБРАТЬ
 	Счета.Ссылка КАК Ссылка,
-	Счета.ОтветственныйПоСчету КАК ОтветственныйПоСчету
+	Счета.ОтветственныйПоСчету КАК ОтветственныйПоСчету,
+	Счета.ВидПеречисления
 ПОМЕСТИТЬ ВТ_Счета
 ИЗ
 	Справочник.Счета КАК Счета
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	РегистрНакопленияБалансОстатки.Измерение1 КАК Измерение1,
 	РегистрНакопленияБалансОстатки.БалансОстаток КАК БалансОстаток,
-	ВТ_Счета.ОтветственныйПоСчету КАК ОтветственныйПоСчету
+	ВТ_Счета.ОтветственныйПоСчету КАК ОтветственныйПоСчету,
+	ВТ_Счета.ВидПеречисления
 ИЗ
 	РегистрНакопления.Баланс.Остатки КАК РегистрНакопленияБалансОстатки
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Счета КАК ВТ_Счета
-		ПО (РегистрНакопленияБалансОстатки.Измерение1 = ВТ_Счета.Ссылка)
-</queryText>
+		ПО (РегистрНакопленияБалансОстатки.Измерение1 = ВТ_Счета.Ссылка)</queryText>
       <mainTable>AccumulationRegister.Баланс.Balance</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
