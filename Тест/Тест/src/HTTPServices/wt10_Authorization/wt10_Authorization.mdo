@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cd911903-c8d5-4ec3-ac71-231166b3019f">
+  <name>wt10_Authorization</name>
+  <synonym>
+    <key>ru</key>
+    <value>Wt10 authorization</value>
+  </synonym>
+  <rootURL>wt10_Authorization</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="1adf9e89-ac19-4b3e-8d9b-c52e127325c8">
+    <name>АвторизацияСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авторизация сотрудника</value>
+    </synonym>
+    <template>/auth_employee</template>
+    <methods uuid="0c80b118-b7a0-4f7c-8b19-3f75a7fa5a32">
+      <name>AuthorizationEmployee</name>
+      <synonym>
+        <key>ru</key>
+        <value>Authorization employee</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьАвторизациюСотрудникаAuthorizationemployee</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>
