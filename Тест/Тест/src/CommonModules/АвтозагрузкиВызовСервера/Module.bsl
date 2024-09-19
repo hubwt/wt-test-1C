@@ -1752,7 +1752,7 @@
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Для грузовиков и спецтехники</ProductType>
 				|<SparePartType>" + ?(РезультатЗапроса.Вес > 14, "Кабина", "Электроника и свет") + "</SparePartType>
-				|<TechnicSparePartType>" + ?(РезультатЗапроса.Вес > 14, "Кабины в разборе", "Контроллеры, реле и датчики") + "</TechnicSparePartType>
+				|<TechnicSparePartType>" + ?(РезультатЗапроса.Вес > 14, "Кабины в сборе", "Контроллеры, реле и датчики") + "</TechnicSparePartType>
 				|<Availability>В наличии</Availability>
 				|<Originality>Оригинал</Originality>
 				|<Brand>" + Бренд + "</Brand>
