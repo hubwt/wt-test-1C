@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cd911903-c8d5-4ec3-ac71-231166b3019f">
-  <name>wt10_Authorization</name>
+  <name>wt10_auth</name>
   <synonym>
     <key>ru</key>
-    <value>Wt10 authorization</value>
+    <value>Wt10 auth</value>
   </synonym>
-  <rootURL>wt10_Authorization</rootURL>
+  <rootURL>wt10_auth</rootURL>
   <reuseSessions>AutoUse</reuseSessions>
   <sessionMaxAge>20</sessionMaxAge>
   <urlTemplates uuid="1adf9e89-ac19-4b3e-8d9b-c52e127325c8">
@@ -40,6 +40,23 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>ПолучитьАвторизациюКлиентаAuthorizationclient</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="474474b8-355b-4f35-afca-06024cd475ee">
+    <name>ПроверитьТелНомерСотрудника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проверить тел номер сотрудника</value>
+    </synonym>
+    <template>/check_phone_by_employee</template>
+    <methods uuid="0a5f4962-5650-4b9d-b635-c35c449ff3b9">
+      <name>CheckPhoneByEmployee</name>
+      <synonym>
+        <key>ru</key>
+        <value>Check phone by employee</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПроверитьТелНомерСотрудникаCheckphonebyemployee</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
