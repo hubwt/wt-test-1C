@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:InformationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="95ab07e3-99f3-4889-be6c-0323f884a6ba">
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="95ab07e3-99f3-4889-be6c-0323f884a6ba">
   <producedTypes>
     <selectionType typeId="3b0cbbe5-a1e5-45ff-9228-96940df59553" valueTypeId="7f3b12ab-8a01-4576-8d3e-201a11d7d332"/>
     <listType typeId="b63865e5-4524-4cfc-8ec3-95b3d37c7672" valueTypeId="f7642980-11f1-46db-8c8a-13b3deb425ba"/>
@@ -16,5 +16,63 @@
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
   <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="fa21fa2a-dc00-4ad3-bc54-a4cfa59c9a89">
+    <name>ПланНаДень</name>
+    <synonym>
+      <key>ru</key>
+      <value>План на день</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>6</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="68371ad2-aa19-4920-949a-08e8a9acbe26">
+    <name>ПланНаНеделю</name>
+    <synonym>
+      <key>ru</key>
+      <value>План на неделю</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>6</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1310082f-c7b5-41a5-99b9-6331b9aa6cec">
+    <name>ПланНаМесяц</name>
+    <synonym>
+      <key>ru</key>
+      <value>План на месяц</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>6</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
 </mdclass:InformationRegister>
