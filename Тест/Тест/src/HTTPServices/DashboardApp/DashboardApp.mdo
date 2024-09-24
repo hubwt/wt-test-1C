@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1fbdb743-0824-4b69-b59d-4140a20e9971">
+  <name>DashboardApp</name>
+  <synonym>
+    <key>ru</key>
+    <value>Dashboard app</value>
+  </synonym>
+  <rootURL>dashboard</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="73d9fac3-9529-4a87-a61e-b74f401fecbb">
+    <name>СтатистикаПоЗаявкам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статистика по заявкам</value>
+    </synonym>
+    <template>/statistic_app</template>
+    <methods uuid="dbf6b301-8e6e-4ef3-a0df-3938c3ca6799">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <handler>СтатистикаПоЗаявкамGET</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>
