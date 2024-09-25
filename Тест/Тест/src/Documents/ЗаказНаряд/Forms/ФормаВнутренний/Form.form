@@ -2675,7 +2675,6 @@
         <items xsi:type="form:FormField">
           <name>РаботыЦенаСоСкидкойНаценкой</name>
           <id>756</id>
-          <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
@@ -5633,6 +5632,10 @@
           <dataPath xsi:type="form:DataPath">
             <segments>Объект.Товары.КлиентскаяДеталь</segments>
           </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>ТоварыКлиентскаяДетальПриИзменении</name>
+          </handlers>
           <extendedTooltip>
             <name>ТоварыКлиентскаяДетальРасширеннаяПодсказка</name>
             <id>885</id>
@@ -6027,7 +6030,6 @@
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
-          <readOnly>true</readOnly>
           <editMode>EnterOnInput</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
