@@ -48,6 +48,57 @@
 {ГДЕ
 	(ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания)}</query>
 	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных2</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ответственный</dataPath>
+			<field>Ответственный</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственный</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>МестоРаботы</dataPath>
+			<field>МестоРаботы</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Место работы</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаДокумента</dataPath>
+			<field>СуммаДокумента</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Канал</dataPath>
+			<field>Канал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Канал</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Представление(ЗаказКлиента.Ответственный) КАК Ответственный,
+	Представление(Сотрудники.МестоРаботы) КАК МестоРаботы,
+	ЗаказКлиента.СуммаДокумента КАК СуммаДокумента,
+	Представление(ЗаказКлиента.Канал) КАК Канал
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Сотрудники КАК Сотрудники
+		ПО (ЗаказКлиента.Ответственный = Сотрудники.Пользователь)
+ГДЕ
+	Сотрудники.МестоРаботы &lt;&gt; ЗНАЧЕНИЕ(справочник.МестоРаботы.ПустаяСсылка)
+	И ЗаказКлиента.Ответственный &lt;&gt; ЗНАЧЕНИЕ(справочник.пользователи.ПустаяСсылка)
+	И ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания</query>
+	</dataSet>
 	<totalField>
 		<dataPath>СуммаДокумента</dataPath>
 		<expression>Сумма(СуммаДокумента)</expression>
@@ -522,5 +573,15 @@
 				</dcsset:outputParameters>
 			</dcsset:item>
 		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>Общий</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Общий</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"/>
 	</settingsVariant>
 </DataCompositionSchema>
