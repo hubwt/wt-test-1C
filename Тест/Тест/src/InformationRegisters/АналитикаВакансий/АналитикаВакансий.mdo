@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="68b8e168-1fde-487c-9efb-c25cd4491eab">
+  <producedTypes>
+    <selectionType typeId="e90c67e6-6dd0-4321-98c2-b1c2e84ad226" valueTypeId="eb62f0dc-3489-469a-89cb-dc22d1f3710a"/>
+    <listType typeId="a009f927-8ef2-480e-825a-21a8e9de6fea" valueTypeId="05256fd5-de01-4ae8-960b-9de7e6d1ee92"/>
+    <managerType typeId="4e6d85fa-e4ca-47a7-a862-35844e54e249" valueTypeId="f2fde348-46cb-48f4-877f-fd590754edd0"/>
+    <recordSetType typeId="eb8707cd-bdd3-473b-bd97-46af298f18fc" valueTypeId="b587367c-b580-4ac9-969b-09a193689446"/>
+    <recordKeyType typeId="3fcc8c9a-c456-45cd-bb9f-4b05dffdf076" valueTypeId="9ae8ea12-06c8-4c96-8234-9ce59df0ec57"/>
+    <recordType typeId="387b23cd-51e3-4f89-968c-13ee740d442a" valueTypeId="0c96e33e-ab63-4eb6-ae19-264611eecf95"/>
+    <recordManagerType typeId="5789b7ca-e7a5-47e4-b88b-1c387e2e3f6c" valueTypeId="71fda409-7212-464e-92ce-481c89a52772"/>
+  </producedTypes>
+  <name>АналитикаВакансий</name>
+  <synonym>
+    <key>ru</key>
+    <value>Аналитика вакансий</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="0d93ed81-f98b-46b1-b201-e6358d77249f">
+    <name>ДатаСоздания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата создания</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="df898958-3141-4ab6-8d08-7368d3f66a4c">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="25d8a13c-d4dc-4e81-8126-8be3385f6ec8">
+    <name>ДатаЗакрытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата закрытия</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="29110fd9-5b52-4946-ae9c-bc9cbcd25a59">
+    <name>КадровыйПриказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кадровый приказ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.КадровыйПриказ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2603fe23-5319-4760-9a03-e58d50d34605">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c3d7bc83-78ff-43ec-970d-21a4606ee187">
+    <name>ПериодПоиска</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период поиска</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a0cae5a2-b8e7-46fc-a682-a3d02f212708">
+    <name>Увольнение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Увольнение</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.УвольненияСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="266ca171-9817-40cd-93ce-b6f1409722ae">
+    <name>ДатаУвольнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата увольнения</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d5354358-23d3-454c-a5ba-bd7cba16f0ce">
+    <name>ПериодРаботы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период работы</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="43795c7b-932a-4713-9489-fddfffcf1255">
+    <name>Вакансия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вакансия</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВакансииКампании</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
