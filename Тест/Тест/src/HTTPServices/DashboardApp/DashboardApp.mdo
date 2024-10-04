@@ -57,4 +57,20 @@
       <handler>ОпубликоватьПланМенеджеровПоЗаявкамPostManagerPlan</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="daec1c2a-e37e-47bf-bed7-33b294395e19">
+    <name>СтатистикаПоЗаявкамИПродажам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статистика по заявкам и продажам</value>
+    </synonym>
+    <template>/statistics_app_sale/{date_start}/{date_end}</template>
+    <methods uuid="3bd1be82-835e-4097-bb6a-6809ba820d68">
+      <name>get_statistic_app_sale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get statistic app sale</value>
+      </synonym>
+      <handler>СтатистикаПоЗаявкамИПродажамget_statistic_app_sale</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
