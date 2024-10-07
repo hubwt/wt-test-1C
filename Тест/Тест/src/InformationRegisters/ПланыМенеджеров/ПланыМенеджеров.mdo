@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="174f6e4e-a3a1-472a-92fa-bed74e1836e6">
+  <producedTypes>
+    <selectionType typeId="71eb50a3-5aaf-4784-b20c-ace10f76541a" valueTypeId="6953b39c-e430-4cde-99c1-78f85ce95e8a"/>
+    <listType typeId="08957381-34f1-436d-bfd6-19ba45283328" valueTypeId="ff9a426d-babd-421a-880a-46dcfe8f74a0"/>
+    <managerType typeId="c060309e-a8ca-468e-beb0-2652b42d696f" valueTypeId="fdd91f83-553f-447f-a47f-5cfa72a9b107"/>
+    <recordSetType typeId="187bd1a0-77ab-4ae3-ad53-f06312aa9550" valueTypeId="383ca23d-be3b-4bef-939a-bd02d51d3580"/>
+    <recordKeyType typeId="3877672c-401d-4e58-a9a1-0b91116de63b" valueTypeId="31f7e000-1128-47cf-900e-90a846b88576"/>
+    <recordType typeId="814de200-7c48-4a69-ab14-fb3b040ba621" valueTypeId="a1e9827f-85ab-49b1-a76b-40cecf08e7f9"/>
+    <recordManagerType typeId="75729d54-1976-4c32-a485-0497be8376e4" valueTypeId="1299df82-002a-40c5-b168-af2db643898a"/>
+  </producedTypes>
+  <name>ПланыМенеджеров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планы менеджеров</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="a8ff4e89-8c39-4beb-ae82-9360a32c3a42">
+    <name>План</name>
+    <synonym>
+      <key>ru</key>
+      <value>План</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="26714b03-859f-4bc6-861a-66d56310a176">
+    <name>ВидПлана</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид плана</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыПлана</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
