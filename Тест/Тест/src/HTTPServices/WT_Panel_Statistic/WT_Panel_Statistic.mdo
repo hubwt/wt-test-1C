@@ -8,6 +8,38 @@
   <rootURL>wt_panel_statistic</rootURL>
   <reuseSessions>AutoUse</reuseSessions>
   <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="1f0c6afa-92e6-4a16-9537-385c9cdc10ff">
+    <name>ВыручкаПоКатегориям</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выручка по категориям</value>
+    </synonym>
+    <template>/profit</template>
+    <methods uuid="039985f3-7f51-4031-b05d-ff1275297410">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ВыручкаПоКатегориямGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e4c9176d-339e-44f7-9ecb-9c97693b392b">
+    <name>ПолучитьСтатистикуКадров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить статистику кадров</value>
+    </synonym>
+    <template>/get-statistic-personnel/{vacancy}/{responsible}/</template>
+    <methods uuid="36867822-62a9-4ed4-a46a-4c3d173f808c">
+      <name>getstatisticpersonnel</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getstatisticpersonnel</value>
+      </synonym>
+      <handler>ПолучитьСтатистикуКадровgetstatisticpersonnel</handler>
+    </methods>
+  </urlTemplates>
   <urlTemplates uuid="7960f726-409c-416d-9aec-a91462516757">
     <name>ПолучитьСтатистикуКладовщиков</name>
     <synonym>

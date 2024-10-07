@@ -57,4 +57,53 @@
       <handler>ОпубликоватьПланМенеджеровПоЗаявкамPostManagerPlan</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="daec1c2a-e37e-47bf-bed7-33b294395e19">
+    <name>СтатистикаПоЗаявкамИПродажам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статистика по заявкам и продажам</value>
+    </synonym>
+    <template>/statistics_app_sale/{date_start}/{date_end}</template>
+    <methods uuid="3bd1be82-835e-4097-bb6a-6809ba820d68">
+      <name>get_statistic_app_sale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get statistic app sale</value>
+      </synonym>
+      <handler>СтатистикаПоЗаявкамИПродажамget_statistic_app_sale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="7c327d9f-6bcc-4183-8d7f-fb218123f58f">
+    <name>ПолучитьПланПоЗаявкамНаДату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить план по заявкам на дату</value>
+    </synonym>
+    <template>/get_plan_app/{date}</template>
+    <methods uuid="182be0c3-b429-4d28-9bdf-ec3bc0dd2ace">
+      <name>get_plan_app</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get plan app</value>
+      </synonym>
+      <handler>ПолучитьПланПоЗаявкамНаДатуget_plan_app</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="07437249-60cf-4c88-949e-3248fd1b26a2">
+    <name>ИзменитьПланПоЗаявкам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить план по заявкам</value>
+    </synonym>
+    <template>/change_plan_app</template>
+    <methods uuid="c9e04a34-1182-43c6-b013-829e405f2cdf">
+      <name>change_plan_app</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change plan app</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьПланПоЗаявкамchange_plan_app</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
