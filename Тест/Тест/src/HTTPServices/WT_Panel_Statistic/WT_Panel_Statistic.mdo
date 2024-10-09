@@ -14,7 +14,7 @@
       <key>ru</key>
       <value>Выручка по категориям</value>
     </synonym>
-    <template>/profit</template>
+    <template>/coming_spending_money_categories/{date_start}/{date_end}</template>
     <methods uuid="039985f3-7f51-4031-b05d-ff1275297410">
       <name>GET</name>
       <synonym>
@@ -70,6 +70,22 @@
         <value>Get marketing stat</value>
       </synonym>
       <handler>ПолучитьСтатистикуРекламыGetMarketingStat</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="340887d2-0f97-4327-9688-2fd54197ae4a">
+    <name>ПриходИРасходДенег</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приход и расход денег</value>
+    </synonym>
+    <template>/coming_spending_money/{date_start}/{date_end}</template>
+    <methods uuid="d27ff428-ac17-45d6-a566-5a9c74708f5f">
+      <name>get_coming_spending_money</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get coming spending money</value>
+      </synonym>
+      <handler>ПриходИРасходДенегget_coming_spending_money</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
