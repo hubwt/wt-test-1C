@@ -821,12 +821,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ДатаПер</dataPath>
 			<field>ДатаПер</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дата</v8:content>
-				</v8:item>
-			</title>
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
@@ -834,12 +828,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>АккаунтПер</dataPath>
 			<field>АккаунтПер</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Аккаунт</v8:content>
-				</v8:item>
-			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>НомерПокупателяПер</dataPath>
@@ -866,8 +854,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	ЗвонкиАвито.Дата КАК ДатаПер,
-	ЗвонкиАвито.АккаунтАвито КАК АккаунтПер,
+	МАКСИМУМ(ЗвонкиАвито.Дата) КАК ДатаПер,
+	МАКСИМУМ(ЗвонкиАвито.АккаунтАвито) КАК АккаунтПер,
 	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателяПер
 ИЗ
 	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
@@ -885,9 +873,11 @@
 			РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
 		ГДЕ
 			ЗаписиЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ))
+СГРУППИРОВАТЬ ПО
+	ЗвонкиАвито.НомерПокупателя
 
 УПОРЯДОЧИТЬ ПО
-	ДатаПер УБЫВ</query>
+	Максимум(Дата) УБЫВ</query>
 	</dataSet>
 	<calculatedField>
 		<dataPath>ИтогоЗвонков</dataPath>
