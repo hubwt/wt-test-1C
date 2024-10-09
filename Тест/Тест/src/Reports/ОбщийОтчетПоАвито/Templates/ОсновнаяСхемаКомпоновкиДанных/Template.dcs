@@ -879,6 +879,81 @@
 УПОРЯДОЧИТЬ ПО
 	Максимум(Дата) УБЫВ</query>
 	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НеПерезвонили</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПер</dataPath>
+			<field>ДатаПер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АккаунтПер</dataPath>
+			<field>АккаунтПер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>АккаунтАвито</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерПокупателяПер</dataPath>
+			<field>НомерПокупателяПер</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер покупателя</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ЗвонкиАвито.Дата, ДЕНЬ) КАК Дата,
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя,
+	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито
+ПОМЕСТИТЬ Успешные
+ИЗ
+	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
+ГДЕ
+	ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
+	И ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(ЗвонкиАвито.Дата) КАК ДатаПер,
+	МАКСИМУМ(ЗвонкиАвито.АккаунтАвито) КАК АккаунтПер,
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателяПер
+ИЗ
+	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
+ГДЕ
+	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+	И НЕ ЗвонкиАвито.НомерПокупателя В
+		(ВЫБРАТЬ
+			Успешные.НомерПокупателя КАК НомерПокупателя
+		ИЗ
+			Успешные КАК Успешные)
+	И НЕ ЗвонкиАвито.НомерПокупателя В
+		(ВЫБРАТЬ
+			ЗаписиЗвонков.НомерТелефона КАК НомерТелефона
+		ИЗ
+			РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+		ГДЕ
+			ЗаписиЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ))
+СГРУППИРОВАТЬ ПО
+	ЗвонкиАвито.НомерПокупателя
+
+УПОРЯДОЧИТЬ ПО
+	МАКСИМУМ(Дата) УБЫВ</query>
+	</dataSet>
 	<calculatedField>
 		<dataPath>ИтогоЗвонков</dataPath>
 		<expression>КоличествоУспешных + КоличествоПерезвонивших + КоличествоПропущенных</expression>
@@ -1143,77 +1218,35 @@
 				</dcsset:item>
 			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
-				<dcsset:groupItems>
-					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>ДатаНеделя</dcsset:field>
-						<dcsset:groupType>Items</dcsset:groupType>
-						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-					</dcsset:item>
-				</dcsset:groupItems>
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ДатаНеделя</dcsset:field>
+						<dcsset:field>ДатаПер</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>КоличествоУспешных</dcsset:field>
+						<dcsset:field>АккаунтПер</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>КоличествоПерезвонивших</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>КоличествоПропущенных</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ИтогоЗвонков</dcsset:field>
+						<dcsset:field>НомерПокупателяПер</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">Арктика</dcscor:value>
+					</dcscor:item>
 					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 						<dcscor:parameter>Заголовок</dcscor:parameter>
 						<dcscor:value xsi:type="v8:LocalStringType">
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Детальная по звонкам</v8:content>
+								<v8:content>Не перезвонили</v8:content>
 							</v8:item>
 						</dcscor:value>
 					</dcscor:item>
 				</dcsset:outputParameters>
-				<dcsset:item xsi:type="dcsset:StructureItemGroup">
-					<dcsset:groupItems>
-						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>Аккаунт</dcsset:field>
-							<dcsset:groupType>Items</dcsset:groupType>
-							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-						</dcsset:item>
-					</dcsset:groupItems>
-					<dcsset:order>
-						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-					</dcsset:order>
-					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>Аккаунт</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КоличествоУспешных</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КоличествоПерезвонивших</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>КоличествоПропущенных</dcsset:field>
-						</dcsset:item>
-						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ИтогоЗвонков</dcsset:field>
-						</dcsset:item>
-					</dcsset:selection>
-				</dcsset:item>
 			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:order>
