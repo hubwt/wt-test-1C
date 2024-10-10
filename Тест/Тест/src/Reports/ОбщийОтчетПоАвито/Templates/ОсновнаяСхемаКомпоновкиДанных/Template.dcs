@@ -776,12 +776,23 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Дата неп</v8:content>
+					<v8:content>Дата</v8:content>
 				</v8:item>
 			</title>
 			<role>
 				<dcscom:dimension>true</dcscom:dimension>
 			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДЛФ=DD</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>АккаунтНеп</dataPath>
@@ -789,7 +800,7 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Аккаунт неп</v8:content>
+					<v8:content>Аккаунт</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -799,7 +810,7 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Номер покупателя неп</v8:content>
+					<v8:content>Номер покупателя</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -826,19 +837,23 @@
 ГДЕ
 	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
 	И НЕ ЗвонкиАвито.НомерПокупателя В
-		(ВЫБРАТЬ
-			Успешные.НомерПокупателя КАК НомерПокупателя
-		ИЗ
-			Успешные КАК Успешные)
+				(ВЫБРАТЬ
+					Успешные.НомерПокупателя КАК НомерПокупателя
+				ИЗ
+					Успешные КАК Успешные)
 	И НЕ ЗвонкиАвито.НомерПокупателя В
-		(ВЫБРАТЬ
-			ЗаписиЗвонков.НомерТелефона КАК НомерТелефона
-		ИЗ
-			РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
-		ГДЕ
-			ЗаписиЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ))
+				(ВЫБРАТЬ
+					ЗаписиЗвонков.НомерТелефона КАК НомерТелефона
+				ИЗ
+					РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+				ГДЕ
+					ЗаписиЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ))
+
 СГРУППИРОВАТЬ ПО
-	ЗвонкиАвито.НомерПокупателя</query>
+	ЗвонкиАвито.НомерПокупателя
+
+УПОРЯДОЧИТЬ ПО
+	ДатаНеп УБЫВ</query>
 	</dataSet>
 	<calculatedField>
 		<dataPath>ИтогоЗвонков</dataPath>
