@@ -7,42 +7,23 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>ОбщаяСтатистика</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоПросмотров</dataPath>
-			<field>КоличествоПросмотров</field>
+			<dataPath>ДатаНеп</dataPath>
+			<field>ДатаНеп</field>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоКонтактов</dataPath>
-			<field>КоличествоКонтактов</field>
+			<dataPath>АккаунтНеп</dataPath>
+			<field>АккаунтНеп</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоЗвонков</dataPath>
-			<field>КоличествоЗвонков</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоЗаказов</dataPath>
-			<field>КоличествоЗаказов</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КоличествоОбъявлений</dataPath>
-			<field>КоличествоОбъявлений</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ПериодДень</dataPath>
-			<field>ПериодДень</field>
+			<dataPath>НомерПокупателяНеп</dataPath>
+			<field>НомерПокупателяНеп</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Период день</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ПериодМесяц</dataPath>
-			<field>ПериодМесяц</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Период месяц</v8:content>
+					<v8:content>Номер покупателя неп</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -882,10 +863,6 @@
 		<expression>Сумма(КоличествоВсехЗаявок)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>КоличествоЗаказов</dataPath>
-		<expression>Сумма(КоличествоЗаказов)</expression>
-	</totalField>
-	<totalField>
 		<dataPath>КоличествоЗаявокПродажа</dataPath>
 		<expression>Сумма(КоличествоЗаявокПродажа)</expression>
 	</totalField>
@@ -894,28 +871,12 @@
 		<expression>Сумма(КоличествоЗаявокСПродажей)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>КоличествоЗвонков</dataPath>
-		<expression>Сумма(КоличествоЗвонков)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>КоличествоКонтактов</dataPath>
-		<expression>Сумма(КоличествоКонтактов)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>КоличествоОбъявлений</dataPath>
-		<expression>Максимум(КоличествоОбъявлений)</expression>
-	</totalField>
-	<totalField>
 		<dataPath>КоличествоПерезвонивших</dataPath>
 		<expression>Сумма(КоличествоПерезвонивших)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоПропущенных</dataPath>
 		<expression>Сумма(КоличествоПропущенных)</expression>
-	</totalField>
-	<totalField>
-		<dataPath>КоличествоПросмотров</dataPath>
-		<expression>Сумма(КоличествоПросмотров)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоУспешных</dataPath>
