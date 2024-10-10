@@ -768,6 +768,78 @@
 	ДеньгиИКоличествоИзЗаявокВсе.Дата,
 	ДеньгиИКоличествоИзЗаявокВсе.Заявка</query>
 	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Пропущенные</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаНеп</dataPath>
+			<field>ДатаНеп</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата неп</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АккаунтНеп</dataPath>
+			<field>АккаунтНеп</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аккаунт неп</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НомерПокупателяНеп</dataPath>
+			<field>НомерПокупателяНеп</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер покупателя неп</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	НАЧАЛОПЕРИОДА(ЗвонкиАвито.Дата, ДЕНЬ) КАК Дата,
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя,
+	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито
+ПОМЕСТИТЬ Успешные
+ИЗ
+	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
+ГДЕ
+	ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
+	И ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(ЗвонкиАвито.Дата) КАК ДатаНеп,
+	МАКСИМУМ(ЗвонкиАвито.АккаунтАвито) КАК АккаунтНеп,
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателяНеп
+ИЗ
+	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
+ГДЕ
+	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
+	И НЕ ЗвонкиАвито.НомерПокупателя В
+		(ВЫБРАТЬ
+			Успешные.НомерПокупателя КАК НомерПокупателя
+		ИЗ
+			Успешные КАК Успешные)
+	И НЕ ЗвонкиАвито.НомерПокупателя В
+		(ВЫБРАТЬ
+			ЗаписиЗвонков.НомерТелефона КАК НомерТелефона
+		ИЗ
+			РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+		ГДЕ
+			ЗаписиЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ))
+СГРУППИРОВАТЬ ПО
+	ЗвонкиАвито.НомерПокупателя</query>
+	</dataSet>
 	<calculatedField>
 		<dataPath>ИтогоЗвонков</dataPath>
 		<expression>КоличествоУспешных + КоличествоПерезвонивших + КоличествоПропущенных</expression>
@@ -1050,6 +1122,37 @@
 						</dcsset:item>
 					</dcsset:selection>
 				</dcsset:item>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДатаНеп</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>АккаунтНеп</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>НомерПокупателяНеп</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">Арктика</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Заголовок</dcscor:parameter>
+						<dcscor:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Пропущенные</v8:content>
+							</v8:item>
+						</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
 			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
