@@ -386,7 +386,7 @@
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Приход денгег</v8:content>
+					<v8:content>Приход денег</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -614,6 +614,16 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсточникЗаявки</dataPath>
+			<field>ИсточникЗаявки</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Источник заявки</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя,
@@ -630,7 +640,16 @@
 ВЫБРАТЬ
 	ЗаказКлиента.СуммаДокумента КАК СуммаДокумента,
 	ЗаказКлиента.Ссылка КАК Заявка,
-	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ) КАК Дата
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ) КАК Дата,
+	ВЫБОР
+		КОГДА ЗаказКлиента.Канал.Наименование = "AVITO"
+			ТОГДА "Авито1"
+		КОГДА ЗаказКлиента.Канал.Наименование = "Авито Частник"
+			ТОГДА "Авито2"
+		КОГДА ЗаказКлиента.Канал.Наименование = "Авито Частник2 (доставка)"
+			ТОГДА "Авито3"
+		ИНАЧЕ ЗаказКлиента.Канал.Наименование
+	КОНЕЦ КАК Канал
 ПОМЕСТИТЬ ДеньгиИКоличествоИзЗаявок
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
@@ -644,7 +663,8 @@
 ВЫБРАТЬ
 	ЗаказКлиента.СуммаДокумента,
 	ЗаказКлиента.Ссылка,
-	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ)
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ),
+	Звонки.АккаунтАвито
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Звонки КАК Звонки
@@ -664,7 +684,11 @@
 ВЫБРАТЬ
 	МаршрутЗвонков.ЗаявкаКлиента.СуммаДокумента,
 	МаршрутЗвонков.ЗаявкаКлиента,
-	НАЧАЛОПЕРИОДА(МаршрутЗвонков.ЗаявкаКлиента.Дата, ДЕНЬ)
+	НАЧАЛОПЕРИОДА(МаршрутЗвонков.ЗаявкаКлиента.Дата, ДЕНЬ),
+	ВЫБОР
+		КОГДА ИСТИНА
+			ТОГДА "Drom.ru"
+	КОНЕЦ
 ИЗ
 	РегистрСведений.МаршрутЗвонков КАК МаршрутЗвонков
 ГДЕ
@@ -678,7 +702,11 @@
 ВЫБРАТЬ
 	МаршрутЗвонков.ЗаявкаКлиента.СуммаДокумента,
 	МаршрутЗвонков.ЗаявкаКлиента,
-	НАЧАЛОПЕРИОДА(МаршрутЗвонков.ЗаявкаКлиента.Дата, ДЕНЬ)
+	НАЧАЛОПЕРИОДА(МаршрутЗвонков.ЗаявкаКлиента.Дата, ДЕНЬ),
+	ВЫБОР
+		КОГДА ИСТИНА
+			ТОГДА "ZZap"
+	КОНЕЦ
 ИЗ
 	РегистрСведений.МаршрутЗвонков КАК МаршрутЗвонков
 ГДЕ
@@ -692,7 +720,16 @@
 ВЫБРАТЬ
 	ЗаказКлиента.СуммаДокумента КАК СуммаДокумента,
 	ЗаказКлиента.Ссылка КАК Заявка,
-	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ) КАК Дата
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ) КАК Дата,
+	ВЫБОР
+		КОГДА ЗаказКлиента.Канал.Наименование = "AVITO"
+			ТОГДА "Авито1"
+		КОГДА ЗаказКлиента.Канал.Наименование = "Авито Частник"
+			ТОГДА "Авито2"
+		КОГДА ЗаказКлиента.Канал.Наименование = "Авито Частник2 (доставка)"
+			ТОГДА "Авито3"
+		ИНАЧЕ ЗаказКлиента.Канал.Наименование
+	КОНЕЦ КАК Канал
 ПОМЕСТИТЬ ДеньгиИКоличествоИзЗаявокВсе
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
@@ -705,7 +742,8 @@
 ВЫБРАТЬ
 	ЗаказКлиента.СуммаДокумента,
 	ЗаказКлиента.Ссылка,
-	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ)
+	НАЧАЛОПЕРИОДА(ЗаказКлиента.Дата, ДЕНЬ),
+	Звонки.АккаунтАвито
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Звонки КАК Звонки
@@ -724,7 +762,11 @@
 ВЫБРАТЬ
 	МаршрутЗвонков.ЗаявкаКлиента.СуммаДокумента,
 	МаршрутЗвонков.ЗаявкаКлиента,
-	НАЧАЛОПЕРИОДА(МаршрутЗвонков.ЗаявкаКлиента.Дата, ДЕНЬ)
+	НАЧАЛОПЕРИОДА(МаршрутЗвонков.ЗаявкаКлиента.Дата, ДЕНЬ),
+	ВЫБОР
+		КОГДА ИСТИНА
+			ТОГДА "Drom.ru"
+	КОНЕЦ
 ИЗ
 	РегистрСведений.МаршрутЗвонков КАК МаршрутЗвонков
 ГДЕ
@@ -737,7 +779,11 @@
 ВЫБРАТЬ
 	МаршрутЗвонков.ЗаявкаКлиента.СуммаДокумента,
 	МаршрутЗвонков.ЗаявкаКлиента,
-	НАЧАЛОПЕРИОДА(МаршрутЗвонков.ЗаявкаКлиента.Дата, ДЕНЬ)
+	НАЧАЛОПЕРИОДА(МаршрутЗвонков.ЗаявкаКлиента.Дата, ДЕНЬ),
+	ВЫБОР
+		КОГДА ИСТИНА
+			ТОГДА "ZZap"
+	КОНЕЦ
 ИЗ
 	РегистрСведений.МаршрутЗвонков КАК МаршрутЗвонков
 ГДЕ
@@ -756,27 +802,29 @@
 	КОЛИЧЕСТВО(ДеньгиИКоличествоИзЗаявокВсе.Заявка) КАК КоличествоВсехЗаявок,
 	ДеньгиИКоличествоИзЗаявокВсе.Дата КАК ДатаЗаявки,
 	НАЧАЛОПЕРИОДА(ДеньгиИКоличествоИзЗаявокВсе.Дата, МЕСЯЦ) КАК МесяцПериод,
-	ДеньгиИКоличествоИзЗаявокВсе.Заявка КАК Заявка
+	ДеньгиИКоличествоИзЗаявокВсе.Заявка КАК Заявка,
+	ДеньгиИКоличествоИзЗаявокВсе.Канал КАК ИсточникЗаявки
 ИЗ
 	ДеньгиИКоличествоИзЗаявокВсе КАК ДеньгиИКоличествоИзЗаявокВсе
 		ЛЕВОЕ СОЕДИНЕНИЕ ДеньгиИКоличествоИзЗаявок КАК ДеньгиИКоличествоИзЗаявок
-		ПО ДеньгиИКоличествоИзЗаявокВсе.Заявка = ДеньгиИКоличествоИзЗаявок.Заявка
+		ПО (ДеньгиИКоличествоИзЗаявокВсе.Заявка = ДеньгиИКоличествоИзЗаявок.Заявка)
 
 СГРУППИРОВАТЬ ПО
 	ДеньгиИКоличествоИзЗаявок.Дата,
 	ДеньгиИКоличествоИзЗаявок.Заявка,
 	ДеньгиИКоличествоИзЗаявокВсе.Дата,
-	ДеньгиИКоличествоИзЗаявокВсе.Заявка</query>
+	ДеньгиИКоличествоИзЗаявокВсе.Заявка,
+	ДеньгиИКоличествоИзЗаявокВсе.Канал</query>
 	</dataSet>
 	<dataSet xsi:type="DataSetQuery">
-		<name>Пропущенные</name>
+		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ДатаНеп</dataPath>
-			<field>ДатаНеп</field>
+			<dataPath>ДатаПере</dataPath>
+			<field>ДатаПере</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Дата неп</v8:content>
+					<v8:content>Дата</v8:content>
 				</v8:item>
 			</title>
 			<role>
@@ -784,22 +832,22 @@
 			</role>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>АккаунтНеп</dataPath>
-			<field>АккаунтНеп</field>
+			<dataPath>АккаунтПере</dataPath>
+			<field>АккаунтПере</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Аккаунт неп</v8:content>
+					<v8:content>Аккаунт</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>НомерПокупателяНеп</dataPath>
-			<field>НомерПокупателяНеп</field>
+			<dataPath>НомерПокупателяПере</dataPath>
+			<field>НомерПокупателяПере</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Номер покупателя неп</v8:content>
+					<v8:content>Номер покупателя</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -818,27 +866,28 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	МАКСИМУМ(ЗвонкиАвито.Дата) КАК ДатаНеп,
-	МАКСИМУМ(ЗвонкиАвито.АккаунтАвито) КАК АккаунтНеп,
-	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателяНеп
+	ЗвонкиАвито.Дата КАК ДатаПере,
+	ЗвонкиАвито.АккаунтАвито КАК АккаунтПере,
+	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателяПере
 ИЗ
 	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
 ГДЕ
 	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
 	И НЕ ЗвонкиАвито.НомерПокупателя В
-		(ВЫБРАТЬ
-			Успешные.НомерПокупателя КАК НомерПокупателя
-		ИЗ
-			Успешные КАК Успешные)
+				(ВЫБРАТЬ
+					Успешные.НомерПокупателя КАК НомерПокупателя
+				ИЗ
+					Успешные КАК Успешные)
 	И НЕ ЗвонкиАвито.НомерПокупателя В
-		(ВЫБРАТЬ
-			ЗаписиЗвонков.НомерТелефона КАК НомерТелефона
-		ИЗ
-			РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
-		ГДЕ
-			ЗаписиЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ))
-СГРУППИРОВАТЬ ПО
-	ЗвонкиАвито.НомерПокупателя</query>
+				(ВЫБРАТЬ
+					ЗаписиЗвонков.НомерТелефона КАК НомерТелефона
+				ИЗ
+					РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+				ГДЕ
+					ЗаписиЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ))
+
+УПОРЯДОЧИТЬ ПО
+	Дата УБЫВ</query>
 	</dataSet>
 	<calculatedField>
 		<dataPath>ИтогоЗвонков</dataPath>
@@ -1129,13 +1178,13 @@
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ДатаНеп</dcsset:field>
+						<dcsset:field>ДатаПере</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>АккаунтНеп</dcsset:field>
+						<dcsset:field>АккаунтПере</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>НомерПокупателяНеп</dcsset:field>
+						<dcsset:field>НомерПокупателяПере</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:outputParameters>
@@ -1148,7 +1197,7 @@
 						<dcscor:value xsi:type="v8:LocalStringType">
 							<v8:item>
 								<v8:lang>ru</v8:lang>
-								<v8:content>Пропущенные</v8:content>
+								<v8:content>Не перезвонили</v8:content>
 							</v8:item>
 						</dcscor:value>
 					</dcscor:item>
@@ -1230,7 +1279,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>МесяцПериод</dcsset:field>
+						<dcsset:field>ИсточникЗаявки</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1242,7 +1291,7 @@
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>МесяцПериод</dcsset:field>
+						<dcsset:field>ИсточникЗаявки</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>КоличествоВсехЗаявок</dcsset:field>
@@ -1271,7 +1320,7 @@
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>ДатаЗаявки</dcsset:field>
+							<dcsset:field>Заявка</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1283,7 +1332,7 @@
 					</dcsset:order>
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ДатаЗаявки</dcsset:field>
+							<dcsset:field>Заявка</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>КоличествоВсехЗаявок</dcsset:field>
@@ -1298,43 +1347,12 @@
 							<dcsset:field>СуммаЗаявокСПродажей</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
-					<dcsset:item xsi:type="dcsset:StructureItemGroup">
-						<dcsset:groupItems>
-							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>Заявка</dcsset:field>
-								<dcsset:groupType>Items</dcsset:groupType>
-								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-							</dcsset:item>
-						</dcsset:groupItems>
-						<dcsset:order>
-							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-						</dcsset:order>
-						<dcsset:selection>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Заявка</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КоличествоВсехЗаявок</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>СуммаВсехЗаявок</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КоличествоЗаявокСПродажей</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>СуммаЗаявокСПродажей</dcsset:field>
-							</dcsset:item>
-						</dcsset:selection>
-					</dcsset:item>
 				</dcsset:item>
 			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>МесяцЗаказа</dcsset:field>
+						<dcsset:field>Источник</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1346,7 +1364,7 @@
 				</dcsset:order>
 				<dcsset:selection>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>МесяцЗаказа</dcsset:field>
+						<dcsset:field>Источник</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>КолвоЗаказов</dcsset:field>
@@ -1369,7 +1387,7 @@
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:groupItems>
 						<dcsset:item xsi:type="dcsset:GroupItemField">
-							<dcsset:field>ДеньЗаказа</dcsset:field>
+							<dcsset:field>Состояние</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
@@ -1381,7 +1399,7 @@
 					</dcsset:order>
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>ДеньЗаказа</dcsset:field>
+							<dcsset:field>Состояние</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>КолвоЗаказов</dcsset:field>
@@ -1390,62 +1408,6 @@
 							<dcsset:field>ОбщаяСумма</dcsset:field>
 						</dcsset:item>
 					</dcsset:selection>
-					<dcsset:outputParameters>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>Заголовок</dcscor:parameter>
-							<dcscor:value xsi:type="v8:LocalStringType"/>
-						</dcscor:item>
-					</dcsset:outputParameters>
-					<dcsset:item xsi:type="dcsset:StructureItemGroup">
-						<dcsset:groupItems>
-							<dcsset:item xsi:type="dcsset:GroupItemField">
-								<dcsset:field>Источник</dcsset:field>
-								<dcsset:groupType>Items</dcsset:groupType>
-								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-							</dcsset:item>
-						</dcsset:groupItems>
-						<dcsset:order>
-							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-						</dcsset:order>
-						<dcsset:selection>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>Источник</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>КолвоЗаказов</dcsset:field>
-							</dcsset:item>
-							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>ОбщаяСумма</dcsset:field>
-							</dcsset:item>
-						</dcsset:selection>
-						<dcsset:item xsi:type="dcsset:StructureItemGroup">
-							<dcsset:groupItems>
-								<dcsset:item xsi:type="dcsset:GroupItemField">
-									<dcsset:field>Состояние</dcsset:field>
-									<dcsset:groupType>Items</dcsset:groupType>
-									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
-									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
-									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
-								</dcsset:item>
-							</dcsset:groupItems>
-							<dcsset:order>
-								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-							</dcsset:order>
-							<dcsset:selection>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>Состояние</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>КолвоЗаказов</dcsset:field>
-								</dcsset:item>
-								<dcsset:item xsi:type="dcsset:SelectedItemField">
-									<dcsset:field>ОбщаяСумма</dcsset:field>
-								</dcsset:item>
-							</dcsset:selection>
-						</dcsset:item>
-					</dcsset:item>
 				</dcsset:item>
 			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemTable">
