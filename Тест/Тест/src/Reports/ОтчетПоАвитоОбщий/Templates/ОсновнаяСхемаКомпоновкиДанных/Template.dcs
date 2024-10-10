@@ -7,75 +7,58 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>ОбщаяСтатистика</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ДатаПере</dataPath>
-			<field>ДатаПере</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дата пере</v8:content>
-				</v8:item>
-			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
+			<dataPath>КоличествоПросмотров</dataPath>
+			<field>КоличествоПросмотров</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>АккаунтПере</dataPath>
-			<field>АккаунтПере</field>
+			<dataPath>КоличествоКонтактов</dataPath>
+			<field>КоличествоКонтактов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоЗвонков</dataPath>
+			<field>КоличествоЗвонков</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоЗаказов</dataPath>
+			<field>КоличествоЗаказов</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоОбъявлений</dataPath>
+			<field>КоличествоОбъявлений</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодДень</dataPath>
+			<field>ПериодДень</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Аккаунт пере</v8:content>
+					<v8:content>Период день</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>НомерПокупателяПере</dataPath>
-			<field>НомерПокупателяПере</field>
+			<dataPath>ПериодМесяц</dataPath>
+			<field>ПериодМесяц</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Номер покупателя пере</v8:content>
+					<v8:content>Период месяц</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	НАЧАЛОПЕРИОДА(ЗвонкиАвито.Дата, ДЕНЬ) КАК Дата,
-	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя,
-	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито
-ПОМЕСТИТЬ Успешные
+	НАЧАЛОПЕРИОДА(СтатистикаАвито.Период, МЕСЯЦ) КАК ПериодМесяц,
+	НАЧАЛОПЕРИОДА(СтатистикаАвито.Период, ДЕНЬ) КАК ПериодДень,
+	СтатистикаАвито.КоличествоПросмотров КАК КоличествоПросмотров,
+	СтатистикаАвито.КоличествоКонтактов КАК КоличествоКонтактов,
+	СтатистикаАвито.КоличествоЗвонков КАК КоличествоЗвонков,
+	СтатистикаАвито.КоличествоЗаказов КАК КоличествоЗаказов,
+	СтатистикаАвито.КоличествоОбъявлений КАК КоличествоОбъявлений
 ИЗ
-	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
+	РегистрСведений.СтатистикаАвито КАК СтатистикаАвито
 ГДЕ
-	ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
-	И ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	ЗвонкиАвито.Дата КАК ДатаПере,
-	ЗвонкиАвито.АккаунтАвито КАК АккаунтПере,
-	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателяПере
-ИЗ
-	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
-ГДЕ
-	ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
-	И НЕ ЗвонкиАвито.НомерПокупателя В
-				(ВЫБРАТЬ
-					Успешные.НомерПокупателя КАК НомерПокупателя
-				ИЗ
-					Успешные КАК Успешные)
-	И НЕ ЗвонкиАвито.НомерПокупателя В
-				(ВЫБРАТЬ
-					ЗаписиЗвонков.НомерТелефона КАК НомерТелефона
-				ИЗ
-					РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
-				ГДЕ
-					ЗаписиЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ))
-
-УПОРЯДОЧИТЬ ПО
-	Дата УБЫВ</query>
+	СтатистикаАвито.Период МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания</query>
 	</dataSet>
 	<dataSet xsi:type="DataSetQuery">
 		<name>ЗаявкиИзЗвонковПоСтатусам</name>
@@ -833,83 +816,6 @@
 	ДеньгиИКоличествоИзЗаявокВсе.Заявка,
 	ДеньгиИКоличествоИзЗаявокВсе.Канал</query>
 	</dataSet>
-	<dataSet xsi:type="DataSetQuery">
-		<name>НаборДанных1</name>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ДатаПере</dataPath>
-			<field>ДатаПере</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дата</v8:content>
-				</v8:item>
-			</title>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>АккаунтПере</dataPath>
-			<field>АккаунтПере</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Аккаунт</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>НомерПокупателяПере</dataPath>
-			<field>НомерПокупателяПере</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Номер покупателя</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<dataSource>ИсточникДанных1</dataSource>
-		<query>ВЫБРАТЬ
-	НАЧАЛОПЕРИОДА(ЗвонкиАвито.Дата, ДЕНЬ) КАК Дата,
-	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателя,
-	ЗвонкиАвито.АккаунтАвито КАК АккаунтАвито
-ПОМЕСТИТЬ Успешные
-ИЗ
-	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
-ГДЕ
-	ЗвонкиАвито.ПродолжительностьЗвонка &gt; 0
-	И ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	МАКСИМУМ(ЗвонкиАвито.Дата) КАК ДатаПере,
-	МАКСИМУМ(ЗвонкиАвито.АккаунтАвито) КАК АккаунтПере,
-	ЗвонкиАвито.НомерПокупателя КАК НомерПокупателяПере
-ИЗ
-	РегистрСведений.ЗвонкиАвито КАК ЗвонкиАвито
-ГДЕ
-	ЗвонкиАвито.ПродолжительностьЗвонка = 0
-	И ЗвонкиАвито.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(&amp;ДатаОкончания, ДЕНЬ)
-	И НЕ ЗвонкиАвито.НомерПокупателя В
-		(ВЫБРАТЬ
-			Успешные.НомерПокупателя КАК НомерПокупателя
-		ИЗ
-			Успешные КАК Успешные)
-	И НЕ ЗвонкиАвито.НомерПокупателя В
-		(ВЫБРАТЬ
-			СТРЗАМЕНИТЬ(СТРЗАМЕНИТЬ(ЗаписиЗвонков.НомерТелефона, " ", ""), "-", "") КАК НомерТелефона
-		ИЗ
-			РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
-		ГДЕ
-			ЗаписиЗвонков.Дата МЕЖДУ НАЧАЛОПЕРИОДА(&amp;ДатаНачала, ДЕНЬ) И КОНЕЦПЕРИОДА(ДОБАВИТЬКДАТЕ(&amp;ДатаОкончания, ДЕНЬ, 3),
-				ДЕНЬ))
-СГРУППИРОВАТЬ ПО
-	ЗвонкиАвито.НомерПокупателя
-
-УПОРЯДОЧИТЬ ПО
-	ДатаПере</query>
-	</dataSet>
 	<calculatedField>
 		<dataPath>ИтогоЗвонков</dataPath>
 		<expression>КоличествоУспешных + КоличествоПерезвонивших + КоличествоПропущенных</expression>
@@ -937,6 +843,10 @@
 		<expression>Сумма(КоличествоВсехЗаявок)</expression>
 	</totalField>
 	<totalField>
+		<dataPath>КоличествоЗаказов</dataPath>
+		<expression>Сумма(КоличествоЗаказов)</expression>
+	</totalField>
+	<totalField>
 		<dataPath>КоличествоЗаявокПродажа</dataPath>
 		<expression>Сумма(КоличествоЗаявокПродажа)</expression>
 	</totalField>
@@ -945,12 +855,28 @@
 		<expression>Сумма(КоличествоЗаявокСПродажей)</expression>
 	</totalField>
 	<totalField>
+		<dataPath>КоличествоЗвонков</dataPath>
+		<expression>Сумма(КоличествоЗвонков)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоКонтактов</dataPath>
+		<expression>Сумма(КоличествоКонтактов)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоОбъявлений</dataPath>
+		<expression>Максимум(КоличествоОбъявлений)</expression>
+	</totalField>
+	<totalField>
 		<dataPath>КоличествоПерезвонивших</dataPath>
 		<expression>Сумма(КоличествоПерезвонивших)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоПропущенных</dataPath>
 		<expression>Сумма(КоличествоПропущенных)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>КоличествоПросмотров</dataPath>
+		<expression>Сумма(КоличествоПросмотров)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>КоличествоУспешных</dataPath>
@@ -1172,37 +1098,6 @@
 						</dcsset:item>
 					</dcsset:selection>
 				</dcsset:item>
-			</dcsset:item>
-			<dcsset:item xsi:type="dcsset:StructureItemGroup">
-				<dcsset:order>
-					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-				</dcsset:order>
-				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ДатаПере</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>АккаунтПере</dcsset:field>
-					</dcsset:item>
-					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>НомерПокупателяПере</dcsset:field>
-					</dcsset:item>
-				</dcsset:selection>
-				<dcsset:outputParameters>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>МакетОформления</dcscor:parameter>
-						<dcscor:value xsi:type="xs:string">Арктика</dcscor:value>
-					</dcscor:item>
-					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-						<dcscor:parameter>Заголовок</dcscor:parameter>
-						<dcscor:value xsi:type="v8:LocalStringType">
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Не перезвонили</v8:content>
-							</v8:item>
-						</dcscor:value>
-					</dcscor:item>
-				</dcsset:outputParameters>
 			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
