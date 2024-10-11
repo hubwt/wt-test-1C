@@ -56,27 +56,21 @@
       <value></value>
     </fillValue>
   </attributes>
-  <dimensions uuid="a12aee93-9aa4-4827-8970-7ac143dd76aa">
-    <name>ИндНомер</name>
+  <attributes uuid="492cf9db-65f7-4b48-9a12-872a7f15c5b7">
+    <name>ОтветственныйПользователь</name>
     <synonym>
       <key>ru</key>
-      <value>Инд номер</value>
+      <value>Ответственный пользователь</value>
     </synonym>
     <type>
-      <types>String</types>
-      <stringQualifiers>
-        <length>20</length>
-      </stringQualifiers>
+      <types>CatalogRef.Пользователи</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
-    <fillValue xsi:type="core:StringValue">
-      <value></value>
-    </fillValue>
-    <mainFilter>true</mainFilter>
-  </dimensions>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
   <dimensions uuid="fffb7f42-a234-406f-acf5-95a72b7ab9ec">
     <name>Дата</name>
     <synonym>
@@ -88,6 +82,22 @@
       <dateQualifiers>
         <dateFractions>Date</dateFractions>
       </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a12aee93-9aa4-4827-8970-7ac143dd76aa">
+    <name>ИндНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инд номер</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ИндКод</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
