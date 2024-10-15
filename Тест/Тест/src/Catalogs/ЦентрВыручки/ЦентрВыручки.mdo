@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f8445da4-1be0-4bbb-96dd-65ca059d12cd">
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f8445da4-1be0-4bbb-96dd-65ca059d12cd">
   <producedTypes>
     <objectType typeId="220fed7a-109c-442a-bb8a-18e3a7fcb4bf" valueTypeId="1ef3739b-7534-41dd-b842-f251be3a2328"/>
     <refType typeId="d001ac7b-88a4-4b8f-8dbe-41938006742a" valueTypeId="3261df65-507c-4272-8d75-794239608331"/>
@@ -33,6 +33,25 @@
   <choiceMode>BothWays</choiceMode>
   <defaultObjectForm>Catalog.ЦентрВыручки.Form.ФормаЭлемента</defaultObjectForm>
   <defaultListForm>Catalog.ЦентрВыручки.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="1708abcc-8516-48d7-9370-5bec04679b44">
+    <name>СуммаВыручки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма выручки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>16</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <forms uuid="da9d05a6-ed9e-4bf5-b02f-935a05655e17">
     <name>ФормаЭлемента</name>
     <synonym>

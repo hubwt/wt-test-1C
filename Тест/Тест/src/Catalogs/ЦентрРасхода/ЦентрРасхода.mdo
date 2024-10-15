@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Catalog xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5cc9609c-0a0d-426a-9326-d0bcafafb1a7">
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5cc9609c-0a0d-426a-9326-d0bcafafb1a7">
   <producedTypes>
     <objectType typeId="7d301e4f-2fc8-427b-bdf3-3c0bd8f0ab41" valueTypeId="33b66c19-0ceb-49be-9d46-254c81755d55"/>
     <refType typeId="c3cb77db-dd7b-4fdb-b039-f6f5fa04a430" valueTypeId="a190177c-8fe9-4743-a581-3539c5c3ffba"/>
@@ -32,6 +32,25 @@
   <choiceMode>BothWays</choiceMode>
   <defaultObjectForm>Catalog.ЦентрРасхода.Form.ФормаЭлемента</defaultObjectForm>
   <defaultListForm>Catalog.ЦентрРасхода.Form.ФормаСписка</defaultListForm>
+  <attributes uuid="2b18646a-2bdb-4461-bdd9-4b46fbabfc70">
+    <name>СуммаРасхода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма расхода</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>16</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <forms uuid="310f250a-663a-4945-815f-ffcba7b70a4a">
     <name>ФормаЭлемента</name>
     <synonym>
