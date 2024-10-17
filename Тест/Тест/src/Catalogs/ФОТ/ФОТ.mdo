@@ -34,6 +34,7 @@
   <choiceMode>BothWays</choiceMode>
   <defaultObjectForm>Catalog.ФОТ.Form.ФормаЭлемента</defaultObjectForm>
   <defaultListForm>Catalog.ФОТ.Form.ФормаСписка</defaultListForm>
+  <defaultChoiceForm>Catalog.ФОТ.Form.ФормаВыбора</defaultChoiceForm>
   <attributes uuid="04db5988-a265-4028-8fa8-0d3ce799ddc2">
     <name>КоличествоСотрудников</name>
     <synonym>
@@ -227,7 +228,7 @@
     <name>Назначение</name>
     <synonym>
       <key>ru</key>
-      <value>Назначение</value>
+      <value>Назначение(удалить)</value>
     </synonym>
     <type>
       <types>String</types>
@@ -259,6 +260,21 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="e1b2abf5-4b53-4cb9-8a8e-6ece6cd581f1">
+    <name>НазначениеФОТ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение ФОТ</value>
+    </synonym>
+    <type>
+      <types>EnumRef.НазначенияФОТ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <forms uuid="ac22ad6b-365f-4368-acbc-dc1ac2c5735e">
     <name>ФормаЭлемента</name>
     <synonym>
@@ -273,6 +289,15 @@
     <synonym>
       <key>ru</key>
       <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9ef7d3f5-51c9-405b-b9f2-eb7f726939ac">
+    <name>ФормаВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора</value>
     </synonym>
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
