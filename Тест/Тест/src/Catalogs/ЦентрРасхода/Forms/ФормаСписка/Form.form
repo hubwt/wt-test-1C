@@ -196,8 +196,120 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СуммаОбязательныхРасходов</name>
+      <id>37</id>
+      <title>
+        <key>ru</key>
+        <value>Обязательные расходы</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.СуммаОбязательныхРасходов</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СуммаОбязательныхРасходовРасширеннаяПодсказка</name>
+        <id>39</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СуммаОбязательныхРасходовКонтекстноеМеню</name>
+        <id>38</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СуммаПеременныхРасходов</name>
+      <id>40</id>
+      <title>
+        <key>ru</key>
+        <value>Переменные расходы</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.СуммаПеременныхРасходов</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СуммаПеременныхРасходовРасширеннаяПодсказка</name>
+        <id>42</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СуммаПеременныхРасходовКонтекстноеМеню</name>
+        <id>41</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>Расходы</name>
       <id>31</id>
+      <title>
+        <key>ru</key>
+        <value>Сумма расходов</value>
+      </title>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -248,6 +360,10 @@
     <items xsi:type="form:FormField">
       <name>СуммаРасходов</name>
       <id>34</id>
+      <title>
+        <key>ru</key>
+        <value>Сумма расходов + ЗП</value>
+      </title>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -584,7 +700,9 @@
 	ЦентрРасхода.ПеременРасходы.*,
 	ЦентрРасхода.Предопределенный,
 	ЦентрРасхода.ИмяПредопределенныхДанных,
-	ЦентрРасхода.Зарплата + ЦентрРасхода.СуммаРасхода КАК СуммаРасходов
+	ЦентрРасхода.Зарплата + ЦентрРасхода.СуммаРасхода КАК СуммаРасходов,
+	ЦентрРасхода.СуммаОбязательныхРасходов,
+	ЦентрРасхода.СуммаПеременныхРасходов
 ИЗ
 	Справочник.ЦентрРасхода КАК ЦентрРасхода</queryText>
       <mainTable>Catalog.ЦентрРасхода</mainTable>
