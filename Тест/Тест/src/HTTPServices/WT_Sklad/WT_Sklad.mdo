@@ -170,4 +170,36 @@
       <handler>ПереместитьПоддонНаПолкуМетод</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="544cc921-5b1e-47fe-8114-74e1bfd4973e">
+    <name>ПолучитьСписокТоваровНаПоддоне</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список товаров на поддоне</value>
+    </synonym>
+    <template>/get_list_products_on_pallet/{id}/{page}/{count}</template>
+    <methods uuid="150e2dea-be2c-4283-842c-0a8d33254ebb">
+      <name>GetListProductsOnPallet</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get list products on pallet</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровНаПоддонеGetListProductsOnPallet</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1a1e00bf-6a95-45ea-8fbc-26fd31a3a147">
+    <name>ПолучитьСписокТоваровНаСтеллаже</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список товаров на стеллаже</value>
+    </synonym>
+    <template>/get_list_products_on_shelf/{id}/{page}/{count}</template>
+    <methods uuid="7d2cb6d6-951b-4d5e-88b0-cdd962bd9498">
+      <name>GetListProductsOnShelf</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get list products on shelf</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровНаСтеллажеGetListProductsOnShelf</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
