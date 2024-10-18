@@ -235,4 +235,21 @@
       <handler>ПолучитьОстаткиТоваровGetPlaces</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="3bf1a7bf-c238-401c-833c-e9e955b63d42">
+    <name>ОчиститьПоддон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Очистить поддон</value>
+    </synonym>
+    <template>/clear_pallet/{name}/{author}</template>
+    <methods uuid="f8c165d5-b961-44e4-b4af-ad36208b3639">
+      <name>ClearPallet</name>
+      <synonym>
+        <key>ru</key>
+        <value>Clear pallet</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОчиститьПоддонClearPallet</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
