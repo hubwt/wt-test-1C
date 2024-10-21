@@ -269,4 +269,304 @@
       <handler>ОчиститьСтеллажClearShelf</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="a0ddb8a2-1f56-40c6-827c-176b1d64533f">
+    <name>НаполнитьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наполнить заявку</value>
+    </synonym>
+    <template>/filling-application/{id}</template>
+    <methods uuid="5ae79b91-91e2-4b8b-810d-60d5e188cdda">
+      <name>fillingapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Fillingapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>НаполнитьЗаявкуfillingapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="40f0fd6c-fb11-44f5-a695-ca14bef90cbc">
+    <name>УдалитьТоварИзЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить товар из заявки</value>
+    </synonym>
+    <template>/deleteproductapplication/{id}/{pose}</template>
+    <methods uuid="3e2b405b-e8d8-496d-9e58-aca331f75521">
+      <name>deleteproductapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Deleteproductapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>УдалитьТоварИзЗаявкиdeleteproductapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b3916f26-1f2b-4aec-96c0-66d35204aad5">
+    <name>ВыйтиИзЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выйти из заявки</value>
+    </synonym>
+    <template>/get-out-app</template>
+    <methods uuid="1ba558c7-7c5d-42d3-9b79-8aea204c1958">
+      <name>getoutapp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getoutapp</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ВыйтиИзЗаявкиgetoutapp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3c5220d8-0da1-41fe-8b11-8165107d5e55">
+    <name>ОбновитьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обновить продажу</value>
+    </synonym>
+    <template>/refresh-sale</template>
+    <methods uuid="1e0ccb23-4608-4a70-944b-6f3d7f38d732">
+      <name>refreshsale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Refreshsale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОбновитьПродажуrefreshsale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="2a7809f4-914c-4a7c-b3a7-00dd4fd3de30">
+    <name>СменатовараЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сменатовара заявки</value>
+    </synonym>
+    <template>/replace-product-application/{id}</template>
+    <methods uuid="9967dad9-da90-4c7a-833b-081612b0811c">
+      <name>replaceproductapplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Replaceproductapplication</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменатовараЗаявкиreplaceproductapplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="bc8a6c41-16a0-473f-b114-57bdd7ab0092">
+    <name>ВзятьВРаботуКладощик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Взять в работу кладощик</value>
+    </synonym>
+    <template>/take-app-storager</template>
+    <methods uuid="f55d2034-1d57-447c-87b2-5c40d769fd1a">
+      <name>takeappstorager</name>
+      <synonym>
+        <key>ru</key>
+        <value>Takeappstorager</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ВзятьВРаботуКладощикtakeappstorager</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a8e877ce-a96f-402f-860a-d4da26debf56">
+    <name>ПолучитьТоварыКарточки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары карточки</value>
+    </synonym>
+    <template>/products-card/{id}/{filter_stock}/{count}/{page}</template>
+    <methods uuid="c7b3675b-755b-4123-99f4-2e667c92c626">
+      <name>productscard</name>
+      <synonym>
+        <key>ru</key>
+        <value>Productscard</value>
+      </synonym>
+      <handler>ПолучитьТоварыКарточкиproductscard</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1b7f388d-29b3-47b8-af06-7b380641ef47">
+    <name>ВывестиСписокпохожихТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вывести списокпохожих товаров</value>
+    </synonym>
+    <template>/similar-list/{id}/{count}/{page}</template>
+    <methods uuid="05724388-1ce4-45ae-aab0-d0791062ee23">
+      <name>GetSimilarProductsList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get similar products list</value>
+      </synonym>
+      <handler>ПолучитьСписокПохожихТоваровGetSimilarProductsList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a71e5e2a-e8a6-45a0-a0ec-91fe99603ed8">
+    <name>ИзменитьКарточкуТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить карточку товара</value>
+    </synonym>
+    <template>/edit-product-card</template>
+    <methods uuid="6cd4ac42-1010-47f0-a4c2-12933fed0e07">
+      <name>ИзменитьКаротчкуТовара</name>
+      <synonym>
+        <key>ru</key>
+        <value>Изменить каротчку товара</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьКарточкуТовараИзменитьКаротчкуТовара</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="408e365f-1ba8-452d-a7cb-1b98b2209efb">
+    <name>ГлобальноВыдатьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Глобально выдать продажу</value>
+    </synonym>
+    <template>/global-issue-sale/{id}</template>
+    <methods uuid="b1279542-a522-4d0a-b4db-77985f5e020f">
+      <name>globalissueasale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Globalissueasale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ГлобальноВыдатьПродажуglobalissueasale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="59f966b7-cecb-4490-9500-bdd607a38629">
+    <name>ПолучитьБонусыПоПродаже</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить бонусы по продаже</value>
+    </synonym>
+    <template>/get-bonus-by-sale/{datestart}/{dateend}/{id}</template>
+    <methods uuid="0ff96ce6-417e-4f8b-956b-af30885e3b02">
+      <name>getbonusbysale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getbonusbysale</value>
+      </synonym>
+      <handler>ПолучитьБонусыПоПродажеgetbonusbysale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="457620e8-3499-4877-8b60-4050e92648e9">
+    <name>СменаCтатусаТоваровВЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена cтатуса товаров ВЗН</value>
+    </synonym>
+    <template>/change-state-order-product/{id}</template>
+    <methods uuid="f7e535d5-f96d-4135-9445-395d506f3a04">
+      <name>changestateorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Changestateorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаCтатусаТоваровВЗНchangestateorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="6b71ea0b-8bb7-4c99-b04d-e3195e8fc74c">
+    <name>СменаCтатусаВЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена cтатуса ВЗН</value>
+    </synonym>
+    <template>/change-state-order/{id}</template>
+    <methods uuid="cae42dac-12ba-4167-8ca4-d8134bdacfdd">
+      <name>changestateorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Changestateorder</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаCтатусаВЗНchangestateorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e51bf74e-cf28-4ffe-9b28-4d4436a1bb79">
+    <name>ПолучитьТоварыЗаказНаряда</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары заказ наряда</value>
+    </synonym>
+    <template>/get-products-order/{id}/{text}/{count}/{page}/{text_search}</template>
+    <methods uuid="26bb9fb0-5660-460e-9f64-7226a01de649">
+      <name>getproductsorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getproductsorder</value>
+      </synonym>
+      <handler>ПолучитьТоварыЗаказНарядаgetproductsorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="cb12c341-4a36-4388-8bdc-796420d1d413">
+    <name>ПолучитьЗаказНаряд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить заказ наряд</value>
+    </synonym>
+    <template>/get-order/{id}</template>
+    <methods uuid="d34eefac-55fa-4370-9f14-5ffa5a2adcca">
+      <name>getorder</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getorder</value>
+      </synonym>
+      <handler>ПолучитьЗаказНарядgetorder</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="f3d40b02-4c9c-4ce3-a6cf-c14ce49848e5">
+    <name>ПолучитьСписокНарядов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список нарядов</value>
+    </synonym>
+    <template>/get-list-orders/{text}/{count}/{page}</template>
+    <methods uuid="e272d305-cf97-4b06-be87-e0d129ee15f3">
+      <name>getlistorders</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlistorders</value>
+      </synonym>
+      <handler>ПолучитьСписокНарядовgetlistorders</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1ef12878-cbe2-4927-92c7-9c4bfc0871de">
+    <name>СменатовараЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сменатовара ЗН</value>
+    </synonym>
+    <template>/replace-product-zn/{id}</template>
+    <methods uuid="1f021565-0d67-49e3-86b2-3b51259f6a68">
+      <name>replaceproductzn</name>
+      <synonym>
+        <key>ru</key>
+        <value>Replaceproductzn</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменатовараЗНreplaceproductzn</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8ee4d9df-3947-48b4-a634-8435239ba4a7">
+    <name>ИзменитьЦенуТовараВЗаявке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить цену товара в заявке</value>
+    </synonym>
+    <template>/edit-application-product-price/{id}</template>
+    <methods uuid="bbfeb68e-58a0-4556-8ee0-ac8b7ba58525">
+      <name>EditPriceProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit price product</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьЦенуТовараВЗаявкеEditPriceProduct</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
