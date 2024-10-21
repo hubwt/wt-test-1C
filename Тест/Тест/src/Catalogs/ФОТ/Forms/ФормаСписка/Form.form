@@ -102,6 +102,60 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>НомерСортировки</name>
+      <id>83</id>
+      <title>
+        <key>ru</key>
+        <value>Порядковый номер</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.НомерСортировки</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>НомерСортировкиРасширеннаяПодсказка</name>
+        <id>85</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>НомерСортировкиКонтекстноеМеню</name>
+        <id>84</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>Наименование</name>
       <id>38</id>
       <visible>true</visible>
@@ -152,19 +206,23 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>Назначение</name>
-      <id>71</id>
+      <name>НазначениеФОТ</name>
+      <id>80</id>
+      <title>
+        <key>ru</key>
+        <value>Назначение</value>
+      </title>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>Список.Назначение</segments>
+        <segments>Список.НазначениеФОТ</segments>
       </dataPath>
       <extendedTooltip>
-        <name>НазначениеРасширеннаяПодсказка</name>
-        <id>73</id>
+        <name>НазначениеФОТРасширеннаяПодсказка</name>
+        <id>82</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -178,8 +236,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>НазначениеКонтекстноеМеню</name>
-        <id>72</id>
+        <name>НазначениеФОТКонтекстноеМеню</name>
+        <id>81</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -190,10 +248,10 @@
       <type>InputField</type>
       <editMode>Enter</editMode>
       <showInHeader>true</showInHeader>
-      <headerHorizontalAlign>Center</headerHorizontalAlign>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:InputFieldExtInfo">
-        <width>5</width>
+        <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <wrap>true</wrap>
         <chooseType>true</chooseType>
@@ -770,6 +828,14 @@
       <horizontalAlign>Left</horizontalAlign>
       <autoFill>true</autoFill>
     </autoCommandBar>
+    <handlers>
+      <event>DragEnd</event>
+      <name>СписокОкончаниеПеретаскивания</name>
+    </handlers>
+    <handlers>
+      <event>Drag</event>
+      <name>СписокПеретаскивание</name>
+    </handlers>
     <searchStringAddition>
       <visible>true</visible>
       <enabled>true</enabled>
@@ -911,7 +977,7 @@
       </userVisible>
       <autoFill>true</autoFill>
     </contextMenu>
-    <representation>HierarchicalList</representation>
+    <representation>Tree</representation>
     <changeRowSet>true</changeRowSet>
     <changeRowOrder>true</changeRowOrder>
     <autoMaxWidth>true</autoMaxWidth>
@@ -929,6 +995,8 @@
     <initialListView>Auto</initialListView>
     <horizontalStretch>true</horizontalStretch>
     <verticalStretch>true</verticalStretch>
+    <enableStartDrag>true</enableStartDrag>
+    <enableDrag>true</enableDrag>
     <fileDragMode>AsFileRef</fileDragMode>
     <extInfo xsi:type="form:DynamicListTableExtInfo">
       <autoRefreshPeriod>60</autoRefreshPeriod>
@@ -979,6 +1047,21 @@
       <autoSaveUserSettings>true</autoSaveUserSettings>
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
+  </attributes>
+  <attributes>
+    <name>МассивПервоначальныхРодителей</name>
+    <title>
+      <key>ru</key>
+      <value>Массив первоначальных родителей</value>
+    </title>
+    <id>2</id>
+    <valueType/>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
   </attributes>
   <commandInterface>
     <navigationPanel/>

@@ -153,4 +153,120 @@
       <handler>ОпределитьАйдиТоварПолкаСтелажЗаявкаЗаказНарядcheckingid</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="c7126789-5afd-42b4-ae89-5470b17f6669">
+    <name>ПереместитьПоддонНаПолку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Переместить поддон на полку</value>
+    </synonym>
+    <template>/move_pallet</template>
+    <methods uuid="f324c569-e7b2-4458-95ae-2adb77f9670c">
+      <name>MovePallet</name>
+      <synonym>
+        <key>ru</key>
+        <value>Move pallet</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПереместитьПоддонНаПолкуМетод</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="544cc921-5b1e-47fe-8114-74e1bfd4973e">
+    <name>ПолучитьСписокТоваровНаПоддоне</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список товаров на поддоне</value>
+    </synonym>
+    <template>/get_list_products_on_pallet/{id}/{page}/{count}</template>
+    <methods uuid="150e2dea-be2c-4283-842c-0a8d33254ebb">
+      <name>GetListProductsOnPallet</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get list products on pallet</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровНаПоддонеGetListProductsOnPallet</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="1a1e00bf-6a95-45ea-8fbc-26fd31a3a147">
+    <name>ПолучитьСписокТоваровНаСтеллаже</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список товаров на стеллаже</value>
+    </synonym>
+    <template>/get_list_products_on_shelf/{id}/{page}/{count}</template>
+    <methods uuid="7d2cb6d6-951b-4d5e-88b0-cdd962bd9498">
+      <name>GetListProductsOnShelf</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get list products on shelf</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровНаСтеллажеGetListProductsOnShelf</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8bcec31e-9cb4-4811-8f5d-213f01322ebc">
+    <name>ВыйтиИзЗН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выйти из ЗН</value>
+    </synonym>
+    <template>/get-out-zn</template>
+    <methods uuid="847e667e-fd84-418d-b036-2f9e0d68588f">
+      <name>getoutzn</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getoutzn</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ВыйтиИзЗНgetoutapp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a3adbb9a-db4d-4d3b-8766-41b029d81ab4">
+    <name>ПолучитьОстаткиТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить остатки товаров</value>
+    </synonym>
+    <template>/get_count/{id}</template>
+    <methods uuid="507ae328-34a9-4090-a332-815bdd80ddc2">
+      <name>GetPlaces</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get places</value>
+      </synonym>
+      <handler>ПолучитьОстаткиТоваровGetPlaces</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3bf1a7bf-c238-401c-833c-e9e955b63d42">
+    <name>ОчиститьПоддон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Очистить поддон</value>
+    </synonym>
+    <template>/clear_pallet/{name}/{author}</template>
+    <methods uuid="f8c165d5-b961-44e4-b4af-ad36208b3639">
+      <name>ClearPallet</name>
+      <synonym>
+        <key>ru</key>
+        <value>Clear pallet</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОчиститьПоддонClearPallet</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0eaa9cd5-aacb-41ba-9c1a-80a434b6cc87">
+    <name>ОчиститьСтеллаж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Очистить стеллаж</value>
+    </synonym>
+    <template>/clear_shelf/{name}/{author}</template>
+    <methods uuid="b824f4bd-e678-4e72-b538-5747654d053b">
+      <name>ClearShelf</name>
+      <synonym>
+        <key>ru</key>
+        <value>Clear shelf</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОчиститьСтеллажClearShelf</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
