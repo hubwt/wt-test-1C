@@ -569,4 +569,36 @@
       <handler>ИзменитьЦенуТовараВЗаявкеEditPriceProduct</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="3101a923-a2a3-4f4c-b931-85c9e6229761">
+    <name>ПолучитьТовар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товар</value>
+    </synonym>
+    <template>/product/{id}</template>
+    <methods uuid="16b8aa48-6ad5-4fd2-9c74-d7093fb764b4">
+      <name>GetProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get product</value>
+      </synonym>
+      <handler>ПолучитьТоварGetProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9b0840cd-2353-4317-9b03-1a4386484b97">
+    <name>ПолучитьКарточкуТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить карточку товара</value>
+    </synonym>
+    <template>/get-card-product/{id}</template>
+    <methods uuid="19a21bd5-0cc7-4462-86cd-922e72463c41">
+      <name>getcardproduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getcardproduct</value>
+      </synonym>
+      <handler>ПолучитьКарточкуТовараgetcardproduct</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
