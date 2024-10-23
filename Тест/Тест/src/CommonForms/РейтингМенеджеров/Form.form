@@ -26626,6 +26626,114 @@
           <verticalStretch>true</verticalStretch>
         </extInfo>
       </items>
+      <items xsi:type="form:FormField">
+        <name>ПериодГрафикаПриростКлинтов</name>
+        <id>1947</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>ПериодГрафикаПриростКлинтов</segments>
+        </dataPath>
+        <handlers>
+          <event>OnChange</event>
+          <name>ПериодГрафикаПриростКлинтовПриИзменении</name>
+        </handlers>
+        <extendedTooltip>
+          <name>ПериодГрафикаПриростКлинтовРасширеннаяПодсказка</name>
+          <id>1949</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ПериодГрафикаПриростКлинтовКонтекстноеМеню</name>
+          <id>1948</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>ГрафикПриростаАктивныхКлиентов</name>
+        <id>1938</id>
+        <titleFont xsi:type="core:FontDef">
+          <height>16.0</height>
+          <bold>true</bold>
+        </titleFont>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>ГрафикПриростаАктивныхКлиентов</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>ГрафикПриростаАктивныхКлиентовРасширеннаяПодсказка</name>
+          <id>1940</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ГрафикПриростаАктивныхКлиентовКонтекстноеМеню</name>
+          <id>1939</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>ChartField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:ChartFieldExtInfo">
+          <width>50</width>
+          <autoMaxWidth>true</autoMaxWidth>
+          <height>4</height>
+          <maxHeight>15</maxHeight>
+          <horizontalStretch>true</horizontalStretch>
+          <verticalStretch>true</verticalStretch>
+        </extInfo>
+      </items>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -29400,7 +29508,7 @@
     <name>ПериодГрафикиТоварооборот</name>
     <title>
       <key>ru</key>
-      <value>Период графики товарооборот</value>
+      <value>Период</value>
     </title>
     <id>39</id>
     <valueType>
@@ -30559,7 +30667,7 @@
     <name>ГруппыКлиентовДиаграмма</name>
     <title>
       <key>ru</key>
-      <value>Группы клиентов диаграмма</value>
+      <value>Количеств клиентов по группам</value>
     </title>
     <id>61</id>
     <valueType>
@@ -30791,6 +30899,58 @@
       <dateQualifiers>
         <dateFractions>Date</dateFractions>
       </dateQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ГрафикПриростаАктивныхКлиентов</name>
+    <title>
+      <key>ru</key>
+      <value>График прироста активных клиентов</value>
+    </title>
+    <id>65</id>
+    <valueType>
+      <types>Chart</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:ChartExtInfo"/>
+  </attributes>
+  <attributes>
+    <name>ПериодГрафикаПриростКлинтов</name>
+    <title>
+      <key>ru</key>
+      <value>Период</value>
+    </title>
+    <id>66</id>
+    <valueType>
+      <types>StandardPeriod</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <settingsSavedData xsi:type="form:DataPath">
+      <segments>ПериодГрафикаПриростКлинтов</segments>
+    </settingsSavedData>
+  </attributes>
+  <attributes>
+    <name>Реквизит1</name>
+    <id>67</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
     </valueType>
     <view>
       <common>true</common>
