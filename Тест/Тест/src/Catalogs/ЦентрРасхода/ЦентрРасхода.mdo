@@ -10,7 +10,7 @@
   <name>ЦентрРасхода</name>
   <synonym>
     <key>ru</key>
-    <value>Центр расхода</value>
+    <value>Центр расхода </value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Catalog.ЦентрРасхода.StandardAttribute.Code</inputByString>
@@ -32,25 +32,6 @@
   <choiceMode>BothWays</choiceMode>
   <defaultObjectForm>Catalog.ЦентрРасхода.Form.ФормаЭлемента</defaultObjectForm>
   <defaultListForm>Catalog.ЦентрРасхода.Form.ФормаСписка</defaultListForm>
-  <attributes uuid="2b18646a-2bdb-4461-bdd9-4b46fbabfc70">
-    <name>СуммаРасхода</name>
-    <synonym>
-      <key>ru</key>
-      <value>Сумма расхода</value>
-    </synonym>
-    <type>
-      <types>Number</types>
-      <numberQualifiers>
-        <precision>16</precision>
-        <nonNegative>true</nonNegative>
-      </numberQualifiers>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
   <attributes uuid="f50001f6-30f5-4458-939c-bddefd2bf757">
     <name>Ответственный</name>
     <synonym>
@@ -85,44 +66,6 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <attributes uuid="5b3ef23a-c21a-43a6-bbc0-57d757276b2e">
-    <name>СуммаОбязательныхРасходов</name>
-    <synonym>
-      <key>ru</key>
-      <value>Сумма обязательных расходов</value>
-    </synonym>
-    <type>
-      <types>Number</types>
-      <numberQualifiers>
-        <precision>50</precision>
-        <scale>2</scale>
-      </numberQualifiers>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="52c90083-32c4-44b7-ae0f-156da5543c5b">
-    <name>СуммаПеременныхРасходов</name>
-    <synonym>
-      <key>ru</key>
-      <value>Сумма переменных расходов</value>
-    </synonym>
-    <type>
-      <types>Number</types>
-      <numberQualifiers>
-        <precision>50</precision>
-        <scale>2</scale>
-      </numberQualifiers>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
   <attributes uuid="afa81dea-4eb1-4d70-b240-da942ea61313">
     <name>ФОТ</name>
     <synonym>
@@ -138,117 +81,180 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <tabularSections uuid="5e09e436-1f61-4080-9e15-c9b7efa6dc67">
-    <producedTypes>
-      <objectType typeId="a05c9a26-a336-4379-a5c9-6f54173b6bb4" valueTypeId="851a8b6c-77bc-43bf-8d2f-7a0e6195b421"/>
-      <rowType typeId="a24c1471-f668-40fb-bcd1-fed8579f5828" valueTypeId="7c777745-0f68-4be5-9c02-be50323012fb"/>
-    </producedTypes>
-    <name>ФиксМесРасходы</name>
+  <attributes uuid="15036254-b43f-4d65-a6c9-31bb72bec09a">
+    <name>Филиал</name>
     <synonym>
       <key>ru</key>
-      <value>Фикс мес расходы</value>
+      <value>Филиал</value>
     </synonym>
-    <attributes uuid="82f251c1-d20a-48e7-9e8c-0a0736b4ddeb">
-      <name>ВидРасхода</name>
-      <synonym>
-        <key>ru</key>
-        <value>Вид расхода</value>
-      </synonym>
-      <type>
-        <types>CatalogRef.ВидыРасходов_3</types>
-      </type>
-      <minValue xsi:type="core:UndefinedValue"/>
-      <maxValue xsi:type="core:UndefinedValue"/>
-      <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
-    </attributes>
-    <attributes uuid="2e738990-72d0-48c3-a6f5-b5dabec9803e">
-      <name>Сумма</name>
-      <synonym>
-        <key>ru</key>
-        <value>Сумма</value>
-      </synonym>
-      <type>
-        <types>Number</types>
-        <numberQualifiers>
-          <precision>50</precision>
-          <scale>2</scale>
-        </numberQualifiers>
-      </type>
-      <minValue xsi:type="core:UndefinedValue"/>
-      <maxValue xsi:type="core:UndefinedValue"/>
-      <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
-    </attributes>
-  </tabularSections>
-  <tabularSections uuid="a6adb229-8fc1-4df1-bdb8-9704c2d9c8ff">
-    <producedTypes>
-      <objectType typeId="5450c1f2-3ef5-478b-ac32-6a0fec2898c4" valueTypeId="121e8266-3aba-4bdf-9a1e-1f62e145b660"/>
-      <rowType typeId="bbb98f83-dc84-4c0b-bfef-a49e5bcdfb4e" valueTypeId="ca092a67-e6b7-4919-9840-82c1be37f39d"/>
-    </producedTypes>
-    <name>ПеременРасходы</name>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d499fe4c-e4c2-4901-8773-607a1874b719">
+    <name>Отдел</name>
     <synonym>
       <key>ru</key>
-      <value>Перемен расходы</value>
+      <value>Отдел</value>
     </synonym>
-    <attributes uuid="d68aed28-49d2-455b-9924-65b27edaa1d2">
-      <name>ВидРасхода</name>
-      <synonym>
-        <key>ru</key>
-        <value>Вид расхода</value>
-      </synonym>
-      <type>
-        <types>CatalogRef.ВидыРасходов_3</types>
-      </type>
-      <minValue xsi:type="core:UndefinedValue"/>
-      <maxValue xsi:type="core:UndefinedValue"/>
-      <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
-    </attributes>
-    <attributes uuid="6b9e4772-b3d4-4c23-ba97-20a26499e62b">
-      <name>Сумма</name>
-      <synonym>
-        <key>ru</key>
-        <value>Сумма</value>
-      </synonym>
-      <type>
-        <types>Number</types>
-        <numberQualifiers>
-          <precision>50</precision>
-          <scale>2</scale>
-        </numberQualifiers>
-      </type>
-      <minValue xsi:type="core:UndefinedValue"/>
-      <maxValue xsi:type="core:UndefinedValue"/>
-      <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
-    </attributes>
-  </tabularSections>
-  <tabularSections uuid="670a2f69-1c78-49a0-93d1-ae9a8a82a71e">
-    <producedTypes>
-      <objectType typeId="def5ebbf-112f-4ba3-9f32-df9ad1512cce" valueTypeId="95cdb4cd-a3ad-4496-8ac1-510bfae21922"/>
-      <rowType typeId="c30efb38-c03a-4f41-8697-c536e6757bf6" valueTypeId="12781bbf-d38c-4bc5-9bb6-9f8f42db31f7"/>
-    </producedTypes>
-    <name>СписокЦФО</name>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="eca707b0-927d-4879-b8d0-5680d6cf91a1">
+    <name>Категория1</name>
     <synonym>
       <key>ru</key>
-      <value>Список ЦФО</value>
+      <value>Категория1</value>
     </synonym>
-    <attributes uuid="4171ba75-b5cd-4805-bff6-cec86862333d">
-      <name>ЦФО</name>
-      <synonym>
-        <key>ru</key>
-        <value>ЦФО</value>
-      </synonym>
-      <type>
-        <types>CatalogRef.ЦФО</types>
-      </type>
-      <minValue xsi:type="core:UndefinedValue"/>
-      <maxValue xsi:type="core:UndefinedValue"/>
-      <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
-    </attributes>
-  </tabularSections>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="11faa7f1-6a98-4bfd-9fe4-84fbcad7bc19">
+    <name>Категория2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория2</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="46e8bfa5-ddee-4726-8c44-dc7d127e9c4b">
+    <name>Категория3</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория3</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="879dd893-9ce0-4960-8499-f8c8cecdebdf">
+    <name>Категория4</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория4</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="57c44dce-c809-43b2-ab27-541dec587f99">
+    <name>Категория5</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория5</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="88100738-bbab-47d2-a9dd-492022ebafae">
+    <name>Категория6</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория6</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="fbb3639a-717f-421a-8f6d-7d75ee7cecd1">
+    <name>ЗарплатаФакт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зарплата факт</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>14</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a56e54f0-88f8-44c2-bd02-3f443e1953f7">
+    <name>РасходПлан</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расход план</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="954c9725-77ae-4509-a481-4856feae21b5">
+    <name>РасходФакт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расход факт</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>14</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <forms uuid="310f250a-663a-4945-815f-ffcba7b70a4a">
     <name>ФормаЭлемента</name>
     <synonym>
@@ -258,7 +264,7 @@
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
   </forms>
-  <forms uuid="d2e639dc-bb93-47e9-957c-7dbe14342e1c">
+  <forms uuid="d029ec5b-5a48-4bc8-be4e-3b6870a64b85">
     <name>ФормаСписка</name>
     <synonym>
       <key>ru</key>
