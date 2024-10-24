@@ -886,6 +886,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>Филиал</name>
+      <id>180</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.Филиал</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ФилиалРасширеннаяПодсказка</name>
+        <id>182</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ФилиалКонтекстноеМеню</name>
+        <id>181</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СтатусВТСпасибо</name>
       <id>168</id>
       <title>
@@ -2965,7 +3015,15 @@
 	СправочникКлиенты.ДатаПоследнегоКонтакта КАК ДатаПоследнегоКонтакта1,
 	СправочникКлиенты.СтатусВТСпасибо КАК СтатусВТСпасибо,
 	СправочникКлиенты.КовбойМальборо КАК КовбойМальборо,
-	ВТ_БалансКлиента.БалансОстаток КАК БалансКлиента
+	ВТ_БалансКлиента.БалансОстаток КАК БалансКлиента,
+	ВЫБОР
+		КОГДА СправочникКлиенты.Ответственный = Значение(Справочник.Пользователи.ПустаяСсылка)
+		ИЛИ СправочникКлиенты.Ответственный.Подразделение.Город = Значение(Справочник.Город.ПустаяСсылка)
+		ИЛИ СправочникКлиенты.Ответственный.Подразделение = Значение(Справочник.Подразделения.ПустаяСсылка)
+		ИЛИ СправочникКлиенты.Ответственный = &amp;ОбщийКлиент
+			ТОГДА &quot;Общие клиенты&quot;
+		ИНАЧЕ СправочникКлиенты.Ответственный.Подразделение.Город
+	КОНЕЦ КАК Филиал
 ИЗ
 	Справочник.Клиенты КАК СправочникКлиенты
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КолвоПродаж КАК ВТ_КолвоПродаж
