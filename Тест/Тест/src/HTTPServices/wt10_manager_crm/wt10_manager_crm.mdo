@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="70da7e49-db7b-40d0-a9f2-6b276e800199">
+  <name>wt10_manager_crm</name>
+  <synonym>
+    <key>ru</key>
+    <value>Wt10 manager crm</value>
+  </synonym>
+  <rootURL>wt10_manager_crm</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="b12dddc5-2095-4584-95d4-41cf2c321aee">
+    <name>ПолучитьСтатусыЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить статусы заявки</value>
+    </synonym>
+    <template>/get_status_app</template>
+    <methods uuid="155028fd-5326-473c-9592-3da265fcda44">
+      <name>GetStatusApp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get status app</value>
+      </synonym>
+      <handler>ПолучитьСтатусыЗаявкиgetstatusapp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="20c370e4-a924-4235-89cf-1d8824374af9">
+    <name>ПолучитьЗаявкиПоСтатусу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить заявки по статусу</value>
+    </synonym>
+    <template>/get-app-by-status/{count}/{page}/{status}</template>
+    <methods uuid="41a1564c-b856-4da3-920a-9468f8c166d0">
+      <name>GetAppByStatus</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get app by status</value>
+      </synonym>
+      <handler>ПолучитьЗаявкиПоСтатусуgetappbystatus</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>
