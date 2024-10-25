@@ -3788,6 +3788,49 @@
           <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
         </items>
         <items xsi:type="form:FormField">
+          <name>ПартииЕстьФото</name>
+          <id>364</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Партии.ЕстьФото</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ПартииЕстьФотоРасширеннаяПодсказка</name>
+            <id>366</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ПартииЕстьФотоКонтекстноеМеню</name>
+            <id>365</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>CheckBoxField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+        </items>
+        <items xsi:type="form:FormField">
           <name>ПартииКод</name>
           <id>113</id>
           <title>
@@ -4646,6 +4689,56 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
+          <name>ПартииОценка</name>
+          <id>748</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Партии.Оценка</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ПартииОценкаРасширеннаяПодсказка</name>
+            <id>750</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ПартииОценкаКонтекстноеМеню</name>
+            <id>749</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>Партиицена2</name>
           <id>283</id>
           <visible>true</visible>
@@ -4874,49 +4967,6 @@
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
           </extInfo>
-        </items>
-        <items xsi:type="form:FormField">
-          <name>ПартииЕстьФото</name>
-          <id>364</id>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
-          <dataPath xsi:type="form:DataPath">
-            <segments>Партии.ЕстьФото</segments>
-          </dataPath>
-          <extendedTooltip>
-            <name>ПартииЕстьФотоРасширеннаяПодсказка</name>
-            <id>366</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <type>Label</type>
-            <autoMaxWidth>true</autoMaxWidth>
-            <autoMaxHeight>true</autoMaxHeight>
-            <extInfo xsi:type="form:LabelDecorationExtInfo">
-              <horizontalAlign>Left</horizontalAlign>
-            </extInfo>
-          </extendedTooltip>
-          <contextMenu>
-            <name>ПартииЕстьФотоКонтекстноеМеню</name>
-            <id>365</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <autoFill>true</autoFill>
-          </contextMenu>
-          <type>CheckBoxField</type>
-          <editMode>Enter</editMode>
-          <showInHeader>true</showInHeader>
-          <headerHorizontalAlign>Left</headerHorizontalAlign>
-          <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
         </items>
         <autoCommandBar>
           <name>ПартииКоманднаяПанель</name>
@@ -7777,7 +7827,8 @@
 	ИндНомер.Код КАК Код,
 	ВЫБОР
 		КОГДА РегистрНакопления1Остатки.Товар.Состояние = ЗНАЧЕНИЕ(Перечисление.Состояние.БУ)
-			ТОГДА (ВЫРАЗИТЬ(РегистрНакопления1Остатки.Товар.РекомендованаяЦена * ИндНомер.наценка.Коофициент / 10 КАК ЧИСЛО(10, 0))) * 10
+			ТОГДА (ВЫРАЗИТЬ(РегистрНакопления1Остатки.Товар.РекомендованаяЦена * ИндНомер.наценка.Коофициент / 10 КАК ЧИСЛО(10,
+				0))) * 10
 		ИНАЧЕ ИндНомер.Цена
 	КОНЕЦ КАК наценкаФ,
 	ИндНомер.п КАК Контрагенты,
@@ -7798,22 +7849,21 @@
 	ИндНомер.ЦенаПроверена КАК ЦенаПроверена,
 	ИндНомер.ЕстьФото КАК ЕстьФото,
 	ИндНомер.Состояние КАК Состояние,
-	ИндНомер.Поддон КАК Поддон
+	ИндНомер.Поддон КАК Поддон,
+	ИндНомер.Оценка
 ИЗ
-	РегистрНакопления.РегистрНакопления1.Остатки(
-			,
-			Товар = &amp;Товар
-				И (НЕ &amp;ЕстьОтборПоСкладу
-					ИЛИ Склад = &amp;Склад)) КАК РегистрНакопления1Остатки
+	РегистрНакопления.РегистрНакопления1.Остатки(, Товар = &amp;Товар
+	И (НЕ &amp;ЕстьОтборПоСкладу
+	ИЛИ Склад = &amp;Склад)) КАК РегистрНакопления1Остатки
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.Комментарии КАК Комментарии
 		ПО (Комментарии.Товар = РегистрНакопления1Остатки.Товар)
-			И (Комментарии.Машина = РегистрНакопления1Остатки.машина)
-			И (Комментарии.индкод = РегистрНакопления1Остатки.индкод)
+		И (Комментарии.Машина = РегистрНакопления1Остатки.машина)
+		И (Комментарии.индкод = РегистрНакопления1Остатки.индкод)
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
 		ПО (ИндНомер.индкод = РегистрНакопления1Остатки.индкод)
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.дт_МестаХраненияНоменклатуры.СрезПоследних КАК МестаХранения
 		ПО РегистрНакопления1Остатки.Товар = МестаХранения.Номенклатура
-			И РегистрНакопления1Остатки.Склад = МестаХранения.Склад</queryText>
+		И РегистрНакопления1Остатки.Склад = МестаХранения.Склад</queryText>
       <mainTable>AccumulationRegister.РегистрНакопления1.Balance</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>

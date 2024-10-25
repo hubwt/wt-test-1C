@@ -4925,6 +4925,49 @@
           <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
         </items>
         <items xsi:type="form:FormField">
+          <name>СписокТоварыЕстьФото</name>
+          <id>1246</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>СписокТовары.ЕстьФото</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокТоварыЕстьФотоРасширеннаяПодсказка</name>
+            <id>1248</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокТоварыЕстьФотоКонтекстноеМеню</name>
+            <id>1247</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>CheckBoxField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+        </items>
+        <items xsi:type="form:FormField">
           <name>СписокТоварыиндкод</name>
           <id>1214</id>
           <visible>true</visible>
@@ -16339,7 +16382,8 @@
 	РегистрНакопления1Остатки.машина,
 	регИндНомер.Комментарий КАК КомментарийИндкода,
 	Комментарии.Комментарий,
-	регИндНомер.Оценка
+	регИндНомер.Оценка,
+	регИндНомер.ЕстьФото
 ИЗ
 	РегистрСведений.ИндНомер КАК регИндНомер
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РегистрНакопления1.Остатки КАК РегистрНакопления1Остатки
