@@ -40,11 +40,11 @@
     </extInfo>
   </items>
   <items xsi:type="form:FormGroup">
-    <name>Группа1</name>
-    <id>34</id>
+    <name>Группа4</name>
+    <id>99</id>
     <items xsi:type="form:FormGroup">
-      <name>Группа3</name>
-      <id>38</id>
+      <name>СписокВлияний</name>
+      <id>101</id>
       <items xsi:type="form:Table">
         <name>Список2</name>
         <id>65</id>
@@ -59,7 +59,7 @@
         <titleLocation>None</titleLocation>
         <items xsi:type="form:FormField">
           <name>Список2Код</name>
-          <id>78</id>
+          <id>90</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -70,7 +70,7 @@
           </dataPath>
           <extendedTooltip>
             <name>Список2КодРасширеннаяПодсказка</name>
-            <id>80</id>
+            <id>92</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -85,7 +85,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>Список2КодКонтекстноеМеню</name>
-            <id>79</id>
+            <id>91</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -108,19 +108,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>Список2Ссылка</name>
-          <id>81</id>
+          <name>Список2Наименование</name>
+          <id>87</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Список2.Ссылка</segments>
+            <segments>Список2.Наименование</segments>
           </dataPath>
           <extendedTooltip>
-            <name>Список2СсылкаРасширеннаяПодсказка</name>
-            <id>83</id>
+            <name>Список2НаименованиеРасширеннаяПодсказка</name>
+            <id>89</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -134,8 +134,58 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>Список2СсылкаКонтекстноеМеню</name>
-            <id>82</id>
+            <name>Список2НаименованиеКонтекстноеМеню</name>
+            <id>88</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>Список2Отдел</name>
+          <id>93</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Список2.Отдел</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>Список2ОтделРасширеннаяПодсказка</name>
+            <id>95</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>Список2ОтделКонтекстноеМеню</name>
+            <id>94</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -166,7 +216,6 @@
             <common>true</common>
           </userVisible>
           <horizontalAlign>Left</horizontalAlign>
-          <autoFill>true</autoFill>
         </autoCommandBar>
         <searchStringAddition>
           <visible>true</visible>
@@ -346,11 +395,11 @@
       </userVisible>
       <title>
         <key>ru</key>
-        <value>Без группировки</value>
+        <value>Список влияний</value>
       </title>
       <extendedTooltip>
-        <name>Группа3РасширеннаяПодсказка</name>
-        <id>39</id>
+        <name>СписокВлиянийРасширеннаяПодсказка</name>
+        <id>102</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -363,15 +412,20 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <type>Page</type>
-      <extInfo xsi:type="form:PageGroupExtInfo">
-        <group>Vertical</group>
+      <type>UsualGroup</type>
+      <extInfo xsi:type="form:UsualGroupExtInfo">
+        <group>HorizontalIfPossible</group>
+        <behavior>Auto</behavior>
+        <showLeftMargin>true</showLeftMargin>
+        <united>true</united>
         <showTitle>true</showTitle>
+        <throughAlign>Auto</throughAlign>
+        <currentRowUse>Auto</currentRowUse>
       </extInfo>
     </items>
     <items xsi:type="form:FormGroup">
-      <name>Группа2</name>
-      <id>36</id>
+      <name>СписокВлиянийСгруппирован</name>
+      <id>103</id>
       <items xsi:type="form:Table">
         <name>Список</name>
         <id>40</id>
@@ -543,7 +597,6 @@
             <common>true</common>
           </userVisible>
           <horizontalAlign>Left</horizontalAlign>
-          <autoFill>true</autoFill>
         </autoCommandBar>
         <searchStringAddition>
           <visible>true</visible>
@@ -723,11 +776,11 @@
       </userVisible>
       <title>
         <key>ru</key>
-        <value>Сгруппирован</value>
+        <value>Список влияний сгруппирован</value>
       </title>
       <extendedTooltip>
-        <name>Группа2РасширеннаяПодсказка</name>
-        <id>37</id>
+        <name>СписокВлиянийСгруппированРасширеннаяПодсказка</name>
+        <id>104</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -740,10 +793,15 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <type>Page</type>
-      <extInfo xsi:type="form:PageGroupExtInfo">
-        <group>Vertical</group>
+      <type>UsualGroup</type>
+      <extInfo xsi:type="form:UsualGroupExtInfo">
+        <group>HorizontalIfPossible</group>
+        <behavior>Auto</behavior>
+        <showLeftMargin>true</showLeftMargin>
+        <united>true</united>
         <showTitle>true</showTitle>
+        <throughAlign>Auto</throughAlign>
+        <currentRowUse>Auto</currentRowUse>
       </extInfo>
     </items>
     <visible>true</visible>
@@ -752,8 +810,8 @@
       <common>true</common>
     </userVisible>
     <extendedTooltip>
-      <name>Группа1РасширеннаяПодсказка</name>
-      <id>35</id>
+      <name>Группа4РасширеннаяПодсказка</name>
+      <id>100</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -766,9 +824,14 @@
         <horizontalAlign>Left</horizontalAlign>
       </extInfo>
     </extendedTooltip>
-    <type>Pages</type>
-    <extInfo xsi:type="form:PagesGroupExtInfo">
-      <pagesRepresentation>Auto</pagesRepresentation>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>AlwaysHorizontal</group>
+      <behavior>Auto</behavior>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <showTitle>true</showTitle>
+      <throughAlign>Auto</throughAlign>
       <currentRowUse>Auto</currentRowUse>
     </extInfo>
   </items>
@@ -852,12 +915,28 @@
       <common>true</common>
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
-      <queryText>ВЫБРАТЬ
-	ВлиянияРасходы.Код,
-	ВлиянияРасходы.Ссылка
+      <queryText>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВидыРасходов_3ТаблицаВлияние.Влияние КАК Влияние,
+	МАКСИМУМ(ВидыРасходов_3ТаблицаВлияние.Ссылка) КАК Ссылка
+ПОМЕСТИТЬ ВТ_1
 ИЗ
-	Справочник.ВлиянияРасходы КАК ВлиянияРасходы</queryText>
+	Справочник.ВидыРасходов_3.ТаблицаВлияние КАК ВидыРасходов_3ТаблицаВлияние
+
+СГРУППИРОВАТЬ ПО
+	ВидыРасходов_3ТаблицаВлияние.Влияние
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВлиянияРасходы.Ссылка КАК Наименование,
+	ВлиянияРасходы.Код КАК Код,
+	ВТ_1.Ссылка КАК Отдел
+ИЗ
+	Справочник.ВлиянияРасходы КАК ВлиянияРасходы
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_1 КАК ВТ_1
+		ПО (ВлиянияРасходы.Ссылка = ВТ_1.Влияние)</queryText>
       <mainTable>Catalog.ВлиянияРасходы</mainTable>
+      <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
