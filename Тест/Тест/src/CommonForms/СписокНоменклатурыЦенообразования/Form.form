@@ -1000,6 +1000,49 @@
         </extInfo>
       </items>
       <items xsi:type="form:FormField">
+        <name>СписокПартийЕстьФото</name>
+        <id>225</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>СписокПартий.ЕстьФото</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>СписокПартийЕстьФотоРасширеннаяПодсказка</name>
+          <id>227</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>СписокПартийЕстьФотоКонтекстноеМеню</name>
+          <id>226</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>CheckBoxField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+      </items>
+      <items xsi:type="form:FormField">
         <name>СписокПартиймашина</name>
         <id>178</id>
         <visible>true</visible>
@@ -1286,6 +1329,56 @@
         <contextMenu>
           <name>СписокПартийКомментарийКонтекстноеМеню</name>
           <id>185</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>СписокПартийОценка</name>
+        <id>222</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>СписокПартий.Оценка</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>СписокПартийОценкаРасширеннаяПодсказка</name>
+          <id>224</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>СписокПартийОценкаКонтекстноеМеню</name>
+          <id>223</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -1864,20 +1957,20 @@
 	РегистрНакопления1Остатки.машина.Год КАК машинаГод,
 	ИндНомер.АвитоЧастник КАК Конвеер,
 	ИндНомер.Комментарий КАК Комментарий1,
-	ИндНомер.ЦенаПроверена КАК ЦенаПроверена
+	ИндНомер.ЦенаПроверена КАК ЦенаПроверена,
+	ИндНомер.Оценка,
+	ИндНомер.ЕстьФото
 ИЗ
-	РегистрНакопления.РегистрНакопления1.Остатки(
-			,
-			Товар = &amp;Товар) КАК РегистрНакопления1Остатки
+	РегистрНакопления.РегистрНакопления1.Остатки(, Товар = &amp;Товар) КАК РегистрНакопления1Остатки
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.Комментарии КАК Комментарии
 		ПО (Комментарии.Товар = РегистрНакопления1Остатки.Товар)
-			И (Комментарии.Машина = РегистрНакопления1Остатки.машина)
-			И (Комментарии.индкод = РегистрНакопления1Остатки.индкод)
+		И (Комментарии.Машина = РегистрНакопления1Остатки.машина)
+		И (Комментарии.индкод = РегистрНакопления1Остатки.индкод)
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
 		ПО (ИндНомер.индкод = РегистрНакопления1Остатки.индкод)
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.дт_МестаХраненияНоменклатуры.СрезПоследних КАК МестаХранения
 		ПО (РегистрНакопления1Остатки.Товар = МестаХранения.Номенклатура)
-			И (РегистрНакопления1Остатки.Склад = МестаХранения.Склад)
+		И (РегистрНакопления1Остатки.Склад = МестаХранения.Склад)
 ГДЕ
 	ИндНомер.АвитоЧастник = ИСТИНА</queryText>
       <mainTable>AccumulationRegister.РегистрНакопления1.Balance</mainTable>

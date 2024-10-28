@@ -601,4 +601,53 @@
       <handler>ПолучитьКарточкуТовараgetcardproduct</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="a47fb8a7-dee4-4203-8f8e-e4d2cc12858c">
+    <name>ПолучитьПотерянныеТовары</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить потерянные товары</value>
+    </synonym>
+    <template>/get-lost/{page}/{count}/{id}</template>
+    <methods uuid="94205bfc-acad-4cf0-9d77-2d2696dd7266">
+      <name>getlost</name>
+      <synonym>
+        <key>ru</key>
+        <value>Getlost</value>
+      </synonym>
+      <handler>ПолучитьПотерянныеТоварыgetlost</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="03ae8644-227f-41b4-a9b6-0cb93f1842a1">
+    <name>СменаМестаХранения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена места хранения</value>
+    </synonym>
+    <template>/edit-place</template>
+    <methods uuid="0903cd40-e7de-4be5-b06a-115420fee474">
+      <name>EditPlace</name>
+      <synonym>
+        <key>ru</key>
+        <value>Edit place</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СменаМестаХраненияEditPlace</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="597f8ff3-ccd8-4157-96cc-23e720227c15">
+    <name>ПолучитьЗаявкиКладовщика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить заявки кладовщика</value>
+    </synonym>
+    <template>/get-app-storekeeper/{count}/{page}/{storekeeper}/{text}</template>
+    <methods uuid="48f749ee-5cb8-4604-8436-c0be405c3583">
+      <name>GetAppStorekeeper</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get app storekeeper</value>
+      </synonym>
+      <handler>ПолучитьЗаявкиКладовщикаGetAppStorekeeper</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
