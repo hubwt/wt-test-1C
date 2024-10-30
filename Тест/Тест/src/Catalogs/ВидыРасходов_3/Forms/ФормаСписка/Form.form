@@ -1,16 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
-  <items xsi:type="form:Button">
-    <name>ЗаполнитьСвязиДляОтбора</name>
-    <id>22</id>
+  <items xsi:type="form:FormGroup">
+    <name>Параметры</name>
+    <id>27</id>
+    <items xsi:type="form:Button">
+      <name>ЗаполнитьСвязиДляОтбора</name>
+      <id>22</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>ЗаполнитьСвязиДляОтбораРасширеннаяПодсказка</name>
+        <id>23</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>UsualButton</type>
+      <commandName>Form.Command.ЗаполнитьСвязиДляОтбора</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Период</name>
+      <id>24</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Период</segments>
+      </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>ПериодПриИзменении</name>
+      </handlers>
+      <extendedTooltip>
+        <name>ПериодРасширеннаяПодсказка</name>
+        <id>26</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ПериодКонтекстноеМеню</name>
+        <id>25</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
       <common>true</common>
     </userVisible>
     <extendedTooltip>
-      <name>ЗаполнитьСвязиДляОтбораРасширеннаяПодсказка</name>
-      <id>23</id>
+      <name>ПараметрыРасширеннаяПодсказка</name>
+      <id>28</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -23,13 +108,17 @@
         <horizontalAlign>Left</horizontalAlign>
       </extInfo>
     </extendedTooltip>
-    <type>UsualButton</type>
-    <commandName>Form.Command.ЗаполнитьСвязиДляОтбора</commandName>
-    <representation>Auto</representation>
-    <autoMaxWidth>true</autoMaxWidth>
-    <autoMaxHeight>true</autoMaxHeight>
-    <placementArea>UserCmds</placementArea>
-    <representationInContextMenu>Auto</representationInContextMenu>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>AlwaysHorizontal</group>
+      <behavior>Auto</behavior>
+      <representation>WeakSeparation</representation>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <showTitle>true</showTitle>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
   </items>
   <items xsi:type="form:FormGroup">
     <name>СписокКомпоновщикНастроекПользовательскиеНастройки</name>
@@ -62,7 +151,6 @@
     <type>UsualGroup</type>
     <extInfo xsi:type="form:UsualGroupExtInfo">
       <group>Vertical</group>
-      <behavior>Auto</behavior>
       <representation>WeakSeparation</representation>
       <showLeftMargin>true</showLeftMargin>
       <united>true</united>
@@ -85,19 +173,18 @@
     <titleLocation>None</titleLocation>
     <items xsi:type="form:FormField">
       <name>Код</name>
-      <id>16</id>
+      <id>29</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>Список.Code</segments>
+        <segments>Список.Код</segments>
       </dataPath>
-      <defaultItem>true</defaultItem>
       <extendedTooltip>
         <name>КодРасширеннаяПодсказка</name>
-        <id>18</id>
+        <id>31</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -112,7 +199,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>КодКонтекстноеМеню</name>
-        <id>17</id>
+        <id>30</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -120,30 +207,39 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <type>LabelField</type>
+      <type>InputField</type>
       <editMode>Enter</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:LabelFieldExtInfo">
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <width>20</width>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>Наименование</name>
-      <id>19</id>
+      <name>Ссылка</name>
+      <id>32</id>
+      <title>
+        <key>ru</key>
+        <value>Наименование</value>
+      </title>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>Список.Description</segments>
+        <segments>Список.Ссылка</segments>
       </dataPath>
       <extendedTooltip>
-        <name>НаименованиеРасширеннаяПодсказка</name>
-        <id>21</id>
+        <name>СсылкаРасширеннаяПодсказка</name>
+        <id>34</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -157,8 +253,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>НаименованиеКонтекстноеМеню</name>
-        <id>20</id>
+        <name>СсылкаКонтекстноеМеню</name>
+        <id>33</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -166,14 +262,173 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <type>LabelField</type>
+      <type>InputField</type>
       <editMode>Enter</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:LabelFieldExtInfo">
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <width>30</width>
+        <autoMaxHeight>true</autoMaxHeight>
+        <horizontalStretch>false</horizontalStretch>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Количество</name>
+      <id>35</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.Количество</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>КоличествоРасширеннаяПодсказка</name>
+        <id>37</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>КоличествоКонтекстноеМеню</name>
+        <id>36</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <horizontalAlign>Right</horizontalAlign>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <width>10</width>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Сумма</name>
+      <id>38</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.Сумма</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СуммаРасширеннаяПодсказка</name>
+        <id>40</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СуммаКонтекстноеМеню</name>
+        <id>39</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <horizontalAlign>Right</horizontalAlign>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <width>10</width>
+        <autoMaxWidth>true</autoMaxWidth>
+        <maxWidth>20</maxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СтандартнаяКартинка</name>
+      <id>46</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.DefaultPicture</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СтандартнаяКартинкаРасширеннаяПодсказка</name>
+        <id>48</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СтандартнаяКартинкаКонтекстноеМеню</name>
+        <id>47</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>PictureField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:ImageFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <horizontalStretch>true</horizontalStretch>
+        <verticalStretch>true</verticalStretch>
+        <fileDragMode>AsFileRef</fileDragMode>
       </extInfo>
     </items>
     <commandBarLocation>None</commandBarLocation>
@@ -187,6 +442,10 @@
       </userVisible>
       <horizontalAlign>Left</horizontalAlign>
     </autoCommandBar>
+    <handlers>
+      <event>DragEnd</event>
+      <name>СписокОкончаниеПеретаскивания</name>
+    </handlers>
     <searchStringAddition>
       <visible>true</visible>
       <enabled>true</enabled>
@@ -337,6 +596,7 @@
     <selectionMode>MultiRow</selectionMode>
     <header>true</header>
     <headerHeight>1</headerHeight>
+    <footer>true</footer>
     <footerHeight>1</footerHeight>
     <horizontalScrollBar>AutoUse</horizontalScrollBar>
     <verticalScrollBar>AutoUse</verticalScrollBar>
@@ -366,6 +626,43 @@
       <userSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</userSettingsGroup>
     </extInfo>
   </items>
+  <items xsi:type="form:FormGroup">
+    <name>ОберткаСписка</name>
+    <id>44</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <width>130</width>
+    <horizontalStretch>false</horizontalStretch>
+    <extendedTooltip>
+      <name>ОберткаСпискаРасширеннаяПодсказка</name>
+      <id>45</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>HorizontalIfPossible</group>
+      <behavior>Auto</behavior>
+      <representation>WeakSeparation</representation>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <showTitle>true</showTitle>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
   <autoCommandBar>
     <name>ФормаКоманднаяПанель</name>
     <id>-1</id>
@@ -377,6 +674,10 @@
     <horizontalAlign>Left</horizontalAlign>
     <autoFill>true</autoFill>
   </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
+  </handlers>
   <autoTitle>true</autoTitle>
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
@@ -399,18 +700,161 @@
     </edit>
     <main>true</main>
     <extInfo xsi:type="form:DynamicListExtInfo">
-      <queryText>ВЫБРАТЬ 
-       ВидыРасходов_3.Ссылка, 
-       ВидыРасходов_3.ПометкаУдаления, 
-       ВидыРасходов_3.Родитель,
-       ВидыРасходов_3.Код, 
-       ВидыРасходов_3.Наименование, 
-       ВидыРасходов_3.Предопределенный, 
-       ВидыРасходов_3.ИмяПредопределенныхДанных
- ИЗ 
-       Справочник.ВидыРасходов_3
- КАК 
-       ВидыРасходов_3</queryText>
+      <queryText>ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Расходы.Ссылка) КАК Количество,
+	Расходы.Филиал КАК Филиал
+ПОМЕСТИТЬ ВТ_1_Фил_РасКол
+ИЗ
+	Документ.Расходы КАК Расходы
+ГДЕ
+	Расходы.Дата МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)
+
+СГРУППИРОВАТЬ ПО
+	Расходы.Филиал
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Расходы.Филиал КАК Филиал,
+	СУММА(Расходы.Сумма) КАК Сумма
+ПОМЕСТИТЬ ВТ_11_Фил_РасСум
+ИЗ
+	Документ.Расходы КАК Расходы
+ГДЕ
+	Расходы.Дата МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)
+
+СГРУППИРОВАТЬ ПО
+	Расходы.Филиал
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Расходы.Ссылка) КАК Количество,
+	Расходы.Отдел КАК Отдел
+ПОМЕСТИТЬ ВТ_2_Отд_РасКол
+ИЗ
+	Документ.Расходы КАК Расходы
+ГДЕ
+	Расходы.Дата МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)
+
+СГРУППИРОВАТЬ ПО
+	Расходы.Отдел
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(Расходы.Сумма) КАК Сумма,
+	Расходы.Отдел КАК Отдел
+ПОМЕСТИТЬ ВТ_22_Отд_РасСум
+ИЗ
+	Документ.Расходы КАК Расходы
+ГДЕ
+	Расходы.Дата МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)
+
+СГРУППИРОВАТЬ ПО
+	Расходы.Отдел
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Расходы.Ссылка) КАК Количество,
+	Расходы.Категория КАК Категория
+ПОМЕСТИТЬ ВТ_3_Кат_РасКол
+ИЗ
+	Документ.Расходы КАК Расходы
+ГДЕ
+	Расходы.Дата МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)
+
+СГРУППИРОВАТЬ ПО
+	Расходы.Категория
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(Расходы.Сумма) КАК Сумма,
+	Расходы.Категория КАК Категория
+ПОМЕСТИТЬ ВТ_33_Кат_РасСум
+ИЗ
+	Документ.Расходы КАК Расходы
+ГДЕ
+	Расходы.Дата МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)
+
+СГРУППИРОВАТЬ ПО
+	Расходы.Категория
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Расходы.Ссылка) КАК Количество,
+	Расходы.Статья КАК Статья
+ПОМЕСТИТЬ ВТ_4_Ст_РасКол
+ИЗ
+	Документ.Расходы КАК Расходы
+ГДЕ
+	Расходы.Дата МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)
+
+СГРУППИРОВАТЬ ПО
+	Расходы.Статья
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(Расходы.Сумма) КАК Сумма,
+	Расходы.Статья КАК Статья
+ПОМЕСТИТЬ ВТ_44_Ст_РасСум
+ИЗ
+	Документ.Расходы КАК Расходы
+ГДЕ
+	Расходы.Дата МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)
+
+СГРУППИРОВАТЬ ПО
+	Расходы.Статья
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВидыРасходов_3.Код КАК Код,
+	ВидыРасходов_3.Ссылка КАК Ссылка,
+	ВЫБОР
+		КОГДА ВидыРасходов_3.Родитель.код = &quot;000000001&quot;
+			ТОГДА ВТ_1_Фил_РасКол.Количество
+		КОГДА ВидыРасходов_3.Родитель.Родитель.код = &quot;000000001&quot;
+			ТОГДА ВТ_2_Отд_РасКол.Количество
+		КОГДА ВидыРасходов_3.Родитель.Родитель.Родитель.код = &quot;000000001&quot;
+			ТОГДА ВТ_3_Кат_РасКол.Количество
+		КОГДА ВидыРасходов_3.Родитель.Родитель.Родитель.Родитель.код = &quot;000000001&quot;
+			ТОГДА ВТ_4_Ст_РасКол.Количество
+		ИНАЧЕ 0
+	КОНЕЦ КАК Количество,
+	ВЫБОР
+		КОГДА ВидыРасходов_3.Родитель.код = &quot;000000001&quot;
+			ТОГДА ВТ_11_Фил_РасСум.Сумма
+		КОГДА ВидыРасходов_3.Родитель.Родитель.код = &quot;000000001&quot;
+			ТОГДА ВТ_22_Отд_РасСум.Сумма
+		КОГДА ВидыРасходов_3.Родитель.Родитель.Родитель.код = &quot;000000001&quot;
+			ТОГДА ВТ_33_Кат_РасСум.Сумма
+		КОГДА ВидыРасходов_3.Родитель.Родитель.Родитель.Родитель.код = &quot;000000001&quot;
+			ТОГДА ВТ_44_Ст_РасСум.Сумма
+		ИНАЧЕ 0
+	КОНЕЦ КАК Сумма
+	ИЗ
+	Справочник.ВидыРасходов_3 КАК ВидыРасходов_3
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_11_Фил_РасСум КАК ВТ_11_Фил_РасСум
+		ПО (ВидыРасходов_3.Ссылка = ВТ_11_Фил_РасСум.Филиал)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_2_Отд_РасКол КАК ВТ_2_Отд_РасКол
+		ПО (ВидыРасходов_3.Ссылка = ВТ_2_Отд_РасКол.Отдел)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_22_Отд_РасСум КАК ВТ_22_Отд_РасСум
+		ПО (ВидыРасходов_3.Ссылка = ВТ_22_Отд_РасСум.Отдел)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_3_Кат_РасКол КАК ВТ_3_Кат_РасКол
+		ПО (ВидыРасходов_3.Ссылка = ВТ_3_Кат_РасКол.Категория)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_33_Кат_РасСум КАК ВТ_33_Кат_РасСум
+		ПО (ВидыРасходов_3.Ссылка = ВТ_33_Кат_РасСум.Категория)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_4_Ст_РасКол КАК ВТ_4_Ст_РасКол
+		ПО (ВидыРасходов_3.Ссылка = ВТ_4_Ст_РасКол.Статья)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_44_Ст_РасСум КАК ВТ_44_Ст_РасСум
+		ПО (ВидыРасходов_3.Ссылка = ВТ_44_Ст_РасСум.Статья)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_1_Фил_РасКол КАК ВТ_1_Фил_РасКол
+		ПО (ВидыРасходов_3.Ссылка = ВТ_1_Фил_РасКол.Филиал)</queryText>
       <mainTable>Catalog.ВидыРасходов_3</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
@@ -418,6 +862,23 @@
       <autoSaveUserSettings>true</autoSaveUserSettings>
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
+  </attributes>
+  <attributes>
+    <name>Период</name>
+    <title>
+      <key>ru</key>
+      <value>Период</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>StandardPeriod</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
   </attributes>
   <formCommands>
     <name>ЗаполнитьСвязиДляОтбора</name>
