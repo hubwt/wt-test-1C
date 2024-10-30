@@ -175,6 +175,82 @@
       <currentRowUse>Auto</currentRowUse>
     </extInfo>
   </items>
+  <items xsi:type="form:FormField">
+    <name>Фильтр</name>
+    <id>69</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Фильтр</segments>
+    </dataPath>
+    <handlers>
+      <event>OnChange</event>
+      <name>ФильтрПриИзменении</name>
+    </handlers>
+    <extendedTooltip>
+      <name>ФильтрРасширеннаяПодсказка</name>
+      <id>71</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>ФильтрКонтекстноеМеню</name>
+      <id>70</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>RadioButtonField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+      <radioButtonsType>Tumbler</radioButtonsType>
+      <choiceList>
+        <presentation>
+          <key>ru</key>
+          <value>Целевой</value>
+        </presentation>
+        <value xsi:type="core:NumberValue">
+          <value>1</value>
+        </value>
+      </choiceList>
+      <choiceList>
+        <presentation>
+          <key>ru</key>
+          <value>Не целевой</value>
+        </presentation>
+        <value xsi:type="core:NumberValue">
+          <value>2</value>
+        </value>
+      </choiceList>
+      <choiceList>
+        <presentation>
+          <key>ru</key>
+          <value>Все</value>
+        </presentation>
+        <value xsi:type="core:NumberValue">
+          <value>3</value>
+        </value>
+      </choiceList>
+    </extInfo>
+  </items>
   <items xsi:type="form:Table">
     <name>СписокКлиентов</name>
     <id>4</id>
@@ -888,6 +964,49 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокКлиентовЦелевой</name>
+      <id>72</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокКлиентов.Целевой</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокКлиентовЦелевойРасширеннаяПодсказка</name>
+        <id>74</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокКлиентовЦелевойКонтекстноеМеню</name>
+        <id>73</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>CheckBoxField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокКлиентовСтандартнаяКартинка</name>
       <id>56</id>
       <visible>true</visible>
@@ -1197,7 +1316,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ПродажаЗапчастей.Клиент КАК Клиент,
 	КОЛИЧЕСТВО(ПродажаЗапчастей.Ссылка) КАК КоличествоПродаж,
 	СУММА(ПродажаЗапчастей.ИтогоРекв) КАК СуммаПродаж
@@ -1212,7 +1331,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	МАКСИМУМ(ЗаказКлиента.Дата) КАК ДатаПоследнегоОбращения,
 	ЗаказКлиента.Клиент КАК Клиент
 ПОМЕСТИТЬ ВТ_ПослОбр
@@ -1226,7 +1345,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	Клиенты.Код,
 	Клиенты.Ссылка КАК Клиент,
 	Клиенты.Телефон,
@@ -1247,7 +1366,8 @@
 	КоличествоЗаявок.КоличествоЗаказов КАК КоличествоЗаявок,
 	КоличествоИСуммаПродаж.КоличествоПродаж,
 	КоличествоИСуммаПродаж.СуммаПродаж,
-	ВТ_ПослОбр.ДатаПоследнегоОбращения
+	ВТ_ПослОбр.ДатаПоследнегоОбращения,
+	Клиенты.Целевой
 ИЗ
 	Справочник.Клиенты КАК Клиенты
 		ЛЕВОЕ СОЕДИНЕНИЕ КоличествоЗаявок КАК КоличествоЗаявок
@@ -1287,6 +1407,26 @@
     <settingsSavedData xsi:type="form:DataPath">
       <segments>КоличествоНовых</segments>
     </settingsSavedData>
+  </attributes>
+  <attributes>
+    <name>Фильтр</name>
+    <title>
+      <key>ru</key>
+      <value>Фильтр</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
   </attributes>
   <formCommands>
     <name>ОбновитьКоличествоНовых</name>
