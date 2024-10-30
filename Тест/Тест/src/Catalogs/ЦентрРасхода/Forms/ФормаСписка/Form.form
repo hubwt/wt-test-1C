@@ -706,6 +706,56 @@
         <textEdit>true</textEdit>
       </extInfo>
     </items>
+    <items xsi:type="form:FormField">
+      <name>Прибыль</name>
+      <id>64</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.Прибыль</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ПрибыльРасширеннаяПодсказка</name>
+        <id>66</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ПрибыльКонтекстноеМеню</name>
+        <id>65</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
     <commandBarLocation>None</commandBarLocation>
     <autoCommandBar>
       <name>СписокКоманднаяПанель</name>
@@ -933,7 +983,7 @@
     </edit>
     <main>true</main>
     <extInfo xsi:type="form:DynamicListExtInfo">
-      <queryText>ВЫБРАТЬ
+      <queryText>     ВЫБРАТЬ
 	ВЫБОР
 		КОГДА Расходы.Категория &lt;> ЗНАЧЕНИЕ(Справочник.ВидыРасходов_3.ПустаяСсылка)
 			ТОГДА СУММА(Расходы.Сумма)
@@ -1021,14 +1071,15 @@
 ВЫБРАТЬ
 	ЦентрРасхода.Код КАК Код,
 	ЦентрРасхода.Ссылка КАК Наименование,
-	ВТ_СуммаОкладов.Сумма + ВТ_СуммаБонусыИПремий.Сумма КАК СуммаЗП,
+	ЕСТЬNULL(ВТ_СуммаОкладов.Сумма,0) + ЕСТЬNULL(ВТ_СуммаБонусыИПремий.Сумма,0) КАК СуммаЗП,
 	ВТ_СуммаОкладов.Сумма КАК СуммаОкладов,
 	ВТ_СуммаБонусыИПремий.Сумма КАК СуммаБонусовИПремий,
-	ВТ_Обязательные.Сумма + ВТ_Переменные.Сумма + ВТ_НеПредвиденные.Сумма КАК СуммаРасходов,
+	ЕСТЬNULL (ВТ_Обязательные.Сумма,0) + ЕСТЬNULL(ВТ_Переменные.Сумма,0) + ЕСТЬNULL(ВТ_НеПредвиденные.Сумма,0) КАК СуммаРасходов,
 	ВТ_Обязательные.Сумма КАК Обязательные,
 	ВТ_Переменные.Сумма КАК Переменные,
 	ВТ_НеПредвиденные.Сумма КАК НеПредвиденные,
 	&quot;Временно отсутствует&quot; КАК Выручка,
+	&quot;Временно отсутствует&quot; КАК Прибыль,
 	ЦентрРасхода.Ответственный,
 	ЦентрРасхода.Филиал
 ИЗ
