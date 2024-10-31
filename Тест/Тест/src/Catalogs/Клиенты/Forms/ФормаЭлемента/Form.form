@@ -3206,6 +3206,37 @@
           <allowGettingCurrentRowURL>true</allowGettingCurrentRowURL>
         </extInfo>
       </items>
+      <items xsi:type="form:Button">
+        <name>СписатьДолгПоПродаже</name>
+        <id>766</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>СписатьДолгПоПродажеРасширеннаяПодсказка</name>
+          <id>767</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualButton</type>
+        <commandName>Form.Command.СписатьДолгПоПродаже</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
       <items xsi:type="form:Table">
         <name>АнализПродаж</name>
         <id>531</id>
@@ -3577,6 +3608,106 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
+          <name>АнализПродажСуммаПродажи</name>
+          <id>760</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>АнализПродаж.СуммаПродажи</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>АнализПродажСуммаПродажиРасширеннаяПодсказка</name>
+            <id>762</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>АнализПродажСуммаПродажиКонтекстноеМеню</name>
+            <id>761</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>АнализПродажСуммаОплаты</name>
+          <id>763</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>АнализПродаж.СуммаОплаты</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>АнализПродажСуммаОплатыРасширеннаяПодсказка</name>
+            <id>765</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>АнализПродажСуммаОплатыКонтекстноеМеню</name>
+            <id>764</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>АнализПродажОплачено</name>
           <id>556</id>
           <visible>true</visible>
@@ -3612,27 +3743,37 @@
             </userVisible>
             <autoFill>true</autoFill>
           </contextMenu>
-          <type>CheckBoxField</type>
+          <type>PictureField</type>
+          <readOnly>true</readOnly>
           <editMode>EnterOnInput</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+          <extInfo xsi:type="form:ImageFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <horizontalStretch>true</horizontalStretch>
+            <verticalStretch>true</verticalStretch>
+            <valuesPicture xsi:type="core:PictureRef">
+              <picture>CommonPicture.Галочки</picture>
+            </valuesPicture>
+            <fileDragMode>AsFileRef</fileDragMode>
+          </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>АнализПродажСумма</name>
-          <id>559</id>
+          <name>АнализПродажДолг</name>
+          <id>757</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>АнализПродаж.Сумма</segments>
+            <segments>АнализПродаж.Долг</segments>
           </dataPath>
           <extendedTooltip>
-            <name>АнализПродажСуммаРасширеннаяПодсказка</name>
-            <id>561</id>
+            <name>АнализПродажДолгРасширеннаяПодсказка</name>
+            <id>759</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3646,8 +3787,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>АнализПродажСуммаКонтекстноеМеню</name>
-            <id>560</id>
+            <name>АнализПродажДолгКонтекстноеМеню</name>
+            <id>758</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3656,7 +3797,7 @@
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
-          <editMode>EnterOnInput</editMode>
+          <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
@@ -3667,6 +3808,59 @@
             <chooseType>true</chooseType>
             <typeDomainEnabled>true</typeDomainEnabled>
             <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>АнализПродажДолгСписан</name>
+          <id>768</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>АнализПродаж.ДолгСписан</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>АнализПродажДолгСписанРасширеннаяПодсказка</name>
+            <id>770</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>АнализПродажДолгСписанКонтекстноеМеню</name>
+            <id>769</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>PictureField</type>
+          <readOnly>true</readOnly>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:ImageFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <horizontalStretch>true</horizontalStretch>
+            <verticalStretch>true</verticalStretch>
+            <valuesPicture xsi:type="core:PictureRef">
+              <picture>CommonPicture.Галочки</picture>
+            </valuesPicture>
+            <fileDragMode>AsFileRef</fileDragMode>
           </extInfo>
         </items>
         <autoCommandBar>
@@ -9813,8 +10007,11 @@
 	&quot;&quot; КАК Ссылка,
 	&quot;&quot; КАК Клиент,
 	&quot;&quot; КАК Ответственный,
-	0 КАК Сумма,
+	0 КАК СуммаПродажи,
+	0 КАК СуммаОплаты,
+	0 КАК Долг,
 	ЛОЖЬ КАК Оплачено,
+	Ложь КАК ДолгСписан,
 	&quot;&quot; КАК Комментарий,
 	&quot;&quot; КАК Организация,
 	&quot;&quot; КАК Тип,
@@ -10148,16 +10345,17 @@
       </edit>
     </columns>
     <columns>
-      <name>Сумма</name>
+      <name>СуммаПродажи</name>
       <title>
         <key>ru</key>
-        <value>Сумма</value>
+        <value>Сумма продажи</value>
       </title>
       <id>6</id>
       <valueType>
         <types>Number</types>
         <numberQualifiers>
           <precision>10</precision>
+          <scale>2</scale>
         </numberQualifiers>
       </valueType>
       <view>
@@ -10214,6 +10412,65 @@
         <numberQualifiers>
           <precision>5</precision>
         </numberQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>Долг</name>
+      <title>
+        <key>ru</key>
+        <value>Долг</value>
+      </title>
+      <id>13</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>СуммаОплаты</name>
+      <title>
+        <key>ru</key>
+        <value>Сумма оплаты</value>
+      </title>
+      <id>14</id>
+      <valueType>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </valueType>
+      <view>
+        <common>true</common>
+      </view>
+      <edit>
+        <common>true</common>
+      </edit>
+    </columns>
+    <columns>
+      <name>ДолгСписан</name>
+      <title>
+        <key>ru</key>
+        <value>Долг списан</value>
+      </title>
+      <id>15</id>
+      <valueType>
+        <types>Boolean</types>
       </valueType>
       <view>
         <common>true</common>
@@ -10314,6 +10571,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>ЗаполнитьДанныеПоИНН</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>СписатьДолгПоПродаже</name>
+    <title>
+      <key>ru</key>
+      <value>Списать долг по продаже</value>
+    </title>
+    <id>4</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>СписатьДолгПоПродаже</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
