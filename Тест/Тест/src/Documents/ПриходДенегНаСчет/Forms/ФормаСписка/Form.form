@@ -539,6 +539,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>Статья</name>
+      <id>93</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.Статья</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СтатьяРасширеннаяПодсказка</name>
+        <id>95</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СтатьяКонтекстноеМеню</name>
+        <id>94</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>Менеджер</name>
       <id>73</id>
       <visible>true</visible>
@@ -938,16 +988,16 @@
 		НомерСтроки КАК НомерСтроки,
 		Документ КАК Документ,
 		Счет КАК Счет,
-		Сумма КАК Сумма
-	) КАК ТабличнаяЧасть1,
+		Сумма КАК Сумма) КАК ТабличнаяЧасть1,
 	ДокументПриходДенегНаСчет.МоментВремени КАК МоментВремени,
-	ДокументПриходДенегНаСчет.Ответственный КАК Ответственный
+	ДокументПриходДенегНаСчет.Ответственный КАК Ответственный,
+	ДокументПриходДенегНаСчет.Статья
+{ГДЕ
+	(ДополнительныеНомера.Город = &amp;Город)}
 ИЗ
 	Документ.ПриходДенегНаСчет КАК ДокументПриходДенегНаСчет
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ДополнительныеНомера КАК ДополнительныеНомера
-		ПО ДокументПриходДенегНаСчет.Менеджер = ДополнительныеНомера.Менеджер
-{ГДЕ
-	(ДополнительныеНомера.Город = &amp;Город)}</queryText>
+		ПО ДокументПриходДенегНаСчет.Менеджер = ДополнительныеНомера.Менеджер</queryText>
       <mainTable>Document.ПриходДенегНаСчет</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
