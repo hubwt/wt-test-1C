@@ -1016,11 +1016,11 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокГорячиеСтандартнаяКартинка</name>
-          <id>4718</id>
+          <name>СписокГорячиеДатаПоследнегоКонтакта</name>
+          <id>5119</id>
           <title>
             <key>ru</key>
-            <value>.</value>
+            <value>Последний контакт</value>
           </title>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -1028,11 +1028,11 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокГорячие.DefaultPicture</segments>
+            <segments>СписокГорячие.ДатаПоследнегоКонтакта</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокГорячиеСтандартнаяКартинкаРасширеннаяПодсказка</name>
-            <id>4720</id>
+            <name>СписокГорячиеДатаПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5121</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -1046,8 +1046,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокГорячиеСтандартнаяКартинкаКонтекстноеМеню</name>
-            <id>4719</id>
+            <name>СписокГорячиеДатаПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5120</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -1055,17 +1055,68 @@
             </userVisible>
             <autoFill>true</autoFill>
           </contextMenu>
-          <type>PictureField</type>
+          <type>InputField</type>
           <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:ImageFieldExtInfo">
+          <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
-            <horizontalStretch>true</horizontalStretch>
-            <verticalStretch>true</verticalStretch>
-            <fileDragMode>AsFileRef</fileDragMode>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>СписокГорячиеДнейСПоследнегоКонтакта</name>
+          <id>5122</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>СписокГорячие.ДнейСПоследнегоКонтакта</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокГорячиеДнейСПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5124</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокГорячиеДнейСПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5123</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
           </extInfo>
         </items>
         <autoCommandBar>
@@ -2046,11 +2097,11 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокАктивныеДатаПоследнегоОбращения</name>
-          <id>4648</id>
+          <name>СписокАктивныеПоследнийКонтакт</name>
+          <id>5068</id>
           <title>
             <key>ru</key>
-            <value>Посл. обращение</value>
+            <value>Последний контакт</value>
           </title>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -2058,11 +2109,11 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокАктивные.ДатаПоследнегоОбращения</segments>
+            <segments>СписокАктивные.ПоследнийКонтакт</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокАктивныеДатаПоследнегоОбращенияРасширеннаяПодсказка</name>
-            <id>4650</id>
+            <name>СписокАктивныеПоследнийКонтактРасширеннаяПодсказка</name>
+            <id>5070</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -2076,8 +2127,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокАктивныеДатаПоследнегоОбращенияКонтекстноеМеню</name>
-            <id>4649</id>
+            <name>СписокАктивныеПоследнийКонтактКонтекстноеМеню</name>
+            <id>5069</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -2100,23 +2151,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокАктивныеКоличествоДнейМеждуОбращениями</name>
-          <id>4651</id>
-          <title>
-            <key>ru</key>
-            <value>Кол-во дней между обращениями</value>
-          </title>
+          <name>СписокАктивныеДнейМеждуОбращениями</name>
+          <id>5071</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокАктивные.КоличествоДнейМеждуОбращениями</segments>
+            <segments>СписокАктивные.ДнейМеждуОбращениями</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокАктивныеКоличествоДнейМеждуОбращениямиРасширеннаяПодсказка</name>
-            <id>4653</id>
+            <name>СписокАктивныеДнейМеждуОбращениямиРасширеннаяПодсказка</name>
+            <id>5073</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -2130,8 +2177,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокАктивныеКоличествоДнейМеждуОбращениямиКонтекстноеМеню</name>
-            <id>4652</id>
+            <name>СписокАктивныеДнейМеждуОбращениямиКонтекстноеМеню</name>
+            <id>5072</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -2154,23 +2201,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокАктивныеСтандартнаяКартинка</name>
-          <id>4654</id>
-          <title>
-            <key>ru</key>
-            <value>.</value>
-          </title>
+          <name>СписокАктивныеДнейСПоследнегоКонтакта</name>
+          <id>5065</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокАктивные.DefaultPicture</segments>
+            <segments>СписокАктивные.ДнейСПоследнегоКонтакта</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокАктивныеСтандартнаяКартинкаРасширеннаяПодсказка</name>
-            <id>4656</id>
+            <name>СписокАктивныеДнейСПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5067</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -2184,8 +2227,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокАктивныеСтандартнаяКартинкаКонтекстноеМеню</name>
-            <id>4655</id>
+            <name>СписокАктивныеДнейСПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5066</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -2193,17 +2236,18 @@
             </userVisible>
             <autoFill>true</autoFill>
           </contextMenu>
-          <type>PictureField</type>
+          <type>InputField</type>
           <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:ImageFieldExtInfo">
+          <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
-            <horizontalStretch>true</horizontalStretch>
-            <verticalStretch>true</verticalStretch>
-            <fileDragMode>AsFileRef</fileDragMode>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
           </extInfo>
         </items>
         <autoCommandBar>
@@ -3176,11 +3220,11 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокТеплыеДатаПоследнегоОбращения</name>
-          <id>4773</id>
+          <name>СписокТеплыеДатаПоследнегоКонтакта</name>
+          <id>5101</id>
           <title>
             <key>ru</key>
-            <value>Посл. обращение</value>
+            <value>Последний контакт</value>
           </title>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -3188,11 +3232,11 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокТеплые.ДатаПоследнегоОбращения</segments>
+            <segments>СписокТеплые.ДатаПоследнегоКонтакта</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокТеплыеДатаПоследнегоОбращенияРасширеннаяПодсказка</name>
-            <id>4775</id>
+            <name>СписокТеплыеДатаПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5103</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3206,8 +3250,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокТеплыеДатаПоследнегоОбращенияКонтекстноеМеню</name>
-            <id>4774</id>
+            <name>СписокТеплыеДатаПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5102</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3230,23 +3274,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокТеплыеКоличествоДнейМеждуОбращениями</name>
-          <id>4776</id>
-          <title>
-            <key>ru</key>
-            <value>Кол-во дней между обращениями</value>
-          </title>
+          <name>СписокТеплыеДнейМеждуОбращениями</name>
+          <id>5104</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокТеплые.КоличествоДнейМеждуОбращениями</segments>
+            <segments>СписокТеплые.ДнейМеждуОбращениями</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокТеплыеКоличествоДнейМеждуОбращениямиРасширеннаяПодсказка</name>
-            <id>4778</id>
+            <name>СписокТеплыеДнейМеждуОбращениямиРасширеннаяПодсказка</name>
+            <id>5106</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3260,8 +3300,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокТеплыеКоличествоДнейМеждуОбращениямиКонтекстноеМеню</name>
-            <id>4777</id>
+            <name>СписокТеплыеДнейМеждуОбращениямиКонтекстноеМеню</name>
+            <id>5105</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3284,23 +3324,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокТеплыеСтандартнаяКартинка</name>
-          <id>4779</id>
-          <title>
-            <key>ru</key>
-            <value>.</value>
-          </title>
+          <name>СписокТеплыеДнейСПоследнегоОбращения</name>
+          <id>5107</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокТеплые.DefaultPicture</segments>
+            <segments>СписокТеплые.ДнейСПоследнегоОбращения</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокТеплыеСтандартнаяКартинкаРасширеннаяПодсказка</name>
-            <id>4781</id>
+            <name>СписокТеплыеДнейСПоследнегоОбращенияРасширеннаяПодсказка</name>
+            <id>5109</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3314,8 +3350,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокТеплыеСтандартнаяКартинкаКонтекстноеМеню</name>
-            <id>4780</id>
+            <name>СписокТеплыеДнейСПоследнегоОбращенияКонтекстноеМеню</name>
+            <id>5108</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3323,17 +3359,18 @@
             </userVisible>
             <autoFill>true</autoFill>
           </contextMenu>
-          <type>PictureField</type>
+          <type>InputField</type>
           <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:ImageFieldExtInfo">
+          <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
-            <horizontalStretch>true</horizontalStretch>
-            <verticalStretch>true</verticalStretch>
-            <fileDragMode>AsFileRef</fileDragMode>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
           </extInfo>
         </items>
         <autoCommandBar>
@@ -4306,11 +4343,11 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокПотенциальныеДатаПоследнегоОбращения</name>
-          <id>4834</id>
+          <name>СписокПотенциальныеДатаПоследнегоКонтакта</name>
+          <id>5092</id>
           <title>
             <key>ru</key>
-            <value>Посл. обращение</value>
+            <value>Последний контакт</value>
           </title>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -4318,11 +4355,11 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокПотенциальные.ДатаПоследнегоОбращения</segments>
+            <segments>СписокПотенциальные.ДатаПоследнегоКонтакта</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокПотенциальныеДатаПоследнегоОбращенияРасширеннаяПодсказка</name>
-            <id>4836</id>
+            <name>СписокПотенциальныеДатаПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5094</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -4336,8 +4373,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокПотенциальныеДатаПоследнегоОбращенияКонтекстноеМеню</name>
-            <id>4835</id>
+            <name>СписокПотенциальныеДатаПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5093</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -4360,23 +4397,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокПотенциальныеКоличествоДнейМеждуОбращениями</name>
-          <id>4837</id>
-          <title>
-            <key>ru</key>
-            <value>Кол-во дней между обращениями</value>
-          </title>
+          <name>СписокПотенциальныеДнейМеждуОбращениями</name>
+          <id>5095</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокПотенциальные.КоличествоДнейМеждуОбращениями</segments>
+            <segments>СписокПотенциальные.ДнейМеждуОбращениями</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокПотенциальныеКоличествоДнейМеждуОбращениямиРасширеннаяПодсказка</name>
-            <id>4839</id>
+            <name>СписокПотенциальныеДнейМеждуОбращениямиРасширеннаяПодсказка</name>
+            <id>5097</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -4390,8 +4423,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокПотенциальныеКоличествоДнейМеждуОбращениямиКонтекстноеМеню</name>
-            <id>4838</id>
+            <name>СписокПотенциальныеДнейМеждуОбращениямиКонтекстноеМеню</name>
+            <id>5096</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -4414,23 +4447,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокПотенциальныеСтандартнаяКартинка</name>
-          <id>4840</id>
-          <title>
-            <key>ru</key>
-            <value>.</value>
-          </title>
+          <name>СписокПотенциальныеДнейСПоследнегоКонтакта</name>
+          <id>5098</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокПотенциальные.DefaultPicture</segments>
+            <segments>СписокПотенциальные.ДнейСПоследнегоКонтакта</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокПотенциальныеСтандартнаяКартинкаРасширеннаяПодсказка</name>
-            <id>4842</id>
+            <name>СписокПотенциальныеДнейСПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5100</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -4444,8 +4473,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокПотенциальныеСтандартнаяКартинкаКонтекстноеМеню</name>
-            <id>4841</id>
+            <name>СписокПотенциальныеДнейСПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5099</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -4453,17 +4482,18 @@
             </userVisible>
             <autoFill>true</autoFill>
           </contextMenu>
-          <type>PictureField</type>
+          <type>InputField</type>
           <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:ImageFieldExtInfo">
+          <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
-            <horizontalStretch>true</horizontalStretch>
-            <verticalStretch>true</verticalStretch>
-            <fileDragMode>AsFileRef</fileDragMode>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
           </extInfo>
         </items>
         <autoCommandBar>
@@ -5436,11 +5466,11 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокХолодныеДатаПоследнегоОбращения</name>
-          <id>4895</id>
+          <name>СписокХолодныеДатаПоследнегоКонтакта</name>
+          <id>5110</id>
           <title>
             <key>ru</key>
-            <value>Посл. обращение</value>
+            <value>Последний контакт</value>
           </title>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -5448,11 +5478,11 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокХолодные.ДатаПоследнегоОбращения</segments>
+            <segments>СписокХолодные.ДатаПоследнегоКонтакта</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокХолодныеДатаПоследнегоОбращенияРасширеннаяПодсказка</name>
-            <id>4897</id>
+            <name>СписокХолодныеДатаПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5112</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -5466,8 +5496,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокХолодныеДатаПоследнегоОбращенияКонтекстноеМеню</name>
-            <id>4896</id>
+            <name>СписокХолодныеДатаПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5111</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -5490,23 +5520,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокХолодныеКоличествоДнейМеждуОбращениями</name>
-          <id>4898</id>
-          <title>
-            <key>ru</key>
-            <value>Кол-во дней между обращениями</value>
-          </title>
+          <name>СписокХолодныеДнейМеждуОбращениями</name>
+          <id>5113</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокХолодные.КоличествоДнейМеждуОбращениями</segments>
+            <segments>СписокХолодные.ДнейМеждуОбращениями</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокХолодныеКоличествоДнейМеждуОбращениямиРасширеннаяПодсказка</name>
-            <id>4900</id>
+            <name>СписокХолодныеДнейМеждуОбращениямиРасширеннаяПодсказка</name>
+            <id>5115</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -5520,8 +5546,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокХолодныеКоличествоДнейМеждуОбращениямиКонтекстноеМеню</name>
-            <id>4899</id>
+            <name>СписокХолодныеДнейМеждуОбращениямиКонтекстноеМеню</name>
+            <id>5114</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -5544,23 +5570,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокХолодныеСтандартнаяКартинка</name>
-          <id>4901</id>
-          <title>
-            <key>ru</key>
-            <value>.</value>
-          </title>
+          <name>СписокХолодныеДнейСПоследнегоКонтакта</name>
+          <id>5116</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокХолодные.DefaultPicture</segments>
+            <segments>СписокХолодные.ДнейСПоследнегоКонтакта</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокХолодныеСтандартнаяКартинкаРасширеннаяПодсказка</name>
-            <id>4903</id>
+            <name>СписокХолодныеДнейСПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5118</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -5574,8 +5596,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокХолодныеСтандартнаяКартинкаКонтекстноеМеню</name>
-            <id>4902</id>
+            <name>СписокХолодныеДнейСПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5117</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -5583,17 +5605,18 @@
             </userVisible>
             <autoFill>true</autoFill>
           </contextMenu>
-          <type>PictureField</type>
+          <type>InputField</type>
           <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:ImageFieldExtInfo">
+          <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
-            <horizontalStretch>true</horizontalStretch>
-            <verticalStretch>true</verticalStretch>
-            <fileDragMode>AsFileRef</fileDragMode>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
           </extInfo>
         </items>
         <autoCommandBar>
@@ -6689,6 +6712,160 @@
           <showInFooter>true</showInFooter>
           <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
         </items>
+        <items xsi:type="form:FormField">
+          <name>СписокДолжникиДатаПоследнегоКонтакта</name>
+          <id>5074</id>
+          <title>
+            <key>ru</key>
+            <value>Последний контакт</value>
+          </title>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>СписокДолжники.ДатаПоследнегоКонтакта</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокДолжникиДатаПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5076</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокДолжникиДатаПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5075</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>СписокДолжникиКоличествоДнейМеждуОбращениями</name>
+          <id>5080</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>СписокДолжники.КоличествоДнейМеждуОбращениями</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокДолжникиКоличествоДнейМеждуОбращениямиРасширеннаяПодсказка</name>
+            <id>5082</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокДолжникиКоличествоДнейМеждуОбращениямиКонтекстноеМеню</name>
+            <id>5081</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>СписокДолжникиДнейСПоследнегоКонтакта</name>
+          <id>5077</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>СписокДолжники.ДнейСПоследнегоКонтакта</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокДолжникиДнейСПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5079</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокДолжникиДнейСПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5078</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
         <autoCommandBar>
           <name>СписокДолжникиКоманднаяПанель</name>
           <id>4907</id>
@@ -7639,11 +7816,11 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокНеЦелевыеПоследнееОбращение</name>
-          <id>5035</id>
+          <name>СписокНеЦелевыеДатаПоследнегоКонтакта</name>
+          <id>5083</id>
           <title>
             <key>ru</key>
-            <value>Посл. обращение</value>
+            <value>Последний контакт</value>
           </title>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -7651,11 +7828,11 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокНеЦелевые.ПоследнееОбращение</segments>
+            <segments>СписокНеЦелевые.ДатаПоследнегоКонтакта</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокНеЦелевыеПоследнееОбращениеРасширеннаяПодсказка</name>
-            <id>5037</id>
+            <name>СписокНеЦелевыеДатаПоследнегоКонтактаРасширеннаяПодсказка</name>
+            <id>5085</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -7669,8 +7846,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокНеЦелевыеПоследнееОбращениеКонтекстноеМеню</name>
-            <id>5036</id>
+            <name>СписокНеЦелевыеДатаПоследнегоКонтактаКонтекстноеМеню</name>
+            <id>5084</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -7693,23 +7870,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокНеЦелевыеКоличествоДнейМеждуОбращениями</name>
-          <id>5038</id>
-          <title>
-            <key>ru</key>
-            <value>Кол-во дней между обращениями</value>
-          </title>
+          <name>СписокНеЦелевыеДнейМеждуОбращениями</name>
+          <id>5086</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокНеЦелевые.КоличествоДнейМеждуОбращениями</segments>
+            <segments>СписокНеЦелевые.ДнейМеждуОбращениями</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокНеЦелевыеКоличествоДнейМеждуОбращениямиРасширеннаяПодсказка</name>
-            <id>5040</id>
+            <name>СписокНеЦелевыеДнейМеждуОбращениямиРасширеннаяПодсказка</name>
+            <id>5088</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -7723,8 +7896,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокНеЦелевыеКоличествоДнейМеждуОбращениямиКонтекстноеМеню</name>
-            <id>5039</id>
+            <name>СписокНеЦелевыеДнейМеждуОбращениямиКонтекстноеМеню</name>
+            <id>5087</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -7747,23 +7920,19 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>СписокНеЦелевыеСтандартнаяКартинка</name>
-          <id>5041</id>
-          <title>
-            <key>ru</key>
-            <value>.</value>
-          </title>
+          <name>СписокНеЦелевыеДнейСПоследнегоОбращения</name>
+          <id>5089</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>СписокНеЦелевые.DefaultPicture</segments>
+            <segments>СписокНеЦелевые.ДнейСПоследнегоОбращения</segments>
           </dataPath>
           <extendedTooltip>
-            <name>СписокНеЦелевыеСтандартнаяКартинкаРасширеннаяПодсказка</name>
-            <id>5043</id>
+            <name>СписокНеЦелевыеДнейСПоследнегоОбращенияРасширеннаяПодсказка</name>
+            <id>5091</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -7777,8 +7946,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>СписокНеЦелевыеСтандартнаяКартинкаКонтекстноеМеню</name>
-            <id>5042</id>
+            <name>СписокНеЦелевыеДнейСПоследнегоОбращенияКонтекстноеМеню</name>
+            <id>5090</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -7786,17 +7955,18 @@
             </userVisible>
             <autoFill>true</autoFill>
           </contextMenu>
-          <type>PictureField</type>
+          <type>InputField</type>
           <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:ImageFieldExtInfo">
+          <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
-            <horizontalStretch>true</horizontalStretch>
-            <verticalStretch>true</verticalStretch>
-            <fileDragMode>AsFileRef</fileDragMode>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
           </extInfo>
         </items>
         <autoCommandBar>
@@ -46010,7 +46180,39 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
+ВЫБРАТЬ
+	ЗаказКлиента.Клиент,
+	МАКСИМУМ(ЗаказКлиента.Дата) КАК ДатаЗаявки
+ПОМЕСТИТЬ ПоследнийКонтактВсе
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Клиент
+
+Объединить
+
+ВЫБРАТЬ
+	ЗаписиЗвонков.Клиент,
+	МАКСИМУМ(ЗаписиЗвонков.Дата) КАК ДатаЗвонка
+ИЗ
+	РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+СГРУППИРОВАТЬ ПО
+	ЗаписиЗвонков.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(ПоследнийКонтактВсе.ДатаЗаявки) КАК ДатаПоследнегоКонтакта,
+	ПоследнийКонтактВсе.Клиент
+Поместить ПоследнийКонтакт
+ИЗ
+	ПоследнийКонтактВсе КАК ПоследнийКонтактВсе
+СГРУППИРОВАТЬ ПО
+	ПоследнийКонтактВсе.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
 	МАКСИМУМ(ЗаказКлиента.Дата) КАК ДатаПоследнегоОбращения,
 	ЗаказКлиента.Клиент КАК Клиент
 ПОМЕСТИТЬ ВТ_ПослОбр
@@ -46024,7 +46226,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
+ВЫБРАТЬ
 	ЗаказКлиента.Клиент КАК Клиент,
 	МАКСИМУМ(ЗаказКлиента.Дата) КАК ПредпоследнееОбращение
 ПОМЕСТИТЬ ВТ_Предпоследнее
@@ -46044,7 +46246,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
+ВЫБРАТЬ
 	СпрКлиенты.Код,
 	СпрКлиенты.Ссылка,
 	СпрКлиенты.Телефон,
@@ -46064,10 +46266,10 @@
 	ЕСТЬNULL(КоличествоЗаявок.КоличествоЗаказов, 0) КАК КоличествоЗаказов,
 	ЕСТЬNULL(КоличествоИСуммаПродаж.КоличествоПродаж, 0) КАК КоличествоПродаж,
 	ЕСТЬNULL(КоличествоИСуммаПродаж.СуммаПродаж, 0) КАК СуммаПродаж,
-	ЕСТЬNULL(ВТ_Предпоследнее.ПредпоследнееОбращение, 0) КАК ПредпоследнееОбращение,
-	ЕСТЬNULL(ВТ_ПослОбр.ДатаПоследнегоОбращения, 0) КАК ДатаПоследнегоОбращения,
-	РАЗНОСТЬДАТ(ВТ_Предпоследнее.ПредпоследнееОбращение, ВТ_ПослОбр.ДатаПоследнегоОбращения, День) КАК
-		КоличествоДнейМеждуОбращениями
+	ПоследнийКонтакт.ДатаПоследнегоКонтакта КАК ПоследнийКонтакт,
+	РАЗНОСТЬДАТ(ПоследнийКонтакт.ДатаПоследнегоКонтакта, &amp;ТекущаяДата, День) КАК ДнейСПоследнегоКонтакта,
+	РАЗНОСТЬДАТ(ВТ_Предпоследнее.ПредпоследнееОбращение, ПоследнийКонтакт.ДатаПоследнегоКонтакта , День) КАК
+		ДнейМеждуОбращениями
 ИЗ
 	Справочник.Клиенты КАК СпрКлиенты
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ АКБ КАК АКБ
@@ -46076,10 +46278,10 @@
 		ПО КоличествоЗаявок.Клиент = СпрКлиенты.Ссылка
 		ЛЕВОЕ СОЕДИНЕНИЕ КоличествоИСуммаПродаж КАК КоличествоИСуммаПродаж
 		ПО СпрКлиенты.Ссылка = КоличествоИСуммаПродаж.Клиент
+		ЛЕВОЕ СОЕДИНЕНИЕ ПоследнийКонтакт КАК ПоследнийКонтакт
+		ПО ПоследнийКонтакт.Клиент = СпрКлиенты.Ссылка
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Предпоследнее КАК ВТ_Предпоследнее
-		ПО СпрКлиенты.Ссылка = ВТ_Предпоследнее.Клиент
-		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПослОбр КАК ВТ_ПослОбр
-		ПО ВТ_ПослОбр.Клиент = СпрКлиенты.Ссылка
+		ПО ВТ_Предпоследнее.Клиент = СпрКлиенты.Ссылка
 ГДЕ
 	СпрКлиенты.Целевой</queryText>
       <mainTable>Catalog.Клиенты</mainTable>
@@ -46202,6 +46404,38 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказКлиента.Клиент,
+	МАКСИМУМ(ЗаказКлиента.Дата) КАК ДатаЗаявки
+ПОМЕСТИТЬ ПоследнийКонтактВсе
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Клиент
+
+Объединить
+
+ВЫБРАТЬ
+	ЗаписиЗвонков.Клиент,
+	МАКСИМУМ(ЗаписиЗвонков.Дата) КАК ДатаЗвонка
+ИЗ
+	РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+СГРУППИРОВАТЬ ПО
+	ЗаписиЗвонков.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
+	МАКСИМУМ(ПоследнийКонтактВсе.ДатаЗаявки) КАК ДатаПоследнегоКонтакта,
+	ПоследнийКонтактВсе.Клиент
+Поместить ПоследнийКонтакт
+ИЗ
+	ПоследнийКонтактВсе КАК ПоследнийКонтактВсе
+СГРУППИРОВАТЬ ПО
+	ПоследнийКонтактВсе.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
  ВЫБРАТЬ
 	Клиенты.Код,
 	Клиенты.Ссылка,
@@ -46222,10 +46456,10 @@
 	ЕСТЬNULL(КоличествоЗаявок.КоличествоЗаказов, 0) КАК КоличествоЗаказов,
 	ЕСТЬNULL(КоличествоИСуммаПродаж.КоличествоПродаж, 0) КАК КоличествоПродаж,
 	ЕСТЬNULL(КоличествоИСуммаПродаж.СуммаПродаж, 0) КАК СуммаПродаж,
-	ЕСТЬNULL(ВТ_Предпоследнее.ПредпоследнееОбращение, 0) КАК ПредпоследнееОбращение,
-	ЕСТЬNULL(ВТ_ПослОбр.ДатаПоследнегоОбращения, 0) КАК ДатаПоследнегоОбращения,
 	РАЗНОСТЬДАТ(ВТ_Предпоследнее.ПредпоследнееОбращение, ВТ_ПослОбр.ДатаПоследнегоОбращения, День) КАК
-		КоличествоДнейМеждуОбращениями
+		ДнейМеждуОбращениями,
+	ПоследнийКонтакт.ДатаПоследнегоКонтакта КАК ДатаПоследнегоКонтакта,
+	РАЗНОСТЬДАТ(ПоследнийКонтакт.ДатаПоследнегоКонтакта, &amp;ТекущаяДата, День) КАК ДнейСПоследнегоОбращения
 ИЗ
 	Справочник.Клиенты КАК Клиенты
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ТЕПЛЫЕ КАК ТЕПЛЫЕ
@@ -46238,6 +46472,8 @@
 		ПО ВТ_Предпоследнее.Клиент = Клиенты.Ссылка
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПослОбр КАК ВТ_ПослОбр
 		ПО Клиенты.Ссылка = ВТ_ПослОбр.Клиент
+		ЛЕВОЕ СОЕДИНЕНИЕ ПоследнийКонтакт КАК ПоследнийКонтакт
+		ПО ПоследнийКонтакт.Клиент = Клиенты.Ссылка
 ГДЕ
 	Клиенты.Целевой</queryText>
       <mainTable>Catalog.Клиенты</mainTable>
@@ -46387,6 +46623,38 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказКлиента.Клиент,
+	МАКСИМУМ(ЗаказКлиента.Дата) КАК ДатаЗаявки
+ПОМЕСТИТЬ ПоследнийКонтактВсе
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Клиент
+
+Объединить
+
+ВЫБРАТЬ
+	ЗаписиЗвонков.Клиент,
+	МАКСИМУМ(ЗаписиЗвонков.Дата) КАК ДатаЗвонка
+ИЗ
+	РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+СГРУППИРОВАТЬ ПО
+	ЗаписиЗвонков.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
+	МАКСИМУМ(ПоследнийКонтактВсе.ДатаЗаявки) КАК ДатаПоследнегоКонтакта,
+	ПоследнийКонтактВсе.Клиент
+Поместить ПоследнийКонтакт
+ИЗ
+	ПоследнийКонтактВсе КАК ПоследнийКонтактВсе
+СГРУППИРОВАТЬ ПО
+	ПоследнийКонтактВсе.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
  ВЫБРАТЬ
 	Клиенты.Код,
 	Клиенты.Ссылка,
@@ -46407,10 +46675,10 @@
 	ЕСТЬNULL(КоличествоЗаявок.КоличествоЗаказов, 0) КАК КоличествоЗаказов,
 	ЕСТЬNULL(КоличествоИСуммаПродаж.КоличествоПродаж, 0) КАК КоличествоПродаж,
 	ЕСТЬNULL(КоличествоИСуммаПродаж.СуммаПродаж, 0) КАК СуммаПродаж,
-	ЕСТЬNULL(ВТ_Предпоследнее.ПредпоследнееОбращение, 0) КАК ПредпоследнееОбращение,
-	ЕСТЬNULL(ВТ_ПослОбр.ДатаПоследнегоОбращения, 0) КАК ДатаПоследнегоОбращения,
 	РАЗНОСТЬДАТ(ВТ_Предпоследнее.ПредпоследнееОбращение, ВТ_ПослОбр.ДатаПоследнегоОбращения, День) КАК
-		КоличествоДнейМеждуОбращениями
+		ДнейМеждуОбращениями,
+	ПоследнийКонтакт.ДатаПоследнегоКонтакта КАК ДатаПоследнегоКонтакта,
+	РАЗНОСТЬДАТ(ПоследнийКонтакт.ДатаПоследнегоКонтакта, &amp;ТекущаяДата, День) КАК ДнейСПоследнегоКонтакта
 ИЗ
 	Справочник.Клиенты КАК Клиенты
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ПОТЕНЦ КАК ПОТЕНЦ
@@ -46423,6 +46691,8 @@
 		ПО ВТ_Предпоследнее.Клиент = Клиенты.Ссылка
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПослОбр КАК ВТ_ПослОбр
 		ПО Клиенты.Ссылка = ВТ_ПослОбр.Клиент
+		ЛЕВОЕ СОЕДИНЕНИЕ ПоследнийКонтакт КАК ПоследнийКонтакт
+		ПО ПоследнийКонтакт.Клиент = Клиенты.Ссылка
 ГДЕ
 	Клиенты.Целевой</queryText>
       <mainTable>Catalog.Клиенты</mainTable>
@@ -46568,6 +46838,38 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказКлиента.Клиент,
+	МАКСИМУМ(ЗаказКлиента.Дата) КАК ДатаЗаявки
+ПОМЕСТИТЬ ПоследнийКонтактВсе
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Клиент
+
+Объединить
+
+ВЫБРАТЬ
+	ЗаписиЗвонков.Клиент,
+	МАКСИМУМ(ЗаписиЗвонков.Дата) КАК ДатаЗвонка
+ИЗ
+	РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+СГРУППИРОВАТЬ ПО
+	ЗаписиЗвонков.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
+	МАКСИМУМ(ПоследнийКонтактВсе.ДатаЗаявки) КАК ДатаПоследнегоКонтакта,
+	ПоследнийКонтактВсе.Клиент
+Поместить ПоследнийКонтакт
+ИЗ
+	ПоследнийКонтактВсе КАК ПоследнийКонтактВсе
+СГРУППИРОВАТЬ ПО
+	ПоследнийКонтактВсе.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
  ВЫБРАТЬ
 	Клиенты.Код,
 	Клиенты.Ссылка КАК Ссылка,
@@ -46588,10 +46890,10 @@
 	ЕСТЬNULL(КоличествоЗаявок.КоличествоЗаказов, 0) КАК КоличествоЗаказов,
 	ЕСТЬNULL(КоличествоИСуммаПродаж.КоличествоПродаж, 0) КАК КоличествоПродаж,
 	ЕСТЬNULL(КоличествоИСуммаПродаж.СуммаПродаж, 0) КАК СуммаПродаж,
-	ЕСТЬNULL(ВТ_Предпоследнее.ПредпоследнееОбращение, 0) КАК ПредпоследнееОбращение,
-	ЕСТЬNULL(ВТ_ПослОбр.ДатаПоследнегоОбращения, 0) КАК ДатаПоследнегоОбращения,
 	РАЗНОСТЬДАТ(ВТ_Предпоследнее.ПредпоследнееОбращение, ВТ_ПослОбр.ДатаПоследнегоОбращения, ДЕНЬ) КАК
-		КоличествоДнейМеждуОбращениями
+		ДнейМеждуОбращениями,
+	ПоследнийКонтакт.ДатаПоследнегоКонтакта КАК ДатаПоследнегоКонтакта,
+	РАЗНОСТЬДАТ(ПоследнийКонтакт.ДатаПоследнегоКонтакта, &amp;ТекущаяДата, ДЕНЬ) КАК ДнейСПоследнегоКонтакта
 ИЗ
 	Справочник.Клиенты КАК Клиенты
 		ЛЕВОЕ СОЕДИНЕНИЕ КоличествоЗаявок КАК КоличествоЗаявок
@@ -46602,6 +46904,8 @@
 		ПО ВТ_Предпоследнее.Клиент = Клиенты.Ссылка
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПослОбр КАК ВТ_ПослОбр
 		ПО Клиенты.Ссылка = ВТ_ПослОбр.Клиент
+		ЛЕВОЕ СОЕДИНЕНИЕ ПоследнийКонтакт КАК ПоследнийКонтакт
+		ПО ПоследнийКонтакт.Клиент = Клиенты.Ссылка
 ГДЕ
 	НЕ Клиенты.Ссылка В
 		(ВЫБРАТЬ
@@ -46703,6 +47007,38 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказКлиента.Клиент,
+	МАКСИМУМ(ЗаказКлиента.Дата) КАК ДатаЗаявки
+ПОМЕСТИТЬ ПоследнийКонтактВсе
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Клиент
+
+Объединить
+
+ВЫБРАТЬ
+	ЗаписиЗвонков.Клиент,
+	МАКСИМУМ(ЗаписиЗвонков.Дата) КАК ДатаЗвонка
+ИЗ
+	РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+СГРУППИРОВАТЬ ПО
+	ЗаписиЗвонков.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
+	МАКСИМУМ(ПоследнийКонтактВсе.ДатаЗаявки) КАК ДатаПоследнегоКонтакта,
+	ПоследнийКонтактВсе.Клиент
+Поместить ПоследнийКонтакт
+ИЗ
+	ПоследнийКонтактВсе КАК ПоследнийКонтактВсе
+СГРУППИРОВАТЬ ПО
+	ПоследнийКонтактВсе.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
  ВЫБРАТЬ
 	Клиенты.Код КАК Код,
 	Клиенты.Ссылка КАК Клиент,
@@ -46727,15 +47063,19 @@
 	КлиентыПолучившиеЗаказ.ДатаОтгрузкиСоСклада КАК ДатаОтгрузкиСоСклада,
 	КлиентыПолучившиеЗаказ.Ожидание КАК Ожидание,
 	КлиентыПолучившиеЗаказ.ДатаПолученияЗаказа КАК ДатаПолученияЗаказа,
-	Клиенты.ПерезвонилиПослеДоставки КАК ПерезвонилиПослеДоставки
+	Клиенты.ПерезвонилиПослеДоставки КАК ПерезвонилиПослеДоставки,
+	ПоследнийКонтакт.ДатаПоследнегоКонтакта КАК ДатаПоследнегоКонтакта,
+	РАЗНОСТЬДАТ(ПоследнийКонтакт.ДатаПоследнегоКонтакта, &amp;ТекущаяДата, День) КАК ДнейСПоследнегоКонтакта
 ИЗ
-	Справочник.Клиенты КАК Клиенты
-		ВНУТРЕННЕЕ СОЕДИНЕНИЕ КлиентыПолучившиеЗаказ КАК КлиентыПолучившиеЗаказ
-		ПО (КлиентыПолучившиеЗаказ.Клиент = Клиенты.Ссылка)
-		ЛЕВОЕ СОЕДИНЕНИЕ КоличествоЗаявок КАК КоличествоЗаявок
-		ПО (КоличествоЗаявок.Клиент = Клиенты.Ссылка)
-		ЛЕВОЕ СОЕДИНЕНИЕ КоличествоИСуммаПродаж КАК КоличествоИСуммаПродаж
-		ПО Клиенты.Ссылка = КоличествоИСуммаПродаж.Клиент
+	ПоследнийКонтакт КАК ПоследнийКонтакт
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Клиенты КАК Клиенты
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ КлиентыПолучившиеЗаказ КАК КлиентыПолучившиеЗаказ
+			ПО (КлиентыПолучившиеЗаказ.Клиент = Клиенты.Ссылка)
+			ЛЕВОЕ СОЕДИНЕНИЕ КоличествоЗаявок КАК КоличествоЗаявок
+			ПО (КоличествоЗаявок.Клиент = Клиенты.Ссылка)
+			ЛЕВОЕ СОЕДИНЕНИЕ КоличествоИСуммаПродаж КАК КоличествоИСуммаПродаж
+			ПО Клиенты.Ссылка = КоличествоИСуммаПродаж.Клиент
+		ПО ПоследнийКонтакт.Клиент = Клиенты.Ссылка
 ГДЕ
 	Клиенты.Целевой</queryText>
       <mainTable>Catalog.Клиенты</mainTable>
@@ -46906,6 +47246,38 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
+	ЗаказКлиента.Клиент,
+	МАКСИМУМ(ЗаказКлиента.Дата) КАК ДатаЗаявки
+ПОМЕСТИТЬ ПоследнийКонтактВсе
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Клиент
+
+Объединить
+
+ВЫБРАТЬ
+	ЗаписиЗвонков.Клиент,
+	МАКСИМУМ(ЗаписиЗвонков.Дата) КАК ДатаЗвонка
+ИЗ
+	РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+СГРУППИРОВАТЬ ПО
+	ЗаписиЗвонков.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
+	МАКСИМУМ(ПоследнийКонтактВсе.ДатаЗаявки) КАК ДатаПоследнегоКонтакта,
+	ПоследнийКонтактВсе.Клиент
+Поместить ПоследнийКонтакт
+ИЗ
+	ПоследнийКонтактВсе КАК ПоследнийКонтактВсе
+СГРУППИРОВАТЬ ПО
+	ПоследнийКонтактВсе.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
 	КОЛИЧЕСТВО(ДоговорыКонтрагентов.Ссылка) КАК КоличествоДоговоров,
 	ДоговорыКонтрагентов.Владелец КАК Клиент,
 	МАКСИМУМ(ДоговорыКонтрагентов.ОтсрочкаПлатежаВДнях) КАК ОтсрочкаВДнях,
@@ -46954,7 +47326,6 @@
 	Должники.СуммаПродаж,
 	Должники.СуммаПриходов,
 	Должники.Долг,
-	ВТ_ПослОбр.ДатаПоследнегоОбращения,
 	РАЗНОСТЬДАТ(ВТ_Предпоследнее.ПредпоследнееОбращение, ВТ_ПослОбр.ДатаПоследнегоОбращения, День) КАК
 		КоличествоДнейМеждуОбращениями,
 	ВЫБОР
@@ -46964,7 +47335,9 @@
 	КОНЕЦ КАК Договор,
 	Договоры.ОтсрочкаВДнях,
 	Договоры.ДатаДоговора,
-	Договоры.ИстекСрокДоговора
+	Договоры.ИстекСрокДоговора,
+	ПоследнийКонтакт.ДатаПоследнегоКонтакта КАК ДатаПоследнегоКонтакта,
+	РАЗНОСТЬДАТ(ПоследнийКонтакт.ДатаПоследнегоКонтакта, &amp;ТекущаяДата, День) КАК ДнейСПоследнегоКонтакта
 ИЗ
 	Справочник.Клиенты КАК Клиенты
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Должники КАК Должники
@@ -46978,7 +47351,9 @@
 			ПО Должники.Клиент = КоличествоИСуммаПродаж.Клиент
 		ПО Клиенты.Ссылка = Должники.Клиент
 		ЛЕВОЕ СОЕДИНЕНИЕ Договоры КАК Договоры
-		ПО Договоры.Клиент = Клиенты.Ссылка</queryText>
+		ПО Договоры.Клиент = Клиенты.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ПоследнийКонтакт КАК ПоследнийКонтакт
+		ПО ПоследнийКонтакт.Клиент = Клиенты.Ссылка</queryText>
       <mainTable>Catalog.Клиенты</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
@@ -47044,7 +47419,7 @@
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ЗаказКлиента.Клиент КАК Клиент,
 	КОЛИЧЕСТВО(ЗаказКлиента.Ссылка) КАК КоличествоЗаказов
 ПОМЕСТИТЬ КоличествоЗаявок
@@ -47058,7 +47433,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ПродажаЗапчастей.Клиент КАК Клиент,
 	КОЛИЧЕСТВО(ПродажаЗапчастей.Ссылка) КАК КоличествоПродаж,
 	СУММА(ПродажаЗапчастей.ИтогоРекв) КАК СуммаПродаж
@@ -47073,7 +47448,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	МАКСИМУМ(ЗаказКлиента.Дата) КАК ДатаПоследнегоОбращения,
 	ЗаказКлиента.Клиент КАК Клиент
 ПОМЕСТИТЬ ВТ_ПослОбр
@@ -47087,7 +47462,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ЗаказКлиента.Клиент КАК Клиент,
 	МАКСИМУМ(ЗаказКлиента.Дата) КАК ПредпоследнееОбращение
 ПОМЕСТИТЬ ВТ_Предпоследнее
@@ -47108,6 +47483,38 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
+	ЗаказКлиента.Клиент,
+	МАКСИМУМ(ЗаказКлиента.Дата) КАК ДатаЗаявки
+ПОМЕСТИТЬ ПоследнийКонтактВсе
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Клиент
+
+Объединить
+
+ВЫБРАТЬ
+	ЗаписиЗвонков.Клиент,
+	МАКСИМУМ(ЗаписиЗвонков.Дата) КАК ДатаЗвонка
+ИЗ
+	РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
+СГРУППИРОВАТЬ ПО
+	ЗаписиЗвонков.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
+	МАКСИМУМ(ПоследнийКонтактВсе.ДатаЗаявки) КАК ДатаПоследнегоКонтакта,
+	ПоследнийКонтактВсе.Клиент
+Поместить ПоследнийКонтакт
+ИЗ
+	ПоследнийКонтактВсе КАК ПоследнийКонтактВсе
+СГРУППИРОВАТЬ ПО
+	ПоследнийКонтактВсе.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ ВЫБРАТЬ
 	Клиенты.Код,
 	Клиенты.Ссылка КАК Клиент,
 	Клиенты.Телефон,
@@ -47127,19 +47534,22 @@
 	КоличествоЗаявок.КоличествоЗаказов КАК Заявки,
 	КоличествоИСуммаПродаж.КоличествоПродаж КАК Продажи,
 	КоличествоИСуммаПродаж.СуммаПродаж,
-	ВТ_ПослОбр.ДатаПоследнегоОбращения КАК ПоследнееОбращение,
 	РАЗНОСТЬДАТ(ВТ_Предпоследнее.ПредпоследнееОбращение, ВТ_ПослОбр.ДатаПоследнегоОбращения, День) КАК
-		КоличествоДнейМеждуОбращениями
+		ДнейМеждуОбращениями,
+	ПоследнийКонтакт.ДатаПоследнегоКонтакта КАК ДатаПоследнегоКонтакта,
+	РАЗНОСТЬДАТ(ПоследнийКонтакт.ДатаПоследнегоКонтакта, &amp;ТекущаяДата, День) КАК ДнейСПоследнегоОбращения
 ИЗ
-	Справочник.Клиенты КАК Клиенты
-		ЛЕВОЕ СОЕДИНЕНИЕ КоличествоЗаявок КАК КоличествоЗаявок
-		ПО КоличествоЗаявок.Клиент = Клиенты.Ссылка
-		ЛЕВОЕ СОЕДИНЕНИЕ КоличествоИСуммаПродаж КАК КоличествоИСуммаПродаж
-		ПО КоличествоИСуммаПродаж.Клиент = Клиенты.Ссылка
-		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПослОбр КАК ВТ_ПослОбр
-		ПО ВТ_ПослОбр.Клиент = Клиенты.Ссылка
-		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Предпоследнее КАК ВТ_Предпоследнее
-		ПО ВТ_Предпоследнее.Клиент = Клиенты.Ссылка
+	ПоследнийКонтакт КАК ПоследнийКонтакт
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.Клиенты КАК Клиенты
+			ЛЕВОЕ СОЕДИНЕНИЕ КоличествоЗаявок КАК КоличествоЗаявок
+			ПО КоличествоЗаявок.Клиент = Клиенты.Ссылка
+			ЛЕВОЕ СОЕДИНЕНИЕ КоличествоИСуммаПродаж КАК КоличествоИСуммаПродаж
+			ПО КоличествоИСуммаПродаж.Клиент = Клиенты.Ссылка
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПослОбр КАК ВТ_ПослОбр
+			ПО ВТ_ПослОбр.Клиент = Клиенты.Ссылка
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Предпоследнее КАК ВТ_Предпоследнее
+			ПО ВТ_Предпоследнее.Клиент = Клиенты.Ссылка
+		ПО ПоследнийКонтакт.Клиент = Клиенты.Ссылка
 ГДЕ
 	НЕ Клиенты.Целевой</queryText>
       <mainTable>Catalog.Клиенты</mainTable>
