@@ -98,24 +98,68 @@
       <items xsi:type="form:FormGroup">
         <name>ГруппаЛево</name>
         <id>66</id>
-        <items xsi:type="form:FormField">
-          <name>ИностранныйНомер</name>
-          <id>242</id>
+        <items xsi:type="form:FormGroup">
+          <name>ГруппаИнострНомерИПорядНом</name>
+          <id>1405</id>
+          <items xsi:type="form:FormField">
+            <name>ИностранныйНомер</name>
+            <id>242</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>ИностранныйНомер</segments>
+            </dataPath>
+            <handlers>
+              <event>OnChange</event>
+              <name>ИностранныйНомерПриИзменении</name>
+            </handlers>
+            <extendedTooltip>
+              <name>ИностранныйНомерРасширеннаяПодсказка</name>
+              <id>244</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>ИностранныйНомерКонтекстноеМеню</name>
+              <id>243</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>CheckBoxField</type>
+            <editMode>Enter</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+          </items>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
-          <dataPath xsi:type="form:DataPath">
-            <segments>ИностранныйНомер</segments>
-          </dataPath>
-          <handlers>
-            <event>OnChange</event>
-            <name>ИностранныйНомерПриИзменении</name>
-          </handlers>
+          <title>
+            <key>ru</key>
+            <value>Группа6</value>
+          </title>
           <extendedTooltip>
-            <name>ИностранныйНомерРасширеннаяПодсказка</name>
-            <id>244</id>
+            <name>ГруппаИнострНомерИПорядНомРасширеннаяПодсказка</name>
+            <id>1406</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -128,22 +172,15 @@
               <horizontalAlign>Left</horizontalAlign>
             </extInfo>
           </extendedTooltip>
-          <contextMenu>
-            <name>ИностранныйНомерКонтекстноеМеню</name>
-            <id>243</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <autoFill>true</autoFill>
-          </contextMenu>
-          <type>CheckBoxField</type>
-          <editMode>Enter</editMode>
-          <showInHeader>true</showInHeader>
-          <headerHorizontalAlign>Left</headerHorizontalAlign>
-          <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+          <type>UsualGroup</type>
+          <extInfo xsi:type="form:UsualGroupExtInfo">
+            <group>AlwaysHorizontal</group>
+            <behavior>Auto</behavior>
+            <showLeftMargin>true</showLeftMargin>
+            <united>true</united>
+            <throughAlign>Auto</throughAlign>
+            <currentRowUse>Auto</currentRowUse>
+          </extInfo>
         </items>
         <items xsi:type="form:FormField">
           <name>Целевая</name>
