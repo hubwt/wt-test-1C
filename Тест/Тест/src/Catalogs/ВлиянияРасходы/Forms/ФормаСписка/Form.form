@@ -39,6 +39,37 @@
       <currentRowUse>Auto</currentRowUse>
     </extInfo>
   </items>
+  <items xsi:type="form:Button">
+    <name>ОбновитьСписки</name>
+    <id>353</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <extendedTooltip>
+      <name>ОбновитьСпискиРасширеннаяПодсказка</name>
+      <id>354</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualButton</type>
+    <commandName>Form.Command.ОбновитьСписки</commandName>
+    <representation>Auto</representation>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <placementArea>UserCmds</placementArea>
+    <representationInContextMenu>Auto</representationInContextMenu>
+  </items>
   <items xsi:type="form:FormGroup">
     <name>Группа4</name>
     <id>99</id>
@@ -157,6 +188,56 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
+          <name>СписокОтделовКоличество</name>
+          <id>341</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>СписокОтделов.Количество</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокОтделовКоличествоРасширеннаяПодсказка</name>
+            <id>343</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокОтделовКоличествоКонтекстноеМеню</name>
+            <id>342</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>СписокОтделовСсылка</name>
           <id>320</id>
           <visible>true</visible>
@@ -185,6 +266,56 @@
           <contextMenu>
             <name>СписокОтделовСсылкаКонтекстноеМеню</name>
             <id>321</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>СписокОтделовПлан</name>
+          <id>347</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>СписокОтделов.План</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокОтделовПланРасширеннаяПодсказка</name>
+            <id>349</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокОтделовПланКонтекстноеМеню</name>
+            <id>348</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -424,6 +555,7 @@
         <selectionMode>MultiRow</selectionMode>
         <header>true</header>
         <headerHeight>1</headerHeight>
+        <footer>true</footer>
         <footerHeight>1</footerHeight>
         <horizontalScrollBar>AutoUse</horizontalScrollBar>
         <verticalScrollBar>AutoUse</verticalScrollBar>
@@ -543,6 +675,56 @@
             <contextMenu>
               <name>Список3ВлияниеКонтекстноеМеню</name>
               <id>306</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>InputField</type>
+            <editMode>Enter</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:InputFieldExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <wrap>true</wrap>
+              <chooseType>true</chooseType>
+              <typeDomainEnabled>true</typeDomainEnabled>
+              <textEdit>true</textEdit>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormField">
+            <name>Список3План</name>
+            <id>344</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>Список3.План</segments>
+            </dataPath>
+            <extendedTooltip>
+              <name>Список3ПланРасширеннаяПодсказка</name>
+              <id>346</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>Список3ПланКонтекстноеМеню</name>
+              <id>345</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -782,6 +964,7 @@
           <selectionMode>MultiRow</selectionMode>
           <header>true</header>
           <headerHeight>1</headerHeight>
+          <footer>true</footer>
           <footerHeight>1</footerHeight>
           <horizontalScrollBar>AutoUse</horizontalScrollBar>
           <verticalScrollBar>AutoUse</verticalScrollBar>
@@ -1053,6 +1236,56 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
+          <name>СписокПлан</name>
+          <id>350</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Список.План</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокПланРасширеннаяПодсказка</name>
+            <id>352</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокПланКонтекстноеМеню</name>
+            <id>351</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>СписокСтандартнаяКартинка</name>
           <id>332</id>
           <visible>true</visible>
@@ -1270,6 +1503,7 @@
         <selectionMode>MultiRow</selectionMode>
         <header>true</header>
         <headerHeight>1</headerHeight>
+        <footer>true</footer>
         <footerHeight>1</footerHeight>
         <horizontalScrollBar>AutoUse</horizontalScrollBar>
         <verticalScrollBar>AutoUse</verticalScrollBar>
@@ -1397,7 +1631,8 @@
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
 	ВидыРасходов_3ТаблицаВлияние.Влияние КАК Влияние,
-	ВидыРасходов_3ТаблицаВлияние.Ссылка КАК Ссылка
+	ВидыРасходов_3ТаблицаВлияние.Ссылка КАК Ссылка,
+	ВидыРасходов_3ТаблицаВлияние.План КАК План
 ПОМЕСТИТЬ ВТ_СписокВлиянийОтделы
 ИЗ
 	Справочник.ВидыРасходов_3.ТаблицаВлияние КАК ВидыРасходов_3ТаблицаВлияние
@@ -1407,7 +1642,8 @@
 ВЫБРАТЬ
 	ВлиянияРасходы.Ссылка КАК Наиенование,
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_СписокВлиянийОтделы.Ссылка) КАК КолОтделов,
-	ВлиянияРасходы.Код КАК Код
+	ВлиянияРасходы.Код КАК Код,
+	СУММА(ВТ_СписокВлиянийОтделы.План) КАК План
 ИЗ
 	Справочник.ВлиянияРасходы КАК ВлиянияРасходы
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СписокВлиянийОтделы КАК ВТ_СписокВлиянийОтделы
@@ -1443,7 +1679,9 @@
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
 	ВидыРасходов_3ТаблицаВлияние.Влияние КАК Влияние,
-	ВидыРасходов_3ТаблицаВлияние.Влияние.Код КАК ВлияниеКод
+	ВидыРасходов_3ТаблицаВлияние.Влияние.Код КАК ВлияниеКод,
+	ВидыРасходов_3ТаблицаВлияние.План КАК План
+	
 ИЗ
 	Справочник.ВидыРасходов_3.ТаблицаВлияние КАК ВидыРасходов_3ТаблицаВлияние
 ГДЕ
@@ -1468,19 +1706,51 @@
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВидыРасходов_3ТаблицаВлияние.Влияние) КАК Влияние,
+	ВидыРасходов_3ТаблицаВлияние.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТ_КоличествоВлиянийОтдела
+ИЗ
+	Справочник.ВидыРасходов_3.ТаблицаВлияние КАК ВидыРасходов_3ТаблицаВлияние
+
+СГРУППИРОВАТЬ ПО
+	ВидыРасходов_3ТаблицаВлияние.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
 	ВидыРасходов_3.Код КАК Код,
-	ВидыРасходов_3.Ссылка КАК Отдел
+	ВидыРасходов_3.Ссылка КАК Отдел,
+	ВТ_КоличествоВлиянийОтдела.Влияние КАК Количество,
+	ВидыРасходов_3.План КАК План
 ИЗ
 	Справочник.ВидыРасходов_3 КАК ВидыРасходов_3
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КоличествоВлиянийОтдела КАК ВТ_КоличествоВлиянийОтдела
+		ПО (ВидыРасходов_3.Ссылка = ВТ_КоличествоВлиянийОтдела.Ссылка)
 ГДЕ
-	ВидыРасходов_3.Родитель.Родитель.Код = &quot;000000001&quot;
-</queryText>
+	ВидыРасходов_3.Родитель.Родитель.Код = &quot;000000001&quot;</queryText>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
   </attributes>
+  <formCommands>
+    <name>ОбновитьСписки</name>
+    <title>
+      <key>ru</key>
+      <value>Обновить списки</value>
+    </title>
+    <id>3</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ОбновитьСписки</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
   <commandInterface>
     <navigationPanel/>
     <commandBar/>
