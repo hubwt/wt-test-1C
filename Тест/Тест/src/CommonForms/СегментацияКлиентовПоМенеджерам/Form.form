@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:FormField">
+    <name>Фильтр</name>
+    <id>44</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Фильтр</segments>
+    </dataPath>
+    <titleLocation>None</titleLocation>
+    <handlers>
+      <event>OnChange</event>
+      <name>ФильтрПриИзменении</name>
+    </handlers>
+    <extendedTooltip>
+      <name>ФильтрРасширеннаяПодсказка</name>
+      <id>46</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>ФильтрКонтекстноеМеню</name>
+      <id>45</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>RadioButtonField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+      <radioButtonsType>Tumbler</radioButtonsType>
+      <choiceList>
+        <presentation>
+          <key>ru</key>
+          <value>Клиенты</value>
+        </presentation>
+        <value xsi:type="core:NumberValue">
+          <value>1</value>
+        </value>
+      </choiceList>
+      <choiceList>
+        <presentation>
+          <key>ru</key>
+          <value>Машины</value>
+        </presentation>
+        <value xsi:type="core:NumberValue">
+          <value>2</value>
+        </value>
+      </choiceList>
+    </extInfo>
+  </items>
+  <items xsi:type="form:Table">
+    <name>СписокСегментацияКлиентовПоМенеджерам</name>
+    <id>1</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>СписокСегментацияКлиентовПоМенеджерам</segments>
+    </dataPath>
+    <titleLocation>None</titleLocation>
+    <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоМенеджерамМенеджер</name>
+      <id>14</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоМенеджерам.Менеджер</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамМенеджерРасширеннаяПодсказка</name>
+        <id>16</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамМенеджерКонтекстноеМеню</name>
+        <id>15</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоГорячих</name>
+      <id>17</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоГорячих</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоГорячихРасширеннаяПодсказка</name>
+        <id>19</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоГорячихКонтекстноеМеню</name>
+        <id>18</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоАктивных</name>
+      <id>20</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоАктивных</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоАктивныхРасширеннаяПодсказка</name>
+        <id>22</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоАктивныхКонтекстноеМеню</name>
+        <id>21</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоТеплых</name>
+      <id>23</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоТеплых</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоТеплыхРасширеннаяПодсказка</name>
+        <id>25</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоТеплыхКонтекстноеМеню</name>
+        <id>24</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоПотенциальных</name>
+      <id>26</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоПотенциальных</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоПотенциальныхРасширеннаяПодсказка</name>
+        <id>28</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоПотенциальныхКонтекстноеМеню</name>
+        <id>27</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоХолодных</name>
+      <id>29</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоХолодных</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоХолодныхРасширеннаяПодсказка</name>
+        <id>31</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоХолодныхКонтекстноеМеню</name>
+        <id>30</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоДолжников</name>
+      <id>32</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоДолжников</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоДолжниковРасширеннаяПодсказка</name>
+        <id>34</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоДолжниковКонтекстноеМеню</name>
+        <id>33</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоНеЦелевых</name>
+      <id>35</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоНеЦелевых</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоНеЦелевыхРасширеннаяПодсказка</name>
+        <id>37</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоНеЦелевыхКонтекстноеМеню</name>
+        <id>36</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоМенеджерамИтогоПоМенеджеру</name>
+      <id>41</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоМенеджерам.ИтогоПоМенеджеру</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамИтогоПоМенеджеруРасширеннаяПодсказка</name>
+        <id>43</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамИтогоПоМенеджеруКонтекстноеМеню</name>
+        <id>42</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <autoCommandBar>
+      <name>СписокСегментацияКлиентовПоМенеджерамКоманднаяПанель</name>
+      <id>2</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <horizontalAlign>Left</horizontalAlign>
+      <autoFill>true</autoFill>
+    </autoCommandBar>
+    <searchStringAddition>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <name>СписокСегментацияКлиентовПоМенеджерамСтрокаПоиска</name>
+      <id>5</id>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамСтрокаПоискаРасширеннаяПодсказка</name>
+        <id>7</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамСтрокаПоискаКонтекстноеМеню</name>
+        <id>6</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <source>СписокСегментацияКлиентовПоМенеджерамСтрокаПоиска</source>
+      <extInfo xsi:type="form:SearchStringAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchStringAddition>
+    <viewStatusAddition>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <name>СписокСегментацияКлиентовПоМенеджерамСостояниеПросмотра</name>
+      <id>11</id>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамСостояниеПросмотраРасширеннаяПодсказка</name>
+        <id>13</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамСостояниеПросмотраКонтекстноеМеню</name>
+        <id>12</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>ViewStatusAddition</type>
+      <source>СписокСегментацияКлиентовПоМенеджерамСостояниеПросмотра</source>
+      <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </viewStatusAddition>
+    <searchControlAddition>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <name>СписокСегментацияКлиентовПоМенеджерамУправлениеПоиском</name>
+      <id>8</id>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоМенеджерамУправлениеПоискомРасширеннаяПодсказка</name>
+        <id>10</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоМенеджерамУправлениеПоискомКонтекстноеМеню</name>
+        <id>9</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>SearchControlAddition</type>
+      <source>СписокСегментацияКлиентовПоМенеджерамУправлениеПоиском</source>
+      <extInfo xsi:type="form:SearchControlAdditionExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+      </extInfo>
+    </searchControlAddition>
+    <extendedTooltip>
+      <name>СписокСегментацияКлиентовПоМенеджерамРасширеннаяПодсказка</name>
+      <id>4</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>СписокСегментацияКлиентовПоМенеджерамКонтекстноеМеню</name>
+      <id>3</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <representation>HierarchicalList</representation>
+    <changeRowSet>true</changeRowSet>
+    <changeRowOrder>true</changeRowOrder>
+    <autoMaxWidth>true</autoMaxWidth>
+    <autoMaxHeight>true</autoMaxHeight>
+    <autoMaxRowsCount>true</autoMaxRowsCount>
+    <selectionMode>MultiRow</selectionMode>
+    <header>true</header>
+    <headerHeight>1</headerHeight>
+    <footer>true</footer>
+    <footerHeight>1</footerHeight>
+    <horizontalScrollBar>AutoUse</horizontalScrollBar>
+    <verticalScrollBar>AutoUse</verticalScrollBar>
+    <horizontalLines>true</horizontalLines>
+    <verticalLines>true</verticalLines>
+    <searchOnInput>Auto</searchOnInput>
+    <initialListView>Auto</initialListView>
+    <horizontalStretch>true</horizontalStretch>
+    <verticalStretch>true</verticalStretch>
+    <fileDragMode>AsFileRef</fileDragMode>
+    <extInfo xsi:type="form:DynamicListTableExtInfo">
+      <autoRefreshPeriod>60</autoRefreshPeriod>
+      <period>
+        <startDate>0001-01-01T00:00:00</startDate>
+        <endDate>0001-01-01T00:00:00</endDate>
+      </period>
+      <topLevelParent xsi:type="core:UndefinedValue"/>
+      <showRoot>true</showRoot>
+      <allowGettingCurrentRowURL>true</allowGettingCurrentRowURL>
+    </extInfo>
+  </items>
+  <autoCommandBar>
+    <name>ФормаКоманднаяПанель</name>
+    <id>-1</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <horizontalAlign>Left</horizontalAlign>
+    <autoFill>true</autoFill>
+  </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
+  </handlers>
+  <handlers>
+    <event>OnOpen</event>
+    <name>ПриОткрытии</name>
+  </handlers>
+  <autoTitle>true</autoTitle>
+  <autoUrl>true</autoUrl>
+  <group>Vertical</group>
+  <autoFillCheck>true</autoFillCheck>
+  <allowFormCustomize>true</allowFormCustomize>
+  <enabled>true</enabled>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>СписокСегментацияКлиентовПоМенеджерам</name>
+    <title>
+      <key>ru</key>
+      <value>Список сегментация клиентов по менеджерам</value>
+    </title>
+    <id>1</id>
+    <valueType>
+      <types>DynamicList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:DynamicListExtInfo">
+      <queryText>ВЫБРАТЬ
+	Пользователи.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТ_Пользователи
+ИЗ
+	Справочник.Пользователи КАК Пользователи
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ПродажаЗапчастей.Клиент) КАК КоличествоГорячих,
+	ВЫБОР
+		КОГДА ПродажаЗапчастей.Клиент.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА ПродажаЗапчастей.Клиент.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ КАК Ответственный
+ПОМЕСТИТЬ ГорячиеКлиентыПоМенеджерам
+ИЗ
+	Документ.ПродажаЗапчастей КАК ПродажаЗапчастей
+ГДЕ
+	(ПродажаЗапчастей.ЕстьДоставка
+				И (ПродажаЗапчастей.ДатаПолучения МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания)
+			ИЛИ ПродажаЗапчастей.Самовывоз
+				И (ПродажаЗапчастей.ДатаОтгрузкиСоСклада МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания))
+	И ПродажаЗапчастей.Клиент.Целевой
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА ПродажаЗапчастей.Клиент.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА ПродажаЗапчастей.Клиент.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказКлиента.Клиент КАК Клиент,
+	ЗаказКлиента.Клиент.Ответственный КАК Ответственный
+ПОМЕСТИТЬ АКБ
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачалаАКБ И &amp;ДатаОкончанияАКБ
+
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Клиент,
+	ЗаказКлиента.Клиент.Ответственный
+
+ИМЕЮЩИЕ
+	КОЛИЧЕСТВО(ЗаказКлиента.Клиент) > 1
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ АКБ.Клиент) КАК КоличествоАктивных,
+	ВЫБОР
+		КОГДА АКБ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА АКБ.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ КАК Ответственный
+ПОМЕСТИТЬ АктивныеКлиентыПоМенеджерам
+ИЗ
+	АКБ КАК АКБ
+ГДЕ
+	АКБ.Клиент.Целевой
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА АКБ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА АКБ.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказКлиента.Клиент КАК Клиент,
+	ЗаказКлиента.Клиент.Ответственный КАК Ответственный
+ПОМЕСТИТЬ ТЕПЛЫЕ
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачалаТеплые И &amp;ДатаОкончанияТеплые
+	И НЕ ЗаказКлиента.Клиент В
+				(ВЫБРАТЬ
+					АКБ.Клиент
+				ИЗ
+					АКБ КАК АКБ)
+
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Клиент,
+	ЗаказКлиента.Клиент.Ответственный
+
+ИМЕЮЩИЕ
+	КОЛИЧЕСТВО(ЗаказКлиента.Клиент) > 1
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ТЕПЛЫЕ.Клиент) КАК КоличествоТеплых,
+	ВЫБОР
+		КОГДА ТЕПЛЫЕ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА ТЕПЛЫЕ.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ КАК Ответственный
+ПОМЕСТИТЬ ТеплыеКлиентыПоменеджерам
+ИЗ
+	ТЕПЛЫЕ КАК ТЕПЛЫЕ
+ГДЕ
+	ТЕПЛЫЕ.Клиент.Целевой
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА ТЕПЛЫЕ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА ТЕПЛЫЕ.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказКлиента.Клиент КАК Клиент,
+	ЗаказКлиента.Клиент.Ответственный КАК Ответственный
+ПОМЕСТИТЬ ПОТЕНЦ
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачалаПотенциальные И &amp;ДатаОкончанияПотенциальные
+	И НЕ ЗаказКлиента.Клиент В
+				(ВЫБРАТЬ
+					АКБ.Клиент
+				ИЗ
+					АКБ КАК АКБ)
+	И НЕ ЗаказКлиента.Клиент В
+				(ВЫБРАТЬ
+					ТЕПЛЫЕ.Клиент
+				ИЗ
+					ТЕПЛЫЕ КАК ТЕПЛЫЕ)
+	И ЗаказКлиента.Клиент.Целевой
+
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Клиент,
+	ЗаказКлиента.Клиент.Ответственный
+
+ИМЕЮЩИЕ
+	КОЛИЧЕСТВО(ЗаказКлиента.Клиент) = 1
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ПОТЕНЦ.Клиент) КАК КоличествоПотенциальных,
+	ВЫБОР
+		КОГДА ПОТЕНЦ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА ПОТЕНЦ.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ КАК Ответственный
+ПОМЕСТИТЬ ПотенциальныеКлиентыПоМенеджерам
+ИЗ
+	ПОТЕНЦ КАК ПОТЕНЦ
+ГДЕ
+	ПОТЕНЦ.Клиент.Целевой
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА ПОТЕНЦ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА ПОТЕНЦ.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Клиенты.Ссылка КАК Клиент,
+	Клиенты.Ответственный КАК Ответственный
+ПОМЕСТИТЬ ХолодныеКлиенты
+ИЗ
+	Справочник.Клиенты КАК Клиенты
+ГДЕ
+	НЕ Клиенты.Ссылка В
+				(ВЫБРАТЬ
+					АКБ.Клиент
+				ИЗ
+					АКБ КАК АКБ)
+	И НЕ Клиенты.Ссылка В
+				(ВЫБРАТЬ
+					ТЕПЛЫЕ.Клиент
+				ИЗ
+					ТЕПЛЫЕ КАК ТЕПЛЫЕ)
+	И НЕ Клиенты.Ссылка В
+				(ВЫБРАТЬ
+					ПОТЕНЦ.Клиент
+				ИЗ
+					ПОТЕНЦ КАК ПОТЕНЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ХолодныеКлиенты.Клиент) КАК КоличествоХолодных,
+	ВЫБОР
+		КОГДА ХолодныеКлиенты.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА ХолодныеКлиенты.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ КАК Ответственный
+ПОМЕСТИТЬ ХолодныеКлиентыПоМенеджерам
+ИЗ
+	ХолодныеКлиенты КАК ХолодныеКлиенты
+ГДЕ
+	ХолодныеКлиенты.Клиент.Целевой
+	И НЕ ХолодныеКлиенты.Клиент В
+				(ВЫБРАТЬ
+					АКБ.Клиент
+				ИЗ
+					АКБ КАК АКБ)
+	И НЕ ХолодныеКлиенты.Клиент В
+				(ВЫБРАТЬ
+					ТЕПЛЫЕ.Клиент
+				ИЗ
+					ТЕПЛЫЕ КАК ТЕПЛЫЕ)
+	И НЕ ХолодныеКлиенты.Клиент В
+				(ВЫБРАТЬ
+					ПОТЕНЦ.Клиент
+				ИЗ
+					ПОТЕНЦ КАК ПОТЕНЦ)
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА ХолодныеКлиенты.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА ХолодныеКлиенты.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПродажаЗапчастей.Клиент КАК Клиент,
+	СУММА(ПродажаЗапчастей.ИтогоРекв) КАК СуммаПродажи
+ПОМЕСТИТЬ ВТ_ДеньгиСПродажПоКлиентам
+ИЗ
+	Документ.ПродажаЗапчастей КАК ПродажаЗапчастей
+ГДЕ
+	НЕ ПродажаЗапчастей.ДолгСписан
+
+СГРУППИРОВАТЬ ПО
+	ПродажаЗапчастей.Клиент
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ЗаказНаряд.Клиент,
+	ЗаказНаряд.СуммаДокумента
+ИЗ
+	Документ.ЗаказНаряд КАК ЗаказНаряд
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПриходДенегНаСчет.Сделка.Клиент КАК Клиент,
+	СУММА(ПриходДенегНаСчет.СуммаДокумента) КАК СуммаПрихода
+ПОМЕСТИТЬ ВТ_ПриходДенегПоКлиентам
+ИЗ
+	Документ.ПриходДенегНаСчет КАК ПриходДенегНаСчет
+
+СГРУППИРОВАТЬ ПО
+	ПриходДенегНаСчет.Сделка.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ДеньгиСПродажПоКлиентам.Клиент КАК Клиент,
+	ВТ_ДеньгиСПродажПоКлиентам.СуммаПродажи - ВТ_ПриходДенегПоКлиентам.СуммаПрихода КАК Долг
+ПОМЕСТИТЬ Долги
+ИЗ
+	ВТ_ДеньгиСПродажПоКлиентам КАК ВТ_ДеньгиСПродажПоКлиентам
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПриходДенегПоКлиентам КАК ВТ_ПриходДенегПоКлиентам
+		ПО ВТ_ДеньгиСПродажПоКлиентам.Клиент = ВТ_ПриходДенегПоКлиентам.Клиент
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Долги.Клиент) КАК КоличествоДолжников,
+	ВЫБОР
+		КОГДА Долги.Клиент.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА Долги.Клиент.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ КАК Ответственный
+ПОМЕСТИТЬ ДолжникиПоМенеджерам
+ИЗ
+	Долги КАК Долги
+ГДЕ
+	Долги.Долг > 0
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА Долги.Клиент.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА Долги.Клиент.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Клиенты.Ссылка) КАК КоличествоНеЦелевых,
+	ВЫБОР
+		КОГДА Клиенты.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА Клиенты.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ КАК Ответственный
+ПОМЕСТИТЬ НеЦелевыеКлиентыПоМенеджерам
+ИЗ
+	Справочник.Клиенты КАК Клиенты
+ГДЕ
+	НЕ Клиенты.Целевой
+
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА Клиенты.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
+			ТОГДА Клиенты.Ответственный
+		ИНАЧЕ &amp;ОбщийКлиент
+	КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Пользователи.Ссылка КАК Менеджер,
+	ГорячиеКлиентыПоМенеджерам.КоличествоГорячих КАК КоличествоГорячих,
+	АктивныеКлиентыПоМенеджерам.КоличествоАктивных КАК КоличествоАктивных,
+	ТеплыеКлиентыПоменеджерам.КоличествоТеплых КАК КоличествоТеплых,
+	ПотенциальныеКлиентыПоМенеджерам.КоличествоПотенциальных КАК КоличествоПотенциальных,
+	ХолодныеКлиентыПоМенеджерам.КоличествоХолодных КАК КоличествоХолодных,
+	ДолжникиПоМенеджерам.КоличествоДолжников КАК КоличествоДолжников,
+	НеЦелевыеКлиентыПоМенеджерам.КоличествоНеЦелевых КАК КоличествоНеЦелевых,
+	ЕСТЬNULL(ГорячиеКлиентыПоМенеджерам.КоличествоГорячих, 0) + ЕСТЬNULL(АктивныеКлиентыПоМенеджерам.КоличествоАктивных, 0) + ЕСТЬNULL(ТеплыеКлиентыПоменеджерам.КоличествоТеплых, 0) + ЕСТЬNULL(ПотенциальныеКлиентыПоМенеджерам.КоличествоПотенциальных, 0) + ЕСТЬNULL(ХолодныеКлиентыПоМенеджерам.КоличествоХолодных, 0) + ЕСТЬNULL(ДолжникиПоМенеджерам.КоличествоДолжников, 0) + ЕСТЬNULL(НеЦелевыеКлиентыПоМенеджерам.КоличествоНеЦелевых, 0) КАК ИтогоПоМенеджеру
+ПОМЕСТИТЬ ВсеПользователи
+ИЗ
+	ВТ_Пользователи КАК ВТ_Пользователи
+		ЛЕВОЕ СОЕДИНЕНИЕ ГорячиеКлиентыПоМенеджерам КАК ГорячиеКлиентыПоМенеджерам
+		ПО (ГорячиеКлиентыПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ АктивныеКлиентыПоМенеджерам КАК АктивныеКлиентыПоМенеджерам
+		ПО (АктивныеКлиентыПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ ТеплыеКлиентыПоменеджерам КАК ТеплыеКлиентыПоменеджерам
+		ПО (ТеплыеКлиентыПоменеджерам.Ответственный = ВТ_Пользователи.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ ПотенциальныеКлиентыПоМенеджерам КАК ПотенциальныеКлиентыПоМенеджерам
+		ПО (ПотенциальныеКлиентыПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ ХолодныеКлиентыПоМенеджерам КАК ХолодныеКлиентыПоМенеджерам
+		ПО (ХолодныеКлиентыПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ ДолжникиПоМенеджерам КАК ДолжникиПоМенеджерам
+		ПО (ДолжникиПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ НеЦелевыеКлиентыПоМенеджерам КАК НеЦелевыеКлиентыПоМенеджерам
+		ПО (НеЦелевыеКлиентыПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВсеПользователи.Менеджер КАК Менеджер,
+	ВсеПользователи.КоличествоГорячих КАК КоличествоГорячих,
+	ВсеПользователи.КоличествоАктивных КАК КоличествоАктивных,
+	ВсеПользователи.КоличествоТеплых КАК КоличествоТеплых,
+	ВсеПользователи.КоличествоПотенциальных КАК КоличествоПотенциальных,
+	ВсеПользователи.КоличествоХолодных КАК КоличествоХолодных,
+	ВсеПользователи.КоличествоДолжников КАК КоличествоДолжников,
+	ВсеПользователи.КоличествоНеЦелевых КАК КоличествоНеЦелевых,
+	ВсеПользователи.ИтогоПоМенеджеру КАК ИтогоПоМенеджеру
+ИЗ
+	ВсеПользователи КАК ВсеПользователи
+ГДЕ
+	(ВсеПользователи.КоличествоГорячих &lt;> 0
+			ИЛИ ВсеПользователи.КоличествоАктивных &lt;> 0
+			ИЛИ ВсеПользователи.КоличествоТеплых &lt;> 0
+			ИЛИ ВсеПользователи.КоличествоПотенциальных &lt;> 0
+			ИЛИ ВсеПользователи.КоличествоХолодных &lt;> 0
+			ИЛИ ВсеПользователи.КоличествоДолжников &lt;> 0
+			ИЛИ ВсеПользователи.КоличествоНеЦелевых &lt;> 0)</queryText>
+      <autoFillAvailableFields>true</autoFillAvailableFields>
+      <customQuery>true</customQuery>
+      <autoSaveUserSettings>true</autoSaveUserSettings>
+      <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
+    </extInfo>
+  </attributes>
+  <attributes>
+    <name>Фильтр</name>
+    <title>
+      <key>ru</key>
+      <value>Фильтр</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <commandInterface>
+    <navigationPanel/>
+    <commandBar/>
+  </commandInterface>
+</form:Form>
