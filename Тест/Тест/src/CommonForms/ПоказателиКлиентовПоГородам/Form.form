@@ -2,7 +2,7 @@
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
   <items xsi:type="form:Table">
     <name>ПоказателиКлиентовПоГородам</name>
-    <id>63</id>
+    <id>1</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -14,7 +14,7 @@
     <titleLocation>None</titleLocation>
     <items xsi:type="form:FormField">
       <name>ПоказателиКлиентовПоГородамГород</name>
-      <id>76</id>
+      <id>14</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -25,7 +25,7 @@
       </dataPath>
       <extendedTooltip>
         <name>ПоказателиКлиентовПоГородамГородРасширеннаяПодсказка</name>
-        <id>78</id>
+        <id>16</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -40,7 +40,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПоказателиКлиентовПоГородамГородКонтекстноеМеню</name>
-        <id>77</id>
+        <id>15</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -64,7 +64,7 @@
     </items>
     <items xsi:type="form:FormField">
       <name>ПоказателиКлиентовПоГородамМашины</name>
-      <id>79</id>
+      <id>17</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -75,7 +75,7 @@
       </dataPath>
       <extendedTooltip>
         <name>ПоказателиКлиентовПоГородамМашиныРасширеннаяПодсказка</name>
-        <id>81</id>
+        <id>19</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -90,7 +90,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПоказателиКлиентовПоГородамМашиныКонтекстноеМеню</name>
-        <id>80</id>
+        <id>18</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -113,19 +113,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>ПоказателиКлиентовПоГородамЗаявки</name>
-      <id>82</id>
+      <name>ПоказателиКлиентовПоГородамКоличествоЗаявок</name>
+      <id>20</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>ПоказателиКлиентовПоГородам.Заявки</segments>
+        <segments>ПоказателиКлиентовПоГородам.КоличествоЗаявок</segments>
       </dataPath>
       <extendedTooltip>
-        <name>ПоказателиКлиентовПоГородамЗаявкиРасширеннаяПодсказка</name>
-        <id>84</id>
+        <name>ПоказателиКлиентовПоГородамКоличествоЗаявокРасширеннаяПодсказка</name>
+        <id>22</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -139,8 +139,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>ПоказателиКлиентовПоГородамЗаявкиКонтекстноеМеню</name>
-        <id>83</id>
+        <name>ПоказателиКлиентовПоГородамКоличествоЗаявокКонтекстноеМеню</name>
+        <id>21</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -163,19 +163,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>ПоказателиКлиентовПоГородамПродажи</name>
-      <id>85</id>
+      <name>ПоказателиКлиентовПоГородамСуммаЗаявок</name>
+      <id>23</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>ПоказателиКлиентовПоГородам.Продажи</segments>
+        <segments>ПоказателиКлиентовПоГородам.СуммаЗаявок</segments>
       </dataPath>
       <extendedTooltip>
-        <name>ПоказателиКлиентовПоГородамПродажиРасширеннаяПодсказка</name>
-        <id>87</id>
+        <name>ПоказателиКлиентовПоГородамСуммаЗаявокРасширеннаяПодсказка</name>
+        <id>25</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -189,8 +189,108 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>ПоказателиКлиентовПоГородамПродажиКонтекстноеМеню</name>
-        <id>86</id>
+        <name>ПоказателиКлиентовПоГородамСуммаЗаявокКонтекстноеМеню</name>
+        <id>24</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>ПоказателиКлиентовПоГородамКоличествоПродаж</name>
+      <id>26</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>ПоказателиКлиентовПоГородам.КоличествоПродаж</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ПоказателиКлиентовПоГородамКоличествоПродажРасширеннаяПодсказка</name>
+        <id>28</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ПоказателиКлиентовПоГородамКоличествоПродажКонтекстноеМеню</name>
+        <id>27</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>ПоказателиКлиентовПоГородамСуммаПродаж</name>
+      <id>29</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>ПоказателиКлиентовПоГородам.СуммаПродаж</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ПоказателиКлиентовПоГородамСуммаПродажРасширеннаяПодсказка</name>
+        <id>31</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ПоказателиКлиентовПоГородамСуммаПродажКонтекстноеМеню</name>
+        <id>30</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -214,7 +314,7 @@
     </items>
     <items xsi:type="form:FormField">
       <name>ПоказателиКлиентовПоГородамПоступления</name>
-      <id>88</id>
+      <id>32</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -225,7 +325,7 @@
       </dataPath>
       <extendedTooltip>
         <name>ПоказателиКлиентовПоГородамПоступленияРасширеннаяПодсказка</name>
-        <id>90</id>
+        <id>34</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -240,7 +340,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПоказателиКлиентовПоГородамПоступленияКонтекстноеМеню</name>
-        <id>89</id>
+        <id>33</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -264,7 +364,7 @@
     </items>
     <items xsi:type="form:FormField">
       <name>ПоказателиКлиентовПоГородамСтандартнаяКартинка</name>
-      <id>91</id>
+      <id>35</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -275,7 +375,7 @@
       </dataPath>
       <extendedTooltip>
         <name>ПоказателиКлиентовПоГородамСтандартнаяКартинкаРасширеннаяПодсказка</name>
-        <id>93</id>
+        <id>37</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -290,7 +390,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПоказателиКлиентовПоГородамСтандартнаяКартинкаКонтекстноеМеню</name>
-        <id>92</id>
+        <id>36</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -313,7 +413,7 @@
     </items>
     <autoCommandBar>
       <name>ПоказателиКлиентовПоГородамКоманднаяПанель</name>
-      <id>64</id>
+      <id>2</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -329,10 +429,10 @@
         <common>true</common>
       </userVisible>
       <name>ПоказателиКлиентовПоГородамСтрокаПоиска</name>
-      <id>67</id>
+      <id>5</id>
       <extendedTooltip>
         <name>ПоказателиКлиентовПоГородамСтрокаПоискаРасширеннаяПодсказка</name>
-        <id>69</id>
+        <id>7</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -347,7 +447,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПоказателиКлиентовПоГородамСтрокаПоискаКонтекстноеМеню</name>
-        <id>68</id>
+        <id>6</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -367,10 +467,10 @@
         <common>true</common>
       </userVisible>
       <name>ПоказателиКлиентовПоГородамСостояниеПросмотра</name>
-      <id>73</id>
+      <id>11</id>
       <extendedTooltip>
         <name>ПоказателиКлиентовПоГородамСостояниеПросмотраРасширеннаяПодсказка</name>
-        <id>75</id>
+        <id>13</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -385,7 +485,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПоказателиКлиентовПоГородамСостояниеПросмотраКонтекстноеМеню</name>
-        <id>74</id>
+        <id>12</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -406,10 +506,10 @@
         <common>true</common>
       </userVisible>
       <name>ПоказателиКлиентовПоГородамУправлениеПоиском</name>
-      <id>70</id>
+      <id>8</id>
       <extendedTooltip>
         <name>ПоказателиКлиентовПоГородамУправлениеПоискомРасширеннаяПодсказка</name>
-        <id>72</id>
+        <id>10</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -424,7 +524,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПоказателиКлиентовПоГородамУправлениеПоискомКонтекстноеМеню</name>
-        <id>71</id>
+        <id>9</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -440,7 +540,7 @@
     </searchControlAddition>
     <extendedTooltip>
       <name>ПоказателиКлиентовПоГородамРасширеннаяПодсказка</name>
-      <id>66</id>
+      <id>4</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -455,7 +555,7 @@
     </extendedTooltip>
     <contextMenu>
       <name>ПоказателиКлиентовПоГородамКонтекстноеМеню</name>
-      <id>65</id>
+      <id>3</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -531,71 +631,82 @@
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
 	СУММА(Клиенты.КоличествоАвтомобилей) КАК КоличествоАвтомобилей,
-	Клиенты.Город2 КАК Город
+	Клиенты.Город2.Наименование КАК Город
 ПОМЕСТИТЬ Машины
 ИЗ
 	Справочник.Клиенты КАК Клиенты
+
 СГРУППИРОВАТЬ ПО
-	Клиенты.Город2
+	Клиенты.Город2.Наименование
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	СУММА(ЗаказКлиента.СуммаДокумента) КАК СуммаЗаявок,
-	ЗаказКлиента.Клиент.Город2 КАК Город
+	ЗаказКлиента.Клиент.Город2.Наименование КАК Город,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК КоличествоЗаявок,
+	СУММА(ЗаказКлиента.СуммаДокумента) КАК СуммаЗаявок
 ПОМЕСТИТЬ Заявки
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
+
 СГРУППИРОВАТЬ ПО
-	ЗаказКлиента.Клиент.Город2
+	ЗаказКлиента.Клиент.Город2.Наименование
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	СУММА(ПродажаЗапчастей.ИтогоРекв) КАК СуммаПродаж,
-	ПродажаЗапчастей.Клиент.Город2 КАК Город
+	ПродажаЗапчастей.Клиент.Город2.Наименование КАК Город,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ПродажаЗапчастей.Ссылка) КАК КоличествоПродаж,
+	СУММА(ПродажаЗапчастей.ИтогоРекв) КАК СуммаПродаж
 ПОМЕСТИТЬ Продажи
 ИЗ
 	Документ.ПродажаЗапчастей КАК ПродажаЗапчастей
+
 СГРУППИРОВАТЬ ПО
-	ПродажаЗапчастей.Клиент.Город2
+	ПродажаЗапчастей.Клиент.Город2.Наименование
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	СУММА(ПриходДенегНаСчет.СуммаДокумента) КАК СуммаПрихода,
-	ПриходДенегНаСчет.Сделка.Клиент.Город2 КАК Город
+	ПриходДенегНаСчет.Сделка.Клиент.Город2.Наименование КАК Город
 ПОМЕСТИТЬ ПриходДенег
 ИЗ
 	Документ.ПриходДенегНаСчет КАК ПриходДенегНаСчет
+
 СГРУППИРОВАТЬ ПО
-	ПриходДенегНаСчет.Сделка.Клиент.Город2
+	ПриходДенегНаСчет.Сделка.Клиент.Город2.Наименование
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	спрГород.Ссылка КАК Город,
-	Максимум(Машины.КоличествоАвтомобилей) КАК Машины,
-	Максимум(Заявки.СуммаЗаявок) КАК Заявки,
-	Максимум(Продажи.СуммаПродаж) КАК Продажи,
-	Максимум(ПриходДенег.СуммаПрихода) КАК Поступления
+	спрГород.Наименование КАК Город,
+	МАКСИМУМ(Машины.КоличествоАвтомобилей) КАК Машины,
+	МАКСИМУМ(Заявки.КоличествоЗаявок) КАК КоличествоЗаявок,
+	МАКСИМУМ(Заявки.СуммаЗаявок) КАК СуммаЗаявок,
+	МАКСИМУМ(Продажи.КоличествоПродаж) КАК КоличествоПродаж,
+	МАКСИМУМ(Продажи.СуммаПродаж) КАК СуммаПродаж,
+	МАКСИМУМ(ПриходДенег.СуммаПрихода) КАК Поступления
 ИЗ
 	Справочник.Город КАК спрГород
 		ЛЕВОЕ СОЕДИНЕНИЕ Машины КАК Машины
-		ПО (Машины.Город = спрГород.Ссылка)
+		ПО (Машины.Город = спрГород.Наименование)
 		ЛЕВОЕ СОЕДИНЕНИЕ Заявки КАК Заявки
-		ПО (спрГород.Ссылка = Заявки.Город)
+		ПО (спрГород.Наименование = Заявки.Город)
 		ЛЕВОЕ СОЕДИНЕНИЕ Продажи КАК Продажи
-		ПО (спрГород.Ссылка = Продажи.Город)
+		ПО (спрГород.Наименование = Продажи.Город)
 		ЛЕВОЕ СОЕДИНЕНИЕ ПриходДенег КАК ПриходДенег
-		ПО (спрГород.Ссылка = ПриходДенег.Город)
+		ПО (спрГород.Наименование = ПриходДенег.Город)
 ГДЕ
 	(Машины.КоличествоАвтомобилей &lt;> 0
-	ИЛИ Заявки.СуммаЗаявок &lt;> 0
-	ИЛИ Продажи.СуммаПродаж &lt;> 0
-	ИЛИ ПриходДенег.СуммаПрихода &lt;> 0)
+			ИЛИ Заявки.СуммаЗаявок &lt;> 0
+			ИЛИ Продажи.СуммаПродаж &lt;> 0
+			ИЛИ ПриходДенег.СуммаПрихода &lt;> 0
+			ИЛИ Заявки.КоличествоЗаявок &lt;> 0
+			ИЛИ Продажи.КоличествоПродаж &lt;> 0)
+
 СГРУППИРОВАТЬ ПО
-	спрГород.Ссылка</queryText>
+	спрГород.Наименование</queryText>
       <mainTable>Catalog.Город</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
