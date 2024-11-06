@@ -9992,7 +9992,7 @@
     </items>
     <items xsi:type="form:FormField">
       <name>Куратор</name>
-      <id>816</id>
+      <id>810</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -10003,7 +10003,7 @@
       </dataPath>
       <extendedTooltip>
         <name>КураторРасширеннаяПодсказка</name>
-        <id>818</id>
+        <id>812</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -10018,7 +10018,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>КураторКонтекстноеМеню</name>
-        <id>817</id>
+        <id>811</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -10032,9 +10032,15 @@
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:InputFieldExtInfo">
+        <handlers>
+          <event>StartChoice</event>
+          <name>КураторНачалоВыбора</name>
+        </handlers>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <wrap>true</wrap>
+        <dropListButton>true</dropListButton>
+        <listChoiceMode>true</listChoiceMode>
         <chooseType>true</chooseType>
         <typeDomainEnabled>true</typeDomainEnabled>
         <textEdit>true</textEdit>
