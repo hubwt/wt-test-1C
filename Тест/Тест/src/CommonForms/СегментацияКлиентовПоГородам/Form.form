@@ -1,258 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
-  <items xsi:type="form:FormField">
-    <name>ДатаОтчета</name>
-    <id>50</id>
-    <visible>true</visible>
-    <enabled>true</enabled>
-    <userVisible>
-      <common>true</common>
-    </userVisible>
-    <dataPath xsi:type="form:DataPath">
-      <segments>ДатаОтчета</segments>
-    </dataPath>
-    <handlers>
-      <event>OnChange</event>
-      <name>ДатаОтчетаПриИзменении</name>
-    </handlers>
-    <extendedTooltip>
-      <name>ДатаОтчетаРасширеннаяПодсказка</name>
-      <id>52</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <type>Label</type>
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
-      <extInfo xsi:type="form:LabelDecorationExtInfo">
-        <horizontalAlign>Left</horizontalAlign>
-      </extInfo>
-    </extendedTooltip>
-    <contextMenu>
-      <name>ДатаОтчетаКонтекстноеМеню</name>
-      <id>51</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <autoFill>true</autoFill>
-    </contextMenu>
-    <type>InputField</type>
-    <editMode>Enter</editMode>
-    <showInHeader>true</showInHeader>
-    <headerHorizontalAlign>Left</headerHorizontalAlign>
-    <showInFooter>true</showInFooter>
-    <extInfo xsi:type="form:InputFieldExtInfo">
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
-      <wrap>true</wrap>
-      <chooseType>true</chooseType>
-      <typeDomainEnabled>true</typeDomainEnabled>
-      <textEdit>true</textEdit>
-    </extInfo>
-  </items>
-  <items xsi:type="form:FormGroup">
-    <name>ОберткаДляФильтров</name>
-    <id>59</id>
-    <items xsi:type="form:FormField">
-      <name>Фильтр</name>
-      <id>44</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>Фильтр</segments>
-      </dataPath>
-      <titleLocation>None</titleLocation>
-      <handlers>
-        <event>OnChange</event>
-        <name>ФильтрПриИзменении</name>
-      </handlers>
-      <extendedTooltip>
-        <name>ФильтрРасширеннаяПодсказка</name>
-        <id>46</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <type>Label</type>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:LabelDecorationExtInfo">
-          <horizontalAlign>Left</horizontalAlign>
-        </extInfo>
-      </extendedTooltip>
-      <contextMenu>
-        <name>ФильтрКонтекстноеМеню</name>
-        <id>45</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <autoFill>true</autoFill>
-      </contextMenu>
-      <type>RadioButtonField</type>
-      <editMode>Enter</editMode>
-      <showInHeader>true</showInHeader>
-      <headerHorizontalAlign>Left</headerHorizontalAlign>
-      <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
-        <radioButtonsType>Tumbler</radioButtonsType>
-        <choiceList>
-          <presentation>
-            <key>ru</key>
-            <value>Клиенты</value>
-          </presentation>
-          <value xsi:type="core:NumberValue">
-            <value>1</value>
-          </value>
-        </choiceList>
-        <choiceList>
-          <presentation>
-            <key>ru</key>
-            <value>Машины</value>
-          </presentation>
-          <value xsi:type="core:NumberValue">
-            <value>2</value>
-          </value>
-        </choiceList>
-      </extInfo>
-    </items>
-    <items xsi:type="form:FormField">
-      <name>ФильтрПоЗаполненнымРеквизитамКлиента</name>
-      <id>56</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>ФильтрПоЗаполненнымРеквизитамКлиента</segments>
-      </dataPath>
-      <titleLocation>None</titleLocation>
-      <handlers>
-        <event>OnChange</event>
-        <name>ФильтрПоЗаполненнымРеквизитамКлиентаПриИзменении</name>
-      </handlers>
-      <extendedTooltip>
-        <name>ФильтрПоЗаполненнымРеквизитамКлиентаРасширеннаяПодсказка</name>
-        <id>58</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <type>Label</type>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:LabelDecorationExtInfo">
-          <horizontalAlign>Left</horizontalAlign>
-        </extInfo>
-      </extendedTooltip>
-      <contextMenu>
-        <name>ФильтрПоЗаполненнымРеквизитамКлиентаКонтекстноеМеню</name>
-        <id>57</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <autoFill>true</autoFill>
-      </contextMenu>
-      <type>RadioButtonField</type>
-      <editMode>Enter</editMode>
-      <showInHeader>true</showInHeader>
-      <headerHorizontalAlign>Left</headerHorizontalAlign>
-      <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
-        <radioButtonsType>Tumbler</radioButtonsType>
-        <choiceList>
-          <presentation>
-            <key>ru</key>
-            <value>Без машин</value>
-          </presentation>
-          <value xsi:type="core:NumberValue">
-            <value>1</value>
-          </value>
-        </choiceList>
-        <choiceList>
-          <presentation>
-            <key>ru</key>
-            <value>Без городов</value>
-          </presentation>
-          <value xsi:type="core:NumberValue">
-            <value>2</value>
-          </value>
-        </choiceList>
-      </extInfo>
-    </items>
-    <visible>true</visible>
-    <enabled>true</enabled>
-    <userVisible>
-      <common>true</common>
-    </userVisible>
-    <title>
-      <key>ru</key>
-      <value>Группа1</value>
-    </title>
-    <extendedTooltip>
-      <name>ОберткаДляФильтровРасширеннаяПодсказка</name>
-      <id>60</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <type>Label</type>
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
-      <extInfo xsi:type="form:LabelDecorationExtInfo">
-        <horizontalAlign>Left</horizontalAlign>
-      </extInfo>
-    </extendedTooltip>
-    <type>UsualGroup</type>
-    <extInfo xsi:type="form:UsualGroupExtInfo">
-      <group>HorizontalIfPossible</group>
-      <behavior>Auto</behavior>
-      <showLeftMargin>true</showLeftMargin>
-      <united>true</united>
-      <throughAlign>Auto</throughAlign>
-      <currentRowUse>Auto</currentRowUse>
-    </extInfo>
-  </items>
   <items xsi:type="form:Table">
-    <name>СписокСегментацияКлиентовПоМенеджерам</name>
-    <id>1</id>
+    <name>СписокСегментацияКлиентовПоГородам</name>
+    <id>183</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
       <common>true</common>
     </userVisible>
     <dataPath xsi:type="form:DataPath">
-      <segments>СписокСегментацияКлиентовПоМенеджерам</segments>
+      <segments>СписокСегментацияКлиентовПоГородам</segments>
     </dataPath>
     <titleLocation>None</titleLocation>
     <items xsi:type="form:FormField">
-      <name>СписокСегментацияКлиентовПоМенеджерамМенеджер</name>
-      <id>14</id>
+      <name>СписокСегментацияКлиентовПоГородамГород</name>
+      <id>196</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>СписокСегментацияКлиентовПоМенеджерам.Менеджер</segments>
+        <segments>СписокСегментацияКлиентовПоГородам.Город</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамМенеджерРасширеннаяПодсказка</name>
-        <id>16</id>
+        <name>СписокСегментацияКлиентовПоГородамГородРасширеннаяПодсказка</name>
+        <id>198</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -266,8 +39,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамМенеджерКонтекстноеМеню</name>
-        <id>15</id>
+        <name>СписокСегментацияКлиентовПоГородамГородКонтекстноеМеню</name>
+        <id>197</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -290,19 +63,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоГорячих</name>
-      <id>17</id>
+      <name>СписокСегментацияКлиентовПоГородамКоличествоГорячих</name>
+      <id>199</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоГорячих</segments>
+        <segments>СписокСегментацияКлиентовПоГородам.КоличествоГорячих</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоГорячихРасширеннаяПодсказка</name>
-        <id>19</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоГорячихРасширеннаяПодсказка</name>
+        <id>201</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -316,8 +89,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоГорячихКонтекстноеМеню</name>
-        <id>18</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоГорячихКонтекстноеМеню</name>
+        <id>200</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -340,19 +113,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоАктивных</name>
-      <id>20</id>
+      <name>СписокСегментацияКлиентовПоГородамКоличествоАктивных</name>
+      <id>202</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоАктивных</segments>
+        <segments>СписокСегментацияКлиентовПоГородам.КоличествоАктивных</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоАктивныхРасширеннаяПодсказка</name>
-        <id>22</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоАктивныхРасширеннаяПодсказка</name>
+        <id>204</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -366,8 +139,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоАктивныхКонтекстноеМеню</name>
-        <id>21</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоАктивныхКонтекстноеМеню</name>
+        <id>203</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -390,19 +163,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоТеплых</name>
-      <id>23</id>
+      <name>СписокСегментацияКлиентовПоГородамКоличествоТеплых</name>
+      <id>205</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоТеплых</segments>
+        <segments>СписокСегментацияКлиентовПоГородам.КоличествоТеплых</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоТеплыхРасширеннаяПодсказка</name>
-        <id>25</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоТеплыхРасширеннаяПодсказка</name>
+        <id>207</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -416,8 +189,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоТеплыхКонтекстноеМеню</name>
-        <id>24</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоТеплыхКонтекстноеМеню</name>
+        <id>206</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -440,19 +213,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоПотенциальных</name>
-      <id>26</id>
+      <name>СписокСегментацияКлиентовПоГородамКоличествоПотенциальных</name>
+      <id>208</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоПотенциальных</segments>
+        <segments>СписокСегментацияКлиентовПоГородам.КоличествоПотенциальных</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоПотенциальныхРасширеннаяПодсказка</name>
-        <id>28</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоПотенциальныхРасширеннаяПодсказка</name>
+        <id>210</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -466,8 +239,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоПотенциальныхКонтекстноеМеню</name>
-        <id>27</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоПотенциальныхКонтекстноеМеню</name>
+        <id>209</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -490,19 +263,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоХолодных</name>
-      <id>29</id>
+      <name>СписокСегментацияКлиентовПоГородамКоличествоХолодных</name>
+      <id>211</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоХолодных</segments>
+        <segments>СписокСегментацияКлиентовПоГородам.КоличествоХолодных</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоХолодныхРасширеннаяПодсказка</name>
-        <id>31</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоХолодныхРасширеннаяПодсказка</name>
+        <id>213</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -516,8 +289,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоХолодныхКонтекстноеМеню</name>
-        <id>30</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоХолодныхКонтекстноеМеню</name>
+        <id>212</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -540,19 +313,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоДолжников</name>
-      <id>32</id>
+      <name>СписокСегментацияКлиентовПоГородамКоличествоДолжников</name>
+      <id>214</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоДолжников</segments>
+        <segments>СписокСегментацияКлиентовПоГородам.КоличествоДолжников</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоДолжниковРасширеннаяПодсказка</name>
-        <id>34</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоДолжниковРасширеннаяПодсказка</name>
+        <id>216</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -566,8 +339,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоДолжниковКонтекстноеМеню</name>
-        <id>33</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоДолжниковКонтекстноеМеню</name>
+        <id>215</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -590,19 +363,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСегментацияКлиентовПоМенеджерамКоличествоНеЦелевых</name>
-      <id>35</id>
+      <name>СписокСегментацияКлиентовПоГородамКоличествоНеЦелевых</name>
+      <id>217</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>СписокСегментацияКлиентовПоМенеджерам.КоличествоНеЦелевых</segments>
+        <segments>СписокСегментацияКлиентовПоГородам.КоличествоНеЦелевых</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоНеЦелевыхРасширеннаяПодсказка</name>
-        <id>37</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоНеЦелевыхРасширеннаяПодсказка</name>
+        <id>219</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -616,8 +389,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамКоличествоНеЦелевыхКонтекстноеМеню</name>
-        <id>36</id>
+        <name>СписокСегментацияКлиентовПоГородамКоличествоНеЦелевыхКонтекстноеМеню</name>
+        <id>218</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -640,19 +413,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСегментацияКлиентовПоМенеджерамИтогоПоМенеджеру</name>
-      <id>41</id>
+      <name>СписокСегментацияКлиентовПоГородамИтогоПоГороду</name>
+      <id>220</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>СписокСегментацияКлиентовПоМенеджерам.ИтогоПоМенеджеру</segments>
+        <segments>СписокСегментацияКлиентовПоГородам.ИтогоПоГороду</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамИтогоПоМенеджеруРасширеннаяПодсказка</name>
-        <id>43</id>
+        <name>СписокСегментацияКлиентовПоГородамИтогоПоГородуРасширеннаяПодсказка</name>
+        <id>222</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -666,8 +439,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамИтогоПоМенеджеруКонтекстноеМеню</name>
-        <id>42</id>
+        <name>СписокСегментацияКлиентовПоГородамИтогоПоГородуКонтекстноеМеню</name>
+        <id>221</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -687,11 +460,60 @@
         <chooseType>true</chooseType>
         <typeDomainEnabled>true</typeDomainEnabled>
         <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоГородамСтандартнаяКартинка</name>
+      <id>223</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоГородам.DefaultPicture</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоГородамСтандартнаяКартинкаРасширеннаяПодсказка</name>
+        <id>225</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоГородамСтандартнаяКартинкаКонтекстноеМеню</name>
+        <id>224</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>PictureField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:ImageFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <horizontalStretch>true</horizontalStretch>
+        <verticalStretch>true</verticalStretch>
+        <fileDragMode>AsFileRef</fileDragMode>
       </extInfo>
     </items>
     <autoCommandBar>
-      <name>СписокСегментацияКлиентовПоМенеджерамКоманднаяПанель</name>
-      <id>2</id>
+      <name>СписокСегментацияКлиентовПоГородамКоманднаяПанель</name>
+      <id>184</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -706,11 +528,11 @@
       <userVisible>
         <common>true</common>
       </userVisible>
-      <name>СписокСегментацияКлиентовПоМенеджерамСтрокаПоиска</name>
-      <id>5</id>
+      <name>СписокСегментацияКлиентовПоГородамСтрокаПоиска</name>
+      <id>187</id>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамСтрокаПоискаРасширеннаяПодсказка</name>
-        <id>7</id>
+        <name>СписокСегментацияКлиентовПоГородамСтрокаПоискаРасширеннаяПодсказка</name>
+        <id>189</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -724,8 +546,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамСтрокаПоискаКонтекстноеМеню</name>
-        <id>6</id>
+        <name>СписокСегментацияКлиентовПоГородамСтрокаПоискаКонтекстноеМеню</name>
+        <id>188</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -733,7 +555,7 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <source>СписокСегментацияКлиентовПоМенеджерамСтрокаПоиска</source>
+      <source>СписокСегментацияКлиентовПоГородамСтрокаПоиска</source>
       <extInfo xsi:type="form:SearchStringAdditionExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
       </extInfo>
@@ -744,11 +566,11 @@
       <userVisible>
         <common>true</common>
       </userVisible>
-      <name>СписокСегментацияКлиентовПоМенеджерамСостояниеПросмотра</name>
-      <id>11</id>
+      <name>СписокСегментацияКлиентовПоГородамСостояниеПросмотра</name>
+      <id>193</id>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамСостояниеПросмотраРасширеннаяПодсказка</name>
-        <id>13</id>
+        <name>СписокСегментацияКлиентовПоГородамСостояниеПросмотраРасширеннаяПодсказка</name>
+        <id>195</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -762,8 +584,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамСостояниеПросмотраКонтекстноеМеню</name>
-        <id>12</id>
+        <name>СписокСегментацияКлиентовПоГородамСостояниеПросмотраКонтекстноеМеню</name>
+        <id>194</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -772,7 +594,7 @@
         <autoFill>true</autoFill>
       </contextMenu>
       <type>ViewStatusAddition</type>
-      <source>СписокСегментацияКлиентовПоМенеджерамСостояниеПросмотра</source>
+      <source>СписокСегментацияКлиентовПоГородамСостояниеПросмотра</source>
       <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
       </extInfo>
@@ -783,11 +605,11 @@
       <userVisible>
         <common>true</common>
       </userVisible>
-      <name>СписокСегментацияКлиентовПоМенеджерамУправлениеПоиском</name>
-      <id>8</id>
+      <name>СписокСегментацияКлиентовПоГородамУправлениеПоиском</name>
+      <id>190</id>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоМенеджерамУправлениеПоискомРасширеннаяПодсказка</name>
-        <id>10</id>
+        <name>СписокСегментацияКлиентовПоГородамУправлениеПоискомРасширеннаяПодсказка</name>
+        <id>192</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -801,8 +623,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоМенеджерамУправлениеПоискомКонтекстноеМеню</name>
-        <id>9</id>
+        <name>СписокСегментацияКлиентовПоГородамУправлениеПоискомКонтекстноеМеню</name>
+        <id>191</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -811,14 +633,14 @@
         <autoFill>true</autoFill>
       </contextMenu>
       <type>SearchControlAddition</type>
-      <source>СписокСегментацияКлиентовПоМенеджерамУправлениеПоиском</source>
+      <source>СписокСегментацияКлиентовПоГородамУправлениеПоиском</source>
       <extInfo xsi:type="form:SearchControlAdditionExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
       </extInfo>
     </searchControlAddition>
     <extendedTooltip>
-      <name>СписокСегментацияКлиентовПоМенеджерамРасширеннаяПодсказка</name>
-      <id>4</id>
+      <name>СписокСегментацияКлиентовПоГородамРасширеннаяПодсказка</name>
+      <id>186</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -832,8 +654,8 @@
       </extInfo>
     </extendedTooltip>
     <contextMenu>
-      <name>СписокСегментацияКлиентовПоМенеджерамКонтекстноеМеню</name>
-      <id>3</id>
+      <name>СписокСегментацияКлиентовПоГородамКонтекстноеМеню</name>
+      <id>185</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -850,7 +672,6 @@
     <selectionMode>MultiRow</selectionMode>
     <header>true</header>
     <headerHeight>1</headerHeight>
-    <footer>true</footer>
     <footerHeight>1</footerHeight>
     <horizontalScrollBar>AutoUse</horizontalScrollBar>
     <verticalScrollBar>AutoUse</verticalScrollBar>
@@ -887,11 +708,6 @@
     <event>OnCreateAtServer</event>
     <name>ПриСозданииНаСервере</name>
   </handlers>
-  <handlers>
-    <event>OnOpen</event>
-    <name>ПриОткрытии</name>
-  </handlers>
-  <autoSaveDataInSettings>Use</autoSaveDataInSettings>
   <autoTitle>true</autoTitle>
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
@@ -901,10 +717,10 @@
   <showTitle>true</showTitle>
   <showCloseButton>true</showCloseButton>
   <attributes>
-    <name>СписокСегментацияКлиентовПоМенеджерам</name>
+    <name>СписокСегментацияКлиентовПоГородам</name>
     <title>
       <key>ru</key>
-      <value>Список сегментация клиентов по менеджерам</value>
+      <value>Список сегментация клиентов по городам</value>
     </title>
     <id>1</id>
     <valueType>
@@ -918,21 +734,9 @@
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
-	Пользователи.Ссылка КАК Ссылка
-ПОМЕСТИТЬ ВТ_Пользователи
-ИЗ
-	Справочник.Пользователи КАК Пользователи
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ПродажаЗапчастей.Клиент) КАК КоличествоГорячих,
-	ВЫБОР
-		КОГДА ПродажаЗапчастей.Клиент.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА ПродажаЗапчастей.Клиент.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ КАК Ответственный
-ПОМЕСТИТЬ ГорячиеКлиентыПоМенеджерам
+	ПродажаЗапчастей.Клиент.Город2.Наименование КАК Город
+ПОМЕСТИТЬ ГорячиеКлиентыПоГородам
 ИЗ
 	Документ.ПродажаЗапчастей КАК ПродажаЗапчастей
 ГДЕ
@@ -943,17 +747,13 @@
 	И ПродажаЗапчастей.Клиент.Целевой
 
 СГРУППИРОВАТЬ ПО
-	ВЫБОР
-		КОГДА ПродажаЗапчастей.Клиент.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА ПродажаЗапчастей.Клиент.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ
+	ПродажаЗапчастей.Клиент.Город2.Наименование
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	ЗаказКлиента.Клиент КАК Клиент,
-	ЗаказКлиента.Клиент.Ответственный КАК Ответственный
+	ЗаказКлиента.Клиент.Город2.Наименование КАК Город
 ПОМЕСТИТЬ АКБ
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
@@ -962,7 +762,7 @@
 
 СГРУППИРОВАТЬ ПО
 	ЗаказКлиента.Клиент,
-	ЗаказКлиента.Клиент.Ответственный
+	ЗаказКлиента.Клиент.Город2.Наименование
 
 ИМЕЮЩИЕ
 	КОЛИЧЕСТВО(ЗаказКлиента.Клиент) > 1
@@ -971,29 +771,21 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ АКБ.Клиент) КАК КоличествоАктивных,
-	ВЫБОР
-		КОГДА АКБ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА АКБ.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ КАК Ответственный
-ПОМЕСТИТЬ АктивныеКлиентыПоМенеджерам
+	АКБ.Город КАК Город
+ПОМЕСТИТЬ АктивныеКлиентыПоГородам
 ИЗ
 	АКБ КАК АКБ
 ГДЕ
 	АКБ.Клиент.Целевой
 
 СГРУППИРОВАТЬ ПО
-	ВЫБОР
-		КОГДА АКБ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА АКБ.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ
+	АКБ.Город
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	ЗаказКлиента.Клиент КАК Клиент,
-	ЗаказКлиента.Клиент.Ответственный КАК Ответственный
+	ЗаказКлиента.Клиент.Город2.Наименование КАК Город
 ПОМЕСТИТЬ ТЕПЛЫЕ
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
@@ -1007,7 +799,7 @@
 
 СГРУППИРОВАТЬ ПО
 	ЗаказКлиента.Клиент,
-	ЗаказКлиента.Клиент.Ответственный
+	ЗаказКлиента.Клиент.Город2.Наименование
 
 ИМЕЮЩИЕ
 	КОЛИЧЕСТВО(ЗаказКлиента.Клиент) > 1
@@ -1016,29 +808,21 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ТЕПЛЫЕ.Клиент) КАК КоличествоТеплых,
-	ВЫБОР
-		КОГДА ТЕПЛЫЕ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА ТЕПЛЫЕ.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ КАК Ответственный
-ПОМЕСТИТЬ ТеплыеКлиентыПоменеджерам
+	ТЕПЛЫЕ.Город КАК Город
+ПОМЕСТИТЬ ТеплыеКлиентыПоГородам
 ИЗ
 	ТЕПЛЫЕ КАК ТЕПЛЫЕ
 ГДЕ
 	ТЕПЛЫЕ.Клиент.Целевой
 
 СГРУППИРОВАТЬ ПО
-	ВЫБОР
-		КОГДА ТЕПЛЫЕ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА ТЕПЛЫЕ.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ
+	ТЕПЛЫЕ.Город
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	ЗаказКлиента.Клиент КАК Клиент,
-	ЗаказКлиента.Клиент.Ответственный КАК Ответственный
+	ЗаказКлиента.Клиент.Город2.Наименование КАК Город
 ПОМЕСТИТЬ ПОТЕНЦ
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
@@ -1054,11 +838,10 @@
 					ТЕПЛЫЕ.Клиент
 				ИЗ
 					ТЕПЛЫЕ КАК ТЕПЛЫЕ)
-	И ЗаказКлиента.Клиент.Целевой
 
 СГРУППИРОВАТЬ ПО
 	ЗаказКлиента.Клиент,
-	ЗаказКлиента.Клиент.Ответственный
+	ЗаказКлиента.Клиент.Город2.Наименование
 
 ИМЕЮЩИЕ
 	КОЛИЧЕСТВО(ЗаказКлиента.Клиент) = 1
@@ -1068,11 +851,11 @@
 ВЫБРАТЬ
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ПОТЕНЦ.Клиент) КАК КоличествоПотенциальных,
 	ВЫБОР
-		КОГДА ПОТЕНЦ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА ПОТЕНЦ.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ КАК Ответственный
-ПОМЕСТИТЬ ПотенциальныеКлиентыПоМенеджерам
+		КОГДА ПОТЕНЦ.Город &lt;> ЗНАЧЕНИЕ(Справочник.Город.ПустаяСсылка)
+			ТОГДА ПОТЕНЦ.Город
+		ИНАЧЕ ЗНАЧЕНИЕ(Справочник.Город.ПустаяСсылка)
+	КОНЕЦ КАК Город
+ПОМЕСТИТЬ ПотенциальныеКлиентыПоГородам
 ИЗ
 	ПОТЕНЦ КАК ПОТЕНЦ
 ГДЕ
@@ -1080,16 +863,16 @@
 
 СГРУППИРОВАТЬ ПО
 	ВЫБОР
-		КОГДА ПОТЕНЦ.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА ПОТЕНЦ.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
+		КОГДА ПОТЕНЦ.Город &lt;> ЗНАЧЕНИЕ(Справочник.Город.ПустаяСсылка)
+			ТОГДА ПОТЕНЦ.Город
+		ИНАЧЕ ЗНАЧЕНИЕ(Справочник.Город.ПустаяСсылка)
 	КОНЕЦ
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	Клиенты.Ссылка КАК Клиент,
-	Клиенты.Ответственный КАК Ответственный
+	Клиенты.Город2.Наименование КАК Город
 ПОМЕСТИТЬ ХолодныеКлиенты
 ИЗ
 	Справочник.Клиенты КАК Клиенты
@@ -1114,17 +897,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ХолодныеКлиенты.Клиент) КАК КоличествоХолодных,
-	ВЫБОР
-		КОГДА ХолодныеКлиенты.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА ХолодныеКлиенты.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ КАК Ответственный
-ПОМЕСТИТЬ ХолодныеКлиентыПоМенеджерам
+	ХолодныеКлиенты.Город КАК Город
+ПОМЕСТИТЬ ХолодныеКлиентыПоГородам
 ИЗ
 	ХолодныеКлиенты КАК ХолодныеКлиенты
 ГДЕ
-	ХолодныеКлиенты.Клиент.Целевой
-	И НЕ ХолодныеКлиенты.Клиент В
+	НЕ ХолодныеКлиенты.Клиент В
 				(ВЫБРАТЬ
 					АКБ.Клиент
 				ИЗ
@@ -1139,13 +917,10 @@
 					ПОТЕНЦ.Клиент
 				ИЗ
 					ПОТЕНЦ КАК ПОТЕНЦ)
+	И ХолодныеКлиенты.Клиент.Целевой
 
 СГРУППИРОВАТЬ ПО
-	ВЫБОР
-		КОГДА ХолодныеКлиенты.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА ХолодныеКлиенты.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ
+	ХолодныеКлиенты.Город
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1196,163 +971,90 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Долги.Клиент) КАК КоличествоДолжников,
-	ВЫБОР
-		КОГДА Долги.Клиент.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА Долги.Клиент.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ КАК Ответственный
-ПОМЕСТИТЬ ДолжникиПоМенеджерам
+	Долги.Клиент.Город2.Наименование КАК Город
+ПОМЕСТИТЬ ДолжникиПоГородам
 ИЗ
 	Долги КАК Долги
 ГДЕ
 	Долги.Долг > 0
+	И Долги.Клиент.Целевой
 
 СГРУППИРОВАТЬ ПО
-	ВЫБОР
-		КОГДА Долги.Клиент.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА Долги.Клиент.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ
+	Долги.Клиент.Город2.Наименование
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Клиенты.Ссылка) КАК КоличествоНеЦелевых,
-	ВЫБОР
-		КОГДА Клиенты.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА Клиенты.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ КАК Ответственный
-ПОМЕСТИТЬ НеЦелевыеКлиентыПоМенеджерам
+	Клиенты.Город2.Наименование КАК Город
+ПОМЕСТИТЬ НеЦелевыеКлиентыПоГородам
 ИЗ
 	Справочник.Клиенты КАК Клиенты
 ГДЕ
 	НЕ Клиенты.Целевой
 
 СГРУППИРОВАТЬ ПО
-	ВЫБОР
-		КОГДА Клиенты.Ответственный &lt;> ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)
-			ТОГДА Клиенты.Ответственный
-		ИНАЧЕ &amp;ОбщийКлиент
-	КОНЕЦ
+	Клиенты.Город2.Наименование
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	ВТ_Пользователи.Ссылка КАК Менеджер,
-	ГорячиеКлиентыПоМенеджерам.КоличествоГорячих КАК КоличествоГорячих,
-	АктивныеКлиентыПоМенеджерам.КоличествоАктивных КАК КоличествоАктивных,
-	ТеплыеКлиентыПоменеджерам.КоличествоТеплых КАК КоличествоТеплых,
-	ПотенциальныеКлиентыПоМенеджерам.КоличествоПотенциальных КАК КоличествоПотенциальных,
-	ХолодныеКлиентыПоМенеджерам.КоличествоХолодных КАК КоличествоХолодных,
-	ДолжникиПоМенеджерам.КоличествоДолжников КАК КоличествоДолжников,
-	НеЦелевыеКлиентыПоМенеджерам.КоличествоНеЦелевых КАК КоличествоНеЦелевых,
-	ЕСТЬNULL(ГорячиеКлиентыПоМенеджерам.КоличествоГорячих, 0) + ЕСТЬNULL(АктивныеКлиентыПоМенеджерам.КоличествоАктивных, 0) + ЕСТЬNULL(ТеплыеКлиентыПоменеджерам.КоличествоТеплых, 0) + ЕСТЬNULL(ПотенциальныеКлиентыПоМенеджерам.КоличествоПотенциальных, 0) + ЕСТЬNULL(ХолодныеКлиентыПоМенеджерам.КоличествоХолодных, 0) + ЕСТЬNULL(ДолжникиПоМенеджерам.КоличествоДолжников, 0) + ЕСТЬNULL(НеЦелевыеКлиентыПоМенеджерам.КоличествоНеЦелевых, 0) КАК ИтогоПоМенеджеру
-ПОМЕСТИТЬ ВсеПользователи
+	СпрГород.Наименование КАК Город,
+	МАКСИМУМ(ГорячиеКлиентыПоГородам.КоличествоГорячих) КАК КоличествоГорячих,
+	МАКСИМУМ(АктивныеКлиентыПоГородам.КоличествоАктивных) КАК КоличествоАктивных,
+	МАКСИМУМ(ТеплыеКлиентыПоГородам.КоличествоТеплых) КАК КоличествоТеплых,
+	МАКСИМУМ(ПотенциальныеКлиентыПоГородам.КоличествоПотенциальных) КАК КоличествоПотенциальных,
+	МАКСИМУМ(ХолодныеКлиентыПоГородам.КоличествоХолодных) КАК КоличествоХолодных,
+	МАКСИМУМ(ДолжникиПоГородам.КоличествоДолжников) КАК КоличествоДолжников,
+	МАКСИМУМ(НеЦелевыеКлиентыПоГородам.КоличествоНеЦелевых) КАК КоличествоНеЦелевых
+ПОМЕСТИТЬ ВсеГорода
 ИЗ
-	ВТ_Пользователи КАК ВТ_Пользователи
-		ЛЕВОЕ СОЕДИНЕНИЕ ГорячиеКлиентыПоМенеджерам КАК ГорячиеКлиентыПоМенеджерам
-		ПО (ГорячиеКлиентыПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
-		ЛЕВОЕ СОЕДИНЕНИЕ АктивныеКлиентыПоМенеджерам КАК АктивныеКлиентыПоМенеджерам
-		ПО (АктивныеКлиентыПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
-		ЛЕВОЕ СОЕДИНЕНИЕ ТеплыеКлиентыПоменеджерам КАК ТеплыеКлиентыПоменеджерам
-		ПО (ТеплыеКлиентыПоменеджерам.Ответственный = ВТ_Пользователи.Ссылка)
-		ЛЕВОЕ СОЕДИНЕНИЕ ПотенциальныеКлиентыПоМенеджерам КАК ПотенциальныеКлиентыПоМенеджерам
-		ПО (ПотенциальныеКлиентыПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
-		ЛЕВОЕ СОЕДИНЕНИЕ ХолодныеКлиентыПоМенеджерам КАК ХолодныеКлиентыПоМенеджерам
-		ПО (ХолодныеКлиентыПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
-		ЛЕВОЕ СОЕДИНЕНИЕ ДолжникиПоМенеджерам КАК ДолжникиПоМенеджерам
-		ПО (ДолжникиПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
-		ЛЕВОЕ СОЕДИНЕНИЕ НеЦелевыеКлиентыПоМенеджерам КАК НеЦелевыеКлиентыПоМенеджерам
-		ПО (НеЦелевыеКлиентыПоМенеджерам.Ответственный = ВТ_Пользователи.Ссылка)
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	ВсеПользователи.Менеджер КАК Менеджер,
-	ВсеПользователи.КоличествоГорячих КАК КоличествоГорячих,
-	ВсеПользователи.КоличествоАктивных КАК КоличествоАктивных,
-	ВсеПользователи.КоличествоТеплых КАК КоличествоТеплых,
-	ВсеПользователи.КоличествоПотенциальных КАК КоличествоПотенциальных,
-	ВсеПользователи.КоличествоХолодных КАК КоличествоХолодных,
-	ВсеПользователи.КоличествоДолжников КАК КоличествоДолжников,
-	ВсеПользователи.КоличествоНеЦелевых КАК КоличествоНеЦелевых,
-	ВсеПользователи.ИтогоПоМенеджеру КАК ИтогоПоМенеджеру
-ИЗ
-	ВсеПользователи КАК ВсеПользователи
+	Справочник.Город КАК СпрГород
+		ЛЕВОЕ СОЕДИНЕНИЕ ГорячиеКлиентыПоГородам КАК ГорячиеКлиентыПоГородам
+		ПО (СпрГород.Наименование = ГорячиеКлиентыПоГородам.Город)
+		ЛЕВОЕ СОЕДИНЕНИЕ АктивныеКлиентыПоГородам КАК АктивныеКлиентыПоГородам
+		ПО (АктивныеКлиентыПоГородам.Город = СпрГород.Наименование)
+		ЛЕВОЕ СОЕДИНЕНИЕ ТеплыеКлиентыПоГородам КАК ТеплыеКлиентыПоГородам
+		ПО (ТеплыеКлиентыПоГородам.Город = СпрГород.Наименование)
+		ЛЕВОЕ СОЕДИНЕНИЕ ПотенциальныеКлиентыПоГородам КАК ПотенциальныеКлиентыПоГородам
+		ПО (ПотенциальныеКлиентыПоГородам.Город = СпрГород.Наименование)
+		ЛЕВОЕ СОЕДИНЕНИЕ ХолодныеКлиентыПоГородам КАК ХолодныеКлиентыПоГородам
+		ПО (ХолодныеКлиентыПоГородам.Город = СпрГород.Наименование)
+		ЛЕВОЕ СОЕДИНЕНИЕ ДолжникиПоГородам КАК ДолжникиПоГородам
+		ПО (ДолжникиПоГородам.Город = СпрГород.Наименование)
+		ЛЕВОЕ СОЕДИНЕНИЕ НеЦелевыеКлиентыПоГородам КАК НеЦелевыеКлиентыПоГородам
+		ПО (НеЦелевыеКлиентыПоГородам.Город = СпрГород.Наименование)
 ГДЕ
-	(ВсеПользователи.КоличествоГорячих &lt;> 0
-			ИЛИ ВсеПользователи.КоличествоАктивных &lt;> 0
-			ИЛИ ВсеПользователи.КоличествоТеплых &lt;> 0
-			ИЛИ ВсеПользователи.КоличествоПотенциальных &lt;> 0
-			ИЛИ ВсеПользователи.КоличествоХолодных &lt;> 0
-			ИЛИ ВсеПользователи.КоличествоДолжников &lt;> 0
-			ИЛИ ВсеПользователи.КоличествоНеЦелевых &lt;> 0)</queryText>
+	(АктивныеКлиентыПоГородам.КоличествоАктивных &lt;> 0
+			ИЛИ ПотенциальныеКлиентыПоГородам.КоличествоПотенциальных &lt;> 0
+			ИЛИ ГорячиеКлиентыПоГородам.КоличествоГорячих &lt;> 0
+			ИЛИ НеЦелевыеКлиентыПоГородам.КоличествоНеЦелевых &lt;> 0
+			ИЛИ ХолодныеКлиентыПоГородам.КоличествоХолодных &lt;> 0
+			ИЛИ ТеплыеКлиентыПоГородам.КоличествоТеплых &lt;> 0
+			ИЛИ ДолжникиПоГородам.КоличествоДолжников &lt;> 0)
+
+СГРУППИРОВАТЬ ПО
+	СпрГород.Наименование
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВсеГорода.Город КАК Город,
+	ВсеГорода.КоличествоГорячих КАК КоличествоГорячих,
+	ВсеГорода.КоличествоАктивных КАК КоличествоАктивных,
+	ВсеГорода.КоличествоТеплых КАК КоличествоТеплых,
+	ВсеГорода.КоличествоПотенциальных КАК КоличествоПотенциальных,
+	ВсеГорода.КоличествоХолодных КАК КоличествоХолодных,
+	ВсеГорода.КоличествоДолжников КАК КоличествоДолжников,
+	ВсеГорода.КоличествоНеЦелевых КАК КоличествоНеЦелевых,
+	ЕСТЬNULL(ВсеГорода.КоличествоГорячих, 0) + ЕСТЬNULL(ВсеГорода.КоличествоАктивных, 0) + ЕСТЬNULL(ВсеГорода.КоличествоТеплых, 0) + ЕСТЬNULL(ВсеГорода.КоличествоПотенциальных, 0) + ЕСТЬNULL(ВсеГорода.КоличествоХолодных, 0) + ЕСТЬNULL(ВсеГорода.КоличествоДолжников, 0) + ЕСТЬNULL(ВсеГорода.КоличествоНеЦелевых, 0) КАК ИтогоПоГороду
+ИЗ
+	ВсеГорода КАК ВсеГорода</queryText>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
-  </attributes>
-  <attributes>
-    <name>Фильтр</name>
-    <title>
-      <key>ru</key>
-      <value>Фильтр</value>
-    </title>
-    <id>2</id>
-    <valueType>
-      <types>Number</types>
-      <numberQualifiers>
-        <precision>10</precision>
-      </numberQualifiers>
-    </valueType>
-    <view>
-      <common>true</common>
-    </view>
-    <edit>
-      <common>true</common>
-    </edit>
-  </attributes>
-  <attributes>
-    <name>ДатаОтчета</name>
-    <title>
-      <key>ru</key>
-      <value>Дата</value>
-    </title>
-    <id>3</id>
-    <valueType>
-      <types>Date</types>
-      <dateQualifiers>
-        <dateFractions>Date</dateFractions>
-      </dateQualifiers>
-    </valueType>
-    <view>
-      <common>true</common>
-    </view>
-    <edit>
-      <common>true</common>
-    </edit>
-  </attributes>
-  <attributes>
-    <name>ФильтрПоЗаполненнымРеквизитамКлиента</name>
-    <title>
-      <key>ru</key>
-      <value>Фильтр по заполненным реквизитам клиента</value>
-    </title>
-    <id>4</id>
-    <valueType>
-      <types>Number</types>
-      <numberQualifiers>
-        <precision>10</precision>
-      </numberQualifiers>
-    </valueType>
-    <view>
-      <common>true</common>
-    </view>
-    <edit>
-      <common>true</common>
-    </edit>
   </attributes>
   <commandInterface>
     <navigationPanel/>
