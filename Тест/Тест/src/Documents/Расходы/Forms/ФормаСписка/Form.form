@@ -1038,6 +1038,56 @@
             <autoMaxHeight>true</autoMaxHeight>
           </extInfo>
         </items>
+        <items xsi:type="form:FormField">
+          <name>ДатаРасхода</name>
+          <id>189</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Список.ДатаРасхода</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ДатаРасходаРасширеннаяПодсказка</name>
+            <id>191</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ДатаРасходаКонтекстноеМеню</name>
+            <id>190</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
         <autoCommandBar>
           <name>СписокКоманднаяПанель</name>
           <id>46</id>
@@ -2560,7 +2610,8 @@
 	ДокументРасходы.МоментВремени КАК МоментВремени,
 	ДокументРасходы.НомерВходящегоДокумента КАК НомерВходящегоДокумента,
 	ДокументРасходы.ДатаВходящегоДокумента КАК ДатаВходящегоДокумента,
-	ДокументРасходы.Статья КАК СтатьяРасхода
+	ДокументРасходы.Статья КАК СтатьяРасхода,
+	ДокументРасходы.ДатаРасхода
 ИЗ
 	Документ.Расходы КАК ДокументРасходы</queryText>
       <mainTable>Document.Расходы</mainTable>
