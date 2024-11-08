@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c48b7c98-92b9-4d46-a3b5-69f9e90f785e">
+  <name>wt10_time_control</name>
+  <synonym>
+    <key>ru</key>
+    <value>Wt10 time control</value>
+  </synonym>
+  <rootURL>wt10_time_control</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="03746b10-ffeb-4dc8-a90c-139f15258a1e">
+    <name>ПолучитьСписокВсехРуководителей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список всех руководителей</value>
+    </synonym>
+    <template>/get-all-bosses-list</template>
+    <methods uuid="353dfdba-5407-4e0f-b7d6-decc64b84af3">
+      <name>GetAllBossesList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get all bosses list</value>
+      </synonym>
+      <handler>ПолучитьСписокВсехРуководителейgetallbosseslist</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>
