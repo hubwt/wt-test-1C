@@ -63,6 +63,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокСегментацияКлиентовПоГородамОбласть</name>
+      <id>226</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокСегментацияКлиентовПоГородам.Область</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокСегментацияКлиентовПоГородамОбластьРасширеннаяПодсказка</name>
+        <id>228</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокСегментацияКлиентовПоГородамОбластьКонтекстноеМеню</name>
+        <id>227</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокСегментацияКлиентовПоГородамКоличествоГорячих</name>
       <id>199</id>
       <visible>true</visible>
@@ -935,14 +985,6 @@
 
 СГРУППИРОВАТЬ ПО
 	ПродажаЗапчастей.Клиент
-
-ОБЪЕДИНИТЬ
-
-ВЫБРАТЬ
-	ЗаказНаряд.Клиент,
-	ЗаказНаряд.СуммаДокумента
-ИЗ
-	Документ.ЗаказНаряд КАК ЗаказНаряд
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1006,7 +1048,8 @@
 	МАКСИМУМ(ПотенциальныеКлиентыПоГородам.КоличествоПотенциальных) КАК КоличествоПотенциальных,
 	МАКСИМУМ(ХолодныеКлиентыПоГородам.КоличествоХолодных) КАК КоличествоХолодных,
 	МАКСИМУМ(ДолжникиПоГородам.КоличествоДолжников) КАК КоличествоДолжников,
-	МАКСИМУМ(НеЦелевыеКлиентыПоГородам.КоличествоНеЦелевых) КАК КоличествоНеЦелевых
+	МАКСИМУМ(НеЦелевыеКлиентыПоГородам.КоличествоНеЦелевых) КАК КоличествоНеЦелевых,
+	МАКСИМУМ(СпрГород.Владелец) КАК Область
 ПОМЕСТИТЬ ВсеГорода
 ИЗ
 	Справочник.Город КАК СпрГород
@@ -1040,6 +1083,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	ВсеГорода.Город КАК Город,
+	ВсеГорода.Область КАК Область,
 	ВсеГорода.КоличествоГорячих КАК КоличествоГорячих,
 	ВсеГорода.КоличествоАктивных КАК КоличествоАктивных,
 	ВсеГорода.КоличествоТеплых КАК КоличествоТеплых,
