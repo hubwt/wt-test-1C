@@ -1,5 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:FormField">
+    <name>Фильтр</name>
+    <id>229</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Фильтр</segments>
+    </dataPath>
+    <titleLocation>None</titleLocation>
+    <handlers>
+      <event>OnChange</event>
+      <name>ФильтрПриИзменении</name>
+    </handlers>
+    <extendedTooltip>
+      <name>ФильтрРасширеннаяПодсказка</name>
+      <id>231</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>ФильтрКонтекстноеМеню</name>
+      <id>230</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>RadioButtonField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+      <radioButtonsType>Tumbler</radioButtonsType>
+      <choiceList>
+        <presentation>
+          <key>ru</key>
+          <value>Город</value>
+        </presentation>
+        <value xsi:type="core:NumberValue">
+          <value>1</value>
+        </value>
+      </choiceList>
+      <choiceList>
+        <presentation>
+          <key>ru</key>
+          <value>Область</value>
+        </presentation>
+        <value xsi:type="core:NumberValue">
+          <value>2</value>
+        </value>
+      </choiceList>
+    </extInfo>
+  </items>
   <items xsi:type="form:Table">
     <name>СписокСегментацияКлиентовПоГородам</name>
     <id>183</id>
@@ -463,19 +531,19 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСегментацияКлиентовПоГородамИтогоПоГороду</name>
-      <id>220</id>
+      <name>СписокСегментацияКлиентовПоГородамИтого</name>
+      <id>232</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>СписокСегментацияКлиентовПоГородам.ИтогоПоГороду</segments>
+        <segments>СписокСегментацияКлиентовПоГородам.Итого</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСегментацияКлиентовПоГородамИтогоПоГородуРасширеннаяПодсказка</name>
-        <id>222</id>
+        <name>СписокСегментацияКлиентовПоГородамИтогоРасширеннаяПодсказка</name>
+        <id>234</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -489,8 +557,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСегментацияКлиентовПоГородамИтогоПоГородуКонтекстноеМеню</name>
-        <id>221</id>
+        <name>СписокСегментацияКлиентовПоГородамИтогоКонтекстноеМеню</name>
+        <id>233</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -1068,7 +1136,7 @@
 	ЕСТЬNULL(ВсеГорода.КоличествоГорячих, 0) + ЕСТЬNULL(ВсеГорода.КоличествоАктивных, 0) +
 		ЕСТЬNULL(ВсеГорода.КоличествоТеплых, 0) + ЕСТЬNULL(ВсеГорода.КоличествоПотенциальных, 0) +
 		ЕСТЬNULL(ВсеГорода.КоличествоХолодных, 0) + ЕСТЬNULL(ВсеГорода.КоличествоДолжников, 0) +
-		ЕСТЬNULL(ВсеГорода.КоличествоНеЦелевых, 0) КАК ИтогоПоГороду
+		ЕСТЬNULL(ВсеГорода.КоличествоНеЦелевых, 0) КАК Итого
 ИЗ
 	ВсеГорода КАК ВсеГорода</queryText>
       <autoFillAvailableFields>true</autoFillAvailableFields>
@@ -1076,6 +1144,26 @@
       <autoSaveUserSettings>true</autoSaveUserSettings>
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
+  </attributes>
+  <attributes>
+    <name>Фильтр</name>
+    <title>
+      <key>ru</key>
+      <value>Фильтр</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
   </attributes>
   <commandInterface>
     <navigationPanel/>
