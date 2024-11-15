@@ -24,4 +24,36 @@
       <handler>ПолучитьСписокВсехРуководителейgetallbosseslist</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="e9531a96-07f0-4679-bab0-c6f60dbc3f1b">
+    <name>GetSubDepartaments</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get sub departaments</value>
+    </synonym>
+    <template>/get_sub_departaments/{id}</template>
+    <methods uuid="d1688de8-3e96-40a5-83d6-fdff3541c885">
+      <name>GetSubDepartaments</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get sub departaments</value>
+      </synonym>
+      <handler>GetSubDepartamentsGetSubDepartaments</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b389b8be-59b1-4a7e-9f52-1c6048e7dc0b">
+    <name>ПолучитьСотрудниковПодОтдела</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить сотрудников под отдела</value>
+    </synonym>
+    <template>/get_workers_subdepartament/{id}</template>
+    <methods uuid="e21347fc-c4c3-435f-8972-03f3cf37da65">
+      <name>getWorkersSubdepartament</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get workers subdepartament</value>
+      </synonym>
+      <handler>ПолучитьСотрудниковПодОтделаgetWorkersSubdepartament</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
