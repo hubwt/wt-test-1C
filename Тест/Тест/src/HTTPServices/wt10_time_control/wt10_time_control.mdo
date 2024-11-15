@@ -56,4 +56,36 @@
       <handler>ПолучитьСотрудниковПодОтделаgetWorkersSubdepartament</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="8bed2b08-6b0e-4898-a644-5d872e0f32f3">
+    <name>ПолучитьСписокОтделов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список отделов</value>
+    </synonym>
+    <template>/get-list-departments</template>
+    <methods uuid="b949569f-68f5-4f19-8586-8ce87563674a">
+      <name>getListDepartments</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get list departments</value>
+      </synonym>
+      <handler>ПолучитьСписокОтделовПолучитьСписокОтделов</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="be4c1122-68f8-4f02-8791-8fec5ef33835">
+    <name>ПолучитьСписокСотрудников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список сотрудников</value>
+    </synonym>
+    <template>/get-all-workers-list/{department}</template>
+    <methods uuid="b4b10bf7-90cc-4cf2-9f6e-c2c856eee94f">
+      <name>getAllWorkersList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get all workers list</value>
+      </synonym>
+      <handler>ПолучитьСписокСотрудниковgetAllWorkersList</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
