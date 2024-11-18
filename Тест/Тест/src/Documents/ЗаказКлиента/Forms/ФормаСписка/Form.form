@@ -1188,6 +1188,55 @@
           <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
         </items>
         <items xsi:type="form:FormField">
+          <name>ПорядковыйНомерПоСтатусу</name>
+          <id>421</id>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Список.ПорядковыйНомерПоСтатусу</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ПорядковыйНомерПоСтатусуРасширеннаяПодсказка</name>
+            <id>423</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ПорядковыйНомерПоСтатусуКонтекстноеМеню</name>
+            <id>422</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <width>3</width>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>Номер</name>
           <id>16</id>
           <visible>true</visible>
@@ -6816,7 +6865,10 @@
 		КОГДА ВТ_Константа.Значение &lt; РАЗНОСТЬДАТ(ДокументЗаказКлиента.Дата, ДокументЗаказКлиента.ДатаСвязи, МИНУТА)
 			ТОГДА &quot;Алярм, GGS&quot;
 		ИНАЧЕ &quot;Все норм&quot;
-	КОНЕЦ КАК ФактРеакцияНаЗаявку
+	КОНЕЦ КАК ФактРеакцияНаЗаявку,
+	ДокументЗаказКлиента.ПорядковыйНомерПоСтатусу
+{ГДЕ
+	(ДокументЗаказКлиента.Ответственный = &amp;Ответственный) КАК Поле2}
 ИЗ
 	Документ.ЗаказКлиента КАК ДокументЗаказКлиента
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Приходы КАК ВТ_Приходы
@@ -6829,9 +6881,7 @@
 		ПО ДокументЗаказКлиента.Ссылка = ВТ_Звонки.Заявка,
 	ВТ_Константа КАК ВТ_Константа
 ГДЕ
-	ДокументЗаказКлиента.Дата МЕЖДУ &amp;ДатаНач И &amp;ТекДата
-{ГДЕ
-	(ДокументЗаказКлиента.Ответственный = &amp;Ответственный) КАК Поле2}</queryText>
+	ДокументЗаказКлиента.Дата МЕЖДУ &amp;ДатаНач И &amp;ТекДата</queryText>
       <mainTable>Document.ЗаказКлиента</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
