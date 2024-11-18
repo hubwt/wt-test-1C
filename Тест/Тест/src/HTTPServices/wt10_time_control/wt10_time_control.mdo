@@ -24,4 +24,84 @@
       <handler>ПолучитьСписокВсехРуководителейgetallbosseslist</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="e9531a96-07f0-4679-bab0-c6f60dbc3f1b">
+    <name>GetSubDepartaments</name>
+    <synonym>
+      <key>ru</key>
+      <value>Get sub departaments</value>
+    </synonym>
+    <template>/get_sub_departaments/{id}</template>
+    <methods uuid="d1688de8-3e96-40a5-83d6-fdff3541c885">
+      <name>GetSubDepartaments</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get sub departaments</value>
+      </synonym>
+      <handler>GetSubDepartamentsGetSubDepartaments</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="b389b8be-59b1-4a7e-9f52-1c6048e7dc0b">
+    <name>ПолучитьСотрудниковПодОтдела</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить сотрудников под отдела</value>
+    </synonym>
+    <template>/get_workers_subdepartament/{id}</template>
+    <methods uuid="e21347fc-c4c3-435f-8972-03f3cf37da65">
+      <name>getWorkersSubdepartament</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get workers subdepartament</value>
+      </synonym>
+      <handler>ПолучитьСотрудниковПодОтделаgetWorkersSubdepartament</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8bed2b08-6b0e-4898-a644-5d872e0f32f3">
+    <name>ПолучитьСписокОтделов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список отделов</value>
+    </synonym>
+    <template>/get-list-departments</template>
+    <methods uuid="b949569f-68f5-4f19-8586-8ce87563674a">
+      <name>getListDepartments</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get list departments</value>
+      </synonym>
+      <handler>ПолучитьСписокОтделовПолучитьСписокОтделов</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="be4c1122-68f8-4f02-8791-8fec5ef33835">
+    <name>ПолучитьСписокСотрудников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список сотрудников</value>
+    </synonym>
+    <template>/get-all-workers-list/{department}</template>
+    <methods uuid="b4b10bf7-90cc-4cf2-9f6e-c2c856eee94f">
+      <name>getAllWorkersList</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get all workers list</value>
+      </synonym>
+      <handler>ПолучитьСписокСотрудниковgetAllWorkersList</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3cdeb225-bc42-4c24-abcc-45bf701d2576">
+    <name>ПолучитьВсехСотрудинков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить всех сотрудинков</value>
+    </synonym>
+    <template>/get_all_workers</template>
+    <methods uuid="256146d7-957a-443e-8ad3-00837f1b35db">
+      <name>GetAllWorkers</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get all workers</value>
+      </synonym>
+      <handler>ПолучитьВсехСотрудинковGetAllWorkers</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4474a427-851f-4cca-be66-85233a34c195">
+  <producedTypes>
+    <selectionType typeId="937387df-eb40-4a82-b821-e97fa6b59c04" valueTypeId="48c7aed5-e348-488c-95c6-0c937dd268eb"/>
+    <listType typeId="3c5f5d5c-0809-4644-88ff-d54c210134b8" valueTypeId="4942aa17-f28d-4cc0-957f-242d3eca8734"/>
+    <managerType typeId="0349bb96-c9ad-4ce6-bf77-2f1e08832891" valueTypeId="6c0a4f58-2419-4cc9-aed7-aac3bf496b39"/>
+    <recordSetType typeId="20364db7-960e-4802-aaf0-7ce4bdfa95f9" valueTypeId="b1797aa0-42f2-452c-bb41-576f68427dfb"/>
+    <recordKeyType typeId="eda7bbd8-8df1-4e0c-b17a-092fa7409270" valueTypeId="5cc5fabc-f352-486d-8c22-fba70bc57441"/>
+    <recordType typeId="a594bc68-05bc-4caf-8f5b-0d8131638666" valueTypeId="3dbd8472-c897-4961-a521-05e7caea683f"/>
+    <recordManagerType typeId="47ffd09a-9353-4d57-b996-602c9f1487cd" valueTypeId="fa605498-931b-479b-a4a7-c1a899e29ab0"/>
+  </producedTypes>
+  <name>ПорядокЗаявок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Порядок заявок</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="be3d1495-4396-45a2-803e-3fa19b0fc7a5">
+    <name>ПорядковыйНомер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядковый номер</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="da105ba3-4008-4695-84ba-8b2a4998eecb">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.дт_СостоянияЗаказовКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="15deef44-5590-4208-a758-0b30bb521771">
+    <name>Заявка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

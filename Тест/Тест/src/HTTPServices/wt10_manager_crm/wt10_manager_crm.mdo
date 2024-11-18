@@ -40,4 +40,38 @@
       <handler>ПолучитьЗаявкиПоСтатусуgetappbystatus</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="8e264307-8067-490e-a1e2-d8b4991dfc86">
+    <name>СоздатьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать заявку</value>
+    </synonym>
+    <template>/create-application</template>
+    <methods uuid="e5c4ff0f-1bd3-40f9-b7d9-8431372ee383">
+      <name>createApplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Create application</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьЗаявкуcreateApplication</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="6b2ba332-47e9-4fca-8192-73e4104c3560">
+    <name>ИзменитьСтатусЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить статус заявки</value>
+    </synonym>
+    <template>/change-status-app/{id}</template>
+    <methods uuid="cc2c31f7-047f-43dc-8820-60cf2e46db66">
+      <name>ChangeStatusApp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change status app</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьСтатусЗаявкиchangestatusapp</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
