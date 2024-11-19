@@ -227,32 +227,27 @@
       <currentRowUse>Auto</currentRowUse>
     </extInfo>
   </items>
-  <items xsi:type="form:Table">
-    <name>АналитикаЦен</name>
-    <id>1</id>
-    <visible>true</visible>
-    <enabled>true</enabled>
-    <userVisible>
-      <common>true</common>
-    </userVisible>
-    <dataPath xsi:type="form:DataPath">
-      <segments>АналитикаЦен</segments>
-    </dataPath>
-    <titleLocation>None</titleLocation>
+  <items xsi:type="form:FormGroup">
+    <name>ГруппаОтборПериоды</name>
+    <id>89</id>
     <items xsi:type="form:FormField">
-      <name>АналитикаЦенДата</name>
-      <id>74</id>
+      <name>ПериодДатаИзмененияЦены</name>
+      <id>86</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>АналитикаЦен.Дата</segments>
+        <segments>ПериодДатаИзмененияЦены</segments>
       </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>ПериодДатаИзмененияЦеныПриИзменении</name>
+      </handlers>
       <extendedTooltip>
-        <name>АналитикаЦенДатаРасширеннаяПодсказка</name>
-        <id>76</id>
+        <name>ПериодДатаИзмененияЦеныРасширеннаяПодсказка</name>
+        <id>88</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -266,8 +261,158 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>АналитикаЦенДатаКонтекстноеМеню</name>
-        <id>75</id>
+        <name>ПериодДатаИзмененияЦеныКонтекстноеМеню</name>
+        <id>87</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>ПериодДатаПродажи</name>
+      <id>91</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>ПериодДатаПродажи</segments>
+      </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>ПериодДатаПродажиПриИзменении</name>
+      </handlers>
+      <extendedTooltip>
+        <name>ПериодДатаПродажиРасширеннаяПодсказка</name>
+        <id>93</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ПериодДатаПродажиКонтекстноеМеню</name>
+        <id>92</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Группа1</value>
+    </title>
+    <extendedTooltip>
+      <name>ГруппаОтборПериодыРасширеннаяПодсказка</name>
+      <id>90</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>AlwaysHorizontal</group>
+      <behavior>Auto</behavior>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <items xsi:type="form:Table">
+    <name>АналитикаЦен</name>
+    <id>1</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>АналитикаЦен</segments>
+    </dataPath>
+    <titleLocation>None</titleLocation>
+    <items xsi:type="form:FormField">
+      <name>АналитикаЦенДатаИзмененияЦены</name>
+      <id>77</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>АналитикаЦен.ДатаИзмененияЦены</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>АналитикаЦенДатаИзмененияЦеныРасширеннаяПодсказка</name>
+        <id>79</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>АналитикаЦенДатаИзмененияЦеныКонтекстноеМеню</name>
+        <id>78</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -798,6 +943,106 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>АналитикаЦенДатаПродажи</name>
+      <id>80</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>АналитикаЦен.ДатаПродажи</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>АналитикаЦенДатаПродажиРасширеннаяПодсказка</name>
+        <id>82</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>АналитикаЦенДатаПродажиКонтекстноеМеню</name>
+        <id>81</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>АналитикаЦенПродажа</name>
+      <id>83</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>АналитикаЦен.Продажа</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>АналитикаЦенПродажаРасширеннаяПодсказка</name>
+        <id>85</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>АналитикаЦенПродажаКонтекстноеМеню</name>
+        <id>84</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>АналитикаЦенСтатус</name>
       <id>26</id>
       <visible>true</visible>
@@ -1290,7 +1535,7 @@
 ИЗ
 	ВТ_ЦеныДеталейСДатой КАК ВТ_ЦеныДеталейСДатой
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Документ.ПродажаЗапчастей.Таблица КАК ПродажаЗапчастейТаблица
-		ПО ПродажаЗапчастейТаблица.Товар = ВТ_ЦеныДеталейСДатой.ИндНомер.Владелец
+		ПО (ПродажаЗапчастейТаблица.Товар = ВТ_ЦеныДеталейСДатой.ИндНомер.Владелец)
 
 СГРУППИРОВАТЬ ПО
 	ВТ_ЦеныДеталейСДатой.ИндНомер,
@@ -1299,7 +1544,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	ВТ_ЦеныДеталейСДатой.Дата КАК Дата,
+	ВТ_ЦеныДеталейСДатой.Дата КАК ДатаИзмененияЦены,
 	ВТ_ЦеныДеталейСДатой.ИндНомер КАК ИндНомер,
 	ВТ_ЦеныДеталейСДатой.ИндНомер.Владелец КАК Номенклатура,
 	ВТ_ЦеныДеталейСДатой.ИндНомер.Владелец.Артикул КАК Артикул,
@@ -1321,6 +1566,8 @@
 			ТОГДА ПродажаЗапчастейТаблица.Сумма
 		ИНАЧЕ 0
 	КОНЕЦ КАК СуммаПродажи,
+	ПродажаЗапчастейТаблица.Ссылка.Дата КАК ДатаПродажи,
+	ПродажаЗапчастейТаблица.Ссылка.Ссылка КАК Продажа,
 	ВТ_ЦеныДеталейСДатой.ОтветственныйПользователь КАК ОтветственныйПользователь,
 	ВЫБОР
 		КОГДА ПродажаЗапчастейТаблица.СтатусТовара = ИСТИНА
@@ -1332,15 +1579,15 @@
 ИЗ
 	ВТ_ЦеныДеталейСДатой КАК ВТ_ЦеныДеталейСДатой
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СпросЗапчастей КАК ВТ_СпросЗапчастей
-		ПО ВТ_ЦеныДеталейСДатой.ИндНомер = ВТ_СпросЗапчастей.ИндНомер
+		ПО (ВТ_ЦеныДеталейСДатой.ИндНомер = ВТ_СпросЗапчастей.ИндНомер)
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СпросЗапчастейНаТовар КАК ВТ_СпросЗапчастейНаТовар
-		ПО ВТ_ЦеныДеталейСДатой.ИндНомер = ВТ_СпросЗапчастейНаТовар.ИндНомер
+		ПО (ВТ_ЦеныДеталейСДатой.ИндНомер = ВТ_СпросЗапчастейНаТовар.ИндНомер)
 		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ПродажаЗапчастей.Таблица КАК ПродажаЗапчастейТаблица
-		ПО ВТ_ЦеныДеталейСДатой.ИндНомер = ПродажаЗапчастейТаблица.Партия
+		ПО (ВТ_ЦеныДеталейСДатой.ИндНомер = ПродажаЗапчастейТаблица.Партия)
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РегистрНакопления1.Остатки КАК РегистрНакопления1Остатки
-		ПО ВТ_ЦеныДеталейСДатой.ИндНомер = РегистрНакопления1Остатки.индкод
+		ПО (ВТ_ЦеныДеталейСДатой.ИндНомер = РегистрНакопления1Остатки.индкод)
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПродажаТовара КАК ВТ_ПродажаТовара
-		ПО ВТ_ЦеныДеталейСДатой.ИндНомер = ВТ_ПродажаТовара.ИндНомер</queryText>
+		ПО (ВТ_ЦеныДеталейСДатой.ИндНомер = ВТ_ПродажаТовара.ИндНомер)</queryText>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
@@ -1399,6 +1646,40 @@
       <numberQualifiers>
         <precision>20</precision>
       </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ПериодДатаИзмененияЦены</name>
+    <title>
+      <key>ru</key>
+      <value>Период дата изменения цены</value>
+    </title>
+    <id>6</id>
+    <valueType>
+      <types>StandardPeriod</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ПериодДатаПродажи</name>
+    <title>
+      <key>ru</key>
+      <value>Период дата продажи</value>
+    </title>
+    <id>7</id>
+    <valueType>
+      <types>StandardPeriod</types>
     </valueType>
     <view>
       <common>true</common>
