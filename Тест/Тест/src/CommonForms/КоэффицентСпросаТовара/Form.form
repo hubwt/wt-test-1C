@@ -227,6 +227,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокНоменклатурыКоэффицентДатаСоздания</name>
+      <id>90</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокНоменклатурыКоэффицент.ДатаСоздания</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокНоменклатурыКоэффицентДатаСозданияРасширеннаяПодсказка</name>
+        <id>92</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокНоменклатурыКоэффицентДатаСозданияКонтекстноеМеню</name>
+        <id>91</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокНоменклатурыКоэффицентКоличествоЗаявок</name>
       <id>17</id>
       <visible>true</visible>
@@ -278,7 +328,7 @@
     </items>
     <items xsi:type="form:FormField">
       <name>СписокНоменклатурыКоэффицентКоличествоМесяцев</name>
-      <id>20</id>
+      <id>96</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -289,7 +339,7 @@
       </dataPath>
       <extendedTooltip>
         <name>СписокНоменклатурыКоэффицентКоличествоМесяцевРасширеннаяПодсказка</name>
-        <id>22</id>
+        <id>98</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -304,7 +354,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>СписокНоменклатурыКоэффицентКоличествоМесяцевКонтекстноеМеню</name>
-        <id>21</id>
+        <id>97</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -355,6 +405,56 @@
       <contextMenu>
         <name>СписокНоменклатурыКоэффицентКоэффицентКонтекстноеМеню</name>
         <id>24</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокНоменклатурыКоэффицентКатегория</name>
+      <id>65</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокНоменклатурыКоэффицент.Категория</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокНоменклатурыКоэффицентКатегорияРасширеннаяПодсказка</name>
+        <id>67</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокНоменклатурыКоэффицентКатегорияКонтекстноеМеню</name>
+        <id>66</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -548,6 +648,10 @@
     <verticalStretch>true</verticalStretch>
     <fileDragMode>AsFileRef</fileDragMode>
     <extInfo xsi:type="form:DynamicListTableExtInfo">
+      <handlers>
+        <event>OnGetDataAtServer</event>
+        <name>СписокНоменклатурыКоэффицентПриПолученииДанныхНаСервере</name>
+      </handlers>
       <autoRefreshPeriod>60</autoRefreshPeriod>
       <period>
         <startDate>0001-01-01T00:00:00</startDate>
@@ -560,7 +664,7 @@
   </items>
   <items xsi:type="form:Table">
     <name>КоличествоТоваровВКатегрии</name>
-    <id>29</id>
+    <id>99</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -571,19 +675,19 @@
     </dataPath>
     <titleLocation>None</titleLocation>
     <items xsi:type="form:FormField">
-      <name>КоличествоТоваровВКатегрииНомерСтроки</name>
-      <id>48</id>
+      <name>КоличествоТоваровВКатегрииКатегория</name>
+      <id>115</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>КоличествоТоваровВКатегрии.НомерСтроки</segments>
+        <segments>КоличествоТоваровВКатегрии.Категория</segments>
       </dataPath>
       <extendedTooltip>
-        <name>КоличествоТоваровВКатегрииНомерСтрокиРасширеннаяПодсказка</name>
-        <id>50</id>
+        <name>КоличествоТоваровВКатегрииКатегорияРасширеннаяПодсказка</name>
+        <id>117</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -597,58 +701,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>КоличествоТоваровВКатегрииНомерСтрокиКонтекстноеМеню</name>
-        <id>49</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <autoFill>true</autoFill>
-      </contextMenu>
-      <type>InputField</type>
-      <editMode>Enter</editMode>
-      <showInHeader>true</showInHeader>
-      <headerHorizontalAlign>Left</headerHorizontalAlign>
-      <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:InputFieldExtInfo">
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <wrap>true</wrap>
-        <chooseType>true</chooseType>
-        <typeDomainEnabled>true</typeDomainEnabled>
-        <textEdit>true</textEdit>
-      </extInfo>
-    </items>
-    <items xsi:type="form:FormField">
-      <name>КоличествоТоваровВКатегрииКоэффицент</name>
-      <id>45</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>КоличествоТоваровВКатегрии.Коэффицент</segments>
-      </dataPath>
-      <extendedTooltip>
-        <name>КоличествоТоваровВКатегрииКоэффицентРасширеннаяПодсказка</name>
-        <id>47</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <type>Label</type>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:LabelDecorationExtInfo">
-          <horizontalAlign>Left</horizontalAlign>
-        </extInfo>
-      </extendedTooltip>
-      <contextMenu>
-        <name>КоличествоТоваровВКатегрииКоэффицентКонтекстноеМеню</name>
-        <id>46</id>
+        <name>КоличествоТоваровВКатегрииКатегорияКонтекстноеМеню</name>
+        <id>116</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -672,7 +726,7 @@
     </items>
     <items xsi:type="form:FormField">
       <name>КоличествоТоваровВКатегрииКоличествоТоваров</name>
-      <id>42</id>
+      <id>112</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -683,7 +737,7 @@
       </dataPath>
       <extendedTooltip>
         <name>КоличествоТоваровВКатегрииКоличествоТоваровРасширеннаяПодсказка</name>
-        <id>44</id>
+        <id>114</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -698,7 +752,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>КоличествоТоваровВКатегрииКоличествоТоваровКонтекстноеМеню</name>
-        <id>43</id>
+        <id>113</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -720,65 +774,15 @@
         <textEdit>true</textEdit>
       </extInfo>
     </items>
-    <items xsi:type="form:FormField">
-      <name>КоличествоТоваровВКатегрииСтандартнаяКартинка</name>
-      <id>51</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>КоличествоТоваровВКатегрии.DefaultPicture</segments>
-      </dataPath>
-      <extendedTooltip>
-        <name>КоличествоТоваровВКатегрииСтандартнаяКартинкаРасширеннаяПодсказка</name>
-        <id>53</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <type>Label</type>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:LabelDecorationExtInfo">
-          <horizontalAlign>Left</horizontalAlign>
-        </extInfo>
-      </extendedTooltip>
-      <contextMenu>
-        <name>КоличествоТоваровВКатегрииСтандартнаяКартинкаКонтекстноеМеню</name>
-        <id>52</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <autoFill>true</autoFill>
-      </contextMenu>
-      <type>PictureField</type>
-      <editMode>Enter</editMode>
-      <showInHeader>true</showInHeader>
-      <headerHorizontalAlign>Left</headerHorizontalAlign>
-      <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:ImageFieldExtInfo">
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <horizontalStretch>true</horizontalStretch>
-        <verticalStretch>true</verticalStretch>
-        <fileDragMode>AsFileRef</fileDragMode>
-      </extInfo>
-    </items>
     <autoCommandBar>
       <name>КоличествоТоваровВКатегрииКоманднаяПанель</name>
-      <id>30</id>
+      <id>100</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <horizontalAlign>Left</horizontalAlign>
-      <autoFill>true</autoFill>
     </autoCommandBar>
     <searchStringAddition>
       <visible>true</visible>
@@ -787,10 +791,10 @@
         <common>true</common>
       </userVisible>
       <name>КоличествоТоваровВКатегрииСтрокаПоиска</name>
-      <id>33</id>
+      <id>103</id>
       <extendedTooltip>
         <name>КоличествоТоваровВКатегрииСтрокаПоискаРасширеннаяПодсказка</name>
-        <id>35</id>
+        <id>105</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -805,7 +809,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>КоличествоТоваровВКатегрииСтрокаПоискаКонтекстноеМеню</name>
-        <id>34</id>
+        <id>104</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -825,10 +829,10 @@
         <common>true</common>
       </userVisible>
       <name>КоличествоТоваровВКатегрииСостояниеПросмотра</name>
-      <id>39</id>
+      <id>109</id>
       <extendedTooltip>
         <name>КоличествоТоваровВКатегрииСостояниеПросмотраРасширеннаяПодсказка</name>
-        <id>41</id>
+        <id>111</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -843,7 +847,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>КоличествоТоваровВКатегрииСостояниеПросмотраКонтекстноеМеню</name>
-        <id>40</id>
+        <id>110</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -864,10 +868,10 @@
         <common>true</common>
       </userVisible>
       <name>КоличествоТоваровВКатегрииУправлениеПоиском</name>
-      <id>36</id>
+      <id>106</id>
       <extendedTooltip>
         <name>КоличествоТоваровВКатегрииУправлениеПоискомРасширеннаяПодсказка</name>
-        <id>38</id>
+        <id>108</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -882,7 +886,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>КоличествоТоваровВКатегрииУправлениеПоискомКонтекстноеМеню</name>
-        <id>37</id>
+        <id>107</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -898,7 +902,7 @@
     </searchControlAddition>
     <extendedTooltip>
       <name>КоличествоТоваровВКатегрииРасширеннаяПодсказка</name>
-      <id>32</id>
+      <id>102</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -913,7 +917,7 @@
     </extendedTooltip>
     <contextMenu>
       <name>КоличествоТоваровВКатегрииКонтекстноеМеню</name>
-      <id>31</id>
+      <id>101</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -925,7 +929,9 @@
     <changeRowSet>true</changeRowSet>
     <changeRowOrder>true</changeRowOrder>
     <autoMaxWidth>true</autoMaxWidth>
+    <height>9</height>
     <autoMaxHeight>true</autoMaxHeight>
+    <heightControlVariant>ByContent</heightControlVariant>
     <autoMaxRowsCount>true</autoMaxRowsCount>
     <selectionMode>MultiRow</selectionMode>
     <header>true</header>
@@ -997,30 +1003,84 @@
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
 	ЗаказКлиентаТовары.Номенклатура КАК Номенклатура,
-	КОЛИЧЕСТВО(ЗаказКлиентаТовары.Ссылка) КАК КоличествоЗаявок,
-	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ МЕСЯЦ(ЗаказКлиентаТовары.Ссылка.Дата)) КАК КоличествоМесяцев,
-	ВЫРАЗИТЬ(КОЛИЧЕСТВО(ЗаказКлиентаТовары.Ссылка) / КОЛИЧЕСТВО(РАЗЛИЧНЫЕ МЕСЯЦ(ЗаказКлиентаТовары.Ссылка.Дата)) КАК ЧИСЛО(10, 2)) КАК Коэффицент
-ПОМЕСТИТЬ ТоварыИзЗаявокСКоэфф
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиентаТовары.Ссылка) КАК КоличествоЗаявок
+ПОМЕСТИТЬ ТоварыИзЗаявок
 ИЗ
 	Документ.ЗаказКлиента.Товары КАК ЗаказКлиентаТовары
-
+ГДЕ
+	ЗаказКлиентаТовары.Номенклатура &lt;> ЗНАЧЕНИЕ(Справочник.Номенклатура.ПустаяСсылка)
 СГРУППИРОВАТЬ ПО
 	ЗаказКлиентаТовары.Номенклатура
-
-ИНДЕКСИРОВАТЬ ПО
-	Номенклатура
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	СпрНоменклатура.Ссылка КАК Товар,
-	ТоварыИзЗаявокСКоэфф.КоличествоЗаявок КАК КоличествоЗаявок,
-	ТоварыИзЗаявокСКоэфф.КоличествоМесяцев КАК КоличествоМесяцев,
-	ТоварыИзЗаявокСКоэфф.Коэффицент КАК Коэффицент
+	СпрНоменклатура.ДатаСоздания КАК ДатаСоздания,
+	ЕСТЬNULL(ТоварыИзЗаявок.КоличествоЗаявок, 0) КАК КоличествоЗаявок,
+	РАЗНОСТЬДАТ(СпрНоменклатура.ДатаСоздания, &amp;ТекущаяДата, МЕСЯЦ) КАК КоличествоМесяцев,
+	ВЫБОР
+		КОГДА РАЗНОСТЬДАТ(СпрНоменклатура.ДатаСоздания, &amp;ТекущаяДата, МЕСЯЦ) = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(ЕСТЬNULL(ТоварыИзЗаявок.КоличествоЗаявок, 0) / РАЗНОСТЬДАТ(СпрНоменклатура.ДатаСоздания,
+			&amp;ТекущаяДата, МЕСЯЦ) КАК ЧИСЛО(10, 2))
+	КОНЕЦ КАК Коэффицент
+ПОМЕСТИТЬ ТоварыСКоэфф
 ИЗ
 	Справочник.Номенклатура КАК СпрНоменклатура
-		ЛЕВОЕ СОЕДИНЕНИЕ ТоварыИзЗаявокСКоэфф КАК ТоварыИзЗаявокСКоэфф
-		ПО (ТоварыИзЗаявокСКоэфф.Номенклатура = СпрНоменклатура.Ссылка)</queryText>
+		ЛЕВОЕ СОЕДИНЕНИЕ ТоварыИзЗаявок КАК ТоварыИзЗаявок
+		ПО (ТоварыИзЗаявок.Номенклатура = СпрНоменклатура.Ссылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Номенклатура.Ссылка КАК Товар,
+	ТоварыСКоэфф.ДатаСоздания КАК ДатаСоздания,
+	ТоварыСКоэфф.КоличествоЗаявок КАК КоличествоЗаявок,
+	ТоварыСКоэфф.КоличествоМесяцев КАК КоличествоМесяцев,
+	ТоварыСКоэфф.Коэффицент КАК Коэффицент,
+	ВЫБОР
+		КОГДА ТоварыСКоэфф.ДатаСоздания > &amp;ДатаПолгодаНазад
+			ТОГДА &quot;Новые&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент = 0
+			ТОГДА &quot;Мусор&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.03
+			ТОГДА &quot;Категория 8&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.03
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.05
+			ТОГДА &quot;Категория 7&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.05
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.09
+			ТОГДА &quot;Категория 6&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.09
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.15
+			ТОГДА &quot;Категория 5&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.15
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.3
+			ТОГДА &quot;Категория 4&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.3
+		И ТоварыСКоэфф.Коэффицент &lt;= 1
+			ТОГДА &quot;Категория 3&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 1
+		И ТоварыСКоэфф.Коэффицент &lt;= 1.5
+			ТОГДА &quot;Категория 2&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 1.5
+			ТОГДА &quot;Категория 1&quot;
+	КОНЕЦ КАК Категория
+ИЗ
+	Справочник.Номенклатура КАК Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ ТоварыСКоэфф КАК ТоварыСКоэфф
+		ПО ТоварыСКоэфф.Товар = Номенклатура.Ссылка</queryText>
       <mainTable>Catalog.Номенклатура</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
@@ -1047,41 +1107,119 @@
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
 	ЗаказКлиентаТовары.Номенклатура КАК Номенклатура,
-	КОЛИЧЕСТВО(ЗаказКлиентаТовары.Ссылка) КАК КоличествоЗаявок,
-	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ МЕСЯЦ(ЗаказКлиентаТовары.Ссылка.Дата)) КАК КоличествоМесяцев,
-	ВЫРАЗИТЬ(КОЛИЧЕСТВО(ЗаказКлиентаТовары.Ссылка) / КОЛИЧЕСТВО(РАЗЛИЧНЫЕ МЕСЯЦ(ЗаказКлиентаТовары.Ссылка.Дата)) КАК
-		ЧИСЛО(10, 2)) КАК Коэффицент
-ПОМЕСТИТЬ ТоварыИзЗаявокСКоэфф
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиентаТовары.Ссылка) КАК КоличествоЗаявок
+ПОМЕСТИТЬ ТоварыИзЗаявок
 ИЗ
 	Документ.ЗаказКлиента.Товары КАК ЗаказКлиентаТовары
+ГДЕ
+	ЗаказКлиентаТовары.Номенклатура &lt;> ЗНАЧЕНИЕ(Справочник.Номенклатура.ПустаяСсылка)
 СГРУППИРОВАТЬ ПО
 	ЗаказКлиентаТовары.Номенклатура
-
-ИНДЕКСИРОВАТЬ ПО
-	Номенклатура
-;
-
-////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
-	КОЛИЧЕСТВО(СпрНоменклатура.Ссылка) КАК КоличествоТоваров,
-	ТоварыИзЗаявокСКоэфф.Коэффицент КАК Коэффицент,
-	АВТОНОМЕРЗАПИСИ() КАК НомерСтроки
-ПОМЕСТИТЬ КоличествоИКоэффНомерСтроки
-ИЗ
-	Справочник.Номенклатура КАК СпрНоменклатура
-		ЛЕВОЕ СОЕДИНЕНИЕ ТоварыИзЗаявокСКоэфф КАК ТоварыИзЗаявокСКоэфф
-		ПО (ТоварыИзЗаявокСКоэфф.Номенклатура = СпрНоменклатура.Ссылка)
-СГРУППИРОВАТЬ ПО
-	ТоварыИзЗаявокСКоэфф.Коэффицент
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	КоличествоИКоэффНомерСтроки.КоличествоТоваров,
-	КоличествоИКоэффНомерСтроки.Коэффицент,
-	КоличествоИКоэффНомерСтроки.НомерСтроки
+	СпрНоменклатура.Ссылка КАК Товар,
+	СпрНоменклатура.ДатаСоздания КАК ДатаСоздания,
+	ЕСТЬNULL(ТоварыИзЗаявок.КоличествоЗаявок, 0) КАК КоличествоЗаявок,
+	РАЗНОСТЬДАТ(СпрНоменклатура.ДатаСоздания, &amp;ТекущаяДата, МЕСЯЦ) КАК КоличествоМесяцев,
+	ВЫБОР
+		КОГДА РАЗНОСТЬДАТ(СпрНоменклатура.ДатаСоздания, &amp;ТекущаяДата, МЕСЯЦ) = 0
+			ТОГДА 0
+		ИНАЧЕ ВЫРАЗИТЬ(ЕСТЬNULL(ТоварыИзЗаявок.КоличествоЗаявок, 0) / РАЗНОСТЬДАТ(СпрНоменклатура.ДатаСоздания,
+			&amp;ТекущаяДата, МЕСЯЦ) КАК ЧИСЛО(10, 2))
+	КОНЕЦ КАК Коэффицент
+ПОМЕСТИТЬ ТоварыСКоэфф
 ИЗ
-	КоличествоИКоэффНомерСтроки КАК КоличествоИКоэффНомерСтроки</queryText>
+	Справочник.Номенклатура КАК СпрНоменклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ ТоварыИзЗаявок КАК ТоварыИзЗаявок
+		ПО (ТоварыИзЗаявок.Номенклатура = СпрНоменклатура.Ссылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(Номенклатура.Ссылка) КАК КоличествоТоваров,
+	ВЫБОР
+		КОГДА ТоварыСКоэфф.ДатаСоздания > &amp;ДатаПолгодаНазад
+			ТОГДА &quot;Новые&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент = 0
+			ТОГДА &quot;Мусор&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.03
+			ТОГДА &quot;Категория 8&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.03
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.05
+			ТОГДА &quot;Категория 7&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.05
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.09
+			ТОГДА &quot;Категория 6&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.09
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.15
+			ТОГДА &quot;Категория 5&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.15
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.3
+			ТОГДА &quot;Категория 4&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.3
+		И ТоварыСКоэфф.Коэффицент &lt;= 1
+			ТОГДА &quot;Категория 3&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 1
+		И ТоварыСКоэфф.Коэффицент &lt;= 1.5
+			ТОГДА &quot;Категория 2&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 1.5
+			ТОГДА &quot;Категория 1&quot;
+	КОНЕЦ КАК Категория
+ИЗ
+	Справочник.Номенклатура КАК Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ ТоварыСКоэфф КАК ТоварыСКоэфф
+		ПО ТоварыСКоэфф.Товар = Номенклатура.Ссылка
+СГРУППИРОВАТЬ ПО
+	ВЫБОР
+		КОГДА ТоварыСКоэфф.ДатаСоздания > &amp;ДатаПолгодаНазад
+			ТОГДА &quot;Новые&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент = 0
+			ТОГДА &quot;Мусор&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.03
+			ТОГДА &quot;Категория 8&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.03
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.05
+			ТОГДА &quot;Категория 7&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.05
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.09
+			ТОГДА &quot;Категория 6&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.09
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.15
+			ТОГДА &quot;Категория 5&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.15
+		И ТоварыСКоэфф.Коэффицент &lt;= 0.3
+			ТОГДА &quot;Категория 4&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 0.3
+		И ТоварыСКоэфф.Коэффицент &lt;= 1
+			ТОГДА &quot;Категория 3&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 1
+		И ТоварыСКоэфф.Коэффицент &lt;= 1.5
+			ТОГДА &quot;Категория 2&quot;
+		КОГДА ТоварыСКоэфф.ДатаСоздания &lt; &amp;ДатаПолгодаНазад
+		И ТоварыСКоэфф.Коэффицент > 1.5
+			ТОГДА &quot;Категория 1&quot;
+	КОНЕЦ</queryText>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>

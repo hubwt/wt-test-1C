@@ -1738,6 +1738,56 @@
           <textEdit>true</textEdit>
         </extInfo>
       </items>
+      <items xsi:type="form:FormField">
+        <name>ЯчейкаРВР</name>
+        <id>892</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Объект.ЯчейкаРВР</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>ЯчейкаРВРРасширеннаяПодсказка</name>
+          <id>894</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ЯчейкаРВРКонтекстноеМеню</name>
+          <id>893</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
       <items xsi:type="form:FormGroup">
         <name>ГруппаВремяИтого</name>
         <id>496</id>
@@ -6190,11 +6240,6 @@
             <textEdit>true</textEdit>
             <choiceList>
               <value xsi:type="core:ReferenceValue">
-                <value>Enum.СтатусыТовараВЗаказНаряде.EnumValue.Планово</value>
-              </value>
-            </choiceList>
-            <choiceList>
-              <value xsi:type="core:ReferenceValue">
                 <value>Enum.СтатусыТовараВЗаказНаряде.EnumValue.Срочно</value>
               </value>
             </choiceList>
@@ -6206,6 +6251,21 @@
             <choiceList>
               <value xsi:type="core:ReferenceValue">
                 <value>Enum.СтатусыТовараВЗаказНаряде.EnumValue.Установлена</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.СтатусыТовараВЗаказНаряде.EnumValue.Заказано</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.СтатусыТовараВЗаказНаряде.EnumValue.НетВНаличии</value>
+              </value>
+            </choiceList>
+            <choiceList>
+              <value xsi:type="core:ReferenceValue">
+                <value>Enum.СтатусыТовараВЗаказНаряде.EnumValue.Ожидание</value>
               </value>
             </choiceList>
           </extInfo>
