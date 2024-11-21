@@ -74,4 +74,68 @@
       <handler>ИзменитьСтатусЗаявкиchangestatusapp</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="4c80d6c9-405f-4b78-a359-485e5192d36f">
+    <name>ПолучитьТоварыКарточки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары карточки</value>
+    </synonym>
+    <template>/products-card/{id}/{filter_stock}/{count}/{page}</template>
+    <methods uuid="dfcd4dd3-335a-4ce2-b96a-a8064a279304">
+      <name>productscard</name>
+      <synonym>
+        <key>ru</key>
+        <value>Productscard</value>
+      </synonym>
+      <handler>ПолучитьТоварыКарточкиproductscard</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="380fd181-c8a1-4314-96e7-dad3a74eeb4d">
+    <name>ПолучитьКорзинуМенеджера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить корзину менеджера</value>
+    </synonym>
+    <template>/get_shelf_manager/{id}/{count}/{page}</template>
+    <methods uuid="48e3285c-0187-4b36-92ec-3ab4662072d1">
+      <name>GetShelfManager</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get shelf manager</value>
+      </synonym>
+      <handler>ПолучитьКорзинуМенеджераGetShelfManager</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="0cedba7f-0575-495d-814d-9b605424fcd1">
+    <name>ПолучитьТовар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товар</value>
+    </synonym>
+    <template>/product/{id}</template>
+    <methods uuid="3efca63f-a5c2-48c7-aa91-bc3d40c8546e">
+      <name>GetProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get product</value>
+      </synonym>
+      <handler>ПолучитьТоварGetProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="7062fc58-6a6c-420d-b01f-d03607805cad">
+    <name>ПоискЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поиск заявок</value>
+    </synonym>
+    <template>/search_applications/{search}/{count}/{page}</template>
+    <methods uuid="a3ef5908-a23a-4359-beb2-d34b1d09d081">
+      <name>SearchApplications</name>
+      <synonym>
+        <key>ru</key>
+        <value>Search applications</value>
+      </synonym>
+      <handler>ПоискЗаявокSearchApplications</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
