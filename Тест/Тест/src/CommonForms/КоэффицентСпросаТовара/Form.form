@@ -227,6 +227,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокНоменклатурыКоэффицентКод</name>
+      <id>169</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокНоменклатурыКоэффицент.Code</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокНоменклатурыКоэффицентКодРасширеннаяПодсказка</name>
+        <id>171</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокНоменклатурыКоэффицентКодКонтекстноеМеню</name>
+        <id>170</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокНоменклатурыКоэффицентАртикул</name>
       <id>121</id>
       <visible>true</visible>
@@ -1586,7 +1636,8 @@
 		ИЛИ ЕСТЬNULL(ОстаткиСумма.КолвоОстаток, 0) = 3
 			ТОГДА СпрНоменклатура.РекомендованаяЦена
 		ИНАЧЕ 0
-	КОНЕЦ КАК РекомендованаяЦена
+	КОНЕЦ КАК РекомендованаяЦена,
+	СпрНоменклатура.Код
 ИЗ
 	Справочник.Номенклатура КАК СпрНоменклатура
 		ЛЕВОЕ СОЕДИНЕНИЕ ТоварыИзЗаявок КАК ТоварыИзЗаявок
