@@ -321,6 +321,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокНоменклатурыСпросили</name>
+      <id>209</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокНоменклатуры.Спросили</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокНоменклатурыСпросилиРасширеннаяПодсказка</name>
+        <id>211</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокНоменклатурыСпросилиКонтекстноеМеню</name>
+        <id>210</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокНоменклатурыКоличествоПродаж</name>
       <id>186</id>
       <title>
@@ -711,6 +761,36 @@
         <picture xsi:type="core:PictureRef">
           <picture>StdPicture.GotoExternalURL</picture>
         </picture>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
+      <items xsi:type="form:Button">
+        <name>СписокНоменклатурыКонтекстноеМенюДобавитьВЗаказКлиента</name>
+        <id>212</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>СписокНоменклатурыКонтекстноеМенюДобавитьВЗаказКлиентаРасширеннаяПодсказка</name>
+          <id>213</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.ДобавитьВЗаказКлиента</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
         <representationInContextMenu>Auto</representationInContextMenu>
       </items>
       <visible>true</visible>
@@ -1650,14 +1730,29 @@
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиентаТовары.Ссылка) КАК Спросили,
+	ЗаказКлиентаТовары.Номенклатура КАК Номенклатура
+ПОМЕСТИТЬ ВТ_Спрашивают
+ИЗ
+	Документ.ЗаказКлиента.Товары КАК ЗаказКлиентаТовары
+{ГДЕ
+	ЗаказКлиентаТовары.Ссылка.Дата МЕЖДУ &amp;Дата1 и Конецпериода(&amp;Дата2, День)}
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиентаТовары.Номенклатура
+
+ИНДЕКСИРОВАТЬ ПО
+	Номенклатура
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ПродажаЗапчастейТаблица.Ссылка) КАК Ссылка,
 	ПродажаЗапчастейТаблица.Товар КАК Товар
 ПОМЕСТИТЬ ВТ_Продажи
 ИЗ
 	Документ.ПродажаЗапчастей.Таблица КАК ПродажаЗапчастейТаблица
 {ГДЕ
-	ПродажаЗапчастейТаблица.Ссылка.Дата МЕЖДУ &amp;Дата1 и Конецпериода(&amp;Дата2,День)}
-
+	ПродажаЗапчастейТаблица.Ссылка.Дата МЕЖДУ &amp;Дата1 и Конецпериода(&amp;Дата2, День)}
 СГРУППИРОВАТЬ ПО
 	ПродажаЗапчастейТаблица.Товар
 
@@ -1674,7 +1769,6 @@
 	РегистрСведений.дт_ЦеныНоменклатуры КАК дт_ЦеныНоменклатуры
 ГДЕ
 	дт_ЦеныНоменклатуры.ТипЦен.Код = &quot;000000004&quot;
-
 СГРУППИРОВАТЬ ПО
 	дт_ЦеныНоменклатуры.Номенклатура
 ;
@@ -1688,8 +1782,7 @@
 	РегистрСведений.дт_ЦеныНоменклатуры КАК дт_ЦеныНоменклатуры
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ МаксПериод КАК МаксПериод
 		ПО дт_ЦеныНоменклатуры.Период = МаксПериод.Период
-			И дт_ЦеныНоменклатуры.Номенклатура = МаксПериод.Номенклатура
-
+		И дт_ЦеныНоменклатуры.Номенклатура = МаксПериод.Номенклатура
 СГРУППИРОВАТЬ ПО
 	дт_ЦеныНоменклатуры.Номенклатура
 
@@ -1706,15 +1799,18 @@
 	ОКР(Актуальная.Цена, 0) КАК Цена,
 	ВТ_Продажи.Ссылка КАК КоличествоПродаж,
 	ЕСТЬNULL(СправочникНоменклатура.ПроцентМенеджераНаНеЛиквид, 0) КАК ПроцентМенеджераНаНеЛиквид,
-	СправочникНоменклатура.ЗПМенеджераНаНеЛиквид КАК ЗПМенеджераНаНеЛиквид
+	СправочникНоменклатура.ЗПМенеджераНаНеЛиквид КАК ЗПМенеджераНаНеЛиквид,
+	ВТ_Спрашивают.Спросили КАК Спросили
 ИЗ
 	Справочник.Номенклатура КАК СправочникНоменклатура
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РегистрНакопления1.Остатки(, ) КАК РегистрНакопления1Остатки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РегистрНакопления1.Остатки(,) КАК РегистрНакопления1Остатки
 		ПО СправочникНоменклатура.Ссылка = РегистрНакопления1Остатки.Товар
 		ЛЕВОЕ СОЕДИНЕНИЕ Актуальная КАК Актуальная
 		ПО (Актуальная.Номенклатура = СправочникНоменклатура.Ссылка)
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Продажи КАК ВТ_Продажи
 		ПО СправочникНоменклатура.Ссылка = ВТ_Продажи.Товар
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Спрашивают КАК ВТ_Спрашивают
+		ПО (СправочникНоменклатура.Ссылка = ВТ_Спрашивают.Номенклатура.Ссылка)
 ГДЕ
 	СправочникНоменклатура.ПроцентМенеджераНаНеЛиквид &lt;> 0</queryText>
       <mainTable>Catalog.Номенклатура</mainTable>
