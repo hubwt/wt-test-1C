@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Исполнитель</dataPath>
+			<field>Исполнитель</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаПродажи</dataPath>
+			<field>СуммаПродажи</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма продажи</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦенаРасходника</dataPath>
+			<field>ЦенаРасходника</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цена расходника</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Прибыль</dataPath>
+			<field>Прибыль</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прибыль</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ЗаказНарядТовары.Партия КАК Партия,
+	ЗаказНарядТовары.Цена КАК СуммаПродажи
+ПОМЕСТИТЬ ПроданныеДетали
+ИЗ
+	Документ.ЗаказНаряд.Товары КАК ЗаказНарядТовары
+ГДЕ
+	НЕ ЗаказНарядТовары.Партия = ЗНАЧЕНИЕ(Справочник.ИндКод.ПустаяСсылка)
+	И ЗаказНарядТовары.Ссылка.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияЗаказНаряда.Выполнен)
+	И ЗаказНарядТовары.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ПродажаЗапчастейТаблица.Партия,
+	ПродажаЗапчастейТаблица.Цена
+ИЗ
+	Документ.ПродажаЗапчастей.Таблица КАК ПродажаЗапчастейТаблица
+ГДЕ
+	НЕ ПродажаЗапчастейТаблица.Партия = ЗНАЧЕНИЕ(Справочник.ИндКод.ПустаяСсылка)
+	И ПродажаЗапчастейТаблица.СтатусТовара
+	И НЕ ПродажаЗапчастейТаблица.Отменено
+	И ПродажаЗапчастейТаблица.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	МАКСИМУМ(Рас_КомплектовкаИсполнители.НомерСтроки) КАК КоличествоИсполнителей,
+	Рас_КомплектовкаИсполнители.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТ_КоличествоИсполнителей
+ИЗ
+	Документ.Рас_Комплектовка.Исполнители КАК Рас_КомплектовкаИсполнители
+ГДЕ
+	Рас_КомплектовкаИсполнители.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	Рас_КомплектовкаИсполнители.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	Рас_КомплектовкаНоменклатураСписок.Ссылка КАК ЗаказНаВостановлениеДетали,
+	Рас_КомплектовкаИсполнители.Ссылка.Дата КАК Дата,
+	Рас_КомплектовкаНоменклатураСписок.Номенклатураспис КАК Номенклатура,
+	Рас_КомплектовкаНоменклатураСписок.Партия КАК Партия,
+	ВЫБОР
+		КОГДА Рас_КомплектовкаНоменклатураСписок.Партия = Рас_КомплектовкаНоменклатураСписок.Ссылка.Инкод
+			ТОГДА 0
+		ИНАЧЕ ВЫБОР
+				КОГДА ЕСТЬNULL(ИндНомер.Цена, 0) &lt;&gt; 0
+					ТОГДА ИндНомер.Цена
+				ИНАЧЕ Рас_КомплектовкаНоменклатураСписок.Номенклатураспис.РекомендованаяЦена
+			КОНЕЦ
+	КОНЕЦ КАК ЦенаРасходника,
+	Рас_КомплектовкаИсполнители.Исполнитель КАК Исполнитель,
+	ВТ_КоличествоИсполнителей.КоличествоИсполнителей КАК КоличествоИсполнителей,
+	ЕСТЬNULL(ПроданныеДетали.СуммаПродажи, 0) КАК СуммаПродажи
+ПОМЕСТИТЬ ВТ_ВостановлениеИПродажа
+ИЗ
+	Документ.Рас_Комплектовка.НоменклатураСписок КАК Рас_КомплектовкаНоменклатураСписок
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.Рас_Комплектовка.Исполнители КАК Рас_КомплектовкаИсполнители
+		ПО Рас_КомплектовкаНоменклатураСписок.Ссылка = Рас_КомплектовкаИсполнители.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
+		ПО (ИндНомер.индкод = Рас_КомплектовкаНоменклатураСписок.Партия)
+		ЛЕВОЕ СОЕДИНЕНИЕ ПроданныеДетали КАК ПроданныеДетали
+		ПО Рас_КомплектовкаНоменклатураСписок.Ссылка.Инкод = ПроданныеДетали.Партия
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КоличествоИсполнителей КАК ВТ_КоличествоИсполнителей
+		ПО Рас_КомплектовкаНоменклатураСписок.Ссылка = ВТ_КоличествоИсполнителей.Ссылка
+ГДЕ
+	Рас_КомплектовкаНоменклатураСписок.Партия &lt;&gt; ЗНАЧЕНИЕ(Справочник.ИндКод.ПустаяСсылка)
+	И Рас_КомплектовкаИсполнители.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ВостановлениеИПродажа.Исполнитель КАК Исполнитель,
+	КОЛИЧЕСТВО(ВТ_ВостановлениеИПродажа.ЗаказНаВостановлениеДетали) КАК КоличествоВостановленны,
+	СУММА(ВТ_ВостановлениеИПродажа.ЦенаРасходника / ВТ_ВостановлениеИПродажа.КоличествоИсполнителей) КАК ЦенаРасходника,
+	МАКСИМУМ(ВТ_ВостановлениеИПродажа.СуммаПродажи / ВТ_ВостановлениеИПродажа.КоличествоИсполнителей) КАК СуммаПродажи
+ПОМЕСТИТЬ ЗаказНарядыПоИсполнителям
+ИЗ
+	ВТ_ВостановлениеИПродажа КАК ВТ_ВостановлениеИПродажа
+
+СГРУППИРОВАТЬ ПО
+	ВТ_ВостановлениеИПродажа.Исполнитель
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказНарядыПоИсполнителям.Исполнитель КАК Исполнитель,
+	СУММА(ЗаказНарядыПоИсполнителям.ЦенаРасходника) КАК ЦенаРасходника,
+	СУММА(ЗаказНарядыПоИсполнителям.СуммаПродажи) КАК СуммаПродажи,
+	СУММА(ЗаказНарядыПоИсполнителям.СуммаПродажи - ЗаказНарядыПоИсполнителям.ЦенаРасходника) КАК Прибыль
+ИЗ
+	ЗаказНарядыПоИсполнителям КАК ЗаказНарядыПоИсполнителям
+
+СГРУППИРОВАТЬ ПО
+	ЗаказНарядыПоИсполнителям.Исполнитель</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных2</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Количество</dataPath>
+			<field>Количество</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказНарядНаВостановление</dataPath>
+			<field>ЗаказНарядНаВостановление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заказ наряд на востановление</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПродажаПоДетале</dataPath>
+			<field>ПродажаПоДетале</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продажа</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ЗаказНарядТовары.Партия КАК Партия,
+	ЗаказНарядТовары.Цена КАК СуммаПродажи
+ПОМЕСТИТЬ ПроданныеДетали
+ИЗ
+	Документ.ЗаказНаряд.Товары КАК ЗаказНарядТовары
+ГДЕ
+	НЕ ЗаказНарядТовары.Партия = ЗНАЧЕНИЕ(Справочник.ИндКод.ПустаяСсылка)
+	И ЗаказНарядТовары.Ссылка.Состояние = ЗНАЧЕНИЕ(Перечисление.СостоянияЗаказНаряда.Выполнен)
+	И ЗаказНарядТовары.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+
+ОБЪЕДИНИТЬ
+
+ВЫБРАТЬ
+	ПродажаЗапчастейТаблица.Партия,
+	ПродажаЗапчастейТаблица.Цена
+ИЗ
+	Документ.ПродажаЗапчастей.Таблица КАК ПродажаЗапчастейТаблица
+ГДЕ
+	НЕ ПродажаЗапчастейТаблица.Партия = ЗНАЧЕНИЕ(Справочник.ИндКод.ПустаяСсылка)
+	И ПродажаЗапчастейТаблица.СтатусТовара
+	И НЕ ПродажаЗапчастейТаблица.Отменено
+	И ПродажаЗапчастейТаблица.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(Рас_Комплектовка.Номер) КАК Количество,
+	Рас_Комплектовка.Ссылка КАК ЗаказНарядНаВостановление,
+	СУММА(ЕСТЬNULL(ПроданныеДетали.СуммаПродажи, 0)) КАК ПродажаПоДетале
+ИЗ
+	Документ.Рас_Комплектовка КАК Рас_Комплектовка
+		ЛЕВОЕ СОЕДИНЕНИЕ ПроданныеДетали КАК ПроданныеДетали
+		ПО Рас_Комплектовка.Инкод = ПроданныеДетали.Партия
+ГДЕ
+	Рас_Комплектовка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+СГРУППИРОВАТЬ ПО
+	Рас_Комплектовка.Ссылка</query>
+	</dataSet>
+	<totalField>
+		<dataPath>СуммаПродажи</dataPath>
+		<expression>Сумма(СуммаПродажи)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Прибыль</dataPath>
+		<expression>Сумма(Прибыль)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЦенаРасходника</dataPath>
+		<expression>Сумма(ЦенаРасходника)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПродажаПоДетале</dataPath>
+		<expression>Сумма(ПродажаПоДетале)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Количество</dataPath>
+		<expression>Сумма(Количество)</expression>
+	</totalField>
+	<parameter>
+		<name>ДатаНачала</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата начала</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ДатаОкончания</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата окончания</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;ПериодОтчета.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>ПериодОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Исполнитель</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЦенаРасходника</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаПродажи</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Прибыль</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаНачала</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>6e6b582d-4e29-425d-af61-d8213030c7a9</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ДатаОкончания</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>cd4a419b-e329-4f91-8573-be7c3419dd9c</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодОтчета</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>7b21a73f-144f-4db6-bd92-8328d5f456d1</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Исполнитель</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЗаказНарядНаВостановление</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПродажаПоДетале</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
