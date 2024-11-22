@@ -1,8 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:FormField">
+    <name>Период</name>
+    <id>198</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Период</segments>
+    </dataPath>
+    <handlers>
+      <event>OnChange</event>
+      <name>ПериодПриИзменении</name>
+    </handlers>
+    <extendedTooltip>
+      <name>ПериодРасширеннаяПодсказка</name>
+      <id>200</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <contextMenu>
+      <name>ПериодКонтекстноеМеню</name>
+      <id>199</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <autoFill>true</autoFill>
+    </contextMenu>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <showInHeader>true</showInHeader>
+    <headerHorizontalAlign>Left</headerHorizontalAlign>
+    <showInFooter>true</showInFooter>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <wrap>true</wrap>
+      <chooseType>true</chooseType>
+      <typeDomainEnabled>true</typeDomainEnabled>
+      <textEdit>true</textEdit>
+    </extInfo>
+  </items>
   <items xsi:type="form:Table">
-    <name>Список</name>
-    <id>1</id>
+    <name>СписокНоменклатуры</name>
+    <id>158</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -13,8 +67,8 @@
     </dataPath>
     <titleLocation>None</titleLocation>
     <items xsi:type="form:FormField">
-      <name>СписокКод</name>
-      <id>14</id>
+      <name>СписокНоменклатурыКод</name>
+      <id>171</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -24,8 +78,8 @@
         <segments>СписокНоменклатуры.Код</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокКодРасширеннаяПодсказка</name>
-        <id>16</id>
+        <name>СписокНоменклатурыКодРасширеннаяПодсказка</name>
+        <id>173</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -39,8 +93,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокКодКонтекстноеМеню</name>
-        <id>15</id>
+        <name>СписокНоменклатурыКодКонтекстноеМеню</name>
+        <id>172</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -63,8 +117,8 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокАртикул</name>
-      <id>17</id>
+      <name>СписокНоменклатурыАртикул</name>
+      <id>174</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -74,8 +128,8 @@
         <segments>СписокНоменклатуры.Артикул</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокАртикулРасширеннаяПодсказка</name>
-        <id>19</id>
+        <name>СписокНоменклатурыАртикулРасширеннаяПодсказка</name>
+        <id>176</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -89,8 +143,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокАртикулКонтекстноеМеню</name>
-        <id>18</id>
+        <name>СписокНоменклатурыАртикулКонтекстноеМеню</name>
+        <id>175</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -113,8 +167,12 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСсылка</name>
-      <id>20</id>
+      <name>СписокНоменклатурыСсылка</name>
+      <id>177</id>
+      <title>
+        <key>ru</key>
+        <value>Наименование</value>
+      </title>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -124,8 +182,8 @@
         <segments>СписокНоменклатуры.Ссылка</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСсылкаРасширеннаяПодсказка</name>
-        <id>22</id>
+        <name>СписокНоменклатурыСсылкаРасширеннаяПодсказка</name>
+        <id>179</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -139,8 +197,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСсылкаКонтекстноеМеню</name>
-        <id>21</id>
+        <name>СписокНоменклатурыСсылкаКонтекстноеМеню</name>
+        <id>178</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -163,8 +221,8 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокКолвоОстаток</name>
-      <id>23</id>
+      <name>СписокНоменклатурыКолвоОстаток</name>
+      <id>180</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -174,8 +232,8 @@
         <segments>СписокНоменклатуры.КолвоОстаток</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокКолвоОстатокРасширеннаяПодсказка</name>
-        <id>25</id>
+        <name>СписокНоменклатурыКолвоОстатокРасширеннаяПодсказка</name>
+        <id>182</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -189,8 +247,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокКолвоОстатокКонтекстноеМеню</name>
-        <id>24</id>
+        <name>СписокНоменклатурыКолвоОстатокКонтекстноеМеню</name>
+        <id>181</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -213,8 +271,8 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокЦена</name>
-      <id>26</id>
+      <name>СписокНоменклатурыЦена</name>
+      <id>183</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -224,8 +282,8 @@
         <segments>СписокНоменклатуры.Цена</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокЦенаРасширеннаяПодсказка</name>
-        <id>28</id>
+        <name>СписокНоменклатурыЦенаРасширеннаяПодсказка</name>
+        <id>185</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -239,8 +297,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокЦенаКонтекстноеМеню</name>
-        <id>27</id>
+        <name>СписокНоменклатурыЦенаКонтекстноеМеню</name>
+        <id>184</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -263,8 +321,8 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокКоличествоПродаж</name>
-      <id>131</id>
+      <name>СписокНоменклатурыКоличествоПродаж</name>
+      <id>186</id>
       <title>
         <key>ru</key>
         <value>Было продано</value>
@@ -278,8 +336,8 @@
         <segments>СписокНоменклатуры.КоличествоПродаж</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокКоличествоПродажРасширеннаяПодсказка</name>
-        <id>133</id>
+        <name>СписокНоменклатурыКоличествоПродажРасширеннаяПодсказка</name>
+        <id>188</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -293,8 +351,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокКоличествоПродажКонтекстноеМеню</name>
-        <id>132</id>
+        <name>СписокНоменклатурыКоличествоПродажКонтекстноеМеню</name>
+        <id>187</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -317,8 +375,8 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокПроцентМенеджераНаНеЛиквид</name>
-      <id>29</id>
+      <name>СписокНоменклатурыПроцентМенеджераНаНеЛиквид</name>
+      <id>189</id>
       <title>
         <key>ru</key>
         <value>% для менеджера</value>
@@ -332,8 +390,8 @@
         <segments>СписокНоменклатуры.ПроцентМенеджераНаНеЛиквид</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокПроцентМенеджераНаНеЛиквидРасширеннаяПодсказка</name>
-        <id>31</id>
+        <name>СписокНоменклатурыПроцентМенеджераНаНеЛиквидРасширеннаяПодсказка</name>
+        <id>191</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -347,8 +405,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокПроцентМенеджераНаНеЛиквидКонтекстноеМеню</name>
-        <id>30</id>
+        <name>СписокНоменклатурыПроцентМенеджераНаНеЛиквидКонтекстноеМеню</name>
+        <id>190</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -371,8 +429,8 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокЗПМенеджераНаНеЛиквид</name>
-      <id>32</id>
+      <name>СписокНоменклатурыЗПМенеджераНаНеЛиквид</name>
+      <id>192</id>
       <title>
         <key>ru</key>
         <value>ЗП для менеджера</value>
@@ -386,8 +444,8 @@
         <segments>СписокНоменклатуры.ЗПМенеджераНаНеЛиквид</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокЗПМенеджераНаНеЛиквидРасширеннаяПодсказка</name>
-        <id>34</id>
+        <name>СписокНоменклатурыЗПМенеджераНаНеЛиквидРасширеннаяПодсказка</name>
+        <id>194</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -401,8 +459,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокЗПМенеджераНаНеЛиквидКонтекстноеМеню</name>
-        <id>33</id>
+        <name>СписокНоменклатурыЗПМенеджераНаНеЛиквидКонтекстноеМеню</name>
+        <id>193</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -425,8 +483,8 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>СписокСтандартнаяКартинка</name>
-      <id>35</id>
+      <name>СписокНоменклатурыСтандартнаяКартинка</name>
+      <id>195</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -436,8 +494,8 @@
         <segments>СписокНоменклатуры.DefaultPicture</segments>
       </dataPath>
       <extendedTooltip>
-        <name>СписокСтандартнаяКартинкаРасширеннаяПодсказка</name>
-        <id>37</id>
+        <name>СписокНоменклатурыСтандартнаяКартинкаРасширеннаяПодсказка</name>
+        <id>197</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -451,8 +509,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСтандартнаяКартинкаКонтекстноеМеню</name>
-        <id>36</id>
+        <name>СписокНоменклатурыСтандартнаяКартинкаКонтекстноеМеню</name>
+        <id>196</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -474,26 +532,31 @@
       </extInfo>
     </items>
     <autoCommandBar>
-      <name>СписокКоманднаяПанель</name>
-      <id>2</id>
+      <name>СписокНоменклатурыКоманднаяПанель</name>
+      <id>159</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <horizontalAlign>Left</horizontalAlign>
+      <autoFill>true</autoFill>
     </autoCommandBar>
+    <handlers>
+      <event>OnActivateRow</event>
+      <name>СписокНоменклатурыПриАктивизацииСтроки</name>
+    </handlers>
     <searchStringAddition>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
-      <name>СписокСтрокаПоиска</name>
-      <id>5</id>
+      <name>СписокНоменклатурыСтрокаПоиска</name>
+      <id>162</id>
       <extendedTooltip>
-        <name>СписокСтрокаПоискаРасширеннаяПодсказка</name>
-        <id>7</id>
+        <name>СписокНоменклатурыСтрокаПоискаРасширеннаяПодсказка</name>
+        <id>164</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -507,8 +570,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСтрокаПоискаКонтекстноеМеню</name>
-        <id>6</id>
+        <name>СписокНоменклатурыСтрокаПоискаКонтекстноеМеню</name>
+        <id>163</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -516,7 +579,7 @@
         </userVisible>
         <autoFill>true</autoFill>
       </contextMenu>
-      <source>СписокСтрокаПоиска</source>
+      <source>СписокНоменклатурыСтрокаПоиска</source>
       <extInfo xsi:type="form:SearchStringAdditionExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
       </extInfo>
@@ -527,11 +590,11 @@
       <userVisible>
         <common>true</common>
       </userVisible>
-      <name>СписокСостояниеПросмотра</name>
-      <id>11</id>
+      <name>СписокНоменклатурыСостояниеПросмотра</name>
+      <id>168</id>
       <extendedTooltip>
-        <name>СписокСостояниеПросмотраРасширеннаяПодсказка</name>
-        <id>13</id>
+        <name>СписокНоменклатурыСостояниеПросмотраРасширеннаяПодсказка</name>
+        <id>170</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -545,8 +608,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокСостояниеПросмотраКонтекстноеМеню</name>
-        <id>12</id>
+        <name>СписокНоменклатурыСостояниеПросмотраКонтекстноеМеню</name>
+        <id>169</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -555,7 +618,7 @@
         <autoFill>true</autoFill>
       </contextMenu>
       <type>ViewStatusAddition</type>
-      <source>СписокСостояниеПросмотра</source>
+      <source>СписокНоменклатурыСостояниеПросмотра</source>
       <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
       </extInfo>
@@ -566,11 +629,11 @@
       <userVisible>
         <common>true</common>
       </userVisible>
-      <name>СписокУправлениеПоиском</name>
-      <id>8</id>
+      <name>СписокНоменклатурыУправлениеПоиском</name>
+      <id>165</id>
       <extendedTooltip>
-        <name>СписокУправлениеПоискомРасширеннаяПодсказка</name>
-        <id>10</id>
+        <name>СписокНоменклатурыУправлениеПоискомРасширеннаяПодсказка</name>
+        <id>167</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -584,8 +647,8 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>СписокУправлениеПоискомКонтекстноеМеню</name>
-        <id>9</id>
+        <name>СписокНоменклатурыУправлениеПоискомКонтекстноеМеню</name>
+        <id>166</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -594,14 +657,14 @@
         <autoFill>true</autoFill>
       </contextMenu>
       <type>SearchControlAddition</type>
-      <source>СписокУправлениеПоиском</source>
+      <source>СписокНоменклатурыУправлениеПоиском</source>
       <extInfo xsi:type="form:SearchControlAdditionExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
       </extInfo>
     </searchControlAddition>
     <extendedTooltip>
-      <name>СписокРасширеннаяПодсказка</name>
-      <id>4</id>
+      <name>СписокНоменклатурыРасширеннаяПодсказка</name>
+      <id>161</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -615,8 +678,41 @@
       </extInfo>
     </extendedTooltip>
     <contextMenu>
-      <name>СписокКонтекстноеМеню</name>
-      <id>3</id>
+      <name>СписокНоменклатурыКонтекстноеМеню</name>
+      <id>160</id>
+      <items xsi:type="form:Button">
+        <name>СписокНоменклатурыКонтекстноеМенюОткрытьКарточкуНаСайте</name>
+        <id>205</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>СписокНоменклатурыКонтекстноеМенюОткрытьКарточкуНаСайтеРасширеннаяПодсказка</name>
+          <id>206</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.ОткрытьКарточкуНаСайте</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <picture xsi:type="core:PictureRef">
+          <picture>StdPicture.GotoExternalURL</picture>
+        </picture>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -633,6 +729,7 @@
     <selectionMode>MultiRow</selectionMode>
     <header>true</header>
     <headerHeight>1</headerHeight>
+    <footer>true</footer>
     <footerHeight>1</footerHeight>
     <horizontalScrollBar>AutoUse</horizontalScrollBar>
     <verticalScrollBar>AutoUse</verticalScrollBar>
@@ -1438,6 +1535,39 @@
     <contextMenu>
       <name>СписокПартийКонтекстноеМеню</name>
       <id>42</id>
+      <items xsi:type="form:Button">
+        <name>СписокПартийКонтекстноеМенюОткрытьДетальНаСайте</name>
+        <id>207</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>СписокПартийКонтекстноеМенюОткрытьДетальНаСайтеРасширеннаяПодсказка</name>
+          <id>208</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.ОткрытьДетальНаСайте</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <picture xsi:type="core:PictureRef">
+          <picture>StdPicture.GotoExternalURL</picture>
+        </picture>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -1486,6 +1616,14 @@
     <horizontalAlign>Left</horizontalAlign>
     <autoFill>true</autoFill>
   </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
+  </handlers>
+  <handlers>
+    <event>ChoiceProcessing</event>
+    <name>ОбработкаВыбора</name>
+  </handlers>
   <autoTitle>true</autoTitle>
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
@@ -1517,6 +1655,8 @@
 ПОМЕСТИТЬ ВТ_Продажи
 ИЗ
 	Документ.ПродажаЗапчастей.Таблица КАК ПродажаЗапчастейТаблица
+{ГДЕ
+	ПродажаЗапчастейТаблица.Ссылка.Дата МЕЖДУ &amp;Дата1 и Конецпериода(&amp;Дата2,День)}
 
 СГРУППИРОВАТЬ ПО
 	ПродажаЗапчастейТаблица.Товар
@@ -1565,19 +1705,18 @@
 	РегистрНакопления1Остатки.КолвоОстаток КАК КолвоОстаток,
 	ОКР(Актуальная.Цена, 0) КАК Цена,
 	ВТ_Продажи.Ссылка КАК КоличествоПродаж,
-	ЕСТЬNULL (СправочникНоменклатура.ПроцентМенеджераНаНеЛиквид,0) КАК ПроцентМенеджераНаНеЛиквид,
+	ЕСТЬNULL(СправочникНоменклатура.ПроцентМенеджераНаНеЛиквид, 0) КАК ПроцентМенеджераНаНеЛиквид,
 	СправочникНоменклатура.ЗПМенеджераНаНеЛиквид КАК ЗПМенеджераНаНеЛиквид
 ИЗ
 	Справочник.Номенклатура КАК СправочникНоменклатура
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РегистрНакопления1.Остатки(, ) КАК РегистрНакопления1Остатки
-		ПО (СправочникНоменклатура.Ссылка = РегистрНакопления1Остатки.Товар)
+		ПО СправочникНоменклатура.Ссылка = РегистрНакопления1Остатки.Товар
 		ЛЕВОЕ СОЕДИНЕНИЕ Актуальная КАК Актуальная
 		ПО (Актуальная.Номенклатура = СправочникНоменклатура.Ссылка)
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Продажи КАК ВТ_Продажи
-		ПО (СправочникНоменклатура.Ссылка = ВТ_Продажи.Товар)
+		ПО СправочникНоменклатура.Ссылка = ВТ_Продажи.Товар
 ГДЕ
-	 
-	 СправочникНоменклатура.ПроцентМенеджераНаНеЛиквид &lt;> 0</queryText>
+	СправочникНоменклатура.ПроцентМенеджераНаНеЛиквид &lt;> 0</queryText>
       <mainTable>Catalog.Номенклатура</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
@@ -1635,6 +1774,74 @@
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
   </attributes>
+  <attributes>
+    <name>Период</name>
+    <title>
+      <key>ru</key>
+      <value>Период</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>StandardPeriod</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <formCommands>
+    <name>ОткрытьДетальНаСайте</name>
+    <title>
+      <key>ru</key>
+      <value>Открыть деталь на сайте</value>
+    </title>
+    <id>1</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ОткрытьДетальНаСайте1</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ОткрытьКарточкуНаСайте</name>
+    <title>
+      <key>ru</key>
+      <value>Открыть карточку на сайте</value>
+    </title>
+    <id>2</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ОткрытьКарточкуТовараНаСайте</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ДобавитьВЗаказКлиента</name>
+    <title>
+      <key>ru</key>
+      <value>Добавить в заказ клиента</value>
+    </title>
+    <id>3</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ДобавитьВЗаказКлиента1</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
   <commandInterface>
     <navigationPanel/>
     <commandBar/>
