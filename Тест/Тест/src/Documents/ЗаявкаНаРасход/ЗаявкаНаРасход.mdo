@@ -59,6 +59,7 @@
   <basedOn>Document.АктВозврата</basedOn>
   <basedOn>Document.ПоступлениеЗапчастей</basedOn>
   <basedOn>Document.Расходы</basedOn>
+  <basedOn>Document.ЗаявкаНаРасходСотрудник</basedOn>
   <createOnInput>Use</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
   <fullTextSearch>Use</fullTextSearch>
@@ -408,44 +409,14 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <attributes uuid="074c531e-7831-4ed0-8c10-59bf7b5f0118">
-    <name>ВидРасхода2</name>
-    <synonym>
-      <key>ru</key>
-      <value>Вид расхода2</value>
-    </synonym>
-    <type>
-      <types>CatalogRef.ВидыРасходов_2</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="d4e16f6e-7b75-4cc0-a7a2-e736a6f5d1f2">
-    <name>ЦентрВыручки</name>
-    <synonym>
-      <key>ru</key>
-      <value>Центр выручки</value>
-    </synonym>
-    <type>
-      <types>CatalogRef.ЦентрВыручки</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="34fe43b0-ac2e-4df5-8b77-0ba75588ce96">
+  <attributes uuid="bdcf219e-a7a1-4a9c-bce7-6c86384ba867">
     <name>Филиал</name>
     <synonym>
       <key>ru</key>
       <value>Филиал</value>
     </synonym>
     <type>
-      <types>CatalogRef.ЦФО</types>
+      <types>CatalogRef.ВидыРасходов_3</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
@@ -453,29 +424,90 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <attributes uuid="7123eaf7-aa45-448a-99ec-5ef615f7dd97">
-    <name>ЦентрРасхода</name>
+  <attributes uuid="c0d32687-6da8-4f59-b978-6275c45859cf">
+    <name>Отдел</name>
     <synonym>
       <key>ru</key>
-      <value>Центр расхода</value>
-    </synonym>
-    <type>
-      <types>CatalogRef.ЦентрРасхода</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="700d0d3e-adb4-41b6-ab37-87d60e11de52">
-    <name>ВидыРасходов3</name>
-    <synonym>
-      <key>ru</key>
-      <value>Виды расходов3</value>
+      <value>Отдел</value>
     </synonym>
     <type>
       <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5570e78d-c80e-4e3b-923c-f1f827f6799b">
+    <name>ВидыРасхода_3</name>
+    <synonym>
+      <key>ru</key>
+      <value>Виды расхода 3</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="18b88dcd-0533-4ba2-b513-222c2e19c531">
+    <name>Категория</name>
+    <synonym>
+      <key>ru</key>
+      <value>Категория</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="e5db7dbc-65b9-46ba-97b3-80cce52d71df">
+    <name>Статья</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1670e48e-b0a0-453d-ab76-177799291064">
+    <name>Влияние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Влияние</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВлиянияРасходы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f5d955c6-dadb-4890-b3f8-271014bf0018">
+    <name>Наименование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>

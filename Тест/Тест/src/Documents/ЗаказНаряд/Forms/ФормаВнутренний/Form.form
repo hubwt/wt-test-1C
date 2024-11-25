@@ -976,56 +976,6 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>Ячейка</name>
-          <id>779</id>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
-          <dataPath xsi:type="form:DataPath">
-            <segments>Объект.Ячейка</segments>
-          </dataPath>
-          <extendedTooltip>
-            <name>ЯчейкаРасширеннаяПодсказка</name>
-            <id>781</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <type>Label</type>
-            <autoMaxWidth>true</autoMaxWidth>
-            <autoMaxHeight>true</autoMaxHeight>
-            <extInfo xsi:type="form:LabelDecorationExtInfo">
-              <horizontalAlign>Left</horizontalAlign>
-            </extInfo>
-          </extendedTooltip>
-          <contextMenu>
-            <name>ЯчейкаКонтекстноеМеню</name>
-            <id>780</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <autoFill>true</autoFill>
-          </contextMenu>
-          <type>InputField</type>
-          <editMode>Enter</editMode>
-          <showInHeader>true</showInHeader>
-          <headerHorizontalAlign>Left</headerHorizontalAlign>
-          <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:InputFieldExtInfo">
-            <autoMaxWidth>true</autoMaxWidth>
-            <autoMaxHeight>true</autoMaxHeight>
-            <wrap>true</wrap>
-            <chooseType>true</chooseType>
-            <typeDomainEnabled>true</typeDomainEnabled>
-            <textEdit>true</textEdit>
-          </extInfo>
-        </items>
-        <items xsi:type="form:FormField">
           <name>ВинКодДонор</name>
           <id>648</id>
           <visible>true</visible>
@@ -1161,6 +1111,87 @@
         <headerHorizontalAlign>Left</headerHorizontalAlign>
         <showInFooter>true</showInFooter>
         <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>СсылкаНаВТ10</name>
+        <id>895</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>СсылкаНаВТ10</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>СсылкаНаВТ10РасширеннаяПодсказка</name>
+          <id>897</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>СсылкаНаВТ10КонтекстноеМеню</name>
+          <id>896</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:Button">
+        <name>ЗаменитьОжиданиеНаСрочно</name>
+        <id>898</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ЗаменитьОжиданиеНаСрочноРасширеннаяПодсказка</name>
+          <id>899</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualButton</type>
+        <commandName>Form.Command.ЗаменитьОжиданиеНаСрочно</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
       </items>
       <visible>true</visible>
       <enabled>true</enabled>
@@ -10095,6 +10126,24 @@
     </edit>
     <savedData>true</savedData>
   </attributes>
+  <attributes>
+    <name>СсылкаНаВТ10</name>
+    <title>
+      <key>ru</key>
+      <value>Ссылка на в т10</value>
+    </title>
+    <id>18</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
   <formCommands>
     <name>ЗаполнитьПартииПоОстаткам</name>
     <title>
@@ -10243,6 +10292,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>РаспечататьЭтикетку</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ЗаменитьОжиданиеНаСрочно</name>
+    <title>
+      <key>ru</key>
+      <value>Заменить ожидание на срочно (Товары)</value>
+    </title>
+    <id>8</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ЗаменитьОжиданиеНаСрочно</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>

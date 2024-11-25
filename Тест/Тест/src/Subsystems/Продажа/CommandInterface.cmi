@@ -646,10 +646,16 @@
       <commands>Catalog.Машины.Command.ТранспортныеСредства</commands>
       <commands>Document.УстановкаЦенНоменклатуры.StandardCommand.OpenList</commands>
     </placementFragments>
+    <placementFragments>
+      <group>ActionsPanelCreate</group>
+      <commands>CommonForm.НоменклатураПовышенныйПроцент.StandardCommand.Open</commands>
+    </placementFragments>
   </commandsPlacement>
   <commandsOrder>
     <orderFragments>
       <group>NavigationPanelImportant</group>
+      <commands>CommonCommand.НоменклатураповышенПроцент</commands>
+      <commands>CommonCommand.ЗакупленныйТовар</commands>
       <commands>Document.ЗаказКлиента.Command.ОткрытьАктуальныеЗаявки</commands>
       <commands>Document.ЗаявкаНаСборку.Command.ДокументыРазнесениеПоСкладу</commands>
       <commands>Document.ПродажаЗапчастей.Command.ОткрытьСписокПродажВРаботе</commands>
@@ -671,6 +677,12 @@
       <commands>Document.ЗаказКлиента.Command.ЗаявкиАвитоЧастник</commands>
       <commands>Document.ЗаказКлиента.Command.ЗаявкиЛопыгина</commands>
       <commands>Document.ЗаказКлиента.Command.ЗаявкиЧетвертухина</commands>
+      <commands>Catalog.Номенклатура.Command.СписокНоменклатурыДляПеремещения</commands>
+      <commands>Catalog.Номенклатура.Command.ТоварыДляПополнения</commands>
+      <commands>Document.ЗаказКлиента.Command.ЗаявкиМихеева</commands>
+      <commands>Document.ЗаказКлиента.Command.ЗаявкиМорошан</commands>
+      <commands>Document.ЗаказКлиента.Command.ЗаявкиРоманова</commands>
+      <commands>Document.ЗаказКлиента.Command.ЗаявкиЧумакова</commands>
     </orderFragments>
     <orderFragments>
       <group>NavigationPanelOrdinary</group>
@@ -686,6 +698,43 @@
       <commands>InformationRegister.ЗаписиЗвонков.StandardCommand.OpenList</commands>
       <commands>InformationRegister.ЭтапированиеЗаказа.StandardCommand.OpenList</commands>
       <commands>Catalog.Номенклатура.Command.ТоварыДляПополнения</commands>
+    </orderFragments>
+    <orderFragments>
+      <group>ActionsPanelTools</group>
+      <commands>DataProcessor.ПокупкиКлиентов.StandardCommand.Open</commands>
+    </orderFragments>
+    <orderFragments>
+      <group>ActionsPanelReports</group>
+      <commands>Report.АнализПродажЗапчастей.StandardCommand.Open</commands>
+      <commands>Report.ЗаявкиИПродажи.StandardCommand.Open</commands>
+      <commands>Report.ПоискТовараДляЗаявокНетВНаличии.StandardCommand.Open</commands>
+      <commands>Report.ПродажиСМашиныПоКатегориям.StandardCommand.Open</commands>
+      <commands>Report.Сверка.StandardCommand.Open</commands>
+      <commands>Report.СтатусыЗаявокПоМенеджерам.StandardCommand.Open</commands>
+    </orderFragments>
+    <orderFragments>
+      <group>ActionsPanelCreate</group>
+      <commands>CommonForm.НоменклатураПовышенныйПроцент.StandardCommand.Open</commands>
+      <commands>Catalog.ДоговорыКонтрагентов.StandardCommand.Create</commands>
+      <commands>Catalog.Клиенты.StandardCommand.Create</commands>
+      <commands>Catalog.Машины.StandardCommand.Create</commands>
+      <commands>Catalog.Номенклатура.StandardCommand.Create</commands>
+      <commands>Catalog.ОтветственныеЛицаОрганизаций.StandardCommand.Create</commands>
+      <commands>Catalog.ПроектыРазработки.StandardCommand.Create</commands>
+      <commands>Catalog.СтепениСложностиПроектовРазработки.StandardCommand.Create</commands>
+      <commands>CommonCommand.дт_СоздатьЗаказКлиента</commands>
+      <commands>Document.АктВозврата.StandardCommand.Create</commands>
+      <commands>Document.Дозвон.StandardCommand.Create</commands>
+      <commands>Document.ЗаказКлиента.StandardCommand.Create</commands>
+      <commands>Document.ЗаявкаНаСборку.StandardCommand.Create</commands>
+      <commands>Document.ИПР.StandardCommand.Create</commands>
+      <commands>Document.КомандыПредприятия.StandardCommand.Create</commands>
+      <commands>Document.ПредварительныйСчет.StandardCommand.Create</commands>
+      <commands>Document.ПродажаЗапчастей.StandardCommand.Create</commands>
+      <commands>Document.УстановкаЦенНоменклатуры.StandardCommand.Create</commands>
+      <commands>Document.ЧекЛист1.StandardCommand.Create</commands>
+      <commands>InformationRegister.ЗаписиЗвонков.StandardCommand.Create</commands>
+      <commands>InformationRegister.ЭтапированиеЗаказа.StandardCommand.Create</commands>
     </orderFragments>
   </commandsOrder>
 </cmi:CommandInterface>

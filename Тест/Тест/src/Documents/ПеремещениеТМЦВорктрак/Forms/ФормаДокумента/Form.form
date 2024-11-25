@@ -336,6 +336,10 @@
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:InputFieldExtInfo">
+        <handlers>
+          <event>StartChoice</event>
+          <name>ФилиалНачалоВыбора</name>
+        </handlers>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <wrap>true</wrap>
@@ -381,6 +385,116 @@
         <autoFill>true</autoFill>
       </contextMenu>
       <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <handlers>
+          <event>StartChoice</event>
+          <name>ОтделНачалоВыбора</name>
+        </handlers>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>ВидыРасхода_3</name>
+      <id>106</id>
+      <title>
+        <key>ru</key>
+        <value>Виды</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Объект.ВидыРасхода_3</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ВидыРасхода_3РасширеннаяПодсказка</name>
+        <id>108</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ВидыРасхода_3КонтекстноеМеню</name>
+        <id>107</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <readOnly>true</readOnly>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>Категория</name>
+      <id>109</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Объект.Категория</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>КатегорияРасширеннаяПодсказка</name>
+        <id>111</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>КатегорияКонтекстноеМеню</name>
+        <id>110</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <readOnly>true</readOnly>
       <editMode>Enter</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
@@ -436,6 +550,10 @@
       <headerHorizontalAlign>Left</headerHorizontalAlign>
       <showInFooter>true</showInFooter>
       <extInfo xsi:type="form:InputFieldExtInfo">
+        <handlers>
+          <event>StartChoice</event>
+          <name>СтатьяНачалоВыбора</name>
+        </handlers>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <wrap>true</wrap>
@@ -467,7 +585,6 @@
     <type>UsualGroup</type>
     <extInfo xsi:type="form:UsualGroupExtInfo">
       <group>Vertical</group>
-      <behavior>Auto</behavior>
       <representation>WeakSeparation</representation>
       <showLeftMargin>true</showLeftMargin>
       <united>true</united>
