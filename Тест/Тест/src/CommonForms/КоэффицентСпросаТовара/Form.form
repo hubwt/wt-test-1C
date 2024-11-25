@@ -226,6 +226,58 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокНоменклатурыКоэффицентОстатокСовпадает</name>
+      <id>172</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокНоменклатурыКоэффицент.ОстатокСовпадает</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокНоменклатурыКоэффицентОстатокСовпадаетРасширеннаяПодсказка</name>
+        <id>174</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокНоменклатурыКоэффицентОстатокСовпадаетКонтекстноеМеню</name>
+        <id>173</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>PictureField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:ImageFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <horizontalStretch>true</horizontalStretch>
+        <verticalStretch>true</verticalStretch>
+        <valuesPicture xsi:type="core:PictureRef">
+          <picture>CommonPicture.Галочки</picture>
+        </valuesPicture>
+        <fileDragMode>AsFileRef</fileDragMode>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокНоменклатурыКоэффицентКод</name>
       <id>169</id>
       <visible>true</visible>
@@ -690,6 +742,10 @@
       <horizontalAlign>Left</horizontalAlign>
       <autoFill>true</autoFill>
     </autoCommandBar>
+    <handlers>
+      <event>Selection</event>
+      <name>СписокНоменклатурыКоэффицентВыбор</name>
+    </handlers>
     <searchStringAddition>
       <visible>true</visible>
       <enabled>true</enabled>
@@ -1636,7 +1692,8 @@
 			ТОГДА СпрНоменклатура.РекомендованаяЦена
 		ИНАЧЕ 0
 	КОНЕЦ КАК РекомендованаяЦена,
-	СпрНоменклатура.Код
+	СпрНоменклатура.Код,
+	СпрНоменклатура.ОстатокСовпадает
 ИЗ
 	Справочник.Номенклатура КАК СпрНоменклатура
 		ЛЕВОЕ СОЕДИНЕНИЕ ТоварыИзЗаявок КАК ТоварыИзЗаявок
