@@ -81,7 +81,7 @@
       <choiceList>
         <presentation>
           <key>ru</key>
-          <value>Поступил</value>
+          <value>Ожидаем</value>
         </presentation>
         <value xsi:type="core:NumberValue">
           <value>1</value>
@@ -90,7 +90,7 @@
       <choiceList>
         <presentation>
           <key>ru</key>
-          <value>Ожидаем</value>
+          <value>Поступил</value>
         </presentation>
         <value xsi:type="core:NumberValue">
           <value>2</value>
@@ -763,6 +763,38 @@
     <autoCommandBar>
       <name>СписокЗакупленногоТовараКоманднаяПанель</name>
       <id>322</id>
+      <items xsi:type="form:Button">
+        <name>Оприходовать</name>
+        <id>376</id>
+        <displayImportance>VeryHigh</displayImportance>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ОприходоватьРасширеннаяПодсказка</name>
+          <id>377</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.Оприходовать</commandName>
+        <representation>Auto</representation>
+        <defaultButton>true</defaultButton>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -1001,7 +1033,9 @@
 	ЗакупкаТовараЗакупленныйТовар.СуммаЗакупки,
 	ЗакупкаТовараЗакупленныйТовар.СтатусПоступления
 ИЗ
-	Документ.ЗакупкаТовара.ЗакупленныйТовар КАК ЗакупкаТовараЗакупленныйТовар</queryText>
+	Документ.ЗакупкаТовара.ЗакупленныйТовар КАК ЗакупкаТовараЗакупленныйТовар
+ГДЕ
+	ЗакупкаТовараЗакупленныйТовар.СтатусПоступления = ЗНАЧЕНИЕ(Перечисление.СтатусЗакупкиТовара.ОжидаемПоступление)</queryText>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
@@ -1061,6 +1095,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>СоздатьДокументЗакупка</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>Оприходовать</name>
+    <title>
+      <key>ru</key>
+      <value>Оприходовать</value>
+    </title>
+    <id>2</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Оприходовать</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>
