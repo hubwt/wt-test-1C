@@ -11,22 +11,32 @@
 			<field>Исполнитель</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоЗаказов</dataPath>
+			<field>КоличествоЗаказов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество заказов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СуммаРасходовНаВостановление</dataPath>
+			<field>СуммаРасходовНаВостановление</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма расходов на востановление</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
 			<dataPath>СуммаПродажи</dataPath>
 			<field>СуммаПродажи</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сумма продажи</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ЦенаРасходника</dataPath>
-			<field>ЦенаРасходника</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Цена расходника</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -117,24 +127,26 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	ВТ_ВостановлениеИПродажа.Исполнитель КАК Исполнитель,
-	КОЛИЧЕСТВО(ВТ_ВостановлениеИПродажа.ЗаказНаВостановлениеДетали) КАК КоличествоВостановленны,
-	СУММА(ВТ_ВостановлениеИПродажа.ЦенаРасходника / ВТ_ВостановлениеИПродажа.КоличествоИсполнителей) КАК ЦенаРасходника,
+	ВТ_ВостановлениеИПродажа.ЗаказНаВостановлениеДетали КАК ЗаказНарядНаВостановление,
+	МАКСИМУМ(ВТ_ВостановлениеИПродажа.ЦенаРасходника / ВТ_ВостановлениеИПродажа.КоличествоИсполнителей) КАК СуммаРасходовНаВостановление,
 	МАКСИМУМ(ВТ_ВостановлениеИПродажа.СуммаПродажи / ВТ_ВостановлениеИПродажа.КоличествоИсполнителей) КАК СуммаПродажи
 ПОМЕСТИТЬ ЗаказНарядыПоИсполнителям
 ИЗ
 	ВТ_ВостановлениеИПродажа КАК ВТ_ВостановлениеИПродажа
 
 СГРУППИРОВАТЬ ПО
+	ВТ_ВостановлениеИПродажа.ЗаказНаВостановлениеДетали,
 	ВТ_ВостановлениеИПродажа.Исполнитель
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	ЗаказНарядыПоИсполнителям.Исполнитель КАК Исполнитель,
-	СУММА(ЗаказНарядыПоИсполнителям.ЦенаРасходника) КАК ЦенаРасходника,
+	КОЛИЧЕСТВО(ЗаказНарядыПоИсполнителям.ЗаказНарядНаВостановление) КАК КоличествоЗаказов,
+	СУММА(ЗаказНарядыПоИсполнителям.СуммаРасходовНаВостановление) КАК СуммаРасходовНаВостановление,
 	СУММА(ЗаказНарядыПоИсполнителям.СуммаПродажи) КАК СуммаПродажи,
-	СУММА(ЗаказНарядыПоИсполнителям.СуммаПродажи - ЗаказНарядыПоИсполнителям.ЦенаРасходника) КАК Прибыль
-ИЗ
+	Сумма(ЗаказНарядыПоИсполнителям.СуммаПродажи - ЗаказНарядыПоИсполнителям.СуммаРасходовНаВостановление) КАК Прибыль
+	ИЗ
 	ЗаказНарядыПоИсполнителям КАК ЗаказНарядыПоИсполнителям
 
 СГРУППИРОВАТЬ ПО
@@ -143,26 +155,28 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>НаборДанных2</name>
 		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаказНарядНаВостановление</dataPath>
+			<field>ЗаказНарядНаВостановление</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЦенаРасходника</dataPath>
+			<field>ЦенаРасходника</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Продажа</dataPath>
+			<field>Продажа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
 			<dataPath>Количество</dataPath>
 			<field>Количество</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ЗаказНарядНаВостановление</dataPath>
-			<field>ЗаказНарядНаВостановление</field>
+			<dataPath>ПрибыльОтЗаказНаряда</dataPath>
+			<field>ПрибыльОтЗаказНаряда</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Заказ наряд на востановление</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ПродажаПоДетале</dataPath>
-			<field>ПродажаПоДетале</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Продажа</v8:content>
+					<v8:content>Прибыль от заказ наряда</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -194,33 +208,71 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	КОЛИЧЕСТВО(Рас_Комплектовка.Номер) КАК Количество,
-	Рас_Комплектовка.Ссылка КАК ЗаказНарядНаВостановление,
-	СУММА(ЕСТЬNULL(ПроданныеДетали.СуммаПродажи, 0)) КАК ПродажаПоДетале
+	Рас_КомплектовкаНоменклатураСписок.Ссылка КАК ЗаказНарядНаВостановление,
+	СУММА(ВЫБОР
+			КОГДА Рас_КомплектовкаНоменклатураСписок.Партия = Рас_КомплектовкаНоменклатураСписок.Ссылка.Инкод
+				ТОГДА 0
+			ИНАЧЕ ВЫБОР
+					КОГДА ЕСТЬNULL(ИндНомер.Цена, 0) &lt;&gt; 0
+						ТОГДА ИндНомер.Цена
+					ИНАЧЕ Рас_КомплектовкаНоменклатураСписок.Номенклатураспис.РекомендованаяЦена
+				КОНЕЦ
+		КОНЕЦ) КАК ЦенаРасходника,
+	МАКСИМУМ(ЕСТЬNULL(ПроданныеДетали.СуммаПродажи, 0)) КАК Продажа,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ Рас_КомплектовкаНоменклатураСписок.Ссылка) КАК Количество
+ПОМЕСТИТЬ ПродажаИРасходыПоЗаказу
 ИЗ
-	Документ.Рас_Комплектовка КАК Рас_Комплектовка
+	Документ.Рас_Комплектовка.НоменклатураСписок КАК Рас_КомплектовкаНоменклатураСписок
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
+		ПО (ИндНомер.индкод = Рас_КомплектовкаНоменклатураСписок.Партия)
 		ЛЕВОЕ СОЕДИНЕНИЕ ПроданныеДетали КАК ПроданныеДетали
-		ПО Рас_Комплектовка.Инкод = ПроданныеДетали.Партия
+		ПО (Рас_КомплектовкаНоменклатураСписок.Ссылка.Инкод = ПроданныеДетали.Партия)
 ГДЕ
-	Рас_Комплектовка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	Рас_КомплектовкаНоменклатураСписок.Партия &lt;&gt; ЗНАЧЕНИЕ(Справочник.ИндКод.ПустаяСсылка)
+	И Рас_КомплектовкаНоменклатураСписок.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	
+
 СГРУППИРОВАТЬ ПО
-	Рас_Комплектовка.Ссылка</query>
+	Рас_КомплектовкаНоменклатураСписок.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПродажаИРасходыПоЗаказу.ЗаказНарядНаВостановление КАК ЗаказНарядНаВостановление,
+	ПродажаИРасходыПоЗаказу.ЦенаРасходника КАК ЦенаРасходника,
+	ПродажаИРасходыПоЗаказу.Продажа КАК Продажа,
+	ПродажаИРасходыПоЗаказу.Количество КАК Количество,
+	ПродажаИРасходыПоЗаказу.Продажа - ПродажаИРасходыПоЗаказу.ЦенаРасходника КАК ПрибыльОтЗаказНаряда
+ИЗ
+	ПродажаИРасходыПоЗаказу КАК ПродажаИРасходыПоЗаказу</query>
 	</dataSet>
 	<totalField>
-		<dataPath>СуммаПродажи</dataPath>
-		<expression>Сумма(СуммаПродажи)</expression>
+		<dataPath>КоличествоЗаказов</dataPath>
+		<expression>Сумма(КоличествоЗаказов)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>Прибыль</dataPath>
 		<expression>Сумма(Прибыль)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>ЦенаРасходника</dataPath>
-		<expression>Сумма(ЦенаРасходника)</expression>
+		<dataPath>СуммаПродажи</dataPath>
+		<expression>Сумма(СуммаПродажи)</expression>
 	</totalField>
 	<totalField>
-		<dataPath>ПродажаПоДетале</dataPath>
-		<expression>Сумма(ПродажаПоДетале)</expression>
+		<dataPath>СуммаРасходовНаВостановление</dataPath>
+		<expression>Сумма(СуммаРасходовНаВостановление)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПрибыльОтЗаказНаряда</dataPath>
+		<expression>Сумма(ПрибыльОтЗаказНаряда)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Продажа</dataPath>
+		<expression>Сумма(Продажа)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ЦенаРасходника</dataPath>
+		<expression>Сумма(ЦенаРасходника)</expression>
 	</totalField>
 	<totalField>
 		<dataPath>Количество</dataPath>
@@ -289,7 +341,10 @@
 					<dcsset:field>Исполнитель</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ЦенаРасходника</dcsset:field>
+					<dcsset:field>КоличествоЗаказов</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>СуммаРасходовНаВостановление</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>СуммаПродажи</dcsset:field>
@@ -335,13 +390,22 @@
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 				</dcsset:order>
 				<dcsset:selection>
-					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Исполнитель</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КоличествоЗаказов</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаРасходовНаВостановление</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СуммаПродажи</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Прибыль</dcsset:field>
+					</dcsset:item>
 				</dcsset:selection>
-				<dcsset:item xsi:type="dcsset:StructureItemGroup">
-					<dcsset:order>
-						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
-					</dcsset:order>
-				</dcsset:item>
 			</dcsset:item>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:order>
@@ -355,7 +419,13 @@
 						<dcsset:field>Количество</dcsset:field>
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
-						<dcsset:field>ПродажаПоДетале</dcsset:field>
+						<dcsset:field>ЦенаРасходника</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Продажа</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ПрибыльОтЗаказНаряда</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
 			</dcsset:item>

@@ -10,7 +10,7 @@
   <name>ЗакупкаТовара</name>
   <synonym>
     <key>ru</key>
-    <value>Закупка товара</value>
+    <value>Заказ товара</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Document.ЗакупкаТовара.StandardAttribute.Number</inputByString>
@@ -37,6 +37,7 @@
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
     <fillValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
@@ -68,21 +69,6 @@
     </synonym>
     <type>
       <types>CatalogRef.Пользователи</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="422a7001-4880-4d1e-b988-64e9992dc525">
-    <name>СтатусЗакупки</name>
-    <synonym>
-      <key>ru</key>
-      <value>Статус закупки</value>
-    </synonym>
-    <type>
-      <types>EnumRef.СтатусЗакупкиТовара</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
@@ -254,6 +240,40 @@
           <precision>10</precision>
           <scale>2</scale>
         </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="82a4aba3-d9fe-4c48-8927-77262e790d6b">
+      <name>СтатусПоступления</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус поступления</value>
+      </synonym>
+      <type>
+        <types>EnumRef.СтатусЗакупкиТовара</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="43540c89-86a6-4706-b630-98a81f9b37cf">
+      <name>НазначениеДетали</name>
+      <synonym>
+        <key>ru</key>
+        <value>Назначение детали</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <types>DocumentRef.ПродажаЗапчастей</types>
+        <types>DocumentRef.ЗаказНаряд</types>
+        <types>CatalogRef.ПроектыРазработки</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
