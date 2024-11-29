@@ -3372,7 +3372,7 @@
           <titleLocation>None</titleLocation>
           <items xsi:type="form:FormField">
             <name>ДинСписок2222Коментарий</name>
-            <id>949</id>
+            <id>982</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3383,7 +3383,7 @@
             </dataPath>
             <extendedTooltip>
               <name>ДинСписок2222КоментарийРасширеннаяПодсказка</name>
-              <id>951</id>
+              <id>984</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -3398,57 +3398,7 @@
             </extendedTooltip>
             <contextMenu>
               <name>ДинСписок2222КоментарийКонтекстноеМеню</name>
-              <id>950</id>
-              <visible>true</visible>
-              <enabled>true</enabled>
-              <userVisible>
-                <common>true</common>
-              </userVisible>
-              <autoFill>true</autoFill>
-            </contextMenu>
-            <type>InputField</type>
-            <editMode>Enter</editMode>
-            <showInHeader>true</showInHeader>
-            <headerHorizontalAlign>Left</headerHorizontalAlign>
-            <showInFooter>true</showInFooter>
-            <extInfo xsi:type="form:InputFieldExtInfo">
-              <autoMaxWidth>true</autoMaxWidth>
-              <autoMaxHeight>true</autoMaxHeight>
-              <wrap>true</wrap>
-              <chooseType>true</chooseType>
-              <typeDomainEnabled>true</typeDomainEnabled>
-              <textEdit>true</textEdit>
-            </extInfo>
-          </items>
-          <items xsi:type="form:FormField">
-            <name>ДинСписок2222ДокТМЦ</name>
-            <id>952</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <dataPath xsi:type="form:DataPath">
-              <segments>ДинСписок2222.ДокТМЦ</segments>
-            </dataPath>
-            <extendedTooltip>
-              <name>ДинСписок2222ДокТМЦРасширеннаяПодсказка</name>
-              <id>954</id>
-              <visible>true</visible>
-              <enabled>true</enabled>
-              <userVisible>
-                <common>true</common>
-              </userVisible>
-              <type>Label</type>
-              <autoMaxWidth>true</autoMaxWidth>
-              <autoMaxHeight>true</autoMaxHeight>
-              <extInfo xsi:type="form:LabelDecorationExtInfo">
-                <horizontalAlign>Left</horizontalAlign>
-              </extInfo>
-            </extendedTooltip>
-            <contextMenu>
-              <name>ДинСписок2222ДокТМЦКонтекстноеМеню</name>
-              <id>953</id>
+              <id>983</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -3472,7 +3422,7 @@
           </items>
           <items xsi:type="form:FormField">
             <name>ДинСписок2222Расход</name>
-            <id>955</id>
+            <id>985</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -3483,7 +3433,7 @@
             </dataPath>
             <extendedTooltip>
               <name>ДинСписок2222РасходРасширеннаяПодсказка</name>
-              <id>957</id>
+              <id>987</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -3498,7 +3448,7 @@
             </extendedTooltip>
             <contextMenu>
               <name>ДинСписок2222РасходКонтекстноеМеню</name>
-              <id>956</id>
+              <id>986</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -3521,19 +3471,19 @@
             </extInfo>
           </items>
           <items xsi:type="form:FormField">
-            <name>ДинСписок2222Сумма</name>
-            <id>958</id>
+            <name>ДинСписок2222СуммаОстаток</name>
+            <id>988</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
               <common>true</common>
             </userVisible>
             <dataPath xsi:type="form:DataPath">
-              <segments>ДинСписок2222.Сумма</segments>
+              <segments>ДинСписок2222.СуммаОстаток</segments>
             </dataPath>
             <extendedTooltip>
-              <name>ДинСписок2222СуммаРасширеннаяПодсказка</name>
-              <id>960</id>
+              <name>ДинСписок2222СуммаОстатокРасширеннаяПодсказка</name>
+              <id>990</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -3547,8 +3497,8 @@
               </extInfo>
             </extendedTooltip>
             <contextMenu>
-              <name>ДинСписок2222СуммаКонтекстноеМеню</name>
-              <id>959</id>
+              <name>ДинСписок2222СуммаОстатокКонтекстноеМеню</name>
+              <id>989</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -9035,7 +8985,8 @@
 	Документ.Расходы КАК Расходы
 ГДЕ
 	Расходы.Категория = &amp;Категория
-	И Расходы.ДатаРасхода МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, День)</queryText>
+	И Расходы.ДатаРасхода МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, День)
+	И Расходы.Проведен = ИСТИНА</queryText>
       <mainTable>Document.Расходы</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
@@ -9280,6 +9231,7 @@
 		ГДЕ
 			Расходы.Категория = &amp;Категория
 		И 	Расходы.ДатаРасхода МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, День)
+		И Расходы.Проведен = Истина
 		СГРУППИРОВАТЬ ПО
 			Расходы.Статья</queryText>
       <autoFillAvailableFields>true</autoFillAvailableFields>
@@ -9534,6 +9486,7 @@
 ГДЕ
 	Расходы.Категория = &amp;Категория
 	И Расходы.ДатаРасхода МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, День)
+	И Расходы.Проведен = Истина
 
 СГРУППИРОВАТЬ ПО
 	Расходы.Влияние</queryText>
@@ -9764,23 +9717,15 @@
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
-	БюджетТМЦ.Коментарий КАК Коментарий,
-	БюджетТМЦ.ДокРег КАК ДокТМЦ,
-	БюджетТМЦ.Расход КАК Расход,
-	СУММА(БюджетТМЦ.Сумма) КАК Сумма,
-	БюджетТМЦ.Статья КАК Статья
+	БюджетТМЦОстатки.Коментарий КАК Коментарий,
+	БюджетТМЦОстатки.Расход КАК Расход,
+	БюджетТМЦОстатки.СуммаОстаток КАК СуммаОстаток
 ИЗ
-	РегистрСведений.БюджетТМЦ КАК БюджетТМЦ
+	РегистрНакопления.БюджетТМЦ.Остатки(, Статья = &amp;Статья) КАК БюджетТМЦОстатки
 		ЛЕВОЕ СОЕДИНЕНИЕ Документ.Расходы КАК Расходы
-		ПО (БюджетТМЦ.Расход = Расходы.Ссылка)
+		ПО (БюджетТМЦОстатки.Расход = Расходы.Ссылка)
 ГДЕ
-	БюджетТМЦ.Статья = &amp;Статья
-	И БюджетТМЦ.ДатаРасхода МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, День)
-СГРУППИРОВАТЬ ПО
-	БюджетТМЦ.ДокРег,
-	БюджетТМЦ.Коментарий,
-	БюджетТМЦ.Расход,
-	БюджетТМЦ.Статья</queryText>
+	БюджетТМЦОстатки.ДатаРасхода МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)</queryText>
       <mainTable>Document.Расходы</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
