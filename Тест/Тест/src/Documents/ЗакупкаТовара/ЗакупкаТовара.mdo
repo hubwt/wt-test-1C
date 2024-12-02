@@ -10,7 +10,7 @@
   <name>ЗакупкаТовара</name>
   <synonym>
     <key>ru</key>
-    <value>Заказ товара</value>
+    <value>Закупка товара</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Document.ЗакупкаТовара.StandardAttribute.Number</inputByString>
@@ -37,7 +37,6 @@
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
-    <fillChecking>ShowError</fillChecking>
     <fillValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
@@ -246,7 +245,7 @@
       <dataHistory>Use</dataHistory>
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
-    <attributes uuid="82a4aba3-d9fe-4c48-8927-77262e790d6b">
+    <attributes uuid="826e62bc-7069-4c9a-808f-c74fcf36967e">
       <name>СтатусПоступления</name>
       <synonym>
         <key>ru</key>
@@ -260,7 +259,7 @@
       <dataHistory>Use</dataHistory>
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
-    <attributes uuid="43540c89-86a6-4706-b630-98a81f9b37cf">
+    <attributes uuid="d9a2870b-1714-4dc7-a66f-7b5acacf2d0c">
       <name>НазначениеДетали</name>
       <synonym>
         <key>ru</key>
@@ -268,8 +267,8 @@
       </synonym>
       <type>
         <types>String</types>
+        <types>DocumentRef.ЗаказКлиента</types>
         <types>DocumentRef.ПродажаЗапчастей</types>
-        <types>DocumentRef.ЗаказНаряд</types>
         <types>CatalogRef.ПроектыРазработки</types>
         <stringQualifiers>
           <length>10</length>
