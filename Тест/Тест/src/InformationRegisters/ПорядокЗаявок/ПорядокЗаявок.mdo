@@ -17,7 +17,7 @@
   <useStandardCommands>true</useStandardCommands>
   <editType>InDialog</editType>
   <dataLockControlMode>Managed</dataLockControlMode>
-  <attributes uuid="be3d1495-4396-45a2-803e-3fa19b0fc7a5">
+  <attributes uuid="9eaa5cff-771b-4e23-a419-285dd7a4812c">
     <name>ПорядковыйНомер</name>
     <synonym>
       <key>ru</key>
@@ -29,21 +29,6 @@
         <precision>10</precision>
         <nonNegative>true</nonNegative>
       </numberQualifiers>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-    <fillValue xsi:type="core:UndefinedValue"/>
-  </attributes>
-  <attributes uuid="da105ba3-4008-4695-84ba-8b2a4998eecb">
-    <name>Статус</name>
-    <synonym>
-      <key>ru</key>
-      <value>Статус</value>
-    </synonym>
-    <type>
-      <types>EnumRef.дт_СостоянияЗаказовКлиента</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
@@ -66,5 +51,20 @@
     <dataHistory>Use</dataHistory>
     <fillValue xsi:type="core:UndefinedValue"/>
     <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0d16ef44-72aa-415a-9bb5-c4c8f515c1d8">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.дт_СостоянияЗаказовКлиента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
   </dimensions>
 </mdclass:InformationRegister>

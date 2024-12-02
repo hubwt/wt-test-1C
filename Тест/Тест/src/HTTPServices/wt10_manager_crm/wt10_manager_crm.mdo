@@ -219,20 +219,68 @@
       <handler>ПолучитьГородаGetCities</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="e9586ea6-fe51-4bc7-ae2e-cc80df3bc9dd">
+    <name>ПолучитьГлавныеСтатусыЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить главные статусы заявки</value>
+    </synonym>
+    <template>/get_main_status_app</template>
+    <methods uuid="015b1296-92b0-4049-9489-f081b09121fc">
+      <name>GetMainStatusApp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get main status app</value>
+      </synonym>
+      <handler>ПолучитьГлавныеСтатусыЗаявкиgetmainstatusapp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="319fde85-a1d4-44c8-a767-9e4b55b08b34">
+    <name>ПолучитьВторостепенныеСтатусыЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить второстепенные статусы заявки</value>
+    </synonym>
+    <template>/get_secondary_status_app</template>
+    <methods uuid="3da3b69a-7920-4f64-ac06-7a86b298ef22">
+      <name>GetSecondaryStatusApp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get secondary status app</value>
+      </synonym>
+      <handler>ПолучитьВторостепенныеСтатусыЗаявкиgetsecondarystatusapp</handler>
+    </methods>
+  </urlTemplates>
   <urlTemplates uuid="8fc13222-d21b-44a7-8b31-d0b6f26238c0">
     <name>ПолучитьИнформациюОЗаявке</name>
     <synonym>
       <key>ru</key>
       <value>Получить информацию о заявке</value>
     </synonym>
-    <template>/get_info_application/{id}</template>
+    <template>/get_info_app/{id}</template>
     <methods uuid="2dec63e0-3e06-44a0-8f70-16f50e76f449">
-      <name>GetInfoApplication</name>
+      <name>GetInfoApp</name>
       <synonym>
         <key>ru</key>
-        <value>Get info application</value>
+        <value>Get info app</value>
       </synonym>
-      <handler>ПолучитьИнформациюОЗаявкеGetInfoApplication</handler>
+      <handler>ПолучитьИнформациюОЗаявкеgetinfoapp</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="25b483d9-8e09-40b6-9aa9-5d82f2b24455">
+    <name>ПолучитьСписокТоваровПоЗаявке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список товаров по заявке</value>
+    </synonym>
+    <template>/get-list-products-by-app/{id}/{count}/{page}</template>
+    <methods uuid="e2768e38-88bb-40a7-a2c8-eb23830f3d61">
+      <name>GetListProductsByApp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get list products by app</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровПоЗаявкеgetlistproductsbyapp</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
