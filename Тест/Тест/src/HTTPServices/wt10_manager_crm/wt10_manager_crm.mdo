@@ -267,4 +267,20 @@
       <handler>ПолучитьИнформациюОЗаявкеGetInfoApplication</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="25b483d9-8e09-40b6-9aa9-5d82f2b24455">
+    <name>ПолучитьСписокТоваровПоЗаявке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список товаров по заявке</value>
+    </synonym>
+    <template>/get-list-products-by-app/{id}/{count}/{page}</template>
+    <methods uuid="e2768e38-88bb-40a7-a2c8-eb23830f3d61">
+      <name>GetListProductsByApp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get list products by app</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровПоЗаявкеgetlistproductsbyapp</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
