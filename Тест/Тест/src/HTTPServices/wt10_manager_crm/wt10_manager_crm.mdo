@@ -283,4 +283,38 @@
       <handler>ПолучитьСписокТоваровПоЗаявкеgetlistproductsbyapp</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="a4b88076-db5b-47e9-bfc8-ed4bab40f8a7">
+    <name>НаполнитьЗаявку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наполнить заявку</value>
+    </synonym>
+    <template>/filling_application/{id}</template>
+    <methods uuid="fa30e2dd-c9e7-4a99-9498-29595aa01d9a">
+      <name>FillingApplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Filling application</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>НаполнитьЗаявкуFillingApplication1</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="8fdcbd21-2513-42aa-9f4d-0a933dc31d09">
+    <name>УдалитьТоварИзЗаявки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить товар из заявки</value>
+    </synonym>
+    <template>/delete_product_application/{id}/{pose}</template>
+    <methods uuid="8526abe5-ef50-41f1-a632-89b431c57b73">
+      <name>DeleteProductApplication</name>
+      <synonym>
+        <key>ru</key>
+        <value>Delete product application</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>УдалитьТоварИзЗаявкиDeleteProductApplication1</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
