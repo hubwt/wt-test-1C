@@ -4698,7 +4698,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<Ad>
 				|<Id>" + АйдиКод + "</Id> 
-				|<ContactPhone>8 953 554 29 93</ContactPhone>
+				|<ContactPhone>8 952 475 93 15</ContactPhone>
 				|<Address>" + Адрес + "</Address> 
 				|<ContactMethod>По телефону и в сообщениях</ContactMethod>
 				|<Category>Запчасти и аксессуары</Category>
@@ -4794,7 +4794,7 @@
 				ТекстФайла = ТекстФайла + " 
 				|<Ad>
 				|<Id>" + АйдиКод + "</Id> 
-				|<ContactPhone>8 953 554 29 93</ContactPhone>
+				|<ContactPhone>8 952 475 93 15</ContactPhone>
 				|<Address>" + Адрес + "</Address> 
 				|<ContactMethod>По телефону и в сообщениях</ContactMethod>
 				|<Category>Запчасти и аксессуары</Category>
