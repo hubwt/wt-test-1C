@@ -30,7 +30,7 @@
       <key>ru</key>
       <value>Получить заявки по статусу</value>
     </synonym>
-    <template>/get-app-by-status/{count}/{page}/{status}</template>
+    <template>/get-app-by-status/{count}/{page}/{status}/{manager}</template>
     <methods uuid="41a1564c-b856-4da3-920a-9468f8c166d0">
       <name>GetAppByStatus</name>
       <synonym>
@@ -203,6 +203,22 @@
       <handler>ПолучитьРегионыGetRegions</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="25b483d9-8e09-40b6-9aa9-5d82f2b24455">
+    <name>ПолучитьСписокТоваровПоЗаявке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список товаров по заявке</value>
+    </synonym>
+    <template>/get-list-products-by-app/{id}/{count}/{page}</template>
+    <methods uuid="e2768e38-88bb-40a7-a2c8-eb23830f3d61">
+      <name>GetListProductsByApp</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get list products by app</value>
+      </synonym>
+      <handler>ПолучитьСписокТоваровПоЗаявкеgetlistproductsbyapp</handler>
+    </methods>
+  </urlTemplates>
   <urlTemplates uuid="0aeaaa24-2e67-49c7-b878-a54aa574b72d">
     <name>ПолучитьГорода</name>
     <synonym>
@@ -267,22 +283,6 @@
       <handler>ПолучитьИнформациюОЗаявкеgetinfoapp</handler>
     </methods>
   </urlTemplates>
-  <urlTemplates uuid="25b483d9-8e09-40b6-9aa9-5d82f2b24455">
-    <name>ПолучитьСписокТоваровПоЗаявке</name>
-    <synonym>
-      <key>ru</key>
-      <value>Получить список товаров по заявке</value>
-    </synonym>
-    <template>/get-list-products-by-app/{id}/{count}/{page}</template>
-    <methods uuid="e2768e38-88bb-40a7-a2c8-eb23830f3d61">
-      <name>GetListProductsByApp</name>
-      <synonym>
-        <key>ru</key>
-        <value>Get list products by app</value>
-      </synonym>
-      <handler>ПолучитьСписокТоваровПоЗаявкеgetlistproductsbyapp</handler>
-    </methods>
-  </urlTemplates>
   <urlTemplates uuid="a4b88076-db5b-47e9-bfc8-ed4bab40f8a7">
     <name>НаполнитьЗаявку</name>
     <synonym>
@@ -315,6 +315,55 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>УдалитьТоварИзЗаявкиDeleteProductApplication1</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9b8bda8c-962a-4db1-af75-7cbb2b563ad5">
+    <name>ПолучитьСписокМенеджеров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список менеджеров</value>
+    </synonym>
+    <template>/get-list-managers</template>
+    <methods uuid="767ebc8a-f196-41a1-828c-1c2580d6032b">
+      <name>GetListManagers</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get list managers</value>
+      </synonym>
+      <handler>ПолучитьСписокМенеджеровgetlistmanagers</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="327ed687-3020-4e1c-94ab-9d6a5beba66b">
+    <name>ПолучитьЗаявкиПоСтатусуВерсия2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить заявки по статусу версия2</value>
+    </synonym>
+    <template>/get_app_by_status_v2/{count}/{page}/{status}/{manager}</template>
+    <methods uuid="0812e7eb-4660-4b1e-856d-18ea806acc1e">
+      <name>GetAppByStatusV2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get app by status v2</value>
+      </synonym>
+      <handler>ПолучитьЗаявкиПоСтатусуВерсия2getappbystatusv2</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="3491e3a0-e898-4bb3-acb1-5e23154207da">
+    <name>ИзменитьСтатусЗаявкиВерсия2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменить статус заявки версия2</value>
+    </synonym>
+    <template>/change_status_app_v2/{id}</template>
+    <methods uuid="286c1404-895f-4588-ab07-c6a0dfb6b68b">
+      <name>ChangeStatusAppV2</name>
+      <synonym>
+        <key>ru</key>
+        <value>Change status app v2</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ИзменитьСтатусЗаявкиВерсия2changestatusappv2</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
