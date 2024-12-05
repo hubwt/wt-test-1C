@@ -3367,6 +3367,52 @@
               </extInfo>
             </items>
             <items xsi:type="form:FormField">
+              <name>РейтингМенеджеров1ДоПлана</name>
+              <id>177</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>РейтингМенеджеров.ДоПлана</segments>
+              </dataPath>
+              <extendedTooltip>
+                <name>РейтингМенеджеров1ДоПланаРасширеннаяПодсказка</name>
+                <id>179</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>РейтингМенеджеров1ДоПланаКонтекстноеМеню</name>
+                <id>178</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>LabelField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:LabelFieldExtInfo">
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
               <name>РейтингМенеджеров1СуммаПоступлений</name>
               <id>180</id>
               <visible>true</visible>
@@ -3413,19 +3459,19 @@
               </extInfo>
             </items>
             <items xsi:type="form:FormField">
-              <name>РейтингМенеджеров1ДоПлана</name>
-              <id>177</id>
+              <name>РейтингМенеджеровСуммаЗаявок</name>
+              <id>1965</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
                 <common>true</common>
               </userVisible>
               <dataPath xsi:type="form:DataPath">
-                <segments>РейтингМенеджеров.ДоПлана</segments>
+                <segments>РейтингМенеджеров.СуммаЗаявок</segments>
               </dataPath>
               <extendedTooltip>
-                <name>РейтингМенеджеров1ДоПланаРасширеннаяПодсказка</name>
-                <id>179</id>
+                <name>РейтингМенеджеровСуммаЗаявокРасширеннаяПодсказка</name>
+                <id>1967</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
@@ -3439,8 +3485,8 @@
                 </extInfo>
               </extendedTooltip>
               <contextMenu>
-                <name>РейтингМенеджеров1ДоПланаКонтекстноеМеню</name>
-                <id>178</id>
+                <name>РейтингМенеджеровСуммаЗаявокКонтекстноеМеню</name>
+                <id>1966</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
@@ -3448,14 +3494,176 @@
                 </userVisible>
                 <autoFill>true</autoFill>
               </contextMenu>
-              <type>LabelField</type>
+              <type>InputField</type>
               <editMode>Enter</editMode>
               <showInHeader>true</showInHeader>
               <headerHorizontalAlign>Left</headerHorizontalAlign>
               <showInFooter>true</showInFooter>
-              <extInfo xsi:type="form:LabelFieldExtInfo">
+              <extInfo xsi:type="form:InputFieldExtInfo">
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>РейтингМенеджеровКонверсияПроцент</name>
+              <id>1956</id>
+              <title>
+                <key>ru</key>
+                <value>Конверсия,%</value>
+              </title>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>РейтингМенеджеров.КонверсияПроцент</segments>
+              </dataPath>
+              <extendedTooltip>
+                <name>РейтингМенеджеровКонверсияПроцентРасширеннаяПодсказка</name>
+                <id>1958</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>РейтингМенеджеровКонверсияПроцентКонтекстноеМеню</name>
+                <id>1957</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>РейтингМенеджеровПроиграноСделок</name>
+              <id>1962</id>
+              <title>
+                <key>ru</key>
+                <value>Проигранно сделок</value>
+              </title>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>РейтингМенеджеров.ПроиграноСделок</segments>
+              </dataPath>
+              <extendedTooltip>
+                <name>РейтингМенеджеровПроиграноСделокРасширеннаяПодсказка</name>
+                <id>1964</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>РейтингМенеджеровПроиграноСделокКонтекстноеМеню</name>
+                <id>1963</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
+              </extInfo>
+            </items>
+            <items xsi:type="form:FormField">
+              <name>РейтингМенеджеровСуммаПроигранноСделок</name>
+              <id>1968</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <dataPath xsi:type="form:DataPath">
+                <segments>РейтингМенеджеров.СуммаПроигранноСделок</segments>
+              </dataPath>
+              <extendedTooltip>
+                <name>РейтингМенеджеровСуммаПроигранноСделокРасширеннаяПодсказка</name>
+                <id>1970</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <type>Label</type>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <extInfo xsi:type="form:LabelDecorationExtInfo">
+                  <horizontalAlign>Left</horizontalAlign>
+                </extInfo>
+              </extendedTooltip>
+              <contextMenu>
+                <name>РейтингМенеджеровСуммаПроигранноСделокКонтекстноеМеню</name>
+                <id>1969</id>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <autoFill>true</autoFill>
+              </contextMenu>
+              <type>InputField</type>
+              <editMode>Enter</editMode>
+              <showInHeader>true</showInHeader>
+              <headerHorizontalAlign>Left</headerHorizontalAlign>
+              <showInFooter>true</showInFooter>
+              <extInfo xsi:type="form:InputFieldExtInfo">
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <wrap>true</wrap>
+                <chooseType>true</chooseType>
+                <typeDomainEnabled>true</typeDomainEnabled>
+                <textEdit>true</textEdit>
               </extInfo>
             </items>
             <items xsi:type="form:FormField">
@@ -22531,34 +22739,33 @@
       <common>true</common>
     </edit>
     <extInfo xsi:type="form:DynamicListExtInfo">
-      <queryText> ВЫБРАТЬ
+      <queryText>ВЫБРАТЬ
 	СУММА(ВЫБОР
-			КОГДА ПриходДенегНаСчет.Поступление = ЗНАЧЕНИЕ(перечисление.ВидыПоступлений.НаличныйРасчет)
-				ТОГДА ПриходДенегНаСчет.СуммаДокумента
-			ИНАЧЕ 0
-		КОНЕЦ) КАК Наличные,
+		КОГДА ПриходДенегНаСчет.Поступление = ЗНАЧЕНИЕ(перечисление.ВидыПоступлений.НаличныйРасчет)
+			ТОГДА ПриходДенегНаСчет.СуммаДокумента
+		ИНАЧЕ 0
+	КОНЕЦ) КАК Наличные,
 	СУММА(ВЫБОР
-			КОГДА ПриходДенегНаСчет.Поступление = ЗНАЧЕНИЕ(перечисление.ВидыПоступлений.БезналичныйРасчет)
-				ТОГДА ПриходДенегНаСчет.СуммаДокумента
-			ИНАЧЕ 0
-		КОНЕЦ) КАК Безнал,
+		КОГДА ПриходДенегНаСчет.Поступление = ЗНАЧЕНИЕ(перечисление.ВидыПоступлений.БезналичныйРасчет)
+			ТОГДА ПриходДенегНаСчет.СуммаДокумента
+		ИНАЧЕ 0
+	КОНЕЦ) КАК Безнал,
 	СУММА(ВЫБОР
-			КОГДА ПриходДенегНаСчет.Поступление = ЗНАЧЕНИЕ(перечисление.ВидыПоступлений.БезналичныйРасчет)
-				ТОГДА ВЫБОР
-						КОГДА ПриходДенегНаСчет.Счет.Владелец.Налог = 20
-								И ПриходДенегНаСчет.Дата >= &amp;ДатаНачалаБезналБезНДС
-							ТОГДА ВЫРАЗИТЬ(ПриходДенегНаСчет.СуммаДокумента / 1.2 КАК ЧИСЛО(20, 0))
-						ИНАЧЕ ПриходДенегНаСчет.СуммаДокумента
-					КОНЕЦ
-			ИНАЧЕ 0
-		КОНЕЦ) КАК БезналБезНДС,
+		КОГДА ПриходДенегНаСчет.Поступление = ЗНАЧЕНИЕ(перечисление.ВидыПоступлений.БезналичныйРасчет)
+			ТОГДА ВЫБОР
+				КОГДА ПриходДенегНаСчет.Счет.Владелец.Налог = 20
+				И ПриходДенегНаСчет.Дата >= &amp;ДатаНачалаБезналБезНДС
+					ТОГДА ВЫРАЗИТЬ(ПриходДенегНаСчет.СуммаДокумента / 1.2 КАК ЧИСЛО(20, 0))
+				ИНАЧЕ ПриходДенегНаСчет.СуммаДокумента
+			КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ) КАК БезналБезНДС,
 	ПриходДенегНаСчет.Менеджер КАК Менеджер
 ПОМЕСТИТЬ НалБезнал
 ИЗ
 	Документ.ПриходДенегНаСчет КАК ПриходДенегНаСчет
 ГДЕ
 	ПриходДенегНаСчет.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
-
 СГРУППИРОВАТЬ ПО
 	ПриходДенегНаСчет.Менеджер
 ;
@@ -22568,26 +22775,25 @@
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК КолвоЗаявок,
 	ЗаказКлиента.Ответственный КАК Ответственный,
 	СУММА(ВЫБОР
-			КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.Думает)
-					ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.Ожидание)
-					ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.ОжидаетПриход)
-				ТОГДА 1
-			ИНАЧЕ 0
-		КОНЕЦ) КАК ВРаботе,
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.Думает)
+		ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.Ожидание)
+		ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.ОжидаетПриход)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ) КАК ВРаботе,
 	СУММА(ВЫБОР
-			КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.Думает)
-					ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.Ожидание)
-					ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.ОжидаетПриход)
-				ТОГДА ЗаказКлиента.СуммаДокумента
-			ИНАЧЕ 0
-		КОНЕЦ) КАК СуммаВРаботе
+		КОГДА ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.Думает)
+		ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.Ожидание)
+		ИЛИ ЗаказКлиента.Состояние = ЗНАЧЕНИЕ(перечисление.дт_состояниязаказовклиента.ОжидаетПриход)
+			ТОГДА ЗаказКлиента.СуммаДокумента
+		ИНАЧЕ 0
+	КОНЕЦ) КАК СуммаВРаботе
 ПОМЕСТИТЬ ЗаявкиМенеджера
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
 ГДЕ
 	ЗаказКлиента.Клиент.Ответственный = ЗаказКлиента.Ответственный
 	И ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
-
 СГРУППИРОВАТЬ ПО
 	ЗаказКлиента.Ответственный
 ;
@@ -22598,21 +22804,20 @@
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаписиЗвонков.Дата) КАК КоличествоЗвонков,
 	СУММА(ЗаписиЗвонков.Длительность) КАК Длительность,
 	СУММА(ВЫБОР
-			КОГДА ЗаписиЗвонков.ТипЗвонка
-				ТОГДА ЗаписиЗвонков.Длительность
-			ИНАЧЕ 0
-		КОНЕЦ) КАК ДлительностьИсходящих,
+		КОГДА ЗаписиЗвонков.ТипЗвонка
+			ТОГДА ЗаписиЗвонков.Длительность
+		ИНАЧЕ 0
+	КОНЕЦ) КАК ДлительностьИсходящих,
 	СУММА(ВЫБОР
-			КОГДА НЕ ЗаписиЗвонков.ТипЗвонка
-				ТОГДА ЗаписиЗвонков.Длительность
-			ИНАЧЕ 0
-		КОНЕЦ) КАК ДлительностьВходящих
+		КОГДА НЕ ЗаписиЗвонков.ТипЗвонка
+			ТОГДА ЗаписиЗвонков.Длительность
+		ИНАЧЕ 0
+	КОНЕЦ) КАК ДлительностьВходящих
 ПОМЕСТИТЬ ЗвонкиМенеджера
 ИЗ
 	РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
 ГДЕ
 	ЗаписиЗвонков.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
-
 СГРУППИРОВАТЬ ПО
 	ЗаписиЗвонков.Менеджер
 ;
@@ -22627,7 +22832,6 @@
 	РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
 ГДЕ
 	ЗаписиЗвонков.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
-
 СГРУППИРОВАТЬ ПО
 	ЗаписиЗвонков.ТипЗвонка,
 	ЗаписиЗвонков.Менеджер
@@ -22636,13 +22840,28 @@
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
 	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК КолвоЗаявок,
-	ЗаказКлиента.Ответственный КАК Ответственный
+	ЗаказКлиента.Ответственный КАК Ответственный,
+	СУММА(ЗаказКлиента.СуммаДокумента) КАК СуммаДокумента
 ПОМЕСТИТЬ ВсеЗаявкиМенеджера
 ИЗ
 	Документ.ЗаказКлиента КАК ЗаказКлиента
 ГДЕ
 	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+СГРУППИРОВАТЬ ПО
+	ЗаказКлиента.Ответственный
+;
 
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ЗаказКлиента.Ссылка) КАК КолвоЗаявок,
+	ЗаказКлиента.Ответственный КАК Ответственный,
+	СУММА(ЗаказКлиента.СуммаДокумента) КАК СуммаДокумента
+ПОМЕСТИТЬ ПроиграноСделок
+ИЗ
+	Документ.ЗаказКлиента КАК ЗаказКлиента
+ГДЕ
+	ЗаказКлиента.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ЗаказКлиента.Состояние &lt;> ЗНАЧЕНИЕ(Перечисление.дт_СостоянияЗаказовКлиента.Продажа)
 СГРУППИРОВАТЬ ПО
 	ЗаказКлиента.Ответственный
 ;
@@ -22659,7 +22878,6 @@
 ГДЕ
 	ПродажаЗапчастей.Клиент.Ответственный = ПродажаЗапчастей.КтоПродал
 	И ПродажаЗапчастей.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
-
 СГРУППИРОВАТЬ ПО
 	ПродажаЗапчастей.КтоПродал
 ;
@@ -22675,7 +22893,6 @@
 	Документ.ПродажаЗапчастей КАК ПродажаЗапчастей
 ГДЕ
 	ПродажаЗапчастей.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
-
 СГРУППИРОВАТЬ ПО
 	ПродажаЗапчастей.КтоПродал
 ;
@@ -22688,7 +22905,6 @@
 ПОМЕСТИТЬ КлиентыМенеджера
 ИЗ
 	Справочник.Клиенты КАК Клиенты
-
 СГРУППИРОВАТЬ ПО
 	Клиенты.Ответственный
 ;
@@ -22702,7 +22918,6 @@
 	Документ.ПриходДенегНаСчет КАК ПриходДенегНаСчет
 ГДЕ
 	ПриходДенегНаСчет.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
-
 СГРУППИРОВАТЬ ПО
 	ПриходДенегНаСчет.Менеджер
 ;
@@ -22717,7 +22932,6 @@
 ГДЕ
 	Расходы.ВидРасхода = &amp;ВидРасхода
 	И Расходы.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
-
 СГРУППИРОВАТЬ ПО
 	Расходы.Инициатор.Пользователь
 ;
@@ -22729,13 +22943,17 @@
 ПОМЕСТИТЬ ПоследнийЗвонокМенеджера
 ИЗ
 	РегистрСведений.ЗаписиЗвонков КАК ЗаписиЗвонков
-
 СГРУППИРОВАТЬ ПО
 	ЗаписиЗвонков.Менеджер
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
+	ЕСТЬNULL(ВсеЗаявкиМенеджера.СуммаДокумента, 0) КАК СуммаЗаявок,
+	ЕСТЬNULL(ВЫРАЗИТЬ(((ВсеПродажиМенеджера.ИтогоРекв / ВсеЗаявкиМенеджера.СуммаДокумента) * 100) КАК ЧИСЛО(2.0)), 0) КАК
+		КонверсияПроцент,
+	ЕСТЬNULL(ПроиграноСделок.КолвоЗаявок, 0) КАК ПроиграноСделок,
+	ПроиграноСделок.СуммаДокумента КАК СуммаПроигранноСделок,
 	ПриходДенегНаСчет.СуммаДокумента КАК СуммаПоступлений,
 	КлиентыМенеджера.ОбщееКоличествоКлиентов КАК КоличествоКлиентов,
 	ДополнительныеНомера.Менеджер КАК Менеджер,
@@ -22749,15 +22967,15 @@
 	ЗвонкиМенеджера.Длительность / 60 КАК Длительность,
 	(НалБезнал.Наличные + НалБезнал.БезналБезНДС) * 0.03 КАК ЗПМенеджера,
 	СУММА(ВЫБОР
-			КОГДА ВхИсхМенеджера.ТипЗвонка
-				ТОГДА ВхИсхМенеджера.ВхИсх
-			ИНАЧЕ 0
-		КОНЕЦ) КАК Исходящие,
+		КОГДА ВхИсхМенеджера.ТипЗвонка
+			ТОГДА ВхИсхМенеджера.ВхИсх
+		ИНАЧЕ 0
+	КОНЕЦ) КАК Исходящие,
 	СУММА(ВЫБОР
-			КОГДА НЕ ВхИсхМенеджера.ТипЗвонка
-				ТОГДА ВхИсхМенеджера.ВхИсх
-			ИНАЧЕ 0
-		КОНЕЦ) КАК Входящие,
+		КОГДА НЕ ВхИсхМенеджера.ТипЗвонка
+			ТОГДА ВхИсхМенеджера.ВхИсх
+		ИНАЧЕ 0
+	КОНЕЦ) КАК Входящие,
 	КлиентыМенеджера.КоличествоАвтомобилей КАК КоличествоАвтомобилей,
 	НалБезнал.Наличные КАК Наличные,
 	НалБезнал.Безнал КАК Безнал,
@@ -22771,7 +22989,7 @@
 	ЗаявкиМенеджера.СуммаВРаботе КАК СуммаВРаботе,
 	ЗвонкиМенеджера.ДлительностьИсходящих КАК ДлительностьИсходящих,
 	ЗвонкиМенеджера.ДлительностьВходящих КАК ДлительностьВходящих
-
+	
 ИЗ
 	РегистрСведений.ДополнительныеНомера КАК ДополнительныеНомера
 		ЛЕВОЕ СОЕДИНЕНИЕ ЗаявкиМенеджера КАК ЗаявкиМенеджера
@@ -22796,7 +23014,8 @@
 		ПО (ДополнительныеНомера.Менеджер = ВТ_Расходы.Инициатор)
 		ЛЕВОЕ СОЕДИНЕНИЕ ПоследнийЗвонокМенеджера КАК ПоследнийЗвонокМенеджера
 		ПО (ДополнительныеНомера.Менеджер = ПоследнийЗвонокМенеджера.Менеджер)
-
+		ЛЕВОЕ СОЕДИНЕНИЕ ПроиграноСделок КАК ПроиграноСделок
+		ПО (ДополнительныеНомера.Менеджер = ПроиграноСделок.Ответственный)
 СГРУППИРОВАТЬ ПО
 	ДополнительныеНомера.Менеджер,
 	ПриходДенегНаСчет.СуммаДокумента,
@@ -22823,7 +23042,11 @@
 	ЗвонкиМенеджера.Длительность / 60,
 	3000000 - ПриходДенегНаСчет.СуммаДокумента,
 	ВсеПродажиМенеджера.ИтогоРекв - ВТ_Расходы.Сумма,
-	(НалБезнал.Наличные + НалБезнал.БезналБезНДС) * 0.03</queryText>
+	(НалБезнал.Наличные + НалБезнал.БезналБезНДС) * 0.03,
+	ВсеЗаявкиМенеджера.СуммаДокумента,
+	ПроиграноСделок.КолвоЗаявок,
+	ПроиграноСделок.СуммаДокумента</queryText>
+      <mainTable>InformationRegister.ДополнительныеНомера</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
       <autoSaveUserSettings>true</autoSaveUserSettings>
