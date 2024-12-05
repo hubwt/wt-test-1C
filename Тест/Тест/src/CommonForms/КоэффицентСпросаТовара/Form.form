@@ -130,6 +130,83 @@
         <textEdit>true</textEdit>
       </extInfo>
     </items>
+    <items xsi:type="form:FormField">
+      <name>Города</name>
+      <id>199</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Города</segments>
+      </dataPath>
+      <titleLocation>None</titleLocation>
+      <handlers>
+        <event>OnChange</event>
+        <name>ГородаПриИзменении</name>
+      </handlers>
+      <extendedTooltip>
+        <name>ГородаРасширеннаяПодсказка</name>
+        <id>201</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ГородаКонтекстноеМеню</name>
+        <id>200</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>RadioButtonField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+        <radioButtonsType>Tumbler</radioButtonsType>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Нижний Новгород</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>1</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Москва</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>2</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Екатеринбург</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>3</value>
+          </value>
+        </choiceList>
+      </extInfo>
+    </items>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -1780,7 +1857,7 @@
 	СУММА(ИндНомер.Цена) КАК Сумма
 ПОМЕСТИТЬ ОстаткиСумма
 ИЗ
-	РегистрНакопления.РегистрНакопления1.Остатки КАК РегистрНакопления1Остатки
+	РегистрНакопления.РегистрНакопления1.Остатки(, Склад = &amp;Склад) КАК РегистрНакопления1Остатки
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
 		ПО ИндНомер.индкод = РегистрНакопления1Остатки.индкод
 ГДЕ
@@ -1901,7 +1978,7 @@
 	СУММА(ИндНомер.Цена) КАК Сумма
 ПОМЕСТИТЬ ОстаткиСумма
 ИЗ
-	РегистрНакопления.РегистрНакопления1.Остатки КАК РегистрНакопления1Остатки
+	РегистрНакопления.РегистрНакопления1.Остатки(, Склад = &amp;Склад) КАК РегистрНакопления1Остатки
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
 		ПО ИндНомер.индкод = РегистрНакопления1Остатки.индкод
 ГДЕ
@@ -2083,6 +2160,26 @@
       <value>Все года</value>
     </title>
     <id>4</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>Города</name>
+    <title>
+      <key>ru</key>
+      <value>Города</value>
+    </title>
+    <id>5</id>
     <valueType>
       <types>Number</types>
       <numberQualifiers>
