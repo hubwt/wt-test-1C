@@ -648,6 +648,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СостояниеТовара</name>
+      <id>101</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.СостояниеТовара</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СостояниеТовараРасширеннаяПодсказка</name>
+        <id>103</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СостояниеТовараКонтекстноеМеню</name>
+        <id>102</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>МестоХранения</name>
       <id>83</id>
       <visible>true</visible>
@@ -936,14 +986,13 @@
 ГДЕ
 	ЗаказКлиентаТовары.Ссылка.Состояние = ЗНАЧЕНИЕ(Перечисление.дт_СостоянияЗаказовКлиента.ЖдёмДенег)
 	И ПродажаЗапчастей.ЗаказКлиента ЕСТЬ NULL
-
 СГРУППИРОВАТЬ ПО
 	ЗаказКлиентаТовары.Номенклатура,
 	ЗаказКлиентаТовары.Ссылка.Состояние
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	СправочникНоменклатура.Ссылка КАК Ссылка,
 	СправочникНоменклатура.Код КАК Код,
 	СправочникНоменклатура.Наименование КАК Наименование,
@@ -955,17 +1004,18 @@
 	СправочникНоменклатура.НомерЗаменИндекс КАК НомерЗаменИндекс,
 	СправочникНоменклатура.РекомендованаяЦена КАК РекомендованаяЦена,
 	СправочникНоменклатура.Категория КАК Категория,
-	ВТ_Заявки.Состояние КАК Состояние
+	ВТ_Заявки.Состояние КАК Состояние,
+	СправочникНоменклатура.Состояние КАК СостояниеТовара
+{ГДЕ
+	(СправочникНоменклатура.Категория = &amp;Категория)}
 ИЗ
 	Справочник.Номенклатура КАК СправочникНоменклатура
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РегистрНакопления1.Остатки(, Склад = &amp;Склад) КАК РегистрНакопления1Остатки
 		ПО СправочникНоменклатура.Ссылка = РегистрНакопления1Остатки.Товар
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.дт_МестаХраненияНоменклатуры.СрезПоследних(, Склад = &amp;Склад) КАК МестаХранения
 		ПО СправочникНоменклатура.Ссылка = МестаХранения.Номенклатура
-		Левое СОЕДИНЕНИЕ ВТ_Заявки КАК ВТ_Заявки
-		ПО СправочникНоменклатура.Ссылка = ВТ_Заявки.Номенклатура
-{ГДЕ
-	(СправочникНоменклатура.Категория = &amp;Категория)}</queryText>
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Заявки КАК ВТ_Заявки
+		ПО СправочникНоменклатура.Ссылка = ВТ_Заявки.Номенклатура</queryText>
       <mainTable>Catalog.Номенклатура</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
