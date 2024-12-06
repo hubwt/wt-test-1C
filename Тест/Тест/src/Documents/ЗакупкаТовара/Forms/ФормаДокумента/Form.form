@@ -739,6 +739,7 @@
         <autoFill>true</autoFill>
       </contextMenu>
       <type>InputField</type>
+      <readOnly>true</readOnly>
       <editMode>Enter</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
@@ -814,6 +815,10 @@
       <dataPath xsi:type="form:DataPath">
         <segments>Объект.ЗакупленныйТовар.СуммаЗакупки</segments>
       </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>ЗакупленныйТоварСуммаЗакупкиПриИзменении</name>
+      </handlers>
       <extendedTooltip>
         <name>ЗакупленныйТоварСуммаЗакупкиРасширеннаяПодсказка</name>
         <id>101</id>
