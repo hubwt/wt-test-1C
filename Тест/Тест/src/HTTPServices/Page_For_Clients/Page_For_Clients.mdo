@@ -9,19 +9,35 @@
   <reuseSessions>AutoUse</reuseSessions>
   <sessionMaxAge>20</sessionMaxAge>
   <urlTemplates uuid="6f52adba-7726-4bef-9d4e-bbc4b636a013">
-    <name>ПолучитьГорода</name>
+    <name>ПолучитьКатегорииТовара</name>
     <synonym>
       <key>ru</key>
-      <value>Получить города</value>
+      <value>Получить категории товара</value>
     </synonym>
-    <template>/get_cities/{count}/{page}/{region}/{text}</template>
+    <template>/get_product_categories</template>
     <methods uuid="fd60a38a-28c6-4588-ada3-d737c043b868">
-      <name>GetCities</name>
+      <name>GetProductCategories</name>
       <synonym>
         <key>ru</key>
-        <value>Get cities</value>
+        <value>Get product categories</value>
       </synonym>
-      <handler>ПолучитьГородаGetCities</handler>
+      <handler>ПолучитьКатегорииТовараgetproductcategories</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="419a8e3b-c438-46cf-9397-fd11a76e9da9">
+    <name>ПолучитьТоварыПоКатегории</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары по категории</value>
+    </synonym>
+    <template>/get_product_by_categories/{count}/{page}/{categories}</template>
+    <methods uuid="a3bbf479-0d15-466a-96d1-69bc367a6cf2">
+      <name>GetProductByCategories</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get product by categories</value>
+      </synonym>
+      <handler>ПолучитьТоварыПоКатегорииgetproductbycategories</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
