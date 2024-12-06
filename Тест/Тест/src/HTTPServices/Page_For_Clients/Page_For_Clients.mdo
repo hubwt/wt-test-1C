@@ -8,4 +8,20 @@
   <rootURL>page_for_clients</rootURL>
   <reuseSessions>AutoUse</reuseSessions>
   <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="e3e1d358-0bf9-48e5-b164-ab6623d5fbb7">
+    <name>ПолучитьТоварыКарточки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары карточки</value>
+    </synonym>
+    <template>/products-card/{id}/{filter_stock}/{count}/{page}</template>
+    <methods uuid="b2ff6d5c-de9d-4630-a83b-ea8606033f87">
+      <name>ProductsCard</name>
+      <synonym>
+        <key>ru</key>
+        <value>Products card</value>
+      </synonym>
+      <handler>ПолучитьТоварыКарточкиProductsCard</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
