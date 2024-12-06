@@ -25,4 +25,20 @@
       <handler>ПолучитьТоварыПоИндКодамGetProductsByIds</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="25cde28c-e445-43b2-b260-19c1ba4bba94">
+    <name>СписокТоваровДляИнвентаризации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список товаров для инвентаризации</value>
+    </synonym>
+    <template>/prodects_list_inventory/{city}/{count}/{page}</template>
+    <methods uuid="12e9fde1-44d2-49e1-9a11-8c520b7a61ad">
+      <name>ProductsListInventory</name>
+      <synonym>
+        <key>ru</key>
+        <value>Products list inventory</value>
+      </synonym>
+      <handler>СписокТоваровДляИнвентаризацииProductsListInventory</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
