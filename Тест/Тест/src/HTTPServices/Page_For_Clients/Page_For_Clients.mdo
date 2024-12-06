@@ -8,6 +8,38 @@
   <rootURL>page_for_clients</rootURL>
   <reuseSessions>AutoUse</reuseSessions>
   <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="9600757c-3476-44d6-ac29-858017de580a">
+    <name>ПолучитьТовар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товар</value>
+    </synonym>
+    <template>/product/{id}</template>
+    <methods uuid="1de0bb0e-f530-4ec3-a8d1-d3255a62a0ce">
+      <name>GetProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get product</value>
+      </synonym>
+      <handler>ПолучитьТоварGetProduct</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="36c77b70-3c9d-461c-acc3-df745cb3abe1">
+    <name>ПроверитьНаличиеТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проверить наличие товара</value>
+    </synonym>
+    <template>/check_the_product/{id}/{place}</template>
+    <methods uuid="64d6cc1a-b5df-4ad2-9f58-5550ea2eae06">
+      <name>GETCheckTheProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>GETCheck the product</value>
+      </synonym>
+      <handler>ПроверитьНаличиеТовараGETCheckTheProduct</handler>
+    </methods>
+  </urlTemplates>
   <urlTemplates uuid="e3e1d358-0bf9-48e5-b164-ab6623d5fbb7">
     <name>ПолучитьТоварыКарточки</name>
     <synonym>
