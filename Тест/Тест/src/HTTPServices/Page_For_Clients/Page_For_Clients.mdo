@@ -8,4 +8,20 @@
   <rootURL>page_for_clients</rootURL>
   <reuseSessions>AutoUse</reuseSessions>
   <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="6f52adba-7726-4bef-9d4e-bbc4b636a013">
+    <name>ПолучитьГорода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить города</value>
+    </synonym>
+    <template>/get_cities/{count}/{page}/{region}/{text}</template>
+    <methods uuid="fd60a38a-28c6-4588-ada3-d737c043b868">
+      <name>GetCities</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get cities</value>
+      </synonym>
+      <handler>ПолучитьГородаGetCities</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
