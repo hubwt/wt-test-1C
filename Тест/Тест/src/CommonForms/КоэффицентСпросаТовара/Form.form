@@ -357,6 +357,10 @@
     <items xsi:type="form:FormField">
       <name>СписокНоменклатурыКоэффицентОстатокСовпадает</name>
       <id>196</id>
+      <title>
+        <key>ru</key>
+        <value>Остаток совпадает НН</value>
+      </title>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -383,6 +387,110 @@
       <contextMenu>
         <name>СписокНоменклатурыКоэффицентОстатокСовпадаетКонтекстноеМеню</name>
         <id>197</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>PictureField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:ImageFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <horizontalStretch>true</horizontalStretch>
+        <verticalStretch>true</verticalStretch>
+        <valuesPicture xsi:type="core:PictureRef">
+          <picture>CommonPicture.Галочки</picture>
+        </valuesPicture>
+        <fileDragMode>AsFileRef</fileDragMode>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокНоменклатурыКоэффицентОстатокСовпадаетМСК</name>
+      <id>202</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокНоменклатурыКоэффицент.ОстатокСовпадаетМСК</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокНоменклатурыКоэффицентОстатокСовпадаетМСКРасширеннаяПодсказка</name>
+        <id>204</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокНоменклатурыКоэффицентОстатокСовпадаетМСККонтекстноеМеню</name>
+        <id>203</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>PictureField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:ImageFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <horizontalStretch>true</horizontalStretch>
+        <verticalStretch>true</verticalStretch>
+        <valuesPicture xsi:type="core:PictureRef">
+          <picture>CommonPicture.Галочки</picture>
+        </valuesPicture>
+        <fileDragMode>AsFileRef</fileDragMode>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>СписокНоменклатурыКоэффицентОстатокСовпадаетЕКБ</name>
+      <id>205</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокНоменклатурыКоэффицент.ОстатокСовпадаетЕКБ</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокНоменклатурыКоэффицентОстатокСовпадаетЕКБРасширеннаяПодсказка</name>
+        <id>207</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокНоменклатурыКоэффицентОстатокСовпадаетЕКБКонтекстноеМеню</name>
+        <id>206</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -1925,7 +2033,9 @@
 	СпрНоменклатура.ОстатокСовпадает,
 	дт_МестаХраненияНоменклатурыСрезПоследних.МестоХранения,
 	СпрНоменклатура.ПроцентМенеджераНаНеЛиквид КАК ПроцентМенеджера,
-	СпрНоменклатура.ОписаниеЗаполнено
+	СпрНоменклатура.ОписаниеЗаполнено,
+	СпрНоменклатура.ОстатокСовпадаетМСК,
+	СпрНоменклатура.ОстатокСовпадаетЕКБ
 ИЗ
 	Справочник.Номенклатура КАК СпрНоменклатура
 		ЛЕВОЕ СОЕДИНЕНИЕ ТоварыИзЗаявок КАК ТоварыИзЗаявок

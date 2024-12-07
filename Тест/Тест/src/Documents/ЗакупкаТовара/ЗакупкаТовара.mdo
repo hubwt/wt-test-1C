@@ -24,6 +24,7 @@
   <checkUnique>true</checkUnique>
   <autonumbering>true</autonumbering>
   <defaultObjectForm>Document.ЗакупкаТовара.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.ЗакупкаТовара.Form.ФормаСписка</defaultListForm>
   <postInPrivilegedMode>true</postInPrivilegedMode>
   <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
   <attributes uuid="ffdc3cc6-13e2-4d52-8a2c-f9287e848e9e">
@@ -95,6 +96,15 @@
     <synonym>
       <key>ru</key>
       <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="be832cb7-2230-44ec-b92e-decb199c0936">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
     </synonym>
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
@@ -299,10 +309,10 @@
         <value>Назначение детали</value>
       </synonym>
       <type>
+        <types>CatalogRef.ПроектыРазработки</types>
+        <types>DocumentRef.ПродажаЗапчастей</types>
         <types>String</types>
         <types>DocumentRef.ЗаказКлиента</types>
-        <types>DocumentRef.ПродажаЗапчастей</types>
-        <types>CatalogRef.ПроектыРазработки</types>
         <stringQualifiers>
           <length>10</length>
         </stringQualifiers>
