@@ -118,7 +118,41 @@
         <key>ru</key>
         <value>Get list verified products</value>
       </synonym>
+      <httpMethod>POST</httpMethod>
       <handler>ПолучитьСписокПроверенныхТоваровGetListVerifiedProducts</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e528b5a8-3c23-4abd-9989-22b9f6b0eb32">
+    <name>ПолучитьПроверенныеТоварыJSON</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить проверенные товары JSON</value>
+    </synonym>
+    <template>/get_all_list_verified_products</template>
+    <methods uuid="9faf95cc-dd07-488e-8938-bf5da06c6677">
+      <name>GetAllListVerifiedProducts</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get all list verified products</value>
+      </synonym>
+      <handler>ПолучитьПроверенныеТоварыJSONGetAllListVerifiedProducts</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e7a1bd49-c610-4df4-8180-d11e1cb0245b">
+    <name>ПолучитьТоварыПоМассивуИндКодов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары по массиву инд кодов</value>
+    </synonym>
+    <template>/get_products_from_array_ids/{count}/{page}</template>
+    <methods uuid="b2cfd32a-9570-41c7-a3b6-60e52b6eb836">
+      <name>GetProductsFromArrayIds</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get products from array ids</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьТоварыПоМассивуИндКодовGetProductsFromArrayIds</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
