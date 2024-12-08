@@ -916,6 +916,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокДеталейНоменклатурыКоличествоДнейПослеИнвентаризации</name>
+      <id>123</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокДеталейНоменклатуры.КоличествоДнейПослеИнвентаризации</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокДеталейНоменклатурыКоличествоДнейПослеИнвентаризацииРасширеннаяПодсказка</name>
+        <id>125</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокДеталейНоменклатурыКоличествоДнейПослеИнвентаризацииКонтекстноеМеню</name>
+        <id>124</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокДеталейНоменклатурыОтветственныйЗаИнвентаризацию</name>
       <id>115</id>
       <visible>true</visible>
@@ -1335,16 +1385,17 @@
 	КОНЕЦ КАК МестоХранения,
 	ИндНомер.Поддон КАК Поддон,
 	ИндНомер.Цена КАК цена,
-	ИндНомер.Машина.ВинКод КАК VIN,
 	ИндНомер.ДатаПроверкиЕстьВНаличии КАК ДатаИнвентаризации,
-	ИндНомер.ОтветственныйЕстьВНаличии КАК ОтветственныйЗаИнвентаризацию
+	ИндНомер.ОтветственныйЕстьВНаличии КАК ОтветственныйЗаИнвентаризацию,
+	РАЗНОСТЬДАТ(ИндНомер.ДатаПроверкиЕстьВНаличии, &amp;ТекущаяДата, ДЕНЬ) КАК КоличествоДнейПослеИнвентаризации,
+	РегистрНакопления1Остатки.машина.ВинКод КАК VIN
 ИЗ
 	РегистрНакопления.РегистрНакопления1.Остатки(, Товар = &amp;Товар) КАК РегистрНакопления1Остатки
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
 		ПО (ИндНомер.индкод = РегистрНакопления1Остатки.индкод)
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.дт_МестаХраненияНоменклатуры.СрезПоследних КАК МестаХранения
-		ПО РегистрНакопления1Остатки.Товар = МестаХранения.Номенклатура
-		И РегистрНакопления1Остатки.Склад = МестаХранения.Склад
+		ПО (РегистрНакопления1Остатки.Товар = МестаХранения.Номенклатура)
+			И (РегистрНакопления1Остатки.Склад = МестаХранения.Склад)
 ГДЕ
 	ИндНомер.ДатаПроверкиЕстьВНаличии &lt;> ДАТАВРЕМЯ(1, 1, 1)
 	И ИндНомер.ДатаПроверкиЕстьВНаличии >= &amp;ДатаМесяцНазад</queryText>
