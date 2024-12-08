@@ -217,6 +217,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокПроверенногоТовараКоличество</name>
+      <id>118</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокПроверенногоТовара.Количество</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокПроверенногоТовараКоличествоРасширеннаяПодсказка</name>
+        <id>120</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокПроверенногоТовараКоличествоКонтекстноеМеню</name>
+        <id>119</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокПроверенногоТовараСтандартнаяКартинка</name>
       <id>26</id>
       <visible>true</visible>
@@ -824,6 +874,7 @@
       <dataPath xsi:type="form:DataPath">
         <segments>СписокДеталейНоменклатуры.ДатаИнвентаризации</segments>
       </dataPath>
+      <titleLocation>Right</titleLocation>
       <extendedTooltip>
         <name>СписокДеталейНоменклатурыДатаИнвентаризацииРасширеннаяПодсказка</name>
         <id>114</id>
@@ -850,6 +901,7 @@
         <autoFill>true</autoFill>
       </contextMenu>
       <type>InputField</type>
+      <horizontalAlign>Right</horizontalAlign>
       <editMode>Enter</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
@@ -900,6 +952,7 @@
         <autoFill>true</autoFill>
       </contextMenu>
       <type>InputField</type>
+      <horizontalAlign>Right</horizontalAlign>
       <editMode>Enter</editMode>
       <showInHeader>true</showInHeader>
       <headerHorizontalAlign>Left</headerHorizontalAlign>
@@ -1106,6 +1159,39 @@
     <contextMenu>
       <name>СписокДеталейНоменклатурыКонтекстноеМеню</name>
       <id>74</id>
+      <items xsi:type="form:Button">
+        <name>СписокДеталейНоменклатурыКонтекстноеМенюОткрытьДетальНаСайте</name>
+        <id>121</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>СписокДеталейНоменклатурыКонтекстноеМенюОткрытьДетальНаСайтеРасширеннаяПодсказка</name>
+          <id>122</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.ОткрытьДетальНаСайте</commandName>
+        <representation>PictureAndText</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <picture xsi:type="core:PictureRef">
+          <picture>StdPicture.GotoExternalURL</picture>
+        </picture>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -1189,7 +1275,8 @@
 	ИндНомер.индкод.Владелец.Ссылка КАК Товар,
 	МАКСИМУМ(ИндНомер.индкод.Владелец.Код) КАК Код,
 	МАКСИМУМ(ИндНомер.индкод.Владелец.Артикул) КАК Артикул,
-	МАКСИМУМ(ИндНомер.индкод.Владелец.РекомендованаяЦена) КАК Цена
+	МАКСИМУМ(ИндНомер.индкод.Владелец.РекомендованаяЦена) КАК Цена,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ИндНомер.индкод) КАК Количество
 ПОМЕСТИТЬ ТоврыПрошедшиеИнв
 ИЗ
 	РегистрНакопления.РегистрНакопления1.Остатки КАК РегистрНакопления1Остатки
@@ -1198,17 +1285,17 @@
 ГДЕ
 	ИндНомер.ДатаПроверкиЕстьВНаличии &lt;> ДАТАВРЕМЯ(1, 1, 1)
 	И ИндНомер.ДатаПроверкиЕстьВНаличии >= &amp;ДатаМесяцНазад
-
 СГРУППИРОВАТЬ ПО
 	ИндНомер.индкод.Владелец.Ссылка
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	Номенклатура.Ссылка КАК Ссылка,
 	ТоврыПрошедшиеИнв.Код КАК Код,
 	ТоврыПрошедшиеИнв.Артикул КАК Артикул,
-	ТоврыПрошедшиеИнв.Цена КАК Цена
+	ТоврыПрошедшиеИнв.Цена КАК Цена,
+	ТоврыПрошедшиеИнв.Количество
 ИЗ
 	Справочник.Номенклатура КАК Номенклатура
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ТоврыПрошедшиеИнв КАК ТоврыПрошедшиеИнв
@@ -1253,7 +1340,7 @@
 	ИндНомер.ОтветственныйЕстьВНаличии КАК ОтветственныйЗаИнвентаризацию
 ИЗ
 	РегистрНакопления.РегистрНакопления1.Остатки(, Товар = &amp;Товар) КАК РегистрНакопления1Остатки
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
 		ПО (ИндНомер.индкод = РегистрНакопления1Остатки.индкод)
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.дт_МестаХраненияНоменклатуры.СрезПоследних КАК МестаХранения
 		ПО РегистрНакопления1Остатки.Товар = МестаХранения.Номенклатура
@@ -1268,6 +1355,23 @@
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
   </attributes>
+  <formCommands>
+    <name>ОткрытьДетальНаСайте</name>
+    <title>
+      <key>ru</key>
+      <value>Открыть деталь на сайте</value>
+    </title>
+    <id>1</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ОткрытьДетальНаСайте</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
   <commandInterface>
     <navigationPanel/>
     <commandBar/>
