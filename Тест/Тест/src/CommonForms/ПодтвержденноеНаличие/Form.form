@@ -267,6 +267,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокПроверенногоТовараКоличествоФото</name>
+      <id>132</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокПроверенногоТовара.КоличествоФото</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокПроверенногоТовараКоличествоФотоРасширеннаяПодсказка</name>
+        <id>134</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокПроверенногоТовараКоличествоФотоКонтекстноеМеню</name>
+        <id>133</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокПроверенногоТовараСтандартнаяКартинка</name>
       <id>26</id>
       <visible>true</visible>
@@ -864,6 +914,49 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокДеталейНоменклатурыЕстьФото</name>
+      <id>126</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокДеталейНоменклатуры.ЕстьФото</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокДеталейНоменклатурыЕстьФотоРасширеннаяПодсказка</name>
+        <id>128</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокДеталейНоменклатурыЕстьФотоКонтекстноеМеню</name>
+        <id>127</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>CheckBoxField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокДеталейНоменклатурыДатаИнвентаризации</name>
       <id>112</id>
       <visible>true</visible>
@@ -1326,7 +1419,12 @@
 	МАКСИМУМ(ИндНомер.индкод.Владелец.Код) КАК Код,
 	МАКСИМУМ(ИндНомер.индкод.Владелец.Артикул) КАК Артикул,
 	МАКСИМУМ(ИндНомер.индкод.Владелец.РекомендованаяЦена) КАК Цена,
-	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ИндНомер.индкод) КАК Количество
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ИндНомер.индкод) КАК Количество,
+	СУММА(ВЫБОР
+		КОГДА ИндНомер.ЕстьФото = ИСТИНА
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ) КАК КоличествоФото
 ПОМЕСТИТЬ ТоврыПрошедшиеИнв
 ИЗ
 	РегистрНакопления.РегистрНакопления1.Остатки КАК РегистрНакопления1Остатки
@@ -1340,12 +1438,13 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
+ВЫБРАТЬ
 	Номенклатура.Ссылка КАК Ссылка,
 	ТоврыПрошедшиеИнв.Код КАК Код,
 	ТоврыПрошедшиеИнв.Артикул КАК Артикул,
 	ТоврыПрошедшиеИнв.Цена КАК Цена,
-	ТоврыПрошедшиеИнв.Количество
+	ТоврыПрошедшиеИнв.Количество КАК Количество,
+	ТоврыПрошедшиеИнв.КоличествоФото КАК КоличествоФото
 ИЗ
 	Справочник.Номенклатура КАК Номенклатура
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ТоврыПрошедшиеИнв КАК ТоврыПрошедшиеИнв
@@ -1388,14 +1487,15 @@
 	ИндНомер.ДатаПроверкиЕстьВНаличии КАК ДатаИнвентаризации,
 	ИндНомер.ОтветственныйЕстьВНаличии КАК ОтветственныйЗаИнвентаризацию,
 	РАЗНОСТЬДАТ(ИндНомер.ДатаПроверкиЕстьВНаличии, &amp;ТекущаяДата, ДЕНЬ) КАК КоличествоДнейПослеИнвентаризации,
-	РегистрНакопления1Остатки.машина.ВинКод КАК VIN
+	РегистрНакопления1Остатки.машина.ВинКод КАК VIN,
+	ИндНомер.ЕстьФото
 ИЗ
 	РегистрНакопления.РегистрНакопления1.Остатки(, Товар = &amp;Товар) КАК РегистрНакопления1Остатки
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
 		ПО (ИндНомер.индкод = РегистрНакопления1Остатки.индкод)
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.дт_МестаХраненияНоменклатуры.СрезПоследних КАК МестаХранения
 		ПО (РегистрНакопления1Остатки.Товар = МестаХранения.Номенклатура)
-			И (РегистрНакопления1Остатки.Склад = МестаХранения.Склад)
+		И (РегистрНакопления1Остатки.Склад = МестаХранения.Склад)
 ГДЕ
 	ИндНомер.ДатаПроверкиЕстьВНаличии &lt;> ДАТАВРЕМЯ(1, 1, 1)
 	И ИндНомер.ДатаПроверкиЕстьВНаличии >= &amp;ДатаМесяцНазад</queryText>
