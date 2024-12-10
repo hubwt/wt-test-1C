@@ -378,6 +378,10 @@
     <items xsi:type="form:FormField">
       <name>ОстатокНаСкладе</name>
       <id>113</id>
+      <title>
+        <key>ru</key>
+        <value>ОстатокНН</value>
+      </title>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -419,6 +423,114 @@
       <extInfo xsi:type="form:LabelFieldExtInfo">
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>ОстатокНаСкладеЕКБ</name>
+      <id>119</id>
+      <title>
+        <key>ru</key>
+        <value>ОстатокЕКБ</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.ОстатокНаСкладеЕКБ</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ОстатокНаСкладеЕКБРасширеннаяПодсказка</name>
+        <id>121</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ОстатокНаСкладеЕКБКонтекстноеМеню</name>
+        <id>120</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>ОстатокНаСкладеМСК</name>
+      <id>122</id>
+      <title>
+        <key>ru</key>
+        <value>ОстатокМСК</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.ОстатокНаСкладеМСК</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ОстатокНаСкладеМСКРасширеннаяПодсказка</name>
+        <id>124</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ОстатокНаСкладеМСККонтекстноеМеню</name>
+        <id>123</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
@@ -1683,6 +1795,34 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
+	СУММА(ДвижениеТМЦВорктракОстатки.КоличествоОстаток) КАК ОстатокНаСкладе,
+	ДвижениеТМЦВорктракОстатки.ТМЦ КАК ТМЦ
+ПОМЕСТИТЬ ВТ_ОстатокНаСкладеМСК
+ИЗ
+	РегистрНакопления.ДвижениеТМЦВорктрак.Остатки(&amp;Дата, ) КАК ДвижениеТМЦВорктракОстатки
+ГДЕ
+	ДвижениеТМЦВорктракОстатки.МестоХранения.Код = &quot;000000227&quot;
+
+СГРУППИРОВАТЬ ПО
+	ДвижениеТМЦВорктракОстатки.ТМЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(ДвижениеТМЦВорктракОстатки.КоличествоОстаток) КАК ОстатокНаСкладе,
+	ДвижениеТМЦВорктракОстатки.ТМЦ КАК ТМЦ
+ПОМЕСТИТЬ ВТ_ОстатокНаСкладеЕКБ
+ИЗ
+	РегистрНакопления.ДвижениеТМЦВорктрак.Остатки(&amp;Дата, ) КАК ДвижениеТМЦВорктракОстатки
+ГДЕ
+	ДвижениеТМЦВорктракОстатки.МестоХранения.Код = &quot;000000226&quot;
+
+СГРУППИРОВАТЬ ПО
+	ДвижениеТМЦВорктракОстатки.ТМЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
 	ИнвентарныеНомера.Владелец КАК Владелец,
 	МАКСИМУМ(ИнвентарныеНомера.Стоимость) КАК Стоимость
 ПОМЕСТИТЬ ВТ_МаксимальнаяСтоимость
@@ -1722,19 +1862,25 @@
 		КОГДА ВТ_СтоимостьКомплектовки.Сумма > 0
 			ТОГДА ВТ_СтоимостьКомплектовки.Сумма
 		ИНАЧЕ ВТ_МаксимальнаяСтоимость.Стоимость
-	КОНЕЦ КАК СтоимостьТМЦ
+	КОНЕЦ КАК СтоимостьТМЦ,
+	ВТ_ОстатокНаСкладеЕКБ.ОстатокНаСкладе КАК ОстатокНаСкладеЕКБ,
+	ВТ_ОстатокНаСкладеМСК.ОстатокНаСкладе КАК ОстатокНаСкладеМСК
 ИЗ
 	Справочник.ТМЦВорктрак КАК СправочникТМЦВорктрак
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.дт_НаличиеФайлов КАК дт_НаличиеФайлов
-		ПО СправочникТМЦВорктрак.Ссылка = дт_НаличиеФайлов.ОбъектСФайлами
+		ПО (СправочникТМЦВорктрак.Ссылка = дт_НаличиеФайлов.ОбъектСФайлами)
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Остаток КАК ВТ_Остаток
-		ПО СправочникТМЦВорктрак.Ссылка = ВТ_Остаток.ТМЦ
+		ПО (СправочникТМЦВорктрак.Ссылка = ВТ_Остаток.ТМЦ)
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОстатокНаСкладе КАК ВТ_ОстатокНаСкладе
-		ПО СправочникТМЦВорктрак.Ссылка = ВТ_ОстатокНаСкладе.ТМЦ
+		ПО (СправочникТМЦВорктрак.Ссылка = ВТ_ОстатокНаСкладе.ТМЦ)
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_МаксимальнаяСтоимость КАК ВТ_МаксимальнаяСтоимость
-		ПО СправочникТМЦВорктрак.Ссылка = ВТ_МаксимальнаяСтоимость.Владелец
+		ПО (СправочникТМЦВорктрак.Ссылка = ВТ_МаксимальнаяСтоимость.Владелец)
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СтоимостьКомплектовки КАК ВТ_СтоимостьКомплектовки
-		ПО СправочникТМЦВорктрак.Ссылка = ВТ_СтоимостьКомплектовки.СписаниеВТМЦ</queryText>
+		ПО (СправочникТМЦВорктрак.Ссылка = ВТ_СтоимостьКомплектовки.СписаниеВТМЦ)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОстатокНаСкладеМСК КАК ВТ_ОстатокНаСкладеМСК
+		ПО (СправочникТМЦВорктрак.Ссылка = ВТ_ОстатокНаСкладеМСК.ТМЦ.Ссылка)
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ОстатокНаСкладеЕКБ КАК ВТ_ОстатокНаСкладеЕКБ
+		ПО (СправочникТМЦВорктрак.Ссылка = ВТ_ОстатокНаСкладеЕКБ.ТМЦ.Ссылка)</queryText>
       <mainTable>Catalog.ТМЦВорктрак</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
