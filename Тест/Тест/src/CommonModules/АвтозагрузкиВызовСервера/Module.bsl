@@ -1588,7 +1588,7 @@
 	|ГДЕ
 	|	РегистрНакопления1Остатки.КолвоОстаток > 0
 	|	И ИндНомер.АвитоЧастник
-	|	И НЕ ИндНомер.УбратьИзАвтозагрузкиАвито
+	|	И ИндНомер.ВАвтозагрузкеАвито
 	|	И ТоварыИзЗаявок.КоличествоЗаявок > 0
 	|	И ИндНомер.индкод.Владелец <> ЗНАЧЕНИЕ(Справочник.Номенклатура.ПустаяСсылка)
 	|	И ИндНомер.Цена > 0
@@ -3973,7 +3973,7 @@
 				|<p>️Запчасти Scania и качественное восстановление тягачей. Оставьте заявку, и наши менеджеры помогут вам!</p]]></Description>
 				|<Price>" + Цена + "</Price>
 				|" + НайденныеФотки + "
-				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw</VideoURL>
+				|<VideoURL>https://rutube.ru/video/private/3d12a0445c38d7648e4fff724ebcd69c/?p=uL3e2SsIgFvgo3YnYu2_Ug</VideoURL>
 				|<GoodsType>Шины, диски и колёса</GoodsType>
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Шины для грузовиков и спецтехники</ProductType>
@@ -4070,7 +4070,7 @@
 				|<p>️Запчасти Scania и качественное восстановление тягачей. Оставьте заявку, и наши менеджеры помогут вам!</p]]></Description>
 				|<Price>" + Цена + "</Price>
 				|" + НайденныеФотки + "
-				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw</VideoURL>
+				|<VideoURL>https://rutube.ru/video/private/3d12a0445c38d7648e4fff724ebcd69c/?p=uL3e2SsIgFvgo3YnYu2_Ug</VideoURL>
 				|<GoodsType>Запчасти</GoodsType>
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Для грузовиков и спецтехники</ProductType>
@@ -4446,7 +4446,7 @@
 				|<p>️Запчасти Scania и качественное восстановление тягачей. Оставьте заявку, и наши менеджеры помогут вам!</p]]></Description>
 				|<Price>" + Цена + "</Price>
 				|" + НайденныеФотки + "
-				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw</VideoURL>
+				|<VideoURL>https://rutube.ru/video/private/3d12a0445c38d7648e4fff724ebcd69c/?p=uL3e2SsIgFvgo3YnYu2_Ug</VideoURL>
 				|<GoodsType>Шины, диски и колёса</GoodsType>
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Шины для грузовиков и спецтехники</ProductType>
@@ -4543,7 +4543,7 @@
 				|<p>️Запчасти Scania и качественное восстановление тягачей. Оставьте заявку, и наши менеджеры помогут вам!</p]]></Description>
 				|<Price>" + Цена + "</Price>
 				|" + НайденныеФотки + "
-				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw</VideoURL>
+				|<VideoURL>https://rutube.ru/video/private/3d12a0445c38d7648e4fff724ebcd69c/?p=uL3e2SsIgFvgo3YnYu2_Ug</VideoURL>
 				|<GoodsType>Запчасти</GoodsType>
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Для грузовиков и спецтехники</ProductType>
@@ -4876,7 +4876,7 @@
 				|<p>️Запчасти Scania и качественное восстановление тягачей. Оставьте заявку, и наши менеджеры помогут вам!</p]]></Description>
 				|<Price>" + Цена + "</Price>
 				|" + НайденныеФотки + "
-				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw</VideoURL>
+				|<VideoURL>https://rutube.ru/video/private/3d12a0445c38d7648e4fff724ebcd69c/?p=uL3e2SsIgFvgo3YnYu2_Ug</VideoURL>
 				|<GoodsType>Шины, диски и колёса</GoodsType>
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Шины для грузовиков и спецтехники</ProductType>
@@ -4973,7 +4973,7 @@
 				|<p>️Запчасти Scania и качественное восстановление тягачей. Оставьте заявку, и наши менеджеры помогут вам!</p]]></Description>
 				|<Price>" + Цена + "</Price>
 				|" + НайденныеФотки + "
-				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw</VideoURL>
+				|<VideoURL>https:https://rutube.ru/video/private/3d12a0445c38d7648e4fff724ebcd69c/?p=uL3e2SsIgFvgo3YnYu2_Ug</VideoURL>
 				|<GoodsType>Запчасти</GoodsType>
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Для грузовиков и спецтехники</ProductType>
@@ -6996,7 +6996,7 @@
 				|<p>️Запчасти Scania и качественное восстановление тягачей. Оставьте заявку, и наши менеджеры помогут вам!</p]]></Description>
 				|<Price>" + Цена + "</Price>
 				|" + НайденныеФотки + "
-				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw</VideoURL>
+				|<VideoURL>https://rutube.ru/video/private/3d12a0445c38d7648e4fff724ebcd69c/?p=uL3e2SsIgFvgo3YnYu2_Ug</VideoURL>
 				|<GoodsType>Шины, диски и колёса</GoodsType>
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Шины для грузовиков и спецтехники</ProductType>
@@ -7087,7 +7087,7 @@
 				|<p>️Запчасти Scania и качественное восстановление тягачей. Оставьте заявку, и наши менеджеры помогут вам!</p]]></Description>
 				|<Price>" + Цена + "</Price>
 				|" + НайденныеФотки + "
-				|<VideoURL>https://www.youtube.com/watch?v=E6-xEkuu5Kw</VideoURL>
+				|<VideoURL>https://rutube.ru/video/private/3d12a0445c38d7648e4fff724ebcd69c/?p=uL3e2SsIgFvgo3YnYu2_Ug</VideoURL>
 				|<GoodsType>Запчасти</GoodsType>
 				|<AdType>Товар приобретен на продажу</AdType>
 				|<ProductType>Для грузовиков и спецтехники</ProductType>
