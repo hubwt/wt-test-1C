@@ -7115,8 +7115,8 @@
 				|" + ЗаменаТекстаДетали + "
 				|<Condition>" + Состояние + "</Condition>
 				
-				|<SparePartType>" + РезультатЗапроса.SparePartType + "</SparePartType>
-				|<TechnicSparePartType>" + РезультатЗапроса.TechnicSparePartType + "</TechnicSparePartType>
+				|<SparePartType>" + Строка(РезультатЗапроса.SparePartType) + "</SparePartType>
+				|<TechnicSparePartType>" + Строка(РезультатЗапроса.TechnicSparePartType) + "</TechnicSparePartType>
 				
 				|</Ad>";
 			
