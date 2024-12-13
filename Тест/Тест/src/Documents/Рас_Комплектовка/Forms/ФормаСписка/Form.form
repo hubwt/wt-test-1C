@@ -503,6 +503,56 @@
             <textEdit>true</textEdit>
           </extInfo>
         </items>
+        <items xsi:type="form:FormField">
+          <name>ЦенаДетали</name>
+          <id>651</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Список.ЦенаДетали</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ЦенаДеталиРасширеннаяПодсказка</name>
+            <id>653</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ЦенаДеталиКонтекстноеМеню</name>
+            <id>652</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
         <autoCommandBar>
           <name>СписокКоманднаяПанель</name>
           <id>473</id>
@@ -2569,25 +2619,32 @@
     <main>true</main>
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
-	Рас_Комплектовка.Ссылка,
-	Рас_Комплектовка.Номер,
-	Рас_Комплектовка.Дата,
-	Рас_Комплектовка.Проведен,
-	Рас_Комплектовка.Состояние,
-	Рас_Комплектовка.Ответственный,
-	Рас_Комплектовка.Направление,
-	Рас_Комплектовка.Комментарий,
+	Рас_Комплектовка.Ссылка КАК Ссылка,
+	Рас_Комплектовка.Номер КАК Номер,
+	Рас_Комплектовка.Дата КАК Дата,
+	Рас_Комплектовка.Проведен КАК Проведен,
+	Рас_Комплектовка.Состояние КАК Состояние,
+	Рас_Комплектовка.Ответственный КАК Ответственный,
+	Рас_Комплектовка.Направление КАК Направление,
+	Рас_Комплектовка.Комментарий КАК Комментарий,
 	Рас_Комплектовка.Исполнители.(
-		Ссылка,
-		НомерСтроки,
-		Исполнитель,
-		Процент,
-		ВремяФакт,
-		Дата,
-		ВремяНорм)
-
+		Ссылка КАК Ссылка,
+		НомерСтроки КАК НомерСтроки,
+		Исполнитель КАК Исполнитель,
+		Процент КАК Процент,
+		ВремяФакт КАК ВремяФакт,
+		Дата КАК Дата,
+		ВремяНорм КАК ВремяНорм
+	) КАК Исполнители,
+	ВЫБОР
+		КОГДА ИндНомер.Цена &lt;> 0
+			ТОГДА ИндНомер.Цена
+		ИНАЧЕ ИндНомер.индкод.Владелец.РекомендованаяЦена
+	КОНЕЦ КАК ЦенаДетали
 ИЗ
-	Документ.Рас_Комплектовка КАК Рас_Комплектовка</queryText>
+	Документ.Рас_Комплектовка КАК Рас_Комплектовка
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
+		ПО (Рас_Комплектовка.Инкод.Наименование = ИндНомер.индкод.Наименование)</queryText>
       <mainTable>Document.Рас_Комплектовка</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
