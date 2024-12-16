@@ -2517,6 +2517,56 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
+          <name>Помощник</name>
+          <id>4030</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Список.Помощник</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ПомощникРасширеннаяПодсказка</name>
+            <id>4032</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ПомощникКонтекстноеМеню</name>
+            <id>4031</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>Согласовал</name>
           <id>49</id>
           <enabled>true</enabled>
@@ -7835,7 +7885,10 @@
 	ДокументЗаказКлиента.Целевая КАК Целевая,
 	ДокументЗаказКлиента.Контроль КАК Контроль,
 	ДокументЗаказКлиента.Закрыта КАК Закрыта1,
-	ДокументЗаказКлиента.СтатусОбработки КАК СтатусОбработки
+	ДокументЗаказКлиента.СтатусОбработки КАК СтатусОбработки,
+	ДокументЗаказКлиента.Помощник
+{ГДЕ
+	(ДокументЗаказКлиента.Ответственный = &amp;Ответственный) КАК Поле2}
 ИЗ
 	Документ.ЗаказКлиента КАК ДокументЗаказКлиента
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Приходы КАК ВТ_Приходы
@@ -7845,9 +7898,7 @@
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_НомерСчета КАК ВТ_НомерСчета
 		ПО ДокументЗаказКлиента.Ссылка = ВТ_НомерСчета.Основание
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_НомерПродажи КАК ВТ_НомерПродажи
-		ПО ДокументЗаказКлиента.Ссылка = ВТ_НомерПродажи.ЗаказКлиента
-{ГДЕ
-	(ДокументЗаказКлиента.Ответственный = &amp;Ответственный) КАК Поле2}</queryText>
+		ПО ДокументЗаказКлиента.Ссылка = ВТ_НомерПродажи.ЗаказКлиента</queryText>
       <mainTable>Document.ЗаказКлиента</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>

@@ -1755,6 +1755,56 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
+          <name>Помощник</name>
+          <id>395</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Список.Помощник</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ПомощникРасширеннаяПодсказка</name>
+            <id>397</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ПомощникКонтекстноеМеню</name>
+            <id>396</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>ДатаСвязи</name>
           <id>66</id>
           <visible>true</visible>
@@ -6375,7 +6425,10 @@
 	ДокументЗаказКлиента.Закрыта КАК Закрыта,
 	ДокументЗаказКлиента.АтоматическоеСоздание КАК АтоматическоеСоздание,
 	ВТ_Звонки.Длительность КАК Длительность,
-	ВТ_Звонки.Дата КАК КолвоЗвонков
+	ВТ_Звонки.Дата КАК КолвоЗвонков,
+	ДокументЗаказКлиента.Помощник
+{ГДЕ
+	(ДокументЗаказКлиента.Ответственный = &amp;Ответственный) КАК Поле2}
 ИЗ
 	Документ.ЗаказКлиента КАК ДокументЗаказКлиента
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Приходы КАК ВТ_Приходы
@@ -6386,8 +6439,6 @@
 		ПО ДокументЗаказКлиента.Ссылка = ВТ_Продажи.ЗаказКлиента
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Звонки КАК ВТ_Звонки
 		ПО ДокументЗаказКлиента.Ссылка = ВТ_Звонки.Заявка
-{ГДЕ
-	(ДокументЗаказКлиента.Ответственный = &amp;Ответственный) КАК Поле2}
 ГДЕ
 	(ДокументЗаказКлиента.ДатаСвязи &lt;= &amp;ДатаСвязи
 	И Не ДокументЗаказКлиента.Состояние В (&amp;Состояния)
