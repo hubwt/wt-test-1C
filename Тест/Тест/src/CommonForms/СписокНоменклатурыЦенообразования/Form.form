@@ -4142,7 +4142,7 @@
 		ЛЕВОЕ СОЕДИНЕНИЕ ВсеНоменклатура КАК ВсеНоменклатура
 		ПО ВсеНоменклатура.Наименование = Номенклатура.Ссылка
 ГДЕ
-	ВсеНоменклатура.Дата &lt;= &amp;ДатаВПрошлом</queryText>
+	НачалоПериода(ВсеНоменклатура.Дата, День) &lt;= НачалоПериода(&amp;ДатаВПрошлом, День)</queryText>
       <mainTable>Catalog.Номенклатура</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
