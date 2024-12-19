@@ -504,7 +504,7 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>ЦенаДетали</name>
+          <name>РекомендованнаяЦена</name>
           <id>651</id>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -512,10 +512,10 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Список.ЦенаДетали</segments>
+            <segments>Список.РекомендованнаяЦена</segments>
           </dataPath>
           <extendedTooltip>
-            <name>ЦенаДеталиРасширеннаяПодсказка</name>
+            <name>РекомендованнаяЦенаРасширеннаяПодсказка</name>
             <id>653</id>
             <visible>true</visible>
             <enabled>true</enabled>
@@ -530,7 +530,7 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>ЦенаДеталиКонтекстноеМеню</name>
+            <name>РекомендованнаяЦенаКонтекстноеМеню</name>
             <id>652</id>
             <visible>true</visible>
             <enabled>true</enabled>
@@ -714,6 +714,7 @@
         <selectionMode>MultiRow</selectionMode>
         <header>true</header>
         <headerHeight>1</headerHeight>
+        <footer>true</footer>
         <footerHeight>1</footerHeight>
         <horizontalScrollBar>AutoUse</horizontalScrollBar>
         <verticalScrollBar>AutoUse</verticalScrollBar>
@@ -2634,17 +2635,10 @@
 		Процент КАК Процент,
 		ВремяФакт КАК ВремяФакт,
 		Дата КАК Дата,
-		ВремяНорм КАК ВремяНорм
-	) КАК Исполнители,
-	ВЫБОР
-		КОГДА ИндНомер.Цена &lt;> 0
-			ТОГДА ИндНомер.Цена
-		ИНАЧЕ ИндНомер.индкод.Владелец.РекомендованаяЦена
-	КОНЕЦ КАК ЦенаДетали
+		ВремяНорм КАК ВремяНорм) КАК Исполнители,
+	Рас_Комплектовка.Номенклатура.РекомендованаяЦена КАК РекомендованнаяЦена
 ИЗ
-	Документ.Рас_Комплектовка КАК Рас_Комплектовка
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
-		ПО (Рас_Комплектовка.Инкод.Наименование = ИндНомер.индкод.Наименование)</queryText>
+	Документ.Рас_Комплектовка КАК Рас_Комплектовка</queryText>
       <mainTable>Document.Рас_Комплектовка</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
