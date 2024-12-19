@@ -6,6 +6,60 @@
     <items xsi:type="form:FormGroup">
       <name>СтраницаВосстановлениеДеталей</name>
       <id>33</id>
+      <items xsi:type="form:FormField">
+        <name>Диапазон</name>
+        <id>654</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Диапазон</segments>
+        </dataPath>
+        <handlers>
+          <event>OnChange</event>
+          <name>ДиапазонПриИзменении</name>
+        </handlers>
+        <extendedTooltip>
+          <name>ДиапазонРасширеннаяПодсказка</name>
+          <id>656</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ДиапазонКонтекстноеМеню</name>
+          <id>655</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
       <items xsi:type="form:Table">
         <name>Список</name>
         <id>472</id>
@@ -2597,6 +2651,11 @@
     <event>OnOpen</event>
     <name>ПриОткрытии</name>
   </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
+  </handlers>
+  <autoSaveDataInSettings>Use</autoSaveDataInSettings>
   <autoTitle>true</autoTitle>
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
@@ -2638,7 +2697,9 @@
 		ВремяНорм КАК ВремяНорм) КАК Исполнители,
 	Рас_Комплектовка.Номенклатура.РекомендованаяЦена КАК РекомендованнаяЦена
 ИЗ
-	Документ.Рас_Комплектовка КАК Рас_Комплектовка</queryText>
+	Документ.Рас_Комплектовка КАК Рас_Комплектовка
+{ГДЕ
+	Рас_Комплектовка.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания}</queryText>
       <mainTable>Document.Рас_Комплектовка</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
@@ -2786,6 +2847,23 @@
       <common>true</common>
     </edit>
     <savedData>true</savedData>
+  </attributes>
+  <attributes>
+    <name>Диапазон</name>
+    <title>
+      <key>ru</key>
+      <value>Диапазон</value>
+    </title>
+    <id>7</id>
+    <valueType>
+      <types>StandardPeriod</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
   </attributes>
   <formCommands>
     <name>ИнформацияОПроданныхИВостановленныхДеталях</name>
