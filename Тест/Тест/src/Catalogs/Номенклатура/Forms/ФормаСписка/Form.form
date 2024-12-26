@@ -144,38 +144,6 @@
       </extInfo>
     </items>
     <items xsi:type="form:Button">
-      <name>ОтменаРаспродажи</name>
-      <id>447</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <extendedTooltip>
-        <name>ОтменаРаспродажиРасширеннаяПодсказка</name>
-        <id>448</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <type>Label</type>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:LabelDecorationExtInfo">
-          <horizontalAlign>Left</horizontalAlign>
-        </extInfo>
-      </extendedTooltip>
-      <type>UsualButton</type>
-      <commandName>Form.Command.ОтменаРаспродажи</commandName>
-      <representation>Auto</representation>
-      <defaultButton>true</defaultButton>
-      <autoMaxWidth>true</autoMaxWidth>
-      <autoMaxHeight>true</autoMaxHeight>
-      <placementArea>UserCmds</placementArea>
-      <representationInContextMenu>Auto</representationInContextMenu>
-    </items>
-    <items xsi:type="form:Button">
       <name>СоздатьИзНомера</name>
       <id>34</id>
       <visible>true</visible>
@@ -5015,6 +4983,156 @@
             <autoMaxHeight>true</autoMaxHeight>
           </extInfo>
         </items>
+        <items xsi:type="form:FormField">
+          <name>ПартииДатаИнвентаризации</name>
+          <id>760</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Партии.ДатаИнвентаризации</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ПартииДатаИнвентаризацииРасширеннаяПодсказка</name>
+            <id>762</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ПартииДатаИнвентаризацииКонтекстноеМеню</name>
+            <id>761</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>ПартииОтветственныйИнвентаризация</name>
+          <id>754</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Партии.ОтветственныйИнвентаризация</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ПартииОтветственныйИнвентаризацияРасширеннаяПодсказка</name>
+            <id>756</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ПартииОтветственныйИнвентаризацияКонтекстноеМеню</name>
+            <id>755</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
+          <name>ПартииКоличествоДнейСИнвентаризации</name>
+          <id>757</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Партии.КоличествоДнейСИнвентаризации</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>ПартииКоличествоДнейСИнвентаризацииРасширеннаяПодсказка</name>
+            <id>759</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>ПартииКоличествоДнейСИнвентаризацииКонтекстноеМеню</name>
+            <id>758</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
         <autoCommandBar>
           <name>ПартииКоманднаяПанель</name>
           <id>18</id>
@@ -7874,8 +7992,7 @@
 	ИндНомер.Код КАК Код,
 	ВЫБОР
 		КОГДА РегистрНакопления1Остатки.Товар.Состояние = ЗНАЧЕНИЕ(Перечисление.Состояние.БУ)
-			ТОГДА (ВЫРАЗИТЬ(РегистрНакопления1Остатки.Товар.РекомендованаяЦена * ИндНомер.наценка.Коофициент / 10 КАК ЧИСЛО(10,
-				0))) * 10
+			ТОГДА (ВЫРАЗИТЬ(РегистрНакопления1Остатки.Товар.РекомендованаяЦена * ИндНомер.наценка.Коофициент / 10 КАК ЧИСЛО(10, 0))) * 10
 		ИНАЧЕ ИндНомер.Цена
 	КОНЕЦ КАК наценкаФ,
 	ИндНомер.п КАК Контрагенты,
@@ -7897,20 +8014,29 @@
 	ИндНомер.ЕстьФото КАК ЕстьФото,
 	ИндНомер.Состояние КАК Состояние,
 	ИндНомер.Поддон КАК Поддон,
-	ИндНомер.Оценка
+	ИндНомер.Оценка КАК Оценка,
+	ИндНомер.ДатаПроверкиЕстьВНаличии КАК ДатаИнвентаризации,
+	ИндНомер.ОтветственныйЕстьВНаличии КАК ОтветственныйИнвентаризация,
+	ВЫБОР
+		КОГДА ИндНомер.ДатаПроверкиЕстьВНаличии = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА 0
+		ИНАЧЕ РАЗНОСТЬДАТ(ИндНомер.ДатаПроверкиЕстьВНаличии, &amp;ТекущаяДата, ДЕНЬ)
+	КОНЕЦ КАК КоличествоДнейСИнвентаризации
 ИЗ
-	РегистрНакопления.РегистрНакопления1.Остатки(, Товар = &amp;Товар
-	И (НЕ &amp;ЕстьОтборПоСкладу
-	ИЛИ Склад = &amp;Склад)) КАК РегистрНакопления1Остатки
+	РегистрНакопления.РегистрНакопления1.Остатки(
+			,
+			Товар = &amp;Товар
+				И (НЕ &amp;ЕстьОтборПоСкладу
+					ИЛИ Склад = &amp;Склад)) КАК РегистрНакопления1Остатки
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.Комментарии КАК Комментарии
 		ПО (Комментарии.Товар = РегистрНакопления1Остатки.Товар)
-		И (Комментарии.Машина = РегистрНакопления1Остатки.машина)
-		И (Комментарии.индкод = РегистрНакопления1Остатки.индкод)
+			И (Комментарии.Машина = РегистрНакопления1Остатки.машина)
+			И (Комментарии.индкод = РегистрНакопления1Остатки.индкод)
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ИндНомер КАК ИндНомер
 		ПО (ИндНомер.индкод = РегистрНакопления1Остатки.индкод)
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.дт_МестаХраненияНоменклатуры.СрезПоследних КАК МестаХранения
-		ПО РегистрНакопления1Остатки.Товар = МестаХранения.Номенклатура
-		И РегистрНакопления1Остатки.Склад = МестаХранения.Склад</queryText>
+		ПО (РегистрНакопления1Остатки.Товар = МестаХранения.Номенклатура)
+			И (РегистрНакопления1Остатки.Склад = МестаХранения.Склад)</queryText>
       <mainTable>AccumulationRegister.РегистрНакопления1.Balance</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
@@ -9386,23 +9512,6 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>КомандаДляМоегоПиздатогоПоиска</name>
-      </handler>
-    </action>
-    <currentRowUse>Auto</currentRowUse>
-  </formCommands>
-  <formCommands>
-    <name>ОтменаРаспродажи</name>
-    <title>
-      <key>ru</key>
-      <value>Отмена распродажи</value>
-    </title>
-    <id>40</id>
-    <use>
-      <common>true</common>
-    </use>
-    <action xsi:type="form:FormCommandHandlerContainer">
-      <handler>
-        <name>ОтменаРаспро</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>

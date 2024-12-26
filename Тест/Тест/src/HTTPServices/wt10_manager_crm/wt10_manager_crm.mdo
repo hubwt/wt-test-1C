@@ -138,22 +138,6 @@
       <handler>ПоискЗаявокSearchApplications</handler>
     </methods>
   </urlTemplates>
-  <urlTemplates uuid="7887d17d-05dd-4e5e-b2ae-d0cc5456a662">
-    <name>ПолучитьДанныеОКлиенте</name>
-    <synonym>
-      <key>ru</key>
-      <value>Получить данные о клиенте</value>
-    </synonym>
-    <template>/get_info_client/{id}</template>
-    <methods uuid="f8e63dd9-bee4-43d8-b4a4-763eef15a5b3">
-      <name>Get_info_client</name>
-      <synonym>
-        <key>ru</key>
-        <value>Get info client</value>
-      </synonym>
-      <handler>ПолучитьДанныеОКлиентеGet_info_client</handler>
-    </methods>
-  </urlTemplates>
   <urlTemplates uuid="f874af92-2406-4eba-bf32-9cdaa68045f5">
     <name>РедактироватьКлиента</name>
     <synonym>
@@ -364,6 +348,39 @@
       </synonym>
       <httpMethod>POST</httpMethod>
       <handler>ИзменитьСтатусЗаявкиВерсия2changestatusappv2</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="ab5101fd-d509-477f-8793-74ef93abb9b8">
+    <name>СоздатьПродажу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать продажу</value>
+    </synonym>
+    <template>/create-sale</template>
+    <methods uuid="4cdc24f1-d280-4825-97bd-2551382bc311">
+      <name>createsale</name>
+      <synonym>
+        <key>ru</key>
+        <value>Createsale</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СоздатьПродажуcreatesale</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="ed58de3f-16f2-4915-a9ca-fcdda69ee58f">
+    <name>ПолучитьКарточкуТовара</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить карточку товара</value>
+    </synonym>
+    <template>/get-card-product/{id}</template>
+    <methods uuid="afddc7ba-7aaf-4e4a-94d8-2722398a9d35">
+      <name>GetCardProduct</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get card product</value>
+      </synonym>
+      <handler>ПолучитьКарточкуТовараGetCardProduct</handler>
     </methods>
   </urlTemplates>
 </mdclass:HTTPService>
