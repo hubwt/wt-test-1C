@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="df0c6135-6e4f-4043-a14d-812cf27b3c5f">
+  <producedTypes>
+    <selectionType typeId="8795ee33-cf71-4d27-83ff-da810358f63a" valueTypeId="47089176-22fc-4203-92e6-d4d5e4ade753"/>
+    <listType typeId="8b5efe20-1b4f-459d-8c3f-b851c15499d1" valueTypeId="46331c5d-be07-4f65-9207-1a78036583cd"/>
+    <managerType typeId="8df5ab6f-c06b-4fe4-a2ac-6e1bc90a6e21" valueTypeId="2d30a001-4510-48a8-89f0-a767671c01ab"/>
+    <recordSetType typeId="1b04f4be-efb1-420e-937e-f6a750f7386a" valueTypeId="5085bacf-4739-4306-bebe-60c07ddeeaa9"/>
+    <recordKeyType typeId="722e9558-2c17-478b-80fb-ed8219b80eb4" valueTypeId="0c6473af-52aa-4b34-8e94-7d1de9be3ef1"/>
+    <recordType typeId="f4106469-8bf3-4715-afaf-6542dbfc48a9" valueTypeId="2c436efc-c6e1-4069-9134-4272f51a3e08"/>
+    <recordManagerType typeId="ffc86497-9e7a-4fae-94db-16f78c523b24" valueTypeId="b799301d-8330-4f57-9cac-eb5a4046ae0d"/>
+  </producedTypes>
+  <name>АрендаПлощадьОтдела</name>
+  <synonym>
+    <key>ru</key>
+    <value>Аренда площадь отдела</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="9385f227-45a9-4459-9157-f5f75ddb8314">
+    <name>ИспользуемаяПлощадь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Используемая площадь</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>16</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2c88eb7f-5b8e-404d-a11a-8c94fc60f69e">
+    <name>ОбъектАренды</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект аренды</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОбъектыАренды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="479def0c-722c-44f3-b358-f9ebfb2d0058">
+    <name>Отдел</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отдел</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

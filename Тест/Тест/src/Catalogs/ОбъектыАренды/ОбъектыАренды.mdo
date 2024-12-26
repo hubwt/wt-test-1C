@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7c3d8cb5-cb66-4bd4-964a-aba7bbcbcac9">
+  <producedTypes>
+    <objectType typeId="109494fd-65d7-43f8-878e-87fd7d0f6ee7" valueTypeId="0200be4a-4a7d-4304-bdb2-b99e59062e0b"/>
+    <refType typeId="2c6079d6-0282-4734-9fbd-7de4e39f79ba" valueTypeId="24c07953-0ac2-448b-8be7-a95dbb96648b"/>
+    <selectionType typeId="3a9e4724-1879-46df-ba68-1afdcdf031e0" valueTypeId="a46d48d2-b505-482b-8dbf-088d08446dcd"/>
+    <listType typeId="dd087f81-df34-4799-9c09-9ee06c3dd858" valueTypeId="53ac9050-4e3b-4344-8ee2-3d52a5ef5802"/>
+    <managerType typeId="b1834785-bba0-4a65-a6fa-9db2fbac0f95" valueTypeId="66174052-1bd7-43d3-a4bf-b4179d52a91a"/>
+  </producedTypes>
+  <name>ОбъектыАренды</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объекты аренды</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.ОбъектыАренды.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.ОбъектыАренды.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="c02811ac-df8f-4ffa-96a3-fc2b390706c6">
+    <name>Площадь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Площадь</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>14</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4ddf38e1-040c-4af7-b6e0-9a541b0b93c3">
+    <name>СтавкаЗаМетр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка за метр</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>13</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="e7bd9c73-ff77-422b-8560-0b5783ca0876">
+    <producedTypes>
+      <objectType typeId="51cfd9be-2440-48e4-805c-2bb28cd74fc2" valueTypeId="308c82df-5988-4c5f-a662-bf2f37cde6fb"/>
+      <rowType typeId="a4863a56-2b06-4674-9f7b-e0de0401ead0" valueTypeId="8084d40b-35b5-4628-b248-bd3b3cbbeac1"/>
+    </producedTypes>
+    <name>Отделы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отделы</value>
+    </synonym>
+    <attributes uuid="3013ac2b-ce25-4009-b759-d10247850377">
+      <name>Отдел</name>
+      <synonym>
+        <key>ru</key>
+        <value>Отдел</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыРасходов_3</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="993f58b3-714f-4f79-8214-2c2481248aed">
+      <name>ЗанимаяПлощадь</name>
+      <synonym>
+        <key>ru</key>
+        <value>Занимая площадь</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

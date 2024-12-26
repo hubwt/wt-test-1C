@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e5d78151-e0f6-45d0-b22e-215ae5120c2e">
+  <producedTypes>
+    <selectionType typeId="22250cbd-5d86-48c2-bcb3-94ef7dd0f20a" valueTypeId="942b2f7d-1e1f-4d74-9d91-eee3b3d3bfd9"/>
+    <listType typeId="a7da1824-e59d-4e7b-9494-1840304e69a0" valueTypeId="1fb45ba8-e384-47bc-acbb-2f6316834b32"/>
+    <managerType typeId="f633dcee-84a9-40f0-a198-2cfb96a17fab" valueTypeId="bd5c76e7-ae59-412c-9976-3acae479f0f1"/>
+    <recordSetType typeId="87137003-b712-41b9-a18f-6f4dc02fc853" valueTypeId="8a58e2ec-2a54-4663-b2df-c71be61d9434"/>
+    <recordKeyType typeId="0b28e9ff-b9f3-4cb6-b8e8-2b5221f6badf" valueTypeId="3eb1b160-7a57-4705-8b2e-1c0c479ba348"/>
+    <recordType typeId="94e4cb05-9a38-42c5-8db8-c3468f4f01cf" valueTypeId="17c07dbe-85ec-4479-a6b7-9f48556e92ef"/>
+    <recordManagerType typeId="3d241615-584f-4642-908a-5aaf9ee95a49" valueTypeId="7fbc69b4-5745-4320-9902-c557a110b3d7"/>
+  </producedTypes>
+  <name>АрендаСтавка</name>
+  <synonym>
+    <key>ru</key>
+    <value>Аренда ставка</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="103f3688-b3ba-46e2-a66e-094e5e74672d">
+    <name>СтавкаМетр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка метр</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2033c0bb-5602-48b6-870e-e001ca9b5363">
+    <name>ОбщаяПлощадь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Общая площадь</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>16</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="e7be828f-88d1-412a-b52c-ddb784b2db65">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
