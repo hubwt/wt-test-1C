@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d3ea6bf4-2390-4378-a2b7-8054a1ac9308">
+  <producedTypes>
+    <selectionType typeId="0346b484-2d95-4d6d-ab4b-7a0151dcffe5" valueTypeId="5a1a111a-2140-48b1-bab5-8a8248bcde8a"/>
+    <listType typeId="05fbfbc9-8fe9-4239-a7b6-22531fb4d0f3" valueTypeId="c2a39d12-290b-43ed-be56-8840c1b4ae01"/>
+    <managerType typeId="2a0d7edd-eb87-498a-9df1-fbf17dc9d2ad" valueTypeId="bca46727-7341-4fb1-99a4-230cd02db090"/>
+    <recordSetType typeId="3ff0b92e-1257-4ebe-8f11-478b8498456f" valueTypeId="6e7f4019-9eae-47c5-8ee8-f124203ecee7"/>
+    <recordKeyType typeId="85904d7a-fc54-4384-b73f-5930b8dd7aa7" valueTypeId="71e26504-37cc-4e30-a68e-32315a2c86fc"/>
+    <recordType typeId="bf981ce3-1e98-4d35-b248-4f34015a9d0f" valueTypeId="34d833d3-d83d-461b-af79-addb9dc157c1"/>
+    <recordManagerType typeId="2e177db0-3096-44b6-97a6-0095fb5eec44" valueTypeId="1c9edf79-f602-4ff7-86b3-c5ab8d3f1b75"/>
+  </producedTypes>
+  <name>ПланРасходовОтдел</name>
+  <synonym>
+    <key>ru</key>
+    <value>План расходов отдел</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="e0dcfeb0-f1fb-4cb3-8d9b-0366795b4ba2">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>13</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="7f03137f-44a1-4453-a907-09ffe24ac911">
+    <name>Отдел</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отдел</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРасходов_3</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
