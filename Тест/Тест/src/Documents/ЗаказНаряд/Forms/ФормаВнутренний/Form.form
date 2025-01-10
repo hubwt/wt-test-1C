@@ -47,8 +47,8 @@
     <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
   </items>
   <items xsi:type="form:FormField">
-    <name>ДатаБлокировкиПродажи</name>
-    <id>903</id>
+    <name>ДатаБлокировкиЗаказНаряда</name>
+    <id>906</id>
     <visible>true</visible>
     <userVisible>
       <common>true</common>
@@ -57,8 +57,8 @@
       <segments>Объект.ДатаБлокировкиЗаказНаряда</segments>
     </dataPath>
     <extendedTooltip>
-      <name>ДатаБлокировкиПродажиРасширеннаяПодсказка</name>
-      <id>905</id>
+      <name>ДатаБлокировкиЗаказНарядаРасширеннаяПодсказка</name>
+      <id>908</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -72,8 +72,8 @@
       </extInfo>
     </extendedTooltip>
     <contextMenu>
-      <name>ДатаБлокировкиПродажиКонтекстноеМеню</name>
-      <id>904</id>
+      <name>ДатаБлокировкиЗаказНарядаКонтекстноеМеню</name>
+      <id>907</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -9418,6 +9418,39 @@
         <showTitle>true</showTitle>
       </extInfo>
     </items>
+    <items xsi:type="form:FormGroup">
+      <name>ГруппаТоварыКоторыхНет</name>
+      <id>909</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <title>
+        <key>ru</key>
+        <value>Товары которых нет</value>
+      </title>
+      <extendedTooltip>
+        <name>ГруппаТоварыКоторыхНетРасширеннаяПодсказка</name>
+        <id>910</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <type>Page</type>
+      <extInfo xsi:type="form:PageGroupExtInfo">
+        <group>Vertical</group>
+        <showTitle>true</showTitle>
+      </extInfo>
+    </items>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -9727,7 +9760,6 @@
     <notDefaultUseAlwaysAttributes xsi:type="form:DataPath">
       <segments>Объект.RegisterRecords</segments>
     </notDefaultUseAlwaysAttributes>
-    <main>true</main>
     <savedData>true</savedData>
     <additionalColumns>
       <tablePath xsi:type="form:DataPath">
@@ -10417,27 +10449,5 @@
     <navigationPanel/>
     <commandBar/>
   </commandInterface>
-  <extInfo xsi:type="form:DocumentFormExtInfo">
-    <handlers>
-      <event>AfterWrite</event>
-      <name>ПослеЗаписи</name>
-    </handlers>
-    <handlers>
-      <event>OnReadAtServer</event>
-      <name>ПриЧтенииНаСервере</name>
-    </handlers>
-    <handlers>
-      <event>BeforeWrite</event>
-      <name>ПередЗаписью</name>
-    </handlers>
-    <handlers>
-      <event>BeforeWriteAtServer</event>
-      <name>ПередЗаписьюНаСервере</name>
-    </handlers>
-    <handlers>
-      <event>OnWriteAtServer</event>
-      <name>ПриЗаписиНаСервере</name>
-    </handlers>
-    <repostOnWrite>true</repostOnWrite>
-  </extInfo>
+  <extInfo xsi:type="form:DynamicListFormExtInfo"/>
 </form:Form>
