@@ -2659,6 +2659,60 @@
           <textEdit>true</textEdit>
         </extInfo>
       </items>
+      <items xsi:type="form:FormField">
+        <name>ФильтрИсполнители</name>
+        <id>714</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>ФильтрИсполнители</segments>
+        </dataPath>
+        <handlers>
+          <event>OnChange</event>
+          <name>ФильтрИсполнителиПриИзменении</name>
+        </handlers>
+        <extendedTooltip>
+          <name>ФильтрИсполнителиРасширеннаяПодсказка</name>
+          <id>716</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ФильтрИсполнителиКонтекстноеМеню</name>
+          <id>715</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
       <items xsi:type="form:Table">
         <name>Аналитика</name>
         <id>659</id>
@@ -2862,6 +2916,7 @@
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
+          <footerHorizontalAlign>Right</footerHorizontalAlign>
           <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2912,6 +2967,7 @@
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
+          <footerHorizontalAlign>Right</footerHorizontalAlign>
           <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2924,6 +2980,10 @@
         <items xsi:type="form:FormField">
           <name>АналитикаПроцентДиме</name>
           <id>690</id>
+          <title>
+            <key>ru</key>
+            <value>Процент Соболеву</value>
+          </title>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -2962,6 +3022,7 @@
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
+          <footerHorizontalAlign>Right</footerHorizontalAlign>
           <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -3012,6 +3073,7 @@
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
+          <footerHorizontalAlign>Right</footerHorizontalAlign>
           <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -3062,6 +3124,7 @@
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
+          <footerHorizontalAlign>Right</footerHorizontalAlign>
           <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -3112,6 +3175,7 @@
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
+          <footerHorizontalAlign>Right</footerHorizontalAlign>
           <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -3162,6 +3226,7 @@
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
+          <footerHorizontalAlign>Right</footerHorizontalAlign>
           <extInfo xsi:type="form:InputFieldExtInfo">
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -3332,6 +3397,7 @@
         <selectionMode>MultiRow</selectionMode>
         <header>true</header>
         <headerHeight>1</headerHeight>
+        <footer>true</footer>
         <footerHeight>1</footerHeight>
         <horizontalScrollBar>AutoUse</horizontalScrollBar>
         <verticalScrollBar>AutoUse</verticalScrollBar>
@@ -3483,8 +3549,9 @@
 	Рас_Комплектовка.Номенклатура.РекомендованаяЦена КАК РекомендованнаяЦена
 ИЗ
 	Документ.Рас_Комплектовка КАК Рас_Комплектовка
+
 {ГДЕ
-	Рас_Комплектовка.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания}</queryText>
+	(Рас_Комплектовка.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания) КАК Поле2}</queryText>
       <mainTable>Document.Рас_Комплектовка</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
@@ -3675,13 +3742,12 @@
 	Документ.Рас_Комплектовка.РаботыСписок КАК Рас_КомплектовкаРаботыСписок
 ГДЕ
 	Рас_КомплектовкаРаботыСписок.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
-
 СГРУППИРОВАТЬ ПО
 	Рас_КомплектовкаРаботыСписок.Ссылка
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ВТ_СуммаРабот.Ссылка КАК Ссылка,
 	ВТ_СуммаРабот.СуммаРабот * 0.4 КАК ПроцентДиме
 ПОМЕСТИТЬ ВТ_ПроцентДиме
@@ -3692,15 +3758,15 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	Рас_КомплектовкаНоменклатураСписок.Ссылка.Ссылка КАК Ссылка,
 	Рас_КомплектовкаНоменклатураСписок.Ссылка.Дата КАК Дата,
 	Рас_КомплектовкаНоменклатураСписок.Ссылка.Инкод КАК Инкод,
 	СУММА(ВЫБОР
-			КОГДА Рас_КомплектовкаНоменклатураСписок.Партия = Рас_КомплектовкаНоменклатураСписок.Ссылка.Инкод
-				ТОГДА 0
-			ИНАЧЕ Рас_КомплектовкаНоменклатураСписок.ЦенаДетали
-		КОНЕЦ) КАК РемКомплект,
+		КОГДА Рас_КомплектовкаНоменклатураСписок.Партия = Рас_КомплектовкаНоменклатураСписок.Ссылка.Инкод
+			ТОГДА 0
+		ИНАЧЕ Рас_КомплектовкаНоменклатураСписок.ЦенаДетали
+	КОНЕЦ) КАК РемКомплект,
 	Рас_КомплектовкаНоменклатураСписок.Ссылка.Инкод.Владелец.РекомендованаяЦена КАК РекЦена
 ПОМЕСТИТЬ ВТ_РемКомплект
 ИЗ
@@ -3710,7 +3776,6 @@
 	И Рас_КомплектовкаНоменклатураСписок.Ссылка.Проведен
 	И НЕ Рас_КомплектовкаНоменклатураСписок.Ссылка.ПометкаУдаления
 	И Рас_КомплектовкаНоменклатураСписок.Ссылка.Состояние = Значение(Перечисление.СостояниеКомплектовки.Выполнено)
-
 СГРУППИРОВАТЬ ПО
 	Рас_КомплектовкаНоменклатураСписок.Ссылка.Инкод,
 	Рас_КомплектовкаНоменклатураСписок.Ссылка.Ссылка,
@@ -3719,7 +3784,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ВТ_РемКомплект.Ссылка КАК Ссылка,
 	ВТ_РемКомплект.Дата КАК Дата,
 	ВТ_РемКомплект.Инкод КАК Инкод,
@@ -3727,7 +3792,8 @@
 	ЕСТЬNULL(ВТ_РемКомплект.РекЦена, 0) КАК РекЦена,
 	ЕСТЬNULL(ВТ_СуммаРабот.СуммаРабот, 0) КАК СуммаРабот,
 	ЕСТЬNULL(ВТ_ПроцентДиме.ПроцентДиме, 0) КАК ПроцентДиме,
-	ЕСТЬNULL(ВТ_РемКомплект.РемКомплект, 0) + ЕСТЬNULL(ВТ_СуммаРабот.СуммаРабот, 0) + ЕСТЬNULL(ВТ_ПроцентДиме.ПроцентДиме, 0) КАК Себестоимость
+	ЕСТЬNULL(ВТ_РемКомплект.РемКомплект, 0) + ЕСТЬNULL(ВТ_СуммаРабот.СуммаРабот, 0) +
+		ЕСТЬNULL(ВТ_ПроцентДиме.ПроцентДиме, 0) КАК Себестоимость
 ПОМЕСТИТЬ ВТ_Себестоимость
 ИЗ
 	ВТ_РемКомплект КАК ВТ_РемКомплект
@@ -3738,7 +3804,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	ВТ_Себестоимость.Ссылка КАК Ссылка,
 	ВТ_Себестоимость.Дата КАК Дата,
 	ВТ_Себестоимость.Инкод КАК Инкод,
@@ -3748,10 +3814,10 @@
 	ВТ_Себестоимость.ПроцентДиме КАК ПроцентДиме,
 	ВТ_Себестоимость.Себестоимость КАК Себестоимость,
 	ВЫРАЗИТЬ(ВЫБОР
-			КОГДА ВТ_Себестоимость.Себестоимость &lt;> 0
-				ТОГДА (ВТ_Себестоимость.РекЦена / ВТ_Себестоимость.Себестоимость - 1) * 100
-			ИНАЧЕ 0
-		КОНЕЦ КАК ЧИСЛО(10, 2)) КАК НаценкаПроцент,
+		КОГДА ВТ_Себестоимость.Себестоимость &lt;> 0
+			ТОГДА (ВТ_Себестоимость.РекЦена / ВТ_Себестоимость.Себестоимость - 1) * 100
+		ИНАЧЕ 0
+	КОНЕЦ КАК ЧИСЛО(10, 2)) КАК НаценкаПроцент,
 	ВТ_Себестоимость.РекЦена - ВТ_Себестоимость.Себестоимость КАК НаценкаВРублях
 ИЗ
 	ВТ_Себестоимость КАК ВТ_Себестоимость</queryText>
@@ -3780,6 +3846,23 @@
     <settingsSavedData xsi:type="form:DataPath">
       <segments>ПериодОтчета</segments>
     </settingsSavedData>
+  </attributes>
+  <attributes>
+    <name>ФильтрИсполнители</name>
+    <title>
+      <key>ru</key>
+      <value>Исполнители</value>
+    </title>
+    <id>10</id>
+    <valueType>
+      <types>CatalogRef.Пользователи</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
   </attributes>
   <formCommands>
     <name>ИнформацияОПроданныхИВостановленныхДеталях</name>
