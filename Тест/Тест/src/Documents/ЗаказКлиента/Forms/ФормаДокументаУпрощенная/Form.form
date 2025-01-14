@@ -305,20 +305,20 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>ТипЗаявки</name>
-          <id>61</id>
+          <name>ТипСделки</name>
+          <id>411</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Объект.ТипЗаявки</segments>
+            <segments>Объект.ТипСделки</segments>
           </dataPath>
           <titleLocation>None</titleLocation>
           <extendedTooltip>
-            <name>ТипЗаявкиРасширеннаяПодсказка</name>
-            <id>63</id>
+            <name>ТипСделкиРасширеннаяПодсказка</name>
+            <id>413</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -332,8 +332,8 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>ТипЗаявкиКонтекстноеМеню</name>
-            <id>62</id>
+            <name>ТипСделкиКонтекстноеМеню</name>
+            <id>412</id>
             <visible>true</visible>
             <enabled>true</enabled>
             <userVisible>
@@ -342,28 +342,20 @@
             <autoFill>true</autoFill>
           </contextMenu>
           <type>RadioButtonField</type>
-          <editMode>EnterOnInput</editMode>
+          <editMode>Enter</editMode>
           <showInHeader>true</showInHeader>
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
           <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
             <radioButtonsType>Tumbler</radioButtonsType>
             <choiceList>
-              <presentation>
-                <key>ru</key>
-                <value>Заявка</value>
-              </presentation>
               <value xsi:type="core:ReferenceValue">
-                <value>Enum.ТипЗаявки.EnumValue.Услуги</value>
+                <value>Enum.ТипСделки.EnumValue.Заявка</value>
               </value>
             </choiceList>
             <choiceList>
-              <presentation>
-                <key>ru</key>
-                <value>Продажа</value>
-              </presentation>
               <value xsi:type="core:ReferenceValue">
-                <value>Enum.ТипЗаявки.EnumValue.Продажа</value>
+                <value>Enum.ТипСделки.EnumValue.Продажа</value>
               </value>
             </choiceList>
           </extInfo>
@@ -1695,21 +1687,20 @@
     <items xsi:type="form:FormGroup">
       <name>СтраницаПродажа</name>
       <id>299</id>
-      <items xsi:type="form:Decoration">
-        <name>Декорация4</name>
-        <id>333</id>
-        <title>
-          <key>ru</key>
-          <value>Декорация4</value>
-        </title>
+      <items xsi:type="form:FormField">
+        <name>Продажа</name>
+        <id>408</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
           <common>true</common>
         </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>Объект.Продажа</segments>
+        </dataPath>
         <extendedTooltip>
-          <name>Декорация4РасширеннаяПодсказка</name>
-          <id>335</id>
+          <name>ПродажаРасширеннаяПодсказка</name>
+          <id>410</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -1723,8 +1714,8 @@
           </extInfo>
         </extendedTooltip>
         <contextMenu>
-          <name>Декорация4КонтекстноеМеню</name>
-          <id>334</id>
+          <name>ПродажаКонтекстноеМеню</name>
+          <id>409</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -1732,10 +1723,18 @@
           </userVisible>
           <autoFill>true</autoFill>
         </contextMenu>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:PictureDecorationExtInfo">
-          <fileDragMode>AsFileRef</fileDragMode>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
         </extInfo>
       </items>
       <visible>true</visible>
@@ -3211,6 +3210,10 @@
     <event>OnOpen</event>
     <name>ПриОткрытии</name>
   </handlers>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
+  </handlers>
   <autoTitle>true</autoTitle>
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
@@ -3255,11 +3258,32 @@
       <common>true</common>
     </edit>
   </attributes>
+  <formCommands>
+    <name>ОбновитьПродажу</name>
+    <title>
+      <key>ru</key>
+      <value>Обновить продажу</value>
+    </title>
+    <id>1</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ОбновитьПродажу</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
   <commandInterface>
     <navigationPanel/>
     <commandBar/>
   </commandInterface>
   <extInfo xsi:type="form:DocumentFormExtInfo">
+    <handlers>
+      <event>OnWriteAtServer</event>
+      <name>ПриЗаписиНаСервере</name>
+    </handlers>
     <repostOnWrite>true</repostOnWrite>
   </extInfo>
 </form:Form>
