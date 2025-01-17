@@ -15,6 +15,7 @@
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Document.ЗаявкаЗакупкаТовара.StandardAttribute.Number</inputByString>
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <basedOn>Document.ЗаказНаряд</basedOn>
   <createOnInput>Use</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
   <fullTextSearch>Use</fullTextSearch>
@@ -54,6 +55,21 @@
     </synonym>
     <type>
       <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d257d543-60fb-4a1c-86ae-9212a0576379">
+    <name>ЗаказНаряд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ наряд</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаряд</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
@@ -169,10 +185,10 @@
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
     <attributes uuid="20850484-4469-4bab-bd43-be80f298ae3a">
-      <name>ЦинаВЗаказНаряде</name>
+      <name>ЦенаВЗаказНаряде</name>
       <synonym>
         <key>ru</key>
-        <value>Цина в заказ наряде</value>
+        <value>Цена в заказ наряде</value>
       </synonym>
       <type>
         <types>Number</types>
