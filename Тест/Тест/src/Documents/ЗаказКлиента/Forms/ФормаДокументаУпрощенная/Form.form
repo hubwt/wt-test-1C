@@ -1294,6 +1294,12 @@
             <chooseType>true</chooseType>
             <typeDomainEnabled>true</typeDomainEnabled>
             <textEdit>true</textEdit>
+            <choiceParameterLinks>
+              <name>Отбор.Владелец</name>
+              <datapath xsi:type="form:DataPath">
+                <segments>Items.Товары.CurrentData.Номенклатура</segments>
+              </datapath>
+            </choiceParameterLinks>
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
@@ -1466,6 +1472,10 @@
           <dataPath xsi:type="form:DataPath">
             <segments>Объект.Товары.Сумма</segments>
           </dataPath>
+          <handlers>
+            <event>OnChange</event>
+            <name>ТоварыСуммаПриИзменении</name>
+          </handlers>
           <extendedTooltip>
             <name>ТоварыСуммаРасширеннаяПодсказка</name>
             <id>209</id>
@@ -1559,6 +1569,10 @@
           <horizontalAlign>Left</horizontalAlign>
           <autoFill>true</autoFill>
         </autoCommandBar>
+        <handlers>
+          <event>OnStartEdit</event>
+          <name>ТоварыПриНачалеРедактирования</name>
+        </handlers>
         <searchStringAddition>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -1937,6 +1951,56 @@
         <contextMenu>
           <name>ПродажаКонтекстноеМеню</name>
           <id>409</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:InputFieldExtInfo">
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
+        </extInfo>
+      </items>
+      <items xsi:type="form:FormField">
+        <name>ДатаОплаты</name>
+        <id>479</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>ДатаОплаты</segments>
+        </dataPath>
+        <extendedTooltip>
+          <name>ДатаОплатыРасширеннаяПодсказка</name>
+          <id>481</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>ДатаОплатыКонтекстноеМеню</name>
+          <id>480</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -4002,6 +4066,26 @@
       <common>true</common>
     </edit>
   </attributes>
+  <attributes>
+    <name>ДатаОплаты</name>
+    <title>
+      <key>ru</key>
+      <value>Дата оплаты</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
   <formCommands>
     <name>НарядНаВыдачу</name>
     <title>
@@ -4220,6 +4304,10 @@
     <handlers>
       <event>AfterWrite</event>
       <name>ПослеЗаписи</name>
+    </handlers>
+    <handlers>
+      <event>BeforeWriteAtServer</event>
+      <name>ПередЗаписьюНаСервере</name>
     </handlers>
     <handlers>
       <event>OnWriteAtServer</event>
