@@ -169,6 +169,56 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
+          <name>СписокЗаявкиСтатусЗаявки</name>
+          <id>60</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>СписокЗаявки.СтатусЗаявки</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокЗаявкиСтатусЗаявкиРасширеннаяПодсказка</name>
+            <id>62</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокЗаявкиСтатусЗаявкиКонтекстноеМеню</name>
+            <id>61</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>СписокЗаявкиСтандартнаяКартинка</name>
           <id>29</id>
           <visible>true</visible>
@@ -977,8 +1027,10 @@
     <extInfo xsi:type="form:DynamicListExtInfo">
       <queryText>ВЫБРАТЬ
 	ЗаявкаЗакупкаТовара.Ответственный,
-	ЗаявкаЗакупкаТовара.ЗаказНаряд,
-	ЗаявкаЗакупкаТовара.СуммаДокумента
+	ЗаявкаЗакупкаТовара.СуммаДокумента,
+	ЗаявкаЗакупкаТовара.СтатусЗаявки,
+	ЗаявкаЗакупкаТовара.Ответственный,
+	ЗаявкаЗакупкаТовара.Основание
 ИЗ
 	Документ.ЗаявкаЗакупкаТовара КАК ЗаявкаЗакупкаТовара</queryText>
       <mainTable>Document.ЗаявкаЗакупкаТовара</mainTable>

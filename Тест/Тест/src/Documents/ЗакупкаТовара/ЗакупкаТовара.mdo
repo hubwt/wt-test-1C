@@ -15,6 +15,7 @@
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Document.ЗакупкаТовара.StandardAttribute.Number</inputByString>
   <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <basedOn>Document.ЗаявкаЗакупкаТовара</basedOn>
   <createOnInput>Use</createOnInput>
   <dataLockControlMode>Managed</dataLockControlMode>
   <fullTextSearch>Use</fullTextSearch>
@@ -92,10 +93,10 @@
     <dataHistory>Use</dataHistory>
   </attributes>
   <attributes uuid="049f8040-0e61-4536-866c-2dee6af27973">
-    <name>ЗаявкаНаЗакупку</name>
+    <name>Основание</name>
     <synonym>
       <key>ru</key>
-      <value>Заявка на закупку</value>
+      <value>Основание</value>
     </synonym>
     <type>
       <types>DocumentRef.ЗаявкаЗакупкаТовара</types>
@@ -317,6 +318,21 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="c19d8ca3-595b-45bb-92f6-760c02ba9fb9">
+    <name>СтатусЗакупки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус закупки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыЗаявкаЗакупкаТоваров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <forms uuid="e46484d2-dc0b-4127-a230-22831d68de16">
     <name>ФормаДокумента</name>
     <synonym>
@@ -353,54 +369,6 @@
       </synonym>
       <type>
         <types>CatalogRef.Номенклатура</types>
-      </type>
-      <minValue xsi:type="core:UndefinedValue"/>
-      <maxValue xsi:type="core:UndefinedValue"/>
-      <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
-    </attributes>
-    <attributes uuid="18a7ceb4-afd1-458d-9094-7cbebbb55c6d">
-      <name>Код</name>
-      <synonym>
-        <key>ru</key>
-        <value>Код</value>
-      </synonym>
-      <type>
-        <types>String</types>
-        <stringQualifiers>
-          <length>9</length>
-        </stringQualifiers>
-      </type>
-      <minValue xsi:type="core:UndefinedValue"/>
-      <maxValue xsi:type="core:UndefinedValue"/>
-      <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
-    </attributes>
-    <attributes uuid="89a05c50-c60a-4430-9a26-4ca8867803a0">
-      <name>Артикул</name>
-      <synonym>
-        <key>ru</key>
-        <value>Артикул</value>
-      </synonym>
-      <type>
-        <types>String</types>
-        <stringQualifiers>
-          <length>10</length>
-        </stringQualifiers>
-      </type>
-      <minValue xsi:type="core:UndefinedValue"/>
-      <maxValue xsi:type="core:UndefinedValue"/>
-      <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
-    </attributes>
-    <attributes uuid="43f657e4-cc59-48f3-8abc-0fa1b13c38db">
-      <name>Производитель</name>
-      <synonym>
-        <key>ru</key>
-        <value>Производитель</value>
-      </synonym>
-      <type>
-        <types>CatalogRef.Производитель</types>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>
