@@ -5,6 +5,209 @@
     <value>Заявки</value>
   </title>
   <items xsi:type="form:FormGroup">
+    <name>Фильтр</name>
+    <id>54</id>
+    <items xsi:type="form:FormField">
+      <name>ФильтрЭтапСделки</name>
+      <id>51</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>ФильтрЭтапСделки</segments>
+      </dataPath>
+      <titleLocation>None</titleLocation>
+      <handlers>
+        <event>OnChange</event>
+        <name>ФильтрЭтапСделкиПриИзменении</name>
+      </handlers>
+      <extendedTooltip>
+        <name>ФильтрЭтапСделкиРасширеннаяПодсказка</name>
+        <id>53</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ФильтрЭтапСделкиКонтекстноеМеню</name>
+        <id>52</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>RadioButtonField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:RadioButtonsFieldExtInfo">
+        <radioButtonsType>Tumbler</radioButtonsType>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Все</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>0</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Новая заявка</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>1</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>В работе</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>2</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Сборка</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>3</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Собрано</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>4</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Контроль</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>5</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Оформление</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>6</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Оформлено</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>7</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Упаковка</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>8</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Упаковано</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>9</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Доставка</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>10</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Отправлено</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>11</value>
+          </value>
+        </choiceList>
+        <choiceList>
+          <presentation>
+            <key>ru</key>
+            <value>Завершено</value>
+          </presentation>
+          <value xsi:type="core:NumberValue">
+            <value>12</value>
+          </value>
+        </choiceList>
+      </extInfo>
+    </items>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <title>
+      <key>ru</key>
+      <value>Группа1</value>
+    </title>
+    <extendedTooltip>
+      <name>ФильтрРасширеннаяПодсказка</name>
+      <id>55</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <type>Label</type>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Left</horizontalAlign>
+      </extInfo>
+    </extendedTooltip>
+    <type>UsualGroup</type>
+    <extInfo xsi:type="form:UsualGroupExtInfo">
+      <group>HorizontalIfPossible</group>
+      <showLeftMargin>true</showLeftMargin>
+      <united>true</united>
+      <throughAlign>Auto</throughAlign>
+      <currentRowUse>Auto</currentRowUse>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormGroup">
     <name>СписокКомпоновщикНастроекПользовательскиеНастройки</name>
     <id>1</id>
     <visible>true</visible>
@@ -453,6 +656,60 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>ЭтапыПродажи</name>
+      <id>48</id>
+      <title>
+        <key>ru</key>
+        <value>Этап Сделки</value>
+      </title>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.ЭтапыПродажи</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ЭтапыПродажиРасширеннаяПодсказка</name>
+        <id>50</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ЭтапыПродажиКонтекстноеМеню</name>
+        <id>49</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>Поле</name>
       <id>30</id>
       <visible>true</visible>
@@ -766,17 +1023,18 @@
       <queryText>ВЫБРАТЬ
 	ДокЗаказКлиента.Ссылка КАК Ссылка,
 	ДокЗаказКлиента.Номер КАК Номер,
-	Представление(ДокЗаказКлиента.Клиент) КАК Клиент,
+	ДокЗаказКлиента.Клиент КАК Клиент,
 	ДокЗаказКлиента.НомерТелефона КАК НомерТелефона,
 	ДокЗаказКлиента.Состояние КАК Состояние,
-	Представление(ДокЗаказКлиента.Ответственный) КАК Ответственный,
+	ДокЗаказКлиента.Ответственный КАК Ответственный,
 	ДокЗаказКлиента.СуммаДокумента КАК СуммаДокумента,
 	ВЫБОР
 		КОГДА ЕСТЬNULL(ПродажаЗапчастей.Ссылка, НЕОПРЕДЕЛЕНО) &lt;> НЕОПРЕДЕЛЕНО
 			ТОГДА &quot;Продажа&quot;
 		ИНАЧЕ &quot;Заявка&quot;
 	КОНЕЦ КАК ТипСделки,
-	НЕОПРЕДЕЛЕНО КАК Поле
+	НЕОПРЕДЕЛЕНО КАК Поле,
+	ДокЗаказКлиента.ЭтапыПродажи
 ИЗ
 	Документ.ЗаказКлиента КАК ДокЗаказКлиента
 		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ПродажаЗапчастей КАК ПродажаЗапчастей
@@ -788,6 +1046,26 @@
       <autoSaveUserSettings>true</autoSaveUserSettings>
       <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
     </extInfo>
+  </attributes>
+  <attributes>
+    <name>ФильтрЭтапСделки</name>
+    <title>
+      <key>ru</key>
+      <value>Фильтр этап сделки</value>
+    </title>
+    <id>2</id>
+    <valueType>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
   </attributes>
   <formCommands>
     <name>СоздатьЗаявку</name>
