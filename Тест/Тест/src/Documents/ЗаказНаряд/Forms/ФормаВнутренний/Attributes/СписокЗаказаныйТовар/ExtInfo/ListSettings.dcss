@@ -7,7 +7,58 @@
 		<userSettingID>406e83d2-81d6-4cbc-97d3-56b91c3fa167</userSettingID>
 	</order>
 	<conditionalAppearance>
+		<item>
+			<selection/>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">ЕстьВЗаказНаряде</left>
+					<comparisonType>Contains</comparisonType>
+					<right xsi:type="xs:string">Нет</right>
+					<presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Нет в таблице</v8:content>
+						</v8:item>
+					</presentation>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ЦветФона</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#DF3722</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</item>
+		<item>
+			<selection/>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">ЕстьВЗаказНаряде</left>
+					<comparisonType>Contains</comparisonType>
+					<right xsi:type="xs:string">Да</right>
+					<presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть в таблице</v8:content>
+						</v8:item>
+					</presentation>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ЦветФона</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">#83C673</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</item>
+		<viewMode>Normal</viewMode>
 		<userSettingID>7c422666-7ef1-4219-b933-f89518c69a19</userSettingID>
+		<userSettingPresentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Добавить цвета</v8:content>
+			</v8:item>
+		</userSettingPresentation>
 	</conditionalAppearance>
 	<itemsUserSettingID>d7496950-96e4-4577-8b24-bec405e44a3d</itemsUserSettingID>
 </Settings>
