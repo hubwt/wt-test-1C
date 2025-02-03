@@ -624,7 +624,7 @@
       <name>Цена</name>
       <synonym>
         <key>ru</key>
-        <value>Цена</value>
+        <value>ЦенаПродажи</value>
       </synonym>
       <type>
         <types>Number</types>
@@ -708,7 +708,7 @@
       <name>ЦенаПоступления</name>
       <synonym>
         <key>ru</key>
-        <value>Цена поступления</value>
+        <value>Цена без НДС</value>
       </synonym>
       <type>
         <types>Number</types>
@@ -791,7 +791,7 @@
       <name>СуммаПоступления</name>
       <synonym>
         <key>ru</key>
-        <value>Сумма поступления</value>
+        <value>Сумма</value>
       </synonym>
       <type>
         <types>Number</types>
@@ -940,6 +940,37 @@
       </synonym>
       <type>
         <types>CatalogRef.Стеллаж</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ba3e48a4-583d-4db2-94eb-2751f7f5d8e6">
+      <name>Заявка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Заявка</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЗаявкаЗакупкаТовара</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="cb2b4762-9113-416a-8d50-0056d2d5de64">
+      <name>НДС</name>
+      <synonym>
+        <key>ru</key>
+        <value>НДС</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
       </type>
       <minValue xsi:type="core:UndefinedValue"/>
       <maxValue xsi:type="core:UndefinedValue"/>

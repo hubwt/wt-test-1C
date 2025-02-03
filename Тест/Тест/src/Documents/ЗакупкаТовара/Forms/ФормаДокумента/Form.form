@@ -595,6 +595,7 @@
       <items xsi:type="form:FormField">
         <name>НДСДоставки</name>
         <id>163</id>
+        <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
           <common>true</common>
@@ -2022,6 +2023,10 @@
       <dataPath xsi:type="form:DataPath">
         <segments>Объект.ЗакупленныйТовар.СтатусПоступления</segments>
       </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>ЗакупленныйТоварСтатусПоступленияПриИзменении</name>
+      </handlers>
       <extendedTooltip>
         <name>ЗакупленныйТоварСтатусПоступленияРасширеннаяПодсказка</name>
         <id>210</id>

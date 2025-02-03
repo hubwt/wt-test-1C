@@ -2068,6 +2068,106 @@
         <autoMaxHeight>true</autoMaxHeight>
       </extInfo>
     </items>
+    <items xsi:type="form:FormField">
+      <name>СтатусКлиентаКолЦентр</name>
+      <id>186</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.СтатусКлиентаКолЦентр</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СтатусКлиентаКолЦентрРасширеннаяПодсказка</name>
+        <id>188</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СтатусКлиентаКолЦентрКонтекстноеМеню</name>
+        <id>187</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
+      <name>ДатаПоследнегоОбзвонаКолЦентра</name>
+      <id>183</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.ДатаПоследнегоОбзвонаКолЦентра</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ДатаПоследнегоОбзвонаКолЦентраРасширеннаяПодсказка</name>
+        <id>185</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ДатаПоследнегоОбзвонаКолЦентраКонтекстноеМеню</name>
+        <id>184</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
     <commandBarLocation>None</commandBarLocation>
     <autoCommandBar>
       <name>СписокКоманднаяПанель</name>
@@ -2890,7 +2990,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	СправочникКлиенты.Ссылка КАК Ссылка,
 	СправочникКлиенты.ВерсияДанных КАК ВерсияДанных,
 	СправочникКлиенты.ПометкаУдаления КАК ПометкаУдаления,
@@ -2955,7 +3055,11 @@
 		ИЛИ СправочникКлиенты.Ответственный = &amp;ОбщийКлиент
 			ТОГДА &quot;Общие клиенты&quot;
 		ИНАЧЕ СправочникКлиенты.Ответственный.Подразделение.Город
-	КОНЕЦ КАК Филиал
+	КОНЕЦ КАК Филиал,
+	СправочникКлиенты.СтатусКлиентаКолЦентр,
+	СправочникКлиенты.ДатаПоследнегоОбзвонаКолЦентра
+{ГДЕ
+	(СправочникКлиенты.ДатаСоздания МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания)}
 ИЗ
 	Справочник.Клиенты КАК СправочникКлиенты
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КолвоПродаж КАК ВТ_КолвоПродаж
@@ -2967,9 +3071,7 @@
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_СуммаЗаявок КАК ВТ_СуммаЗаявок
 		ПО (ВТ_СуммаЗаявок.Клиент = СправочникКлиенты.Ссылка)
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПоследняяПродажа КАК ВТ_ПоследняяПродажа
-		ПО СправочникКлиенты.Ссылка = ВТ_ПоследняяПродажа.Клиент
-{ГДЕ
-	(СправочникКлиенты.ДатаСоздания МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания)}</queryText>
+		ПО СправочникКлиенты.Ссылка = ВТ_ПоследняяПродажа.Клиент</queryText>
       <mainTable>Catalog.Клиенты</mainTable>
       <autoFillAvailableFields>true</autoFillAvailableFields>
       <customQuery>true</customQuery>
