@@ -397,6 +397,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>СписокЗакупленногоТовараНомерПроизводителя</name>
+      <id>542</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>СписокЗакупленногоТовара.НомерПроизводителя</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>СписокЗакупленногоТовараНомерПроизводителяРасширеннаяПодсказка</name>
+        <id>544</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>СписокЗакупленногоТовараНомерПроизводителяКонтекстноеМеню</name>
+        <id>543</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СписокЗакупленногоТовараКоличество</name>
       <id>497</id>
       <visible>true</visible>
@@ -1412,7 +1462,8 @@
 			ТОГДА 4
 		ИНАЧЕ 4
 	КОНЕЦ КАК ИндексКартинки,
-	ЗакупкаТовараЗакупленныйТовар.Ссылка.Основание КАК Заявка
+	ЗакупкаТовараЗакупленныйТовар.Ссылка.Основание КАК Заявка,
+	ЗакупкаТовараЗакупленныйТовар.Товар.НомерПроизводителя КАК НомерПроизводителя
 ИЗ
 	Документ.ЗакупкаТовара.ЗакупленныйТовар КАК ЗакупкаТовараЗакупленныйТовар
 ГДЕ
