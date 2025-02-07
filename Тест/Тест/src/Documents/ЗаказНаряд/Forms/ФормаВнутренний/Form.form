@@ -3582,6 +3582,10 @@
                 <headerHorizontalAlign>Left</headerHorizontalAlign>
                 <showInFooter>true</showInFooter>
                 <extInfo xsi:type="form:InputFieldExtInfo">
+                  <handlers>
+                    <event>Creating</event>
+                    <name>ИсполнителиИсполнительСоздание</name>
+                  </handlers>
                   <autoMaxWidth>true</autoMaxWidth>
                   <autoMaxHeight>true</autoMaxHeight>
                   <wrap>true</wrap>
@@ -3593,6 +3597,7 @@
               <items xsi:type="form:FormField">
                 <name>ИсполнителиПроцент</name>
                 <id>309</id>
+                <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
                   <common>true</common>
@@ -4029,31 +4034,31 @@
               <rowFilter xsi:type="core:UndefinedValue"/>
             </items>
             <items xsi:type="form:Table">
-              <name>СуммаИПроцентПоИсполнителям</name>
-              <id>921</id>
+              <name>ЗПИсполнителиРабот</name>
+              <id>1157</id>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
                 <common>true</common>
               </userVisible>
               <dataPath xsi:type="form:DataPath">
-                <segments>СуммаИПроцентПоИсполнителям</segments>
+                <segments>ЗПИсполнителиРабот</segments>
               </dataPath>
               <titleLocation>None</titleLocation>
               <items xsi:type="form:FormField">
-                <name>СуммаИПроцентПоИсполнителямИсполнитель</name>
-                <id>934</id>
+                <name>ЗПИсполнителиРаботИсполнитель</name>
+                <id>1170</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
                   <common>true</common>
                 </userVisible>
                 <dataPath xsi:type="form:DataPath">
-                  <segments>СуммаИПроцентПоИсполнителям.Исполнитель</segments>
+                  <segments>ЗПИсполнителиРабот.Исполнитель</segments>
                 </dataPath>
                 <extendedTooltip>
-                  <name>СуммаИПроцентПоИсполнителямИсполнительРасширеннаяПодсказка</name>
-                  <id>936</id>
+                  <name>ЗПИсполнителиРаботИсполнительРасширеннаяПодсказка</name>
+                  <id>1172</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4067,8 +4072,8 @@
                   </extInfo>
                 </extendedTooltip>
                 <contextMenu>
-                  <name>СуммаИПроцентПоИсполнителямИсполнительКонтекстноеМеню</name>
-                  <id>935</id>
+                  <name>ЗПИсполнителиРаботИсполнительКонтекстноеМеню</name>
+                  <id>1171</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4091,19 +4096,19 @@
                 </extInfo>
               </items>
               <items xsi:type="form:FormField">
-                <name>СуммаИПроцентПоИсполнителямСуммаПоИсполнителю</name>
-                <id>937</id>
+                <name>ЗПИсполнителиРаботСуммаПоИсполнителю</name>
+                <id>1173</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
                   <common>true</common>
                 </userVisible>
                 <dataPath xsi:type="form:DataPath">
-                  <segments>СуммаИПроцентПоИсполнителям.СуммаПоИсполнителю</segments>
+                  <segments>ЗПИсполнителиРабот.СуммаПоИсполнителю</segments>
                 </dataPath>
                 <extendedTooltip>
-                  <name>СуммаИПроцентПоИсполнителямСуммаПоИсполнителюРасширеннаяПодсказка</name>
-                  <id>939</id>
+                  <name>ЗПИсполнителиРаботСуммаПоИсполнителюРасширеннаяПодсказка</name>
+                  <id>1175</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4117,8 +4122,8 @@
                   </extInfo>
                 </extendedTooltip>
                 <contextMenu>
-                  <name>СуммаИПроцентПоИсполнителямСуммаПоИсполнителюКонтекстноеМеню</name>
-                  <id>938</id>
+                  <name>ЗПИсполнителиРаботСуммаПоИсполнителюКонтекстноеМеню</name>
+                  <id>1174</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4141,19 +4146,19 @@
                 </extInfo>
               </items>
               <items xsi:type="form:FormField">
-                <name>СуммаИПроцентПоИсполнителямПроцент</name>
-                <id>940</id>
+                <name>ЗПИсполнителиРаботПроцент</name>
+                <id>1176</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
                   <common>true</common>
                 </userVisible>
                 <dataPath xsi:type="form:DataPath">
-                  <segments>СуммаИПроцентПоИсполнителям.Процент</segments>
+                  <segments>ЗПИсполнителиРабот.Процент</segments>
                 </dataPath>
                 <extendedTooltip>
-                  <name>СуммаИПроцентПоИсполнителямПроцентРасширеннаяПодсказка</name>
-                  <id>942</id>
+                  <name>ЗПИсполнителиРаботПроцентРасширеннаяПодсказка</name>
+                  <id>1178</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4167,8 +4172,8 @@
                   </extInfo>
                 </extendedTooltip>
                 <contextMenu>
-                  <name>СуммаИПроцентПоИсполнителямПроцентКонтекстноеМеню</name>
-                  <id>941</id>
+                  <name>ЗПИсполнителиРаботПроцентКонтекстноеМеню</name>
+                  <id>1177</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4191,8 +4196,8 @@
                 </extInfo>
               </items>
               <autoCommandBar>
-                <name>СуммаИПроцентПоИсполнителямКоманднаяПанель</name>
-                <id>922</id>
+                <name>ЗПИсполнителиРаботКоманднаяПанель</name>
+                <id>1158</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
@@ -4206,11 +4211,11 @@
                 <userVisible>
                   <common>true</common>
                 </userVisible>
-                <name>СуммаИПроцентПоИсполнителямСтрокаПоиска</name>
-                <id>925</id>
+                <name>ЗПИсполнителиРаботСтрокаПоиска</name>
+                <id>1161</id>
                 <extendedTooltip>
-                  <name>СуммаИПроцентПоИсполнителямСтрокаПоискаРасширеннаяПодсказка</name>
-                  <id>927</id>
+                  <name>ЗПИсполнителиРаботСтрокаПоискаРасширеннаяПодсказка</name>
+                  <id>1163</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4224,8 +4229,8 @@
                   </extInfo>
                 </extendedTooltip>
                 <contextMenu>
-                  <name>СуммаИПроцентПоИсполнителямСтрокаПоискаКонтекстноеМеню</name>
-                  <id>926</id>
+                  <name>ЗПИсполнителиРаботСтрокаПоискаКонтекстноеМеню</name>
+                  <id>1162</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4233,7 +4238,7 @@
                   </userVisible>
                   <autoFill>true</autoFill>
                 </contextMenu>
-                <source>СуммаИПроцентПоИсполнителямСтрокаПоиска</source>
+                <source>ЗПИсполнителиРаботСтрокаПоиска</source>
                 <extInfo xsi:type="form:SearchStringAdditionExtInfo">
                   <autoMaxWidth>true</autoMaxWidth>
                 </extInfo>
@@ -4244,11 +4249,11 @@
                 <userVisible>
                   <common>true</common>
                 </userVisible>
-                <name>СуммаИПроцентПоИсполнителямСостояниеПросмотра</name>
-                <id>931</id>
+                <name>ЗПИсполнителиРаботСостояниеПросмотра</name>
+                <id>1167</id>
                 <extendedTooltip>
-                  <name>СуммаИПроцентПоИсполнителямСостояниеПросмотраРасширеннаяПодсказка</name>
-                  <id>933</id>
+                  <name>ЗПИсполнителиРаботСостояниеПросмотраРасширеннаяПодсказка</name>
+                  <id>1169</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4262,8 +4267,8 @@
                   </extInfo>
                 </extendedTooltip>
                 <contextMenu>
-                  <name>СуммаИПроцентПоИсполнителямСостояниеПросмотраКонтекстноеМеню</name>
-                  <id>932</id>
+                  <name>ЗПИсполнителиРаботСостояниеПросмотраКонтекстноеМеню</name>
+                  <id>1168</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4272,7 +4277,7 @@
                   <autoFill>true</autoFill>
                 </contextMenu>
                 <type>ViewStatusAddition</type>
-                <source>СуммаИПроцентПоИсполнителямСостояниеПросмотра</source>
+                <source>ЗПИсполнителиРаботСостояниеПросмотра</source>
                 <extInfo xsi:type="form:ViewStatusAdditionExtInfo">
                   <autoMaxWidth>true</autoMaxWidth>
                 </extInfo>
@@ -4283,11 +4288,11 @@
                 <userVisible>
                   <common>true</common>
                 </userVisible>
-                <name>СуммаИПроцентПоИсполнителямУправлениеПоиском</name>
-                <id>928</id>
+                <name>ЗПИсполнителиРаботУправлениеПоиском</name>
+                <id>1164</id>
                 <extendedTooltip>
-                  <name>СуммаИПроцентПоИсполнителямУправлениеПоискомРасширеннаяПодсказка</name>
-                  <id>930</id>
+                  <name>ЗПИсполнителиРаботУправлениеПоискомРасширеннаяПодсказка</name>
+                  <id>1166</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4301,8 +4306,8 @@
                   </extInfo>
                 </extendedTooltip>
                 <contextMenu>
-                  <name>СуммаИПроцентПоИсполнителямУправлениеПоискомКонтекстноеМеню</name>
-                  <id>929</id>
+                  <name>ЗПИсполнителиРаботУправлениеПоискомКонтекстноеМеню</name>
+                  <id>1165</id>
                   <visible>true</visible>
                   <enabled>true</enabled>
                   <userVisible>
@@ -4311,14 +4316,14 @@
                   <autoFill>true</autoFill>
                 </contextMenu>
                 <type>SearchControlAddition</type>
-                <source>СуммаИПроцентПоИсполнителямУправлениеПоиском</source>
+                <source>ЗПИсполнителиРаботУправлениеПоиском</source>
                 <extInfo xsi:type="form:SearchControlAdditionExtInfo">
                   <autoMaxWidth>true</autoMaxWidth>
                 </extInfo>
               </searchControlAddition>
               <extendedTooltip>
-                <name>СуммаИПроцентПоИсполнителямРасширеннаяПодсказка</name>
-                <id>924</id>
+                <name>ЗПИсполнителиРаботРасширеннаяПодсказка</name>
+                <id>1160</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
@@ -4332,8 +4337,8 @@
                 </extInfo>
               </extendedTooltip>
               <contextMenu>
-                <name>СуммаИПроцентПоИсполнителямКонтекстноеМеню</name>
-                <id>923</id>
+                <name>ЗПИсполнителиРаботКонтекстноеМеню</name>
+                <id>1159</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
@@ -4341,6 +4346,7 @@
                 </userVisible>
                 <autoFill>true</autoFill>
               </contextMenu>
+              <representation>HierarchicalList</representation>
               <changeRowSet>true</changeRowSet>
               <changeRowOrder>true</changeRowOrder>
               <autoMaxWidth>true</autoMaxWidth>
@@ -4349,6 +4355,7 @@
               <selectionMode>MultiRow</selectionMode>
               <header>true</header>
               <headerHeight>1</headerHeight>
+              <footer>true</footer>
               <footerHeight>1</footerHeight>
               <horizontalScrollBar>AutoUse</horizontalScrollBar>
               <verticalScrollBar>AutoUse</verticalScrollBar>
@@ -4359,7 +4366,16 @@
               <horizontalStretch>true</horizontalStretch>
               <verticalStretch>true</verticalStretch>
               <fileDragMode>AsFileRef</fileDragMode>
-              <rowFilter xsi:type="core:UndefinedValue"/>
+              <extInfo xsi:type="form:DynamicListTableExtInfo">
+                <autoRefreshPeriod>60</autoRefreshPeriod>
+                <period>
+                  <startDate>0001-01-01T00:00:00</startDate>
+                  <endDate>0001-01-01T00:00:00</endDate>
+                </period>
+                <topLevelParent xsi:type="core:UndefinedValue"/>
+                <showRoot>true</showRoot>
+                <allowGettingCurrentRowURL>true</allowGettingCurrentRowURL>
+              </extInfo>
             </items>
             <visible>true</visible>
             <enabled>true</enabled>
@@ -12351,6 +12367,124 @@
         <common>true</common>
       </edit>
     </columns>
+  </attributes>
+  <attributes>
+    <name>ЗПИсполнителиРабот</name>
+    <title>
+      <key>ru</key>
+      <value>ЗПИсполнители работ</value>
+    </title>
+    <id>24</id>
+    <valueType>
+      <types>DynamicList</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+    <extInfo xsi:type="form:DynamicListExtInfo">
+      <queryText>ВЫБРАТЬ
+	ЗаказНарядИсполнители.Исполнитель КАК Исполнитель,
+	ЗаказНарядИсполнители.ИдентификаторСтрокиРодитель КАК ИдентификаторСтрокиРодитель
+ПОМЕСТИТЬ ВТ_ИсполнителиРеал
+ИЗ
+	Документ.ЗаказНаряд.Исполнители КАК ЗаказНарядИсполнители
+ГДЕ
+	ЗаказНарядИсполнители.Ссылка = &amp;Ссылка
+
+СГРУППИРОВАТЬ ПО
+	ЗаказНарядИсполнители.Исполнитель,
+	ЗаказНарядИсполнители.ИдентификаторСтрокиРодитель
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказНарядРаботы.Работа КАК Работа,
+	КОЛИЧЕСТВО(РАЗЛИЧНЫЕ ВТ_ИсполнителиРеал.Исполнитель) КАК ИсполнительКол,
+	ЗаказНарядРаботы.ИдентификаторСтроки КАК ИдентификаторСтроки
+ПОМЕСТИТЬ ВТ_КоличествоИсполнителей
+ИЗ
+	ВТ_ИсполнителиРеал КАК ВТ_ИсполнителиРеал
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗаказНаряд.Работы КАК ЗаказНарядРаботы
+		ПО ВТ_ИсполнителиРеал.ИдентификаторСтрокиРодитель = ЗаказНарядРаботы.ИдентификаторСтроки
+ГДЕ
+	ЗаказНарядРаботы.Ссылка = &amp;Ссылка
+
+СГРУППИРОВАТЬ ПО
+	ЗаказНарядРаботы.Работа,
+	ЗаказНарядРаботы.ИдентификаторСтроки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЗаказНарядРаботы.Работа КАК Работа,
+	ЗаказНарядРаботы.СуммаВсего КАК СуммаВсего,
+	ВТ_ИсполнителиРеал.Исполнитель КАК Исполнитель,
+	ЗаказНарядРаботы.ИдентификаторСтроки КАК ИдентификаторСтроки,
+	ВТ_КоличествоИсполнителей.ИсполнительКол КАК ИсполнительКол,
+	ЗаказНарядРаботы.СуммаВсего / ВТ_КоличествоИсполнителей.ИсполнительКол КАК СуммаИсполнитель
+ПОМЕСТИТЬ ВТ_КоличествоИсполнителейИСуммаРаботы
+ИЗ
+	ВТ_ИсполнителиРеал КАК ВТ_ИсполнителиРеал
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗаказНаряд.Работы КАК ЗаказНарядРаботы
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КоличествоИсполнителей КАК ВТ_КоличествоИсполнителей
+			ПО ЗаказНарядРаботы.ИдентификаторСтроки = ВТ_КоличествоИсполнителей.ИдентификаторСтроки
+		ПО ВТ_ИсполнителиРеал.ИдентификаторСтрокиРодитель = ЗаказНарядРаботы.ИдентификаторСтроки
+ГДЕ
+	ЗаказНарядРаботы.Ссылка = &amp;Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_КоличествоИсполнителейИСуммаРаботы.Работа КАК Работа,
+	ВТ_КоличествоИсполнителейИСуммаРаботы.СуммаВсего КАК СуммаВсего
+ПОМЕСТИТЬ ВТ_СписокРабот
+ИЗ
+	ВТ_КоличествоИсполнителейИСуммаРаботы КАК ВТ_КоличествоИсполнителейИСуммаРаботы
+
+СГРУППИРОВАТЬ ПО
+	ВТ_КоличествоИсполнителейИСуммаРаботы.Работа,
+	ВТ_КоличествоИсполнителейИСуммаРаботы.СуммаВсего
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(ВТ_СписокРабот.СуммаВсего) КАК СуммаВсехРабот
+ПОМЕСТИТЬ ВТ_СуммаРабот
+ИЗ
+	ВТ_СписокРабот КАК ВТ_СписокРабот
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_КоличествоИсполнителейИСуммаРаботы.Исполнитель КАК Исполнитель,
+	СУММА(ВТ_КоличествоИсполнителейИСуммаРаботы.СуммаИсполнитель) КАК СуммаИсполнитель,
+	ВТ_СуммаРабот.СуммаВсехРабот КАК СуммаВсехРабот,
+	СУММА(ВТ_КоличествоИсполнителейИСуммаРаботы.СуммаИсполнитель) / ВТ_СуммаРабот.СуммаВсехРабот * 100 КАК ПроцентОТОбщейСуммыРабот
+ПОМЕСТИТЬ ВТ_Итоговая
+ИЗ
+	ВТ_КоличествоИсполнителейИСуммаРаботы КАК ВТ_КоличествоИсполнителейИСуммаРаботы,
+	ВТ_СуммаРабот КАК ВТ_СуммаРабот
+
+СГРУППИРОВАТЬ ПО
+	ВТ_КоличествоИсполнителейИСуммаРаботы.Исполнитель,
+	ВТ_СуммаРабот.СуммаВсехРабот
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_Итоговая.Исполнитель КАК Исполнитель,
+	ВЫРАЗИТЬ (ВТ_Итоговая.СуммаИсполнитель КАК ЧИСЛО(10,0)) КАК СуммаПоИсполнителю,
+	ВЫРАЗИТЬ (ВТ_Итоговая.ПроцентОТОбщейСуммыРабот КАК ЧИСЛО(10,0)) КАК Процент
+ИЗ
+	ВТ_Итоговая КАК ВТ_Итоговая</queryText>
+      <autoFillAvailableFields>true</autoFillAvailableFields>
+      <customQuery>true</customQuery>
+      <autoSaveUserSettings>true</autoSaveUserSettings>
+      <getInvisibleFieldPresentations>true</getInvisibleFieldPresentations>
+    </extInfo>
   </attributes>
   <formCommands>
     <name>ЗаполнитьПартииПоОстаткам</name>
