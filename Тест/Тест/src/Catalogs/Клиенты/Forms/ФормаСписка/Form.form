@@ -2168,6 +2168,56 @@
         <textEdit>true</textEdit>
       </extInfo>
     </items>
+    <items xsi:type="form:FormField">
+      <name>ДатаСМСРассылки</name>
+      <id>189</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.ДатаСМСРассылки</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ДатаСМСРассылкиРасширеннаяПодсказка</name>
+        <id>191</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ДатаСМСРассылкиКонтекстноеМеню</name>
+        <id>190</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
     <commandBarLocation>None</commandBarLocation>
     <autoCommandBar>
       <name>СписокКоманднаяПанель</name>
@@ -3057,8 +3107,8 @@
 		ИНАЧЕ СправочникКлиенты.Ответственный.Подразделение.Город
 	КОНЕЦ КАК Филиал,
 	СправочникКлиенты.СтатусКлиентаКолЦентр КАК СтатусКлиентаКолЦентр,
-	СправочникКлиенты.ДатаПоследнегоОбзвонаКолЦентра КАК ДатаПоследнегоОбзвонаКолЦентра
-
+	СправочникКлиенты.ДатаПоследнегоОбзвонаКолЦентра КАК ДатаПоследнегоОбзвонаКолЦентра,
+	СправочникКлиенты.ДатаСМСРассылки
 {ГДЕ
 	(СправочникКлиенты.ДатаСоздания МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания)}
 ИЗ

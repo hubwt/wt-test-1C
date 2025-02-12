@@ -988,8 +988,8 @@
         </extInfo>
       </items>
       <items xsi:type="form:FormField">
-        <name>ТоварыТоварМестоНаСкладе</name>
-        <id>38</id>
+        <name>ТоварыМестоХраненияПартии</name>
+        <id>131</id>
         <title>
           <key>ru</key>
           <value>М. на складе</value>
@@ -1000,11 +1000,11 @@
           <common>true</common>
         </userVisible>
         <dataPath xsi:type="form:DataPath">
-          <segments>Объект.Товары.МестоХранения</segments>
+          <segments>Объект.Товары.МестоХраненияПартии</segments>
         </dataPath>
         <extendedTooltip>
-          <name>ТоварыТоварМестоНаСкладеРасширеннаяПодсказка</name>
-          <id>75</id>
+          <name>ТоварыМестоХраненияПартииРасширеннаяПодсказка</name>
+          <id>133</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -1018,8 +1018,8 @@
           </extInfo>
         </extendedTooltip>
         <contextMenu>
-          <name>ТоварыТоварМестоНаСкладеКонтекстноеМеню</name>
-          <id>39</id>
+          <name>ТоварыМестоХраненияПартииКонтекстноеМеню</name>
+          <id>132</id>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -1027,16 +1027,18 @@
           </userVisible>
           <autoFill>true</autoFill>
         </contextMenu>
-        <type>LabelField</type>
-        <editMode>EnterOnInput</editMode>
+        <type>InputField</type>
+        <editMode>Enter</editMode>
         <showInHeader>true</showInHeader>
         <headerHorizontalAlign>Left</headerHorizontalAlign>
         <showInFooter>true</showInFooter>
-        <extInfo xsi:type="form:LabelFieldExtInfo">
-          <width>7</width>
+        <extInfo xsi:type="form:InputFieldExtInfo">
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
-          <horizontalStretch>false</horizontalStretch>
+          <wrap>true</wrap>
+          <chooseType>true</chooseType>
+          <typeDomainEnabled>true</typeDomainEnabled>
+          <textEdit>true</textEdit>
         </extInfo>
       </items>
       <items xsi:type="form:FormField">
@@ -1770,6 +1772,23 @@
           <value>Место хранения</value>
         </title>
         <id>3</id>
+        <valueType>
+          <types>CatalogRef.Стеллаж</types>
+        </valueType>
+        <view>
+          <common>true</common>
+        </view>
+        <edit>
+          <common>true</common>
+        </edit>
+      </columns>
+      <columns>
+        <name>МестоХраненияПартии</name>
+        <title>
+          <key>ru</key>
+          <value>Место хранения партии</value>
+        </title>
+        <id>6</id>
         <valueType>
           <types>CatalogRef.Стеллаж</types>
         </valueType>
