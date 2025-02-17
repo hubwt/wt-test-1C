@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИндКод</dataPath>
+			<field>ИндКод</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Номенклатура</dataPath>
+			<field>Номенклатура</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВосстановления</dataPath>
+			<field>ДатаВосстановления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПродажи</dataPath>
+			<field>ДатаПродажи</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата продажи</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КоличествоДней</dataPath>
+			<field>КоличествоДней</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество дней</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Рас_Комплектовка.Инкод КАК ИндКод,
+	Рас_Комплектовка.Инкод.Владелец КАК Номенклатура,
+	Рас_Комплектовка.Дата КАК ДатаВосстановления
+ПОМЕСТИТЬ ВТ_ВосстановленныеДетали
+ИЗ
+	Документ.Рас_Комплектовка КАК Рас_Комплектовка
+ГДЕ
+	Рас_Комплектовка.Инкод &lt;&gt; ЗНАЧЕНИЕ(Справочник.ИндКод.ПустаяСсылка)
+
+ИНДЕКСИРОВАТЬ ПО
+	ИндКод
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ПродажаЗапчастейТаблица.Партия КАК Партия,
+	ПродажаЗапчастейТаблица.Ссылка.Дата КАК ДатаПродажи
+ПОМЕСТИТЬ ВТ_ПроданныеДетали
+ИЗ
+	Документ.ПродажаЗапчастей.Таблица КАК ПродажаЗапчастейТаблица
+ГДЕ
+	ПродажаЗапчастейТаблица.Партия В
+		(ВЫБРАТЬ
+			ВТ_ВосстановленныеДетали.ИндКод
+		ИЗ
+			ВТ_ВосстановленныеДетали КАК ВТ_ВосстановленныеДетали)
+
+ИНДЕКСИРОВАТЬ ПО
+	Партия
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ВосстановленныеДетали.ИндКод КАК ИндКод,
+	ВТ_ВосстановленныеДетали.Номенклатура КАК Номенклатура,
+	ВТ_ВосстановленныеДетали.ДатаВосстановления КАК ДатаВосстановления,
+	ЕСТЬNULL(ВТ_ПроданныеДетали.ДатаПродажи, "Нет продажи") КАК ДатаПродажи,
+	ВЫБОР
+		КОГДА ВТ_ПроданныеДетали.ДатаПродажи ЕСТЬ NULL
+			ТОГДА Выбор
+				Когда РАЗНОСТЬДАТ(ВТ_ВосстановленныеДетали.ДатаВосстановления, &amp;ТекДата, ДЕНЬ) = 0
+					Тогда 1
+				Иначе РАЗНОСТЬДАТ(ВТ_ВосстановленныеДетали.ДатаВосстановления, &amp;ТекДата, ДЕНЬ)
+			Конец
+		ИНАЧЕ ВЫБОР
+			КОГДА РАЗНОСТЬДАТ(ВТ_ВосстановленныеДетали.ДатаВосстановления, ВТ_ПроданныеДетали.ДатаПродажи, ДЕНЬ) = 0
+				ТОГДА 1
+			ИНАЧЕ РАЗНОСТЬДАТ(ВТ_ВосстановленныеДетали.ДатаВосстановления, ВТ_ПроданныеДетали.ДатаПродажи, ДЕНЬ)
+		КОНЕЦ
+	КОНЕЦ КАК КоличествоДней
+ИЗ
+	ВТ_ВосстановленныеДетали КАК ВТ_ВосстановленныеДетали
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПроданныеДетали КАК ВТ_ПроданныеДетали
+		ПО (ВТ_ВосстановленныеДетали.ИндКод = ВТ_ПроданныеДетали.Партия)
+		И (ВТ_ПроданныеДетали.ДатаПродажи &gt; ВТ_ВосстановленныеДетали.ДатаВосстановления)
+
+УПОРЯДОЧИТЬ ПО
+	ДатаВосстановления УБЫВ</query>
+	</dataSet>
+	<parameter>
+		<name>ТекДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тек дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">2025-02-17T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+		<use>Always</use>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>ПродажаВосстановленныхДеталей</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Продажа восстановленных деталей</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ИндКод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Номенклатура</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаВосстановления</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаПродажи</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КоличествоДней</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ДатаВосстановления</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Номенклатура</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>ДатаВосстановления</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>
