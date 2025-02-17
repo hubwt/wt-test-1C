@@ -7,16 +7,16 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>НаборДанных1</name>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ИндКод</dataPath>
-			<field>ИндКод</field>
+			<dataPath>Партия</dataPath>
+			<field>Партия</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Номенклатура</dataPath>
-			<field>Номенклатура</field>
+			<dataPath>Товар</dataPath>
+			<field>Товар</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ДатаВосстановления</dataPath>
-			<field>ДатаВосстановления</field>
+			<dataPath>ДатаЗакупки</dataPath>
+			<field>ДатаЗакупки</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>ДатаПродажи</dataPath>
@@ -40,33 +40,29 @@
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	Рас_Комплектовка.Инкод КАК ИндКод,
-	Рас_Комплектовка.Инкод.Владелец КАК Номенклатура,
-	Рас_Комплектовка.Дата КАК ДатаВосстановления
-ПОМЕСТИТЬ ВТ_ВосстановленныеДетали
+	ПоступлениеЗапчастейТаблица.Партия КАК Партия,
+	ПоступлениеЗапчастейТаблица.Товар КАК Товар,
+	ПоступлениеЗапчастейТаблица.Ссылка.Дата КАК ДатаЗакупки
+ПОМЕСТИТЬ ВТ_ЗакупленныеДетали
 ИЗ
-	Документ.Рас_Комплектовка КАК Рас_Комплектовка
+	Документ.ПоступлениеЗапчастей.Таблица КАК ПоступлениеЗапчастейТаблица
 ГДЕ
-	Рас_Комплектовка.Инкод &lt;&gt; ЗНАЧЕНИЕ(Справочник.ИндКод.ПустаяСсылка)
-	И Рас_Комплектовка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	ПоступлениеЗапчастейТаблица.Ссылка.Новые
+	И ПоступлениеЗапчастейТаблица.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ПоступлениеЗапчастейТаблица.Партия &lt;&gt; ЗНАЧЕНИЕ(Справочник.индКод.ПустаяСсылка)
 
-ИНДЕКСИРОВАТЬ ПО
-	ИндКод
-;
+ОБЪЕДИНИТЬ ВСЕ
 
-////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	ПродажаЗапчастейТаблица.Партия КАК Партия,
-	ПродажаЗапчастейТаблица.ДатаВыдачи КАК ДатаПродажи
-ПОМЕСТИТЬ ВТ_ПроданныеДетали
+	ПоступлениеЗапчастейТаблица.Партия,
+	ПоступлениеЗапчастейТаблица.Товар,
+	ПоступлениеЗапчастейТаблица.Ссылка.Дата
 ИЗ
-	Документ.ПродажаЗапчастей.Таблица КАК ПродажаЗапчастейТаблица
+	Документ.ПоступлениеЗапчастей.Таблица КАК ПоступлениеЗапчастейТаблица
 ГДЕ
-	ПродажаЗапчастейТаблица.Партия В
-		(ВЫБРАТЬ
-			ВТ_ВосстановленныеДетали.ИндКод
-		ИЗ
-			ВТ_ВосстановленныеДетали КАК ВТ_ВосстановленныеДетали)
+	ПоступлениеЗапчастейТаблица.Ссылка.Перекуп
+	И ПоступлениеЗапчастейТаблица.Ссылка.Дата МЕЖДУ &amp;ДатаНачала И &amp;ДатаОкончания
+	И ПоступлениеЗапчастейТаблица.Партия &lt;&gt; ЗНАЧЕНИЕ(Справочник.индКод.ПустаяСсылка)
 
 ИНДЕКСИРОВАТЬ ПО
 	Партия
@@ -74,51 +70,49 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ
-	ВТ_ВосстановленныеДетали.ИндКод КАК ИндКод,
-	ВТ_ВосстановленныеДетали.Номенклатура КАК Номенклатура,
-	ВТ_ВосстановленныеДетали.ДатаВосстановления КАК ДатаВосстановления,
-	ЕСТЬNULL(ВТ_ПроданныеДетали.ДатаПродажи, "Нет продажи") КАК ДатаПродажи,
+	ПродажаЗапчастейТаблица.Партия КАК Партия,
+	ПродажаЗапчастейТаблица.Товар КАК Товар,
+	ПродажаЗапчастейТаблица.ДатаВыдачи КАК ДатаПродажи
+ПОМЕСТИТЬ Вт_ПроданныеДетали
+ИЗ
+	Документ.ПродажаЗапчастей.Таблица КАК ПродажаЗапчастейТаблица
+ГДЕ
+	ПродажаЗапчастейТаблица.Партия В
+		(ВЫБРАТЬ
+			ВТ_ЗакупленныеДетали.Партия
+		ИЗ
+			ВТ_ЗакупленныеДетали КАК ВТ_ЗакупленныеДетали)
+	И ПродажаЗапчастейТаблица.Ссылка.Проведен
+
+ИНДЕКСИРОВАТЬ ПО
+	Партия
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЗакупленныеДетали.Партия КАК Партия,
+	ВТ_ЗакупленныеДетали.Товар КАК Товар,
+	ВТ_ЗакупленныеДетали.ДатаЗакупки КАК ДатаЗакупки,
+	ЕСТЬNULL(Вт_ПроданныеДетали.ДатаПродажи, "Нет продажи") КАК ДатаПродажи,
 	ВЫБОР
-		КОГДА ВТ_ПроданныеДетали.ДатаПродажи ЕСТЬ NULL ИЛИ ВТ_ПроданныеДетали.ДатаПродажи = ДАТАВРЕМЯ(1, 1, 1)
-		
-			ТОГДА Выбор
-				Когда РАЗНОСТЬДАТ(ВТ_ВосстановленныеДетали.ДатаВосстановления, &amp;ТекДата, ДЕНЬ) = 0
-					Тогда 1
-				Иначе РАЗНОСТЬДАТ(ВТ_ВосстановленныеДетали.ДатаВосстановления, &amp;ТекДата, ДЕНЬ)
-			Конец
+		КОГДА Вт_ПроданныеДетали.ДатаПродажи ЕСТЬ NULL
+		ИЛИ Вт_ПроданныеДетали.ДатаПродажи = ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА ВЫБОР
+				КОГДА РАЗНОСТЬДАТ(ВТ_ЗакупленныеДетали.ДатаЗакупки, &amp;ТекДата, ДЕНЬ) = 0
+					ТОГДА 1
+				ИНАЧЕ РАЗНОСТЬДАТ(ВТ_ЗакупленныеДетали.ДатаЗакупки, &amp;ТекДата, ДЕНЬ)
+			КОНЕЦ
 		ИНАЧЕ ВЫБОР
-			КОГДА РАЗНОСТЬДАТ(ВТ_ВосстановленныеДетали.ДатаВосстановления, ВТ_ПроданныеДетали.ДатаПродажи, ДЕНЬ) = 0
+			КОГДА РАЗНОСТЬДАТ(ВТ_ЗакупленныеДетали.ДатаЗакупки, Вт_ПроданныеДетали.ДатаПродажи, ДЕНЬ) = 0
 				ТОГДА 1
-			ИНАЧЕ РАЗНОСТЬДАТ(ВТ_ВосстановленныеДетали.ДатаВосстановления, ВТ_ПроданныеДетали.ДатаПродажи, ДЕНЬ)
+			ИНАЧЕ РАЗНОСТЬДАТ(ВТ_ЗакупленныеДетали.ДатаЗакупки, Вт_ПроданныеДетали.ДатаПродажи, ДЕНЬ)
 		КОНЕЦ
 	КОНЕЦ КАК КоличествоДней
 ИЗ
-	ВТ_ВосстановленныеДетали КАК ВТ_ВосстановленныеДетали
-		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ПроданныеДетали КАК ВТ_ПроданныеДетали
-		ПО (ВТ_ВосстановленныеДетали.ИндКод = ВТ_ПроданныеДетали.Партия)
-		И (ВТ_ПроданныеДетали.ДатаПродажи &gt; ВТ_ВосстановленныеДетали.ДатаВосстановления)
-
-УПОРЯДОЧИТЬ ПО
-	ДатаВосстановления УБЫВ</query>
+	ВТ_ЗакупленныеДетали КАК ВТ_ЗакупленныеДетали
+		ЛЕВОЕ СОЕДИНЕНИЕ Вт_ПроданныеДетали КАК Вт_ПроданныеДетали
+		ПО ВТ_ЗакупленныеДетали.Партия = Вт_ПроданныеДетали.Партия</query>
 	</dataSet>
-	<parameter>
-		<name>ТекДата</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Тек дата</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:dateTime</v8:Type>
-			<v8:DateQualifiers>
-				<v8:DateFractions>DateTime</v8:DateFractions>
-			</v8:DateQualifiers>
-		</valueType>
-		<useRestriction>true</useRestriction>
-		<expression>ТекущаяДата()</expression>
-		<use>Always</use>
-	</parameter>
 	<parameter>
 		<name>ДатаОкончания</name>
 		<title xsi:type="v8:LocalStringType">
@@ -154,6 +148,24 @@
 		<expression>&amp;Период.ДатаНачала</expression>
 	</parameter>
 	<parameter>
+		<name>ТекДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Тек дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<expression>ТекущаяДата()</expression>
+		<use>Always</use>
+	</parameter>
+	<parameter>
 		<name>Период</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
@@ -168,20 +180,24 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
-		<dcsset:name>ПродажаВосстановленныхДеталей</dcsset:name>
-		<dcsset:presentation xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>Продажа восстановленных деталей</v8:content>
-			</v8:item>
-		</dcsset:presentation>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ИндКод</dcsset:field>
+					<dcsset:field>Товар</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ДатаВосстановления</dcsset:field>
+					<dcsset:field>Партия</dcsset:field>
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Деталь</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДатаЗакупки</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ДатаПродажи</dcsset:field>
@@ -193,15 +209,9 @@
 			<dcsset:dataParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>Период</dcscor:parameter>
-					<dcsset:userSettingID>9ff789e7-7f5d-4eaa-8c34-79e09260a1ac</dcsset:userSettingID>
+					<dcsset:userSettingID>05ec6e28-c805-4438-b2fe-d8c08aaecd1a</dcsset:userSettingID>
 				</dcscor:item>
 			</dcsset:dataParameters>
-			<dcsset:order>
-				<dcsset:item xsi:type="dcsset:OrderItemField">
-					<dcsset:field>ДатаВосстановления</dcsset:field>
-					<dcsset:orderType>Asc</dcsset:orderType>
-				</dcsset:item>
-			</dcsset:order>
 			<dcsset:outputParameters>
 				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
 					<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
@@ -211,7 +221,7 @@
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:groupItems>
 					<dcsset:item xsi:type="dcsset:GroupItemField">
-						<dcsset:field>Номенклатура</dcsset:field>
+						<dcsset:field>Товар</dcsset:field>
 						<dcsset:groupType>Items</dcsset:groupType>
 						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
 					</dcsset:item>
@@ -224,10 +234,7 @@
 				</dcsset:selection>
 				<dcsset:item xsi:type="dcsset:StructureItemGroup">
 					<dcsset:order>
-						<dcsset:item xsi:type="dcsset:OrderItemField">
-							<dcsset:field>ДатаВосстановления</dcsset:field>
-							<dcsset:orderType>Asc</dcsset:orderType>
-						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
 						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
