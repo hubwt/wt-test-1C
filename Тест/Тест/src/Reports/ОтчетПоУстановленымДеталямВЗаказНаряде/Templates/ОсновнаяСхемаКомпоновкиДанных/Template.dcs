@@ -28,16 +28,29 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Расчет</dataPath>
+			<field>Расчет</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	ЗаказНарядТовары.Номенклатура КАК Номенклатура,
 	ЗаказНарядТовары.Партия КАК Партия,
 	ЗаказНарядТовары.Цена КАК Цена,
-	1 КАК Количество
+	1 КАК Количество,
+	ЗаказНарядТовары.Ссылка.СостояниеРасчетов КАК Расчет
+
 ИЗ
 	Документ.ЗаказНаряд.Товары КАК ЗаказНарядТовары
 ГДЕ
-	ЗаказНарядТовары.ДатаУстановки МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)</query>
+	ЗаказНарядТовары.ДатаУстановки МЕЖДУ &amp;Дата1 И КОНЕЦПЕРИОДА(&amp;Дата2, ДЕНЬ)
+</query>
 	</dataSet>
 	<totalField>
 		<dataPath>Цена</dataPath>
@@ -155,6 +168,10 @@
 					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
 					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
 				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:name>Заголовок</dcsset:name>
@@ -208,6 +225,9 @@
 					</dcsset:item>
 					<dcsset:item xsi:type="dcsset:SelectedItemField">
 						<dcsset:field>Количество</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Расчет</dcsset:field>
 					</dcsset:item>
 				</dcsset:selection>
 				<dcsset:outputParameters>
