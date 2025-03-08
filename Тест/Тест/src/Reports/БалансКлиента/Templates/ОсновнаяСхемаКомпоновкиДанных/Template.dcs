@@ -30,10 +30,48 @@
 			<dataPath>Клиент</dataPath>
 			<field>Клиент</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Задолженность</dataPath>
+			<field>Задолженность</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задолженность</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Итог</dataPath>
+			<field>Итог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итог</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
 	Клиенты.Ссылка КАК Ссылка,
-	ЕСТЬNULL(БалансКлиентаОстатки.БалансОстаток, 0) КАК Баланс
+	ВЫБОР
+		КОГДА ЕСТЬNULL(БалансКлиентаОстатки.БалансОстаток, 0) &lt; 0
+			ТОГДА ЕСТЬNULL(БалансКлиентаОстатки.БалансОстаток, 0)
+		ИНАЧЕ 0
+	КОНЕЦ КАК Задолженность,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(БалансКлиентаОстатки.БалансОстаток, 0) &gt;= 0
+			ТОГДА ЕСТЬNULL(БалансКлиентаОстатки.БалансОстаток, 0)
+		ИНАЧЕ 0
+	КОНЕЦ КАК Баланс,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(БалансКлиентаОстатки.БалансОстаток, 0) &lt; 0
+			ТОГДА ЕСТЬNULL(БалансКлиентаОстатки.БалансОстаток, 0)
+		ИНАЧЕ 0
+	КОНЕЦ + ВЫБОР
+		КОГДА ЕСТЬNULL(БалансКлиентаОстатки.БалансОстаток, 0) &gt;= 0
+			ТОГДА ЕСТЬNULL(БалансКлиентаОстатки.БалансОстаток, 0)
+		ИНАЧЕ 0
+	КОНЕЦ КАК Итог
 ИЗ
 	Справочник.Клиенты КАК Клиенты
 		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.БалансКлиента.Остатки КАК БалансКлиентаОстатки
@@ -42,6 +80,14 @@
 	<totalField>
 		<dataPath>Баланс</dataPath>
 		<expression>Сумма(Баланс)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Задолженность</dataPath>
+		<expression>Сумма(Задолженность)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Итог</dataPath>
+		<expression>Сумма(Итог)</expression>
 	</totalField>
 	<parameter>
 		<name>Период</name>
@@ -57,6 +103,7 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 	</parameter>
 	<settingsVariant>
@@ -68,9 +115,25 @@
 					<dcsset:field>Ссылка</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Задолженность</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Баланс</dcsset:field>
 				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Итог</dcsset:field>
+				</dcsset:item>
 			</dcsset:selection>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">End</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemGroup">
 				<dcsset:order>
 					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
