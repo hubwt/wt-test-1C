@@ -10,7 +10,7 @@
   <name>ТипыНаценок</name>
   <synonym>
     <key>ru</key>
-    <value>Типы оплат</value>
+    <value>Типы оплат (Авто выбор организации и счета)</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>Catalog.ТипыНаценок.StandardAttribute.Code</inputByString>
@@ -113,6 +113,36 @@
   <defaultObjectForm>Catalog.ТипыНаценок.Form.ФормаЭлемента</defaultObjectForm>
   <defaultListForm>Catalog.ТипыНаценок.Form.ФормаСписка</defaultListForm>
   <defaultChoiceForm>Catalog.ТипыНаценок.Form.ФормаВыбора</defaultChoiceForm>
+  <attributes uuid="bd7b5310-00b8-4106-8d2c-5d7ff28078a5">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организация</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1e52156c-c2e5-48dd-9dc4-0bb9c6b84eab">
+    <name>БанковскийСчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Банковский счет</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.БанковскиеСчета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <attributes uuid="28e4a3f5-548e-4490-a275-2ed5292c08d7">
     <name>ПроцентНаценки</name>
     <synonym>
@@ -133,36 +163,6 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <attributes uuid="bd7b5310-00b8-4106-8d2c-5d7ff28078a5">
-    <name>Организация</name>
-    <synonym>
-      <key>ru</key>
-      <value>Организация</value>
-    </synonym>
-    <type>
-      <types>CatalogRef.Организация</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="fd47f2dc-4cce-4d8a-ab9e-09ec15c4abe1">
-    <name>Счет</name>
-    <synonym>
-      <key>ru</key>
-      <value>Счет</value>
-    </synonym>
-    <type>
-      <types>CatalogRef.TipOplati</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
   <attributes uuid="98eb42c1-a485-4775-86f0-20649b37dcf7">
     <name>Приоритет</name>
     <synonym>
@@ -171,6 +171,21 @@
     </synonym>
     <type>
       <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="a4ef08a1-bcca-43db-8285-9255af7212c2">
+    <name>Счет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Счета</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
