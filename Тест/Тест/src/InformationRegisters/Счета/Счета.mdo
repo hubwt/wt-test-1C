@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e0f35c6-3fe8-4b37-be7f-1696eeb453c6">
+  <producedTypes>
+    <selectionType typeId="d89405cd-e256-4a91-8a35-25970e52482c" valueTypeId="44d458bb-3254-4ab8-bf4c-8d3d13fb0e53"/>
+    <listType typeId="e277a381-e24b-49d4-ab06-074b5dd7040f" valueTypeId="5cf42306-0a3a-4011-a79f-3510463fb661"/>
+    <managerType typeId="678945c2-955c-4691-bac4-01241a130fea" valueTypeId="9c934d5e-94b5-4e67-98aa-1bfd70051bdd"/>
+    <recordSetType typeId="3b0de51e-124f-4cdd-87df-4156689575b1" valueTypeId="f1d8c367-e783-4b35-9371-bf469c09b621"/>
+    <recordKeyType typeId="6814e6a2-01c3-4b9a-bc50-5318f77d4346" valueTypeId="dd6d6853-47a3-4be7-8c41-b49ce6ec67b1"/>
+    <recordType typeId="2dddd938-d1a0-49ce-a61c-4fbb98f9393d" valueTypeId="70ba9a4e-5c6e-4b25-a5c4-02ea8f3d8ecd"/>
+    <recordManagerType typeId="bbb4d440-4608-4003-93cf-2a15937fd3f9" valueTypeId="ae8bebce-8d06-4264-8f4b-3c0931d08216"/>
+  </producedTypes>
+  <name>Счета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Счета</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="a0e0ae51-5933-4535-99fe-6e286b1e63ca">
+    <name>Принадлежность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Принадлежность</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПринадлежностьСчета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="8e3ad194-bd66-4be3-8ace-32a527f9721e">
+    <name>Счет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Счета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>
