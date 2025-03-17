@@ -3295,6 +3295,22 @@
             <headerHorizontalAlign>Left</headerHorizontalAlign>
             <showInFooter>true</showInFooter>
             <extInfo xsi:type="form:InputFieldExtInfo">
+              <handlers>
+                <event>StartChoice</event>
+                <name>ТоварыНоменклатураНачалоВыбора</name>
+              </handlers>
+              <handlers>
+                <event>Creating</event>
+                <name>ТоварыНоменклатураСоздание</name>
+              </handlers>
+              <handlers>
+                <event>StartListChoice</event>
+                <name>ТоварыНоменклатураНачалоВыбораИзСписка</name>
+              </handlers>
+              <handlers>
+                <event>ChoiceProcessing</event>
+                <name>ТоварыНоменклатураОбработкаВыбора</name>
+              </handlers>
               <width>13</width>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -5167,6 +5183,10 @@
                   <horizontalAlign>Left</horizontalAlign>
                   <autoFill>true</autoFill>
                 </autoCommandBar>
+                <handlers>
+                  <event>ChoiceProcessing</event>
+                  <name>ПартииТовараОбработкаВыбора</name>
+                </handlers>
                 <searchStringAddition>
                   <visible>true</visible>
                   <enabled>true</enabled>
@@ -10024,6 +10044,10 @@
     <horizontalAlign>Left</horizontalAlign>
     <autoFill>true</autoFill>
   </autoCommandBar>
+  <handlers>
+    <event>ChoiceProcessing</event>
+    <name>ОбработкаВыбора</name>
+  </handlers>
   <handlers>
     <event>OnOpen</event>
     <name>ПриОткрытии</name>
