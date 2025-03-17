@@ -648,6 +648,56 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
+      <name>ЦенаПоАкции</name>
+      <id>104</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Список.ЦенаПоАкции</segments>
+      </dataPath>
+      <extendedTooltip>
+        <name>ЦенаПоАкцииРасширеннаяПодсказка</name>
+        <id>106</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ЦенаПоАкцииКонтекстноеМеню</name>
+        <id>105</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <showInHeader>true</showInHeader>
+      <headerHorizontalAlign>Left</headerHorizontalAlign>
+      <showInFooter>true</showInFooter>
+      <extInfo xsi:type="form:InputFieldExtInfo">
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <wrap>true</wrap>
+        <chooseType>true</chooseType>
+        <typeDomainEnabled>true</typeDomainEnabled>
+        <textEdit>true</textEdit>
+      </extInfo>
+    </items>
+    <items xsi:type="form:FormField">
       <name>СостояниеТовара</name>
       <id>101</id>
       <visible>true</visible>
@@ -947,6 +997,10 @@
     <event>OnCreateAtServer</event>
     <name>ПриСозданииНаСервере</name>
   </handlers>
+  <handlers>
+    <event>ChoiceProcessing</event>
+    <name>ОбработкаВыбора</name>
+  </handlers>
   <windowOpeningMode>LockOwnerWindow</windowOpeningMode>
   <autoTitle>true</autoTitle>
   <autoUrl>true</autoUrl>
@@ -992,7 +1046,30 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
- ВЫБРАТЬ
+ВЫБРАТЬ
+	МАКСИМУМ(РасспродажаТовараСрезПоследних.Номенклатура) КАК Номенклатура,
+	МАКСИМУМ(РасспродажаТовараСрезПоследних.Период) КАК Период
+ПОМЕСТИТЬ ВТ_ЦенаПоАкции_Предв
+ИЗ
+	РегистрСведений.РасспродажаТовара.СрезПоследних(, ДатаНачала &lt;= &amp;ДатаЗаявки
+	И ДатаОкончания >= &amp;ДатаЗаявки) КАК РасспродажаТовараСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТ_ЦенаПоАкции_Предв.Номенклатура,
+	РасспродажаТовараСрезПоследних.Цена КАК ЦенаПоАкции
+ПОМЕСТИТЬ ВТ_ЦенаПоАкции
+ИЗ
+	ВТ_ЦенаПоАкции_Предв КАК ВТ_ЦенаПоАкции_Предв
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.РасспродажаТовара.СрезПоследних(, ДатаНачала &lt;= &amp;ДатаЗаявки
+		И ДатаОкончания >= &amp;ДатаЗаявки) КАК РасспродажаТовараСрезПоследних
+		ПО ВТ_ЦенаПоАкции_Предв.Номенклатура = РасспродажаТовараСрезПоследних.Номенклатура
+		И РасспродажаТовараСрезПоследних.Период = ВТ_ЦенаПоАкции_Предв.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
 	СправочникНоменклатура.Ссылка КАК Ссылка,
 	СправочникНоменклатура.Код КАК Код,
 	СправочникНоменклатура.Наименование КАК Наименование,
@@ -1005,7 +1082,8 @@
 	СправочникНоменклатура.РекомендованаяЦена КАК РекомендованаяЦена,
 	СправочникНоменклатура.Категория КАК Категория,
 	ВТ_Заявки.Состояние КАК Состояние,
-	СправочникНоменклатура.Состояние КАК СостояниеТовара
+	СправочникНоменклатура.Состояние КАК СостояниеТовара,
+	ЕстьNULL(ВТ_ЦенаПоАкции.ЦенаПоАкции, 0) КАК ЦенаПоАкции
 {ГДЕ
 	(СправочникНоменклатура.Категория = &amp;Категория)}
 ИЗ
@@ -1015,7 +1093,9 @@
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.дт_МестаХраненияНоменклатуры.СрезПоследних(, Склад = &amp;Склад) КАК МестаХранения
 		ПО СправочникНоменклатура.Ссылка = МестаХранения.Номенклатура
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_Заявки КАК ВТ_Заявки
-		ПО СправочникНоменклатура.Ссылка = ВТ_Заявки.Номенклатура</queryText>
+		ПО СправочникНоменклатура.Ссылка = ВТ_Заявки.Номенклатура
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ЦенаПоАкции КАК ВТ_ЦенаПоАкции
+		ПО СправочникНоменклатура.Ссылка = ВТ_ЦенаПоАкции.Номенклатура</queryText>
       <mainTable>Catalog.Номенклатура</mainTable>
       <dynamicDataRead>true</dynamicDataRead>
       <autoFillAvailableFields>true</autoFillAvailableFields>
@@ -1114,6 +1194,13 @@
     </action>
     <currentRowUse>Auto</currentRowUse>
   </formCommands>
+  <parameters>
+    <name>ДатаЗаявки</name>
+    <valueType>
+      <types>Date</types>
+      <dateQualifiers/>
+    </valueType>
+  </parameters>
   <commandInterface>
     <navigationPanel/>
     <commandBar/>
