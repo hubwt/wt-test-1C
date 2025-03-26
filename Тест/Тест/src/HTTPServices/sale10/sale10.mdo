@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8df5887a-abf5-4d11-bec8-4cef6c61fc83">
+  <name>sale10</name>
+  <synonym>
+    <key>ru</key>
+    <value>Sale10</value>
+  </synonym>
+  <rootURL>sale10</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="6913d48d-485b-4b8b-960d-53efab410f8e">
+    <name>Авторизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авторизация</value>
+    </synonym>
+    <template>/auth</template>
+    <methods uuid="e44d5dbe-d661-4e2a-abaf-10fb0a88bb81">
+      <name>auth</name>
+      <synonym>
+        <key>ru</key>
+        <value>Auth</value>
+      </synonym>
+      <comment>Авторизация участников акции</comment>
+      <httpMethod>POST</httpMethod>
+      <handler>Авторизацияauth</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="2566f01d-cabb-40f3-bcb7-b775cdd88f3f">
+    <name>КоличествоУчастниковАкции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество участников акции</value>
+    </synonym>
+    <template>/number-of-people</template>
+    <methods uuid="7c715d4f-d24e-4015-9ffd-63dc184b707d">
+      <name>КоличествоУчастниковАкции</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество участников акции</value>
+      </synonym>
+      <handler>КоличествоУчастниковАкцииКоличествоУчастниковАкции</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>
