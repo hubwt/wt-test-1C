@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b84281f4-647b-406b-a86d-49265252e9ff">
+  <producedTypes>
+    <selectionType typeId="803c037b-6e71-4752-8307-f7f7bd5b5016" valueTypeId="c9465dba-7693-4894-8c20-f516fd2cd730"/>
+    <listType typeId="2fba5d85-4f73-428d-8212-58064b1c2fd6" valueTypeId="1dc03a3a-e9d1-4946-a786-d0c2775b1373"/>
+    <managerType typeId="1ac0003e-8c92-4cc5-8205-d21b08673102" valueTypeId="a1e52691-90a1-4a40-aa79-aaf358a9c8c7"/>
+    <recordSetType typeId="d9cf1307-0b65-4c5e-88b3-9e930134041b" valueTypeId="72ab04a5-edd8-454d-8a09-75a1ee52b4d9"/>
+    <recordKeyType typeId="f67d4a2c-e137-4183-848e-6ba815e157e2" valueTypeId="b618a6e5-24de-42f4-b38d-08cfce18868c"/>
+    <recordType typeId="b19daeab-3e31-42bb-ab80-26aed6f792a3" valueTypeId="d351c2f3-f4bb-460e-81f8-c07d5a21bdca"/>
+  </producedTypes>
+  <name>РегистрАкция10</name>
+  <synonym>
+    <key>ru</key>
+    <value>Регистр акция10</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="6a57976c-fe24-4e75-a1fc-c451561e5a57">
+    <name>Колво</name>
+    <synonym>
+      <key>ru</key>
+      <value>Колво</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="568629fb-9466-45e1-a46e-9575f12056a5">
+    <name>Цена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цена</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="abfef335-297e-4dc1-a3af-ef109aaba5e1">
+    <name>Товар</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товар</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e47389f9-bd5c-40d1-96e5-d41fa86d5981">
+    <name>индкод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Индкод</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ИндКод</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="9a0e718a-bfb6-4ad8-aca1-62458b07a630">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="48aea00a-7430-4b45-aac7-3efc6ffc6d47">
+    <name>машина</name>
+    <synonym>
+      <key>ru</key>
+      <value>Машина</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Машины</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>
