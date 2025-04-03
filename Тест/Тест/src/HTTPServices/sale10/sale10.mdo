@@ -42,4 +42,37 @@
       <handler>КоличествоУчастниковАкцииКоличествоУчастниковАкции</handler>
     </methods>
   </urlTemplates>
+  <urlTemplates uuid="97e1deec-20f4-4380-95ce-e30ffcbb5846">
+    <name>СписокТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список товаров</value>
+    </synonym>
+    <template>/list-of-products</template>
+    <methods uuid="18c9962e-b91e-41fe-941f-4286ce073c7c">
+      <name>listOfProducts</name>
+      <synonym>
+        <key>ru</key>
+        <value>List of products</value>
+      </synonym>
+      <handler>СписокТоваровlistOfProducts</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="bbb3844a-1cbb-43a3-833c-8f5a39729c07">
+    <name>ПолучитьТоварыКарточки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить товары карточки</value>
+    </synonym>
+    <template>/get-card-products</template>
+    <methods uuid="197d9a05-fbc7-45ee-bb08-7efabc10a79d">
+      <name>GetCardProducts</name>
+      <synonym>
+        <key>ru</key>
+        <value>Get card products</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьТоварыКарточкиGetCardProducts</handler>
+    </methods>
+  </urlTemplates>
 </mdclass:HTTPService>
