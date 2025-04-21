@@ -26,22 +26,6 @@
       <handler>Авторизацияauth</handler>
     </methods>
   </urlTemplates>
-  <urlTemplates uuid="2566f01d-cabb-40f3-bcb7-b775cdd88f3f">
-    <name>КоличествоУчастниковАкции</name>
-    <synonym>
-      <key>ru</key>
-      <value>Количество участников акции</value>
-    </synonym>
-    <template>/number-of-people</template>
-    <methods uuid="7c715d4f-d24e-4015-9ffd-63dc184b707d">
-      <name>КоличествоУчастниковАкции</name>
-      <synonym>
-        <key>ru</key>
-        <value>Количество участников акции</value>
-      </synonym>
-      <handler>КоличествоУчастниковАкцииКоличествоУчастниковАкции</handler>
-    </methods>
-  </urlTemplates>
   <urlTemplates uuid="97e1deec-20f4-4380-95ce-e30ffcbb5846">
     <name>СписокТоваров</name>
     <synonym>
@@ -64,14 +48,13 @@
       <key>ru</key>
       <value>Получить товары карточки</value>
     </synonym>
-    <template>/get-card-products</template>
+    <template>/get-card-products/{cardId}</template>
     <methods uuid="197d9a05-fbc7-45ee-bb08-7efabc10a79d">
       <name>GetCardProducts</name>
       <synonym>
         <key>ru</key>
         <value>Get card products</value>
       </synonym>
-      <httpMethod>POST</httpMethod>
       <handler>ПолучитьТоварыКарточкиGetCardProducts</handler>
     </methods>
   </urlTemplates>
