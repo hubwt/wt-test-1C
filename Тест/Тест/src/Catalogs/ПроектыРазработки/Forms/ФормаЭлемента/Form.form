@@ -1616,6 +1616,56 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
+          <name>СписокДатаОкончания</name>
+          <id>244</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <dataPath xsi:type="form:DataPath">
+            <segments>Список.ДатаОкончания</segments>
+          </dataPath>
+          <extendedTooltip>
+            <name>СписокДатаОкончанияРасширеннаяПодсказка</name>
+            <id>246</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <contextMenu>
+            <name>СписокДатаОкончанияКонтекстноеМеню</name>
+            <id>245</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <autoFill>true</autoFill>
+          </contextMenu>
+          <type>InputField</type>
+          <editMode>Enter</editMode>
+          <showInHeader>true</showInHeader>
+          <headerHorizontalAlign>Left</headerHorizontalAlign>
+          <showInFooter>true</showInFooter>
+          <extInfo xsi:type="form:InputFieldExtInfo">
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <wrap>true</wrap>
+            <chooseType>true</chooseType>
+            <typeDomainEnabled>true</typeDomainEnabled>
+            <textEdit>true</textEdit>
+          </extInfo>
+        </items>
+        <items xsi:type="form:FormField">
           <name>СписокНомер</name>
           <id>35</id>
           <visible>true</visible>
@@ -3444,7 +3494,8 @@
 	ЗаказНаряд.Ссылка КАК Ссылка,
 	ЗаказНаряд.СуммаТовары КАК СуммаТовары,
 	ЗаказНаряд.СуммаРаботы КАК СуммаРаботы,
-	ЗаказНаряд.Состояние
+	ЗаказНаряд.Состояние,
+	ЗаказНаряд.ДатаОкончания КАК ДатаОкончания
 ПОМЕСТИТЬ ВТ_ЗаказНаряд
 ИЗ
 	Документ.ЗаказНаряд КАК ЗаказНаряд
@@ -3454,6 +3505,7 @@
 ВЫБРАТЬ
 	ПоступлениеЗапчастей.Ссылка,
 	ПоступлениеЗапчастей.СуммаНакладной,
+	NULL,
 	NULL,
 	NULL
 ИЗ
@@ -3465,6 +3517,7 @@
 	ПриходДенегНаСчет.Ссылка,
 	ПриходДенегНаСчет.СуммаДокумента,
 	NULL,
+	NULL,
 	NULL
 ИЗ
 	Документ.ПриходДенегНаСчет КАК ПриходДенегНаСчет
@@ -3475,6 +3528,7 @@
 	ПродажаЗапчастей.Ссылка,
 	ПродажаЗапчастей.ИтогоРекв,
 	NULL,
+	NULL,
 	NULL
 ИЗ
 	Документ.ПродажаЗапчастей КАК ПродажаЗапчастей
@@ -3484,6 +3538,7 @@
 ВЫБРАТЬ
 	ПредварительныйСчет.Ссылка,
 	ПредварительныйСчет.ИтогоРекв,
+	NULL,
 	NULL,
 	NULL
 ИЗ
@@ -3504,7 +3559,8 @@
 	ЖурналДокументовДокументыПоПроектам.Тип КАК Тип,
 	ВТ_ЗаказНаряд_Работы.СуммаТовары КАК СуммаТовары,
 	ВТ_ЗаказНаряд_Работы.СуммаРаботы КАК СуммаРаботы,
-	ВТ_ЗаказНаряд_Работы.Состояние
+	ВТ_ЗаказНаряд_Работы.Состояние,
+	ВТ_ЗаказНаряд_Работы.ДатаОкончания
 ИЗ
 	ЖурналДокументов.ДокументыПоПроектам КАК ЖурналДокументовДокументыПоПроектам
 		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_ЗаказНаряд КАК ВТ_ЗаказНаряд_Работы
