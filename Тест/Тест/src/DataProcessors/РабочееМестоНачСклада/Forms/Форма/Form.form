@@ -6,6 +6,41 @@
     <items xsi:type="form:FormGroup">
       <name>Акция10</name>
       <id>3</id>
+      <items xsi:type="form:Button">
+        <name>ЗанулитьРегистрАкция</name>
+        <id>42</id>
+        <title>
+          <key>ru</key>
+          <value>Лучше не нажимать!!!</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>ЗанулитьРегистрАкцияРасширеннаяПодсказка</name>
+          <id>43</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>UsualButton</type>
+        <commandName>Form.Command.ЗанулитьРегистрАкция</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
+      </items>
       <items xsi:type="form:FormGroup">
         <name>Списки</name>
         <id>40</id>
@@ -823,6 +858,23 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>УбратьТоварыИзАкции</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ЗанулитьРегистрАкция</name>
+    <title>
+      <key>ru</key>
+      <value>Занулить регистр акция</value>
+    </title>
+    <id>3</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ЗанулитьРегистрАкция</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>

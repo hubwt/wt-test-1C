@@ -648,6 +648,56 @@
             </extInfo>
           </items>
           <items xsi:type="form:FormField">
+            <name>ДатаИзмененияЦены</name>
+            <id>877</id>
+            <visible>true</visible>
+            <enabled>true</enabled>
+            <userVisible>
+              <common>true</common>
+            </userVisible>
+            <dataPath xsi:type="form:DataPath">
+              <segments>СписокНоменклатуры.ДатаИзмененияЦены</segments>
+            </dataPath>
+            <extendedTooltip>
+              <name>ДатаИзмененияЦеныРасширеннаяПодсказка</name>
+              <id>879</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <type>Label</type>
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <extInfo xsi:type="form:LabelDecorationExtInfo">
+                <horizontalAlign>Left</horizontalAlign>
+              </extInfo>
+            </extendedTooltip>
+            <contextMenu>
+              <name>ДатаИзмененияЦеныКонтекстноеМеню</name>
+              <id>878</id>
+              <visible>true</visible>
+              <enabled>true</enabled>
+              <userVisible>
+                <common>true</common>
+              </userVisible>
+              <autoFill>true</autoFill>
+            </contextMenu>
+            <type>InputField</type>
+            <editMode>Enter</editMode>
+            <showInHeader>true</showInHeader>
+            <headerHorizontalAlign>Left</headerHorizontalAlign>
+            <showInFooter>true</showInFooter>
+            <extInfo xsi:type="form:InputFieldExtInfo">
+              <autoMaxWidth>true</autoMaxWidth>
+              <autoMaxHeight>true</autoMaxHeight>
+              <wrap>true</wrap>
+              <chooseType>true</chooseType>
+              <typeDomainEnabled>true</typeDomainEnabled>
+              <textEdit>true</textEdit>
+            </extInfo>
+          </items>
+          <items xsi:type="form:FormField">
             <name>ЦенаПоАкции</name>
             <id>874</id>
             <visible>true</visible>
@@ -5203,7 +5253,7 @@
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
+ ВЫБРАТЬ
 	МАКСИМУМ(РасспродажаТовараСрезПоследних.Номенклатура) КАК Номенклатура,
 	МАКСИМУМ(РасспродажаТовараСрезПоследних.Период) КАК Период
 ПОМЕСТИТЬ ВТ_ЦенаПоАкции_Предв
@@ -5244,7 +5294,8 @@
 	ВТ_Продажи.Ссылка КАК КоличествоПродаж,
 	ОКР(Актуальная.Цена, 0) КАК Цена,
 	ВТ_Спрашивают.Спросили КАК Спросили,
-	ЕстьNULL(ВТ_ЦенаПоАкции.ЦенаПоАкции, 0) КАк ЦенаПоАкции
+	ЕстьNULL(ВТ_ЦенаПоАкции.ЦенаПоАкции, 0) КАк ЦенаПоАкции,
+	СправочникНоменклатура.ДатаИзмененияЦены
 ИЗ
 	Справочник.Номенклатура КАК СправочникНоменклатура
 		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.РегистрНакопления1.Остатки(,
